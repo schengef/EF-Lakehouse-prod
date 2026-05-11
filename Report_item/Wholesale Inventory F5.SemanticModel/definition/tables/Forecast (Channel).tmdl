@@ -1,0 +1,138 @@
+table 'Forecast (Channel)'
+	lineageTag: a33e911c-e36e-4bad-adfb-6d0c48e2f756
+
+	column Channel
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3bbb4b0e-d505-4ad0-a734-c8c3a812aefe
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 2a82d433-7e46-463f-8203-3a46f0f0847a
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 29aeeca0-5fe7-4289-9761-446ca14d4032
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b0855b52-b452-4929-9a21-c0de29d0baf3
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 42f7dcf8-9062-41e8-93e2-dd905985f48e
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: f909e800-cedf-40d9-9c70-2d144011cb28
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Forecast Value'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 4877aaa8-6330-4201-bf77-806c62191e2e
+		summarizeBy: sum
+		sourceColumn: Forecast Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(10)
+		lineageTag: 9e82a5c7-6e00-4fd1-a884-345a48afb94f
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dashboard Order Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a957b906-0bfb-45e8-a7e9-bd08bc857198
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Forecast (Channel)' = m
+		mode: dual
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				            "
+				select T.CHANNEL, T.DATE_KEY,T.CUSTOMER_TYPE,T.ORDER_TYPE,T.MEASURE,T.CURRENCY_KEY,T.FORECAST_VALUE,T.CURRENCY_CODE,
+				CASE WHEN T.CUSTOMER_TYPE='US THIRD PARTY' AND T.ORDER_TYPE='INITIALS MAINLINE' THEN '3RD PARTY'
+				    WHEN T.ORDER_TYPE='INITIALS QR' THEN 'QR'
+				    WHEN T.ORDER_TYPE='REORDERS QR' THEN 'QR'
+				    WHEN T.ORDER_TYPE='REORDERS MAINLINE' THEN 'FASHION REORDER'
+				    WHEN T.ORDER_TYPE='INITIALS MAINLINE' THEN 'FASHION INITIALS'
+				    WHEN T.ORDER_TYPE='INITIALS EXCLUSIVES' THEN 'FASHION INITIALS'
+				    WHEN T.ORDER_TYPE='DROP SHIP MAINLINE' THEN 'DROP SHIP'
+				    WHEN T.ORDER_TYPE='DROP SHIP QR' THEN 'DROP SHIP'
+				END AS DASHBOARD_ORDER_TYPE
+				
+				from EDW_V.F_FORECAST T
+				where WEEK_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) )
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

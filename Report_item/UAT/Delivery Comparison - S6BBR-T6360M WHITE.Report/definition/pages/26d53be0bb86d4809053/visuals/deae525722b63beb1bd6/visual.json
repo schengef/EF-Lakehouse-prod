@@ -1,0 +1,113 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "deae525722b63beb1bd6",
+  "position": {
+    "x": 0,
+    "y": 898.28571428571433,
+    "z": 0,
+    "height": 318.57142857142861,
+    "width": 808.57142857142867,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product (Current)"
+                    }
+                  },
+                  "Property": "Style Number"
+                }
+              },
+              "queryRef": "Product (Current).Style Number",
+              "nativeQueryRef": "Style Number"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Week End Date"
+                }
+              },
+              "queryRef": "Date.Date Hierarchy.Week End Date",
+              "nativeQueryRef": "Date Hierarchy Week End Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Delivery"
+                    }
+                  },
+                  "Property": "Delivery Code"
+                }
+              },
+              "queryRef": "Delivery.Delivery Code",
+              "nativeQueryRef": "Delivery Code"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Retail Sales Units"
+                }
+              },
+              "queryRef": "Total Company Measures.External Retail Sales Units",
+              "nativeQueryRef": "External Retail Sales Units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inventory Measures"
+                    }
+                  },
+                  "Property": "External Quantity On Hand"
+                }
+              },
+              "queryRef": "Inventory Measures.External Quantity On Hand",
+              "nativeQueryRef": "External Quantity On Hand"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Sell Through %"
+                }
+              },
+              "queryRef": "Total Company Measures.External Sell Through %",
+              "nativeQueryRef": "External Sell Through %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

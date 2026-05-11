@@ -1,0 +1,769 @@
+table 'Calendar Period'
+	lineageTag: 239545fb-5577-4488-a20e-9b7ccb69383a
+
+	calculationGroup
+		precedence: 3
+
+		calculationItem WTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofWeek =  LOOKUPVALUE('Date'[Dayofweek],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ContextMonth=LASTDATE('Date'[Date])
+				VAR ThisWeek=LOOKUPVALUE('Date'[Week],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Week] = ThisWeek &&
+				    'Date'[Year] =CurrYear &&
+				    'Date'[Dayofweek]<=DayofWeek
+				)
+
+		calculationItem MTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofMonth =  LOOKUPVALUE('Date'[Monthindex],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ContextMonth=LASTDATE('Date'[Date])
+				VAR ThisMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Monthnum] = ThisMonth &&
+				    'Date'[Year] =CurrYear &&
+				    'Date'[Monthindex]<=DayofMonth
+				)
+
+		calculationItem QTD =
+				
+				VAR LastDayAvailable = calculate(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR CurrQuarter=LOOKUPVALUE('Date'[Quarter],'Date'[date],LastDayAvailable)
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],LastDayAvailable)
+				VAR MinDayQ=CALCULATE(MIN('Date'[Date]),'Date'[Quarter]=CurrQuarter,'Date'[Year]=CurrYear,ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DaysintoQ=DATEDIFF(MinDayQ,LastDayAvailable,DAY)
+				VAR FirstDayofQ=LOOKUPVALUE('Date'[Date],'Date'[Date],MIN('Date'[Date]))
+				VAR Q=DATESINPERIOD('Date'[Date],FirstDayofQ,DaysintoQ,DAY)
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Date] in Q
+				    )
+
+		calculationItem YTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofYear =  LOOKUPVALUE('Date'[Dayofyear],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR Context=LASTDATE('Date'[Date])
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],Context,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Year] =CurrYear &&
+				    'Date'[Dayofyear]<=DayofYear
+				)
+
+		calculationItem LWTD = ```
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofWeek =  LOOKUPVALUE('Date'[Dayofweek],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ContextMonth=LASTDATE('Date'[Date])
+				VAR ThisWeek=LOOKUPVALUE('Date'[Week],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastWeek=IF(ThisWeek=1,52,ThisWeek-1)
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastWeekYear=IF(ThisWeek=1,CurrYear-1,CurrYear)
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Week] = LastWeek &&
+				    'Date'[Year] =LastWeekYear &&
+				    'Date'[Dayofweek]<=DayofWeek
+				)
+				
+				```
+
+		calculationItem LMTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofMonth =  LOOKUPVALUE('Date'[Monthindex],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ContextMonth=LASTDATE('Date'[Date])
+				VAR ThisMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastMonth=IF(ThisMonth=1,12,ThisMonth-1)
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastMonthYear=IF(ThisMonth=1,CurrYear-1,CurrYear)
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Monthnum] = LastMonth &&
+				    'Date'[Year] =LastMonthYear &&
+				    'Date'[Monthindex]<=DayofMonth
+				)
+
+		calculationItem LQTD = ```
+				
+				VAR LastDayAvailable = calculate(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR CurrQuarter=LOOKUPVALUE('Date'[Quarter],'Date'[date],LastDayAvailable)
+				VAR ContextQuarter=LOOKUPVALUE('Date'[Quarter],'Date'[date],MAX('Date'[date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastQuarter=SWITCH(ContextQuarter,"Q1","Q4","Q2","Q1","Q3","Q2","Q4","Q3")
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],LastDayAvailable)
+				VAR LastQYear=IF(ContextQuarter="Q1",MAX('Date'[Year])-1,MAX('Date'[Year]))
+				VAR MinDayQ=CALCULATE(MIN('Date'[Date]),'Date'[Quarter]=CurrQuarter,'Date'[Year]=CurrYear,ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR MinDayLQ=CALCULATE(MIN('Date'[Date]),'Date'[Quarter]=LastQuarter,'Date'[Year]=LastQYear,ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DaysintoQ=DATEDIFF(MinDayQ,LastDayAvailable,DAY)
+				VAR LQ=DATESINPERIOD('Date'[Date],MinDayLQ,DaysintoQ,DAY)
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Date] in LQ
+				    )
+				        
+				```
+
+		calculationItem LYTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastDayNumLY=LOOKUPVALUE('Date'[Dayofyear],'Date'[Date],LastDayLY,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ThisYear=MAX('Date'[Year])
+				VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=ThisYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				        SELECTEDMEASURE(),
+				        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				        'Date'[Date] in LY &&
+				        'Date'[Dayofyear]<=LastDayNumLY
+				    )
+
+		calculationItem LLYTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR LastDayLLY=LOOKUPVALUE('Date'[Date LLY],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LastDayNumLLY=LOOKUPVALUE('Date'[Dayofyear],'Date'[Date],LastDayLLY,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ThisYear=MAX('Date'[Year])
+				VAR LLY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LLY], FILTER('Date','Date'[Year]=ThisYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				        SELECTEDMEASURE(),
+				        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				        'Date'[Date] in LLY &&
+				        'Date'[Dayofyear]<=LastDayNumLLY
+				    )
+
+		calculationItem LYWTD = ```
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR LastDayofWeek = LOOKUPVALUE('Date'[Dayofweek],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR Context=MAX('Date'[Week End Date])
+				VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=MAX('Date'[Week End Date])))
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Date] in LW &&
+				    'Date'[DayofWeek]<=LastDayofWeek
+				)
+				
+				```
+
+		calculationItem LYMTD =
+				
+				VAR LastDayAvailable = CALCULATE(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DayofMonth = LOOKUPVALUE('Date'[Monthindex],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR ContextMonth=LASTDATE('Date'[Date])
+				VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Monthindex],DayofMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]),'Date'[Monthnum],MAX('Date'[Monthnum]),'Date'[Year],MAX('Date'[Year]))
+				VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar],'Date'[Year]))
+				VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],ContextMonth,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+				VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Date] in LM &&
+				    'Date'[Date] in LY &&
+				    'Date'[Date]<=LastDayLY
+				)
+
+		calculationItem LYQTD =
+				
+				VAR LastDayAvailable = calculate(max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0),ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR CurrQuarter=LOOKUPVALUE('Date'[Quarter],'Date'[date],LastDayAvailable)
+				VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],LastDayAvailable)
+				VAR MinDayQ=CALCULATE(MIN('Date'[Date]),'Date'[Quarter]=CurrQuarter,'Date'[Year]=CurrYear,ALLEXCEPT('Date','Date'[Select a Calendar]))
+				VAR DaysintoQ=DATEDIFF(MinDayQ,LastDayAvailable,DAY)
+				VAR FirstDayofLYQ=LOOKUPVALUE('Date'[Date LY],'Date'[Date],MIN('Date'[Date]))
+				VAR LYQ=DATESINPERIOD('Date'[Date],FirstDayofLYQ,DaysintoQ,DAY)
+				RETURN
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				    'Date'[Date] in LYQ
+				    )
+
+		calculationItem LWC = ```
+				
+				    VAR LastDOW =  DATEADD(LASTDATE('Date'[Date]),-1*WEEKDAY(LASTDATE('Date'[Date]),1),DAY)
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        
+				         CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+				                     'Date'[Week End Date] = LastDOW &&
+				            'Date'[Year] = LastFiscalYear)
+				           
+				```
+
+		calculationItem LMC = ```
+				
+				    VAR LastFiscalYearMonthAvailable = MAX ( 'Date'[MonthNum] )
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar],'Date'[MonthNum]),
+				            If(LastFiscalYearMonthAvailable = 1, 'Date'[MonthNum] = 12 &&
+				            'Date'[Year] = LastFiscalYear-1, 'Date'[MonthNum] = LastFiscalYearMonthAvailable-1 &&
+				            'Date'[Year] = LastFiscalYear)
+				        )
+				```
+
+		calculationItem LQC =
+				VAR LastFiscalYearQuarterAvailable = MAX ( 'Date'[Quarter] )
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar],'Date'[Quarter]),
+				            If(LastFiscalYearQuarterAvailable = "Q1", 'Date'[Quarter] = "Q4" &&
+				            'Date'[Year] = LastFiscalYear-1, 'Date'[Quarter] = "Q"&right(LastFiscalYearQuarterAvailable,1)-1  &&
+				            'Date'[Year] = LastFiscalYear)
+				        )
+
+		calculationItem LYC = ```
+				
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar],'Date'[Year]),
+				            'Date'[Year] = LastFiscalYear-1
+				            )
+				        
+				```
+
+		calculationItem LLYC = ```
+				
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar],'Date'[Year]),
+				            'Date'[Year] = LastFiscalYear-2
+				            )
+				        
+				```
+
+		calculationItem MAT =
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    DATESINPERIOD(
+				        'Date'[Date],
+				        LASTDATE(
+				            'Date'[Date]
+				        ),
+				        DATEDIFF(
+				            LASTDATE(
+				                'Date'[Date]
+				            ),
+				            DATEADD(
+				                LASTDATE(
+				                    'Date'[Date]
+				                    ),
+				                -1,
+				                YEAR
+				            ),
+				            DAY
+				        ),
+				        DAY
+				    )
+				)
+
+		calculationItem LYMAT = ```
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    DATESINPERIOD(
+				        'Date'[Date],
+				            DATEADD(
+				                LASTDATE(
+				                    'Date'[Date]
+				                ),
+				                -1,
+				                year
+				            ),
+				        DATEDIFF(
+				            DATEADD(
+				                LASTDATE(
+				                    'Date'[Date]
+				                ),
+				                -1,
+				                year
+				            ),
+				            DATEADD(
+				                LASTDATE(
+				                   'Date'[Date]
+				                ),
+				                -2,
+				                YEAR
+				            ),
+				            DAY
+				        ),
+				        DAY
+				    )  
+				)
+				```
+
+		calculationItem MATG =
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="MAT"
+				)-
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYMAT"
+				)
+
+		calculationItem MATG% =
+				divide(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="MAT"
+				    )-
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYMAT"
+				    ),
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYMAT"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem WOW = ```
+				
+				    CALCULATE(SELECTEDMEASURE(),'Calendar Period'[Calendar Period Aggregation]="WTD")
+				    -
+				    CALCULATE(SELECTEDMEASURE(),'Calendar Period'[Calendar Period Aggregation]="LYWTD")
+				```
+
+		calculationItem WOW% =
+				
+				DIVIDE(
+				    CALCULATE(SELECTEDMEASURE(),'Calendar Period'[Calendar Period Aggregation]="WOW")
+				    ,
+				    CALCULATE(SELECTEDMEASURE(),'Calendar Period'[Calendar Period Aggregation]="LYWTD")
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem WOWTD =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="WTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LWTD"
+				)
+
+		calculationItem WOWTD% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="WOWTD"
+				    )
+				    ,
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LWTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem WTDOLW =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="WTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LWC"
+				)
+
+		calculationItem WTDOLW% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="WTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LWC"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LWC"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem MOM =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="MTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LYMTD"
+				)
+
+		calculationItem MOM% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="MOM"
+				    )
+				    ,
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYMTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem MOMTD =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="MTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LMTD"
+				)
+
+		calculationItem MOMTD% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="MTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LMTD"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LMTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem MTDOLM =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="MTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LMC"
+				)
+
+		calculationItem MTDOLM% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="MTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LMC"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LMC"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem QOQ =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="QTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LYQTD"
+				)
+
+		calculationItem QOQ% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="QOQ"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYQTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem QOQTD =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="QTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LQTD"
+				)
+
+		calculationItem QOQTD% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="QOQTD"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LQTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem QTDOLQ =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="QTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LQC"
+				)
+
+		calculationItem QTDOLQ% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="QTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LQC"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LQC"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem YOY =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="YTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LYTD"
+				)
+
+		calculationItem YOY% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="YTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYTD"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem YTDOLY =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="YTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LYC"
+				)
+
+		calculationItem YTDOLY% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="YTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYC"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LYC"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem YOLLYTD =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="YTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LLYTD"
+				)
+
+		calculationItem YOLLYTD% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="YTD"
+				    )
+				    -
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LLYTD"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LLYTD"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem YTDOLLY =
+				
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="YTD"
+				)
+				-
+				CALCULATE(
+				    SELECTEDMEASURE(),
+				    'Calendar Period'[Calendar Period Aggregation]="LLYC"
+				)
+
+		calculationItem YTDOLLY% =
+				
+				DIVIDE(
+				    CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="YTDOLLY"
+				    ),
+				        CALCULATE(
+				        SELECTEDMEASURE(),
+				        'Calendar Period'[Calendar Period Aggregation]="LLYC"
+				    )
+				)
+
+			formatStringDefinition = "0.0%"
+
+		calculationItem TY = CALCULATE(SELECTEDMEASURE(),'Date'[Year]=MAX('Date'[Year]))
+
+		calculationItem LY =
+				
+				CALCULATE(SELECTEDMEASURE(),'Date'[Year]=MAX('Date'[Year])-1)
+
+		calculationItem LTD = ```
+				
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar])
+				           )
+				```
+
+	column 'Calendar Period Aggregation'
+		dataType: string
+		lineageTag: c1a30105-1dc9-4121-bb6d-556c1993d230
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: a9954857-9600-42c0-a645-a9ca41efd17c
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

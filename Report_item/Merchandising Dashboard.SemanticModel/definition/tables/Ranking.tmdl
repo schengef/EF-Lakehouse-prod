@@ -1,0 +1,21 @@
+table Ranking
+	lineageTag: 88a21170-0670-412d-89ca-b5b2f77bb640
+	sourceLineageTag: b4c3a760-25cc-4a39-bc1e-9685c519c7cb
+
+	column Rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 8583b85a-75d3-43df-986b-78035bc60b96
+		sourceLineageTag: 482fbfa5-2900-4675-96a3-e20faddf8f18
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = User
+
+	partition Ranking = entity
+		mode: directQuery
+		source
+			entityName: Ranking
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

@@ -1,0 +1,23 @@
+table Ranking
+	lineageTag: b4c3a760-25cc-4a39-bc1e-9685c519c7cb
+
+	column Rank
+		formatString: 0
+		lineageTag: 482fbfa5-2900-4675-96a3-e20faddf8f18
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Rank]
+
+		annotation SummarizationSetBy = User
+
+	partition Ranking = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS(
+				    GENERATESERIES( 1 , 15 , 1 ),
+				    "Rank", ''[Value]
+				)
+
+	annotation PBI_Id = 2a736c7818584af497b819ac39a06571
+

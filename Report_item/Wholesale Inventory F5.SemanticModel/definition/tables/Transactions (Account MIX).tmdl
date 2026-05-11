@@ -1,0 +1,110 @@
+table 'Transactions (Account MIX)'
+	lineageTag: 11e23613-4838-4e45-817e-cba23c6de8f6
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 4f95a197-b70c-4c37-a33e-1fa18545556b
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: a119f51c-0c9c-4e0d-93a1-18168d61135f
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Department
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bddc01c0-de97-45c3-ae7e-07760046c21d
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Dollars'
+		dataType: double
+		sourceProviderType: decimal(27, 2)
+		lineageTag: b864aa36-6d9f-4928-9bd6-2ab4d1428b63
+		summarizeBy: sum
+		sourceColumn: Sales Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: a0d7ada0-544e-40a8-8fde-73929ade797d
+		summarizeBy: count
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 06c23467-6c03-4e47-8a17-f53942a1421b
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Transactions (Account MIX)' = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*
+				from EDW_V.V_WHOLESALE_RETAIL_MIX T
+				where WEEK_ENDING_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Week Ending Date", "Source System"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week Ending Date Key", Int32.Type}, {"Store Key", Int32.Type}, {"Currency Key", Int32.Type}, {"Channel Key", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

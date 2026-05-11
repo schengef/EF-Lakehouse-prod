@@ -1,0 +1,383 @@
+table Date
+	lineageTag: 0e3275bd-5374-4778-b7d3-e435015be387
+
+	column Date
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 348664e2-fdc0-4108-80ac-00382f5f8248
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c865ee82-1bcd-4dad-b26a-447fd780bfdc
+		summarizeBy: none
+		sourceColumn: Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(18, 0)
+		lineageTag: b6e4de05-400a-4e31-84dc-e90d7c2eb547
+		summarizeBy: none
+		sourceColumn: Week
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f0448cf3-ea77-453b-b65b-774e12059125
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 685fbd3d-453b-4fa8-8beb-452ace3ab96f
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Week End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 3d181f72-22ff-4639-975e-e990e649a51b
+		summarizeBy: none
+		sourceColumn: Week End Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Half
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(2)
+		lineageTag: b86e53f9-00d5-42da-9778-b5ba0a0f72fb
+		summarizeBy: none
+		sourceColumn: Half
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sequential Day Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(9, 0)
+		lineageTag: 799a26c6-1439-4a8d-a167-398eafd2aa3e
+		summarizeBy: sum
+		sourceColumn: Sequential Day Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Select a Calendar'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(12)
+		lineageTag: 3124752b-3f55-4776-a20b-60e2d20ab9a8
+		summarizeBy: none
+		sourceColumn: Select a Calendar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CurrWeek End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 34306d12-f584-4b9a-b47e-b147ab08b862
+		summarizeBy: none
+		sourceColumn: CurrWeek End Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Dayofweek
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(3, 0)
+		lineageTag: 94a2f794-2356-422b-ab39-0a36ab093e0c
+		summarizeBy: sum
+		sourceColumn: Dayofweek
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dayofmonth
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(10, 0)
+		lineageTag: 6ea00ce8-707e-47eb-8ea6-4d8641d51ef3
+		summarizeBy: sum
+		sourceColumn: Dayofmonth
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dayofyear
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(10, 0)
+		lineageTag: d1c9af73-ea6a-4f0f-9634-11c4ec07977a
+		summarizeBy: sum
+		sourceColumn: Dayofyear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Monthnum
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 27e039e9-b370-4b49-a184-a362444d52dc
+		summarizeBy: sum
+		sourceColumn: Monthnum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Datekey
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: e648b890-be32-4df9-b205-9463471a8f03
+		summarizeBy: sum
+		sourceColumn: Datekey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Monthname Weekno'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 65d0eed1-b5bb-481b-80c9-27be7581c86c
+		summarizeBy: none
+		sourceColumn: Monthname Weekno
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6c4f664a-e232-4b51-8f1c-030b3e0bff25
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Monthnum
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthsort
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: decimal(2, 0)
+		lineageTag: 353890b4-c64a-4fdc-9ef7-437b9473a1be
+		summarizeBy: sum
+		sourceColumn: Monthsort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Monthnamefull
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 80299630-c2c0-4210-a154-bbc6f0cac6ac
+		summarizeBy: none
+		sourceColumn: Monthnamefull
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthindex
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: decimal(18, 0)
+		lineageTag: 61fde869-6771-4fbf-8ca8-76a83792fc06
+		summarizeBy: sum
+		sourceColumn: Monthindex
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sortorder
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c9a2752e-b284-4a46-9ec9-ad1e42ac2d53
+		summarizeBy: none
+		sourceColumn: Sortorder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date LY'
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: c09ce0bf-b76b-40d8-a5d0-b3fa254d963c
+		summarizeBy: none
+		sourceColumn: Date LY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Date LLY'
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: bdbcc161-8bc3-4df5-a687-ac50a1ab04a8
+		summarizeBy: none
+		sourceColumn: Date LLY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 93dd6939-606e-4580-9fbf-8fecf1e96440
+
+		level Year
+			lineageTag: cc6954c2-9b49-47d0-ac95-57403dfe5fb8
+			column: Year
+
+		level Half
+			lineageTag: 6c46954c-3bdd-4f86-b915-648e3715a48c
+			column: Half
+
+		level Quarter
+			lineageTag: 47f23b12-09b2-4fdf-b8a7-14e5bd0d51a7
+			column: Quarter
+
+		level MonthName
+			lineageTag: ad94fb74-378a-4b1e-93db-fc99ea5e68ef
+			column: MonthName
+
+		level 'Week End Date'
+			lineageTag: d23a6d8f-f886-48cf-b850-c322bf8457e9
+			column: 'Week End Date'
+
+		level Date
+			lineageTag: 65b48285-366d-4878-8798-2e3e5e2343b6
+			column: Date
+
+		changedProperty = IsHidden
+
+	partition Date = m
+		mode: dual
+		queryGroup: Calendars
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*,
+				from EDW_V.V_UNIFIED_CALENDAR T where T.YEAR>=year(getdate())-3",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),    
+				#"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				#"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				#"Renamed Columns1" = Table.RenameColumns(#"Renamed Columns",{{"Select A Calendar", "Select a Calendar"}, {"Currweek End Date", "CurrWeek End Date"}, {"Monthname", "MonthName"},{"Date Ly", "Date LY"}, {"Date Lly", "Date LLY"}}),
+				#"Filtered Rows" = if Date.DayOfWeekName(DateTime.Date(DateTime.FixedLocalNow()))="Sunday" then Table.SelectRows(#"Renamed Columns1", each [Date] < Date.From(DateTime.LocalNow())) else if Date.DayOfWeekName(DateTime.Date(DateTime.FixedLocalNow()))="Saturday" then Table.SelectRows(#"Renamed Columns1", each [Date] <= Date.From(DateTime.LocalNow())) else #"Renamed Columns1",
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"This Year Vs Last Year"}),
+				    #"Sorted Rows" = Table.Sort(#"Removed Columns",{{"Date", Order.Descending}})
+				in
+				    #"Sorted Rows"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

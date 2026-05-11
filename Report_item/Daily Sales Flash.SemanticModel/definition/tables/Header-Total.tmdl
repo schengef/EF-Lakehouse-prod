@@ -1,0 +1,22 @@
+table Header-Total
+	lineageTag: aaffd818-eda6-4309-9e5a-28aa84e918c8
+
+	column Total
+		dataType: string
+		lineageTag: de9d5ebb-87a5-41f0-851e-0c1401a2344e
+		summarizeBy: none
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Header-Total = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCskvScxRio0FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Total = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Total", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

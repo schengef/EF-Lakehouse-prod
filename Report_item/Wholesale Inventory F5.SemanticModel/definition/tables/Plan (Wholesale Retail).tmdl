@@ -1,0 +1,163 @@
+table 'Plan (Wholesale Retail)'
+	lineageTag: 5fec36a3-cb25-47db-b75a-b27d7c67e3eb
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cd54d858-ba27-47cd-86ae-9c4b9452f9ca
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2e062d24-a7f4-4eef-ba55-be83e599b160
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7e672147-d1a0-4f57-8646-ea07fb25af0c
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 516dbf39-a838-41fe-b4a6-06befce5017c
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Plan Value'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 49336087-e879-4843-8c21-8ad06da73b23
+		summarizeBy: sum
+		sourceColumn: Plan Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(10)
+		lineageTag: e03c95cf-b0ab-4c7d-bfe2-329bd16b8e13
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 8b08b3d9-c368-45b2-a785-f4c3744173cd
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Wholesale Account Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 029f7dde-e8db-404b-bbf9-4284483ac721
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: double
+		sourceProviderType: decimal(4, 0)
+		lineageTag: 239a31c5-6baf-4de2-9921-48449e4c9e35
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Week
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 8a3ae4e5-6dc7-4a38-8e49-2746e8ea8c45
+		summarizeBy: sum
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week End Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 1a68f178-274c-4a7e-8616-3d959d41597a
+		summarizeBy: none
+		sourceColumn: Week End Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Plan (Wholesale Retail)' = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*,
+				from EDW_V.F_WHOLESALE_RETAIL_PLAN T
+				where WEEK_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Account Code", "Wholesale Account Key", "Department", "Type", "Year", "Week", "Week End Date", "Date Key", "Plan Value", "Currency Code", "Currency Key"})
+				in
+				    #"Removed Other Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,69 @@
+relationship e70237e5-95f0-1f53-4c0d-f5d09d62be5d
+	fromColumn: 'Headers-Merch Detail'.Category
+	toColumn: 'Column Categories'.'Column Categories'
+
+relationship d03feaf5-6e9d-38f3-6102-30d72e108d40
+	fromColumn: Parameter.'Parameter Fields (groups)'
+	toColumn: 'Column Categories'.'Column Categories'
+
+relationship 98bc9e22-3cc2-b011-2d71-6883d360fa47
+	fromColumn: 'Parameter Rank'.'Rank Parameter Fields (groups)'
+	toColumn: 'Column Categories'.'Column Categories'
+
+relationship 9a83200b-d9f4-471b-a7a3-c72d9001c51a
+	fromColumn: 'Transactions (Financial)'.'Transaction Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 0398e8c6-8d52-45f5-a57b-bc071f3be1de
+	fromColumn: 'Transactions (Financial)'.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship d4c76fc8-6ea8-4fec-898f-52f013b3ca52
+	fromColumn: 'Transactions (Financial)'.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship d027c177-7b89-4760-9d91-005d3bb6b8b4
+	fromColumn: 'Transactions (Financial)'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship 82063994-cf33-4e26-8edc-264d4b5ed435
+	fromColumn: Currency.'Currency Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 4db5bd18-54c5-4f93-abcc-103d246b52d0
+	fromColumn: Currency.'Conversion Type'
+	toColumn: 'Currency Selector'.'Conversion Type'
+
+relationship 583f0419-c65c-4851-84bd-0445cfe06a3f
+	crossFilteringBehavior: bothDirections
+	fromColumn: Date.Datekey
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 646d34ef-cb47-4cf1-a030-a58078a533ad
+	fromColumn: Inventory.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship e749cff2-792c-4053-a22a-546b86c3638e
+	fromColumn: Inventory.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship d55fa940-e887-42a0-a0c1-10b97bd6ab71
+	fromColumn: Inventory.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship 4582c0a7-2897-45d3-ab70-b02b2e32acec
+	fromColumn: 'Transactions (External POS)'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 14b62b36-f357-4ac8-85b7-7fd5432ff4ff
+	fromColumn: 'Transactions (External POS)'.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship ad78b9d6-ab61-4586-bb15-58c5494d867e
+	fromColumn: 'Transactions (External POS)'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship aad71942-10bf-4ea3-8dd9-d1ebc513161e
+	fromColumn: 'Transactions (External POS)'.'Channel Key'
+	toColumn: Channel.'Channel Key'
+

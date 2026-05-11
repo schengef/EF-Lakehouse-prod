@@ -1,0 +1,83 @@
+table Agg-Traffic-Day/Channel
+	isHidden
+	lineageTag: 88ca63eb-0044-4c46-957b-11bf112c02d9
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: 3d2847cf-08c4-418b-830e-60cc309fade6
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		alternateOf
+			baseColumn: Traffic.'Date Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Visits
+		dataType: int64
+		isHidden
+		lineageTag: fc38d87d-c76e-4dcd-80f9-973e3dfdbcb3
+		summarizeBy: sum
+		sourceColumn: Visits
+
+		alternateOf
+			summarization: sum
+			baseColumn: Traffic.Visits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		lineageTag: ef4f3885-a3e6-433d-a95e-a0edb2025890
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		alternateOf
+			baseColumn: Traffic.'Channel Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Agg-Traffic-Day/Channel = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.DATE_KEY, S.CHANNEL_KEY, sum(T.VISITS) as VISITS
+				from EDW_V.F_TRAFFIC T
+				LEFT OUTER JOIN EDW_V.D_STORE S ON T.STORE_KEY = S.STORE_KEY
+				where DATE_KEY  >= (year(getdate()) - 3)*10000+101
+				GROUP BY T.DATE_KEY, S.CHANNEL_KEY
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Date Key", "Visits","Channel Key"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Date Key", Int64.Type}, {"Visits", Int64.Type}, {"Channel Key", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

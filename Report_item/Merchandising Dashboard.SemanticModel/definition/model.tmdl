@@ -1,0 +1,50 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Delivery, Classification, and Fabrics","Headers-Merch Detail","Column Categories","Headers-Sku/Style","Merchandising Measures","Headers-Sales/Receipts Top 15"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","CalcGroup"]
+
+ref table Ranking
+ref table Headers-Period
+ref table Headers-Units/Dollars
+ref table Headers-Total
+ref table 'Headers-Merch Detail'
+ref table Parameter
+ref table 'Column Categories'
+ref table Headers-Sku/Style
+ref table 'Merchandising Measures'
+ref table 'Calculation group'
+ref table 'Headers-Sales/Receipts Top 15'
+ref table Headers-Detail
+ref table Headers-Classification
+ref table 'Product Dashboard Measures'
+ref table 'Parameter Rank'
+ref table 'Product (Current)'
+ref table 'Transactions (Financial)'
+ref table Channel
+ref table Accounts
+ref table Delivery
+ref table 'Currency Selector'
+ref table Currency
+ref table Date
+ref table Inventory
+ref table 'Transactions (External POS)'
+ref table 'Filter Dates'
+ref table 'Total Company Measures'
+ref table 'Wholesale Measures'
+ref table 'Inventory Measures'
+ref table 'DTC Measures'
+
+ref cultureInfo en-US
+

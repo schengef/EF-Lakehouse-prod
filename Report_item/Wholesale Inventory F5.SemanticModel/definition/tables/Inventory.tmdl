@@ -1,0 +1,225 @@
+table Inventory
+	lineageTag: 76d698cc-ccec-4747-8912-4faa9de0134a
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 869137af-e265-4b52-b693-15da757419af
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8b65a826-9217-4446-87b2-3ac43fb802f1
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 45a4c1e1-71db-414b-8b27-56b2a5c96a7c
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Location
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b3a2dee2-349f-4704-bb1e-da2606df6903
+		summarizeBy: none
+		sourceColumn: Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mark Type'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 9fc46aca-5abb-49bf-b066-c75a185348ed
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost On Hand'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 9)
+		lineageTag: 06b35819-5c26-4381-9b9e-53d48ca1fa72
+		summarizeBy: sum
+		sourceColumn: Cost On Hand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Retail On Hand'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 62d52999-25b8-4f17-8472-386d42af0787
+		summarizeBy: sum
+		sourceColumn: Retail On Hand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: f5d954d0-b529-4174-98b5-731552436e5b
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Units On Hand'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cb30c775-8784-4a37-8369-214971ee2877
+		summarizeBy: sum
+		sourceColumn: Units On Hand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b7ea4513-c12a-46e6-a704-089c6f8439dc
+		summarizeBy: count
+		sourceColumn: Warehouse Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1f8c6e01-fbb9-4224-97cd-a8df2089f92b
+		summarizeBy: count
+		sourceColumn: Price Categorization Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 7586846a-4106-4ca1-b132-87bd51702633
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: e1a10a7a-b66d-487e-9e30-44369f6319cf
+		summarizeBy: none
+		sourceColumn: End Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 47d13173-a3f9-4edf-b048-f6319378d80b
+		summarizeBy: sum
+		sourceColumn: Dtc Misc Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Inventory = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*, PC.MARK_TYPE,T.UNITS_ON_HAND*P.STANDARD_COST as COST_ON_HAND,T.UNITS_ON_HAND*P.RETAIL_PRICE as RETAIL_ON_HAND, cast(T.EFFECTIVE_START_DATE as DATE) AS START_DATE, cast(T.EFFECTIVE_END_DATE as DATE) AS END_DATE,CASE WHEN P.DEPARTMENT_CODE_MI9>89 THEN 1 END AS DTC_MISC_FLAG, 
+				from EDW_V.F_INVENTORY_ON_HAND T
+				LEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Inventory On Hand Key", "Md5 Checksum", "Md5 Nk", "Etl Row Created Ts", "Etl Source System Cd","Effective Start Date","Effective End Date", "Etl Row Updated Ts"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{ {"Store Key", Int32.Type}, {"Channel Key", Int32.Type}, {"Product Key", Int32.Type}, {"Delivery Key", Int32.Type}, {"Units On Hand", Int32.Type},{"Warehouse Key", Int32.Type},{"Price Categorization Key", Int32.Type},{"Dtc Misc Flag", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

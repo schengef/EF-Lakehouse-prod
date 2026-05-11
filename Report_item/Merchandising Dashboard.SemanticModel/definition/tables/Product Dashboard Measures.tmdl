@@ -1,0 +1,1850 @@
+table 'Product Dashboard Measures'
+	lineageTag: a38cecd2-f930-4e63-935b-bdc865b0dcf1
+	sourceLineageTag: 8e83b861-fb95-4a9b-bb49-3481193e2310
+
+	measure 'Net Sales $ TY' = EXTERNALMEASURE("Net Sales $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Net Retail Sales $
+		lineageTag: 0f2a5a9f-aa83-46ca-b28c-6ef79c3a3239
+		sourceLineageTag: ba7f30db-5fa5-43ec-ad15-b2c37e6a17d6
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ LY' = EXTERNALMEASURE("Net Sales $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Net Retail Sales $
+		lineageTag: 4c9c74a9-74a8-4415-8619-78cf56fa7c73
+		sourceLineageTag: 913e010a-288e-4ee0-938a-60db2b9e31be
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ % vs LY' = EXTERNALMEASURE("Net Sales $ % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Net Retail Sales $
+		lineageTag: f1a1d561-24e8-4487-ad72-c5aef7433b37
+		sourceLineageTag: 039be1c1-ed57-44a0-86ac-a952cf23561c
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales % to Class TY' = EXTERNALMEASURE("Net Sales % to Class TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Class
+		lineageTag: 536fc262-f7a8-4893-949f-2477490ae8b1
+		sourceLineageTag: 4be23935-d2fd-4566-b5cf-c143ff41460a
+		dataCategory: Uncategorized
+
+	measure 'Net Sales % to Class LY' = EXTERNALMEASURE("Net Sales % to Class LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Class
+		lineageTag: f7dddcaf-1c8a-4ef1-a8a9-2607723864cd
+		sourceLineageTag: abec8d54-624e-420e-96d2-74b3c1330f36
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ % to Total TY' = EXTERNALMEASURE("Net Sales $ % to Total TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: % to Total
+		lineageTag: 5953d98d-092b-486d-8334-4ce13ce9f683
+		sourceLineageTag: b571f175-7d46-4bc1-8cd3-5af4211a749a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales $ % to Total LY' = EXTERNALMEASURE("Net Sales $ % to Total LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: % to Total
+		lineageTag: 612178c0-092d-46a2-b150-fef028598a0d
+		sourceLineageTag: 635978bc-690e-4544-a8fd-d40af3d5f133
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Blank Column' = EXTERNALMEASURE("Blank Column", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Formatting
+		lineageTag: 70c78c31-c9c5-48c1-ba7e-ddddc605a891
+		sourceLineageTag: 779d7f09-9d3b-4cdc-adf0-e889bb64a1d9
+		dataCategory: Uncategorized
+
+	measure 'Display TY' = EXTERNALMEASURE("Display TY", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 67c16896-7042-4e70-92e2-84330b110e4f
+		sourceLineageTag: bfa3ee54-a4d8-49fc-8b74-ec6d5fee171e
+		dataCategory: Uncategorized
+
+	measure 'Display LY' = EXTERNALMEASURE("Display LY", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: ea8d7372-a0b6-4317-a013-3b84d5101da4
+		sourceLineageTag: 598b9482-2837-4034-9ab7-e857c3d88ac6
+		dataCategory: Uncategorized
+
+	measure 'Display % vs LY' = EXTERNALMEASURE("Display % vs LY", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 67a3eb6b-7a96-4ec5-98a5-074f3f4e3604
+		sourceLineageTag: 9f590b29-1e81-4df3-ab76-37a20edc61de
+		dataCategory: Uncategorized
+
+	measure 'Display Overall' = EXTERNALMEASURE("Display Overall", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 204c8b68-9403-4211-8001-be5ff1a26309
+		sourceLineageTag: a4875e0a-516d-4bed-b6dd-9f153cebead9
+		dataCategory: Uncategorized
+
+	measure 'Column Divider Formatting' = EXTERNALMEASURE("Column Divider Formatting", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Formatting
+		lineageTag: 39c084cf-69c2-411a-904c-13abc9c7bd37
+		sourceLineageTag: 484824f9-7843-4d7b-81fe-2aa745d8b292
+		dataCategory: Uncategorized
+
+	measure 'Net Sales FP % TY' = EXTERNALMEASURE("Net Sales FP % TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Full Price %
+		lineageTag: 314391cd-d60a-40a9-bb86-111f254cf01f
+		sourceLineageTag: 95213593-b479-4bf3-b7fc-4bf61509ea9a
+		dataCategory: Uncategorized
+
+	measure 'Net Sales FP % LY' = EXTERNALMEASURE("Net Sales FP % LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Full Price %
+		lineageTag: 03a34cc1-bf0c-4d53-96c5-31da547ea8c6
+		sourceLineageTag: 2484abe1-ace7-48c1-ab95-5c00aaff6adf
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ AUR TY' = EXTERNALMEASURE("Net Sales $ AUR TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: AUR
+		lineageTag: 43aeaf63-0b16-4acd-9cdd-42886d1fa4f1
+		sourceLineageTag: f8a4cdb8-6468-4fba-a3e9-1dc0b555a9aa
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units TY' = EXTERNALMEASURE("Net Sales Units TY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Net Sales Units
+		lineageTag: 678c5ed7-2241-42d1-a05b-3e286ba240a9
+		sourceLineageTag: 0972d0bc-de64-4016-b891-b1473a0376bf
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units LY' = EXTERNALMEASURE("Net Sales Units LY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Net Sales Units
+		lineageTag: 4470ab94-a9f7-4558-a323-0df40cd08738
+		sourceLineageTag: e5c8f646-fe7d-433f-a8fb-1f9d2ba8be34
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ AUR LY' = EXTERNALMEASURE("Net Sales $ AUR LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: AUR
+		lineageTag: 5aa675f6-24a4-41c8-84be-c3511d6ef088
+		sourceLineageTag: 9fdf0933-78ca-4ea9-b34e-5c39ce6b72d0
+		dataCategory: Uncategorized
+
+	measure 'Cost OH $ TY' = EXTERNALMEASURE("Cost OH $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\Cost
+		lineageTag: 8176c20c-e6b0-49d7-914f-193b0c507dc7
+		sourceLineageTag: aa7d3959-78e1-43d9-9f34-2c3be4c818bc
+		dataCategory: Uncategorized
+
+	measure 'Cost OH $ LY' = EXTERNALMEASURE("Cost OH $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\Cost
+		lineageTag: ad162158-2e95-4bf1-8891-7c0955f77c1b
+		sourceLineageTag: ee628b45-51a4-46bf-8a1f-d2577ccda873
+		dataCategory: Uncategorized
+
+	measure 'Cost OH $ % vs LY' = EXTERNALMEASURE("Cost OH $ % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\Cost
+		lineageTag: 53c0a6f4-bb9c-4763-a02c-cde8fc4e49f4
+		sourceLineageTag: 310e028f-8d5a-41f9-b9f5-bb58df1a5387
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH % to Total LY' = EXTERNALMEASURE("Cost OH % to Total LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\% to Total
+		lineageTag: 4af7a0a9-ad0e-4276-9f33-750a8e01976f
+		sourceLineageTag: 81fb6c7b-6c08-47a3-8177-3d8d48292e09
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH % to Total TY' = EXTERNALMEASURE("Cost OH % to Total TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\% to Total
+		lineageTag: dadebea3-8193-442f-9c1f-2a674a3beb08
+		sourceLineageTag: d726d40d-a9e1-4917-9e9d-a58e8ae5df9e
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Cost $ TY' = EXTERNALMEASURE("Net Cost $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Gross Margin %
+		lineageTag: 9c86a958-57d9-4119-aac3-ddfba8b88de2
+		sourceLineageTag: 83573ef0-42af-48d9-aca6-c3141ce18668
+		dataCategory: Uncategorized
+
+	measure 'Net Cost $ LY' = EXTERNALMEASURE("Net Cost $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Gross Margin %
+		lineageTag: 72703c36-7576-46af-b144-3d505e93627d
+		sourceLineageTag: cbe93230-2481-4af8-80c2-8f98c78ff59c
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin % TY' = EXTERNALMEASURE("Net Gross Margin % TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Gross Margin %
+		lineageTag: 42abdc3f-b3c4-40cd-bb11-b889de129a4e
+		sourceLineageTag: e6b21147-d54b-48be-9a93-efc17d5ad783
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin % LY' = EXTERNALMEASURE("Net Gross Margin % LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Gross Margin %
+		lineageTag: 0e27ed5c-08be-455b-b05f-8d62a72799a3
+		sourceLineageTag: 5583c6c1-a9d0-4a3b-adbc-b2292d62edf0
+		dataCategory: Uncategorized
+
+	measure 'On Hand AUR $ TY' = EXTERNALMEASURE("On Hand AUR $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\AUR
+		lineageTag: c5af2fa0-e73c-43f1-8205-1d902559626f
+		sourceLineageTag: 59ffccf3-fc0f-42fd-8eb0-a9f0832743f3
+		dataCategory: Uncategorized
+
+	measure 'On Hand AUR $ LY' = EXTERNALMEASURE("On Hand AUR $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\AUR
+		lineageTag: 38ef19ba-b8cd-408c-88df-f7faf2cb0a93
+		sourceLineageTag: b63ebf58-fe01-4122-afbd-1fc0741adee0
+		dataCategory: Uncategorized
+
+	measure 'Remove Empty Rows Detail' = EXTERNALMEASURE("Remove Empty Rows Detail", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Formatting
+		lineageTag: df19155f-23b9-45d9-94aa-b6a59d0371e2
+		sourceLineageTag: 709f6f2d-fca1-4fff-90fe-30795acdc584
+		dataCategory: Uncategorized
+
+	measure 'Sell Through % TY' = EXTERNALMEASURE("Sell Through % TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Sell Thru
+		lineageTag: dc9b58e1-e255-40e0-ad5d-d868e3a0fff4
+		sourceLineageTag: f0d1e22d-78ad-4a60-818d-b7987eb04a22
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sell Through % LY' = EXTERNALMEASURE("Sell Through % LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Sell Thru
+		lineageTag: e1aa5b8d-c2ec-490c-837a-20974d1f0156
+		sourceLineageTag: 00e934dc-e8a6-46ba-92c4-ab0cbd932ab9
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return %' = EXTERNALMEASURE("Return %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Returns
+		lineageTag: 5357bfd5-f340-4dba-bf05-8f4eaf05c477
+		sourceLineageTag: 1bca8be2-f54e-4a83-9a4d-24d087c361a2
+		dataCategory: Uncategorized
+
+	measure 'Return % to Total' = EXTERNALMEASURE("Return % to Total", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Returns
+		lineageTag: 76b1f6d3-2ab5-4880-988e-7f28e0d4f317
+		sourceLineageTag: 74441c7a-e0ee-43cd-9786-f1af64c73fd5
+		dataCategory: Uncategorized
+
+	measure 'Weeks On Hand TY' = EXTERNALMEASURE("Weeks On Hand TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: On Hand\Weeks
+		lineageTag: c8149b4e-6c8b-4a22-8b0e-92e5c21aaa55
+		sourceLineageTag: 41292d3b-6627-4324-9311-0ceac663d3e2
+		dataCategory: Uncategorized
+
+	measure 'Weeks On Hand LY' = EXTERNALMEASURE("Weeks On Hand LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: " \0.\0\;\(\0.\0\)"
+		displayFolder: On Hand\Weeks
+		lineageTag: fb930a34-1303-4489-9cfb-1f0a6fa8a3c4
+		sourceLineageTag: 2c90a295-9dec-45a5-b0b1-d1b4bde71c77
+		dataCategory: Uncategorized
+
+	measure 'Sales by Rank LY-Color' = EXTERNALMEASURE("Sales by Rank LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 700c7378-50ba-4f88-ada4-99ce252d61ee
+		sourceLineageTag: f8facb2c-3483-487a-89be-c5f4fa303625
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank LY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Sales by Rank TY-Color' = EXTERNALMEASURE("Sales by Rank TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 9c5b942d-4356-46a9-ab9a-2515729f39e8
+		sourceLineageTag: 1e251a4b-fc4c-4a1a-b27d-6a08cef6255a
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank TY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank TY-Color' = EXTERNALMEASURE("Rank TY-Color", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Rank
+		lineageTag: f35425d4-4dba-44e6-a44a-97d9b2bdcda7
+		sourceLineageTag: d3aeaa4d-2c34-401f-b407-28abb2fdd942
+		dataCategory: Uncategorized
+
+	measure 'Rank LY-Color' = EXTERNALMEASURE("Rank LY-Color", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Rank
+		lineageTag: b149c5ab-d1f8-4dc0-962f-74b00d5344bc
+		sourceLineageTag: f4432fec-a88c-4b9d-8fcb-8c7be265fd4b
+		dataCategory: Uncategorized
+
+	measure 'Sales by Rank % vs LY-Color' = EXTERNALMEASURE("Sales by Rank % vs LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 15b58277-bcdd-4db8-a36e-4f8ebfd2f83e
+		sourceLineageTag: 76b2f1d3-de2e-4c28-aeea-87e003eef1a7
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ST% by Rank TY-Color' = EXTERNALMEASURE("ST% by Rank TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: 170ae68e-2222-4311-a419-e4bbbf85806e
+		sourceLineageTag: 3d8d29b1-ffb6-4b64-ab6a-5e6de4234f02
+		dataCategory: Uncategorized
+
+	measure 'ST% by Rank LY-Color' = EXTERNALMEASURE("ST% by Rank LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: c5f82af0-ad99-4b52-8ead-df28dfb2c518
+		sourceLineageTag: 8ae42ca3-0e3a-4372-b7ca-94b34b7ec2d8
+		dataCategory: Uncategorized
+
+	measure 'Rank Net Sales % to Total TY-Color' = EXTERNALMEASURE("Rank Net Sales % to Total TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 96871001-7c5b-4fd6-a4fb-80dd2dcb0d1f
+		sourceLineageTag: de8c9d2c-eff7-4eb1-bfb6-a50db21e9c68
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total LY-Color' = EXTERNALMEASURE("Rank Net Sales % to Total LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: c810dc39-ddff-4bda-abd0-94c174d743b5
+		sourceLineageTag: 2928cab4-0ef8-4abb-a6ec-d995c3c8c419
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return % Rank for Filter' = EXTERNALMEASURE("Return % Rank for Filter", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Returns
+		lineageTag: 7244f2e3-0801-4097-ac5a-c2f9db5a4e54
+		sourceLineageTag: 0d169d71-81d8-4a54-a96f-6da468048346
+		dataCategory: Uncategorized
+
+	measure 'Rank Display OH TY-Color' = EXTERNALMEASURE("Rank Display OH TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: 79311155-b437-46dd-a9da-071b0332d10b
+		sourceLineageTag: c8ad9f2a-792a-4f73-b8fb-ae1010418658
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Display OH TY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Display OH LY-Color' = EXTERNALMEASURE("Rank Display OH LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: f20a24de-2816-4d14-a4f0-b058237abe23
+		sourceLineageTag: 2949347b-35dc-46b1-ba2b-0578e8223db0
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Display OH LY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Net GM TY-Color' = EXTERNALMEASURE("Rank Net GM TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: c3741c6b-2ca3-42e5-a317-99d3fef3e32c
+		sourceLineageTag: 68b60b71-1a17-4719-8b2a-cfad2d838241
+		dataCategory: Uncategorized
+
+	measure 'Rank Net GM LY-Color' = EXTERNALMEASURE("Rank Net GM LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: 8c3fdd33-1c2e-4334-9bc4-31888d0fd007
+		sourceLineageTag: e4fe3981-5c90-42e0-bdb3-6ee26ce63ee7
+		dataCategory: Uncategorized
+
+	measure 'Rank Sales AUR TY-Color' = EXTERNALMEASURE("Rank Sales AUR TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: 07009231-bbe6-4d92-83ff-9799c3ba0be6
+		sourceLineageTag: 3113d399-f6c4-4bf2-b7b5-3eb35b3940f3
+		dataCategory: Uncategorized
+
+	measure 'Rank Sales AUR LY-Color' = EXTERNALMEASURE("Rank Sales AUR LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: a3608deb-6e26-4eea-9aaf-e04f091a770c
+		sourceLineageTag: b7486d45-d6a2-4175-a417-e9661eb3ce9c
+		dataCategory: Uncategorized
+
+	measure 'Rank OH AUR TY-Color' = EXTERNALMEASURE("Rank OH AUR TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: 5411841b-3eb5-4a2d-8611-b50de806f567
+		sourceLineageTag: aa15c456-b159-441b-95fb-2c5c8fb4f2f8
+		dataCategory: Uncategorized
+
+	measure 'Rank OH AUR LY-Color' = EXTERNALMEASURE("Rank OH AUR LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: 89325ae3-bbce-4f17-a16c-eefee8b46151
+		sourceLineageTag: 98bdef42-93e6-442b-8ca4-d825268ac299
+		dataCategory: Uncategorized
+
+	measure 'Rank FP% TY-Color' = EXTERNALMEASURE("Rank FP% TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: 9b7049e0-6157-4e42-87be-9b230e91c9ee
+		sourceLineageTag: 71a525cc-ae8f-4c9b-b661-765e2e2b5b67
+		dataCategory: Uncategorized
+
+	measure 'Rank FP% LY-Color' = EXTERNALMEASURE("Rank FP% LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: d87936b4-2fa3-41e3-9167-ef5c7287e36d
+		sourceLineageTag: c9588935-d8ae-48e7-b22c-3be99dc35caf
+		dataCategory: Uncategorized
+
+	measure 'Retail OH $ TY' = EXTERNALMEASURE("Retail OH $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: On Hand\Retail
+		lineageTag: 7927d1c9-bdae-43f1-88d8-87d13a0993ab
+		sourceLineageTag: a3e716bc-75a3-47b6-9acd-1c27ceec3d04
+		dataCategory: Uncategorized
+
+	measure 'Retail OH $ LY' = EXTERNALMEASURE("Retail OH $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: On Hand\Retail
+		lineageTag: d10a243e-43b0-4c13-8154-46428860865d
+		sourceLineageTag: e3098fa7-201d-47a1-bd94-5524d466d408
+		dataCategory: Uncategorized
+
+	measure 'Retail OH % to Total TY' = EXTERNALMEASURE("Retail OH % to Total TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\Retail
+		lineageTag: 48994714-c9b8-4669-a8b0-077e53255401
+		sourceLineageTag: 658f328f-5632-42f4-b543-b31e8eeacfc6
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Retail OH % to Total LY' = EXTERNALMEASURE("Retail OH % to Total LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\Retail
+		lineageTag: 2962912b-dc8f-4918-a802-daabe09e1f13
+		sourceLineageTag: 74bfc7d1-7a12-436f-bf68-f2ce95248db1
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total TY-Color' = EXTERNALMEASURE("Rank Retail OH % to Total TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Rank\Color\Retail OH
+		lineageTag: f2e2f4a0-6d1f-40fd-a55f-252af9614c8a
+		sourceLineageTag: 326abd4d-ea75-49e4-84dc-d41be085cb31
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total LY-Color' = EXTERNALMEASURE("Rank Retail OH % to Total LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Rank\Color\Retail OH
+		lineageTag: da0ebe11-be58-433f-9899-d58e37419183
+		sourceLineageTag: a2430e80-1549-483f-942f-4577310c10c4
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH LY-Color' = EXTERNALMEASURE("Rank Weeks OH LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: d5fdf14c-5165-45b6-8d07-1f0f4bebf832
+		sourceLineageTag: f57b630d-c974-4c38-901c-815c57473402
+		dataCategory: Uncategorized
+
+	measure 'Rank Weeks OH TY-Color' = EXTERNALMEASURE("Rank Weeks OH TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: 38d8f610-73ca-4231-bd43-1356c503eed9
+		sourceLineageTag: beca735f-df07-488a-bdec-4498349e5301
+		dataCategory: Uncategorized
+
+	measure 'Rank Display OH % vs LY-Color' = EXTERNALMEASURE("Rank Display OH % vs LY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: a5532f94-23be-4146-8b3f-ceb0c6684f0a
+		sourceLineageTag: 8ea42373-a77b-4587-a9bc-219f0c85b702
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Is Current Season' = EXTERNALMEASURE("Is Current Season", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Returns
+		lineageTag: 27e2f19a-76e5-4652-aca9-99b043a29d60
+		sourceLineageTag: 82b74579-f695-4473-9564-8c173cc9119c
+		dataCategory: Uncategorized
+
+	measure 'Remove Empty Rows Delivery Year Month' = EXTERNALMEASURE("Remove Empty Rows Delivery Year Month", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Delivery\Formatting
+		lineageTag: 63462dab-f1a5-4cb1-aad7-01d4a55240c4
+		sourceLineageTag: e2150722-3fd0-4dd0-bddd-e90f9569624f
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ LY Delivery' = EXTERNALMEASURE("Net Sales $ LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: bb695f8d-5bc4-4aca-bcde-b2cd620658ef
+		sourceLineageTag: 49e5bbcb-8d58-423e-af2e-a3b858c12b45
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ % vs LY Delivery' = EXTERNALMEASURE("Net Sales $ % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: 5e18b06b-39e8-4e57-ae3a-7ee6ac69e2e5
+		sourceLineageTag: f5c2dd09-8734-4ecd-a22b-d14f83a5ea8b
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales FP % LY Delivery' = EXTERNALMEASURE("Net Sales FP % LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Full Price %
+		lineageTag: 242cc6c6-2069-4a3f-95c6-1befad421ef8
+		sourceLineageTag: 4f62a5c9-6c8f-4cef-b265-ba8f34cd3d56
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ AUR LY Delivery' = EXTERNALMEASURE("Net Sales $ AUR LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\AUR
+		lineageTag: 095f0715-3033-4561-8a68-59e6432ad674
+		sourceLineageTag: 5bef366d-d519-4b1e-a38d-9751407d9ca2
+		dataCategory: Uncategorized
+
+	measure 'Cost OH $ LY Delivery' = EXTERNALMEASURE("Cost OH $ LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\On Hand\Cost
+		lineageTag: 9c415632-4bd8-4ecc-a8cd-08bec2d2e4bd
+		sourceLineageTag: e136737e-7b60-4c5a-a853-307bdb7243d2
+		dataCategory: Uncategorized
+
+	measure 'Cost OH % vs LY Delivery' = EXTERNALMEASURE("Cost OH % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Delivery\On Hand\Cost
+		lineageTag: 0de549ce-ba43-428c-b66e-ca73d9053445
+		sourceLineageTag: e5c27141-0b78-42e5-a118-a130718ce730
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'On Hand AUR $ LY Delivery' = EXTERNALMEASURE("On Hand AUR $ LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\On Hand\AUR
+		lineageTag: 9293e29c-256e-4667-b822-6b0b4346c6ca
+		sourceLineageTag: d5fa1afa-a5e9-4b0e-8bec-1a6e642cfbd1
+		dataCategory: Uncategorized
+
+	measure 'Sell Through % LY Delivery' = EXTERNALMEASURE("Sell Through % LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Sell Thru
+		lineageTag: f2038afa-1fbf-4943-a8e9-35680469b522
+		sourceLineageTag: 126be5a2-6ade-49c1-a116-c414fc8e76f9
+		dataCategory: Uncategorized
+
+	measure 'Units OH LY BOP Delivery' = EXTERNALMEASURE("Units OH LY BOP Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Sell Thru
+		lineageTag: 5eec5b44-c7e2-4296-85d0-2b7d9b92b712
+		sourceLineageTag: e4852b0a-16c4-45d4-87f3-d657b53a7e77
+		dataCategory: Uncategorized
+
+	measure 'Net Cost $ LY Delivery' = EXTERNALMEASURE("Net Cost $ LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Gross Margin %
+		lineageTag: 1d5ea6f8-2ab5-4307-906f-5d83c82e2093
+		sourceLineageTag: 84f2139b-386a-4929-8325-8a32fd42fecb
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin % LY Delivery' = EXTERNALMEASURE("Net Gross Margin % LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Gross Margin %
+		lineageTag: ae13ac08-d661-4443-87be-d29fcb17e335
+		sourceLineageTag: 793a04ab-a202-4389-9836-e59a2021ac49
+		dataCategory: Uncategorized
+
+	measure 'Weeks On Hand LY Delivery' = EXTERNALMEASURE("Weeks On Hand LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: " \0.\0\;\(\0.\0\)"
+		displayFolder: Delivery\On Hand\Weeks
+		lineageTag: dd0148a9-9db1-4b87-aa43-6fe9218325a2
+		sourceLineageTag: 82cc0292-ec50-4160-8853-955f0fa4518a
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units LY Delivery' = EXTERNALMEASURE("Net Sales Units LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: 0d54ab7b-b106-42ce-b3e9-6f9060d2ba92
+		sourceLineageTag: 530b995b-f066-4bba-a2b2-3c2c9cc8270c
+		dataCategory: Uncategorized
+
+	measure 'Display TY Delivery' = EXTERNALMEASURE("Display TY Delivery", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Display
+		lineageTag: 927c2301-9483-46f5-91a0-af442686df33
+		sourceLineageTag: 50f0d8f7-871b-497e-b5b3-9519611fb076
+		dataCategory: Uncategorized
+
+	measure 'Display LY Delivery' = EXTERNALMEASURE("Display LY Delivery", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Display
+		lineageTag: f3c5eb03-3003-46a3-8047-966534eaa31f
+		sourceLineageTag: c6e4ac87-8b06-46c9-86fb-db156cb32b0f
+		dataCategory: Uncategorized
+
+	measure 'Display % vs LY Delivery' = EXTERNALMEASURE("Display % vs LY Delivery", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Display
+		lineageTag: 0462717a-c23d-482c-8ad8-f0de0816f7dd
+		sourceLineageTag: 6b72f7bd-2034-4610-86a4-c32eca324e32
+		dataCategory: Uncategorized
+
+	measure 'Display Overall Delivery' = EXTERNALMEASURE("Display Overall Delivery", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Display
+		lineageTag: 4035d4dd-1507-40ad-9af0-7ca761d52e8b
+		sourceLineageTag: 81cde8d8-31c0-4b6d-98a1-26d54ebe73d1
+		dataCategory: Uncategorized
+
+	measure 'Retail Returns $ Product' = EXTERNALMEASURE("Retail Returns $ Product", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Returns
+		lineageTag: eb96b6af-1511-4ccc-9b36-6663424a3f0e
+		sourceLineageTag: a179db17-51bf-47da-8140-18c0619ed5b4
+		dataCategory: Uncategorized
+
+	measure 'Retail Returns Units Product' = EXTERNALMEASURE("Retail Returns Units Product", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Returns
+		lineageTag: 0af9c669-b3a5-4bc5-90e5-4661df8e1c31
+		sourceLineageTag: fad14733-d236-41ab-9952-8e3b2e8e142a
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $ % to Total TY Delivery' = EXTERNALMEASURE("Net Sales $ % to Total TY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Delivery\% to Total
+		lineageTag: 68070842-4753-4931-80a0-c7cbbfb02354
+		sourceLineageTag: f52aca49-60df-4e9d-acce-c5c4bfa7ab7d
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Net Sales $ % to Total LY Delivery' = EXTERNALMEASURE("Net Sales $ % to Total LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.00%;(0.00%);0.00%
+		displayFolder: Delivery\% to Total
+		lineageTag: bfe7101f-0028-4179-8043-732f0b7f4bd8
+		sourceLineageTag: cc5abdb7-63d2-44c5-8405-e62f5b2b4a19
+		dataCategory: Uncategorized
+
+	measure 'Cost OH % to Total TY Delivery' = EXTERNALMEASURE("Cost OH % to Total TY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\% to Total
+		lineageTag: 9576706f-826d-43b0-bcdc-f7ac917fbc00
+		sourceLineageTag: 7b56311e-04e8-4475-b72c-e6d9a546a2a8
+		dataCategory: Uncategorized
+
+	measure 'Cost OH % to Total LY Delivery' = EXTERNALMEASURE("Cost OH % to Total LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.00%;(0.00%);0.00%
+		displayFolder: Delivery\% to Total
+		lineageTag: c8acbf24-1f69-42d5-bc4e-2590cdc2cdfc
+		sourceLineageTag: 44de192a-92ed-4560-85df-296328b0c756
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units % vs LY' = EXTERNALMEASURE("Net Sales Units % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: " \0.\0\;\(\0.\0\)\;\0.\0"
+		displayFolder: Net Sales Units
+		lineageTag: cd54b428-2f28-4d28-9c6b-ce97bf27732b
+		sourceLineageTag: b60beaec-3dc9-4aa6-a36e-2af18740982c
+		dataCategory: Uncategorized
+
+	measure 'Units OH TY' = EXTERNALMEASURE("Units OH TY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: On Hand\Units
+		lineageTag: dcdbd117-72ba-4e73-a073-b48147c20c78
+		sourceLineageTag: 3e36f630-6136-43a6-ba30-05a820cbdf34
+		dataCategory: Uncategorized
+
+	measure 'Units OH LY' = EXTERNALMEASURE("Units OH LY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: On Hand\Units
+		lineageTag: a291083f-9817-49dd-bc6e-0660f3942303
+		sourceLineageTag: 8413f012-6472-41e8-8659-49bc72389196
+		dataCategory: Uncategorized
+
+	measure 'Units OH % vs LY' = EXTERNALMEASURE("Units OH % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: On Hand\Units
+		lineageTag: 722c276f-140c-4b64-bcc9-285028743339
+		sourceLineageTag: d2205ec5-ed67-4330-9376-9a064fc5996e
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Units OH LY Delivery' = EXTERNALMEASURE("Units OH LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Delivery\On Hand\Units
+		lineageTag: 4a43f2fa-d7d3-477c-a7ae-38c7f49ff126
+		sourceLineageTag: c07c43eb-ff1f-431a-862c-5295887947de
+		dataCategory: Uncategorized
+
+	measure 'Units OH % vs LY Delivery' = EXTERNALMEASURE("Units OH % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Delivery\On Hand\Units
+		lineageTag: 45ecf6ab-df62-4025-824e-605086e15d95
+		sourceLineageTag: 653fec79-6d20-4147-9f83-6a68b426175a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % vs LY Delivery' = EXTERNALMEASURE("Net Sales Units % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: d21361f1-cb73-4d6c-ab9d-e988f7460c2b
+		sourceLineageTag: d474ef08-4544-425b-9393-fac316451b3a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Net Sales % vs LY' = EXTERNALMEASURE("Display Net Sales % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Display
+		lineageTag: d0975d04-1157-4203-b258-20811ee2d71b
+		sourceLineageTag: 6b473d5a-be53-427d-ba04-ef6f0fc477e2
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Net Sales LY' = EXTERNALMEASURE("Display Net Sales LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 4b4c9075-0cbc-4c40-ba4b-650090ead70e
+		sourceLineageTag: febd6605-0af6-4ad9-8da8-d077087e284a
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Net Sales LY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display Net Sales TY' = EXTERNALMEASURE("Display Net Sales TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 209ebc06-0e3f-4235-a4a9-faf7275d259c
+		sourceLineageTag: d0f8d0a1-d61b-40aa-a310-97bb77dd5b77
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Net Sales TY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display OH % vs LY' = EXTERNALMEASURE("Display OH % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Display
+		lineageTag: 2748c29e-1b7e-4cce-a9c5-3faf8d72e5ea
+		sourceLineageTag: bec7aa3c-4dac-452a-9123-98ae167067f7
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display OH LY' = EXTERNALMEASURE("Display OH LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: e7db43ad-d2bf-44cf-b537-51239c170777
+		sourceLineageTag: 3f4a0d8c-8379-4641-a3f4-f600a547534e
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display OH LY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display OH TY' = EXTERNALMEASURE("Display OH TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 064bfcc1-638b-4740-bda1-a356e4596ffd
+		sourceLineageTag: db50aaaa-f039-4482-ac58-1bbb70df6bcf
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display OH TY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Ranking Measure TY' = EXTERNALMEASURE("Ranking Measure TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank
+		lineageTag: fcfd6f35-5643-4cd1-b654-5122f3ce461f
+		sourceLineageTag: 1313720b-d2c6-4e0e-a89a-a360de23af01
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Ranking Measure TY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Ranking Measure LY' = EXTERNALMEASURE("Ranking Measure LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank
+		lineageTag: e109b050-3aa0-4e78-97b6-58ae88348360
+		sourceLineageTag: 62b57f48-2df0-476d-a4e6-7d33dd88ffdd
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Ranking Measure LY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Shipments $ TY' = EXTERNALMEASURE("Shipments $ TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: b142cbd4-6ea8-4552-b256-9652e0ccb7a6
+		sourceLineageTag: fc164708-222a-41cb-9230-73487890d8ca
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ LY Delivery' = EXTERNALMEASURE("Shipments $ LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: d73ae018-f70d-4866-a3c7-f7cdd82d2c49
+		sourceLineageTag: c2f913ef-301a-464a-aee8-b4e25d7a4029
+		dataCategory: Uncategorized
+
+	measure 'Shipments Units LY Delivery' = EXTERNALMEASURE("Shipments Units LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: a8a127ef-340b-48af-beaf-d1ebae9888b3
+		sourceLineageTag: 1fc34239-35e8-4bdd-abdc-92c2965a5677
+		dataCategory: Uncategorized
+
+	measure 'Shipments Units TY' = EXTERNALMEASURE("Shipments Units TY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: 3bdf2aeb-564a-4ced-969b-c65f0b640e74
+		sourceLineageTag: 4eb11959-0096-4c0c-b284-3014b5ae8454
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ LY' = EXTERNALMEASURE("Shipments $ LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: dfbd1603-78e5-43d1-965e-2a839bf8fbb9
+		sourceLineageTag: 570c5f77-1fcd-48c1-96a3-0c467f4dbfbc
+		dataCategory: Uncategorized
+
+	measure 'Shipments Units LY' = EXTERNALMEASURE("Shipments Units LY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: c37e2dc2-035b-462a-9e3b-d431488fbb0c
+		sourceLineageTag: 78a25bd6-f6e8-4796-8344-9b22079de719
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units % to Total TY' = EXTERNALMEASURE("Net Sales Units % to Total TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: % to Total
+		lineageTag: 3b16df94-dc1a-4b18-80d0-8baa4fc6a0c8
+		sourceLineageTag: 4c079050-a7e5-4f5f-be50-378ec8e0cfb7
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % to Total TY Delivery' = EXTERNALMEASURE("Net Sales Units % to Total TY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Delivery\% to Total
+		lineageTag: 4a874ca9-081f-4065-a0be-8d64121440d9
+		sourceLineageTag: dd0c181c-07f1-46c0-a6a3-d803889e7f49
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Header Display' = EXTERNALMEASURE("Header Display", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Formatting
+		lineageTag: 2eea96b3-aa7a-4f1a-aa7e-9ebc0b3854bf
+		sourceLineageTag: 78b51772-93e6-4c71-b70c-1c0725ae12c2
+		dataCategory: Uncategorized
+
+	measure 'Sales by Rank LY-Fabric' = EXTERNALMEASURE("Sales by Rank LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: d34d4287-ecd3-4e8c-9b32-7d7c088548d7
+		sourceLineageTag: 55ee43cd-d1ca-4753-93a9-30226ec136b4
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank LY-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Sales by Rank TY-Fabric' = EXTERNALMEASURE("Sales by Rank TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: 065267e0-bfe2-494e-88bf-5b5ff0bb379c
+		sourceLineageTag: ded2aa58-8293-4384-9dad-b0f83526b27f
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank TY-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Sales by Rank % vs LY-Fabric' = EXTERNALMEASURE("Sales by Rank % vs LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.;(0%);0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: c95ab005-4bed-46a5-ae7e-1aaefa7aaf03
+		sourceLineageTag: 833356fc-6672-42b5-9760-2d814d873f37
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total TY-Fabric' = EXTERNALMEASURE("Rank Net Sales % to Total TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: 710d7765-7527-4907-8c6e-2ac91af09a8a
+		sourceLineageTag: d9f297c6-1bc4-4728-aae1-22a669da1849
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total LY-Fabric' = EXTERNALMEASURE("Rank Net Sales % to Total LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: ca2b704f-7d2e-4edd-9268-ce48101c1868
+		sourceLineageTag: 7993f09e-4cce-4d9d-baf0-63d260a66130
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank TY-Fabric' = EXTERNALMEASURE("Rank TY-Fabric", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Rank
+		lineageTag: f7723b72-a2fe-4a14-8004-eb61a2452514
+		sourceLineageTag: b8392bc7-6372-4009-a69d-432eb9b8037d
+		dataCategory: Uncategorized
+
+	measure 'Rank LY-Fabric' = EXTERNALMEASURE("Rank LY-Fabric", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Rank
+		lineageTag: b55dbab3-e140-4f5e-af70-c39fdbe8671c
+		sourceLineageTag: 4f6f9f42-33ec-404b-9c33-dad3bb1cd0e9
+		dataCategory: Uncategorized
+
+	measure 'ST% by Rank TY-Fabric' = EXTERNALMEASURE("ST% by Rank TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\ST%
+		lineageTag: 8cacbccc-7e50-40e5-8a0f-198c87e01fd8
+		sourceLineageTag: b0678b99-9b7b-4913-818b-4ebcba87697c
+		dataCategory: Uncategorized
+
+	measure 'ST% by Rank LY-Fabric' = EXTERNALMEASURE("ST% by Rank LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\ST%
+		lineageTag: ffe254cc-d243-44bb-8caa-cfa71d924408
+		sourceLineageTag: 54138534-176e-40fb-ac2e-cc8110ed8f39
+		dataCategory: Uncategorized
+
+	measure 'Rank Display OH TY-Fabric' = EXTERNALMEASURE("Rank Display OH TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: cd43eb1d-e5d3-423b-8529-908bc9b4e409
+		sourceLineageTag: d96d6cf8-3fb2-4f2f-bad0-0b8286bbbb3a
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Display OH TY-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Display OH LY-Fabric' = EXTERNALMEASURE("Rank Display OH LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: c9248e74-5e4e-4cbd-9255-b5a3b07e045d
+		sourceLineageTag: 21cf79ad-0232-4973-a2b0-968c69348454
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Display OH LY-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Display OH % vs LY-Fabric' = EXTERNALMEASURE("Rank Display OH % vs LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: b1be1543-3dcd-4844-9fcf-defb208a445a
+		sourceLineageTag: b507044b-3c7a-48a8-aea2-33877e629232
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net GM TY-Fabric' = EXTERNALMEASURE("Rank Net GM TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\GM%
+		lineageTag: 7a8493ef-b731-41d3-94b6-b9a0bdf4f711
+		sourceLineageTag: 5ef94937-c75a-4fc0-8075-9846a45b4309
+		dataCategory: Uncategorized
+
+	measure 'Rank Net GM LY-Fabric' = EXTERNALMEASURE("Rank Net GM LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\GM%
+		lineageTag: ccad2e69-c1c4-48af-9c99-4e5f7f935b11
+		sourceLineageTag: 0250e290-5a09-4dde-a364-d37a9b159449
+		dataCategory: Uncategorized
+
+	measure 'Rank Sales AUR TY-Fabric' = EXTERNALMEASURE("Rank Sales AUR TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Sales AUR
+		lineageTag: 9fb29f84-650e-46ac-8adb-61faadedd1ec
+		sourceLineageTag: 0d070c13-2232-4f5c-b59b-3394d5bed1ff
+		dataCategory: Uncategorized
+
+	measure 'Rank Sales AUR LY-Fabric' = EXTERNALMEASURE("Rank Sales AUR LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Sales AUR
+		lineageTag: e2bc7588-3b5a-4f92-a929-2e7f2fb175c6
+		sourceLineageTag: 005b74c7-61a1-413c-939f-0c73b0ac22f1
+		dataCategory: Uncategorized
+
+	measure 'Rank OH AUR TY-Fabric' = EXTERNALMEASURE("Rank OH AUR TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\OH AUR
+		lineageTag: b356be43-8142-4245-af70-0afee500d7d2
+		sourceLineageTag: ffce4e3f-2156-49f7-9fa0-a9d79ec00f05
+		dataCategory: Uncategorized
+
+	measure 'Rank OH AUR LY-Fabric' = EXTERNALMEASURE("Rank OH AUR LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\OH AUR
+		lineageTag: bf286cc3-0945-48b6-a2cb-8ff4565b375d
+		sourceLineageTag: efabfbe0-e5cc-48f0-8bd2-fdff41ede8ec
+		dataCategory: Uncategorized
+
+	measure 'Rank FP% TY-Fabric' = EXTERNALMEASURE("Rank FP% TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\FP%
+		lineageTag: f6e0c2b5-588e-4b2a-abf2-2e1b9539cd91
+		sourceLineageTag: fa76e882-4c81-4864-a0ce-48579fec0bca
+		dataCategory: Uncategorized
+
+	measure 'Rank FP% LY-Fabric' = EXTERNALMEASURE("Rank FP% LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\FP%
+		lineageTag: 641a2ffe-4a27-49ee-8737-d523ded24e40
+		sourceLineageTag: d851062c-5b5d-4ecb-acce-18670032032b
+		dataCategory: Uncategorized
+
+	measure 'Rank Retail OH % to Total TY-Fabric' = EXTERNALMEASURE("Rank Retail OH % to Total TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\Retail OH
+		lineageTag: 98537896-420b-4348-bd0b-d25421f61729
+		sourceLineageTag: 56654f6c-9909-4fde-b097-91dcfc53eac2
+		dataCategory: Uncategorized
+
+	measure 'Rank Retail OH % to Total LY-Fabric' = EXTERNALMEASURE("Rank Retail OH % to Total LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\Retail OH
+		lineageTag: 3752812e-9442-4608-bfa1-7b79960cc912
+		sourceLineageTag: 1241801a-e220-45f4-adaa-24c0b7dc221b
+		dataCategory: Uncategorized
+
+	measure 'Rank Weeks OH LY-Fabric' = EXTERNALMEASURE("Rank Weeks OH LY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Fabric\Weeks OH
+		lineageTag: 40a75e90-581f-4b7f-9ee5-275feaada280
+		sourceLineageTag: 77f65914-d476-4f2c-b3ce-99feca7e5a43
+		dataCategory: Uncategorized
+
+	measure 'Rank Weeks OH TY-Fabric' = EXTERNALMEASURE("Rank Weeks OH TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Fabric\Weeks OH
+		lineageTag: 193fa294-da9e-448a-a24c-b1a834857fb0
+		sourceLineageTag: f245bd26-e18a-49f4-8dc2-adb3bf5ef539
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units % to Class TY' = EXTERNALMEASURE("Net Sales Units % to Class TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: % to Class
+		lineageTag: 2c38a325-e05e-4aee-bc83-d6081aafaf6b
+		sourceLineageTag: dff947bb-4f64-49af-845b-24eea121d26e
+		dataCategory: Uncategorized
+
+	measure 'SKU Count TY' = EXTERNALMEASURE("SKU Count TY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: 18e5f375-0665-4742-86f1-2266015fbc52
+		sourceLineageTag: 470321ab-8f94-45b5-b6e5-14d93e70fb6c
+		dataCategory: Uncategorized
+
+	measure 'SKU Count' = EXTERNALMEASURE("SKU Count", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: SKU Count
+		lineageTag: a416c746-5998-4832-962f-6040c39247aa
+		sourceLineageTag: 624eb883-6957-490f-90de-c7d55087fe7d
+		dataCategory: Uncategorized
+
+	measure 'SKU Count LY' = EXTERNALMEASURE("SKU Count LY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: 80ceca27-396a-4eb1-bccb-ff6b97747eb1
+		sourceLineageTag: 154e1f7c-e0c9-4708-aa4d-d7e9dba1b28f
+		dataCategory: Uncategorized
+
+	measure 'SKU Count % vs LY' = EXTERNALMEASURE("SKU Count % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: SKU Count
+		lineageTag: c26200b4-3021-4320-a2f8-db8aa82cf338
+		sourceLineageTag: 7b54e2bd-cfdc-4e64-afbf-e08e61f61496
+		dataCategory: Uncategorized
+
+	measure 'Style Count' = EXTERNALMEASURE("Style Count", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Style Count
+		lineageTag: 89f5654f-3c9b-4fee-831c-0757bba45f20
+		sourceLineageTag: cd9cc092-68ab-4cef-a57c-b141c6c99164
+		dataCategory: Uncategorized
+
+	measure 'Style Count TY' = EXTERNALMEASURE("Style Count TY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: a753034f-965b-42d8-b457-fd30c63ebde8
+		sourceLineageTag: 46725f78-7408-4f36-b029-a673a23f6ef1
+		dataCategory: Uncategorized
+
+	measure 'Style Count LY' = EXTERNALMEASURE("Style Count LY", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: 4c5a0aeb-8632-4ec5-a0b7-fbcb1e9544b3
+		sourceLineageTag: 1e939f67-5c49-4db8-8199-cd71093f4c03
+		dataCategory: Uncategorized
+
+	measure 'Style Count % vs LY' = EXTERNALMEASURE("Style Count % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Style Count
+		lineageTag: eb035ae2-947a-48e3-b5b5-0923d4fa916b
+		sourceLineageTag: 5d7dc332-c3e8-4e5c-bde9-ba25c940f452
+		dataCategory: Uncategorized
+
+	measure 'Color Multiplier TY' = EXTERNALMEASURE("Color Multiplier TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0.0
+		displayFolder: Color Multiplier
+		lineageTag: d1cca3b8-cae1-48df-99e7-408383366b2c
+		sourceLineageTag: d9a7f2a8-de51-4c3e-be75-b1172660207a
+		dataCategory: Uncategorized
+
+	measure 'Color Multiplier LY' = EXTERNALMEASURE("Color Multiplier LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0
+		displayFolder: Color Multiplier
+		lineageTag: 6d536cf5-80ec-4d3a-a23d-842858cb7285
+		sourceLineageTag: d6aba20b-c25d-4f96-8c0a-07c35f3353d2
+		dataCategory: Uncategorized
+
+	measure 'Color Multiplier % vs LY' = EXTERNALMEASURE("Color Multiplier % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Color Multiplier
+		lineageTag: 4cdbd6c4-284e-4915-88b8-71514085e6f3
+		sourceLineageTag: dda61f90-1c9b-499f-a1db-798a0d4d5057
+		dataCategory: Uncategorized
+
+	measure 'Avg Sales per SKU TY' = EXTERNALMEASURE("Avg Sales per SKU TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Avg Sales per SKU
+		lineageTag: 3e203a17-86d9-43dd-a897-01a6a5a707f6
+		sourceLineageTag: 48a9cf62-6dae-43c8-b3d6-0b03fef83fd4
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Avg Sales per SKU TY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Avg Sales per SKU LY' = EXTERNALMEASURE("Avg Sales per SKU LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Avg Sales per SKU
+		lineageTag: 2006a832-965d-4dea-af6e-3d793ddac9d0
+		sourceLineageTag: 6583df56-efd9-4b6a-97cc-5146b6d608ed
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Avg Sales per SKU LY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Avg Sales per SKU % vs LY' = EXTERNALMEASURE("Avg Sales per SKU % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Avg Sales per SKU
+		lineageTag: 8a169c85-ae27-441a-ab5f-0f21448d3767
+		sourceLineageTag: dd39424a-8f38-443b-951a-3feff0723872
+		dataCategory: Uncategorized
+
+	measure 'Display Shipments TY' = EXTERNALMEASURE("Display Shipments TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: ba42bbfe-7994-45b2-b46f-68325c0a2b86
+		sourceLineageTag: 6931fb27-7ba1-4f19-9dca-4bb224945849
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Shipments TY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display Shipments LY' = EXTERNALMEASURE("Display Shipments LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: e9ed270d-70a5-4c52-8665-119c794cc717
+		sourceLineageTag: 20aedcd1-7fa3-4af0-8189-da4840f199bb
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Shipments LY FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display Shipments % vs LY' = EXTERNALMEASURE("Display Shipments % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Display
+		lineageTag: ffc01b6c-dd6c-4f8e-a105-6c0a3bc82ba9
+		sourceLineageTag: 3e369c33-33ef-40b4-b565-d1765de79241
+		dataCategory: Uncategorized
+
+	measure 'Shipments Units % vs LY' = EXTERNALMEASURE("Shipments Units % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 8c50290c-defa-4752-a8f4-52af4a3a06ff
+		sourceLineageTag: 0f9e32b7-386e-41b1-b9f3-4d4c535f65b6
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ % vs LY' = EXTERNALMEASURE("Shipments $ % vs LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: c7d9525c-f29a-4bc1-9fe8-29adc5c6671d
+		sourceLineageTag: a7d283c9-d363-475b-9514-bb1afe526cdf
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ AUR TY' = EXTERNALMEASURE("Shipments $ AUR TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 50e1d6a0-cf6a-4bc7-9125-70d7b9e7e5fa
+		sourceLineageTag: 0fb48a76-9bcb-408d-bd50-14459f17bf0e
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ AUR LY' = EXTERNALMEASURE("Shipments $ AUR LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 769efbd7-f26b-4c61-b109-3be3fde6ab33
+		sourceLineageTag: f133568f-308f-4afd-9f1c-8d6e445f8612
+		dataCategory: Uncategorized
+
+	measure 'Shipments ST% TY' = EXTERNALMEASURE("Shipments ST% TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 44bc79fc-917e-40a4-a8d0-b5c8258ada0c
+		sourceLineageTag: 81172744-8129-4c22-be89-de792820b4ae
+		dataCategory: Uncategorized
+
+	measure 'Shipments ST% LY' = EXTERNALMEASURE("Shipments ST% LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: d59d74e6-0d68-49bf-bc95-0176238b346b
+		sourceLineageTag: 64541527-0746-4367-b42d-86a482a3b926
+		dataCategory: Uncategorized
+
+	measure 'Shipments % to Total TY' = EXTERNALMEASURE("Shipments % to Total TY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: % to Total
+		lineageTag: 8b9c3f4f-a0ce-4bb9-941b-09e59e26580e
+		sourceLineageTag: 198d42d3-1765-41f9-822a-ec2d43330184
+		dataCategory: Uncategorized
+
+	measure 'Shipments % to Total LY' = EXTERNALMEASURE("Shipments % to Total LY", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: % to Total
+		lineageTag: 1256cbf3-c26e-43f3-8eec-025bc5823dd5
+		sourceLineageTag: 6a56388e-f12b-446b-932e-efabddfaac41
+		dataCategory: Uncategorized
+
+	measure 'Selected Date Filters' = EXTERNALMEASURE("Selected Date Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: 45f81d41-abe0-4ea6-862f-63a86943089e
+		sourceLineageTag: 4de87d7f-8887-4b64-a4d6-f1453163854a
+		dataCategory: Uncategorized
+
+	measure 'Selected Channel Filters' = EXTERNALMEASURE("Selected Channel Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: 1e277ca3-60f1-4721-b115-f7be71297f94
+		sourceLineageTag: ef323f85-9173-4edb-b574-dcf4fa90fcbc
+		dataCategory: Uncategorized
+
+	measure 'Selected Style Color Collection Filters' = EXTERNALMEASURE("Selected Style Color Collection Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: 744c6d14-a686-4714-b305-5c1b22e42b10
+		sourceLineageTag: 1dede4bb-cd10-458d-bd56-e5e5d69b1496
+		dataCategory: Uncategorized
+
+	measure 'Selected Division Desc Filters' = EXTERNALMEASURE("Selected Division Desc Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: d8d68a35-206d-4e00-84c2-9e78016b4045
+		sourceLineageTag: 4d58f2cc-27ce-4e0e-a3f2-450b5482c560
+		dataCategory: Uncategorized
+
+	measure 'Selected Mark Type Filters' = EXTERNALMEASURE("Selected Mark Type Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: 95771674-0a5e-4729-b034-f760eaa17844
+		sourceLineageTag: 6241b990-d99c-4e4f-a909-5b049e9fc2c6
+		dataCategory: Uncategorized
+
+	measure 'Selected Classification Filters' = EXTERNALMEASURE("Selected Classification Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: 1b714c00-23b5-463e-8608-3d7e564af8ff
+		sourceLineageTag: 1affb3d8-2b40-44f8-8326-2b68f436ae59
+		dataCategory: Uncategorized
+
+	measure 'Selected Department Filters' = EXTERNALMEASURE("Selected Department Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: a9a3fdc5-962d-4ffd-b556-b54911014dc1
+		sourceLineageTag: 1aff8a92-84fb-4de6-a2ac-a380e37f0c91
+		dataCategory: Uncategorized
+
+	measure 'Selected Delivery Season Filters' = EXTERNALMEASURE("Selected Delivery Season Filters", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Selected Filters
+		lineageTag: bd7d1ae3-47f5-4b02-9a4b-efe37b636626
+		sourceLineageTag: e9b8ea29-906c-4211-918b-7da7f3de081a
+		dataCategory: Uncategorized
+
+	measure 'Display Net Sales LY Delivery' = EXTERNALMEASURE("Display Net Sales LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: cf90115a-59f1-4981-8a52-e9beeacf9764
+		sourceLineageTag: c0e53b6d-fe3e-4c56-b0df-7859cc0d2077
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Net Sales LY Delivery FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display Net Sales % vs LY Delivery' = EXTERNALMEASURE("Display Net Sales % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Display
+		lineageTag: 1e9a16be-a535-4803-8d34-ba15f3d30031
+		sourceLineageTag: 4465c99e-df6c-4ac3-bf23-b9a680abdd6c
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display OH LY Delivery' = EXTERNALMEASURE("Display OH LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 62b17175-9fa1-4a96-b9f1-5f51759cc19e
+		sourceLineageTag: 90a67217-3431-471d-b162-e801b95d8ac3
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display OH LY Delivery FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display OH % vs LY Delivery' = EXTERNALMEASURE("Display OH % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Display
+		lineageTag: a1ccd349-ddc9-4c32-be36-c8d45e1698e6
+		sourceLineageTag: 6e27c385-c1ab-441b-b50e-6e6f3940179c
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Shipments LY Delivery' = EXTERNALMEASURE("Display Shipments LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Display
+		lineageTag: 0ca1d5fa-b678-475d-b68a-5aef7793ed6b
+		sourceLineageTag: 2c5d2f13-1851-4051-b3f1-a81d7010b085
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Shipments LY Delivery FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Display Shipments % vs LY Delivery' = EXTERNALMEASURE("Display Shipments % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Display
+		lineageTag: 370927c2-6571-4dee-b89b-810e8b787abc
+		sourceLineageTag: 7be17787-ddc7-4bce-970b-471626392e0a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Shipments $ % vs LY Delivery' = EXTERNALMEASURE("Shipments $ % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: d7d5c7c5-0bb9-43eb-8f2f-413ea8b1404d
+		sourceLineageTag: bb636c77-941a-40b8-8527-cd1992ecf01c
+		dataCategory: Uncategorized
+
+	measure 'Shipments Units % vs LY Delivery' = EXTERNALMEASURE("Shipments Units % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Shipments
+		lineageTag: 0c21ba51-727a-4af8-a9c3-f948066ad203
+		sourceLineageTag: 20079a1c-8ac9-44c5-87c7-d3645f538452
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Shipments ST% LY Delivery' = EXTERNALMEASURE("Shipments ST% LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: c31fb1b1-7061-48b2-816a-57c4b707746d
+		sourceLineageTag: 9e1be841-0798-445d-a921-db363b13c360
+		dataCategory: Uncategorized
+
+	measure 'Shipments $ AUR LY Delivery' = EXTERNALMEASURE("Shipments $ AUR LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 318b3a6c-fdff-4c21-9c81-dd13fde9845a
+		sourceLineageTag: 2bb512ab-ae78-45fd-ad71-0ff86786f392
+		dataCategory: Uncategorized
+
+	measure 'Style Count LY Delivery' = EXTERNALMEASURE("Style Count LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: bc6f76e7-e5e5-4f69-a29c-09d59dff63cf
+		sourceLineageTag: a94d3b42-5bab-4b8b-95e6-61557c3c2214
+		dataCategory: Uncategorized
+
+	measure 'SKU Count LY Delivery' = EXTERNALMEASURE("SKU Count LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: df804913-9b6e-4bf9-8c08-24a7169b3fd8
+		sourceLineageTag: 8209b9da-be90-4f8c-ad43-d3b97a8af217
+		dataCategory: Uncategorized
+
+	measure 'Style Count % vs LY Delivery' = EXTERNALMEASURE("Style Count % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Style Count
+		lineageTag: 359cafea-cde8-49bc-83f9-e6a0ffe4bbc7
+		sourceLineageTag: 2e2d7f2c-14b1-425f-8ed0-f4701f6b2e3c
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'SKU Count % vs LY Delivery' = EXTERNALMEASURE("SKU Count % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: SKU Count
+		lineageTag: c949d8db-e532-4e06-9cf4-f75b7621011a
+		sourceLineageTag: a6080f17-3ada-4b1a-a21b-75b52a7c4b96
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Color Multiplier LY Delivery' = EXTERNALMEASURE("Color Multiplier LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0.0
+		displayFolder: Color Multiplier
+		lineageTag: 5e7b4525-f6eb-4f6a-ac62-e25ea939b106
+		sourceLineageTag: d726fea4-79d5-48b8-8edb-d7e231be0e7d
+		dataCategory: Uncategorized
+
+	measure 'Color Multiplier % vs LY Delivery' = EXTERNALMEASURE("Color Multiplier % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Color Multiplier
+		lineageTag: 9bbde8f9-a97d-46fc-8ab9-8b9e00591820
+		sourceLineageTag: 8de4d38b-f241-451d-9094-d393a4215c9f
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Avg Sales per SKU LY Delivery' = EXTERNALMEASURE("Avg Sales per SKU LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Avg Sales per SKU
+		lineageTag: 8eecef40-a92c-4182-8ada-47c0a019937a
+		sourceLineageTag: 4ea7ab99-2d22-448f-9430-1e62d276d617
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Avg Sales per SKU LY Delivery FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Avg Sales per SKU % vs LY Delivery' = EXTERNALMEASURE("Avg Sales per SKU % vs LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%)
+		displayFolder: Avg Sales per SKU
+		lineageTag: 100226d7-96a8-4998-9a55-320f4a44bafa
+		sourceLineageTag: 9dd3550e-b205-4e4d-9991-84e0760565ba
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales by Rank  LY Delivery-Color' = EXTERNALMEASURE("Sales by Rank  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: c8a12759-6b2b-49ca-bf57-53ec5cdcff1d
+		sourceLineageTag: e85a2899-52b8-445f-8b56-8d3fb3463b82
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank  LY Delivery-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Sales by Rank % vs  LY Delivery-Color' = EXTERNALMEASURE("Sales by Rank % vs  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 74dc1351-f6b4-4fb9-8e8d-8c77b1302e38
+		sourceLineageTag: 2d536819-700d-4205-a94e-cf914d960231
+		dataCategory: Uncategorized
+
+	measure 'Rank Net Sales % to Total  LY Delivery-Color' = EXTERNALMEASURE("Rank Net Sales % to Total  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: eacca28d-0c46-4ab0-a186-e49dba875231
+		sourceLineageTag: b9f8e6a1-d861-442b-af1c-85cbcf2b2e70
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank  LY Delivery-Color' = EXTERNALMEASURE("Rank  LY Delivery-Color", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Rank
+		lineageTag: e12e62f3-3b63-40ca-9288-4e653fd66e2d
+		sourceLineageTag: 53704b91-61b1-4119-a201-694a4be0e55f
+		dataCategory: Uncategorized
+
+	measure 'ST% by Rank  LY Delivery-Color' = EXTERNALMEASURE("ST% by Rank  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: 436c59c8-f1e5-4c73-8d47-ac143b4ae164
+		sourceLineageTag: fd820e2c-6927-4fbe-b869-e2828474756d
+		dataCategory: Uncategorized
+
+	measure 'Rank Display OH  LY Delivery-Color' = EXTERNALMEASURE("Rank Display OH  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: f8e74c96-ae6c-473a-b69d-744c14796a25
+		sourceLineageTag: 4cf5550a-6952-4d21-9210-6357c88571d4
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Display OH  LY Delivery-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Display OH % vs  LY Delivery-Color' = EXTERNALMEASURE("Rank Display OH % vs  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: c3188ce0-999c-43d8-9671-52c875a61315
+		sourceLineageTag: 6f7a1c02-88d8-4754-a08a-42c5157fef9a
+		dataCategory: Uncategorized
+
+	measure 'Rank Net GM  LY Delivery-Color' = EXTERNALMEASURE("Rank Net GM  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: 1b798ed4-d4b1-443b-8924-b232fcd87728
+		sourceLineageTag: 5d9c148f-8de7-439d-8e35-bde80665c333
+		dataCategory: Uncategorized
+
+	measure 'Rank Sales AUR  LY Delivery-Color' = EXTERNALMEASURE("Rank Sales AUR  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: 54f28a1b-136b-4d59-b9d7-1551453c27dc
+		sourceLineageTag: 15296f97-8545-44c6-abe8-71c5a888e243
+		dataCategory: Uncategorized
+
+	measure 'Rank OH AUR  LY Delivery-Color' = EXTERNALMEASURE("Rank OH AUR  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: 88112a78-217f-4320-bccd-022ea640f109
+		sourceLineageTag: d3445fbd-279c-4fc9-9536-2bb24bd5f974
+		dataCategory: Uncategorized
+
+	measure 'Rank FP%  LY Delivery-Color' = EXTERNALMEASURE("Rank FP%  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: ee9ae3c0-7ef2-4cdb-8716-901d611c9369
+		sourceLineageTag: 9b9d4e23-ea96-4cb8-a92f-ad3e7b0bb581
+		dataCategory: Uncategorized
+
+	measure 'Rank Weeks OH  LY Delivery-Color' = EXTERNALMEASURE("Rank Weeks OH  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: 0fc7ddb8-d0a1-48b6-a2c1-7a37d5c83600
+		sourceLineageTag: e4189df1-97c5-48d1-8d89-b40ddf9ae40e
+		dataCategory: Uncategorized
+
+	measure 'Ranking Measure LY Delivery' = EXTERNALMEASURE("Ranking Measure LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank
+		lineageTag: 8426c819-9920-48a4-b845-f92694b882b8
+		sourceLineageTag: b62f9238-0a01-485d-ac0e-3fca9d1307ef
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments TY-Color' = EXTERNALMEASURE("Rank Shipments TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Shipments
+		lineageTag: b917a700-5efa-4f69-af88-e4d2e451933a
+		sourceLineageTag: 080c1bee-2cd5-4dbb-9e22-cfb4215d0e8d
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Shipments TY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Shipments LY Delivery-Color' = EXTERNALMEASURE("Rank Shipments LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 375935cd-f921-4366-9008-72247a0a022c
+		sourceLineageTag: 04a1b467-4279-428a-8bb3-af293e355408
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Shipments LY Delivery-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Shipments % vs LY Delivery-Color' = EXTERNALMEASURE("Rank Shipments % vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 2972fcb1-70b7-4e3f-94ac-b17c64e38348
+		sourceLineageTag: 69e50b88-888d-4750-bc9c-e87ac64a63e7
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments % to Total TY-Color' = EXTERNALMEASURE("Rank Shipments % to Total TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 16fe2783-77c0-4677-83b7-367e67201be5
+		sourceLineageTag: 48476cba-55af-4082-a1bd-5b4b942f02f3
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Receipt ST% TY-Color' = EXTERNALMEASURE("Rank Receipt ST% TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments ST%
+		lineageTag: af526ea9-a4af-4932-9160-77ceb8f4463a
+		sourceLineageTag: 7fb1e6c6-b06d-40e1-9288-71029bc293c4
+		dataCategory: Uncategorized
+
+	measure 'Rank Receipt ST% LY Delivery-Color' = EXTERNALMEASURE("Rank Receipt ST% LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments ST%
+		lineageTag: cf0bafbe-fe74-47c5-99fb-98f5ab85643c
+		sourceLineageTag: a4f5af3e-e133-4bc6-9ff6-75ee8e7f4886
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments AUR TY-Color' = EXTERNALMEASURE("Rank Shipments AUR TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Receipt AUR
+		lineageTag: 0eb76b75-5c43-4f17-94b3-925c4503f64e
+		sourceLineageTag: 3d0ec77e-275b-4acf-a49a-fa3ff0e02887
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments AUR  LY Delivery-Color' = EXTERNALMEASURE("Rank Shipments AUR  LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Receipt AUR
+		lineageTag: 90fe287f-cc35-491f-8852-1b8420709044
+		sourceLineageTag: 0fc5a559-9a22-48f3-a76c-5d3b1daa2668
+		dataCategory: Uncategorized
+
+	measure 'Rank Style Count TY-Color' = EXTERNALMEASURE("Rank Style Count TY-Color", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Rank\Color\Style Count
+		lineageTag: 465fd92e-86ae-4ff3-a332-135d2a61cb49
+		sourceLineageTag: 9ef381e4-4d2a-42cd-b08a-c6ca8ac10a10
+		dataCategory: Uncategorized
+
+	measure 'Rank Style Count LY Delivery-Color' = EXTERNALMEASURE("Rank Style Count LY Delivery-Color", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Rank\Color\Style Count
+		lineageTag: d4a32218-fe2e-4ae9-8578-bab0d8234d33
+		sourceLineageTag: d0cc1ca0-a867-4c3a-962e-d326b9c7f718
+		dataCategory: Uncategorized
+
+	measure 'Rank Style Count % vs LY Delivery-Color' = EXTERNALMEASURE("Rank Style Count % vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Style Count
+		lineageTag: d078eb3e-7927-407a-bffd-88c963b5205d
+		sourceLineageTag: 1acbb941-beda-432b-b2f9-cddc5c460d20
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank SKU Count TY-Color' = EXTERNALMEASURE("Rank SKU Count TY-Color", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: e560f900-c8ed-4024-97c8-ac6501d8a632
+		sourceLineageTag: 5b6541e9-8221-4e30-b814-3477743249d2
+		dataCategory: Uncategorized
+
+	measure 'Rank SKU Count LY Delivery-Color' = EXTERNALMEASURE("Rank SKU Count LY Delivery-Color", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: 51d13a2a-7192-4b23-9a7a-72e8a2b37abf
+		sourceLineageTag: aadf0118-7be5-4298-ab08-8734e4954c6b
+		dataCategory: Uncategorized
+
+	measure 'Rank SKU Count % vs LY Delivery-Color' = EXTERNALMEASURE("Rank SKU Count % vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: 8913cca8-629d-4a69-91c7-5ce7a79a6309
+		sourceLineageTag: 8047e1e5-8630-4b30-aa79-0c4b1db23e03
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Color Multiplier TY-Color' = EXTERNALMEASURE("Rank Color Multiplier TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: aa35a043-82be-4750-af7a-3b10be5351df
+		sourceLineageTag: d398930f-570c-4b10-b25e-8082a6ad412e
+		dataCategory: Uncategorized
+
+	measure 'Rank Color Multiplier LY Delivery-Color' = EXTERNALMEASURE("Rank Color Multiplier LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: 42756c1b-27f4-4037-8141-c84740a9e5f9
+		sourceLineageTag: 96fee547-dbb9-4011-adc2-41abb4ba0f0e
+		dataCategory: Uncategorized
+
+	measure 'Rank Color Multiplier % vs LY Delivery-Color' = EXTERNALMEASURE("Rank Color Multiplier % vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: 497875b0-ce91-49de-808f-d10627748fd0
+		sourceLineageTag: b2c8d3ff-f12d-4c29-8b05-22427816bc57
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Avg Sales per SKU TY-Color' = EXTERNALMEASURE("Rank Avg Sales per SKU TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: a7b42763-09ad-4b16-9928-b2a1931dc1dc
+		sourceLineageTag: 8572be50-ad08-4aea-8a1e-30a92525e313
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Avg Sales per SKU TY-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Avg Sales per SKU LY Delivery-Color' = EXTERNALMEASURE("Rank Avg Sales per SKU LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: 3fdd4e15-c12b-4283-852d-2023232c63f7
+		sourceLineageTag: 135e4fca-ef9a-49aa-a384-93022f969f90
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Avg Sales per SKU LY Delivery-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Avg Sales per SKU % vs LY Delivery-Color' = EXTERNALMEASURE("Rank Avg Sales per SKU % vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;(0%);0%
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: a4428184-e390-4d8e-bea5-fcbb250e4337
+		sourceLineageTag: fd49910b-ea82-4b3f-a518-4ee1c53bbf7a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Display OH % to Total TY-Color' = EXTERNALMEASURE("Rank Display OH % to Total TY-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: f43d47e8-b53c-4448-a358-9d03a7e5758e
+		sourceLineageTag: c4728726-ee0f-48bb-a0cb-af01d6ffdf1b
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Display Net Sales diff LY Delivery' = EXTERNALMEASURE("Display Net Sales diff LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Display
+		lineageTag: 6eb60015-209e-4334-a391-45e878e7f1ff
+		sourceLineageTag: d41f3f5f-c01c-45ba-8aa7-5fd364e16256
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Display Net Sales diff LY Delivery FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Net Sales $ diff LY Delivery' = EXTERNALMEASURE("Net Sales $ diff LY Delivery", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: 533546be-3041-4df3-8c7c-2c6ddf320451
+		sourceLineageTag: 1ef83761-8bc9-432b-b378-c397c8a8382a
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units diff LY Delivery' = EXTERNALMEASURE("Net Sales Units diff LY Delivery", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: f35927ab-80b9-4b5d-984a-e5ebdc14daa8
+		sourceLineageTag: dd884d7f-7694-428d-b427-81a020aa99a6
+		dataCategory: Uncategorized
+
+	measure 'Sales by Rank diff vs LY Delivery-Color' = EXTERNALMEASURE("Sales by Rank diff vs LY Delivery-Color", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 411c111e-98f8-46ba-a50d-0ddfd4687950
+		sourceLineageTag: c04fd23c-f358-47e4-918a-8bcc05d2d6ee
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Sales by Rank diff vs LY Delivery-Color FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Shipments AUR LY Delivery-Fabric' = EXTERNALMEASURE("Rank Shipments AUR LY Delivery-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Shipments AUR
+		lineageTag: b9586d3b-527f-409e-b248-6847a8b67ccf
+		sourceLineageTag: b1d0315d-0755-45b0-8eb2-069485a32c64
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments AUR TY-Fabric' = EXTERNALMEASURE("Rank Shipments AUR TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Shipments AUR
+		lineageTag: e427d166-80d5-4f9c-8bae-baf21c3a536f
+		sourceLineageTag: 7a77cd6a-1169-44f7-b5f0-a24554075dae
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments % to Total TY-Fabric' = EXTERNALMEASURE("Rank Shipments % to Total TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: f887ff1c-07cf-4595-b06e-107bd619f9c6
+		sourceLineageTag: f8fbb2af-270d-4606-9963-dfc99298d304
+		dataCategory: Uncategorized
+
+	measure 'Rank Shipments LY Delivery-Fabric' = EXTERNALMEASURE("Rank Shipments LY Delivery-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: fcf8c484-13f8-4d01-b64d-e27b79b7f1b6
+		sourceLineageTag: 5ed35328-2f09-4c72-b54d-9f1ce8e12be7
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Shipments LY Delivery-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Shipments TY-Fabric' = EXTERNALMEASURE("Rank Shipments TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: af38a2b8-72d3-4d60-9b9a-a016b4be9aa4
+		sourceLineageTag: c8b380a7-635f-47b4-b18e-cca44bda541c
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Rank Shipments TY-Fabric FormatString", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+
+	measure 'Rank Recpeits % vs LY Delivery-Fabric' = EXTERNALMEASURE("Rank Recpeits % vs LY Delivery-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: 1dba62bd-fec4-4ccd-b800-7d2833e1911b
+		sourceLineageTag: 533a8c38-918c-4b7c-9c3d-4981769691e4
+		dataCategory: Uncategorized
+
+	measure 'Rank Receipt ST% LY Delivery-Fabric' = EXTERNALMEASURE("Rank Receipt ST% LY Delivery-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments ST%
+		lineageTag: 7b583a6a-f28c-4fa2-a5cf-0d32274192a8
+		sourceLineageTag: 8de7d5e1-a695-4f11-a87e-870474ea316d
+		dataCategory: Uncategorized
+
+	measure 'Rank Receipt ST% TY-Fabric' = EXTERNALMEASURE("Rank Receipt ST% TY-Fabric", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments ST%
+		lineageTag: 871211b9-9065-42c2-951d-e3429323e48b
+		sourceLineageTag: f9fd00f0-dd45-471f-a922-c0e94508dc15
+		dataCategory: Uncategorized
+
+	measure 'Filtered Account' = EXTERNALMEASURE("Filtered Account", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0
+		lineageTag: 0b4109a3-7fac-48a5-b3de-84e28b905f38
+		sourceLineageTag: 59c6e44b-33d5-4848-b96f-60afe222dc0a
+		dataCategory: Uncategorized
+
+	partition 'Product Dashboard Measures' = entity
+		mode: directQuery
+		source
+			entityName: Product Dashboard Measures
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

@@ -1,0 +1,26 @@
+{
+  "name": "Accessible Neutral",
+  "dataColors": [
+    "#6B797C",
+    "#362B2B",
+    "#B08D72",
+    "#3D4E62",
+    "#86989C",
+    "#5B3D35",
+    "#928F8B",
+    "#242828"
+  ],
+  "foreground": "#24212E",
+  "background": "#FFFFFF",
+  "foregroundNeutralSecondary": "#6E5746",
+  "backgroundLight": "#FCF7F0",
+  "foregroundNeutralTertiary": "#928F8B",
+  "backgroundNeutral": "#EDE8E1",
+  "tableAccent": "#566164",
+  "maximum": "#000000",
+  "center": "#000000",
+  "minimum": "#B72222",
+  "bad": "#B72222",
+  "neutral": "#000000",
+  "good": "#000000"
+}

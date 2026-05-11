@@ -1,0 +1,13 @@
+expression 'DirectQuery to AS - Lakehouse Semantic Model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Lakehouse", "Lakehouse Semantic Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 452e78d2-585f-4531-b5f4-3f0c74b3c0ad
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"6aec865f-28e8-4111-94a0-8b84d80c81bf"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"1865e004-bdc6-4021-86ae-6b33ad451c21"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"2c1d535d-f186-4fdf-b196-f1a3bfe2949e"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"6a15ff0f-9dab-4bae-9028-43ad1bd36dc3"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"1042ae4e-ab13-4130-b717-488954e76eb0"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"063f79e6-b858-4852-bba6-f35611839455"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"737973f2-4326-499d-9a01-340082d12a58"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"d056fab4-4748-4719-8531-8dad4b89ca24"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"8d59e016-4016-45b8-a98c-cac5109a9ac0"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"6cb183cd-1b13-4db4-951b-2235c8bb7437"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"005777ea-1c9a-4b20-bdfa-b294d9ce9309"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"3b6297b8-290b-43ee-9998-3829c85556be"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"94cb2056-3bd7-433c-af00-19ec11963aec"}},"objectType":"Table"}]
+

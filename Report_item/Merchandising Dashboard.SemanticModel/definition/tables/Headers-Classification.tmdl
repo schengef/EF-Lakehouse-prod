@@ -1,0 +1,20 @@
+table Headers-Classification
+	lineageTag: fd61ea49-a8f5-4383-b4bd-c529d1bb0e21
+	sourceLineageTag: 127f7c32-725b-41e5-8666-d1c60afe1921
+
+	column Column1
+		dataType: string
+		lineageTag: bd1332e8-3373-4f3f-afd9-963bc1d40b01
+		sourceLineageTag: 5d9726ad-5f8a-481f-9f1f-baf8ef92ecb9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition Headers-Classification = entity
+		mode: directQuery
+		source
+			entityName: Headers-Classification
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

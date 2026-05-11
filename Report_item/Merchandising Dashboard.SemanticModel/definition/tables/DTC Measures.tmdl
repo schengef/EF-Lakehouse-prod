@@ -1,0 +1,307 @@
+table 'DTC Measures'
+	lineageTag: 83909bfd-4314-44ed-b7ed-6747e140cd3e
+	sourceLineageTag: dbc9c3b9-bdf7-4f54-92aa-73732085181a
+
+	measure 'Demand Gross Retail Sales $' = EXTERNALMEASURE("Demand Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 71330f12-a4ee-47dd-a60c-f0ea55803b73
+		sourceLineageTag: ae541836-bcda-4990-9868-a7ea287c0317
+		dataCategory: Uncategorized
+
+	measure 'Demand Discount Retail Sales $' = EXTERNALMEASURE("Demand Discount Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 44b22a37-6138-4fb6-b2a6-cb6f075f1488
+		sourceLineageTag: 14ebfc69-299d-4c18-baac-0838ad1ad3d5
+		dataCategory: Uncategorized
+
+	measure 'Demand Net Retail Sales $' = EXTERNALMEASURE("Demand Net Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7e69b5f4-59fe-46b5-9edf-7ee1cd66a305
+		sourceLineageTag: 733b5384-c3c1-4e0d-97cb-a1b6e8290727
+		dataCategory: Uncategorized
+
+	measure 'Demand Unit Sales' = EXTERNALMEASURE("Demand Unit Sales", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 3fbfbe16-4157-4392-843c-5f940f85e783
+		sourceLineageTag: 5a6de6ce-32dc-46e9-b7eb-bc9efe077807
+		dataCategory: Uncategorized
+
+	measure 'Demand Tax $' = EXTERNALMEASURE("Demand Tax $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1962957f-42be-4458-a830-37112c49a7f4
+		sourceLineageTag: e222e1be-292c-4a28-b476-219fc76a316f
+		dataCategory: Uncategorized
+
+	measure 'Cancel Gross Retail Sales $' = EXTERNALMEASURE("Cancel Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 93416bb5-8d72-477c-a0a5-1178ad092b0e
+		sourceLineageTag: 0dff4ebe-f933-4cad-aefc-82da35c8f270
+		dataCategory: Uncategorized
+
+	measure 'Cancel Net Retail Sales $' = EXTERNALMEASURE("Cancel Net Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 42587fc5-32e3-4414-a295-18a33c49acb8
+		sourceLineageTag: 9b12a6a5-94ba-47da-875d-79ab7e6815e5
+		dataCategory: Uncategorized
+
+	measure 'Cancel Tax $' = EXTERNALMEASURE("Cancel Tax $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 37377b78-79c9-45fa-a0b9-0d9e43b5747c
+		sourceLineageTag: 497e75fe-50a1-4250-a31b-d19e03a85dd8
+		dataCategory: Uncategorized
+
+	measure 'Cancel Unit Sales' = EXTERNALMEASURE("Cancel Unit Sales", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: bde5b674-008d-48e8-8f43-5529abf9738f
+		sourceLineageTag: ab7949ce-fe24-4de1-8c2a-41ce9d111020
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Gross Retail Sales $' = EXTERNALMEASURE("Fulfillment Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0c4d6927-a7e3-4463-9bdc-6b41287aece1
+		sourceLineageTag: ff32a722-34c4-4374-b70a-e985bb4c5f5f
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Net Retail Sales $' = EXTERNALMEASURE("Fulfillment Net Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3598a893-75f7-4bd6-b150-2f9f151659da
+		sourceLineageTag: a00b6e48-dfd6-442b-8be5-9a1662ea0b52
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Tax $' = EXTERNALMEASURE("Fulfillment Tax $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8b3094ba-2121-4e13-9130-fe501ec566a3
+		sourceLineageTag: f1a1fa58-cd2a-454c-ac6b-72c5b05b476d
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Unit Sales' = EXTERNALMEASURE("Fulfillment Unit Sales", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: b5ade9da-22ee-4384-973a-663acdaee0f4
+		sourceLineageTag: d6036a31-8802-4d28-8cbe-4ccb5dcc84e1
+		dataCategory: Uncategorized
+
+	measure 'Gross Retail Sales $' = EXTERNALMEASURE("Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2b09dc17-9d0b-4f6e-bf05-2cb5adcbf6d9
+		sourceLineageTag: bc1b6690-0d8c-471c-966d-04842151141b
+		dataCategory: Uncategorized
+
+	measure 'Gross Unit Sales' = EXTERNALMEASURE("Gross Unit Sales", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 7217f9d0-ff49-4ac7-b8c8-4b6fb00a849a
+		sourceLineageTag: 52040adf-8db7-475d-8b4f-93ccb7a2c4bd
+		dataCategory: Uncategorized
+
+	measure 'Gross Cost Sales $' = EXTERNALMEASURE("Gross Cost Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2740f381-1749-4baf-95d6-fea222f19fb5
+		sourceLineageTag: 1266f8c5-9ce2-4230-8a61-a24e5b31857e
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin $' = EXTERNALMEASURE("Gross Margin $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6bd6301e-5bec-49dd-97b7-3c2724459ef9
+		sourceLineageTag: 79a4e34c-a6fa-4c58-af73-5d429ad9705d
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin %' = EXTERNALMEASURE("Gross Margin %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f99d5f88-2a27-4015-bee9-22ff90f1e56e
+		sourceLineageTag: e3d41d5c-a2a0-472d-ae3c-2af5f726d66e
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales AUR' = EXTERNALMEASURE("Gross Sales AUR", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 22665b8a-9ac8-4ca7-95d1-53f30723d256
+		sourceLineageTag: 7d5eb865-cf20-46c1-b197-b99c13fb1729
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales AUC' = EXTERNALMEASURE("Gross Sales AUC", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		lineageTag: aab08aae-c246-4b22-8cb6-512a8d8026aa
+		sourceLineageTag: d6b5ca64-e095-4575-a515-d35951a298e8
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin $' = EXTERNALMEASURE("Net Gross Margin $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: aec292e0-565c-4662-a440-b04c2e3a1a26
+		sourceLineageTag: ea4166b4-46f4-4b77-8129-a03c0c4f2bb8
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin %' = EXTERNALMEASURE("Net Gross Margin %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d47cbac9-53f7-4210-a9c6-744c6857f85a
+		sourceLineageTag: 6b511edf-dbc7-4c1f-b070-08b675be1bfd
+		dataCategory: Uncategorized
+
+	measure 'Net Sales AUR' = EXTERNALMEASURE("Net Sales AUR", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e17e4e89-b3ce-4d92-9197-d6c0358770b1
+		sourceLineageTag: 30222d21-1ed3-4da2-9d88-0a7eadcf4ea0
+		dataCategory: Uncategorized
+
+	measure 'Net Sales AUC' = EXTERNALMEASURE("Net Sales AUC", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		lineageTag: 4060e047-d937-4c42-9759-a2c67da5002f
+		sourceLineageTag: 61027faf-a3e2-46e8-885a-cdd3c4748b93
+		dataCategory: Uncategorized
+
+	measure 'Return Gross Retail Sales $' = EXTERNALMEASURE("Return Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 51e18041-784e-4a86-91d1-f8c59a2dee44
+		sourceLineageTag: c0084205-d5d4-4a09-9b7d-1014d2495e7e
+		dataCategory: Uncategorized
+
+	measure 'Return Net Retail Sales $' = EXTERNALMEASURE("Return Net Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9a0eb6ac-79e8-40c5-a9c6-674e4fbb6792
+		sourceLineageTag: b894d4dd-13ee-44a7-bb3f-d9c4e93c2d07
+		dataCategory: Uncategorized
+
+	measure 'Return Tax Sales $' = EXTERNALMEASURE("Return Tax Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5ccc07f5-91a5-4b9c-9d35-877c421a40e8
+		sourceLineageTag: 43e3afbf-951a-4271-a5d8-083fbe11ba68
+		dataCategory: Uncategorized
+
+	measure 'Return Unit Sales' = EXTERNALMEASURE("Return Unit Sales", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 21125a15-1c68-43ca-9a33-76ab65252532
+		sourceLineageTag: c0eec4b5-8128-4e7a-963a-8f8085298f95
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units' = EXTERNALMEASURE("Net Sales Units", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 6a180654-de47-424e-a397-6ab7e28a5ed7
+		sourceLineageTag: 25caa93d-02c8-4184-bb57-9707723dbb51
+		dataCategory: Uncategorized
+
+	measure 'Returns Units' = EXTERNALMEASURE("Returns Units", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: e1804ba6-61bd-41d3-8e3f-668c7a26aae6
+		sourceLineageTag: e24d0158-3f51-4312-8993-e202d7408c33
+		dataCategory: Uncategorized
+
+	measure 'Net Retail Sales $' = EXTERNALMEASURE("Net Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b40531e1-db30-4e5a-8eee-f782f8bd82c2
+		sourceLineageTag: 525dc911-5304-4398-9c77-75244973f7f4
+		dataCategory: Uncategorized
+
+	measure 'Retail Returns $' = EXTERNALMEASURE("Retail Returns $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 21d9842c-0609-49c3-9498-06e9473d1ce8
+		sourceLineageTag: 5d631c40-1c19-48b2-9fc3-57b00f510fb7
+		dataCategory: Uncategorized
+
+	measure 'Net Cost Sales $' = EXTERNALMEASURE("Net Cost Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7f1c2893-d4c5-43c3-b582-450f513d2ed1
+		sourceLineageTag: fb5031a6-b6fc-474f-9359-656328750509
+		dataCategory: Uncategorized
+
+	measure UPTs = EXTERNALMEASURE("UPTs", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0
+		lineageTag: c9abe124-300f-43c3-8204-568c96bbde28
+		sourceLineageTag: 580c17d8-2275-4401-bd17-d1b7f804ab1a
+		dataCategory: Uncategorized
+
+	measure AOV = EXTERNALMEASURE("AOV", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0ea331ce-4bdb-4b1d-969c-a259b095a9e6
+		sourceLineageTag: 40197742-9375-420e-bf6e-8be01872717e
+		dataCategory: Uncategorized
+
+	measure AUR = EXTERNALMEASURE("AUR", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a038d4e9-7828-4f11-8764-7229b84216a9
+		sourceLineageTag: ce1f8d08-2635-4fbe-a900-e8b885fde76e
+		dataCategory: Uncategorized
+
+	measure 'DTC Full Price %' = EXTERNALMEASURE("DTC Full Price %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 70461424-92e7-4b8e-90e7-d1c26a3c5283
+		sourceLineageTag: 3180a457-54b1-4b3f-a2a6-cccf0ccc8ce8
+		dataCategory: Uncategorized
+
+	measure 'Markdown $ Retail' = EXTERNALMEASURE("Markdown $ Retail", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fcaa31ca-4693-4952-a480-f5ef77be940f
+		sourceLineageTag: 87b91bca-b2c6-4244-ac82-c71d7da74fd2
+		dataCategory: Uncategorized
+
+	measure 'Cost Returns $' = EXTERNALMEASURE("Cost Returns $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0426d8f5-dab7-4fdd-bad9-559df29fd1ee
+		sourceLineageTag: 81e536a6-537d-4f69-9409-fd19bb588073
+		dataCategory: Uncategorized
+
+	measure 'Returns Tax $' = EXTERNALMEASURE("Returns Tax $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f2616beb-a8a3-467a-8026-220f20de76ff
+		sourceLineageTag: 7eb1e828-7199-45aa-b6fb-f7d30a8a2a5f
+		dataCategory: Uncategorized
+
+	measure 'Net Retail Orders $' = EXTERNALMEASURE("Net Retail Orders $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 64f21a84-28b2-45b9-ae23-e057ab633dfc
+		sourceLineageTag: 7343b391-3f7d-48a3-b9d9-8380749d9217
+		dataCategory: Uncategorized
+
+	measure Conversions = EXTERNALMEASURE("Conversions", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0%;-0%;0%
+		lineageTag: 7730841c-0115-4633-86a0-601a6ae69ed8
+		sourceLineageTag: 1e9186de-ef87-442f-af66-77e6e0f5f9d5
+		dataCategory: Uncategorized
+
+	measure Traffic = EXTERNALMEASURE("Traffic", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 9ee17629-e50e-428e-bff9-edc181ca793c
+		sourceLineageTag: cf75f8f6-6129-447d-b5e8-405f38cba237
+		dataCategory: Uncategorized
+
+	measure 'Sales Transactions' = EXTERNALMEASURE("Sales Transactions", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 36280656-7da0-480b-8f40-b397055872b9
+		sourceLineageTag: ce2bda42-17e2-4072-a94b-0d6147fd9a04
+		dataCategory: Uncategorized
+
+	measure 'DC Returns Retail (Digital Purchase)' = EXTERNALMEASURE("DC Returns Retail (Digital Purchase)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1fc647e8-fa19-48d8-8a5b-2b50da888a93
+		sourceLineageTag: 8de2b822-70a4-475d-ad2d-57ef306d1fd5
+		dataCategory: Uncategorized
+
+	measure 'Store Returns Retail (Digital Purchase)' = EXTERNALMEASURE("Store Returns Retail (Digital Purchase)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5ea8a4b7-f55e-4f41-b31d-2297aeea7101
+		sourceLineageTag: 12c2ab4c-5774-447f-bace-ab050b340903
+		dataCategory: Uncategorized
+
+	measure 'Store Returns Retail (Store Purchase)' = EXTERNALMEASURE("Store Returns Retail (Store Purchase)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b24ba1f0-5e35-4ac1-860b-b1f072cefd7b
+		sourceLineageTag: 5c8d6584-11aa-4c49-bcb6-9ebe12a8dfa6
+		dataCategory: Uncategorized
+
+	measure Transactions = EXTERNALMEASURE("Transactions", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: ad0ec568-047d-4e79-b0a8-c4d7b673bdf4
+		sourceLineageTag: f01cef0c-21f7-49d2-99be-581cd0fa500d
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: c0ea8f2d-711a-4c22-bfaa-19dff200c488
+		sourceLineageTag: d5ff7f59-a8c6-46c4-b89b-c5331364ae9d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'DTC Measures' = entity
+		mode: directQuery
+		source
+			entityName: DTC Measures
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

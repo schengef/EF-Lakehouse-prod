@@ -1,0 +1,98 @@
+table 'Total Company Measures'
+	lineageTag: 75e39182-7921-47cb-97f7-2cae95ddc45c
+	sourceLineageTag: cd702dc1-c8af-4c1c-b6b4-78cd336eacd0
+
+	measure 'External Retail Sales Units' = EXTERNALMEASURE("External Retail Sales Units", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: be5e59b0-598f-46fd-9a72-fdb7f0d50baf
+		sourceLineageTag: a1792079-de2e-4870-830f-fb730cca8524
+		dataCategory: Uncategorized
+
+	measure 'External Sell Through %' = EXTERNALMEASURE("External Sell Through %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b7f8fe2e-e5f0-463e-bd94-a34c18d66f08
+		sourceLineageTag: 539b72b3-b2a1-4a59-aa14-275a049d0513
+		dataCategory: Uncategorized
+
+	measure 'Overall External Full Price %' = EXTERNALMEASURE("Overall External Full Price %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 484e6ff7-b243-451c-aad0-51b617b0dca6
+		sourceLineageTag: d09fd50c-ee74-417a-b6f2-98edc22ad210
+		dataCategory: Uncategorized
+
+	measure 'Units (Sum)' = EXTERNALMEASURE("Units (Sum)", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 52428568-46ac-4383-a5e1-1fcea701a779
+		sourceLineageTag: c2f649eb-ec71-431b-8629-2dfcb048b27b
+		dataCategory: Uncategorized
+
+	measure 'External Cost $' = EXTERNALMEASURE("External Cost $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2b0a9a55-3643-43b2-b9ba-5c1b362c98e1
+		sourceLineageTag: b28cc71a-429c-4715-8ffa-39036ff22756
+		dataCategory: Uncategorized
+
+	measure 'External Retail $' = EXTERNALMEASURE("External Retail $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		lineageTag: db25dc09-0f5c-4c9c-8740-4043213d2e01
+		sourceLineageTag: 042ec1b7-58e9-483f-86d3-7f6bae06aeac
+		dataCategory: Uncategorized
+
+	measure 'External Retail Sales $' = EXTERNALMEASURE("External Retail Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 06944b77-fe02-432b-a845-59d087397fa2
+		sourceLineageTag: 08a4f711-1f45-4d1f-b622-37536ee94291
+		dataCategory: Uncategorized
+
+	measure 'External Sales Cost $' = EXTERNALMEASURE("External Sales Cost $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5aed33a3-2d17-4b87-a067-8f39cf429c9e
+		sourceLineageTag: b4a27acb-3493-4963-b149-6d5e69dfe049
+		dataCategory: Uncategorized
+
+	measure 'Discount Amount (Sum)' = EXTERNALMEASURE("Discount Amount (Sum)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f4931830-4d4d-4a22-929a-b74a4434696c
+		sourceLineageTag: 6ee4c420-6693-442b-b39f-513e99a51514
+		dataCategory: Uncategorized
+
+	measure 'Net Price (Sum)' = EXTERNALMEASURE("Net Price (Sum)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 761a13a3-9561-4d2a-a3b0-2b9483edd9d0
+		sourceLineageTag: 4b742beb-71d4-444a-823f-db54bfd2a3ad
+		dataCategory: Uncategorized
+
+	measure 'Standard Cost (Sum)' = EXTERNALMEASURE("Standard Cost (Sum)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: abfc8e3f-137e-4c22-9de2-77b9e56c2273
+		sourceLineageTag: f0838f36-5001-4256-ab20-a1f78e3659f6
+		dataCategory: Uncategorized
+
+	measure 'Tax Amount (Sum)' = EXTERNALMEASURE("Tax Amount (Sum)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d1322d43-43e1-4f81-9de6-8a4af7e8569b
+		sourceLineageTag: 4f92983d-06c5-4daa-90ec-bc78498594cc
+		dataCategory: Uncategorized
+
+	measure 'Total Price (Sum)' = EXTERNALMEASURE("Total Price (Sum)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 918bf0c3-68b2-4a02-b31e-5e1d98392a2b
+		sourceLineageTag: 74f85f1b-427a-4c33-b4bc-252d9eeb655f
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: f458223d-d4af-406b-ab2c-aa8e20aeee7c
+		sourceLineageTag: eeed0683-1163-4c6d-81c6-9b039a1ba712
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'Total Company Measures' = entity
+		mode: directQuery
+		source
+			entityName: Total Company Measures
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

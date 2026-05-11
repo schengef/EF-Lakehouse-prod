@@ -1,0 +1,46 @@
+table 'Semantic Model Update'
+	isHidden
+	lineageTag: 7d0b0006-aa4e-47aa-85e9-b35840effa1c
+
+	column Row
+		dataType: string
+		isHidden
+		lineageTag: 46ca156a-aca3-4491-a89e-87733966dd63
+		summarizeBy: none
+		sourceColumn: Row
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date.1'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 36edba48-ea0d-4b25-9db9-d221b047f130
+		summarizeBy: none
+		sourceColumn: Date.1
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Semantic Model Update' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Row = _t]),
+				    #"Added Custom" = Table.AddColumn(Source, "Date.1", each DateTime.LocalNow())
+				in
+				    #"Added Custom"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

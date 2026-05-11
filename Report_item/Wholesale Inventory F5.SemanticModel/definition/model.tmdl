@@ -1,0 +1,103 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Calendars
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Currency
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup Facts
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Dimensions
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup Measures
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Join Tables'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup Facts\Aggregated
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["DTC Measures","Wholesale Measures","Transactions (Account POS)","Transactions (Account MIX)","Transactions (Account FIN)","Transactions (Financial)","Transactions (External POS)","Traffic","Inventory","Forecast (Channel)","Product","Product (Current)","SnowflakeWarehouse","Environment","Budget (Channel)","Budget (Inventory)","Plan (Wholesale Retail)","Account Group Join","Store","Currency Selector","Accounts","Channel","Delivery","Currency Pivot","Order Type Join","Date","Agg-Transactions (Financial)-$/Day (DTC Focus)","Agg-Transactions (Financial)-$/Day (Wholesale Focus)","Agg-Inventory-Date","Agg-Transactions (External POS)-Day/Product","Agg-Transactions (Financial)-Day/Product","Agg-Transactions (Account MIX)-$/Day","Agg-Traffic-Day/Channel","Agg Pseudo-Transaction Count","Budget (DTC-Store)","Order Categorization","Original Channel (DTC)","Forecast (DTC-Store)","Semantic Model Update","Original Store (DTC)","Budget and Forecast Measures","Inventory Measures","Total Company Measures","Allocated Store (DTC)","Allocated Channel (DTC)","Agg-Transactions (External POS)-Day/Store","Agg-Transactions (Account POS)-Day/Store"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["CalcGroup","DaxQueryView_Desktop"]
+
+annotation __TEdtr = 1
+
+ref table '445 Calendar Period'
+ref table 'Calendar Period'
+ref table 'Filter Dates'
+ref table 'Running Total Period'
+ref table 'DTC Measures'
+ref table 'Wholesale Measures'
+ref table 'Transactions (Financial)'
+ref table 'Transactions (Account POS)'
+ref table Traffic
+ref table Inventory
+ref table Product
+ref table 'Budget (Channel)'
+ref table 'Budget (Inventory)'
+ref table Store
+ref table 'Currency Selector'
+ref table 'Plan (Wholesale Retail)'
+ref table Accounts
+ref table 'Forecast (Channel)'
+ref table Channel
+ref table 'Currency Pivot'
+ref table 'Transactions (External POS)'
+ref table 'Order Type Join'
+ref table 'Account Group Join'
+ref table Date
+ref table 'Agg-Transactions (Financial)-$/Day (DTC Focus)'
+ref table 'Agg-Transactions (Financial)-$/Day (Wholesale Focus)'
+ref table Delivery
+ref table 'Agg-Transactions (External POS)-Day/Product'
+ref table 'Agg-Transactions (Financial)-Day/Product'
+ref table 'Original Channel (DTC)'
+ref table 'Transactions (Account FIN)'
+ref table 'Transactions (Account MIX)'
+ref table 'Agg-Transactions (Account MIX)-$/Day'
+ref table 'Budget (DTC-Store)'
+ref table Agg-Traffic-Day/Channel
+ref table 'Order Categorization'
+ref table 'Forecast (DTC-Store)'
+ref table 'Product (Current)'
+ref table 'Semantic Model Update'
+ref table 'Original Store (DTC)'
+ref table 'Budget and Forecast Measures'
+ref table 'Inventory Measures'
+ref table 'Total Company Measures'
+ref table 'Agg Pseudo-Transaction Count'
+ref table 'Allocated Store (DTC)'
+ref table 'Allocated Channel (DTC)'
+ref table 'Agg-Transactions (External POS)-Day/Store'
+ref table 'Agg-Transactions (Account POS)-Day/Store'
+ref table Agg-Inventory-Date
+
+ref perspective Currency
+
+ref cultureInfo en-US
+

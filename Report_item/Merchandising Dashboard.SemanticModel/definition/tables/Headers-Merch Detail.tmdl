@@ -1,0 +1,64 @@
+table 'Headers-Merch Detail'
+	lineageTag: 2f2387a0-b49c-4d53-8698-4a790bdcdc4f
+
+	column Metric
+		dataType: string
+		lineageTag: d442f6bf-90bf-4c97-b6b4-c7ab2795fb25
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: 'Metric Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: aa579cf1-620d-4dd2-872f-5fe87bb713fe
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: a0bc0126-8244-41d8-b9bb-d2a4642cd7c4
+		summarizeBy: sum
+		sourceColumn: Metric Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 09fc17b4-52d3-4e24-aa61-0ddad11c3af3
+		summarizeBy: sum
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: cd6e157a-6ad1-4693-9b9b-e231c9fd6246
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Headers-Merch Detail' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("1VXbSsNAEP2VodC3Iiatt8cSxRZXKyZ9kLYPQWMbXDcl3RZ888FP8Lv8CL/EXDaXzey2WwShkA0h7DlzzuzM7GTS+vn43P4c7dzxD0+r08rfx2K5Pg1WrVnngAzU1fPo6fVg1Y/4IogPVr27CJdvAeN59dwFHB4C7ocU8pLqbDPlPW4PY4lVVed+/MSA3zbjb8NmBQWfgHb3lPb9VSdpCulJbCMGA589w5BtkuRG8bvOqSaHwpkldYcxqSZxgtQ2JG3mzC5yVmKzL3A9aE/ZmIW8mTTZnIBbe1EQFYXsoCrhP1Vrr9AmdYQh+a5S7RWqd5A3c94rci7jAkrBW8RrQCmruUx+n6g96eEEwbHqNkQv4EXcpznS7ZMrNwecokZAm72Rc1NtPpFOsrk53T8Y3pd6TsXCQysLOGX98UOJ9KosnikHkQJDZIw8XESnaKOc6xpWG+Mc1XJmHlJ/2jAXyjPVAYkMxKd56TmQZuM6jlZJNm79eB4yaOtryjoWAqqLz4CDYA5b4nD5Ow3AidaMb4ltodgaHMG43fHQLVFcEzXYzRgHU406y8ZSNVg04ywby0VYJNZGYp2IRjHcrikPlzRMfmbYTGoK6CKFagCpA2wDgEpdF6nrb+Z5D8IyiCExiEcsmtkpUzmoy840YFJe2+VUNmBChsrRnINnvw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metric = _t, Period = _t, #"Metric Sort" = _t, #"Period Sort" = _t, Category = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Period", type text}, {"Metric Sort", Int64.Type}, {"Period Sort", Int64.Type}, {"Category", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

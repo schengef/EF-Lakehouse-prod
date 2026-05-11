@@ -1,0 +1,117 @@
+table InTransit
+	lineageTag: ff19b64a-e8a2-4552-99bd-498283287bd1
+	sourceLineageTag: 6df49556-5c42-49a6-8b47-6f2f8b2173eb
+
+	column 'Movement No'
+		dataType: string
+		lineageTag: 8b18859c-d09e-4168-a381-d491875e1319
+		sourceLineageTag: 5753e45d-6602-45c9-ad2e-d2fd476ca0e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement No
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		lineageTag: 4a3be25e-e7af-4579-b649-c615db8e7ced
+		sourceLineageTag: 68b3b436-afa4-455e-b8b8-cf42259be16b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: f2a2cb53-3a4d-4cd6-bd56-3875f59e801d
+		sourceLineageTag: 9182306f-8836-4380-bdbe-c618134207fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = User
+
+	column ShipUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 75d6ce18-184a-41a0-9d29-7e5bd6ce9e80
+		sourceLineageTag: 55e7db4d-83d9-4fb9-a976-abb93da769c2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShipUnits
+
+		annotation SummarizationSetBy = User
+
+	column ShipCost
+		dataType: double
+		lineageTag: 688eb371-2726-4d3f-be5f-b3874b622654
+		sourceLineageTag: 4360e494-8cc8-4da8-aaa5-d879acd93384
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShipCost
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a9fa6aa3-072a-4429-8c2a-0740bdcb4396
+		sourceLineageTag: fe18a811-839a-43ac-a8da-8bdb364612a6
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: ReceiptDateKey
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 808479f4-9a7b-40cf-bcaf-9f6421034c38
+		sourceLineageTag: bb4fb1e4-5e06-4bdf-85f8-735e1ac85401
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceiptUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptCost
+		dataType: double
+		lineageTag: 24c5c720-55d8-4641-bea8-32ee064be319
+		sourceLineageTag: a7fb1330-c4e5-44b0-bdc1-8269a3427eb9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceiptCost
+
+		annotation SummarizationSetBy = User
+
+	column IntransitUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 96a670ad-cd40-43b5-b96a-81ecb4190f7c
+		sourceLineageTag: a4975286-8d22-4f5a-be9a-a7f3b594fd9f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: IntransitUnits
+
+		annotation SummarizationSetBy = User
+
+	column IntransitCost
+		dataType: double
+		lineageTag: 83ff1ccc-941c-4392-bad7-d0335099b960
+		sourceLineageTag: aff7e29b-b47f-4c23-a6dd-c4b41a5ec8aa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: IntransitCost
+
+		annotation SummarizationSetBy = User
+
+	partition InTransit = entity
+		mode: directQuery
+		source
+			entityName: InTransit
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

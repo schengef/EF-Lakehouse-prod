@@ -1,0 +1,611 @@
+table 'Transactions (Financial)'
+	lineageTag: c73f4a33-dfdc-4243-b1b3-4d7ac7e6d352
+
+	column 'Transaction Id'
+		dataType: string
+		sourceProviderType: nvarchar(200)
+		lineageTag: b5ef60b2-1737-41c8-aa69-07c52aa7af15
+		summarizeBy: none
+		sourceColumn: Transaction Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Line Id'
+		dataType: string
+		sourceProviderType: nvarchar(200)
+		lineageTag: ae24adb7-544e-459b-8d5b-af7a027ab186
+		summarizeBy: none
+		sourceColumn: Transaction Line Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction No'
+		dataType: string
+		sourceProviderType: nvarchar(2200)
+		lineageTag: 5e4870db-5694-4d78-b91b-3e5b658dca94
+		summarizeBy: none
+		sourceColumn: Transaction No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Line No'
+		dataType: string
+		sourceProviderType: nvarchar(200)
+		lineageTag: c4e80ca7-5dde-4158-ac4d-fc6f16292d50
+		summarizeBy: none
+		sourceColumn: Transaction Line No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ed289a1b-ff4a-4a45-81cd-94384278ded2
+		summarizeBy: none
+		sourceColumn: Transaction Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type'
+		dataType: string
+		sourceProviderType: nvarchar(30)
+		lineageTag: 5c898acd-0d5c-40ca-b842-af92f06dc295
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Id'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(max)
+		lineageTag: 3b9e4a2d-88f5-4909-8a3a-84508efeccf2
+		summarizeBy: none
+		sourceColumn: Store Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9538c888-bc9a-4444-a350-826909b06462
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5c60cee7-5ed8-43d0-b114-fff325ff0cf8
+		summarizeBy: none
+		sourceColumn: Channel Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b18061f5-ab5a-44f6-860f-bd980379572c
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Register Num'
+		dataType: string
+		sourceProviderType: nvarchar(200)
+		lineageTag: 002ca811-f70d-4958-837d-e2793acf610d
+		summarizeBy: none
+		sourceColumn: Register Num
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d01c7e43-744f-4b71-b75d-85272ebb99db
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Number'
+		dataType: string
+		sourceProviderType: nvarchar(1024)
+		lineageTag: d0913582-b900-4156-b67b-d63b320f4aec
+		summarizeBy: none
+		sourceColumn: Customer Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c3d3c81d-4cf5-46a3-924d-2e4785d0bd6d
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 07a09731-f0b5-4d6c-8a1b-6080d64eec9e
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'E Sell Order Num'
+		dataType: string
+		sourceProviderType: nvarchar(200)
+		lineageTag: 5d1fea89-a5b4-445f-9f45-cb60ef9243fd
+		summarizeBy: none
+		sourceColumn: E Sell Order Num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0499eab8-716c-4f75-8ed2-75cc5a755d0a
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Retail Price'
+		dataType: double
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 0b05e846-8ef1-4a16-ad2f-d25d32f83984
+		summarizeBy: sum
+		sourceColumn: Unit Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Price'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 2a5a1009-2a78-46af-a203-63f92d76e325
+		summarizeBy: sum
+		sourceColumn: Total Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Price'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 5f4c9e88-cbd3-4b87-9092-dc7d092860a2
+		summarizeBy: sum
+		sourceColumn: Net Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tax Amount'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 4b937268-c41b-4a08-910d-3ebca3fb4786
+		summarizeBy: sum
+		sourceColumn: Tax Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Amount'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 86b10eca-5ecf-4d38-8eb3-645426d520c6
+		summarizeBy: sum
+		sourceColumn: Discount Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Calc Returned Amt'
+		dataType: double
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 61e5dd17-4d65-422d-82f8-084f369014bd
+		summarizeBy: sum
+		sourceColumn: Calc Returned Amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Gift Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: a27e2802-650b-4ec7-a5e7-de993e675927
+		summarizeBy: none
+		sourceColumn: Gift Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 611f6739-6154-48a9-895f-2eecab6c0019
+		summarizeBy: none
+		sourceColumn: Returned Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Return Reason Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(200)
+		lineageTag: 69870640-2d02-424c-9388-0e452b35cc90
+		summarizeBy: none
+		sourceColumn: Return Reason Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Return Reason Desc'
+		dataType: string
+		sourceProviderType: nvarchar(1024)
+		lineageTag: f25c4f8c-dabd-4e6a-bcfd-b5da70f05628
+		summarizeBy: none
+		sourceColumn: Return Reason Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 44bf9f0f-570e-469e-8001-177bd19bab11
+		summarizeBy: none
+		sourceColumn: Cancel Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Reason Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(200)
+		lineageTag: 80997e86-3a4e-4760-87d3-3bf3f5aa18f4
+		summarizeBy: none
+		sourceColumn: Cancel Reason Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Source System Cd'
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 84ef1840-20e3-4629-b65f-0a9e38ae44b5
+		summarizeBy: none
+		sourceColumn: Etl Source System Cd
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		sourceProviderType: nvarchar(30)
+		lineageTag: d0b1705e-e8d6-4de3-9e75-ec9ccb839f50
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1ef4f48b-f17c-4269-bbff-cd10ff0675c7
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Mark Type'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 9e0ad8f1-d8b4-43a2-bc22-5634ef011e5a
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pos Present'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 31c2f32f-4151-4a5f-a991-795d3e14d4c9
+		summarizeBy: none
+		sourceColumn: Pos Present
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Price'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b6ecdbfb-707e-41a0-9cf7-491f1945181f
+		summarizeBy: none
+		sourceColumn: Selling Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Based Cost'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 5)
+		lineageTag: 43594794-e306-4c14-b1ed-ee04116ee85f
+		summarizeBy: sum
+		sourceColumn: Currency Based Cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Currency
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7a2f71d3-4d25-404f-92c9-6d3f903705f5
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 95285f5d-38f8-49bf-be22-0052edc5909f
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 6189fe81-cf51-4bb3-bacc-e3a9aaa1f1d2
+		summarizeBy: count
+		sourceColumn: Price Categorization Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Dashboard Order Type'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(16)
+		lineageTag: 1679480e-f027-45ad-bc47-0e8ed824dae3
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		sourceProviderType: int
+		lineageTag: 37e006a0-a050-4071-97b6-18b4be5c1401
+		summarizeBy: sum
+		sourceColumn: Dtc Misc Flag
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Categorization Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 79c436e5-e4d3-4d18-9477-39439c3cc53d
+		summarizeBy: none
+		sourceColumn: Order Categorization Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Cost'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(30, 7)
+		lineageTag: 43a742ba-cf95-4bf3-8314-be2db3c17f79
+		summarizeBy: sum
+		sourceColumn: Total Cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 29be1501-0755-4f49-9416-f5727bd85f0a
+		summarizeBy: count
+		sourceColumn: Customer Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Original Store Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: ba01e3e1-3ecf-4a08-8d32-50d6c7a5338d
+		summarizeBy: none
+		sourceColumn: Original Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Original Channel Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 72e122d6-9d49-443c-82b8-04ccc0a22fc2
+		summarizeBy: count
+		sourceColumn: Original Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Store Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 0)
+		lineageTag: 6f0d4ff0-ff79-4a05-bb54-d739be1a1ae6
+		summarizeBy: none
+		sourceColumn: Allocated Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Transactions (Financial)' = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				    SELECT T.*,
+				CASE 
+				        WHEN T.ORIGINAL_STORE_KEY IS NULL 
+				        THEN T.STORE_KEY 
+				        ELSE T.ORIGINAL_STORE_KEY 
+				    END AS Original_Store_Key_DTC, S.CHANNEL_KEY as ORIGINAL_CHANNEL_KEY,
+				CASE WHEN T.ORDER_TYPE = 'LIQ' THEN '3RD PARTY'
+				    WHEN T.ORDER_TYPE = 'DRS' THEN 'DROP SHIP'
+				    WHEN T.ORDER_TYPE ='REO' AND LEFT(P.Fes_Code,1) = 'F' THEN 'FASHION REORDER'
+				    WHEN T.ORDER_TYPE <> 'DRS' AND T.ORDER_TYPE <> 'LIQ'AND left(P.Fes_Code,1)= 'E'THEN 'QR'
+				    ELSE 'FASHION INITIALS'
+				    END AS DASHBOARD_ORDER_TYPE, PC.MARK_TYPE, PC.POS_PRESENT, PC.SELLING_PRICE, C.CURRENCY,
+				    CASE WHEN P.DEPARTMENT_CODE_MI9>89 THEN 1 END AS DTC_MISC_FLAG,
+				CASE WHEN C.CURRENCY='CAD' then P.CAN_STANDARD_COST else P.STANDARD_COST end as Currency_Based_Cost,Currency_Based_Cost*Quantity as Total_Cost
+				FROM EDW_PROD.EDW_V.F_TRANSACTION T
+				LEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				LEFT OUTER JOIN EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY 
+				LEFT OUTER JOIN EDW_V.D_STORE S ON 
+				    CASE 
+				        WHEN T.ORIGINAL_STORE_KEY IS NULL
+				        THEN T.STORE_KEY 
+				        ELSE T.ORIGINAL_STORE_KEY 
+				    END = S.STORE_KEY
+				WHERE TRANSACTION_DATE >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Transaction Nk","Original Store Key","Upc","Transaction Key", "Cashier", "Etl Row Created Ts","Etl Row Updated Ts"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Original Store Key Dtc", "Original Store Key"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns1",{{"Transaction Date Key", Int32.Type}, {"Store Key", Int32.Type}, {"Channel Key", Int32.Type}, {"Employee Key", Int32.Type}, {"Customer Key", Int32.Type}, {"Product Key", Int32.Type}, {"Delivery Key", Int32.Type}, {"Quantity", Int32.Type}, {"Price Categorization Key", Int32.Type}, {"Order Categorization Key", Int32.Type}, {"Currency Key", Int32.Type}, {"Original Store Key", Int32.Type}, {"Original Channel Key", Int32.Type}, {"Dtc Misc Flag", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,88 @@
+table 'Agg Pseudo-Transaction Count'
+	isHidden
+	lineageTag: 2e345d5f-cc93-426d-bb2b-ae4925466343
+
+	column 'Transaction Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 932830bf-2c71-41af-b758-2687c2ee16ea
+		summarizeBy: none
+		sourceColumn: Transaction Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transactions
+		dataType: double
+		isHidden
+		lineageTag: afa1d4fb-b44f-4c27-aa6d-a5ba40c64972
+		summarizeBy: sum
+		sourceColumn: Transactions
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type'
+		dataType: string
+		isHidden
+		lineageTag: 2e0e2977-8797-4aed-ab7c-dcc23722fcbe
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Store Key'
+		dataType: int64
+		isHidden
+		lineageTag: 2c89078a-cbe6-49c4-bb19-bd1f1c90244b
+		summarizeBy: none
+		sourceColumn: Original Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Agg Pseudo-Transaction Count' = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    " 
+				SELECT T.TRANSACTION_DATE_KEY,Count(Distinct T.TRANSACTION_ID) as Transactions,T.TRANSACTION_TYPE, S.STORE_KEY as ORIGINAL_STORE_KEY
+				FROM EDW_PROD.EDW_V.F_TRANSACTION T
+				LEFT OUTER JOIN EDW_V.D_STORE S ON 
+				    CASE 
+				        WHEN T.ORIGINAL_STORE_KEY IS NULL
+				        THEN T.STORE_KEY 
+				        ELSE T.ORIGINAL_STORE_KEY 
+				    END = S.STORE_KEY
+				WHERE TRANSACTION_DATE >= datefromparts(year(getdate()) - 2, 1, 1)
+				GROUP BY T.TRANSACTION_DATE_KEY,T.TRANSACTION_TYPE,S.STORE_KEY
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Transaction Date Key", Int32.Type}, {"Original Store Key", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

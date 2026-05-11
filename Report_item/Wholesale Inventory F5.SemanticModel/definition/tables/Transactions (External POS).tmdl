@@ -1,0 +1,262 @@
+table 'Transactions (External POS)'
+	lineageTag: 77bf025c-5efe-4389-b862-7de75c715d48
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f52a10ef-2df4-44c1-a6b7-eb7de4d0e16c
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0a121219-7a13-4091-a017-5f730a086e45
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a953738c-a515-4e7b-945a-c256a995c293
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Units'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: b6a73d62-4502-4ddc-af48-c52885046114
+		summarizeBy: sum
+		sourceColumn: Sales Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Dollars'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(27, 2)
+		lineageTag: 70f3ae3c-8850-482f-bba0-c1ed53a10d9d
+		summarizeBy: sum
+		sourceColumn: Sales Dollars
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6cce7606-895a-47ba-8c22-eb4348bfaa8a
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9aaea4e7-ed4e-473b-83eb-773f51630861
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 97bcb849-aee3-4090-a029-9c388e97c81e
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Mark Type'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1ebcd998-b8eb-49c3-b858-d974bc8dfa79
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Oh Units'
+		dataType: int64
+		sourceProviderType: int
+		lineageTag: d42ec550-3eb3-4416-ba4e-8b93814cf386
+		summarizeBy: sum
+		sourceColumn: Oh Units
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 8dc4a175-7b0d-419d-b260-87b2d1f0707d
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Based Unit Cost'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(15, 5)
+		lineageTag: 0c310ea1-239b-48e0-9347-943bd539464e
+		summarizeBy: sum
+		sourceColumn: Currency Based Unit Cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'On Hand Cost'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 9)
+		lineageTag: 962ccaae-c65f-49e6-8db8-e8b0f77f635d
+		summarizeBy: sum
+		sourceColumn: On Hand Cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Cost'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 7)
+		lineageTag: 59f1035c-58c9-46e3-9a65-31b7a27f2ea1
+		summarizeBy: sum
+		sourceColumn: Sales Cost
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'On Hand Retail'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: df867444-bd8a-4996-9770-b58b085a2b91
+		summarizeBy: sum
+		sourceColumn: On Hand Retail
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Wholesale Account Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 0a667417-d657-43a8-b927-b4db9001ca66
+		summarizeBy: count
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Transactions (External POS)' = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*,
+				PC.MARK_TYPE,
+				CASE WHEN C.CURRENCY='CAD' then P.CAN_STANDARD_COST else P.STANDARD_COST end  as Currency_Based_Unit_Cost,Currency_Based_Unit_Cost*T.OH_UNITS as ON_HAND_COST,Currency_Based_Unit_Cost*T.SALES_UNITS as SALES_COST,P.RETAIL_PRICE*T.OH_UNITS as ON_HAND_RETAIL, S.WHOLESALE_ACCOUNT_KEY
+				from EDW_V.V_EXTERNAL_TRANSACTIONS_POS T
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				LEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY 
+				LEFT OUTER JOIN EDW_T.D_STORE S ON T.STORE_KEY = S.STORE_KEY 
+				where WEEK_ENDING_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Week Ending Date","Source System"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Channel Key", Int32.Type}, {"Delivery Key", Int32.Type}, {"Price Categorization Key", Int32.Type}, {"Currency Key", Int32.Type}, {"Oh Units", Int32.Type}, {"Sales Units", Int32.Type}, {"Product Key", Int32.Type}, {"Store Key", Int32.Type}, {"Week Ending Date Key", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

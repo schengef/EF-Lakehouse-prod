@@ -1,0 +1,45 @@
+table 'Headers - Wholesale Shipping'
+	isHidden
+	lineageTag: abe5dd3d-0961-47d6-9449-55801fb86e14
+
+	column 'Parent Heading'
+		dataType: string
+		isHidden
+		lineageTag: 239e5aa8-791b-4855-8b53-a1b9ca049b8a
+		summarizeBy: none
+		sourceColumn: Parent Heading
+		sortByColumn: 'Parent Sort'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ff754271-707a-42b5-92dd-3d7e21607973
+		summarizeBy: sum
+		sourceColumn: Parent Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Headers - Wholesale Shipping' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8s3PK8lQKMlXcEksSVXSUTJUitWJVopMTSxCEjRSio0FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Parent Heading" = _t, #"Parent Sort" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Parent Heading", type text}, {"Parent Sort", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

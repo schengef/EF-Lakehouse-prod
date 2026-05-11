@@ -1,0 +1,56 @@
+table 'Headers - Wholesale Retail'
+	lineageTag: 7e39addc-b7de-447a-a9d6-4b1adbec59b4
+
+	column 'Wholesale Retail Period'
+		dataType: string
+		lineageTag: b396807d-202f-4434-9b15-30369cb2d6e4
+		summarizeBy: none
+		sourceColumn: Wholesale Retail Period
+		sortByColumn: 'Period Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0972b4b3-996f-42fa-973c-906dacdcfa73
+		summarizeBy: sum
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Summary Rows'
+		dataType: string
+		lineageTag: 9a5efb36-f290-4a1c-a734-c89ae3299135
+		summarizeBy: none
+		sourceColumn: Summary Rows
+		sortByColumn: 'Summary Row Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Summary Row Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 26b7b1bb-b684-4978-8303-e581d3991540
+		summarizeBy: sum
+		sourceColumn: Summary Row Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Headers - Wholesale Retail' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fZBLCoAwDAWvIgV3bvwdQG0XglqwAZHS+19DiWBSiVlkkzfkDYnRHGBNZep7rF9dgHkqAvjdLfPmMEhVNCtCjQ4FhFodOhHqdEhwOtyIBj82PBY8eCwY8Ji6wcOw4KW8NN9TW76nmnxP98tCfEH3qVMxalcxklEx0e15Tv9vxQHRhwOiyQukCw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Wholesale Retail Period" = _t, #"Period Sort" = _t, #"Summary Rows" = _t, #"Summary Row Sort" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Wholesale Retail Period", type text}, {"Period Sort", Int64.Type}, {"Summary Rows", type text}, {"Summary Row Sort", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

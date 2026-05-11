@@ -1,0 +1,94 @@
+table 'Budget and Forecast Measures'
+	lineageTag: 6e005c8f-f602-4892-a053-eb741ece29fe
+	sourceLineageTag: f42481b9-584b-4284-b3d1-d8836ba0dd13
+
+	measure 'Budget Invoiced Gross Margin %' = EXTERNALMEASURE("Budget Invoiced Gross Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a72e3b7f-168d-4293-9fe2-fafa751c685f
+		sourceLineageTag: f1b6a140-19d5-41c7-922d-ed72c0f7326b
+		dataCategory: Uncategorized
+
+	measure 'Budget Net Gross Margin %' = EXTERNALMEASURE("Budget Net Gross Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: df493a19-a46c-4179-9c75-1c9b5b020d6d
+		sourceLineageTag: 9e2a2df7-f755-412b-9e37-35d6492fba5f
+		dataCategory: Uncategorized
+
+	measure 'Budget Net Invoiced Sales $' = EXTERNALMEASURE("Budget Net Invoiced Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 10bb02cc-bd39-4d2c-b606-d573117be1d1
+		sourceLineageTag: b69a9747-790c-4ba3-bc07-822cb27f78f2
+		dataCategory: Uncategorized
+
+	measure 'Forecast Net Gross Margin %' = EXTERNALMEASURE("Forecast Net Gross Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 866b9923-9fa2-48d4-9a4d-f85d5df8f464
+		sourceLineageTag: 96363128-04ea-49aa-b9e7-8ae0cee36c21
+		dataCategory: Uncategorized
+
+	measure 'Forecast Net Invoiced Sales $' = EXTERNALMEASURE("Forecast Net Invoiced Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 92d767c9-70fc-407e-acc1-c1f25712f353
+		sourceLineageTag: 98bd9d70-c2df-42cc-9529-944f85822925
+		dataCategory: Uncategorized
+
+	measure Budget = EXTERNALMEASURE("Budget", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 57989b47-33f6-4bfd-9d34-bd91921c3b0a
+		sourceLineageTag: 2ff0dc31-d6ea-4e9d-a379-0a0c38ced885
+		dataCategory: Uncategorized
+
+	measure 'Store Budget' = EXTERNALMEASURE("Store Budget", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3ddc8fb4-ae11-477e-9c43-425655470a9d
+		sourceLineageTag: 9603a405-fbde-47af-ac5c-426012a0fbf5
+		dataCategory: Uncategorized
+
+	measure Forecast = EXTERNALMEASURE("Forecast", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7344a21a-2d08-497d-b556-721459daa08c
+		sourceLineageTag: a65803a1-9ab7-4e26-8834-4bc9421b5af9
+		dataCategory: Uncategorized
+
+	measure 'Store Forecast' = EXTERNALMEASURE("Store Forecast", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c3a131a9-3d65-42da-aadd-e8bf6e1da2d2
+		sourceLineageTag: 20df4066-51fd-41b7-9df4-bc859cfa4419
+		dataCategory: Uncategorized
+
+	measure Plan = EXTERNALMEASURE("Plan", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 231cf753-9ede-4621-a99f-04bef25cbcd9
+		sourceLineageTag: f29dfc16-9b27-409a-b9b5-fd7c43c900f2
+		dataCategory: Uncategorized
+
+	measure 'Forecast Net Demand' = EXTERNALMEASURE("Forecast Net Demand", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 19c00a68-1a74-4636-94f9-db6f676a20fc
+		sourceLineageTag: 08c8bd38-89dd-4c37-919e-301d205495a9
+		dataCategory: Uncategorized
+
+	measure 'Budget Net Demand' = EXTERNALMEASURE("Budget Net Demand", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6f1267f7-fcc8-481d-91ee-96f7e73bd027
+		sourceLineageTag: 2c1c0e34-0697-4731-9240-a30c877fd870
+		dataCategory: Uncategorized
+
+	column DELETE
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d059e79c-0aa0-4cac-af58-80de9e913d2c
+		sourceLineageTag: 14081c9e-9c1b-4726-a5a0-d07da21a8833
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DELETE
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget and Forecast Measures' = entity
+		mode: directQuery
+		source
+			entityName: Budget and Forecast Measures
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

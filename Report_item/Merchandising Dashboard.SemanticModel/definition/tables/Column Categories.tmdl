@@ -1,0 +1,24 @@
+table 'Column Categories'
+	lineageTag: 7c916bc4-8142-4395-872b-aabbdb5b5c54
+
+	column 'Column Categories'
+		dataType: string
+		lineageTag: fedd57b5-309e-40e3-a9d1-8607ccd12889
+		summarizeBy: none
+		sourceColumn: Column Categories
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Column Categories' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCk7MSS1WitUBskryk7PBLP+SjNQiiFhGZkFual4JUEUsAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Column Categories" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column Categories", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

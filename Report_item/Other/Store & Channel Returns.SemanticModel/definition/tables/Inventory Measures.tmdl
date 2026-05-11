@@ -1,0 +1,63 @@
+table 'Inventory Measures'
+	lineageTag: c59e19a8-8707-4f8b-9832-282f23b1f985
+	sourceLineageTag: 7d0b364f-68f0-4758-804a-8cc8ab792085
+
+	measure 'EOP Cost $ On Hand' = EXTERNALMEASURE("EOP Cost $ On Hand", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f8f611ac-63ba-4d5d-b65d-3db3c3ce8c1b
+		sourceLineageTag: 52226924-d84f-4a0c-8e4e-0b5b42d51080
+		dataCategory: Uncategorized
+
+	measure 'EOP Quantity On Hand' = EXTERNALMEASURE("EOP Quantity On Hand", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0
+		lineageTag: a0398002-255d-4e36-bbb3-39b107b97743
+		sourceLineageTag: f3ccdf97-00c6-4d39-a5bf-b84de79ac270
+		dataCategory: Uncategorized
+
+	measure 'EOP Retail $ On Hand' = EXTERNALMEASURE("EOP Retail $ On Hand", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2f7f960a-4e8c-451b-bc8c-ff7adb1cbba7
+		sourceLineageTag: 90cb7615-4195-44ce-9918-b6620e2fdf6b
+		dataCategory: Uncategorized
+
+	measure 'On Hand AUR' = EXTERNALMEASURE("On Hand AUR", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ff3ccf04-4030-4da2-8670-d399860bb304
+		sourceLineageTag: 3629ba49-2cfd-4c54-9563-3ad1c398ce16
+		dataCategory: Uncategorized
+
+	measure 'External Quantity On Hand' = EXTERNALMEASURE("External Quantity On Hand", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0
+		lineageTag: f5723934-dc73-4700-bf34-734329caa13e
+		sourceLineageTag: f17df72d-1744-4ec0-a190-014157b79109
+		dataCategory: Uncategorized
+
+	measure 'External On Hand Cost $' = EXTERNALMEASURE("External On Hand Cost $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1d147864-33ed-41a6-834a-46f285e87fe7
+		sourceLineageTag: 52b1a56a-a73c-4039-8c34-43b6f754946d
+		dataCategory: Uncategorized
+
+	measure 'External On Hand Retail $' = EXTERNALMEASURE("External On Hand Retail $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f1207d50-f42f-48b2-8995-1f6d316169bc
+		sourceLineageTag: 0ce744b2-2ba2-4604-97b6-3b1574579253
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 12f42963-058e-49f4-bed9-6f5afa685ce6
+		sourceLineageTag: 757ee45b-b7c0-4369-8989-5f36499b85f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'Inventory Measures' = entity
+		mode: directQuery
+		source
+			entityName: Inventory Measures
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

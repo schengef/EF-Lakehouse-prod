@@ -1,0 +1,24 @@
+table 'Headers-Sales/Receipts Top 15'
+	lineageTag: b96ad1fa-0a49-4e76-971b-2fc15fe6b6df
+
+	column Selection
+		dataType: string
+		lineageTag: 8f3f12c2-dba3-468c-9c00-e0beb7e7992d
+		summarizeBy: none
+		sourceColumn: Selection
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Headers-Sales/Receipts Top 15' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCk7MSS1WitUBsjIyC3JT80qAvFgA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Selection = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Selection", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

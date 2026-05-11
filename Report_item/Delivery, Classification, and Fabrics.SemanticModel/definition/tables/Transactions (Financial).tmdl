@@ -1,0 +1,537 @@
+table 'Transactions (Financial)'
+	lineageTag: 23604ec7-060f-4a42-a3ae-088c3df021e6
+	sourceLineageTag: 3d4c6b9c-e8c5-4764-ab76-b2889437264c
+
+	column 'Transaction Id'
+		dataType: string
+		lineageTag: c1422cdf-ad04-420c-b740-5b087144ed4e
+		sourceLineageTag: a8052ad6-7071-448e-9850-9f8f587e81b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Line Id'
+		dataType: string
+		lineageTag: ac39c9c4-afcf-4cb0-8a0c-574d2a25429d
+		sourceLineageTag: 3c2edc3c-4444-44c9-b459-70fd9f511412
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Line Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction No'
+		dataType: string
+		lineageTag: 22dca5ff-faec-41a8-a784-7647dda7f261
+		sourceLineageTag: 0c188c7f-d3e5-42ca-8233-8187ecd96a06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction No
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Line No'
+		dataType: string
+		lineageTag: b469a572-366d-4122-82c3-966027a7a1e2
+		sourceLineageTag: 16532fe7-7aad-4c58-97b5-74268d1d1103
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Line No
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 5243e0f6-b95c-4ece-8b21-4013f749a2b6
+		sourceLineageTag: b5daec94-10d2-4008-bb9f-98e773a05953
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fd1f3ed6-d796-4a68-a1bb-83e557beeee8
+		sourceLineageTag: 8f22b4dd-242a-4537-a5f4-14768cf692a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: c7d60614-5a0c-4d09-8a1d-ce4a631c0cc2
+		sourceLineageTag: ddf6c170-5dc6-442f-888e-88e405d2ab47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: ffebc25b-18a1-46aa-908c-7cad9f0ccb7b
+		sourceLineageTag: 3a72e0c6-8bcc-4651-96ac-9f3a400e8d1b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Id'
+		dataType: string
+		isHidden
+		lineageTag: c5e94cf5-da15-499c-ab86-268546624d5c
+		sourceLineageTag: 1ed1e836-d67b-4d97-bb39-2b8e9ad9c186
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d5281b04-5005-4373-8ec9-9080de299460
+		sourceLineageTag: 1cc98757-2188-44e4-93e2-620e63b0ec0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Name'
+		dataType: string
+		isHidden
+		lineageTag: c8037948-c1a3-4dcd-af2a-9f6192d0badd
+		sourceLineageTag: e326b17c-b3fa-4502-b9f1-b2f0a40bdf73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1398ccdf-930a-4c13-b029-00d885849836
+		sourceLineageTag: 75514aaf-0ff5-4b0b-864a-c9d73e3c6232
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Register Num'
+		dataType: string
+		lineageTag: 9aa76b4e-093a-471a-9543-04f3d836aca2
+		sourceLineageTag: 62aae08a-118e-401b-a708-5f3feca64c33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Register Num
+
+		annotation SummarizationSetBy = User
+
+	column 'Employee Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1a96ddf5-1d84-4507-8c1b-e6a9407d88bd
+		sourceLineageTag: ba6465d8-1ef3-4d0a-a20a-0c7b2b29e555
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Number'
+		dataType: string
+		isHidden
+		lineageTag: 811fb817-1011-42a3-acb9-da8ba5984850
+		sourceLineageTag: fb41114d-0895-4623-b7bd-46a211b77ffc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: acb03666-6f1c-41b3-b28a-ee708a622a31
+		sourceLineageTag: c725daf2-0738-4796-9878-c7e08904faa4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 32e99d77-2cb7-418a-ab71-2e926992cbfc
+		sourceLineageTag: b013a706-3352-409f-846e-592f9e16558d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b46e72ba-86b2-4273-ae2a-ebd179b2616b
+		sourceLineageTag: e5624126-7f13-4f75-8ec6-c199fb5625a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		annotation SummarizationSetBy = User
+
+	column 'E Sell Order Num'
+		dataType: string
+		lineageTag: 5cba3346-e633-4e9e-91cb-77fc50d55fae
+		sourceLineageTag: 038692dd-a139-40f0-a523-01cc6bffe122
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: E Sell Order Num
+
+		annotation SummarizationSetBy = User
+
+	column Quantity
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: ccbbcb04-c317-4f45-82a5-e52f77358949
+		sourceLineageTag: af2e8a26-6451-4e62-9c9b-b8896caee4b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5bf6d3dc-3633-4ea2-97e3-6a6fde0343e9
+		sourceLineageTag: 247253a6-5d36-4d02-81d9-6fb653a50f33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2a0e343e-deee-457d-b030-c28b63e74ea0
+		sourceLineageTag: 6986cd0c-51b0-47f0-98af-833d4e9ab230
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Categorization Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 10149ecd-ec90-4bab-a777-e85a5561df93
+		sourceLineageTag: 41a455bb-80b9-4679-b0c6-6e238b33620e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Unit Retail Price'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e40bec66-edc6-4385-9e4e-b8dc7bf50136
+		sourceLineageTag: bb49c226-62df-440c-b0bf-94349f93f718
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Unit Retail Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Price'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 8c4d7a39-c7d0-40ea-8259-b7cd9da340c7
+		sourceLineageTag: 36d0592a-bba1-48ac-99db-e4b2bdf26490
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Price'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 70113bd4-5b09-457b-b44c-8fd33ce37693
+		sourceLineageTag: b3a860e8-7484-4ca3-9a37-81d96d9d01d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Tax Amount'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 0ef456ab-f760-46fa-bddb-13a350ae2483
+		sourceLineageTag: e4f65305-5aff-46ab-86aa-f22392fec130
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tax Amount
+
+		annotation SummarizationSetBy = User
+
+	column 'Discount Amount'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 7173378e-5583-4d41-a5a0-97fdfc7915ed
+		sourceLineageTag: 6f75fdb7-ecce-47b0-8dde-e35b2a9771b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Discount Amount
+
+		annotation SummarizationSetBy = User
+
+	column 'Calc Returned Amt'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: aab82cb6-0ba3-4be0-b97c-f71dfe6634a5
+		sourceLineageTag: 12cd64c1-4aa1-42ef-ad96-0e2b4df8a02c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calc Returned Amt
+
+		annotation SummarizationSetBy = User
+
+	column 'Gift Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: da0f754c-3030-43ab-b1dc-f17f6333f527
+		sourceLineageTag: 7db1a998-ae65-4d38-9428-dd14d40083a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gift Flag
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 25d75529-5276-4758-bb34-cc8e571aebaa
+		sourceLineageTag: 9637b099-95e6-497a-9b7b-67c31d706dd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returned Flag
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Reason Code'
+		dataType: string
+		isHidden
+		lineageTag: f0c2e929-304d-4208-ab0a-a27151624b26
+		sourceLineageTag: 2ba75885-bd05-4f64-84da-adb9c3c826c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Reason Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Reason Desc'
+		dataType: string
+		lineageTag: 7d4dce30-004a-4538-8aac-9f3fd903ede8
+		sourceLineageTag: c365573d-d727-435c-b2a2-07400d31f733
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Reason Desc
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Flag'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4356dec0-d842-4e35-9690-53624ba9f434
+		sourceLineageTag: e6f112f3-a2c5-44ed-bb16-04f91449fdaa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Flag
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Reason Code'
+		dataType: string
+		isHidden
+		lineageTag: e7f2deec-a748-4d89-a8ac-71e0214a241f
+		sourceLineageTag: fde8f4aa-58a2-4962-b6e8-c274020b7877
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Reason Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04452470-3101-43a6-b6af-8676b81f7b35
+		sourceLineageTag: 564d10b9-df64-4c60-8ceb-a8acc55bb2b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Source System Cd'
+		dataType: string
+		lineageTag: 4ded84d9-8b10-4b26-b6f5-0715461d23eb
+		sourceLineageTag: 72a28c06-1173-47c3-a24b-16f2d33a36bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Source System Cd
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 14855e39-0dbb-4713-a350-8758b443cd5a
+		sourceLineageTag: 10f06714-4a07-472e-b635-c6344fa8a1b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c49908e4-a606-4862-86c5-d5223bcf742d
+		sourceLineageTag: 034a7596-f26f-4b57-8561-7dcd1b3bda10
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Dashboard Order Type'
+		dataType: string
+		lineageTag: 299c0a1f-d051-494a-807e-8a5e44ad3fda
+		sourceLineageTag: b3de8484-13ea-4733-a57d-5adff1a869dc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark Type'
+		dataType: string
+		lineageTag: 3e91636e-9cdb-4014-9696-319f0809ee42
+		sourceLineageTag: ca9efb39-d23c-468a-ab15-b98afedb91a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Pos Present'
+		dataType: string
+		lineageTag: 6239ae00-e84f-438d-8016-629bdbbd36ab
+		sourceLineageTag: 0e007948-9ec1-4d3c-9038-a33899db3172
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pos Present
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Price'
+		dataType: string
+		lineageTag: 5f7486f5-e53e-424f-909b-ad58ee78b163
+		sourceLineageTag: 7418dd68-d5cf-4649-bb81-cc17f9d91dfa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Price
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		isHidden
+		lineageTag: b1080264-96b2-49eb-89ea-ef5a9d1f9855
+		sourceLineageTag: f329550d-a914-4abc-962e-11c769da6333
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b3cdb6db-bdc0-40cf-91e3-112b77a85984
+		sourceLineageTag: 94e5395b-f200-49a6-94e3-ceb90d630bc5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dtc Misc Flag
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Based Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 9b7d0b2f-30e2-4fe8-9076-19e1129d5833
+		sourceLineageTag: 6f7749ba-b9c9-4399-9c54-ade9c933ccb0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Based Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 6f743da6-f070-4efa-92ac-f70bd85d7e5e
+		sourceLineageTag: b5aa0e36-225c-43a2-aea1-1b333ffe6eca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Cost
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (Financial)' = entity
+		mode: directQuery
+		source
+			entityName: Transactions (Financial)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

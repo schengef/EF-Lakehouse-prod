@@ -1,0 +1,141 @@
+table 'Budget (Channel)'
+	lineageTag: 6383f197-00f2-423d-9b88-9d82e8361c56
+
+	column Channel
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b7008a71-1c9a-4737-b488-f68e576552e9
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7fb8dee2-6309-4ddf-b42d-c72d526ee67b
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 7f8c2028-9a60-4835-814a-d7997a600466
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget Value'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 95d57e05-cd57-4ba8-8f5c-90078264c932
+		summarizeBy: sum
+		sourceColumn: Budget Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ceac1c62-71ef-44d0-8418-7029d75077de
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 47a4cec3-791f-4b3e-a4f9-87ab473e8fa9
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e867e792-14b4-4a6a-a402-de82c8323f54
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5dc2477f-da8d-4fad-b65e-6e4782198086
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dashboard Order Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b01ad389-eab0-4d16-919a-db9606653509
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget (Channel)' = m
+		mode: dual
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.CHANNEL, T.DATE_KEY,T.CUSTOMER_TYPE,T.ORDER_TYPE,T.MEASURE,T.CURRENCY_KEY,T.BUDGET_VALUE,T.CURRENCY_CODE,
+				CASE WHEN T.CUSTOMER_TYPE='US THIRD PARTY' AND T.ORDER_TYPE='INITIALS MAINLINE' THEN '3RD PARTY'
+				    WHEN T.ORDER_TYPE='INITIALS QR' THEN 'QR'
+				    WHEN T.ORDER_TYPE='REORDERS QR' THEN 'QR'
+				    WHEN T.ORDER_TYPE='REORDERS MAINLINE' THEN 'FASHION REORDER'
+				    WHEN T.ORDER_TYPE='INITIALS MAINLINE' THEN 'FASHION INITIALS'
+				    WHEN T.ORDER_TYPE='INITIALS EXCLUSIVES' THEN 'FASHION INITIALS'
+				    WHEN T.ORDER_TYPE='DROP SHIP MAINLINE' THEN 'DROP SHIP'
+				    WHEN T.ORDER_TYPE='DROP SHIP QR' THEN 'DROP SHIP'
+				END AS DASHBOARD_ORDER_TYPE
+				
+				from EDW_V.F_BUDGET T
+				where WEEK_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) )
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

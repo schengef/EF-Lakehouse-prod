@@ -1,0 +1,63 @@
+{
+  "config": "{\"version\":\"5.72\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU04\",\"version\":{\"visual\":\"2.8.0\",\"report\":\"3.2.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU04",
+            "path": "BaseThemes/CY26SU04.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"356L\"}}}}}]},\"filterSortOrder\":3}",
+      "displayName": "Delivery Validation - Product Table",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"9be51499d170aca71560\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Season\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Contains\":{\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Season\"}},\"Right\":{\"Literal\":{\"Value\":\"'s26'\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"d45273023d48c8200090\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Active Style\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Style\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Y'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":1},{\"name\":\"ddd6c84d3a52220b1e10\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Active Colorway\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Colorway\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Y'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":2},{\"name\":\"c4d7ebc018ce8531302d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Material Clone\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Material Clone\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'OLA-ORG HANDKERCHIEF LINEN'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":3}]",
+      "height": 720.00,
+      "name": "40f7a4b75d4047d2ed06",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"bb4dd34cad097798c7e2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.189054726368159,\"y\":0,\"z\":0,\"width\":1159.004975124378,\"height\":683.9402985074627,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Product.Active Style\"},{\"queryRef\":\"Product.Style Number\"},{\"queryRef\":\"Product.Style Name\"},{\"queryRef\":\"Product.Active Colorway\"},{\"queryRef\":\"Product.Color Description\"},{\"queryRef\":\"Delivery.Style Color Collection\"},{\"queryRef\":\"Delivery.Delivery Code\"},{\"queryRef\":\"Product.Intro Season Delivery\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Delivery\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Style Number\"},\"Name\":\"Product.Style Number\",\"NativeReferenceName\":\"Style Number\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Style Name\"},\"Name\":\"Product.Style Name\",\"NativeReferenceName\":\"Style Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Style\"},\"Name\":\"Product.Active Style\",\"NativeReferenceName\":\"Active Style\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Color Description\"},\"Name\":\"Product.Color Description\",\"NativeReferenceName\":\"Color Description\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Style Color Collection\"},\"Name\":\"Delivery.Style Color Collection\",\"NativeReferenceName\":\"Style Color Collection\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Delivery Code\"},\"Name\":\"Delivery.Delivery Code\",\"NativeReferenceName\":\"Delivery Code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Intro Season Delivery\"},\"Name\":\"Product.Intro Season Delivery\",\"NativeReferenceName\":\"Intro Season Delivery\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Colorway\"},\"Name\":\"Product.Active Colorway\",\"NativeReferenceName\":\"Active Colorway\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"154.3781094527363D\"}}}},\"selector\":{\"metadata\":\"Product.Color Description\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"232.40796019900498D\"}}}},\"selector\":{\"metadata\":\"Product.Style Name\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"139.66169154228857D\"}}}},\"selector\":{\"metadata\":\"Product.Style Number\"}}]}}}",
+          "filters": "[]",
+          "height": 683.94,
+          "width": 1159.00,
+          "x": 10.19,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"356L\"}}}}}]},\"filterSortOrder\":3}",
+      "displayName": "Delivery Validation - Product (Current) Table",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"9be51499d170aca71560\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Season\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Contains\":{\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Season\"}},\"Right\":{\"Literal\":{\"Value\":\"'s26'\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"d45273023d48c8200090\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Active Style\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Style\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Y'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":1},{\"name\":\"ddd6c84d3a52220b1e10\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Active Colorway\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Colorway\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Y'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":2},{\"name\":\"c4d7ebc018ce8531302d\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Product\"}},\"Property\":\"Material Clone\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Material Clone\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'OLA-ORG HANDKERCHIEF LINEN'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":3}]",
+      "height": 720.00,
+      "name": "62da384808ca954640ea",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"458a6b05a0d485cce4e2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.189054726368159,\"y\":0,\"z\":0,\"width\":1159.004975124378,\"height\":683.9402985074627,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Product.Active Style\"},{\"queryRef\":\"Product.Style Number\"},{\"queryRef\":\"Product.Style Name\"},{\"queryRef\":\"Product.Active Colorway\"},{\"queryRef\":\"Product.Color Description\"},{\"queryRef\":\"Delivery.Style Color Collection\"},{\"queryRef\":\"Delivery.Delivery Code\"},{\"queryRef\":\"Product.Intro Season Delivery\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Product\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Delivery\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Style Number\"},\"Name\":\"Product.Style Number\",\"NativeReferenceName\":\"Style Number\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Style Name\"},\"Name\":\"Product.Style Name\",\"NativeReferenceName\":\"Style Name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Style\"},\"Name\":\"Product.Active Style\",\"NativeReferenceName\":\"Active Style\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Color Description\"},\"Name\":\"Product.Color Description\",\"NativeReferenceName\":\"Color Description\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Style Color Collection\"},\"Name\":\"Delivery.Style Color Collection\",\"NativeReferenceName\":\"Style Color Collection\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Delivery Code\"},\"Name\":\"Delivery.Delivery Code\",\"NativeReferenceName\":\"Delivery Code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Intro Season Delivery\"},\"Name\":\"Product.Intro Season Delivery\",\"NativeReferenceName\":\"Intro Season Delivery\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Active Colorway\"},\"Name\":\"Product.Active Colorway\",\"NativeReferenceName\":\"Active Colorway\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"154.3781094527363D\"}}}},\"selector\":{\"metadata\":\"Product.Color Description\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"232.40796019900498D\"}}}},\"selector\":{\"metadata\":\"Product.Style Name\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"139.66169154228857D\"}}}},\"selector\":{\"metadata\":\"Product.Style Number\"}}]}}}",
+          "filters": "[]",
+          "height": 683.94,
+          "width": 1159.00,
+          "x": 10.19,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

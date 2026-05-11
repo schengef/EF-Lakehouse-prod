@@ -1,0 +1,793 @@
+table 'Merchandising Measures'
+	lineageTag: 2e5bc774-e4ea-4e38-b1cd-ec4918f24dd3
+
+	measure 'Display Top 15 Sales $' =
+			
+			if(
+			    SELECTEDVALUE('Headers-Sales/Receipts Top 15'[Selection])="Sales",
+			    [Net Sales $ TY],
+			    [Shipments $ TY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2f861295-1075-4be9-af94-0f5ac79c3dfa
+
+	measure 'Display Top 15 Sales Units' =
+			
+			if(
+			    SELECTEDVALUE('Headers-Sales/Receipts Top 15'[Selection])="Sales",
+			    [Net Sales Units TY],
+			    [Shipments Units TY]
+			)
+		formatString: #,0
+		lineageTag: fedbd6f6-5c19-424b-bc59-11b3dbebd3d9
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Display Top 15 ST%' =
+			
+			if(
+			    SELECTEDVALUE('Headers-Sales/Receipts Top 15'[Selection])="Sales",
+			    [Sell Through % TY],
+			    [Shipments ST% TY]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: dd496999-25bd-4d93-bbb5-87b24ed863fd
+
+	measure 'Top 15 Ranking Measure' =
+			
+			CALCULATE(
+			if(
+			    SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",
+			    [Display Top 15 Sales Units],
+			    [Display Top 15 Sales $]
+			),
+			ALL(Channel[Channel Name])
+			)
+		formatString: """ """
+		lineageTag: b960ab3c-b155-438e-a6a6-b6b6ccbec69b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales % to Filtered Total TY Subclass' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Style Subclassification]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 4bb8ce23-f058-47cf-a648-a6a563dedc99
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Remove Empty Rows Delivery Year Merchandising' =
+			
+			VAR AllSelectedRows=COUNTROWS(ALLSELECTED(Delivery[Season],Delivery[Delivery Month]))
+			VAR AllRows=CALCULATE(
+			    COUNTROWS(SUMMARIZE(Delivery,Delivery[Season],Delivery[Delivery Month])),
+			    ALL(Delivery)
+			)
+			Return
+			IF(
+			    AllSelectedRows>AllRows,
+			    [Remove Empty Rows Delivery Year Month],
+			    1
+			)
+		lineageTag: 495e57cd-089d-42f8-bb42-19793ec62a61
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISFILTERED('Product (Current)'[Armhole Construction]),[Net Sales % to Filtered Total TY Armhole],
+			    ISFILTERED('Product (Current)'[Color Category]),[Net Sales % to Filtered Total TY Color Category],
+			    ISFILTERED('Product (Current)'[Color Description]),[Net Sales % to Filtered Total TY Color Desc],
+			    ISFILTERED('Product (Current)'[Ef Color Family]),[Net Sales % to Filtered Total TY Color Family],
+			    ISFILTERED('Product (Current)'[Color Shade]),[Net Sales % to Filtered Total TY Color Shade],
+			    ISFILTERED('Product (Current)'[Color Temp]),[Net Sales % to Filtered Total TY Color Temp],
+			    ISFILTERED('Product (Current)'[Fit]),[Net Sales % to Filtered Total TY Fit],
+			    ISFILTERED('Product (Current)'[Identity Short]),[Net Sales % to Filtered Total TY Identity],
+			    ISFILTERED('Product (Current)'[Garment Length]),[Net Sales % to Filtered Total TY Length],
+			    ISFILTERED('Product (Current)'[Material Clone]),[Net Sales % to Filtered Total TY Material Clone],
+			    ISFILTERED('Product (Current)'[Material Family]),[Net Sales % to Filtered Total TY Material Family],
+			    ISFILTERED('Product (Current)'[Material Group]),[Net Sales % to Filtered Total TY Material Group],
+			    ISFILTERED('Product (Current)'[Material Classification Description]),[Net Sales % to Filtered Total TY Material Class],
+			    ISFILTERED('Product (Current)'[Neckline]),[Net Sales % to Filtered Total TY Neckline],
+			    ISFILTERED('Product (Current)'[Neckline Type]),[Net Sales % to Filtered Total TY Neckline Type],
+			    ISFILTERED('Product (Current)'[Price Tier]),[Net Sales % to Filtered Total TY Price Tier],
+			    ISFILTERED('Product (Current)'[Sleeve Length]),[Net Sales % to Filtered Total TY Sleeve],
+			    ISFILTERED('Product (Current)'[Style Subclassification]),[Net Sales % to Filtered Total TY Subclass],
+			    ISFILTERED('Product (Current)'[Waist Construction]),[Net Sales % to Filtered Total TY Waist],
+			    ISFILTERED(Delivery[Delivery Month]),[Net Sales % to Filtered Total TY Delivery],
+			    1
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 4faf7d97-22fb-46d1-b894-e8e403e29c34
+
+	measure 'Net Sales % to Filtered Total TY Material Clone' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        REMOVEFILTERS('Product (Current)'[Material Clone]),
+			        ALLSELECTED('Product (Current)'[Material Clone]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: b9f4df66-9505-43a2-b979-f7ede7215216
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Color Desc' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        REMOVEFILTERS('Product (Current)'[Color Description],'Product (Current)'[Hex Color]),
+			        ALLSELECTED('Product (Current)'[Color Description]),
+			        all('Product (Current)'[Hex Color]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 85b7a51d-2243-43ee-95ab-7a9b09fe41ea
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Material Family' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        REMOVEFILTERS('Product (Current)'[Material Family]),
+			        ALLSELECTED('Product (Current)'[Material Family]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: a652bf58-57b1-4329-8b61-0a9d173a30d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Price Tier' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)')
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: dda8ebff-004a-4d7d-b5fa-03ecbab3a18a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Identity' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Identity Short],'Product (Current)'[Style Subclassification]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 5baa7df4-8503-47bc-b495-699a7ee09442
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Armhole' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Armhole Construction]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 6138e6d5-787b-461e-a4b8-b68c0fda3ab3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Length' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Garment Length]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: a58edea0-aed9-4bea-a7c4-04154e31c49b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Fit' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Fit]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: eac8f5d3-dc66-46c3-9de3-78e83709f6bf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Sleeve' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Sleeve Length]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: b7918d32-3d98-4a49-95c9-dc1e3fb07a1c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Neckline' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Neckline],'Product (Current)'[Neckline Type]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 04c2a4b8-5968-4179-a617-411cb82834d3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Waist' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Waist Construction]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: a27bc2b3-4c58-4771-9e55-a0d369ed2cb2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Color Category' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Color Category]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 536d2f4f-f110-48b5-a6bb-779827ec7dfd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Color Family' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Ef Color Family]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 431b26e5-2ec5-41ca-a813-2946b8be2b1c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Color Shade' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Color Shade]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 6c03efa8-2c5b-4451-aa88-d59d641790b2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Color Temp' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Color Temp]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 29b7f7b5-51c5-4e35-bad0-8b211957c216
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Material Group' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Material Group]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: ca266c7b-c021-400d-b749-96b8e662ab9f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Neckline Type' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED('Product (Current)'[Neckline Type]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 13b3cec4-7ef5-4d52-a898-67c949ce83ae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Subclass' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Style Subclassification]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: d945d6ec-0330-484e-95bb-8d9756495cb7
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISFILTERED('Product (Current)'[Armhole Construction]),[Cost OH % to Filtered Total TY Armhole],
+			    ISFILTERED('Product (Current)'[Color Category]),[Cost OH % to Filtered Total TY Color Category],
+			    ISFILTERED('Product (Current)'[Color Description]),[Cost OH % to Filtered Total TY Color Desc],
+			    ISFILTERED('Product (Current)'[Ef Color Family]),[Cost OH % to Filtered Total TY Color Family],
+			    ISFILTERED('Product (Current)'[Color Shade]),[Cost OH % to Filtered Total TY Color Shade],
+			    ISFILTERED('Product (Current)'[Color Temp]),[Cost OH % to Filtered Total TY Color Temp],
+			    ISFILTERED('Product (Current)'[Fit]),[Cost OH % to Filtered Total TY Fit],
+			    ISFILTERED('Product (Current)'[Identity Short]),[Cost OH % to Filtered Total TY Identity],
+			    ISFILTERED('Product (Current)'[Garment Length]),[Cost OH % to Filtered Total TY Length],
+			    ISFILTERED('Product (Current)'[Material Clone]),[Cost OH % to Filtered Total TY Material Clone],
+			    ISFILTERED('Product (Current)'[Material Classification Description]),[Cost OH % to Filtered Total TY Material Class],
+			    ISFILTERED('Product (Current)'[Material Family]),[Cost OH % to Filtered Total TY Material Family],
+			    ISFILTERED('Product (Current)'[Material Group]),[Cost OH % to Filtered Total TY Material Group],
+			    ISFILTERED('Product (Current)'[Neckline]),[Cost OH % to Filtered Total TY Neckline],
+			    ISFILTERED('Product (Current)'[Neckline Type]),[Cost OH % to Filtered Total TY Neckline Type],
+			    ISFILTERED('Product (Current)'[Price Tier]),[Cost OH % to Filtered Total TY Price Tier],
+			    ISFILTERED('Product (Current)'[Sleeve Length]),[Cost OH % to Filtered Total TY Sleeve],
+			    ISFILTERED('Product (Current)'[Style Subclassification]),[Cost OH % to Filtered Total TY Subclass],
+			    ISFILTERED('Product (Current)'[Waist Construction]),[Cost OH % to Filtered Total TY Waist],
+			    ISFILTERED(Delivery[Delivery Month]),[Cost OH % to Filtered Total TY Delivery],
+			    1
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: d229c7c2-5692-4861-ba1f-21b770b5eab4
+
+	measure 'Cost OH % to Filtered Total TY Material Clone' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        REMOVEFILTERS('Product (Current)'[Material Clone]),
+			        ALLSELECTED('Product (Current)'[Material Clone]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: f2d37a27-2d91-4c35-bd12-bab7e723be39
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Desc' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        REMOVEFILTERS('Product (Current)'[Color Description]),
+			        ALLSELECTED('Product (Current)'[Color Description]),
+			        all('Product (Current)'[Hex Color]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 81499854-1f29-4916-b713-caa4245321d5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Material Family' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        REMOVEFILTERS('Product (Current)'[Material Family]),
+			        ALLSELECTED('Product (Current)'[Material Family]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 5a808e01-b4cf-4f36-bcec-ebad4f03a60c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Price Tier' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)')
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: f1a399b0-ba80-4647-9071-09305bd118e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Identity' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Identity Short],'Product (Current)'[Style Subclassification]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: f23a0a99-3903-4ae5-96a6-c6907e25e950
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Armhole' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Armhole Construction]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 3eef80fc-13c0-48f4-8681-d5c1a9285ed3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Length' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Garment Length]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: b085a825-6d63-4d68-b5b1-80de4359bf93
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Fit' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Fit]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 44290cb6-9f18-467f-a029-27de474ea905
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Sleeve' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Sleeve Length]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: af4f55a1-1cf9-4cd2-8d81-249f88fc8c25
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Neckline' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Neckline],'Product (Current)'[Neckline Type]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 476da808-e416-421f-9168-c3002a6e53bf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Waist' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Waist Construction]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: a45d04f5-8f49-4650-9828-227105955ebc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Category' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Color Category]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 73242b5a-0c88-46db-947a-e2a34096a63b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Family' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Ef Color Family]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 680527a8-f147-4ae0-9aa4-6844ea35058d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Shade' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Color Shade]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 2e92f065-4165-4345-8bed-8842caf6de02
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Temp' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Color Temp]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 3f75a2e1-b32d-45e0-aec7-57ea284d416d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Material Group' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Material Group]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 479dfe17-68be-4c1b-be54-493f95f41011
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Neckline Type' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED('Product (Current)'[Neckline Type]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 6f91eb81-1652-4129-a977-65955091cda8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Color Desc-Rank' =
+			
+			DIVIDE(
+			    [Rank Display OH TY-Color],
+			    CALCULATE (
+			        [Display OH TY],
+			        REMOVEFILTERS('Product (Current)'[Color Description]),
+			        ALLSELECTED('Product (Current)'[Color Description]),
+			        all('Product (Current)'[Hex Color]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 1a2fa528-357b-4e7a-bd06-7a1cbf5ff78a
+
+	measure 'Net Sales % to Filtered Total TY Color Desc Rank' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Color],
+			    CALCULATE (
+			        [Ranking Measure TY],
+			        REMOVEFILTERS('Product (Current)'[Color Description],'Product (Current)'[Hex Color]),
+			        ALLSELECTED('Product (Current)'[Color Description]),
+			        all('Product (Current)'[Hex Color]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Sales % to Filtered Total
+		lineageTag: 73ea67a4-0362-460d-a89d-a51cdc2b3af0
+
+	measure 'Cost OH % to Filtered Total TY Delivery' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALLSELECTED(Delivery)
+			    )
+			)
+		displayFolder: Cost OH % to Filtered Total
+		lineageTag: 7bdfbe32-5562-4c26-a05d-c1f47db2d763
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Remove Empty Rows Delivery' =
+			
+			VAR CurrMonth=FORMAT(LOOKUPVALUE('Date'[MonthNum],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar])),"00")
+			VAR CurrYear=right(LOOKUPVALUE('Date'[Year],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar])),2)
+			VAR DeliveryCodeKey=LOOKUPVALUE(Delivery[Delivery Code Key],Delivery[Delivery Code],CurrYear&CurrMonth)
+			RETURN
+			DeliveryCodeKey-SELECTEDVALUE('Delivery'[Delivery Code Key])
+		lineageTag: e70660a4-e745-49be-9712-5ba61590397f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales % to Filtered Total TY Delivery' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        ALLSELECTED(Delivery)
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Sales % to Filtered Total
+		lineageTag: c554fb33-4854-49eb-a476-08c75e7f23d8
+
+	measure 'Net Sales % to Filtered Total TY Material Class' =
+			
+			DIVIDE(
+			    [Display Net Sales TY],
+			    CALCULATE (
+			        [Display Net Sales TY],
+			        REMOVEFILTERS('Product (Current)'[Material Classification Description]),
+			        ALLSELECTED('Product (Current)'[Material Classification Description]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		lineageTag: fa609aa0-9e24-4b06-a758-579f843a28fa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Filtered Total TY Material Class' =
+			
+			DIVIDE(
+			    [Display OH TY],
+			    CALCULATE (
+			        [Display OH TY],
+			        REMOVEFILTERS('Product (Current)'[Material Classification Description]),
+			        ALLSELECTED('Product (Current)'[Material Classification Description]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		lineageTag: 9884e850-7b6d-4345-b7d6-b8d1c04130de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Merchandising Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

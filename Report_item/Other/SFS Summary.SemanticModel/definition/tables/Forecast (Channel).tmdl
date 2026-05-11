@@ -1,0 +1,96 @@
+table 'Forecast (Channel)'
+	lineageTag: 5092b834-970c-4135-b86a-12a0680c87a0
+	sourceLineageTag: 856ecb22-c769-4d6d-b2e1-093af6c25bda
+
+	column Channel
+		dataType: string
+		lineageTag: b8300684-656e-4b26-a34d-e672d8654190
+		sourceLineageTag: 1c5a5a5d-927b-456c-83e6-24f488372487
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b6ad897a-0a03-47de-ba4a-a717d20df569
+		sourceLineageTag: 9a95dea9-9330-4047-82d4-8eaa15b1ca5c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Type'
+		dataType: string
+		lineageTag: 8c30c3a6-5426-46d2-9b67-de165d03e6a5
+		sourceLineageTag: 3e0c2281-d4a4-4e55-a622-2b0392510993
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 8656f3bd-544c-4fce-8a9a-91639205297c
+		sourceLineageTag: ed795abb-792a-4547-8f82-9961758e4efe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: f6e2bb12-699b-41a8-b7eb-ca2470db17ee
+		sourceLineageTag: bef84003-59ea-4cbe-aadb-e07485fc9bff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6e12f9d4-599d-49ab-ab3c-83f38fb875bf
+		sourceLineageTag: 276ec2f8-e3de-46bd-aaea-62e5cb566d9a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1a4d9d51-d3a1-4e5e-a820-78b43338c23b
+		sourceLineageTag: 63ced9ec-7697-455f-8e43-cacebcb6d39d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Dashboard Order Type'
+		dataType: string
+		lineageTag: 23d03077-398f-46eb-97b9-15b17eba710c
+		sourceLineageTag: d488b7d4-94e8-439b-b137-b720bd437d70
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast (Channel)' = entity
+		mode: directQuery
+		source
+			entityName: Forecast (Channel)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

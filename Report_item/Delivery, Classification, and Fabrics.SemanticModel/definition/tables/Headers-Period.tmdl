@@ -1,0 +1,35 @@
+table Headers-Period
+	lineageTag: 5a986eda-2914-439b-8f33-728235ec67d3
+
+	column Period
+		dataType: string
+		lineageTag: f93403c2-9794-4c6e-9aa1-baa27ed011ca
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Sort'
+		dataType: string
+		lineageTag: a11b4eb4-3ab3-4e57-99bc-9a3524a6e9a4
+		summarizeBy: none
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Headers-Period = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCg9xUdJRMlSK1YlW8gWzjcDsSDDbGMz2AbNNlGJjAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Period = _t, #"Period Sort" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Period", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

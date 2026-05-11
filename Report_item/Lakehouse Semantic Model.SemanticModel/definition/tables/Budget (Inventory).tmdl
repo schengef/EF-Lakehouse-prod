@@ -1,0 +1,72 @@
+table 'Budget (Inventory)'
+	lineageTag: cb06a3af-0af6-4175-a6a6-2abb67571c82
+	sourceLineageTag: b6441e31-74b2-4603-8b9d-34f13fd9df4c
+
+	measure 'Inventory Budget (Sum)' = EXTERNALMEASURE("Inventory Budget (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4081c1cd-7e3b-457b-a3f2-e6111996f86b
+		sourceLineageTag: 5db2daff-cfe1-4dac-ba7b-f7a7f6d481ab
+		dataCategory: Uncategorized
+
+	column Category
+		dataType: string
+		lineageTag: 220c8f69-f16c-4da3-bdd1-e5a34c80e314
+		sourceLineageTag: 449052f3-8e40-47e1-9cdd-707f15862241
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = User
+
+	column Subcategory
+		dataType: string
+		lineageTag: 7ea09228-577e-45b9-8a41-0627e4e48ce8
+		sourceLineageTag: e668d13e-daa2-4ac1-905b-4e0e9574fb9c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 76fcc058-ce51-4b5b-a701-8f52cec54dd8
+		sourceLineageTag: a3fd4967-21a4-4bb6-aa75-103bb68959ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Inventory Budget Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 6a9ecaca-f6e4-45e9-8bc1-f8aee853c023
+		sourceLineageTag: 0d84f0d9-2b6b-44f6-95de-750f925f7778
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Inventory Budget Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 610040d1-c698-428d-99f4-14aad5c02879
+		sourceLineageTag: 5c7b5d23-e312-49a2-b1de-0c3eebb97a1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget (Inventory)' = entity
+		mode: directQuery
+		source
+			entityName: Budget (Inventory)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,303 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "83e3aa900a96c6c77861",
+  "position": {
+    "x": 10.534979423868313,
+    "y": 0,
+    "z": 0,
+    "height": 720.32921810699588,
+    "width": 1269.4650205761316,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transactions (Financial)"
+                    }
+                  },
+                  "Property": "E Sell Order Num"
+                }
+              },
+              "queryRef": "Transactions (Financial).E Sell Order Num",
+              "nativeQueryRef": "E Sell Order Num"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DTC Measures"
+                    }
+                  },
+                  "Property": "Demand Gross Retail Sales $"
+                }
+              },
+              "queryRef": "DTC Measures.Demand Gross Retail Sales $",
+              "nativeQueryRef": "Demand Gross Retail Sales $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DTC Measures"
+                    }
+                  },
+                  "Property": "Demand Net Retail Sales $"
+                }
+              },
+              "queryRef": "DTC Measures.Demand Net Retail Sales $",
+              "nativeQueryRef": "Demand Net Retail Sales $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DTC Measures"
+                    }
+                  },
+                  "Property": "Demand Discount Retail Sales $"
+                }
+              },
+              "queryRef": "DTC Measures.Demand Discount Retail Sales $",
+              "nativeQueryRef": "Demand Discount Retail Sales $"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DTC Measures"
+                    }
+                  },
+                  "Property": "Demand Tax $"
+                }
+              },
+              "queryRef": "DTC Measures.Demand Tax $",
+              "nativeQueryRef": "Demand Tax $"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Transactions (Financial)"
+                  }
+                },
+                "Property": "E Sell Order Num"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef6c071282bccbbab2bd",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Date"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2026-02-03T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "5a574e0c7d77be0bb60d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transactions (Financial)"
+              }
+            },
+            "Property": "E Sell Order Num"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "17177b2c790e654a0be7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DTC Measures"
+              }
+            },
+            "Property": "Demand Gross Retail Sales $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0f495571b7a0593ebed8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DTC Measures"
+              }
+            },
+            "Property": "Demand Net Retail Sales $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b2326af02e36b9d5b05c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DTC Measures"
+              }
+            },
+            "Property": "Demand Tax $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb7d1c9e2e081d12ed01",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DTC Measures"
+              }
+            },
+            "Property": "Demand Discount Retail Sales $"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d4d8dc03e1e42201eda8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Channel"
+              }
+            },
+            "Property": "Finance Channel"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Channel",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Finance Channel"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Digital'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  }
+}

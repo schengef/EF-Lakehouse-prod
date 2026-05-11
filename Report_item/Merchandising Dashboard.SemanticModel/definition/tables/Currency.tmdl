@@ -1,0 +1,69 @@
+table Currency
+	isHidden
+	lineageTag: ca2a633c-6e70-497a-879a-734b138ffe6a
+	sourceLineageTag: ed4ce73e-eeca-4553-a908-731cd03ac7ce
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8086d332-e6f9-4869-9e60-2d694754ada0
+		sourceLineageTag: 532e10d0-daf8-4c75-b2f2-95211a06d425
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2bbe74b1-8917-4cec-b72b-fd2f01e2b600
+		sourceLineageTag: 883e4d53-fa05-4568-b024-2cd689155b00
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Date Key
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		isHidden
+		lineageTag: f13990c1-9873-42cb-8ab9-cef6ac696c81
+		sourceLineageTag: 6f66d424-15b4-461f-a21d-c874682ea782
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		lineageTag: a9d8f8b0-90e3-47de-8ff3-a2e7a240cfcc
+		sourceLineageTag: 0d0d0710-5a10-4a13-8508-57df1c8bc176
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 9da54ba2-b7cd-49c8-9545-152a051feef0
+		sourceLineageTag: fa12a0eb-c96f-4084-8fab-269fafc4585b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Value
+
+		annotation SummarizationSetBy = User
+
+	partition Currency = entity
+		mode: directQuery
+		source
+			entityName: Currency
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

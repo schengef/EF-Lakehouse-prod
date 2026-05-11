@@ -1,0 +1,88 @@
+table 'Running Total Period'
+	lineageTag: 2ebf982e-c474-405e-ae3a-29038a4fbf94
+
+	calculationGroup
+		precedence: 2
+
+		calculationItem WTD =
+				VAR LastDayAvailable =  MAX ( 'Date'[DayOfYear] )
+				      VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+				      VAR LastFiscalYearMonthAvailable = MAX('Date'[MonthNum])
+				      VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				            'Date'[DayOfYear]  <= LastDayAvailable &&
+				            'Date'[CurrWeek End Date] = LastFiscalYearWeekAvailable &&
+				             'Date'[MonthNum]<= LastFiscalYearMonthAvailable &&
+				            'Date'[Year] = LastFiscalYear)
+
+		calculationItem MTD =
+				
+				VAR LastDayAvailable =  MAX ( 'Date'[DayOfYear] )
+				      VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+				      VAR LastFiscalYearMonthAvailable = MAX('Date'[MonthNum])
+				      VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar],'Date'[MonthNum]),
+				            'Date'[DayOfYear]  <= LastDayAvailable &&
+				             'Date'[MonthNum]= LastFiscalYearMonthAvailable &&
+				            'Date'[Year] = LastFiscalYear)
+
+		calculationItem QTD =
+				
+				VAR LastDayAvailable =  MAX ( 'Date'[DayOfYear] )
+				VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Quarter]),
+				    'Date'[DayOfYear]  <= LastDayAvailable &&
+				    'Date'[Year] = LastFiscalYear
+				)
+
+		calculationItem YTD =
+				
+				VAR LastDayAvailable =  MAX ( 'Date'[DayOfYear] )
+				VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				Return
+				CALCULATE (
+				    SELECTEDMEASURE(),
+				    ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Year]),
+				    'Date'[DayOfYear]  <= LastDayAvailable &&
+				    'Date'[Year] = LastFiscalYear
+				)
+
+		calculationItem Half =
+				VAR LastDayAvailable =  MAX ( 'Date'[DayOfYear] )
+				    VAR LastFiscalYear = MAX ( 'Date'[Year] )
+				    Return
+				        CALCULATE (
+				            SELECTEDMEASURE(),
+				           ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Half]),
+				            'Date'[DayOfYear]  <= LastDayAvailable &&
+				            'Date'[Year] = LastFiscalYear)
+
+	column 'Running Total Date Period'
+		dataType: string
+		lineageTag: 6b025a1f-da3b-4ca0-88a6-6d3353131f72
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"445 Calendar Period","TableItemName":"445 Calendar Aggregation (groups)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"445 Calendar Period","TableItemName":"445 Calendar Aggregation (groups) 2","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: ef501b3f-589c-4ef5-93cf-67f10428c73e
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

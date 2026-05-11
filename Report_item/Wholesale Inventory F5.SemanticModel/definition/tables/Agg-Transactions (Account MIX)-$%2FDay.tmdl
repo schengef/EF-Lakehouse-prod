@@ -1,0 +1,99 @@
+table 'Agg-Transactions (Account MIX)-$/Day'
+	isHidden
+	lineageTag: 69c61306-2e43-4163-acec-db0a4c697fb4
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: 81a9c9da-f3c3-4a60-9a10-8ce2c105fe56
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		alternateOf
+			baseColumn: 'Transactions (Account MIX)'.'Week Ending Date Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		lineageTag: 0a7db55b-f2f7-4763-b37f-17d7aa77dbdd
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		alternateOf
+			baseColumn: 'Transactions (Account MIX)'.'Store Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		lineageTag: 12e9ab56-4122-4523-a582-e2960ae73664
+		summarizeBy: count
+		sourceColumn: Currency Key
+
+		alternateOf
+			baseColumn: 'Transactions (Account MIX)'.'Currency Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Dollars'
+		dataType: double
+		isHidden
+		lineageTag: 42f86092-4636-438e-968f-8abec4897f08
+		summarizeBy: sum
+		sourceColumn: Sales Dollars
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (Account MIX)'.'Sales Dollars'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Agg-Transactions (Account MIX)-$/Day' = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.WEEK_ENDING_DATE_KEY,T.STORE_KEY,T.CURRENCY_KEY, Sum(T.SALES_DOLLARS) as SALES_DOLLARS
+				from EDW_V.V_WHOLESALE_RETAIL_MIX T
+				where WEEK_ENDING_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				group by T.WEEK_ENDING_DATE_KEY,T.STORE_KEY,T.CURRENCY_KEY
+				
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Week Ending Date Key", Int64.Type}, {"Store Key", Int64.Type}, {"Currency Key", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

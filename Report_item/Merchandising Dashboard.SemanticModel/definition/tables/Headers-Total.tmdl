@@ -1,0 +1,20 @@
+table Headers-Total
+	lineageTag: 936cdc70-9e68-44dc-9546-0d3987b1eca1
+	sourceLineageTag: 48df9703-2ff7-4df7-9f25-945b4362395e
+
+	column Total
+		dataType: string
+		lineageTag: c734fbde-8359-4ad8-b585-5bd5ce29eab7
+		sourceLineageTag: 1f873297-21d4-45a3-b027-243249ad8c83
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total
+
+		annotation SummarizationSetBy = User
+
+	partition Headers-Total = entity
+		mode: directQuery
+		source
+			entityName: Headers-Total
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

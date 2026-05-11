@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "MM Delivery Validation"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3009ec1f-1636-99ea-4919-26fb83e072ac"
+  }
+}

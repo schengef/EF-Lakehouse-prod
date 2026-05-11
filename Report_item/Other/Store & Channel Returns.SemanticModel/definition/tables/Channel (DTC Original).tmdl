@@ -1,0 +1,86 @@
+table 'Channel (DTC Original)'
+	lineageTag: 3f7d796b-0329-48e9-a5c8-916793abb7d4
+	sourceLineageTag: 11117a36-c252-4e76-a576-c95da9f88621
+
+	column 'Original Channel Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 6f40781e-75f4-4a99-948c-ea54758245fc
+		sourceLineageTag: c74bfaf4-6211-423a-9dd5-a3300db46d52
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Channel Name'
+		dataType: string
+		lineageTag: cbe24758-2ae1-4ebb-ad4f-de042d13b07c
+		sourceLineageTag: 1570b59a-43ee-4830-bab4-34e25e57b35d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Sub Channel Name'
+		dataType: string
+		lineageTag: 5b76a090-7fff-4c3f-941a-c6cf455f0663
+		sourceLineageTag: 591ad1dc-c688-4ef5-93ea-dc0470fd18f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Sub Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Channel Format'
+		dataType: string
+		lineageTag: 70fde9d6-630b-4f8f-9d39-c89ced6071ad
+		sourceLineageTag: c40c419f-0d64-4dff-a855-acbc26b50233
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Channel Format
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Channel Geography'
+		dataType: string
+		lineageTag: 6a7d9be5-22a0-4642-90b2-82df823516bd
+		sourceLineageTag: 1bb2f01d-cad2-4275-8dbd-89602d865f33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Channel Geography
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5397de2-7bba-4e9c-ba52-eb7a69b4e1c0
+		sourceLineageTag: 0304de70-f3c8-4cb5-9ab6-c4854dbe317b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Finance Channel'
+		dataType: string
+		lineageTag: b9253f29-42bb-4ace-bda2-7e727c799c7b
+		sourceLineageTag: d6bd1a53-398b-4df1-9d4e-1d758ff5c917
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Finance Channel
+		sortByColumn: 'Original Sort'
+
+		annotation SummarizationSetBy = User
+
+	partition 'Channel (DTC Original)' = entity
+		mode: directQuery
+		source
+			entityName: Channel (DTC Original)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

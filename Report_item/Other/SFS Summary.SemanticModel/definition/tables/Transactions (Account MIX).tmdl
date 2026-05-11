@@ -1,0 +1,80 @@
+table 'Transactions (Account MIX)'
+	lineageTag: c7a060ce-5bd3-44d5-aea7-43ff1eba2e9a
+	sourceLineageTag: c32a5b1f-e8aa-4a9b-a3da-58ecf3d26b0a
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 71f1992f-9c9b-409d-85d3-6bcec041d33a
+		sourceLineageTag: ae7b5df0-64a8-4e7a-9561-03a957d10f63
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86f1b231-bc4c-4474-97eb-8b0f1729f114
+		sourceLineageTag: 5df35872-d846-441e-9c61-dd2fe8901f6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column Department
+		dataType: string
+		lineageTag: 0e3bf622-512d-43fe-922e-1c259b4fa637
+		sourceLineageTag: f5994328-249d-46ee-bcc6-c1a2ce9a9bdd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Dollars'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1b092707-88a8-49c3-aed3-401229032971
+		sourceLineageTag: d6447802-65f5-4a59-9202-ec0e57164bdd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 27efdcb7-f96d-4c9f-bab2-0fb12f88b62f
+		sourceLineageTag: ebdc0c0c-92c9-4deb-bc17-24afc887f5ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 74b62075-76c2-42b8-b865-bdd83eb62118
+		sourceLineageTag: 714d765e-608e-497d-a14f-2440e80599e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (Account MIX)' = entity
+		mode: directQuery
+		source
+			entityName: Transactions (Account MIX)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,86 @@
+table 'Budget (DTC-Store)'
+	lineageTag: 62e2df59-5c5f-482e-bb57-0f4ebf579ed9
+
+	column 'Store Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d3290654-83bc-430b-aeef-1367d3198091
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Date Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: f9da10e3-53bf-4839-b2e2-37a10bd2959f
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0f054102-79c5-40ed-9a5b-4225bc21f3fc
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Store Value'
+		dataType: double
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 67f83582-d391-4b3d-9b36-3c692dd69aa2
+		summarizeBy: sum
+		sourceColumn: Budget Store Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(3)
+		lineageTag: a1d35858-d8e6-453d-8b5e-bae0478e478e
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget (DTC-Store)' = m
+		mode: dual
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.STORE_KEY,T.DATE_KEY,T.MEASURE,T.BUDGET_STORE_VALUE,T.CURRENCY_CODE
+				from EDW_V.F_BUDGET_STORE T
+				where WEEK_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) )
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

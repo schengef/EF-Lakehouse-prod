@@ -1,0 +1,54 @@
+table Headers-Detail
+	lineageTag: c1c4ac8d-cc29-4c77-8e1f-778c53c9c826
+	sourceLineageTag: 09e4e6b8-88d2-4d0e-82dd-595a05bbd0c5
+
+	column Metric
+		dataType: string
+		lineageTag: 0ca60fff-fcd1-4565-a092-86ddf1c9ccf5
+		sourceLineageTag: 8669a2d3-09b7-46df-9436-60e743783588
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: 'Metric Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Metric Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 272ca0b3-14d5-40c4-8c72-46fe8ac43235
+		sourceLineageTag: 0509e7fd-f6b1-4016-9468-a2dd67f25dec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Metric Sort
+
+		annotation SummarizationSetBy = User
+
+	column Period
+		dataType: string
+		lineageTag: 36e44a22-0b55-4fdf-a0fb-f0adc9e9d68e
+		sourceLineageTag: dc5fa24e-3003-40a2-9802-0a2c4bb4d665
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Period Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: c1f4b164-8380-47f1-ac09-baf01b5c13b4
+		sourceLineageTag: 2f59737d-6ca4-4218-93cd-a94d473ff82c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = User
+
+	partition Headers-Detail = entity
+		mode: directQuery
+		source
+			entityName: Headers-Detail
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

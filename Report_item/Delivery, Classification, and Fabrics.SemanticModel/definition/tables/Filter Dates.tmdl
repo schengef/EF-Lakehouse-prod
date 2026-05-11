@@ -1,0 +1,43 @@
+table 'Filter Dates'
+	isHidden
+	lineageTag: 4e3a9640-27df-44d7-8fbd-6d79bb0d1b26
+	sourceLineageTag: 0fa70573-26cb-4b46-994d-0929b14ce5dd
+
+	measure 'Selected Date Range' = EXTERNALMEASURE("Selected Date Range", STRING, "DirectQuery to AS - Lakehouse Semantic Model")
+		isHidden
+		lineageTag: 16426f21-11e0-4e45-8466-216b6a70a729
+		sourceLineageTag: 483c6450-dadf-4b5f-87d9-bf5ed574d7cf
+		dataCategory: Uncategorized
+
+	column Date
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Short Date
+		lineageTag: ded117e9-b55a-4e9b-8cd4-0d70fd61c4a4
+		sourceLineageTag: ebd305e8-5407-4fe5-9b5d-2ce134ddfb91
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Datekey
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 84d5e9ed-3e11-4395-a724-3504d4ddf942
+		sourceLineageTag: bc4faf0f-74f1-428f-874f-5929d6028014
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Datekey
+
+		annotation SummarizationSetBy = User
+
+	partition 'Filter Dates' = entity
+		mode: directQuery
+		source
+			entityName: Filter Dates
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

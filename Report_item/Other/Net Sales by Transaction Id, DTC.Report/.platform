@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Net Sales by Transaction Id, DTC"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e4d54ff2-f317-9b0f-4c6e-2a870362c2ab"
+  }
+}

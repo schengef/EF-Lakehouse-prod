@@ -1,0 +1,145 @@
+table 'Parameter Rank'
+	lineageTag: dfc22bd8-c2d0-4d2f-b09f-d4f9953715c5
+
+	column 'Rank Parameter'
+		lineageTag: 34241144-02fc-47c1-ae6a-7843ce157e07
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Rank Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Rank Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rank Parameter Fields'
+		isHidden
+		lineageTag: 54a71d57-0a13-48a4-b3da-fd8e7691b950
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Rank Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Parameter Rank","TableItemName":"Rank Parameter Fields (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Rank Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: cf58154d-9492-4fa5-b134-7ffe7db534a7
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rank Parameter Fields (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('Parameter Rank'[Rank Parameter Fields]),
+				"(Blank)",
+				'Parameter Rank'[Rank Parameter Fields] IN {"'Product Dashboard Measures'[Sales by Rank TY-Color]",
+					"'Product Dashboard Measures'[Sales by Rank  LY Delivery-Color]",
+					"'Product Dashboard Measures'[Sales by Rank diff vs LY Delivery-Color]",
+					"'Product Dashboard Measures'[Sales by Rank % vs  LY Delivery-Color]",
+					"'Merchandising Measures'[Net Sales % to Filtered Total TY Color Desc Rank]",
+					"'Product Dashboard Measures'[Rank Sales AUR TY-Color]",
+					"'Product Dashboard Measures'[Rank Sales AUR  LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Avg Sales per SKU TY-Color]",
+					"'Product Dashboard Measures'[Rank Avg Sales per SKU LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Avg Sales per SKU % vs LY Delivery-Color]"},
+				"Sales",
+				'Parameter Rank'[Rank Parameter Fields] IN {"'Product Dashboard Measures'[Rank Receipts TY-Color]",
+					"'Product Dashboard Measures'[Rank Receipts LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Recpeits % vs LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Receipt ST% TY-Color]",
+					"'Product Dashboard Measures'[Rank Receipt ST% LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Receipts % to Total TY-Color]",
+					"'Product Dashboard Measures'[Rank Receipts AUR TY-Color]",
+					"'Product Dashboard Measures'[Rank Receipts AUR  LY Delivery-Color]"},
+				"Shipments",
+				'Parameter Rank'[Rank Parameter Fields] IN {"'Product Dashboard Measures'[Rank Display OH TY-Color]",
+					"'Product Dashboard Measures'[Rank Display OH  LY Delivery-Color]",
+					"'Product Dashboard Measures'[Rank Display OH % vs  LY Delivery-Color]",
+					"'Product Dashboard Measures'[ST% by Rank TY-Color]",
+					"'Product Dashboard Measures'[ST% by Rank  LY Delivery-Color]",
+					"'Merchandising Measures'[Cost OH % to Filtered Total TY Color Desc-Rank]",
+					"'Product Dashboard Measures'[Rank OH AUR TY-Color]",
+					"'Product Dashboard Measures'[Rank OH AUR  LY Delivery-Color]"},
+				"Stock",
+				"Other"
+			)
+		lineageTag: 8565a6ff-c68e-419f-8f23-364746415d7c
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Parameter Rank"
+				          }
+				        },
+				        "Property": "Rank Parameter Fields"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"p","Entity":"Parameter Rank"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Rank Parameter Fields"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Sales","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Rank Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Sales by Rank TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Sales by Rank  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Sales by Rank diff vs LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Sales by Rank % vs  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Merchandising Measures''[Net Sales % to Filtered Total TY Color Desc Rank]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Sales AUR TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Sales AUR  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Avg Sales per SKU TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Avg Sales per SKU LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Avg Sales per SKU % vs LY Delivery-Color]'"}}]]}}},{"DisplayName":"Shipments","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Rank Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipts TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipts LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Recpeits % vs LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipt ST% TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipt ST% LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipts % to Total TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipts AUR TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Receipts AUR  LY Delivery-Color]'"}}]]}}},{"DisplayName":"Stock","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Rank Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Display OH TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Display OH  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank Display OH % vs  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[ST% by Rank TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[ST% by Rank  LY Delivery-Color]'"}}],[{"Literal":{"Value":"'''Merchandising Measures''[Cost OH % to Filtered Total TY Color Desc-Rank]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank OH AUR TY-Color]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Rank OH AUR  LY Delivery-Color]'"}}]]}}},{"DisplayName":"Other"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter Rank' = calculated
+		mode: import
+		source =
+				{
+				    ("         TY         ", NAMEOF('Product Dashboard Measures'[Sales by Rank TY-Color]), 0),
+				    ("         LY         ", NAMEOF('Product Dashboard Measures'[Sales by Rank  LY Delivery-Color]), 1),
+				    ("     Δ vs LY     ", NAMEOF('Product Dashboard Measures'[Sales by Rank diff vs LY Delivery-Color]), 2),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Sales by Rank % vs  LY Delivery-Color]), 3),
+				    ("       TY       ", NAMEOF('Product Dashboard Measures'[Rank Display OH TY-Color]), 4),
+				    ("       LY       ", NAMEOF('Product Dashboard Measures'[Rank Display OH  LY Delivery-Color]), 5),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank Display OH % vs  LY Delivery-Color]), 6),
+				    ("    TY    ", NAMEOF('Product Dashboard Measures'[ST% by Rank TY-Color]), 7),
+				    ("    LY    ", NAMEOF('Product Dashboard Measures'[ST% by Rank  LY Delivery-Color]), 8),
+				    ("         TY         ", NAMEOF('Product Dashboard Measures'[Rank Shipments TY-Color]), 9),
+				    ("         LY         ", NAMEOF('Product Dashboard Measures'[Rank Shipments LY Delivery-Color]), 10),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank Shipments % vs LY Delivery-Color]), 11),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Rank Receipt ST% TY-Color]), 12),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Rank Receipt ST% LY Delivery-Color]), 13),
+				    (" SALES ", NAMEOF('Merchandising Measures'[Net Sales % to Filtered Total TY Color Desc Rank]), 14),
+				    (" STOCK ", NAMEOF('Merchandising Measures'[Cost OH % to Filtered Total TY Color Desc-Rank]), 15),
+				    ("  SHIP  ", NAMEOF('Product Dashboard Measures'[Rank Shipments % to Total TY-Color]), 16),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[Rank Sales AUR TY-Color]), 17),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[Rank Sales AUR  LY Delivery-Color]), 18),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[Rank OH AUR TY-Color]), 19),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[Rank OH AUR  LY Delivery-Color]), 20),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[Rank Shipments AUR TY-Color]), 21),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[Rank Shipments AUR  LY Delivery-Color]), 22),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Rank Net GM TY-Color]), 23),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Rank Net GM  LY Delivery-Color]), 24),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Rank Style Count TY-Color]), 25),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Rank Style Count LY Delivery-Color]), 26),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank Style Count % vs LY Delivery-Color]), 27),
+				    ("    TY    ", NAMEOF('Product Dashboard Measures'[Rank SKU Count TY-Color]), 28),
+				    ("    LY    ", NAMEOF('Product Dashboard Measures'[Rank SKU Count LY Delivery-Color]), 29),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank SKU Count % vs LY Delivery-Color]), 30),
+				    (" TY ", NAMEOF('Product Dashboard Measures'[Rank Color Multiplier TY-Color]), 31),
+				    (" LY ", NAMEOF('Product Dashboard Measures'[Rank Color Multiplier LY Delivery-Color]), 32),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank Color Multiplier % vs LY Delivery-Color]), 33),
+				    ("     TY     ", NAMEOF('Product Dashboard Measures'[Rank Avg Sales per SKU TY-Color]), 34),
+				    ("     LY     ", NAMEOF('Product Dashboard Measures'[Rank Avg Sales per SKU LY Delivery-Color]), 35),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Rank Avg Sales per SKU % vs LY Delivery-Color]), 36)
+				}
+
+	annotation PBI_Id = 22ec02a073054b5fa299eab3b84b17c8
+

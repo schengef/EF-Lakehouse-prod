@@ -1,0 +1,584 @@
+table 'Wholesale Measures'
+	lineageTag: 61903b3d-cb76-4e41-8c05-5de73f66b8ba
+
+	/// Total gross wholesale cost, shipments at the full price, demand net cancellations
+	/// Sum of [Total Price] where [Channel]=Wholesale, [Transaction Type]=SHIPMENT that is not an internal EF account
+	measure 'Gross Sales $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 84ce05ef-6386-4e4d-9f98-1258110d296f
+
+	/// Credit issued
+	/// Sum of [Total Price] where [Channel]=Wholesale], [Transaction Type]=CREDIT that is not an internal EF account
+	measure 'Gross Return (RTV) $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CREDIT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e5b3501a-c849-4982-a4ed-9860d9d28789
+
+	/// Sum of [Discount Amount] where [Channel Name]=Wholesale, [Transaction Type]=SHIPMENT that is not an EF internal account
+	measure 'Upfront Discount on Sales $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Discount Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b97bb2a3-7b9f-4fc3-b739-62469656105d
+
+	/// Sum of [Discount Amount] where [Channel Name]=Wholesale, [Transaction Type]=CREDIT that is not an EF internal account
+	measure 'Upfront Discount on Return $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Discount Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CREDIT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c9f283b3-1a6d-4d15-bafd-756a93a308cb
+
+	/// [Net Sales $] - [Net Return (RTV) $]
+	measure 'Net Invoiced Sales $' = ```
+			
+			[Net Sales $]
+			- 
+			([Net Return (RTV) $])
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7bfc9748-f02e-4655-ba73-1a270a4766df
+
+	measure 'Total Standard Cost $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Standard Cost (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: $###,###
+		isHidden
+		lineageTag: d49ae871-68ac-47e2-aeb8-a51a12b4125a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Standard Cost $ of Returns' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Standard Cost (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CREDIT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: $###,###
+		isHidden
+		lineageTag: db55bcbc-b914-4357-ba34-115ab18045bf
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// [Total Standard Cost $] - [Total Standard Cost $ of Returns]
+	measure 'Net COGS $' = [Total Standard Cost $]-[Total Standard Cost $ of Returns]
+		formatString: $###,###
+		lineageTag: 05101e06-292a-4b7f-a021-41b79e7075db
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// [Gross Sales $]-[Net COGS $] divided by
+	/// [Gross Sales $]
+	measure 'IMU %' = DIVIDE(([Gross Sales $]-[Net COGS $]),[Gross Sales $])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e9624f98-4f80-40d1-b0b3-20a49201311f
+
+	/// [Net Invoiced Sales $] divided by [Net COGS $]
+	measure 'Invoiced Margin $' = [Net Invoiced Sales $]-[Net COGS $]
+		formatString: $###,###
+		lineageTag: a7b17a52-4863-4d9c-9a6d-881aae39d76d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// [Invoiced Margin $] divided by [Net Invoiced Sales $]
+	measure 'Invoiced Margin %' = DIVIDE([Invoiced Margin $],[Net Invoiced Sales $])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: dd7e4864-25bf-4171-834c-cfe03c6674f8
+
+	measure 'Wholesale Order Qty' =
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]= "ORDER"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+		formatString: ###,###
+		isHidden
+		lineageTag: bc46f9d9-a5ee-49a2-b24f-9351edde4ede
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// [Net Invoiced Sales $] where [Mark Type]=FP divided by all [Net Invoiced Sales $]
+	measure 'Wholesale Full Price % (Internal)' =
+			
+			DIVIDE(
+			    CALCULATE([Net Invoiced Sales $],
+			    KEEPFILTERS('Transactions (Financial)'[Mark Type]="FP")
+			    ),
+			    [Net Invoiced Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 61cd2d86-83a4-4064-b671-f1ba0c770aaa
+
+	/// Sum of [Quantity] where [Channel Name]=Wholesale not in EF internal accounts.
+	/// [Transaction Type]=SHIPMENT - [Transaction Type]=CREDIT
+	measure 'Net Units' =
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    CALCULATE(
+			        [Units (Sum)],
+			        KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT")
+			    )
+			    -
+			    CALCULATE(
+			        [Units (Sum)],
+			        KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CREDIT")
+			    ),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts)),
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale")
+			)
+		lineageTag: 920706b8-35c1-4f8c-959c-277f0c73af94
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of [Net Price] where [Channel Name]=Wholesale, [Transaction Type]=SHIPMENT that is not an internal EF account
+	measure 'Net Sales $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		isHidden
+		lineageTag: de199775-4738-423d-9340-b4b5c05e259a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of [Net Price] where [Channel Name]=Wholesale, [Transaction Type]=CREDIT that is not an internal EF account
+	measure 'Net Return (RTV) $' = ```
+			
+			VAR EFAccounts={"EF102","EF702","EF777","EF150","EF111","EF302","EF799"}
+			RETURN
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="Wholesale"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CREDIT"),
+			    KEEPFILTERS(NOT('Accounts'[Account Code] in EFAccounts))
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 36dea7e3-0855-4d43-bdf0-af6451322625
+
+		changedProperty = IsHidden
+
+	/// [Net External Retail Sales $ FIN] for the selection divided by all [Net External Retail Sales $ FIN]
+	measure '% External Sales $ FIN' =
+			
+			DIVIDE(
+			    [Net External Retail Sales $ FIN],
+			    [Total Net External Retail Sales $ FIN]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: External\FIN
+		lineageTag: 9bf860c8-e930-4dd7-9455-71add396fea3
+
+	/// [Net External Retail Sales Units POS] for the selection divided by all [Net External Retail Sales Units POS]
+	/// 
+	measure '% External Sales Units POS' =
+			
+			DIVIDE(
+			    [Net External Retail Sales Units POS],
+			    [Total Net External Retail Sales Units POS]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: External\POS
+		lineageTag: 67bcdf50-449f-4148-a3f3-1a1a8a0653b5
+
+	///     [Net External Retail Sales $ POS] divided by
+	///     [Net External Retail Sales Units POS]
+	measure 'AUR External Sales $ POS' =
+			
+			DIVIDE(
+			    [Net External Retail Sales $ POS],
+			    [Net External Retail Sales Units POS]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\POS
+		lineageTag: c663bddc-659c-4534-961b-21cd62e9a3b3
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	///     [EOP External $ On Hand POS] divided by
+	///     [EOP External Units On Hand POS]
+	measure 'AUR External Stock POS' =
+			
+			DIVIDE(
+			    [EOP External $ On Hand POS],
+			    [EOP External Units On Hand POS]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\POS
+		lineageTag: a1f3709c-3a5a-4c23-a3b7-5d89133a9655
+
+	/// Sum of [Oh Dollars] FIN at the maximum date in the view
+	measure 'EOP External $ On Hand FIN' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    CALCULATE(
+			        SUM('Transactions (Account FIN)'[Oh Dollars]),
+			        Inventory[Date Key]=max(Inventory[Date Key])
+			    ),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Account FIN)',
+			            'Transactions (Account FIN)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Account FIN)'[Oh Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account FIN)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account FIN)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )
+			    VAR Result=
+			    IF (
+			    HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        CALCULATE(
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            Inventory[Date Key]=max(Inventory[Date Key])
+			            ),
+			        CALCULATE(
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            ),
+			            Inventory[Date Key]=max(Inventory[Date Key])
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		displayFolder: External\FIN
+		lineageTag: f4778810-9b7c-4afd-a450-4043931c8f94
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of [Oh Units] POS at the maximum date in the view
+	measure 'EOP External Units On Hand POS' =
+			
+			CALCULATE(SUM('Transactions (Account POS)'[Oh Units]),
+			    Inventory[Date Key]=max(Inventory[Date Key])
+			)
+		formatString: 0
+		displayFolder: External\POS
+		lineageTag: 512cda9d-a14b-441d-a163-2b79fc891d2f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// Sum of [Sales Dollars] FIN
+	measure 'Net External Retail Sales $ FIN' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    //If the selected currency is Local, just sum the field - potential to be summing USD and CAD together.
+			    SUM('Transactions (Account FIN)'[Sales Dollars]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Account FIN)',
+			            'Transactions (Account FIN)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate(SUM('Transactions (Account FIN)'[Sales Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account FIN)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account FIN)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )//Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			        ),//If a currency is selected, multiply the daily sales by the daily conversion rate in the temporary table
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			        )//If no currency is selected, multiply the daily sales by the default (USD Budget) daily conversion rate in the temporary table
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\FIN
+		lineageTag: d7244c37-5bd9-4d96-bbbc-a028a543330f
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// Sum of [Sales Units] POS
+	measure 'Net External Retail Sales Units POS' =
+			
+			CALCULATE(
+			    SUM(
+			       'Transactions (Account POS)'[Sales Units]
+			    )
+			)
+		formatString: #,0
+		displayFolder: External\POS
+		lineageTag: 9489eeee-8f23-4a96-bc28-b0ea318ce771
+
+	measure 'Total Net External Retail Sales $ FIN' =
+			
+			CALCULATE(
+			    [Net External Retail Sales $ FIN],
+			    ALL('Accounts'),
+			    ALL('Store')
+			)
+		isHidden
+		displayFolder: External\FIN
+		lineageTag: 2feaa004-d07f-4442-96d0-101a8af3305e
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Net External Retail Sales Units POS' =
+			
+			CALCULATE(
+			    [Net External Retail Sales Units POS],
+			    ALL('Accounts'),
+			    ALL('Store')
+			)
+		isHidden
+		displayFolder: External\POS
+		lineageTag: f8dad8b0-9512-4ed5-9efb-7c73dd99775b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// [Net External Retail Sales $ POS] where [Mark Type]=FP divided by all [Net External Retail Sales $ POS]
+	measure 'Wholesale Full Price % (External) POS' =
+			
+			DIVIDE(
+			    CALCULATE([Net External Retail Sales $ POS],
+			    'Transactions (Account POS)'[Mark Type]="FP"
+			    ),
+			    [Net External Retail Sales $ POS]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: External\POS
+		lineageTag: 157e63e6-540e-4183-b455-cfb3205c1dbd
+
+	/// Sum of [Sales Dollars] POS
+	measure 'Net External Retail Sales $ POS' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    //If the selected currency is Local, just sum the field - potential to be summing USD and CAD together.
+			    SUM('Transactions (Account POS)'[Sales Dollars]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Account POS)',
+			            'Transactions (Account POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate(SUM('Transactions (Account POS)'[Sales Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )//Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			        ),//If a currency is selected, multiply the daily sales by the daily conversion rate in the temporary table
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			        )//If no currency is selected, multiply the daily sales by the default (USD Budget) daily conversion rate in the temporary table
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\POS
+		lineageTag: 35c1ff97-90c0-4671-9de3-414c91c34247
+
+	/// Sum of [Oh Dollars] POS at the maximum date in the view
+	measure 'EOP External $ On Hand POS' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    CALCULATE(
+			        SUM('Transactions (Account POS)'[Oh Dollars]),
+			        Inventory[Date Key]=max(Inventory[Date Key])
+			    ),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Account POS)',
+			            'Transactions (Account POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Account POS)'[Oh Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )
+			    VAR Result=
+			    IF (
+			    HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        CALCULATE(
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            Inventory[Date Key]=max(Inventory[Date Key])
+			            ),
+			        CALCULATE(
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            ),
+			            Inventory[Date Key]=max(Inventory[Date Key])
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\POS
+		lineageTag: 8e244b36-2c87-4bff-8ba3-f0d337aa3666
+
+	/// [Net External Retail Sales $ MIX] for the selection divided by all [Net External Retail Sales $ MIX]
+	measure '% External Sales $ MIX' =
+			
+			DIVIDE(
+			    [Net External Retail Sales $ MIX],
+			    [Total Net External Retail Sales $ MIX]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: External\MIX
+		lineageTag: 5fcfcf22-1123-4df2-a3f9-d986ce158325
+
+	/// Sum of [Sales Dollars] MIX
+	measure 'Net External Retail Sales $ MIX' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    //If the selected currency is Local, just sum the field - potential to be summing USD and CAD together.
+			    SUM('Transactions (Account MIX)'[Sales Dollars]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Account MIX)',
+			            'Transactions (Account MIX)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate(SUM('Transactions (Account MIX)'[Sales Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account MIX)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Account MIX)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )//Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			        ),//If a currency is selected, multiply the daily sales by the daily conversion rate in the temporary table
+			        SUMX(
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			        )//If no currency is selected, multiply the daily sales by the default (USD Budget) daily conversion rate in the temporary table
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: External\MIX
+		lineageTag: 8b44a082-45ec-4920-b419-bdf93b26193e
+
+	measure 'Total Net External Retail Sales $ MIX' =
+			
+			CALCULATE(
+			    [Net External Retail Sales $ MIX],
+			    ALL('Accounts'),
+			    ALL('Store')
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		isHidden
+		displayFolder: External\MIX
+		lineageTag: 2812485a-d06a-4159-b3d2-c2fc78535914
+
+		changedProperty = IsHidden
+
+	partition 'Wholesale Measures' = m
+		mode: import
+		queryGroup: Measures
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

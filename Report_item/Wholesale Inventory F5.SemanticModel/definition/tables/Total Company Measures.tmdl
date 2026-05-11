@@ -1,0 +1,378 @@
+table 'Total Company Measures'
+	lineageTag: 1aa2380c-17ee-4101-814c-3687568852be
+
+	/// Sum of [On Hand Cost] POS
+	measure 'External Cost $' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (External POS)'[On Hand Cost]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (External POS)',
+			            'Transactions (External POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (External POS)'[On Hand Cost])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		isHidden
+		lineageTag: 9e19e568-68ac-43cd-81e7-255d0e89d08b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'External Retail $' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (External POS)'[On Hand Retail]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (External POS)',
+			            'Transactions (External POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (External POS)'[On Hand Retail])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		isHidden
+		lineageTag: ccf44030-1a2a-46ea-86f2-03eabb1c8498
+
+		changedProperty = IsHidden
+
+	measure 'External Retail Sales $' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (External POS)'[Sales Dollars]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (External POS)',
+			            'Transactions (External POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (External POS)'[Sales Dollars])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 69418fd2-cd32-4864-b5c8-8db586011b54
+
+	measure 'External Retail Sales Units' =
+			
+			CALCULATE(
+			    SUM(
+			       'Transactions (External POS)'[Sales Units]
+			    )
+			)
+		formatString: #,0
+		lineageTag: e0b5c33b-c972-4644-bbe9-9ef9d96afa29
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'External Sales Cost $' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (External POS)'[Sales Cost]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (External POS)',
+			            'Transactions (External POS)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (External POS)'[Sales Cost])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (External POS)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		lineageTag: 55351f4b-7b30-4472-bc12-4f55d6a5d7be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// [External Retail Sales Units] divided by [External Retail Sales Units] + [External Quantity On Hand]
+	measure 'External Sell Through %' =
+			
+			DIVIDE(
+			    [External Retail Sales Units],
+			    [External Retail Sales Units]+[External Quantity On Hand]
+			)
+		formatString: #,0%;-#,0%;#,0%
+		lineageTag: 34e3f296-0dca-4b67-9100-8fb6265ce4db
+
+	/// [External Retail Sales $] where [Mark Type]=FP divided by all [External Retail Sales $]
+	measure 'Overall External Full Price %' =
+			
+			DIVIDE(
+			    CALCULATE([External Retail Sales $],
+			    'Transactions (External POS)'[Mark Type]="FP"
+			    ),
+			    [External Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3993f03c-e56a-423a-8413-651ceed67096
+
+	measure 'Discount Amount (Sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (Financial)'[Discount Amount]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Financial)'[Discount Amount])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Calculations
+		lineageTag: ec88caed-8836-47ac-b3b2-2393eccac4da
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Price (Sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (Financial)'[Net Price]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Financial)'[Net Price])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Calculations
+		lineageTag: ddd28161-e308-433c-ac3b-f15700de49ec
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Standard Cost (Sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (Financial)'[Total Cost]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Currency Key]
+			        ),
+			        "@NetPrice",CALCULATE(sum('Transactions (Financial)'[Total Cost])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Calculations
+		lineageTag: 5a9d27dd-6e15-4b97-87ac-5e0dc0a19062
+
+	measure 'Tax Amount (Sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (Financial)'[Tax Amount]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Financial)'[Tax Amount])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Calculations
+		lineageTag: acc6851e-c579-4603-b365-87cc8debd32f
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Price (Sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Transactions (Financial)'[Total Price]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Transactions (Financial)'[Total Price])),
+			        "@Rate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key]),
+			        "@DefaultRate",LOOKUPVALUE('Currency Pivot'[Conversion Value],'Currency Pivot'[Currency Key],'Transactions (Financial)'[Currency Key],'Currency Pivot'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Calculations
+		lineageTag: 2076ed8c-7b07-4259-8c46-4c727ba1256b
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Units (Sum)' = ```
+			
+			    sum(
+			        'Transactions (Financial)'[Quantity]
+			    )
+			```
+		formatString: #,0
+		displayFolder: Calculations
+		lineageTag: f74d5374-87ab-4eea-9b47-85063473d55e
+
+	partition 'Total Company Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

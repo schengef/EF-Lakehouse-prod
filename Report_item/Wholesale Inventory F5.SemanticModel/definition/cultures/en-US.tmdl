@@ -1,0 +1,6194 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "v445_Calendar_Period445_calendar_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "445 Calendar Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "445 calendar period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "period": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "445 calendar era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "445 calendar epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "445 calendar age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "445 calendar stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "445 calendar phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "445 calendar episode": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "445 calendar interlude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        },
+			        {
+			          "445 calendar interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.458
+			          }
+			        }
+			      ]
+			    },
+			    "v445_Calendar_Period445_calendar_period.v445_Calendar_Aggregation445_calendar_aggregation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "445 Calendar Period",
+			          "ConceptualProperty": "445 Calendar Aggregation"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "445 calendar aggregation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "calendar aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "445 calendar accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "445 calendar collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "445 calendar accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "calendar accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "calendar collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "calendar accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "445 calendar combination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "445 calendar mass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "445 calendar clump": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "445 calendar bunch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "v445_Calendar_Period445_calendar_period.ordinal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "445 Calendar Period",
+			          "ConceptualProperty": "Ordinal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ordinal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "v445_Calendar_Period445_calendar_period.v445_Calendar_Aggregation__groups_445_calendar_aggregation_groups": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "445 Calendar Period",
+			          "ConceptualProperty": "445 Calendar Aggregation (groups)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "445 calendar aggregation (groups)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "445 calendar aggregation (group)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "445 calendar aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "v445_Calendar_Period445_calendar_period.v445_Calendar_Aggregation__groups__2445_calendar_aggregation_groups_2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "445 Calendar Period",
+			          "ConceptualProperty": "445 Calendar Aggregation (groups) 2"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "445 calendar aggregation (groups) 2": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "445 calendar aggregation (group) 2": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "calendar_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calendar period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "period": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "calendar era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "calendar epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "calendar age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "calendar stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "calendar phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "calendar episode": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "calendar_period.calendar_period_aggregation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar Period",
+			          "ConceptualProperty": "Calendar Period Aggregation"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "calendar period aggregation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "period aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "calendar period accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "calendar period collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "calendar period accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "period accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "period collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "period accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "calendar period combination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "calendar period mass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "calendar period clump": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "calendar period bunch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "calendar_period.ordinal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar Period",
+			          "ConceptualProperty": "Ordinal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ordinal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "filter_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "filter date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "filter moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "filter period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "filter_date.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date.variation.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date.variation.date_hierarchy.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date.variation.date_hierarchy.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date.variation.date_hierarchy.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date.variation.date_hierarchy.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "VariationSource": "Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "filter_date.date_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "ConceptualProperty": "DateKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "date key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DateKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period key": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "date solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "filter_date.selected_date_range": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "ConceptualProperty": "Selected Date Range"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "selected date range": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date range": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "selected moment range": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment range": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "selected period range": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period range": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "selected date variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected date series": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected date assortment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected date collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected date gamut": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "selected date selection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        }
+			      ]
+			    },
+			    "filter_date.v_Selected_Date_Range_FormatString_selected_date_range_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Filter Dates",
+			          "ConceptualProperty": "_Selected Date Range FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_selected date range FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_selected moment range formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_selected period range formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "date_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Running Total Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "period": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "period period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "date era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "date epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "date age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "date stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "date phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "date_period.date_period_aggregation": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Running Total Period",
+			          "ConceptualProperty": "Running Total Date Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date period aggregation": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "period aggregation": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "moment period aggregation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "period period aggregation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "date period accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "date period collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "date period accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "period accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "period collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "period accretion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date period combination": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "date period mass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "date_period.ordinal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Running Total Period",
+			          "ConceptualProperty": "Ordinal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordinal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "DTC measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "dtc degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dtc quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dtc quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dtc extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dtc amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dtc portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dtc ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "dtc size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.demand_gross_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Demand Gross Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "demand gross retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "demand gross retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "demand aggregate retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "demand overall retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "demand whole retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "demand sum retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "demand total retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "demand gross retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.demand_discount_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Demand Discount Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "demand discount retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "demand discount retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "demand discount retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.demand_net_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Demand Net Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "demand net retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "demand net retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "demand net retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.demand_unit_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Demand Unit Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "demand unit sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unit sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "demand unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "demand module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "demand element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "demand entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "demand group sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.demand_tax_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Demand Tax $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "demand tax $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "demand tax dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.cancel_gross_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Cancel Gross Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancel gross retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cancel gross retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "cancel aggregate retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "cancel overall retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "cancel whole retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "cancel sum retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "cancel total retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "cancel gross retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.cancel_net_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Cancel Net Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancel net retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cancel net retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "cancel net retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.cancel_tax_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Cancel Tax $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancel tax $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cancel tax dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.cancel_unit_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Cancel Unit Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancel unit sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unit sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cancel unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "cancel module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "cancel element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "cancel entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "cancel group sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.fulfillment_gross_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Fulfillment Gross Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fulfillment gross retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fulfillment gross retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "fulfillment aggregate retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "fulfillment overall retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "fulfillment whole retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "fulfillment sum retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "fulfillment total retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "fulfillment gross retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.fulfillment_net_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Fulfillment Net Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fulfillment net retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fulfillment net retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "fulfillment net retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.fulfillment_tax_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Fulfillment Tax $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fulfillment tax $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fulfillment tax dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.fulfillment_unit_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Fulfillment Unit Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fulfillment unit sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unit sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "fulfillment unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "fulfillment module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fulfillment element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fulfillment entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fulfillment group sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gross retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "aggregate retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "overall retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "whole retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "sum retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "total retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "gross retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_unit_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Unit Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross unit sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unit sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "gross unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "aggregate unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "gross module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "gross element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "gross entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_cost_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Cost Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross cost sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gross cost sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "aggregate cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "overall cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "whole cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "sum cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "total cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "gross cost sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_margin_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Margin $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross margin $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gross margin dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "aggregate margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "sum margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_margin_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Margin %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross margin %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gross margin percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "gross margin pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "aggregate margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "sum margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_sales_AUR": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Sales AUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross sales AUR": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AUR": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales AUR": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "sum sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "gross sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.gross_sales_AUC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Gross Sales AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross sales AUC": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AUC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales AUC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "sum sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "gross sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.net_gross_margin_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Net Gross Margin $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "net gross margin $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "net gross margin dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "net aggregate margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net overall margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net whole margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net sum margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "net total margin $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.net_gross_margin_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Net Gross Margin %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "net gross margin %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "net gross margin percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "net gross margin pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "net aggregate margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net overall margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net whole margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.665
+			          }
+			        },
+			        {
+			          "net sum margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "net total margin %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.net_sales_AUR": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Net Sales AUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "net sales AUR": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AUR": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales AUR": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "net sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "sale aur": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.net_sales_AUC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Net Sales AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "net sales AUC": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AUC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sales AUC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "net sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "sale auc": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.return_gross_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Return Gross Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "return gross retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "return gross retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "return aggregate retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "return overall retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "return whole retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "return sum retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "return total retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "return gross retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.return_net_retail_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Return Net Retail Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "return net retail sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "return net retail sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "return net retail sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.return_tax_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Return Tax Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "return tax sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "return tax sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "return tax sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.return_unit_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "Return Unit Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "return unit sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "unit sales": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "return unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "unit sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "return module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "return element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "return entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "module sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "element sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "entity sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "return group sale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Demand_Gross_Retail_Sales___FormatString_demand_gross_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Demand Gross Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_demand gross retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Demand_Discount_Retail_Sales___FormatString_demand_discount_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Demand Discount Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_demand discount retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Demand_Net_Retail_Sales___FormatString_demand_net_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Demand Net Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_demand net retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Demand_Unit_Sales_FormatString_demand_unit_sales_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Demand Unit Sales FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_demand unit sales FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_demand module sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_demand element sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_demand entity sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_demand group sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand component sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand constituent sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand item sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand part sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand section sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_demand unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Demand_Tax___FormatString_demand_tax__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Demand Tax $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_demand tax $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_demand tax dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Cancel_Gross_Retail_Sales___FormatString_cancel_gross_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Cancel Gross Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cancel gross retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Cancel_Net_Retail_Sales___FormatString_cancel_net_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Cancel Net Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cancel net retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Cancel_Tax___FormatString_cancel_tax__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Cancel Tax $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cancel tax $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_cancel tax dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Cancel_Unit_Sales_FormatString_cancel_unit_sales_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Cancel Unit Sales FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cancel unit sales FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_cancel module sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_cancel element sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_cancel entity sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_cancel group sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel component sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel constituent sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel item sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel part sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel section sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_cancel unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Fulfillment_Gross_Retail_Sales___FormatString_fulfillment_gross_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Fulfillment Gross Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_fulfillment gross retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Fulfillment_Net_Retail_Sales___FormatString_fulfillment_net_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Fulfillment Net Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_fulfillment net retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Fulfillment_Tax___FormatString_fulfillment_tax__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Fulfillment Tax $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_fulfillment tax $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_fulfillment tax dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Fulfillment_Unit_Sales_FormatString_fulfillment_unit_sales_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Fulfillment Unit Sales FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_fulfillment unit sales FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_fulfillment module sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_fulfillment element sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_fulfillment entity sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_fulfillment group sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment component sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment constituent sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment item sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment part sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment section sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_fulfillment unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Retail_Sales___FormatString_gross_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Unit_Sales_FormatString_gross_unit_sales_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Unit Sales FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross unit sales FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_gross module sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_gross element sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_gross entity sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_ sum unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross group sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross component sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Cost_Sales___FormatString_gross_cost_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Cost Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross cost sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Margin___FormatString_gross_margin__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Margin $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross margin $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate margin $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall margin $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole margin $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_gross margin dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_ sum margin $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total margin $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Margin___FormatString2_gross_margin__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Margin % FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross margin % FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate margin % formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall margin % formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole margin % formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_gross margin percentage formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_ sum margin % formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total margin % formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross margin pct formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Sales_AUR_FormatString_gross_sales_AUR_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Sales AUR FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross sales AUR FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ sum sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Sales_AUC_FormatString_gross_sales_AUC_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Sales AUC FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross sales AUC FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ sum sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Retail_Returns___FormatString_gross_retail_returns__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Retail Returns $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross retail returns $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Gross_Returns_Units_FormatString_gross_returns_units_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Gross Returns Units FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross returns units FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_gross return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.693
+			          }
+			        },
+			        {
+			          "_ aggregate return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ sum return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total return unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Retail_Sales___FormatString_net_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Cost_Sales___FormatString_net_cost_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Cost Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net cost sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Sales_Units_FormatString_net_sales_units_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Sales Units FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net sales units FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_net sale unit formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Gross_Margin___FormatString_net_gross_margin__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Gross Margin $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net gross margin $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Gross_Margin___FormatString2_net_gross_margin__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Gross Margin % FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net gross margin % FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Sales_AUR_FormatString_net_sales_AUR_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Sales AUR FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net sales AUR FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_net sale aur formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Net_Sales_AUC_FormatString_net_sales_AUC_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Net Sales AUC FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_net sales AUC FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_net sale auc formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_TEST_FormatString_TEST_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_TEST FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_TEST FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Return_Gross_Retail_Sales___FormatString_return_gross_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Return Gross Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_return gross retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Return_Net_Retail_Sales___FormatString_return_net_retail_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Return Net Retail Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_return net retail sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Return_Tax_Sales___FormatString_return_tax_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Return Tax Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_return tax sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "DTC_measure.v_Return_Unit_Sales_FormatString_return_unit_sales_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DTC Measures",
+			          "ConceptualProperty": "_Return Unit Sales FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_return unit sales FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_return module sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_return element sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_return entity sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_return group sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return component sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return constituent sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return item sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return part sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return section sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_return unit sale formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wholesale measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "wholesale degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "wholesale quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "wholesale quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "wholesale extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "wholesale amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "wholesale portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "wholesale ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "wholesale size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.gross_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "Gross Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "gross sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "aggregate sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "overall sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "whole sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.657
+			          }
+			        },
+			        {
+			          "sum sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "total sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "gross sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.gross_return_RTV_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "Gross Return (RTV) $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "gross return (RTV) $": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.upfront_discount_on_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "Upfront Discount on Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "upfront discount on sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "upfront discount on sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "upfront discount on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "upfront reduction on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront markdown on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront concession on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront deduction on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront rebate on sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.upfront_discount_on_return_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "Upfront Discount on Return $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "upfront discount on return $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "upfront discount on return dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "upfront reduction on return $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront markdown on return $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront concession on return $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront deduction on return $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "upfront rebate on return $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.invoiced_sales_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "Net Invoiced Sales $"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "invoiced sales $": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "invoiced sale dollar": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "invoiced sale $": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.v_Gross_Sales___FormatString_gross_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "_Gross Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_ aggregate sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ overall sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_ whole sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.673
+			          }
+			        },
+			        {
+			          "_gross sale dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_ sum sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_ total sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "_gross sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.v_Gross_Return__RTV____FormatString_gross_return_RTV__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "_Gross Return (RTV) $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_gross return (RTV) $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.v_Upfront_Discount_on_Sales___FormatString_upfront_discount_on_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "_Upfront Discount on Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_upfront discount on sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.v_Upfront_Discount_on_Return___FormatString_upfront_discount_on_return__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "_Upfront Discount on Return $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_upfront discount on return $ FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "wholesale_measure.v_Invoiced_Sales___FormatString_invoiced_sales__FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Wholesale Measures",
+			          "ConceptualProperty": "_Invoiced Sales $ FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_invoiced sales $ FormatString": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_invoiced sale dollar formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "_invoiced sale $ formatstring": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "store.account_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Store",
+			          "ConceptualProperty": "Account Name"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "forecast.channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Forecast (Channel)",
+			          "ConceptualProperty": "Channel"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "budget.channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Budget (Channel)",
+			          "ConceptualProperty": "Channel"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "original_channel.channel_format": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Original Channel (DTC)",
+			          "ConceptualProperty": "Original Channel Format"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "transactions_financial.channel_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Transactions (Financial)",
+			          "ConceptualProperty": "Channel Name"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "channel.channel_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Channel",
+			          "ConceptualProperty": "Channel Name"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product.color_description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product",
+			          "ConceptualProperty": "Color Description"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "ranking.rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Ranking",
+			          "ConceptualProperty": "Rank"
+			        }
+			      },
+			      "State": "Generated"
+			    }
+			  },
+			  "Relationships": {
+			    "filter_date_has_d_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Filter Dates"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "filter_date": {
+			          "Target": {
+			            "Entity": "filter_date"
+			          }
+			        },
+			        "d_date": {
+			          "Target": {
+			            "Entity": "d_date"
+			          }
+			        }
+			      }
+			    },
+			    "DTC_measure_has_net_sales_AUC": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.net_sales_AUC": {
+			          "Target": {
+			            "Entity": "DTC_measure.net_sales_AUC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.net_sales_AUC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_net_sales_AUC"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_net_gross_margin_1": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.net_gross_margin_1": {
+			          "Target": {
+			            "Entity": "DTC_measure.net_gross_margin_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.net_gross_margin_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_net_gross_margin_"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_net_cost_sales_": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.net_cost_sales_": {
+			          "Target": {
+			            "Entity": "DTC_measure.net_cost_sales_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.net_cost_sales_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_net_cost_sales_"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_gross_sales_AUC": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.gross_sales_AUC": {
+			          "Target": {
+			            "Entity": "DTC_measure.gross_sales_AUC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.gross_sales_AUC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_gross_sales_AUC"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_gross_margin_1": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.gross_margin_1": {
+			          "Target": {
+			            "Entity": "DTC_measure.gross_margin_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.gross_margin_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_gross_margin_"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_gross_margin_": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.gross_margin_": {
+			          "Target": {
+			            "Entity": "DTC_measure.gross_margin_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.gross_margin_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_gross_margin_1"
+			        }
+			      ]
+			    },
+			    "DTC_measure_has_gross_cost_sales_": {
+			      "Binding": {
+			        "ConceptualEntity": "DTC Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DTC_measure": {
+			          "Target": {
+			            "Entity": "DTC_measure"
+			          }
+			        },
+			        "DTC_measure.gross_cost_sales_": {
+			          "Target": {
+			            "Entity": "DTC_measure.gross_cost_sales_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DTC_measure"
+			            },
+			            "Object": {
+			              "Role": "DTC_measure.gross_cost_sales_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DTC_measures_have_gross_cost_sales_"
+			        }
+			      ]
+			    },
+			    "date_period_has_ordinal": {
+			      "Binding": {
+			        "ConceptualEntity": "Running Total Period"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_period": {
+			          "Target": {
+			            "Entity": "date_period"
+			          }
+			        },
+			        "date_period.ordinal": {
+			          "Target": {
+			            "Entity": "date_period.ordinal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_period"
+			            },
+			            "Object": {
+			              "Role": "date_period.ordinal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_periods_have_ordinals"
+			        }
+			      ]
+			    },
+			    "date_period_has_date_period_aggregation": {
+			      "Binding": {
+			        "ConceptualEntity": "Running Total Period"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "date_period": {
+			          "Target": {
+			            "Entity": "date_period"
+			          }
+			        },
+			        "date_period.date_period_aggregation": {
+			          "Target": {
+			            "Entity": "date_period.date_period_aggregation"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "date_period"
+			            },
+			            "Object": {
+			              "Role": "date_period.date_period_aggregation"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "date_periods_have_date_period_aggregations"
+			        }
+			      ]
+			    },
+			    "calendar_period_has_calendar_period_aggregation": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar Period"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar_period": {
+			          "Target": {
+			            "Entity": "calendar_period"
+			          }
+			        },
+			        "calendar_period.calendar_period_aggregation": {
+			          "Target": {
+			            "Entity": "calendar_period.calendar_period_aggregation"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar_period"
+			            },
+			            "Object": {
+			              "Role": "calendar_period.calendar_period_aggregation"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendar_periods_have_calendar_period_aggregations"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

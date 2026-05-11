@@ -1,0 +1,365 @@
+table 'DTC Measures'
+	lineageTag: 3f9af356-b24a-44eb-8527-b08d6d94cbf8
+	sourceLineageTag: b83fd45b-4513-4717-9462-a38c021e3a83
+
+	measure 'Demand Gross Retail Sales $' = EXTERNALMEASURE("Demand Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 466838d5-8f91-41d1-9335-2c242fa47a41
+		sourceLineageTag: 915dfa95-b34b-44a7-8406-025b7ac0e31c
+		dataCategory: Uncategorized
+
+	measure 'Demand Discount Retail Sales $' = EXTERNALMEASURE("Demand Discount Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 25d3f324-aff1-4c90-8e6e-873f8f915434
+		sourceLineageTag: 20c021b9-1af9-47cb-a19a-c519bc51e481
+		dataCategory: Uncategorized
+
+	measure 'Demand Net Retail Sales $' = EXTERNALMEASURE("Demand Net Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9ebcec14-75c1-4178-a50f-703b8a20becf
+		sourceLineageTag: 5158a8f6-baa2-4e0d-96d5-f5031dced01d
+		dataCategory: Uncategorized
+
+	measure 'Demand Unit Sales' = EXTERNALMEASURE("Demand Unit Sales", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 910eae95-0d0e-4497-9431-95588d6fa2e8
+		sourceLineageTag: a5a34f98-a763-473a-bb06-c504b45297e7
+		dataCategory: Uncategorized
+
+	measure 'Demand Tax $' = EXTERNALMEASURE("Demand Tax $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eabf0f54-c3e9-4e6e-bdbf-54843f93e979
+		sourceLineageTag: 3538fd98-8f35-48f3-b98e-dd723a66ca32
+		dataCategory: Uncategorized
+
+	measure 'Cancel Gross Retail Sales $' = EXTERNALMEASURE("Cancel Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: af53c79e-d2fb-450a-8b67-4f5e0a3c8ba2
+		sourceLineageTag: 30ba4f4f-5c27-4574-bad5-24867a1cd1a8
+		dataCategory: Uncategorized
+
+	measure 'Cancel Net Retail Sales $' = EXTERNALMEASURE("Cancel Net Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fefc458d-0161-4319-886c-60a29209f953
+		sourceLineageTag: 27d75100-32c7-4364-8a20-35d2fb1ad037
+		dataCategory: Uncategorized
+
+	measure 'Cancel Tax $' = EXTERNALMEASURE("Cancel Tax $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f7b4ae61-9bd2-4d61-92cc-b982ddaa156b
+		sourceLineageTag: 91beebf0-7357-4a4f-a345-fdf03beb7e9f
+		dataCategory: Uncategorized
+
+	measure 'Cancel Unit Sales' = EXTERNALMEASURE("Cancel Unit Sales", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 18e66af2-f6cb-4ef7-be3f-d111e19f8663
+		sourceLineageTag: 63ee24a6-9b63-4cad-8414-2624ad33a91c
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Gross Retail Sales $' = EXTERNALMEASURE("Fulfillment Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 68054f88-0356-4ba1-b7c6-5a743d9ae046
+		sourceLineageTag: 11019bb9-18cf-4418-b787-95fa82886a4e
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Net Retail Sales $' = EXTERNALMEASURE("Fulfillment Net Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7fefefcb-74aa-4952-9adf-dbe5b3d712ff
+		sourceLineageTag: ff202fa9-9ccd-47c7-a7dc-cf025dec9282
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Tax $' = EXTERNALMEASURE("Fulfillment Tax $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 71b7dec8-60e1-46b9-ad0b-53469c2c2f63
+		sourceLineageTag: b224daa7-12cd-45db-9114-28813d86d9b8
+		dataCategory: Uncategorized
+
+	measure 'Fulfillment Unit Sales' = EXTERNALMEASURE("Fulfillment Unit Sales", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: e50f6d9c-1a0d-4d71-bccc-4c36d32281c4
+		sourceLineageTag: 951c540d-c88d-47b8-a301-e2b1d03defa1
+		dataCategory: Uncategorized
+
+	measure 'Gross Retail Sales $' = EXTERNALMEASURE("Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6ee1d3d2-50b6-48fe-adf7-b7baa55b6427
+		sourceLineageTag: 4d446f80-b073-4d87-866d-e4a7d86f2d01
+		dataCategory: Uncategorized
+
+	measure 'Gross Unit Sales' = EXTERNALMEASURE("Gross Unit Sales", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 8a7203ff-7999-4a96-95ca-3c5870084272
+		sourceLineageTag: 47276505-555e-482c-9eed-403ef070fb17
+		dataCategory: Uncategorized
+
+	measure 'Gross Cost Sales $' = EXTERNALMEASURE("Gross Cost Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8b72e9e4-8ed0-46ab-b3e1-50266f75a209
+		sourceLineageTag: 458729d7-6e5b-4fb4-ba83-deb850ba3801
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin $' = EXTERNALMEASURE("Gross Margin $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d8ec07f3-0127-4c6a-ab72-a4bba7037fcd
+		sourceLineageTag: 40c42ba1-8ef5-4faa-a4ba-ea830adab450
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin %' = EXTERNALMEASURE("Gross Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1455359a-b284-4922-b3bd-c72d0ef49d1a
+		sourceLineageTag: 3083da2f-1466-42df-a90e-70443804c860
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales AUR' = EXTERNALMEASURE("Gross Sales AUR", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2e4f6364-3a0b-4379-a75e-b87f3b947fd9
+		sourceLineageTag: d4728dc0-62ff-487d-bc3e-936dcb876625
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales AUC' = EXTERNALMEASURE("Gross Sales AUC", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: 3b4eb986-169d-4d82-80bf-a42dd185d0b0
+		sourceLineageTag: ae224e5b-09c7-40b7-a179-2ec01fe456c6
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Gross Margin $' = EXTERNALMEASURE("Net Gross Margin $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a04212c9-90c2-422f-abf2-3047f08db63d
+		sourceLineageTag: 7d302c46-f908-430c-a76c-919b6f3fdf26
+		dataCategory: Uncategorized
+
+	measure 'Net Gross Margin %' = EXTERNALMEASURE("Net Gross Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a00ebc09-6946-4ee2-a66d-f0fe73f4382a
+		sourceLineageTag: 2e11eda0-d725-42e1-a5f8-cfccf78f2ef2
+		dataCategory: Uncategorized
+
+	measure 'Net Sales AUR' = EXTERNALMEASURE("Net Sales AUR", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 64489b25-7cbe-40b1-add4-5787768b1b46
+		sourceLineageTag: 29762248-6ed3-45dd-b0fb-c03929ddbae5
+		dataCategory: Uncategorized
+
+	measure 'Net Sales AUC' = EXTERNALMEASURE("Net Sales AUC", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: a9740f84-e4af-4899-9f85-1ef736232f4c
+		sourceLineageTag: 80296969-1528-4685-9e49-692854066fd7
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Return Gross Retail Sales $' = EXTERNALMEASURE("Return Gross Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 934d15f2-be3d-41c8-a9ed-c8fc9bdf426c
+		sourceLineageTag: c25b8ab0-af1c-4cb5-9c4a-2bf8a995a464
+		dataCategory: Uncategorized
+
+	measure 'Return Net Retail Sales $' = EXTERNALMEASURE("Return Net Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c23687f0-4250-48c9-990d-68251f1fdc57
+		sourceLineageTag: d3d339b6-3895-4ad9-9079-2e90c1a72f5a
+		dataCategory: Uncategorized
+
+	measure 'Return Tax Sales $' = EXTERNALMEASURE("Return Tax Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: bf463c8c-86a3-43f2-b66f-eac1ce29d526
+		sourceLineageTag: 86b56d9c-b77f-4113-9529-052cadfaeb1c
+		dataCategory: Uncategorized
+
+	measure 'Return Unit Sales' = EXTERNALMEASURE("Return Unit Sales", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: fe9adc90-ce3f-4ff7-9008-965a5bc79970
+		sourceLineageTag: e90116f6-f437-4a37-9477-84f0f31ad44c
+		dataCategory: Uncategorized
+
+	measure 'Net Sales Units' = EXTERNALMEASURE("Net Sales Units", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 136d0334-01a1-4bfb-84b2-155004105958
+		sourceLineageTag: e961303c-79f6-459a-a527-905c904ffdae
+		dataCategory: Uncategorized
+
+	measure 'Returns Units' = EXTERNALMEASURE("Returns Units", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: b958e64b-1d56-4a10-a30a-d29931ec569e
+		sourceLineageTag: 8d0c3a03-528d-4d1c-a765-f9f0931e585f
+		dataCategory: Uncategorized
+
+	measure 'Net Retail Sales $' = EXTERNALMEASURE("Net Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: fc23c7eb-837c-4cd6-83f9-4a4d5facc3c5
+		sourceLineageTag: eee61652-b18a-48c1-8ba9-75a59a51bdc8
+		dataCategory: Uncategorized
+
+	measure 'Retail Returns $' = EXTERNALMEASURE("Retail Returns $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 079a86bd-fa3a-4ab8-a3ef-7ee42a2145bf
+		sourceLineageTag: 55b48113-3461-4c17-989a-7f5b89c5e7d4
+		dataCategory: Uncategorized
+
+	measure 'Net Cost Sales $' = EXTERNALMEASURE("Net Cost Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8e1f1cf3-37e1-4fd8-a359-0f17ed368f53
+		sourceLineageTag: 7a32597c-c15e-4bea-b9c2-cd40005f7a7e
+		dataCategory: Uncategorized
+
+	measure UPTs = EXTERNALMEASURE("UPTs", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0
+		lineageTag: 2125d0eb-2ffa-4034-8313-7b918641b985
+		sourceLineageTag: c44a23e9-6336-4742-9948-9129b304edbe
+		dataCategory: Uncategorized
+
+	measure AOV = EXTERNALMEASURE("AOV", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6a246d29-3f78-4938-85d6-bc2a6de07477
+		sourceLineageTag: 245610ba-9e5c-4a51-9d01-dc101802c5b3
+		dataCategory: Uncategorized
+
+	measure AUR = EXTERNALMEASURE("AUR", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4a8a836e-74b2-4a7c-b519-a8eeb0484ba7
+		sourceLineageTag: f9021f72-f634-49e5-8703-2a3fec699175
+		dataCategory: Uncategorized
+
+	measure 'DTC Full Price %' = EXTERNALMEASURE("DTC Full Price %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fc109597-a357-428d-b5d8-56f1c063d484
+		sourceLineageTag: 8b97ad2b-29a2-4682-b5cc-ab86a8dcb7f6
+		dataCategory: Uncategorized
+
+	measure 'Markdown $ Retail' = EXTERNALMEASURE("Markdown $ Retail", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8231e6fd-6d41-407f-aade-8b1ff5733b0e
+		sourceLineageTag: 5922de3a-f4ca-4158-9337-fe4d0be8665c
+		dataCategory: Uncategorized
+
+	measure 'Cost Returns $' = EXTERNALMEASURE("Cost Returns $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e550d45f-2b16-4b79-b97f-100073320807
+		sourceLineageTag: 6a227f18-ac21-4d51-825f-a3c9ce7da8de
+		dataCategory: Uncategorized
+
+	measure 'Returns Tax $' = EXTERNALMEASURE("Returns Tax $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0e6e698d-a81c-4aaa-b577-3fd1409ddc6f
+		sourceLineageTag: c45f6fef-9f55-418d-80f6-8debab9f059f
+		dataCategory: Uncategorized
+
+	measure 'Net Retail Orders $' = EXTERNALMEASURE("Net Retail Orders $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f968b115-a448-45ec-b3e9-747e926f8391
+		sourceLineageTag: d29d20c7-e409-4cc6-be16-3593cf128254
+		dataCategory: Uncategorized
+
+	measure Conversions = EXTERNALMEASURE("Conversions", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0%;-0%;0%
+		lineageTag: 72842098-e550-4ef9-bca9-01098977eb9f
+		sourceLineageTag: 5a89ea4d-9246-41ba-bc87-b71c7dedd69b
+		dataCategory: Uncategorized
+
+	measure Traffic = EXTERNALMEASURE("Traffic", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: f8bd249b-a5a1-4860-a262-1a7e86e958f1
+		sourceLineageTag: 78b7fcd8-405f-4556-ac36-94b356733173
+		dataCategory: Uncategorized
+
+	measure 'Sales Transactions' = EXTERNALMEASURE("Sales Transactions", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 7c49502d-66bf-43c3-9ca0-e1fb8b35ae0a
+		sourceLineageTag: fa2978a3-810f-4730-a408-5d5676b3d345
+		dataCategory: Uncategorized
+
+	measure 'DC Returns Retail (Digital Purchase)' = EXTERNALMEASURE("DC Returns Retail (Digital Purchase)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 454843cf-3ac2-47d4-8e52-aa4689f0cbc4
+		sourceLineageTag: 098b94a2-9b45-4643-96f0-4755c5d47625
+		dataCategory: Uncategorized
+
+	measure 'Store Returns Retail (Digital Purchase)' = EXTERNALMEASURE("Store Returns Retail (Digital Purchase)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a768d857-8654-407e-b1d9-3a995db8ddbd
+		sourceLineageTag: 553b2530-7033-4343-88c3-1ab6b0f5b887
+		dataCategory: Uncategorized
+
+	measure 'Store Returns Retail (Store Purchase)' = EXTERNALMEASURE("Store Returns Retail (Store Purchase)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 060f565f-b28c-49a1-8eba-fae48d53b14f
+		sourceLineageTag: 9dfc9590-26e9-45b7-a2cd-37d79d459e1b
+		dataCategory: Uncategorized
+
+	measure Transactions = EXTERNALMEASURE("Transactions", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 3eb14e10-e7f2-40bb-8f81-7701c0a94423
+		sourceLineageTag: 7c74e978-f3d6-4db1-8561-2e6393504a9e
+		dataCategory: Uncategorized
+
+	measure 'Receipt Retail $ MSRP' = EXTERNALMEASURE("Receipt Retail $ MSRP", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c22e4598-ab26-4e5b-af0a-73657bbcf24e
+		sourceLineageTag: 34c36ba7-6387-4721-af9a-1ade474aa957
+		dataCategory: Uncategorized
+
+	measure 'Receipt Cost $' = EXTERNALMEASURE("Receipt Cost $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ec943135-6185-4a86-a15c-c4873fc5b910
+		sourceLineageTag: 8df510fc-1726-46c1-a26b-16e9e47918d5
+		dataCategory: Uncategorized
+
+	measure 'DTC IMU %' = EXTERNALMEASURE("DTC IMU %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e0e4c773-137a-4c22-9043-756cbb8038e5
+		sourceLineageTag: 183f64e3-9224-4348-b7dd-7e0d8c10bfe4
+		dataCategory: Uncategorized
+
+	measure 'Retail Receipt $ Budget' = EXTERNALMEASURE("Retail Receipt $ Budget", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f3d4ca7c-7087-46c7-995b-9e8e95702d2f
+		sourceLineageTag: 7f9f5019-ae2e-4a07-9bda-d5b04f2298bf
+		dataCategory: Uncategorized
+
+	measure 'Cost Receipt $ Budget' = EXTERNALMEASURE("Cost Receipt $ Budget", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: dd1d3a27-4a9d-400c-94d3-210fd27710f9
+		sourceLineageTag: ec0265f7-733e-4ff3-993c-aa21a02fee4a
+		dataCategory: Uncategorized
+
+	measure 'Receipt $ Budget(sum)' = EXTERNALMEASURE("Receipt $ Budget(sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 141489eb-7825-4f66-84f7-61b2d64df4b5
+		sourceLineageTag: da8a5da9-2809-4f15-baa8-78ca01ef4f8e
+		dataCategory: Uncategorized
+
+	measure 'DTC Shipped Units' = EXTERNALMEASURE("DTC Shipped Units", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 38dca012-77d2-4278-a361-2b68fa3140a9
+		sourceLineageTag: 2db1c129-2737-463a-8c18-330f16426fd8
+		dataCategory: Uncategorized
+
+	measure 'DTC Receipt Units' = EXTERNALMEASURE("DTC Receipt Units", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: f2ec2cb9-da9a-43ec-ac33-2f7a9547bb7a
+		sourceLineageTag: 475c9532-9d67-4822-aa60-34684a7181e4
+		dataCategory: Uncategorized
+
+	measure 'DTC InTransit Units' = EXTERNALMEASURE("DTC InTransit Units", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: e3625c3b-b2cc-457b-b13f-062c659196e5
+		sourceLineageTag: 5be2e3df-6826-44c7-ab29-b2c4493b8bf0
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 6aab4585-ef6f-422e-bbbd-8fb802b7c57f
+		sourceLineageTag: 8b0b2500-f477-4a5d-8e36-1c0f4befc228
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'DTC Measures' = entity
+		mode: directQuery
+		source
+			entityName: DTC Measures
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,232 @@
+table Delivery
+	lineageTag: 18fdd372-fa84-4934-bbe4-5b91043f5ca1
+	sourceLineageTag: b43ddfc4-54a0-4f01-9950-c9cfb09a3297
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: a87aa413-9407-482c-80d6-f69b9151edb6
+		sourceLineageTag: cc70483f-34bd-4e01-857e-974a2159d802
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Code Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 44e07564-4a5b-43a3-9fc2-48cc35ba79c1
+		sourceLineageTag: 998adbb6-b4a2-47db-b405-4d751f97ad76
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Code Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Code'
+		dataType: string
+		lineageTag: 50efff93-765f-4a12-9945-4792af8ea45b
+		sourceLineageTag: 3a37221e-2171-4ac3-ab05-55806808d1b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Code
+
+		annotation SummarizationSetBy = User
+
+	column Style
+		dataType: string
+		lineageTag: b5e320fd-02f5-4383-b1d8-a4e2be12b87a
+		sourceLineageTag: d03304f2-a842-46d9-a322-dcb14ce5b490
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Code'
+		dataType: string
+		lineageTag: 4f1eb56f-02ec-4055-a32c-b8b6645f8b6e
+		sourceLineageTag: 54954b8b-834b-4a33-9e19-36cffcc60e95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7992c06a-2aa5-4e92-b1c9-8bab54558ea4
+		sourceLineageTag: 542a54fa-c559-46b7-863e-38780505805e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		lineageTag: 010fa2aa-11d9-4479-ab78-4507f8a96835
+		sourceLineageTag: ae7d6a9a-6cc9-4a1a-86cc-7e5860ee8c80
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Color Collection'
+		dataType: string
+		lineageTag: ec81cd91-e37f-4837-bf61-024e1114f888
+		sourceLineageTag: 90831141-dea6-47ce-80a5-8e8c46d416bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Color Collection
+
+		annotation SummarizationSetBy = User
+
+	column Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c499da00-0bf4-4706-b4da-bdc16aa27319
+		sourceLineageTag: 786dd808-3aff-4534-b2f8-5febc3505a88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = User
+
+	column Exclusive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3c6dec96-aaaa-40e9-874f-f8da4c0c42fd
+		sourceLineageTag: 03010a1a-cf19-41d7-9b3a-2fbf4b484a2e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Exclusive
+
+		annotation SummarizationSetBy = User
+
+	column 'Effective Dtc Transactions Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 7eac7537-0519-4091-a6f2-7cb76fc492c3
+		sourceLineageTag: 0009068c-d3a9-48f1-b4bf-004281334fc9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Effective Dtc Transactions Start Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Effective Dtc Transactions End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: f5ad089a-7737-462f-a0fb-c2cf3363927f
+		sourceLineageTag: 50a926bb-1dae-4a01-b40e-e6adaf728bcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Effective Dtc Transactions End Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Name'
+		dataType: string
+		lineageTag: dece6311-9cf7-4bd4-8e3b-10021b1ed0e6
+		sourceLineageTag: fbde2d83-81be-458a-9110-42913c734712
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Prefix'
+		dataType: string
+		lineageTag: e1cb7a87-5061-4a37-8255-3a4e7b5bc862
+		sourceLineageTag: 38fe382d-d68e-4206-833e-945912eda7aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Prefix
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Year'
+		dataType: string
+		lineageTag: 251d344e-782f-45ce-9b81-49e67a1748bc
+		sourceLineageTag: 4ea7f078-9645-4f12-ab0d-f2e5c784ff6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Month'
+		dataType: string
+		lineageTag: 4ddb43ec-f939-4e24-b5d2-59955d27f134
+		sourceLineageTag: ac9e96fb-cfc3-450a-b197-533583f961e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Month
+		sortByColumn: 'Month Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Dtc Transactions Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 75ac4335-8cc3-44b6-90e8-5d934741a43b
+		sourceLineageTag: 2fea3f14-2294-47e1-940d-043ef6bbfbe2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dtc Transactions Start Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5087201f-10e9-483f-ab58-baeea59a32de
+		sourceLineageTag: 9fcd97ba-d7b5-4ba1-b604-fe2b4610eb09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month Sort
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		lineageTag: d04d3b51-0f66-48b5-85d4-2876c9224895
+		sourceLineageTag: cf7f5eb4-1704-43ad-a9a9-1abc865377d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+		sortByColumn: 'Season Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 60498d43-82c8-4357-9fe1-a1d5d846b9de
+		sourceLineageTag: b364dbef-3f75-487d-b8fd-bde426677fcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Sort
+
+		annotation SummarizationSetBy = User
+
+	partition Delivery = entity
+		mode: directQuery
+		source
+			entityName: Delivery
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

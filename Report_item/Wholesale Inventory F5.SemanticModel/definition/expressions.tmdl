@@ -1,0 +1,16 @@
+expression SnowflakeWarehouse = "REPORTING_prod_WH" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: c7e3d726-1ac2-4029-bbd3-66ca2c331e1d
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression Environment = "PROD" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: b7f343db-2a1e-4001-9ee3-a11e90413c14
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+

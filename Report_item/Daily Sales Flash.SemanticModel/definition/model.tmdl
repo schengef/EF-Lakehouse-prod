@@ -1,0 +1,55 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Header-Sales Flash","Local-Sales Flash","Header-Digital Detail","Header-Daily Flash","Header-Total","DirectQuery to AS - Lakehouse Semantic Model"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["CalcGroup","WebModelingEdit"]
+
+ref table 'Header-Sales Flash'
+ref table 'Local-Sales Flash'
+ref table 'Header-Digital Detail'
+ref table 'Stores Calc Group'
+ref table 'Digital Calc Group'
+ref table 'Channel Calc Group'
+ref table 'Header-Daily Flash'
+ref table Header-Total
+ref table 'Transactions (Financial)'
+ref table 'Forecast (DTC Store)'
+ref table 'Forecast (Channel)'
+ref table 'Budget (DTC Store)'
+ref table 'Budget (Channel)'
+ref table 'Currency Selector'
+ref table 'Order Categorization'
+ref table Currency
+ref table Date
+ref table 'Store (DTC Allocated)'
+ref table 'Channel (DTC Allocated)'
+ref table 'Filter Dates'
+ref table 'Budget and Forecast Measures'
+ref table 'DTC Measures'
+ref table 'Total Company Measures'
+ref table Usage
+ref table 'Business Domain'
+ref table 'Business Domain Process'
+ref table Dependency
+ref table 'Source Table'
+ref table Report
+ref table 'Staging Process'
+ref table 'Semantic Model Update'
+ref table LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c
+ref table 'Inventory Movement'
+ref table 'Readiness SourceTable'
+ref table 'Readiness Domain'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Wholesale Inventory F5"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "aef79234-589b-a1c3-406a-f62bec206a76"
+  }
+}

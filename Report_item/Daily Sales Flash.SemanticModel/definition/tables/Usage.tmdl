@@ -1,0 +1,47 @@
+table Usage
+	isHidden
+	lineageTag: 04695933-6c6d-4ceb-8e5b-c0d9197bde2d
+	sourceLineageTag: 063f79e6-b858-4852-bba6-f35611839455
+
+	column 'Load Usage Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f4240673-305d-4cb6-b951-88e99276a3ae
+		sourceLineageTag: 58f234ee-42ae-4640-877a-07fd6af00542
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Load Usage Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b1ce3210-1e9d-4a5b-a339-c56349d823f2
+		sourceLineageTag: 99b8226b-c421-4477-853a-2de5f1e86f65
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e2f802fe-3e90-4776-8f12-38f2264852a8
+		sourceLineageTag: 2c8fdb44-419e-42c7-8fdb-b77913d41ff2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	partition Usage = entity
+		mode: directQuery
+		source
+			entityName: Usage
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

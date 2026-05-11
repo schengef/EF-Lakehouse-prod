@@ -1,0 +1,114 @@
+table 'Digital Calc Group'
+	lineageTag: 536973bb-5c13-435a-a738-e0bde8103862
+
+	calculationGroup
+		precedence: 2
+
+		calculationItem '        TY        ' = ```
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				CALCULATE(
+				[Daily Flash Digital TY],
+				'Date'[Date]<TODAY()
+				)
+				)
+				
+				```
+
+			formatStringDefinition = "$#,###;($#,###)"
+
+		calculationItem '        LY        ' =
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				    VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+				    VAR LastDayLY=max('Date'[Date])
+				    VAR LW=SUMMARIZECOLUMNS('Date'[Date], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+				    Return
+				        CALCULATE (
+				                [Daily Flash Digital LY],
+				                ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				                'Date'[Date] in LW &&
+				                'Date'[Date]<=LastDayAvailable
+				            )
+				)
+
+			formatStringDefinition = "$#,###;($#,###)"
+
+		calculationItem '    % vs LY   ' =
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				    VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+				    VAR LastDayLY=max('Date'[Date])
+				    VAR LW=SUMMARIZECOLUMNS('Date'[Date], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+				    Return
+				        CALCULATE (
+				                format([Daily Flash Digital % vs LY],"0.0%;(0.0%)"),
+				                ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+				                'Date'[Date] in LW &&
+				                'Date'[Date]<=LastDayAvailable
+				            )
+				)
+
+			formatStringDefinition = "0.0%;(0.0%)"
+
+		calculationItem '   Budget   ' = ```
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				[Daily Flash Digital Budget]
+				)
+				
+				```
+
+			formatStringDefinition = "$#,###;($#,###)"
+
+		calculationItem '% vs Budget' = ```
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				format([Daily Flash Digital % vs Budget],"0.0%;(0.0%)")
+				)
+				
+				```
+
+			formatStringDefinition = "0.0%;(0.0%)"
+
+		calculationItem '% of Budget in' =
+				
+				if(ISINSCOPE('Date'[Date]),blank(),
+				format(1+[Daily Flash Digital % vs Budget],"0.0%;(0.0%)")
+				)
+
+			formatStringDefinition = "0.0%;(0.0%)"
+
+		calculationItem Daily = ```
+				
+				if(ISINSCOPE('Date'[Date]),
+				        SWITCH(SELECTEDVALUE('Header-Daily Flash'[Measure]),
+				        "      TY      ",[Daily Flash Digital TY],
+				        "      LY      ",[Daily Flash Digital LY],
+				        "   % vs LY   ",format([Daily Flash Digital % vs LY],"0.0%;(0.0%)")
+				        ),
+				    blank()
+				)
+				
+				```
+
+			formatStringDefinition = "$#,###;($#,###)"
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: cf35a1a9-02ef-4c0e-aee4-6b1d747e71f6
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 20bf3d71-3538-48e6-9c94-a831f8cdde4f
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

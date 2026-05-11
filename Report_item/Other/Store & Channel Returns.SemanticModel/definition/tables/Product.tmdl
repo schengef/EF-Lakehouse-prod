@@ -1,0 +1,1375 @@
+table Product
+	lineageTag: 39cff7ae-999e-4a21-951b-48f690b04fac
+	sourceLineageTag: 8e18d0d2-55d3-437f-a693-e94a6333a537
+
+	column 'Active Colorway'
+		dataType: string
+		displayFolder: Status
+		lineageTag: e6215dcd-3e7a-4a75-ae19-2e8a4bf692b0
+		sourceLineageTag: 83e45f69-abc7-4d20-bef4-aa52bc9865f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Active Colorway
+
+		annotation SummarizationSetBy = User
+
+	column 'Active Style'
+		dataType: string
+		displayFolder: Status
+		lineageTag: 1c9c3a03-5c08-4bc3-9b45-b07f8c29b94f
+		sourceLineageTag: f0699c5a-592e-440b-b345-88527e070f87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Active Style
+
+		annotation SummarizationSetBy = User
+
+	column 'Armhole Construction'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 5d57a6bf-41bc-4628-8b97-667de37bf2d3
+		sourceLineageTag: b72d44e9-94de-4a83-b04b-7760a8e90668
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Armhole Construction
+
+		annotation SummarizationSetBy = User
+
+	column Bullet01
+		dataType: string
+		displayFolder: Site
+		lineageTag: e075e2e2-2c66-4338-8954-dc6b34e27212
+		sourceLineageTag: 7d773746-0297-4a46-9049-cbc8da68d12f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet01
+
+		annotation SummarizationSetBy = User
+
+	column Bullet02
+		dataType: string
+		displayFolder: Site
+		lineageTag: 72935e1a-1b0f-431a-871a-1552003ad34b
+		sourceLineageTag: ee8d31ee-bffd-49c7-bd68-4bb6d9094967
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet02
+
+		annotation SummarizationSetBy = User
+
+	column Bullet03
+		dataType: string
+		displayFolder: Site
+		lineageTag: b0befbaa-4e6a-4fa1-823b-d4e634536fa9
+		sourceLineageTag: 0bb1748b-aa6b-4215-8577-e3bb947b9379
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet03
+
+		annotation SummarizationSetBy = User
+
+	column Bullet04
+		dataType: string
+		displayFolder: Site
+		lineageTag: 79e450b2-c718-45f1-a9c3-c60f330ebc4f
+		sourceLineageTag: ad911ee3-450b-4e18-966f-96d604879c45
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet04
+
+		annotation SummarizationSetBy = User
+
+	column Bullet05
+		dataType: string
+		displayFolder: Site
+		lineageTag: a4ed5198-4493-44cd-8975-a85fba71731d
+		sourceLineageTag: ca1484f2-39ca-42de-ba08-8a1d0f7fdddf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet05
+
+		annotation SummarizationSetBy = User
+
+	column Bullet06
+		dataType: string
+		displayFolder: Site
+		lineageTag: 17413976-1e24-4cea-87e4-f9f843f0e4d0
+		sourceLineageTag: 8a570d4b-4e9a-4742-99c3-c913cfec04ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet06
+
+		annotation SummarizationSetBy = User
+
+	column Bullet07
+		dataType: string
+		displayFolder: Site
+		lineageTag: 2676548e-ef43-4425-b3fd-ce4aad09ef37
+		sourceLineageTag: b6cf807b-8fa1-4da7-b465-2540f513e790
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet07
+
+		annotation SummarizationSetBy = User
+
+	column Bullet08
+		dataType: string
+		displayFolder: Site
+		lineageTag: 995c9be1-91b4-47aa-8dc3-c53ce6992bcb
+		sourceLineageTag: cf05b6fb-56d4-4a9a-b356-72b5334ba0cb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet08
+
+		annotation SummarizationSetBy = User
+
+	column Bullet09
+		dataType: string
+		displayFolder: Site
+		lineageTag: 2e4a74f8-348f-4800-a424-363bd2707d3c
+		sourceLineageTag: 16071563-a518-47fa-af29-3402fc288f8f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet09
+
+		annotation SummarizationSetBy = User
+
+	column Bullet10
+		dataType: string
+		displayFolder: Site
+		lineageTag: 37945732-c327-44ad-8cc7-c0a0a1fd99e4
+		sourceLineageTag: 2e4d1302-b349-4886-9349-6b3114c334cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet10
+
+		annotation SummarizationSetBy = User
+
+	column Bullet11
+		dataType: string
+		displayFolder: Site
+		lineageTag: 312434e4-8a20-4a27-b962-fdedd5c93562
+		sourceLineageTag: 59951dcc-6a3b-49ba-af3b-d5089b3fe9ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet11
+
+		annotation SummarizationSetBy = User
+
+	column Bullet12
+		dataType: string
+		displayFolder: Site
+		lineageTag: 96354c92-6462-4e2b-b2e8-17a8567c76bb
+		sourceLineageTag: a100f9fd-db90-46d9-ab7f-5203a07ed727
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet12
+
+		annotation SummarizationSetBy = User
+
+	column Bullet13
+		dataType: string
+		displayFolder: Site
+		lineageTag: ec411772-917a-4a9b-9566-2984544e2bee
+		sourceLineageTag: 082efadd-5eae-4f3f-9ce3-f7d610412e40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet13
+
+		annotation SummarizationSetBy = User
+
+	column Bullet14
+		dataType: string
+		displayFolder: Site
+		lineageTag: c97b44a7-cfcd-4fe8-83f8-a934b450601c
+		sourceLineageTag: 5d7033d9-1f23-4d54-a939-ba2ff0fa7eeb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet14
+
+		annotation SummarizationSetBy = User
+
+	column Bullet15
+		dataType: string
+		displayFolder: Site
+		lineageTag: bf419131-87e8-4698-a8cc-d6b11a688ced
+		sourceLineageTag: 39e4ba65-86f0-41f1-ba01-ce0b4a3d069f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bullet15
+
+		annotation SummarizationSetBy = User
+
+	column 'Can Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: e7230a2a-9554-4674-80eb-5bd3c1603882
+		sourceLineageTag: f45ee40e-5392-4139-b418-30212de5efe3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Can Retail Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Can Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 3af0a793-440b-4fe2-b78d-03be181e52ac
+		sourceLineageTag: ede18e75-a84b-4b5e-a9cb-0eb9fa91935e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Can Selling Price Dtc
+
+		annotation SummarizationSetBy = User
+
+	column 'Can Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 2f13347f-ef7a-48fc-b3b1-3505812de1c9
+		sourceLineageTag: 68bf75b6-53ad-4857-8104-b2d74a81711c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Can Standard Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Can Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: de1f04b1-edfa-4d32-97bb-d15a891c02e6
+		sourceLineageTag: 2c9c0e0e-7d74-482a-a6d9-47eebd900f96
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Can Wholesale Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Class Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: 2614391d-170b-4027-9c72-deb2beb17fc0
+		sourceLineageTag: 7260fb5b-1350-42e9-ba6d-20bd8250cbb2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Class Code Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Class Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: c400be56-19c1-43c7-aa95-c5df3a3fd7d0
+		sourceLineageTag: 46cc67f0-b696-4ee7-bdbd-7921dbf4f56c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Class Description Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Category'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 3129331a-1d93-4c57-9d18-8f80f355fb52
+		sourceLineageTag: 9adf5655-a8cc-40b3-835c-6d41e692b0f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Clarity'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 59dfac91-2b3c-41db-a98b-01551bf730d3
+		sourceLineageTag: 7126590e-d128-4325-9b52-b108595ba86d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Clarity
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Code 5 Letter'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 15fa0d82-83b0-42cc-968a-bc5cb163641a
+		sourceLineageTag: 9372ec24-5b24-4db1-b4a5-03edaf17cd72
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Code 5 Letter
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Code Nrf'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 7f8560ad-7922-4133-9e66-6dfc5a15b20c
+		sourceLineageTag: fb805c5a-8589-4a69-817e-4edeec8498e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Code Nrf
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Description'
+		dataType: string
+		displayFolder: Color
+		lineageTag: bbea28ec-1725-4a50-b177-fa60739f5fa7
+		sourceLineageTag: 87252c54-4863-45c8-b89e-0fb896b3c919
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Group Code'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 4c9f2db1-999b-4711-8074-285342d1a403
+		sourceLineageTag: a504b8b7-859d-4f25-982e-e9ee65c23cb0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Group Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Group Name'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 8f0b6a73-da26-4022-8eb1-8a525e75f119
+		sourceLineageTag: 0bd09156-a3dc-44f9-9b57-7dcdd982ac3d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Group Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Shade'
+		dataType: string
+		displayFolder: Color
+		lineageTag: db43f31a-683e-49d8-9657-97121d22d2d0
+		sourceLineageTag: b393a58b-d6d1-4655-8c3c-b88a7482f8a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Shade
+
+		annotation SummarizationSetBy = User
+
+	column 'Color Temp'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 1cb23c57-a7fc-4449-b30f-daa80d716771
+		sourceLineageTag: 11d0c3f2-475a-4d06-a6ab-222d79258288
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Color Temp
+
+		annotation SummarizationSetBy = User
+
+	column 'Department Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 4bc471da-7be2-4566-b9fc-72779f6d5101
+		sourceLineageTag: 5ed41ae5-5973-4322-b360-eb7cd4923d20
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Department Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: 11e6df69-6245-4146-9d06-4ade8e0f8820
+		sourceLineageTag: a9cc53ed-32c1-43d0-bad7-34e68f26bf16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Code Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Department Description'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: e021c267-4754-4f97-b5a6-eb5c1ea93ff7
+		sourceLineageTag: e5803913-97d4-463b-929d-3da45995f92b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Department Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 3d78fb34-7243-4bb2-98f8-b4acdb93eee0
+		sourceLineageTag: 7f30806d-3f0f-4243-a5b9-b8699a30200e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department Description Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Display Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 6ff8b750-f4c1-4a44-bb3d-a33695e55a49
+		sourceLineageTag: 67001b8a-b9cf-492e-b84e-5d9f5ea8427b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Display Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: aaa0de20-ea2c-4f60-9a2b-2c4a46ddd35f
+		sourceLineageTag: 3104af4b-e52d-4358-8bc0-f9637452e708
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Code Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: c4772376-42e6-45fe-937a-fdd3d8b980eb
+		sourceLineageTag: 3c1e5a74-b710-421b-b986-e396be534b3e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Description Mi9
+
+		annotation SummarizationSetBy = User
+
+	column 'Dom Imp Code'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: dcdbe169-c761-4c6d-b913-cd0c700bfe72
+		sourceLineageTag: a95fc382-cc74-48c5-9ab1-321e021dbffd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dom Imp Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Dom Imp Name'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: 4d41031b-6dfa-4047-8107-0ed9feb6c94a
+		sourceLineageTag: 3b4c0734-1282-4448-b5a0-a7f3a880e8e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dom Imp Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Ecom Image'
+		dataType: string
+		displayFolder: Image
+		lineageTag: d2f56c8f-8f92-4be6-89ca-69e11497b234
+		sourceLineageTag: f7baf899-97c1-43bc-917f-5a262a40d231
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image
+
+		annotation SummarizationSetBy = User
+
+	column 'Ecom Image Flat'
+		dataType: string
+		displayFolder: Image
+		lineageTag: ecc981f5-f2b5-4101-95c9-62c68bf1591e
+		sourceLineageTag: 96ba6b74-c7bb-4cb1-8701-dd4b8f192c07
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image Flat
+
+		annotation SummarizationSetBy = User
+
+	column 'Ef Color Family'
+		dataType: string
+		displayFolder: Color
+		lineageTag: ac2caad8-b502-499b-8266-d3824758d806
+		sourceLineageTag: 381762c6-886d-48e7-ba0f-3c01b132957c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ef Color Family
+
+		annotation SummarizationSetBy = User
+
+	column 'Fabric Col Min'
+		dataType: int64
+		formatString: 0
+		displayFolder: Production
+		lineageTag: 816f92b6-713c-4493-aa0b-32e8adad2c33
+		sourceLineageTag: 4e24c42c-afa2-4d7f-bee9-cbbeaa1fda85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fabric Col Min
+
+		annotation SummarizationSetBy = User
+
+	column 'Fabric Ord Min'
+		dataType: int64
+		formatString: 0
+		displayFolder: Production
+		lineageTag: e4f36afd-2233-4ea7-ba0e-c946a70b952e
+		sourceLineageTag: 5d976c7d-84d9-4cb9-8a92-1cecdbe063b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fabric Ord Min
+
+		annotation SummarizationSetBy = User
+
+	column 'Fes Code'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: e3a3a52c-5745-417f-9a2a-b89cf2b1d882
+		sourceLineageTag: 9142b9e1-6f02-4522-a2e3-830fc34fdf6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fes Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Fes Description'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 3ee87d8b-f0c8-4fde-86a9-d84bb06b0f80
+		sourceLineageTag: 7f246246-f714-4466-b76c-ede591bf5a02
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fes Description
+
+		annotation SummarizationSetBy = User
+
+	column Fit
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 745087c7-dd5e-4005-9991-d177b82a34e9
+		sourceLineageTag: 1f08662e-58a5-4dc0-8a83-94e5867312a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fit
+
+		annotation SummarizationSetBy = User
+
+	column 'Flat Hang Code'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: 77e0410e-30bc-42a4-9098-ed986fa02429
+		sourceLineageTag: f872e002-98fc-4612-9366-75c93cc0c114
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Flat Hang Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Flat Hang Name'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: b2f684d1-1acf-474a-8139-d57a6a297c56
+		sourceLineageTag: d017ea20-1953-4fb4-9ae6-5b659dfc54d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Flat Hang Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Garment Details'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: f9d2bf46-7f52-48e7-90c7-b0328ddeb281
+		sourceLineageTag: 0ee62e8f-2314-4384-aa45-afb5780a532a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Garment Details
+
+		annotation SummarizationSetBy = User
+
+	column 'Garment Length'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: a47982d7-bb3d-40af-ab11-639f037de8e5
+		sourceLineageTag: 88b3ada1-744a-4717-879d-c67f9316b53b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Garment Length
+
+		annotation SummarizationSetBy = User
+
+	column 'Gbp Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 43a2ff8b-0a1c-466c-a761-3cab2a6a6347
+		sourceLineageTag: 0f437156-3fe4-4d90-8aa2-d3aa43b6a39f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gbp Retail Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Gbp Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: d57b6795-908d-4e4d-bf95-59cc4ef73ddd
+		sourceLineageTag: aca6fbac-c562-46e8-9efe-f29388d62506
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gbp Standard Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Gbp Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 72ffb184-bc6d-4ae9-bfd7-73861e80a380
+		sourceLineageTag: 938d652b-b7ad-47e9-a722-5e630242bb84
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gbp Wholesale Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Good For Petite'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: e5f8d312-0fcf-4b68-bb09-73f67e7dbc33
+		sourceLineageTag: a3d51a4e-1da7-46fb-b7e9-fcb24b81c9b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Good For Petite
+
+		annotation SummarizationSetBy = User
+
+	column 'Hex Color'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 2e22250d-548c-4085-86d9-d5dbec728322
+		sourceLineageTag: 634425b6-46b4-450b-a052-b750da0b8954
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hex Color
+
+		annotation SummarizationSetBy = User
+
+	column 'Identity Short'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 37ce919a-c552-44e2-9d9c-e45ac0330833
+		sourceLineageTag: b39376ba-f366-465a-b112-9322db05dc14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Identity Short
+
+		annotation SummarizationSetBy = User
+
+	column 'Intro Season Delivery'
+		dataType: string
+		displayFolder: Delivery
+		lineageTag: 7ce1440c-94fa-4a4c-bc9e-4097513b5f9f
+		sourceLineageTag: d2ae2bce-1737-4999-9401-480e631eb2c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Intro Season Delivery
+
+		annotation SummarizationSetBy = User
+
+	column 'In Plm'
+		dataType: string
+		displayFolder: Status
+		lineageTag: d7528eb0-a7dc-48b7-bb0e-00ff376c463e
+		sourceLineageTag: 1718162f-4644-4316-87b2-6bfd563994c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: In Plm
+
+		annotation SummarizationSetBy = User
+
+	column 'Length Dimension'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: eba92e69-b946-475c-92ed-73eaa1446649
+		sourceLineageTag: ddf41d3e-0eed-4038-bbc6-dab2eacd3858
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Length Dimension
+
+		annotation SummarizationSetBy = User
+
+	column 'Long Description'
+		dataType: string
+		displayFolder: Site
+		lineageTag: fa47aae7-e634-4ecb-a338-8664216c05a5
+		sourceLineageTag: 4c9f426f-c514-4254-a719-a0eaba0b2e73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Long Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Mat Stitch Type'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 8a3adf7f-4506-4a7e-a90c-786dd6f586aa
+		sourceLineageTag: 513c4772-4d71-4372-b937-9007f09afecc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mat Stitch Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Classification Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: e22365cf-5b95-44a3-835c-b135f177d83e
+		sourceLineageTag: 6ffd9a6c-5985-43ab-9a5c-a9d0011f58cd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Classification Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Classification Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 631b759f-faf8-40dc-bb78-c91cbfc184b6
+		sourceLineageTag: c2ee8705-9bc3-4ee7-a5be-bd18c4818701
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Classification Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 4daecf89-43bb-4e9b-bb07-8e77215a2382
+		sourceLineageTag: c731298c-5ae1-4916-8498-755402f4848d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Content Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 845e5058-80ae-4eda-9491-0909ed3ded4c
+		sourceLineageTag: d78b9221-0e6a-40a6-83f8-e47752c195db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Content Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Content Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 816b6934-42f6-4dab-baaf-1890558a3f7f
+		sourceLineageTag: b9c722f6-d32d-41fc-97bd-c127837e4453
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Content Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 6d605c35-5017-4ad6-99cf-05020fc7b056
+		sourceLineageTag: 39eb73b0-1621-4b9b-98e5-2cfc1cb8f7c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Eco'
+		dataType: string
+		displayFolder: Material
+		lineageTag: c28308e6-9534-4c37-a87e-3fb7b00a3f80
+		sourceLineageTag: 6805af05-07aa-42cf-8c73-ba43436677b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Eco
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Group'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 532abb90-eea1-415e-87aa-96ad5e06390d
+		sourceLineageTag: 3a1bc6cd-096a-4d08-abe3-db16fcfd1644
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Clone'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 7d1defae-006f-4c3f-8188-c57f26e66092
+		sourceLineageTag: c59b8aff-b8f6-4411-9303-7b41a41ded1d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Clone
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Family'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 96a28ec9-87a6-4818-9908-2786954b0201
+		sourceLineageTag: 81cfd161-420b-433d-9ff9-cfb9b7e21582
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Family
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Selection'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 4fb08598-5ee2-4228-a6d0-fd24c1838770
+		sourceLineageTag: 615ebad1-ec98-4dd8-8ae1-438359770ea9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Selection
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Yarn Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 072adbfe-d325-4b11-98d1-80800687ff44
+		sourceLineageTag: f1f2c94a-632a-406b-b48c-fff4e12791fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Yarn Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Material Yarn Name'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 0d3e433c-e9dd-400d-9843-a79f85ef4828
+		sourceLineageTag: bf735162-d745-494d-90c3-df32815e15e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material Yarn Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Md Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Product Info
+		lineageTag: 231fa66b-20aa-43a5-a0d5-f57e9ee4c150
+		sourceLineageTag: 21d929b5-634a-4635-9c52-8b0355684faf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Md Date
+
+		annotation SummarizationSetBy = User
+
+	column Melange
+		dataType: string
+		displayFolder: Color
+		lineageTag: f92e7926-6452-4e8f-8501-210fb21933cb
+		sourceLineageTag: 6d4166e8-a503-488a-ae70-e9c7fe6fa4bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Melange
+
+		annotation SummarizationSetBy = User
+
+	column 'Merch Division Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: f4768f92-74f6-4b7d-b570-8874f6e827b7
+		sourceLineageTag: 2873b0f0-698e-4291-944e-639d085be571
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Merch Division Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Merch Division Name'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 1841df43-b18d-4eb9-8759-cc40caa66a76
+		sourceLineageTag: d1dad372-e045-44be-911c-587e9e765056
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Merch Division Name
+
+		annotation SummarizationSetBy = User
+
+	column Neckline
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 382c4323-5e66-4dda-b555-9a95f2f9a6b5
+		sourceLineageTag: 83f41437-2fa8-4538-b931-28747dbe4406
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Neckline
+
+		annotation SummarizationSetBy = User
+
+	column 'Neckline Type'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 6d51ab6a-5424-41d0-b0e9-07c85d1c35cf
+		sourceLineageTag: 010ec939-4e57-4767-8f70-5e5614873a7f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Neckline Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Tier'
+		dataType: string
+		displayFolder: Production
+		lineageTag: 9f778c24-6e60-4b10-8008-eee594b79168
+		sourceLineageTag: 020e1d3a-f1ff-4d1c-bdb8-d05f8cd18b1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Tier
+		sortByColumn: 'Price Tier Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Tier Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Production
+		lineageTag: 893f5da0-695f-40bc-b05c-df87dd19128f
+		sourceLineageTag: 3eac4c30-b832-4ce1-a0a4-42254ee2e9a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Tier Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 8338b97c-e385-4ab8-ab64-6b15eda4960b
+		sourceLineageTag: c73b2524-b4c7-45d7-aa49-15abc6404a26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Landed Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Production
+		lineageTag: 71f88093-4d10-469b-8e88-6f0f2cdebdc7
+		sourceLineageTag: 288a2e9d-9365-4f13-869e-c09ad5f0708f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Landed Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Quote State'
+		dataType: string
+		displayFolder: Production
+		lineageTag: b5d6a644-1b51-40aa-8f61-4f07348ac648
+		sourceLineageTag: a4839a9f-f718-4b25-9482-bc7b3ae0cea4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Quote State
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Retail Markup Percent'
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: Production
+		lineageTag: 59ed071a-6825-4f16-b660-f9d567a9180e
+		sourceLineageTag: 8360a3b7-47c7-4845-8214-c30d4dbec699
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Retail Markup Percent
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Wholesale Markup Percent'
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: Production
+		lineageTag: a7fae545-c3c5-4ac4-bb48-67e50aff7bf2
+		sourceLineageTag: 6ea6a211-0d22-4d35-9086-f383ea1f11e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Wholesale Markup Percent
+
+		annotation SummarizationSetBy = User
+
+	column 'Ref Coo'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: d7cb0b37-d079-4d8f-9bf2-9e743581c3c7
+		sourceLineageTag: ca5cdde8-ce6d-4f77-9e02-e188534743d2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ref Coo
+
+		annotation SummarizationSetBy = User
+
+	column 'Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 0844ca0d-ee95-4bad-bae7-c7bf91f1f6de
+		sourceLineageTag: 6a46bff8-ba2a-4774-9434-2557541c18e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Retail Price
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 2ed65084-1391-44cf-9a3b-5d3b7eeae8ec
+		sourceLineageTag: 67e9645c-b930-432b-8ba0-3062e8129a41
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Shape Code'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: b34d6af9-d5a5-466f-b96c-0e8707a0f5a7
+		sourceLineageTag: 3adcf9fb-8121-4826-85d9-d2972747d553
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shape Code
+
+		annotation SummarizationSetBy = User
+
+	column Size
+		dataType: string
+		displayFolder: Size
+		lineageTag: dd9f32e8-9f33-4d2a-b9b9-5e1d053e7f48
+		sourceLineageTag: 64b8bd2f-cd01-455d-82b6-14a6b60dee7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = User
+
+	column 'Size Range Code'
+		dataType: string
+		displayFolder: Size
+		lineageTag: ff3f11d6-3ca2-4e6b-b3d4-d14a74dc8a18
+		sourceLineageTag: f75fe187-ce19-4886-86e2-ef2087143349
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size Range Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Size Range Description'
+		dataType: string
+		displayFolder: Size
+		lineageTag: cb65cc9d-b8ee-4e94-9dc4-6a6a943dbc05
+		sourceLineageTag: 8a3cf65d-1152-416d-8d10-56c6bf275fff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size Range Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Size Scale'
+		dataType: string
+		displayFolder: Size
+		lineageTag: 3890188d-48ad-4ba6-b17d-975342a46837
+		sourceLineageTag: a2c6d57f-5ed3-4df2-89af-d2b773c3371b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size Scale
+
+		annotation SummarizationSetBy = User
+
+	column Sku
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 1f7c3a96-28b2-45d4-a670-63f68bba88b0
+		sourceLineageTag: f377cb4e-4d13-4e89-8ad7-398d57d54ca7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sku
+
+		annotation SummarizationSetBy = User
+
+	column 'Sleeve Length'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: a53c5c3e-d037-4a19-91fb-9f5d80736803
+		sourceLineageTag: fb763f45-e1ee-4eb5-8ae0-805915939648
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sleeve Length
+
+		annotation SummarizationSetBy = User
+
+	column 'Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: c784e2db-b9c8-49cc-94a5-d5475937e194
+		sourceLineageTag: 69f73f42-4283-4437-8f83-13205d1557f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Staple Statement'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: c3f3e5c7-50f0-48a8-b5e4-4ea24dc83bbd
+		sourceLineageTag: dc597f2d-7c98-4e9f-b5e1-80da05298017
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Staple Statement
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Classification Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: d7f96bf0-8f6f-469a-8859-3be99a0bbfdc
+		sourceLineageTag: dd1679fb-85a6-46b3-a88c-06779f588237
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Classification Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Classification Description'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: da4f4a92-ef67-4950-80b9-f47a836ba9f7
+		sourceLineageTag: 991520ef-9e14-472e-bb8c-46223224723a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Classification Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Description Long'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 17c2bb2e-e672-47b0-bc06-958fd790ee6b
+		sourceLineageTag: 2c2ba513-ee28-4758-8ae1-6e246179313c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Description Long
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: d87567cb-d1ad-422c-88e2-022a395bc292
+		sourceLineageTag: 4cfc3d12-cb3a-4ab7-8bc7-a1df742d12f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Number'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 008f5f7b-ce60-4ed9-acb7-fd61d75e189a
+		sourceLineageTag: f4c8cda8-a50f-4b70-90be-009afffa3f60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Number And Color'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: e4416afd-0e67-478c-9762-c943913165c4
+		sourceLineageTag: d1ef6e72-6e49-4cef-8798-5874a2406dc7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Number And Color
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Number And Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 87f21220-0378-4cf3-b87e-c1e50aee0da1
+		sourceLineageTag: 9395619e-7d3c-4391-a042-afd3f3ee56f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Number And Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Replacement'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 902d0436-48f5-43ce-953e-9c4c42adb8cc
+		sourceLineageTag: 49c5ab8b-d0dc-4cfb-96aa-021e85bcabac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Replacement
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Stage'
+		dataType: string
+		displayFolder: Status
+		lineageTag: 78db6a85-c2d5-40a0-993c-aa2c3f67eb72
+		sourceLineageTag: ea92f3fa-8c31-41ae-87a1-b07beaf0d789
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Stage
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Subclassification'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: a6529a37-1df1-4631-895f-21ec96875314
+		sourceLineageTag: 72990958-080e-4145-a2bd-0df3ded482c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Subclassification
+
+		annotation SummarizationSetBy = User
+
+	column Upc
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 1028a68a-c2d1-4f31-a42a-edf4c65af881
+		sourceLineageTag: 80d998d2-682c-40d1-8015-3e965d6a3591
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Upc
+
+		annotation SummarizationSetBy = User
+
+	column 'Us Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: bec5af48-dc1f-4ddb-a79d-8148db512b53
+		sourceLineageTag: 13e0e9c3-496c-444b-b08e-86cb534c9367
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Us Selling Price Dtc
+
+		annotation SummarizationSetBy = User
+
+	column 'Usc Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 12e79f2d-6bce-4a2e-acf0-ac8cdc18c836
+		sourceLineageTag: d02a4a36-2ad3-45bd-945f-02d1abc9900c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Usc Selling Price Dtc
+
+		annotation SummarizationSetBy = User
+
+	column 'Waist Construction'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: e0209b7b-1fd3-49a7-8838-981a50482902
+		sourceLineageTag: aec2a831-fc62-4514-b66e-11ddf7713ec4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Waist Construction
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 4f56e574-4627-4143-b864-0fa948ffb28c
+		sourceLineageTag: 2a31fa01-4c54-4128-a37d-212c5f5bdf97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Width Dimension'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: add63ed0-3dd7-4586-b873-57a28ab7541f
+		sourceLineageTag: 21e8041a-165c-434f-8f7f-dc8cc896ce60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Width Dimension
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Canada'
+		dataType: double
+		lineageTag: 345b99f4-e8f2-4b8b-a40e-1d567c7de3a6
+		sourceLineageTag: 1fce1121-e6bf-418f-8e61-9b85a3d515b6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Canada
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Company'
+		dataType: double
+		lineageTag: 06f58bd0-4ab8-46d9-bbc6-6819a6adac89
+		sourceLineageTag: b114b789-de97-432a-b324-ee7fcd7dcbbc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Company
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Us'
+		dataType: double
+		lineageTag: 90cab3e5-6697-4f45-8747-c186b1ab6b0a
+		sourceLineageTag: e7dfcf8a-8fe0-4c6b-ac3b-9c667f9f4acd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Us
+
+		annotation SummarizationSetBy = User
+
+	partition Product = entity
+		mode: directQuery
+		source
+			entityName: Product
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

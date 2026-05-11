@@ -1,0 +1,29 @@
+relationship 495e6de9-0d5b-4075-91e3-e129ab5bb5b9
+	fromColumn: Currency.'Currency Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 13e341e2-b7d1-4720-8789-a163e431468c
+	fromColumn: Currency.'Conversion Type'
+	toColumn: 'Currency Selector'.'Conversion Type'
+
+relationship 20d06aaa-5ca0-41fa-94c3-0d9a077e4a50
+	crossFilteringBehavior: bothDirections
+	fromColumn: Date.Datekey
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 31f2536d-8680-4df7-88d7-49077a1e9c26
+	fromColumn: Inventory.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship ec74c83a-b1b4-419f-916d-3ac3628ee11d
+	fromColumn: Inventory.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship 8942b890-761a-4a24-8c5b-c8dacfb0a236
+	fromColumn: Inventory.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship eece24bc-cba6-40f5-93dd-8be87f3adb4a
+	fromColumn: Inventory.'Channel Key'
+	toColumn: Channel.'Channel Key'
+

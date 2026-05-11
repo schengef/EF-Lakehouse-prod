@@ -1,0 +1,234 @@
+table 'Agg-Transactions (Financial)-Day/Product'
+	isHidden
+	alternateSourcePrecedence: 2
+	lineageTag: a1dc51c1-a97a-4773-abf8-8160f17cdf3d
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		lineageTag: 70de31ad-d255-406f-b777-f331e52d041a
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Product Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: 8a89d456-0a91-474b-a792-a30bd61f90df
+		summarizeBy: none
+		sourceColumn: Transaction Date Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Transaction Date Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type'
+		dataType: string
+		isHidden
+		lineageTag: 3654f57c-6729-40e7-8b6c-40fb25d8b1ef
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Transaction Type'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		lineageTag: 2fd82612-7747-442f-95ea-e7345349218f
+		summarizeBy: count
+		sourceColumn: Currency Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Currency Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		lineageTag: ab9890f1-cdc9-40a4-969c-f8594f0a55d3
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Channel Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Price'
+		dataType: double
+		isHidden
+		lineageTag: e4d76701-beb5-4c05-a8ed-588fdac13bd8
+		summarizeBy: sum
+		sourceColumn: Total Price
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (Financial)'.'Total Price'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		isHidden
+		lineageTag: e92bf979-41b6-471e-a80f-485515665782
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (Financial)'.Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Price'
+		dataType: double
+		isHidden
+		lineageTag: f483b6a7-bedd-4a96-9ce6-1fc73de420ec
+		summarizeBy: sum
+		sourceColumn: Net Price
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (Financial)'.'Net Price'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Mark Type'
+		dataType: string
+		isHidden
+		lineageTag: b95d3b64-89a3-4ad4-afcf-d6e39ec0474d
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Mark Type'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		lineageTag: 1bf50d96-e876-4b6b-9888-54785c742b9b
+		summarizeBy: sum
+		sourceColumn: Dtc Misc Flag
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Dtc Misc Flag'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		lineageTag: be1e9b5b-1788-47b9-8dd1-0a3d0ae7ffa6
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Delivery Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Original Channel Key'
+		dataType: int64
+		isHidden
+		lineageTag: b7836cb3-422a-4b28-8221-ab26f43e452d
+		summarizeBy: none
+		sourceColumn: Original Channel Key
+
+		alternateOf
+			baseColumn: 'Transactions (Financial)'.'Original Channel Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Agg-Transactions (Financial)-Day/Product' = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    " 
+				    SELECT T.PRODUCT_KEY,T.TRANSACTION_DATE_KEY,T.TRANSACTION_TYPE,T.CURRENCY_KEY,T.CHANNEL_KEY,T.DELIVERY_KEY,SUM(T.TOTAL_PRICE) AS TOTAL_PRICE, SUM(T.QUANTITY) as QUANTITY,SUM(T.NET_PRICE) AS NET_PRICE, PC.MARK_TYPE,CASE WHEN P.DEPARTMENT_CODE_MI9>89 THEN 1 END AS DTC_MISC_FLAG, S.CHANNEL_KEY as ORIGINAL_CHANNEL_KEY
+				FROM EDW_PROD.EDW_V.F_TRANSACTION T
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				LEFT OUTER JOIN EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY
+				LEFT OUTER JOIN EDW_T.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_V.D_STORE S ON 
+				    CASE 
+				        WHEN T.ORIGINAL_STORE_KEY IS NULL
+				        THEN T.STORE_KEY 
+				        ELSE T.ORIGINAL_STORE_KEY 
+				    END = S.STORE_KEY
+				WHERE TRANSACTION_DATE >= datefromparts(year(getdate()) - 3, 1, 1)
+				GROUP BY T.PRODUCT_KEY,T.TRANSACTION_TYPE,PC.MARK_TYPE,T.CHANNEL_KEY,T.TRANSACTION_DATE_KEY,T.CURRENCY_KEY,S.CHANNEL_KEY,DTC_MISC_FLAG,T.DELIVERY_KEY
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Product Key", Int64.Type}, {"Transaction Date Key", Int64.Type}, {"Currency Key", Int64.Type}, {"Channel Key", Int64.Type}, {"Delivery Key", Int64.Type}, {"Quantity", Int64.Type}, {"Dtc Misc Flag", Int64.Type}, {"Original Channel Key", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

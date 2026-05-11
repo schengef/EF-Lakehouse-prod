@@ -1,0 +1,1238 @@
+table 'Product (Current)'
+	lineageTag: d7e8dd51-4316-4e71-a5ce-b1e67f9c11f5
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: eb8107ad-4666-4865-aae4-905532e34ed6
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Upc
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 594f4ca7-47f1-43df-a726-b389b589650c
+		summarizeBy: none
+		sourceColumn: Upc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sku
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f1a3dde7-9cd5-40ec-adc1-5d222e217b3b
+		summarizeBy: none
+		sourceColumn: Sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bc3ebfb9-a6eb-4264-b3eb-c29a3fa8a540
+		summarizeBy: none
+		sourceColumn: Style Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: aa721c80-5310-4595-addf-f2256a2e0b21
+		summarizeBy: none
+		sourceColumn: Style Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Description Long'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f2795b33-65a0-4dbc-972a-fd9aa8836bc5
+		summarizeBy: none
+		sourceColumn: Style Description Long
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Classification Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ce10f279-d04f-4e0b-b71d-4c6f14edc38f
+		summarizeBy: none
+		sourceColumn: Style Classification Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Classification Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 345dd39c-6be1-44b1-92df-b4e19b8269ce
+		summarizeBy: none
+		sourceColumn: Style Classification Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Subclassification'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 44d695c4-fcc3-447d-9495-be797a858d5e
+		summarizeBy: none
+		sourceColumn: Style Subclassification
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Stage'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 079cff5f-c19b-4e1c-8cb4-cb92c04f87d5
+		summarizeBy: none
+		sourceColumn: Style Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Replacement'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8182dc99-7d84-4b6e-82af-3fcfb3332222
+		summarizeBy: none
+		sourceColumn: Style Replacement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Active Style'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 95171173-7bb0-43cd-aacc-f1e8c8306c13
+		summarizeBy: none
+		sourceColumn: Active Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Active Colorway'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 731339c2-3979-4446-b638-84be39323dc8
+		summarizeBy: none
+		sourceColumn: Active Colorway
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Code 5 Letter'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 27bfe525-499c-463d-a7fe-b159fa9b9eaa
+		summarizeBy: none
+		sourceColumn: Color Code 5 Letter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Code Nrf'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 3133a3c8-9d3b-4a79-9ad3-44794c85d1c7
+		summarizeBy: none
+		sourceColumn: Color Code Nrf
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 85bebc53-331a-4517-84f6-2c75e3497a1c
+		summarizeBy: none
+		sourceColumn: Color Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hex Color'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 0e48ff80-32c2-48bf-9b8b-526dcea63837
+		summarizeBy: none
+		sourceColumn: Hex Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Shade'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 52e35ae1-453c-4639-a5c5-12ff39768c51
+		summarizeBy: none
+		sourceColumn: Color Shade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Temp'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 952a390b-d943-4d69-bb30-157f2250e10e
+		summarizeBy: none
+		sourceColumn: Color Temp
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: a07bda08-6c28-469c-80ba-f7a4749f9d2d
+		summarizeBy: none
+		sourceColumn: Color Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ef Color Family'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: e966f602-5f3e-4c22-8f93-445ae4830a03
+		summarizeBy: none
+		sourceColumn: Ef Color Family
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Clarity'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 80fb30c5-f19e-4741-851c-e802130fd7a6
+		summarizeBy: none
+		sourceColumn: Color Clarity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Group Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 79d003c7-afee-47d9-8cef-e829c444e3b6
+		summarizeBy: none
+		sourceColumn: Color Group Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Range Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: eb8ce985-bd86-4fe9-b523-526601dab814
+		summarizeBy: none
+		sourceColumn: Size Range Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Scale'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dc117886-b46b-491c-b9e9-b9c379721514
+		summarizeBy: none
+		sourceColumn: Size Scale
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 33bfbb09-416b-4c6e-ba4e-6cba56694fec
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 782e44f1-ee6a-42e2-a45b-7e5506f89373
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mat Stitch Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: adde65d5-1686-4005-baf8-81ae8253feb5
+		summarizeBy: none
+		sourceColumn: Mat Stitch Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Classification Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 51125a8b-8c3e-4d04-8a26-6013f173cb1a
+		summarizeBy: none
+		sourceColumn: Material Classification Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Classification Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 83faf5a1-dd36-46ff-ace1-ff9324cbe448
+		summarizeBy: none
+		sourceColumn: Material Classification Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 97ff771e-1666-471e-99c3-e9d19370b9bc
+		summarizeBy: none
+		sourceColumn: Material Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Yarn Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: bda11adf-2eff-4416-b9b2-7c99f2860011
+		summarizeBy: none
+		sourceColumn: Material Yarn Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Content Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 4721edb5-e302-4190-bfc1-db2a582a5daf
+		summarizeBy: none
+		sourceColumn: Material Content Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Content Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: fd778f07-9032-4072-a3e8-94562af4a80a
+		summarizeBy: none
+		sourceColumn: Material Content Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Eco'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 82d6ca02-5e2e-456f-98b8-e35698c54535
+		summarizeBy: none
+		sourceColumn: Material Eco
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: fc533a59-ce4f-4a55-959f-37ba7cf4c6d8
+		summarizeBy: none
+		sourceColumn: Material Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Yarn Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 545f35fe-8a43-4a26-90a8-65e50ea2de19
+		summarizeBy: none
+		sourceColumn: Material Yarn Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fabric Col Min'
+		dataType: double
+		sourceProviderType: decimal(15, 8)
+		lineageTag: 83028592-441a-4a21-8d2a-43bb242a1b66
+		summarizeBy: sum
+		sourceColumn: Fabric Col Min
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fabric Ord Min'
+		dataType: double
+		sourceProviderType: decimal(15, 8)
+		lineageTag: b39ac76d-a3ad-4e53-8736-2d22e91e1341
+		summarizeBy: sum
+		sourceColumn: Fabric Ord Min
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Department Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2dcff6eb-2f21-4f55-94fe-b31a166ceac4
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code Mi9'
+		dataType: double
+		sourceProviderType: decimal(10, 0)
+		lineageTag: 5e83f84b-8a36-413e-b410-11695b8c6d56
+		summarizeBy: sum
+		sourceColumn: Department Code Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Department Description Mi9'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fe4aa289-2222-4b8d-90ca-3daec2be389b
+		summarizeBy: none
+		sourceColumn: Department Description Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Merch Division Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 18b2429d-afa7-489e-a4a6-2c7e53c3c047
+		summarizeBy: none
+		sourceColumn: Merch Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code Mi9'
+		dataType: double
+		sourceProviderType: decimal(10, 0)
+		lineageTag: 61bd3405-edf9-4163-b0c8-f8c9d0f40296
+		summarizeBy: sum
+		sourceColumn: Division Code Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Division Description Mi9'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5839a241-792d-441a-97ab-8a449a906cf6
+		summarizeBy: none
+		sourceColumn: Division Description Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Class Code Mi9'
+		dataType: double
+		sourceProviderType: decimal(10, 0)
+		lineageTag: 090fbdd3-1e77-487f-8b42-559219fb23a6
+		summarizeBy: sum
+		sourceColumn: Class Code Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Class Description Mi9'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3c087fdc-47a4-4c41-9ee1-0128cc15d678
+		summarizeBy: none
+		sourceColumn: Class Description Mi9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Tier'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Price
+		lineageTag: 2824fb01-e7e7-424b-8196-e5eb4af98bc4
+		summarizeBy: none
+		sourceColumn: Price Tier
+		sortByColumn: 'Price Tier Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: 07374c28-5b46-4a27-8b40-5583d17079d3
+		summarizeBy: sum
+		sourceColumn: Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Retail Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: 1c3262b8-5239-46fe-a1f5-5509e2f87271
+		summarizeBy: sum
+		sourceColumn: Can Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Us Selling Price Dtc'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: caea0c2a-206e-491e-b433-a6f220923429
+		summarizeBy: sum
+		sourceColumn: Us Selling Price Dtc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Selling Price Dtc'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: 1b2aef49-b258-4610-9e93-2ac97d15701a
+		summarizeBy: sum
+		sourceColumn: Can Selling Price Dtc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Usc Selling Price Dtc'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: 5c3d328d-0c84-48f7-8535-ffd537e87a1a
+		summarizeBy: sum
+		sourceColumn: Usc Selling Price Dtc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Wholesale Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Price
+		lineageTag: f0d11650-58f5-449e-a825-c62d274b2a63
+		summarizeBy: sum
+		sourceColumn: Wholesale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Wholesale Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 2)
+		displayFolder: Price
+		lineageTag: bfc87d4a-1b34-4f22-b095-91f6b2757414
+		summarizeBy: sum
+		sourceColumn: Can Wholesale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Standard Cost'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Cost
+		lineageTag: 902cd62a-56f2-4c2b-9f22-9ded6a3d1cb9
+		summarizeBy: sum
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Standard Cost'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Cost
+		lineageTag: 806f4e2f-2311-4bff-8ff5-2e8379b8e23d
+		summarizeBy: sum
+		sourceColumn: Can Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gbp Wholesale Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Price
+		lineageTag: c623b950-7bb0-4a47-abe5-53c314e9ab4f
+		summarizeBy: sum
+		sourceColumn: Gbp Wholesale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Production Landed Cost'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(18, 12)
+		displayFolder: Cost
+		lineageTag: 31033eaa-89b0-4957-8dd3-dde8f775a979
+		summarizeBy: sum
+		sourceColumn: Production Landed Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Production Retail Markup Percent'
+		dataType: double
+		sourceProviderType: decimal(11, 8)
+		lineageTag: 4c209432-ff7b-4d5c-88ec-4bccc4de8a82
+		summarizeBy: sum
+		sourceColumn: Production Retail Markup Percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Production Wholesale Markup Percent'
+		dataType: double
+		sourceProviderType: decimal(11, 8)
+		lineageTag: dd017296-93bd-4877-833b-32de73d857ee
+		summarizeBy: sum
+		sourceColumn: Production Wholesale Markup Percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ecom Image Flat'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Image
+		lineageTag: d9576d0f-91ca-486d-b3f0-dddc2f264d30
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image Flat
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Armhole Construction'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: da5edec6-bb83-4daf-bf61-b7e7d1b6e359
+		summarizeBy: none
+		sourceColumn: Armhole Construction
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fit
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: 81c5bc77-3d34-4729-8b96-4e7ed536d8dc
+		summarizeBy: none
+		sourceColumn: Fit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Flat Hang Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 85ed0dd9-95be-44c9-a371-a41872fc5235
+		summarizeBy: none
+		sourceColumn: Flat Hang Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Flat Hang Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 481242d0-c12a-43ec-9552-98564d9e9daf
+		summarizeBy: none
+		sourceColumn: Flat Hang Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Garment Details'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bda47ff7-ca04-41e7-a841-af646518547b
+		summarizeBy: none
+		sourceColumn: Garment Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Garment Length'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 369e5473-f260-45ca-a2d3-85b6a7ff58c7
+		summarizeBy: none
+		sourceColumn: Garment Length
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Good For Petite'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ed82bb4d-cc8f-429e-aa66-7b822ead1e6f
+		summarizeBy: none
+		sourceColumn: Good For Petite
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Length Dimension'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 85c9e48b-9ac1-48cd-bdcc-75d89b5fd29d
+		summarizeBy: none
+		sourceColumn: Length Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Melange
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: fdecd690-d324-477d-a124-9b41117cfe81
+		summarizeBy: none
+		sourceColumn: Melange
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neckline
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: 06e7c7ef-797a-4848-96f7-922a16d01159
+		summarizeBy: none
+		sourceColumn: Neckline
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Neckline Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: c2023b0a-19c7-422c-8fb6-91fe6ed7f90d
+		summarizeBy: none
+		sourceColumn: Neckline Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sleeve Length'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: add1b628-17cb-4aa0-aefc-9e872b9d92aa
+		summarizeBy: none
+		sourceColumn: Sleeve Length
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staple Statement'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3f241a69-fd12-460a-bb40-267e99c64b68
+		summarizeBy: none
+		sourceColumn: Staple Statement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Waist Construction'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: e072299e-6b33-475a-a810-a2612dc47761
+		summarizeBy: none
+		sourceColumn: Waist Construction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Width Dimension'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6ea52c30-4c5b-4baf-b70e-433ca596eb45
+		summarizeBy: none
+		sourceColumn: Width Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Intro Season Delivery'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 24a7b3b4-5f95-4c98-b348-b871d5f691bb
+		summarizeBy: none
+		sourceColumn: Intro Season Delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Production Quote State'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cc9017fc-47fc-4674-ae70-cf0d0f2c1864
+		summarizeBy: none
+		sourceColumn: Production Quote State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dom Imp Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7029b228-8f81-4f32-bd2e-0261929e7923
+		summarizeBy: none
+		sourceColumn: Dom Imp Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dom Imp Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7a0e9454-1add-4208-9647-e69acef5de58
+		summarizeBy: none
+		sourceColumn: Dom Imp Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ref Coo'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7cf6e2bf-7f01-4dd3-ac77-01e83eb37388
+		summarizeBy: none
+		sourceColumn: Ref Coo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fes Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4d0c3503-7af9-48d5-953b-77025203cfec
+		summarizeBy: none
+		sourceColumn: Fes Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fes Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 87cd8f6d-787c-406e-862a-2424d544a575
+		summarizeBy: none
+		sourceColumn: Fes Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display Name'
+		dataType: string
+		sourceProviderType: nvarchar(768)
+		lineageTag: df3e4ff7-ed71-4170-89d6-d541e9808ab8
+		summarizeBy: none
+		sourceColumn: Display Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Long Description'
+		dataType: string
+		sourceProviderType: nvarchar(768267)
+		lineageTag: 43d3cac9-5422-47b3-a719-e39c432c9449
+		summarizeBy: none
+		sourceColumn: Long Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet10
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: b2645a36-2f57-4e38-809a-0b84fab2c9b0
+		summarizeBy: none
+		sourceColumn: Bullet10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet11
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: b8a9d5c7-b930-4d69-b783-7866d5ce855f
+		summarizeBy: none
+		sourceColumn: Bullet11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet12
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 8a4d36bd-d545-4b20-83a4-a440669f3f50
+		summarizeBy: none
+		sourceColumn: Bullet12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet13
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 049abcb1-921c-48e7-8420-4c5be23e1c1e
+		summarizeBy: none
+		sourceColumn: Bullet13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet14
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 9069f5ab-db86-4212-9373-e2c0737c66d5
+		summarizeBy: none
+		sourceColumn: Bullet14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet15
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: a0ecff7e-d910-45b8-923b-d15f73a4c235
+		summarizeBy: none
+		sourceColumn: Bullet15
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Md Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 6b83e144-25d8-461c-8bcc-4be9b0356270
+		summarizeBy: none
+		sourceColumn: Md Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'In Plm'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(1)
+		lineageTag: 677a94d2-f8b3-47e4-a14d-ec3d284131a8
+		summarizeBy: none
+		sourceColumn: In Plm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number And Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d76b3834-9ec2-4db9-a0ee-2b9793351b42
+		summarizeBy: none
+		sourceColumn: Style Number And Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Identity Short'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Construction
+		lineageTag: f40ce83c-34ef-47d6-900d-ed0ff4531099
+		summarizeBy: none
+		sourceColumn: Identity Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number And Color'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9dac12ff-508d-4d54-b939-5f185fdd0954
+		summarizeBy: none
+		sourceColumn: Style Number And Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet01
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 56c804f4-778f-43bd-9de7-4ad9b283964e
+		summarizeBy: none
+		sourceColumn: Bullet01
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet02
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 062390fb-35db-4eec-ba04-010a7a509c08
+		summarizeBy: none
+		sourceColumn: Bullet02
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet03
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 64a2224a-5d96-4dbf-b1ff-225963e19f43
+		summarizeBy: none
+		sourceColumn: Bullet03
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet04
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: d0b60052-f8b6-4368-86a8-fa7f017af688
+		summarizeBy: none
+		sourceColumn: Bullet04
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet05
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: aa1c00c0-1b2f-4fee-a2db-402b4c3ebffc
+		summarizeBy: none
+		sourceColumn: Bullet05
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet06
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 2042b2a8-facb-40be-90d1-503c77a5b50a
+		summarizeBy: none
+		sourceColumn: Bullet06
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet07
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: 85ba149b-bcf3-455f-9c25-35d212c5116b
+		summarizeBy: none
+		sourceColumn: Bullet07
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet08
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: f53aec3f-a3f1-4ece-8f29-e0e7e618da44
+		summarizeBy: none
+		sourceColumn: Bullet08
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet09
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Ecom Description
+		lineageTag: ce382296-da7f-476f-9cd3-0cc0235733be
+		summarizeBy: none
+		sourceColumn: Bullet09
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Group Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Color
+		lineageTag: 906f74d1-db86-4a4d-aca1-dad75fd43300
+		summarizeBy: none
+		sourceColumn: Color Group Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5e7223dd-e925-4a5f-b4fd-44e33ca2ec3a
+		summarizeBy: none
+		sourceColumn: Department Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ecom Image'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Image
+		lineageTag: 46ee8b93-7d83-4f9e-8df8-11a552d94b91
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gbp Retail Price'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Price
+		lineageTag: 87165fdd-7346-4450-a8ac-edb10cac68e6
+		summarizeBy: sum
+		sourceColumn: Gbp Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gbp Standard Cost'
+		dataType: double
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		sourceProviderType: decimal(15, 5)
+		displayFolder: Cost
+		lineageTag: 04c5b9b2-79bc-4b7b-8b34-dbd1026c19e2
+		summarizeBy: sum
+		sourceColumn: Gbp Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Material Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 671fa00f-e77f-4697-8fed-ce7023b09714
+		summarizeBy: none
+		sourceColumn: Material Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Clone'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: d6a08d14-d0ec-4d13-adff-36271b3d4c2f
+		summarizeBy: none
+		sourceColumn: Material Clone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Family'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 92f39098-f95c-4302-994e-13384bca6fdb
+		summarizeBy: none
+		sourceColumn: Material Family
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Selection'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Material
+		lineageTag: 46aada1b-d957-4ad7-8e5c-1821e46f9f88
+		summarizeBy: none
+		sourceColumn: Material Selection
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Merch Division Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ff9a8c43-2d32-4f1f-9ca1-9817add97413
+		summarizeBy: none
+		sourceColumn: Merch Division Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Tier Sort'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(2, 0)
+		displayFolder: Price
+		lineageTag: 86f7cd6a-05d2-4365-8693-aaa116ef4cb0
+		summarizeBy: sum
+		sourceColumn: Price Tier Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Shape Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cedb3546-20a3-4486-99c1-9dc82522076a
+		summarizeBy: none
+		sourceColumn: Shape Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Range Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8685b110-e09b-472c-a5b1-2b24c667dd19
+		summarizeBy: none
+		sourceColumn: Size Range Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product (Current)' = m
+		mode: dual
+		queryGroup: Dimensions
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com", SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_" & Environment, Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				    SELECT * FROM EDW_PROD.EDW_V.D_PRODUCT_CURRENT_NEW
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery, each Text.Replace(_, "_", " ")),
+				    #"Renamed Columns" = Table.TransformColumnNames(#"Remove Underscores", each Text.Proper(_)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Product Key", Int32.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each true),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"Identity", "Hierarchy"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Columns",{{"Material Group Clone", "Material Clone"}, {"Material Group Family", "Material Family"}})
+				in
+				    #"Renamed Columns1"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

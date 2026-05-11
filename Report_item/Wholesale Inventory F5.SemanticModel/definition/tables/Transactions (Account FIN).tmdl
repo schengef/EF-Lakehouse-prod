@@ -1,0 +1,150 @@
+table 'Transactions (Account FIN)'
+	lineageTag: 6a559b5b-9d02-40dc-a0d3-4a135a104aa7
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3c6c0c00-42bd-4e91-891f-2af70f391bb7
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 033e0fc6-709d-438c-afec-d897b53e19d2
+		summarizeBy: count
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 259d85ec-25ba-41d4-9da3-16e8f0a67c32
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 4ee7a2bd-2e32-4381-9ac6-b4eee3846a2d
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dept
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c80c15e1-4f57-42f2-b66d-3ccd5aa7b8b9
+		summarizeBy: none
+		sourceColumn: Dept
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Dollars'
+		dataType: double
+		sourceProviderType: decimal(15, 2)
+		lineageTag: bd3255b5-7fca-430e-97c5-7537f8b468ad
+		summarizeBy: sum
+		sourceColumn: Sales Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: 34e13017-524b-4f58-978b-2c9086cfe0c6
+		summarizeBy: count
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Oh Dollars'
+		dataType: double
+		sourceProviderType: decimal(15, 2)
+		lineageTag: f0d139a8-f564-4708-a63e-79704bd2d817
+		summarizeBy: sum
+		sourceColumn: Oh Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Md Dollars'
+		dataType: double
+		sourceProviderType: decimal(15, 2)
+		lineageTag: 46dbd442-c77c-4bb9-a0df-706dbe2b575e
+		summarizeBy: sum
+		sourceColumn: Md Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Receipt Dollars'
+		dataType: double
+		sourceProviderType: decimal(10, 2)
+		lineageTag: 5b0f2e30-d83a-455c-92d6-6556617404f8
+		summarizeBy: sum
+		sourceColumn: Receipt Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Transactions (Account FIN)' = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*
+				from EDW_V.F_WHOLESALE_RETAIL_FIN T
+				where WEEK_ENDING_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Wholesale Retail Fin Key", "Wholesale Retail Fin Nk", "Week Ending Date", "Tpid", "Currency Code", "Etl Row Created Ts", "Etl Source System Cd","Etl Row Updated Ts"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"Week Ending Date Key", Int32.Type}, {"Wholesale Account Key", Int32.Type}, {"Store Key", Int32.Type}, {"Currency Key", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

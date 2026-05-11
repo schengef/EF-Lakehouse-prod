@@ -1,0 +1,103 @@
+table Readiness
+	lineageTag: 184cb084-05b1-4c0e-a8d9-ae2a26ec6d83
+	sourceLineageTag: 1feebf05-a196-4701-af9f-31594d5a07fc
+
+	measure 'Freshness Severity' = EXTERNALMEASURE("Freshness Severity", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0
+		lineageTag: 54ab2a55-fab2-4fa2-971a-07ea2df02d51
+		sourceLineageTag: 92822632-f679-4d42-9a7f-d28a337a0d3d
+		dataCategory: Uncategorized
+
+	measure 'Freshness Status' = EXTERNALMEASURE("Freshness Status", STRING, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: e72b0291-7bac-4822-a6a0-29a803ff2bbe
+		sourceLineageTag: 14eaf348-275d-488a-ba4e-dc0ec0ea29ce
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'Freshness Color' = EXTERNALMEASURE("Freshness Color", STRING, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: d0e3ab49-6aa9-41c1-be34-f53394fa860b
+		sourceLineageTag: fb92a111-db14-48df-aad3-1c35c44cffa1
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'Freshness Icon' = EXTERNALMEASURE("Freshness Icon", STRING, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: 5fa857d8-e2ac-4211-b45a-aa572e3d1621
+		sourceLineageTag: 3deeeb39-71b8-4be8-a73c-f153c5272c8a
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1e432565-25ce-4536-a2b4-5b1b9e75705e
+		sourceLineageTag: 1de56f21-2d4a-4cbf-aa05-696d145d5433
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 249216d8-ef33-400e-8c23-bfe9c722f77f
+		sourceLineageTag: 7f979ad1-5e37-47d5-9255-c8e5e9fedae1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Last Processed Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 445d5514-aa6a-4123-b1e4-8cd51b79d60e
+		sourceLineageTag: f75e24e4-c685-45e2-bb25-ee2e970ac3ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Last Processed Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Last Processed Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 9636db50-ef6f-4775-aaaf-1acdf58ba1e8
+		sourceLineageTag: bb0abb66-0020-4c83-8729-6376403d6003
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Last Processed Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Freshness'
+		dataType: string
+		lineageTag: 71d1cf3a-0b96-429a-a183-bd3f3e61c514
+		sourceLineageTag: c03066f9-07d6-4ffd-8df7-fe11390b3b4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Freshness
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Freshness'
+		dataType: string
+		lineageTag: bec99d23-d526-44b6-89df-8f1538ad390c
+		sourceLineageTag: f1b88136-fe56-45a3-a4cc-d3ec6741d5ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Freshness
+
+		annotation SummarizationSetBy = User
+
+	partition Readiness = entity
+		mode: directQuery
+		source
+			entityName: Readiness
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,145 @@
+table Parameter
+	lineageTag: 9cb6bc63-b2d7-41f4-873c-7f4397e9613f
+
+	column Parameter
+		lineageTag: 1f72734a-a2ac-4841-84f7-33c9b5dda1f3
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields'
+		isHidden
+		lineageTag: e62a8c59-76d9-425b-a440-05d14586d9be
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Parameter","TableItemName":"Parameter Fields (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Parameter Order'
+		isHidden
+		formatString: 0
+		lineageTag: bf22ca9a-4f67-4455-844a-74418dbc3772
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter Fields (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('Parameter'[Parameter Fields]),
+				"(Blank)",
+				'Parameter'[Parameter Fields] IN {"'Product Dashboard Measures'[Display Net Sales TY]",
+					"'Product Dashboard Measures'[Display Net Sales LY Delivery]",
+					"'Product Dashboard Measures'[Display Net Sales diff LY Delivery]",
+					"'Product Dashboard Measures'[Display Net Sales % vs LY Delivery]",
+					"'Merchandising Measures'[Net Sales % to Filtered Total]",
+					"'Product Dashboard Measures'[Net Sales $ AUR TY]",
+					"'Product Dashboard Measures'[Net Sales $ AUR LY Delivery]",
+					"'Product Dashboard Measures'[Avg Sales per SKU TY]",
+					"'Product Dashboard Measures'[Avg Sales per SKU LY Delivery]",
+					"'Product Dashboard Measures'[Avg Sales per SKU % vs LY Delivery]"},
+				"Sales",
+				'Parameter'[Parameter Fields] IN {"'Product Dashboard Measures'[Display Receipts TY]",
+					"'Product Dashboard Measures'[Display Receipts LY Delivery]",
+					"'Product Dashboard Measures'[Display Receipts % vs LY Delivery]",
+					"'Product Dashboard Measures'[Receipts ST% TY]",
+					"'Product Dashboard Measures'[Receipts ST% LY Delivery]",
+					"'Product Dashboard Measures'[Receipts % to Total TY]",
+					"'Product Dashboard Measures'[Receipts $ AUR TY]",
+					"'Product Dashboard Measures'[Receipts $ AUR LY Delivery]"},
+				"Shipments",
+				'Parameter'[Parameter Fields] IN {"'Product Dashboard Measures'[Display OH TY]",
+					"'Product Dashboard Measures'[Display OH LY Delivery]",
+					"'Product Dashboard Measures'[Display OH % vs LY Delivery]",
+					"'Product Dashboard Measures'[Sell Through % TY]",
+					"'Product Dashboard Measures'[Sell Through % LY Delivery]",
+					"'Merchandising Measures'[Cost OH % to Filtered Total]",
+					"'Product Dashboard Measures'[On Hand AUR $ TY]",
+					"'Product Dashboard Measures'[On Hand AUR $ LY Delivery]"},
+				"Stock",
+				"Other"
+			)
+		lineageTag: f08578ab-159c-46ea-9e03-f6062e8ac177
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Parameter"
+				          }
+				        },
+				        "Property": "Parameter Fields"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"p","Entity":"Parameter"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Parameter Fields"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Sales","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Net Sales TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Net Sales LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Net Sales diff LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Net Sales % vs LY Delivery]'"}}],[{"Literal":{"Value":"'''Merchandising Measures''[Net Sales % to Filtered Total]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Net Sales $ AUR TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Net Sales $ AUR LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Avg Sales per SKU TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Avg Sales per SKU LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Avg Sales per SKU % vs LY Delivery]'"}}]]}}},{"DisplayName":"Shipments","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Receipts TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Receipts LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display Receipts % vs LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Receipts ST% TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Receipts ST% LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Receipts % to Total TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Receipts $ AUR TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Receipts $ AUR LY Delivery]'"}}]]}}},{"DisplayName":"Stock","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"Parameter Fields"}}],"Values":[[{"Literal":{"Value":"'''Product Dashboard Measures''[Display OH TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display OH LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Display OH % vs LY Delivery]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Sell Through % TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[Sell Through % LY Delivery]'"}}],[{"Literal":{"Value":"'''Merchandising Measures''[Cost OH % to Filtered Total]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[On Hand AUR $ TY]'"}}],[{"Literal":{"Value":"'''Product Dashboard Measures''[On Hand AUR $ LY Delivery]'"}}]]}}},{"DisplayName":"Other"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Parameter = calculated
+		mode: import
+		source =
+				{
+				    ("         TY         ", NAMEOF('Product Dashboard Measures'[Display Net Sales TY]), 0),
+				    ("         LY         ", NAMEOF('Product Dashboard Measures'[Display Net Sales LY Delivery]), 1),
+				    ("     Δ vs LY     ", NAMEOF('Product Dashboard Measures'[Display Net Sales diff LY Delivery]), 2),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Display Net Sales % vs LY Delivery]), 3),
+				    ("       TY       ", NAMEOF('Product Dashboard Measures'[Display OH TY]), 4),
+				    ("       LY       ", NAMEOF('Product Dashboard Measures'[Display OH LY Delivery]), 5),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Display OH % vs LY Delivery]), 6),
+				    ("    TY    ", NAMEOF('Product Dashboard Measures'[Sell Through % TY]), 7),
+				    ("    LY    ", NAMEOF('Product Dashboard Measures'[Sell Through % LY Delivery]), 8),
+				    ("         TY         ", NAMEOF('Product Dashboard Measures'[Display Shipments TY]), 9),
+				    ("         LY         ", NAMEOF('Product Dashboard Measures'[Display Shipments LY Delivery]), 10),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Display Shipments % vs LY Delivery]), 11),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Shipments ST% TY]), 12),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Shipments ST% LY Delivery]), 13),
+				    (" SALES ", NAMEOF('Merchandising Measures'[Net Sales % to Filtered Total]), 14),
+				    (" STOCK ", NAMEOF('Merchandising Measures'[Cost OH % to Filtered Total]), 15),
+				    ("  SHIP  ", NAMEOF('Product Dashboard Measures'[Shipments % to Total TY]), 16),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[Net Sales $ AUR TY]), 17),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[Net Sales $ AUR LY Delivery]), 18),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[On Hand AUR $ TY]), 19),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[On Hand AUR $ LY Delivery]), 20),
+				    ("  TY  ", NAMEOF('Product Dashboard Measures'[Shipments $ AUR TY]), 21),
+				    ("  LY  ", NAMEOF('Product Dashboard Measures'[Shipments $ AUR LY Delivery]), 22),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Net Gross Margin % TY]), 23),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Net Gross Margin % LY Delivery]), 24),
+				    ("   TY   ", NAMEOF('Product Dashboard Measures'[Style Count TY]), 25),
+				    ("   LY   ", NAMEOF('Product Dashboard Measures'[Style Count LY Delivery]), 26),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Style Count % vs LY Delivery]), 27),
+				    ("    TY    ", NAMEOF('Product Dashboard Measures'[SKU Count TY]), 28),
+				    ("    LY    ", NAMEOF('Product Dashboard Measures'[SKU Count LY Delivery]), 29),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[SKU Count % vs LY Delivery]), 30),
+				    (" TY ", NAMEOF('Product Dashboard Measures'[Color Multiplier TY]), 31),
+				    (" LY ", NAMEOF('Product Dashboard Measures'[Color Multiplier LY Delivery]), 32),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Color Multiplier % vs LY Delivery]), 33),
+				    ("     TY     ", NAMEOF('Product Dashboard Measures'[Avg Sales per SKU TY]), 34),
+				    ("     LY     ", NAMEOF('Product Dashboard Measures'[Avg Sales per SKU LY Delivery]), 35),
+				    ("  % vs LY  ", NAMEOF('Product Dashboard Measures'[Avg Sales per SKU % vs LY Delivery]), 36)
+				}
+
+	annotation PBI_Id = eec52f0aaf044db3a2c4d0744689b3ff
+

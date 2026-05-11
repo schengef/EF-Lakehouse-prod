@@ -1,0 +1,20 @@
+table Headers-Units/Dollars
+	lineageTag: 02926d0d-85ec-4eab-b67b-7338633a65da
+	sourceLineageTag: 9927437a-3eae-47ce-ab3a-472d508a8e4c
+
+	column Selection
+		dataType: string
+		lineageTag: bd5c73c6-648a-4d0f-a849-e4df9498b371
+		sourceLineageTag: 8eb551a8-2c5d-4d27-9377-7b24a86f5c46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selection
+
+		annotation SummarizationSetBy = User
+
+	partition Headers-Units/Dollars = entity
+		mode: directQuery
+		source
+			entityName: Headers-Units/Dollars
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

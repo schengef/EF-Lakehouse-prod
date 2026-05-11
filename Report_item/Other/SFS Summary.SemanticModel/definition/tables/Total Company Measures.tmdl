@@ -1,0 +1,100 @@
+table 'Total Company Measures'
+	lineageTag: 1df4c72c-ac30-4cee-a4a5-2bcdd0ac3988
+	sourceLineageTag: 91e2d494-2318-4dee-8eb8-07b9b740753c
+
+	measure 'External Retail Sales Units' = EXTERNALMEASURE("External Retail Sales Units", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: aeec9d68-15aa-43f4-bffa-0f84cfa14a3c
+		sourceLineageTag: 497863b5-7360-4cf1-878e-5a36bfd661bf
+		dataCategory: Uncategorized
+
+	measure 'External Sell Through %' = EXTERNALMEASURE("External Sell Through %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: db8e4dee-6624-474a-8f0f-73670233d3c1
+		sourceLineageTag: 59e1a258-d902-444c-b338-362be2b153e5
+		dataCategory: Uncategorized
+
+	measure 'Overall External Full Price %' = EXTERNALMEASURE("Overall External Full Price %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 15cfa72e-3dbd-481e-b7d2-bfbafd827038
+		sourceLineageTag: b5c8ca54-9aea-4695-abc0-66e821d3704e
+		dataCategory: Uncategorized
+
+	measure 'Units (Sum)' = EXTERNALMEASURE("Units (Sum)", CURRENCY, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: aa09416b-cd30-4bf8-a599-3596f5832353
+		sourceLineageTag: fd0ae322-fc1a-45ab-970e-ff427e08e62b
+		dataCategory: Uncategorized
+
+	measure 'External Cost $' = EXTERNALMEASURE("External Cost $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a68fddd6-4bd8-4297-86d1-c6a45272ba03
+		sourceLineageTag: c88dcb23-2bfe-4ecd-9377-9087ef68dde9
+		dataCategory: Uncategorized
+
+	measure 'External Retail $' = EXTERNALMEASURE("External Retail $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		lineageTag: 6cffc1ed-72b2-4f16-a28e-c72189086ad0
+		sourceLineageTag: c27699f8-a1b3-4d65-89e9-f6f4382dd2b0
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'External Retail Sales $' = EXTERNALMEASURE("External Retail Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 603dab04-8f5e-4732-8709-f5e975729327
+		sourceLineageTag: 303eab2e-e54c-46bc-bb02-3c8a6adacc15
+		dataCategory: Uncategorized
+
+	measure 'External Sales Cost $' = EXTERNALMEASURE("External Sales Cost $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e7626a38-aa96-4060-a587-824025141a0e
+		sourceLineageTag: 482ca45d-cbc1-48ac-8b62-3302b365ad78
+		dataCategory: Uncategorized
+
+	measure 'Discount Amount (Sum)' = EXTERNALMEASURE("Discount Amount (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6f3cff82-8b3e-49f0-a4fe-c5b2298d5210
+		sourceLineageTag: e7be4680-2f09-4494-8855-6b71896f1b66
+		dataCategory: Uncategorized
+
+	measure 'Net Price (Sum)' = EXTERNALMEASURE("Net Price (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: be4852d9-d8c5-4c2f-81a3-b4c5347b74f7
+		sourceLineageTag: aca36513-4c0e-4636-98e6-3346e1be12c9
+		dataCategory: Uncategorized
+
+	measure 'Standard Cost (Sum)' = EXTERNALMEASURE("Standard Cost (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9a5637d1-b60c-47cf-b668-b0144fcd5978
+		sourceLineageTag: 637b00d0-0234-452f-9aa0-d5a2a671f80f
+		dataCategory: Uncategorized
+
+	measure 'Tax Amount (Sum)' = EXTERNALMEASURE("Tax Amount (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9f5d8d5a-3278-4131-9cef-922620526388
+		sourceLineageTag: 5440b739-d2d6-4902-8eaa-52ad9fe94ad8
+		dataCategory: Uncategorized
+
+	measure 'Total Price (Sum)' = EXTERNALMEASURE("Total Price (Sum)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: da7e9b00-4737-4b88-8916-6d18c065e807
+		sourceLineageTag: aa9f9c67-9d92-426f-a18d-ad25273dc952
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 9a86654a-fa0e-46a8-9465-89a980f7c2f0
+		sourceLineageTag: c969fc88-03f3-4bd0-ae02-808ad5431358
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'Total Company Measures' = entity
+		mode: directQuery
+		source
+			entityName: Total Company Measures
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,63 @@
+table Dependency
+	lineageTag: aa389ec5-89be-4c10-b9bf-362e669c9ee0
+	sourceLineageTag: 1180a63f-e241-4bae-8300-bbdaf3da02ca
+
+	column 'Report Dependency Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 85a5df8f-da02-4b8e-bd8d-ac0ca3961e55
+		sourceLineageTag: c4b45ca0-bae5-470a-b417-7589c4d92837
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Report Dependency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: e3995a6f-57df-4a9f-bc8f-27cd50873c44
+		sourceLineageTag: b4e5261f-f9f7-4063-a3d0-aabdd08b888b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Report Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 44dc5370-3ffd-46c5-843d-6b160c4bfc02
+		sourceLineageTag: 99489c58-02ab-41b9-a33a-8e554d5b7a24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Report Name'
+		dataType: string
+		lineageTag: 5adca048-b0db-4cbb-a9ad-7f439f9921be
+		sourceLineageTag: 6e3113d6-af16-416b-acf8-68e6af7dffda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Frequency Day'
+		dataType: string
+		lineageTag: a3689f9c-940d-43af-b492-82d327e53281
+		sourceLineageTag: 2224b515-fbe6-4933-8c05-6147138113db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Frequency Day
+
+		annotation SummarizationSetBy = User
+
+	partition Dependency = entity
+		mode: directQuery
+		source
+			entityName: Dependency
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,42 @@
+table 'Header-Daily Flash'
+	lineageTag: 22353d61-a51f-49a0-bf21-7fcca9a31c63
+
+	column Period
+		dataType: string
+		lineageTag: a79216d5-4bd9-4f5e-9b99-b2cd906c0315
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		lineageTag: 0145ae47-0eb6-4e76-98ee-fbd23c34f5b5
+		summarizeBy: none
+		sourceColumn: Measure
+		sortByColumn: MeasureSort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MeasureSort
+		dataType: int64
+		formatString: 0
+		lineageTag: 4db03b8b-2a25-4310-a56a-1254582fd907
+		summarizeBy: sum
+		sourceColumn: MeasureSort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Header-Daily Flash' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W0lPSUXrU0IKGQiIxxYAKDZVidaKVsOrwwa7DCEOHqkJZsQKSaqCcMUyRU2lKemoJkGECEwGrhgubIoTz0xTKU1OzFUryEdJmSrGxAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Period = _t, Measure = _t, MeasureSort = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Period", type text}, {"Measure", type text}, {"MeasureSort", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
