@@ -1,0 +1,1116 @@
+table 'Local-Sales Flash'
+	lineageTag: 50374c68-17fd-46ed-91c2-4f093541e389
+
+	measure 'Net Sales Budget' = ```
+			
+			   CALCULATE(
+			    [Budget],KEEPFILTERS('Budget (Channel)'[Measure]= "Net Retail Sales $"))
+			```
+		displayFolder: Budget
+		lineageTag: dd58f665-d4ce-402c-8a56-76cbd1ac0b38
+
+		changedProperty = DisplayFolder
+
+	measure 'Sales Flash TY' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash
+		lineageTag: 7673b5a9-6751-4891-87ba-bb9ececadd5b
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Flash LY' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastYear=LOOKUPVALUE('Date'[Year],'Date'[Date],LastDayLY,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LM &&
+			            'Date'[Date] in LY &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LY &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			   
+			Return
+			    Switch(
+			        Period,
+			        "WTD",Week,
+			        "MTD",Month,
+			        "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash
+		lineageTag: 7732f945-9fb0-49c9-9d17-88c7ec702910
+
+	measure 'Sales Flash Budget' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Sales Budget],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Sales Budget],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Sales Budget],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash
+		lineageTag: f1aac2eb-094f-4f07-8c0d-4845059963aa
+
+	measure 'Sales Flash % vs LY' =
+			
+			DIVIDE(
+			    [Sales Flash TY]-[Sales Flash LY],
+			    [Sales Flash LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash
+		lineageTag: fb27a68f-58f8-4a2b-869f-2537ecf6b095
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Flash % vs Budget' =
+			
+			DIVIDE(
+			    [Sales Flash TY]-[Sales Flash Budget],
+			    [Sales Flash Budget]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash
+		lineageTag: e28f0c37-d9f1-4d5d-91a9-0c9d63bf04ea
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure Blank = BLANK()
+		formatString: 0
+		lineageTag: 120b9296-40b2-41a4-91f8-4949b25bf843
+
+		changedProperty = Name
+
+	measure 'Max Date' =
+			
+			MAX('Date'[Date])
+		formatString: General Date
+		displayFolder: Headers
+		lineageTag: 08d4241a-57c4-493a-ae74-026fd80c036a
+
+	measure 'Daily Flash TY' =
+			
+			if(SELECTEDVALUE('Date'[Date])>=TODAY(),blank(),
+			            [Net Retail Sales $]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash
+		lineageTag: b8e6333e-1843-40f3-b844-d7656bb18ff3
+
+	measure 'Daily Flash LY' =
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR EndofWeek=max('Date'[Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR EndofWeekLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],Endofweek)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+			RETURN
+			IF(ISINSCOPE('Date'[Date]),
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=EndofWeek
+			        ),
+			    CALCULATE (
+			            [Net Retail Sales $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			    )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash
+		lineageTag: 3d64556a-553b-45ef-bda1-fc945cee7c2b
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Daily Flash % vs LY' =
+			
+			if(ISBLANK([Daily Flash TY]),blank(),
+			    DIVIDE(
+			        [Daily Flash TY]-[Daily Flash LY],
+			        [Daily Flash LY]
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash
+		lineageTag: a40ee9bc-3cb1-4c9c-83cc-4c7503fd60be
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Daily Flash Budget' = ```
+			
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+			
+			RETURN 
+			if(ISINSCOPE('Date'[Date]),blank(),
+			if(ISBLANK([Daily Flash TY]),blank(),
+			    CALCULATE (
+			            [Net Sales Budget],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[CurrWeek End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash
+		lineageTag: f2d0c1fa-3217-4f4c-a54e-0c4126054997
+
+	measure 'Daily Flash % vs Budget' =
+			
+			DIVIDE(
+			    [Daily Flash TY]-[Daily Flash Budget],
+			    [Daily Flash Budget]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash
+		lineageTag: a8381397-4d95-44c3-a18c-a8ec3e011147
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Daily Flash Digital TY' =
+			
+			if(SELECTEDVALUE('Date'[Date])>=TODAY(),blank(),
+			    SwitcH(
+			        SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			        "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			        "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			        "SFS Sales",[Daily Flash SFS],
+			        "Borderfree",[Daily Flash Borderfree],
+			        "Digital Demand",[Demand Gross Retail Sales $]
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash\Digital
+		lineageTag: 86a96521-2134-419d-ad6f-74468feb096d
+
+	measure 'Daily Flash Digital Budget' =
+			
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+			VAR LastFiscalDOW=max('Date'[DayOfYear])
+			RETURN
+			if(SELECTEDVALUE('Date'[Date])>=today(),blank(),
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Budget],
+			                "Returns (at Stores)",[Store Returns Budget],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Budget]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[CurrWeek End Date]),
+			            'Date'[DayOfYear]<=LastFiscalDOW &&
+			            'Date'[CurrWeek End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash\Digital
+		lineageTag: 614286ff-79d2-45d4-9343-e0ea7cbf7740
+
+	measure 'Daily Flash Digital % vs Budget' =
+			
+			if(ISBLANK([Daily Flash Digital TY]),blank(),
+			DIVIDE(
+			    [Daily Flash Digital TY]-[Daily Flash Digital Budget],
+			    [Daily Flash Digital Budget]
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash\Digital
+		lineageTag: dba2ca56-4ca8-4604-a71a-df4bf8242d7a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Daily Flash Digital LY' =
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR EndofWeek=max('Date'[Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR EndofWeekLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],Endofweek)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+			RETURN
+			IF(ISINSCOPE('Date'[Date]),
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=EndofWeek
+			        ),
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			    )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash\Digital
+		lineageTag: 59b8d5c4-8e49-402b-a797-c26410b0a043
+
+	measure 'Daily Flash Digital % vs LY' =
+			
+			if(ISBLANK([Daily Flash Digital TY]),blank(),
+			DIVIDE(
+			    [Daily Flash Digital TY]-[Daily Flash Digital LY],
+			    [Daily Flash Digital LY]
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash\Digital
+		lineageTag: f22b9513-ca21-4d79-a039-c184bf1fe262
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Flash Digital TY' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash\Digital
+		lineageTag: b7bbc912-88b2-47c5-b3b6-a79cc46da48b
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Flash Digital LY' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDayAvailable = max('Date'[Date])+ if([Max Date]>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))
+			
+			VAR Week = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LW &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LM &&
+			            'Date'[Date] in LY &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Retail (Digital Purchase)],
+			                "Returns (at Stores)",[Store Returns Retail (Digital Purchase)],
+			                "SFS Sales",[Daily Flash SFS],
+			                "Borderfree",[Daily Flash Borderfree],
+			                "Digital Demand",[Demand Gross Retail Sales $]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] in LY &&
+			            'Date'[Date]<=LastDayLY
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash\Digital
+		lineageTag: be2a1c62-e1dd-41a2-9f1d-53ef6fc7b29c
+
+	measure 'Sales Flash Digital Budget' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Budget],
+			                "Returns (at Stores)",[Store Returns Budget],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Budget]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Budget],
+			                "Returns (at Stores)",[Store Returns Budget],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Budget]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Budget],
+			                "Returns (at Stores)",[Store Returns Budget],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Budget]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash\Digital
+		lineageTag: 9e136339-c354-431f-8ac5-c77f16a3e616
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Flash Digital % vs LY' =
+			
+			DIVIDE(
+			    [Sales Flash Digital TY]-[Sales Flash Digital LY],
+			    [Sales Flash Digital LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash\Digital
+		lineageTag: 60bff00a-72cd-4ee2-ba1a-1643e2458340
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Flash Digital % vs Budget' =
+			
+			DIVIDE(
+			    [Sales Flash Digital TY]-[Sales Flash Digital Budget],
+			    [Sales Flash Digital Budget]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash\Digital
+		lineageTag: d951f05b-1a9f-4611-9e64-54c6589d9c76
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Demand Budget' = ```
+			
+			   CALCULATE(
+			    SUM('Budget (Channel)'[Budget Value]),KEEPFILTERS('Budget (Channel)'[Measure]= "Demand/Gross Retail Sales $"))
+			```
+		displayFolder: Budget
+		lineageTag: 9a3c53a6-1a8e-4901-a71b-760e7f0134ee
+
+	measure 'DC Returns Budget' = ```
+			
+			   CALCULATE(
+			    SUM('Budget (Channel)'[Budget Value]),KEEPFILTERS('Budget (Channel)'[Measure]= "DC Returns Retail $ (Digital Purchase)"))
+			```
+		displayFolder: Budget
+		lineageTag: 2dfff41a-f80f-4582-9bd3-b4ebed6e3aea
+
+	measure 'Store Returns Budget' = ```
+			
+			   CALCULATE(
+			    [Budget],KEEPFILTERS('Budget (Channel)'[Measure]= "Store Returns Retail $ (Digital Purchase)"))
+			```
+		displayFolder: Budget
+		lineageTag: 60e49326-5384-4664-aa9f-79bbff25b409
+
+	measure 'Net Sales Budget Stores' = ```
+			
+			   CALCULATE(
+			    [Store Budget],KEEPFILTERS('Budget (DTC Store)'[Measure]= "Net Retail Sales $"))
+			```
+		displayFolder: Budget
+		lineageTag: 706e3980-6d58-4db7-9d13-476f8b3ffecf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sales Flash Budget Stores' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[MonthNum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date'[Week End Date],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Sales Budget Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Sales Budget Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Sales Budget Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Budget
+		lineageTag: 7d55364d-ffbb-47b7-a419-dc852a844eae
+
+	measure 'Sales Flash % vs Budget Stores' =
+			
+			DIVIDE(
+			    [Sales Flash TY]-[Sales Flash Budget Stores],
+			    [Sales Flash Budget Stores]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash\Stores
+		lineageTag: b93e47d2-7102-4997-b4ef-6885f075744a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Daily Flash Budget Stores' = ```
+			
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+			
+			RETURN 
+			if(ISINSCOPE('Date'[Date]),blank(),
+			if(ISBLANK([Daily Flash TY]),blank(),
+			    CALCULATE (
+			            [Net Sales Budget Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[CurrWeek End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash/Stores
+		lineageTag: 3492d447-7122-4228-a999-505bc9679de9
+
+	measure 'Daily Flash % vs Budget Stores' =
+			
+			DIVIDE(
+			    [Daily Flash TY]-[Daily Flash Budget Stores],
+			    [Daily Flash Budget Stores]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash/Stores
+		lineageTag: c15b0b28-ced2-46b7-9ed7-f67366010a36
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure Space = " "
+		lineageTag: 6535fbac-3304-4bff-9b01-e6053bc4cf25
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Daily Flash Borderfree' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS('Order Categorization'[Sfcc Type]="Global-E"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT")
+			)
+		displayFolder: Daily Flash
+		lineageTag: ee983b33-caaf-4bf1-a8e6-7922e8167432
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Daily Flash SFS' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS('Order Categorization'[Shipped From]="Store"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Channel (DTC Allocated)'[Allocated Channel Format]="Digital")
+			)
+		displayFolder: Daily Flash
+		lineageTag: 4e7889ed-a142-4303-ba66-72671f8c507c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SFS Returns' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS('Order Categorization'[Shipped From]="Store"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS(
+			))
+		displayFolder: Digital
+		lineageTag: e9f1b484-ebd6-4750-8b5d-ed8fc06f2665
+
+	measure 'Sales Flash Forecast Stores' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[MonthNum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date'[Week End Date],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Sales Forecast Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Sales Forecast Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Sales Forecast Stores],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash\Stores
+		lineageTag: e3e1e500-6ef8-4e66-bc94-fa4a3b53c294
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales Forecast Stores' = ```
+			
+			   CALCULATE(
+			    [Store Forecast],KEEPFILTERS('Forecast (DTC Store)'[Measure]= "Net Retail Sales $"))
+			```
+		displayFolder: Forecast
+		lineageTag: 2779d193-dbf5-4b9f-9954-2635f950350b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sales Flash % vs Forecast Stores' =
+			
+			DIVIDE(
+			    [Sales Flash TY]-[Sales Flash Forecast Stores],
+			    [Sales Flash Forecast Stores]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash\Stores
+		lineageTag: 4ee35c7e-1338-4940-a529-f8e9ff909b45
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Flash Digital Forecast' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Forecast],
+			                "Returns (at Stores)",[Store Returns Forecast],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Forecast]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Forecast],
+			                "Returns (at Stores)",[Store Returns Forecast],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Forecast]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            SwitcH(
+			                SELECTEDVALUE('Header-Digital Detail'[Metric]),
+			                "Returns (at DC)",[DC Returns Forecast],
+			                "Returns (at Stores)",[Store Returns Forecast],
+			                "SFS Sales",blank(),
+			                "Borderfree",blank(),
+			                "Digital Demand",[Gross Demand Forecast]
+			            ),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash\Digital
+		lineageTag: b64d24a1-0afb-4755-b866-1b27856f292c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'DC Returns Forecast' = ```
+			
+			   CALCULATE(
+			    SUM('Forecast (Channel)'[Forecast Value]),KEEPFILTERS('Forecast (Channel)'[Measure]= "DC Returns Retail $ (Digital Purchase)"))
+			```
+		displayFolder: Digital
+		lineageTag: 5405cff5-4f90-4dff-9fbf-34a00e5c1ffa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Gross Demand Forecast' = ```
+			
+			   CALCULATE(
+			    SUM('Forecast (Channel)'[Forecast Value]),KEEPFILTERS('Forecast (Channel)'[Measure]= "Demand/Gross Retail Sales $"))
+			```
+		displayFolder: Digital
+		lineageTag: 8d83db0c-3939-42a2-8533-e7aaa26de0d5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Store Returns Forecast' = ```
+			
+			   CALCULATE(
+			    [Forecast],KEEPFILTERS('Forecast (Channel)'[Measure]= "Store Returns Retail $ (Digital Purchase)"))
+			```
+		displayFolder: Digital
+		lineageTag: d6254756-2974-4a77-aa8c-1b6980b36c0c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sales Flash Digital % vs Forecast' =
+			
+			DIVIDE(
+			    [Sales Flash Digital TY]-[Sales Flash Digital Forecast],
+			    [Sales Flash Digital Forecast]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash\Digital
+		lineageTag: 4bf269e0-b3bb-467e-b30d-b73f0ba1716c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Flash Forecast' = ```
+			
+			VAR Period = SELECTEDVALUE('Header-Sales Flash'[Period])
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDateAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[Week End Date] )
+			
+			VAR Week = 
+			    CALCULATE (
+			            [Net Sales Forecast],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Week End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			        
+			VAR Month = 
+			    CALCULATE (
+			            [Net Sales Forecast],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[MonthNum] = LastFiscalYearMonthAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			
+			VAR Year = 
+			    CALCULATE (
+			            [Net Sales Forecast],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[Year] = LastFiscalYear
+			        )
+			   
+			Return
+			    Switch(
+			    Period,
+			    "WTD",Week,
+			    "MTD",Month,
+			    "YTD",Year
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Flash
+		lineageTag: ae09fe9a-9f80-4a45-96d5-b75a1dfd3474
+
+	measure 'Net Sales Forecast' = ```
+			
+			   CALCULATE(
+			    [Forecast],KEEPFILTERS('Forecast (Channel)'[Measure]= "Net Retail Sales $"))
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Forecast
+		lineageTag: abff8817-a74f-486a-9363-0ff95f1932f3
+
+	measure 'Sales Flash % vs Forecast' =
+			
+			DIVIDE(
+			    [Sales Flash TY]-[Sales Flash Forecast],
+			    [Sales Flash Forecast]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sales Flash
+		lineageTag: 22055d19-1066-44c6-8218-76ba001571ac
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure Updated = MAX('Semantic Model Update'[Date.1])
+		displayFolder: Headers
+		lineageTag: cc4d0369-cbdc-4fd3-8215-3853789aec5d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Daily Flash % of Budget In' =
+			
+			1+[Daily Flash % vs Budget]
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Daily Flash
+		lineageTag: e35174c4-4700-47f6-ad0b-0a8144e3d698
+
+	measure 'Daily Flash % of Budget In Stores' =
+			
+			if(ISBLANK([Daily Flash % vs Budget Stores]),blank(),1+[Daily Flash % vs Budget Stores])
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Daily Flash/Stores
+		lineageTag: 128c2af2-b6b2-4c09-9905-d013deff14ab
+
+	measure 'Daily Flash Digital % vs Budget In' =
+			
+			if(ISBLANK([Daily Flash Digital Budget]),blank(),
+			    1+ [Daily Flash Digital % vs Budget]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash\Digital
+		lineageTag: bd8e77b1-72d4-4d75-b76c-25a717e6cbed
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Daily Flash Forecast' = ```
+			
+			VAR LastDateAvailable = LASTDATE('Date'[Date]) 
+			VAR LastFiscalYear = MAX('Date'[Year])
+			VAR LastFiscalYearWeekAvailable = MAX ( 'Date'[CurrWeek End Date] )
+			
+			RETURN 
+			if(ISINSCOPE('Date'[Date]),blank(),
+			if(ISBLANK([Daily Flash TY]),blank(),
+			    CALCULATE (
+			            [Net Sales Forecast],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar], 'Date'[Week End Date]),
+			            'Date'[Date] <= LastDateAvailable &&  
+			            'Date'[CurrWeek End Date] = LastFiscalYearWeekAvailable &&
+			            'Date'[Year] = LastFiscalYear
+			        )
+			)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Daily Flash
+		lineageTag: 0d64ac5a-1932-416e-84d9-1d193f1ba60c
+
+	measure 'Daily Flash % vs Forecast' =
+			
+			DIVIDE(
+			    [Daily Flash TY]-[Daily Flash Forecast],
+			    [Daily Flash Forecast]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Daily Flash
+		lineageTag: 8da55ced-61a5-4f84-bd9e-081d7d2e12ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition 'Local-Sales Flash' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,75 @@
+table AlexQuery
+	lineageTag: 27d092f9-bd2f-44ae-a2a7-8e11524cef71
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: aa700130-9bb2-46f5-94fd-c725da9c8cf5
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_DOMAIN
+		dataType: string
+		lineageTag: 1464aa33-7d66-40be-bc24-677b00be3707
+		summarizeBy: none
+		sourceColumn: BUSINESS_DOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_SUBDOMAIN
+		dataType: string
+		lineageTag: 45dfbc4d-e276-4cb1-8776-d719edaf6da3
+		summarizeBy: none
+		sourceColumn: BUSINESS_SUBDOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column WAREHOUSE_TABLE
+		dataType: string
+		lineageTag: 0cda0f9d-4246-49af-932d-ff9bd558f6ef
+		summarizeBy: none
+		sourceColumn: WAREHOUSE_TABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPORT_KEY
+		dataType: int64
+		lineageTag: c60a47a3-70f3-4ec0-ab0e-8d6c12421117
+		summarizeBy: sum
+		sourceColumn: REPORT_KEY
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition AlexQuery = m
+		mode: import
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com","REPORTING_PROD_WH"),
+				    EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				SELECT
+				    R.REPORT_NAME, BD.BUSINESS_DOMAIN, BD.BUSINESS_SUBDOMAIN, BD.WAREHOUSE_TABLE ,RD.REPORT_KEY 
+				FROM EDW_PROD.EDW_T.D_REPORT R
+				LEFT JOIN EDW_PROD.EDW_T.B_REPORT_DEPENDENCY RD ON RD.REPORT_KEY = R.REPORT_KEY
+				LEFT JOIN EDW_PROD.EDW_T.D_BUSINESS_DOMAIN BD ON RD.BUSINESS_DOMAIN_KEY = BD.BUSINESS_DOMAIN_KEY
+				ORDER BY R.REPORT_NAME, BD.BUSINESS_DOMAIN, BD.BUSINESS_SUBDOMAIN
+				
+				
+				
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true])
+				in
+				    #"NativeQuery"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

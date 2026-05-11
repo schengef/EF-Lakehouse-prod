@@ -1,0 +1,50 @@
+table 'Inventory Dashboard_SubDomain'
+	lineageTag: a58dc9c3-b513-47be-bef3-e966e1cd93ce
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: c8ed8fea-f9fd-4760-86d0-1e54c37eba33
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAKEHOUSE_TABLE_NAME
+		dataType: string
+		lineageTag: f1c7b178-584c-4cf5-a4ff-76178cef3b27
+		summarizeBy: none
+		sourceColumn: LAKEHOUSE_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_VIEW_TABLE_NAME
+		dataType: string
+		lineageTag: 5acf8b77-5dad-4485-8646-a2dc8fa1e317
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_VIEW_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_TABLE_NAME2
+		dataType: string
+		lineageTag: a4079673-e08d-4673-a309-226a2ff03dd1
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_TABLE_NAME2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inventory Dashboard_SubDomain' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\EileenFisher\dev\readiness\Inventory Dashboard_SubDomain.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"REPORT_NAME", type text}, {"LAKEHOUSE_TABLE_NAME", type text}, {"SNOWFLAKE_VIEW_TABLE_NAME", type text}, {"SNOWFLAKE_TABLE_NAME2", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

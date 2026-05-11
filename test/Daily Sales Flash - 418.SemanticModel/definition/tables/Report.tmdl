@@ -1,0 +1,63 @@
+table Report
+	lineageTag: 21a50065-8429-4737-95c1-ccd74dacf398
+	sourceLineageTag: d056fab4-4748-4719-8531-8dad4b89ca24
+
+	column 'Report Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 5275194d-f900-4da3-a93d-6878cb0f3bcc
+		sourceLineageTag: 3852922e-d2d2-4c43-9eb7-ed97f5be48a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Report Name'
+		dataType: string
+		lineageTag: 9890f187-8e10-4592-a72d-d55f124d40b4
+		sourceLineageTag: 6f81453b-f7f6-4fd1-9359-7f71bb7c24da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Frequency Day'
+		dataType: string
+		lineageTag: ad7b2aec-ddcc-4c47-ae57-883943ca9d99
+		sourceLineageTag: 08b011e8-8f24-434f-b41c-62101d1fb445
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Frequency Day
+
+		annotation SummarizationSetBy = User
+
+	column Purpose
+		dataType: string
+		lineageTag: 3c55aedf-4d01-4207-a2f8-12a3214b3dfa
+		sourceLineageTag: 9b82ab4c-d406-4cbd-b799-4708d152f646
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Purpose
+
+		annotation SummarizationSetBy = User
+
+	column Notes
+		dataType: string
+		lineageTag: e407e615-e309-4a7e-bb26-5e9d1b8f1b5a
+		sourceLineageTag: cf751696-9846-486b-bb4c-fe31212ab454
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = User
+
+	partition Report = entity
+		mode: directQuery
+		source
+			entityName: Report
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

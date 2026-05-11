@@ -1,0 +1,50 @@
+table Merchandise_SubDomain
+	lineageTag: 3a01cd1e-1581-49bc-b2d3-2a18347e7d59
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: 635a88f3-68d6-4700-87c2-5eb13b52d279
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAKEHOUSE_TABLE_NAME
+		dataType: string
+		lineageTag: dda98a27-a7a6-4cfa-9345-2a3a2da279db
+		summarizeBy: none
+		sourceColumn: LAKEHOUSE_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_VIEW_TABLE_NAME
+		dataType: string
+		lineageTag: 05c720a9-99b8-4a8b-a31b-606f9db24734
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_VIEW_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_TABLE_NAME2
+		dataType: string
+		lineageTag: c9311ded-522c-42ed-9366-35945dfef299
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_TABLE_NAME2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Merchandise_SubDomain = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\EileenFisher\dev\readiness\Merchandise_SubDomain.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"REPORT_NAME", type text}, {"LAKEHOUSE_TABLE_NAME", type text}, {"SNOWFLAKE_VIEW_TABLE_NAME", type text}, {"SNOWFLAKE_TABLE_NAME2", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

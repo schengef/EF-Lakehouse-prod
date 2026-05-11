@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Daily Sales Flash - 418"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "15e98767-8822-90cd-406a-5df0c87a5253"
+  }
+}

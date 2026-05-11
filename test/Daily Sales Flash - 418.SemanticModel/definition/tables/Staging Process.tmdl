@@ -1,0 +1,89 @@
+table 'Staging Process'
+	lineageTag: 0b6ab472-37b0-4c57-b775-b27c4c184aa0
+	sourceLineageTag: 8d59e016-4016-45b8-a98c-cac5109a9ac0
+
+	column 'Staging Process Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1ef8d518-024f-4511-afc4-65d86494c2b3
+		sourceLineageTag: 7c961e7e-1ba1-417d-91bc-fcc004363ce5
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Staging Process Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 873bca7f-7b33-4176-8fd0-675de8d07ce0
+		sourceLineageTag: b8b779d9-bded-4a47-b190-bb56f3c80694
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: bfba7c10-3ea4-4288-89b5-1ddbd6faa8fc
+		sourceLineageTag: bf2de11b-90cf-4967-9087-76cf3ba1cc32
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Rows Inserted'
+		dataType: int64
+		formatString: 0
+		lineageTag: ea5f3978-e121-4a8b-8524-99aafbbc36b6
+		sourceLineageTag: d87415a4-89b5-468c-9b42-003c0bce5e42
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rows Inserted
+
+		annotation SummarizationSetBy = User
+
+	column 'Rows Updated'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d2a9009-1d25-4a10-9b0f-b211c29a2596
+		sourceLineageTag: 0d5282ea-2a59-426e-ad79-56c7fea310d4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rows Updated
+
+		annotation SummarizationSetBy = User
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 60841b58-723a-4f6d-a26e-5b585363f195
+		sourceLineageTag: de8e8e2a-f5eb-4eaa-ba8c-7bc4733a6190
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = User
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: d0be1eff-a32e-46cc-9225-e21f52c69c78
+		sourceLineageTag: f391a1d2-4455-4675-a9c5-74f8d3c77b74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = User
+
+	partition 'Staging Process' = entity
+		mode: directQuery
+		source
+			entityName: Staging Process
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

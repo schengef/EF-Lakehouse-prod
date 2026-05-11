@@ -1,0 +1,29 @@
+relationship AutoDetected_054425eb-3aff-4c77-b3a6-46ce2c3b9e95
+	fromColumn: DailyFlash_SubDomain.REPORT_NAME
+	toColumn: D_REPORT.REPORT_NAME
+
+relationship AutoDetected_5df26f20-1237-4c77-a7e4-b521e977f6b6
+	fromColumn: B_REPORT_DEPENDENCY.BUSINESS_DOMAIN_KEY
+	toColumn: D_BUSINESS_DOMAIN.BUSINESS_DOMAIN_KEY
+
+relationship AutoDetected_7d7cc138-9abd-4a61-8845-fe8b451af9c4
+	fromColumn: B_SOURCE_TABLE_USAGE.BUSINESS_DOMAIN_KEY
+	toColumn: D_BUSINESS_DOMAIN.BUSINESS_DOMAIN_KEY
+
+relationship AutoDetected_f83f9f5c-dd3c-40ac-b1e8-3702f63bf654
+	fromColumn: B_REPORT_DEPENDENCY.REPORT_KEY
+	toColumn: D_REPORT.REPORT_KEY
+
+relationship AutoDetected_485f790d-4e33-4669-8cec-dff9a64168e3
+	fromColumn: AlexQuery.REPORT_NAME
+	toColumn: D_REPORT.REPORT_NAME
+
+relationship AutoDetected_22ff75a3-f67a-4403-9119-c55fc581fa90
+	isActive: false
+	fromColumn: 'DAILY SALES FLASH'.'B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY'
+	toColumn: B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY
+
+relationship AutoDetected_04d57939-39d1-48ca-b56b-6c0c0032b76f
+	fromColumn: 'DAILY SALES FLASH'.REPORT_NAME
+	toColumn: D_REPORT.REPORT_NAME
+

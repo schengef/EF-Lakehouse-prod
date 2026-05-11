@@ -1,0 +1,36 @@
+table 'Semantic Model Update'
+	lineageTag: b33f1f69-1b96-4ac6-bd8d-6aa92edc3aa5
+	sourceLineageTag: 6cb183cd-1b13-4db4-951b-2235c8bb7437
+
+	column Row
+		dataType: string
+		lineageTag: 4ffe4c42-7f3e-4b15-bd89-270e2866be17
+		sourceLineageTag: 200767f4-78ba-44d5-a03b-53acb2a58f4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Row
+
+		annotation SummarizationSetBy = User
+
+	column 'Date.1'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7d640af8-2a05-4d57-a6b7-e5c94a1c9bc2
+		sourceLineageTag: 517fe0f4-c492-4e90-994f-5aa6fddc5f68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date.1
+
+		variation Variation
+			isDefault
+			relationship: eb92bdf6-85a1-41aa-8ca6-5009261ec77f
+			defaultHierarchy: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Semantic Model Update' = entity
+		mode: directQuery
+		source
+			entityName: Semantic Model Update
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

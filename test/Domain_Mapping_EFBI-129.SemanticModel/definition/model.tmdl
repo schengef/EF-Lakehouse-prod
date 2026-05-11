@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DailyFlash_SubDomain","B_REPORT_DEPENDENCY","B_SOURCE_TABLE_USAGE","D_BUSINESS_DOMAIN","D_REPORT","DAILY SALES FLASH","AlexQuery","Merchandise_SubDomain","DCAF_SubDomain","ExecutiveDashboard_SubDomain","Inventory Dashboard_SubDomain"]
+
+ref table DailyFlash_SubDomain
+ref table B_REPORT_DEPENDENCY
+ref table B_SOURCE_TABLE_USAGE
+ref table D_BUSINESS_DOMAIN
+ref table D_REPORT
+ref table 'DAILY SALES FLASH'
+ref table AlexQuery
+ref table Merchandise_SubDomain
+ref table DCAF_SubDomain
+ref table 'Inventory Dashboard_SubDomain'
+ref table ExecutiveDashboard_SubDomain
+
+ref cultureInfo en-US
+

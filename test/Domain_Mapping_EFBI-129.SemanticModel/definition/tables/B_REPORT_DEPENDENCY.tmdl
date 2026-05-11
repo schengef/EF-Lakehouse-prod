@@ -1,0 +1,46 @@
+table B_REPORT_DEPENDENCY
+	lineageTag: 4d8617a0-4772-4309-b11f-3fad7fe26ecd
+
+	column REPORT_DEPENDENCY_KEY
+		dataType: double
+		lineageTag: e841c009-a964-49f6-ada9-21c4d83cdf48
+		summarizeBy: sum
+		sourceColumn: REPORT_DEPENDENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BUSINESS_DOMAIN_KEY
+		dataType: double
+		lineageTag: f48a97cc-087e-4c68-9306-6ec0af6100d9
+		summarizeBy: none
+		sourceColumn: BUSINESS_DOMAIN_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REPORT_KEY
+		dataType: double
+		lineageTag: dc52dbd4-7104-4009-80c1-d3079a241bfe
+		summarizeBy: none
+		sourceColumn: REPORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition B_REPORT_DEPENDENCY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com","REPORTING_PROD_WH",[Implementation="2.0"]),
+				    EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
+				    EDW_T_Schema = EDW_PROD_Database{[Name="EDW_T",Kind="Schema"]}[Data],
+				    B_REPORT_DEPENDENCY_Table = EDW_T_Schema{[Name="B_REPORT_DEPENDENCY",Kind="Table"]}[Data]
+				in
+				    B_REPORT_DEPENDENCY_Table
+
+	annotation PBI_ResultType = Table
+

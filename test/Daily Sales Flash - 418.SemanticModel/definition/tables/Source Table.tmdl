@@ -1,0 +1,96 @@
+table 'Source Table'
+	lineageTag: d5a33b91-6a72-4f14-bf47-9644a84422b9
+	sourceLineageTag: 737973f2-4326-499d-9a01-340082d12a58
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 9625cbe8-103c-4813-ae58-cbdeee24b5f1
+		sourceLineageTag: 9d088368-fe9f-489d-92ac-1f348043cc26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source System'
+		dataType: string
+		lineageTag: 9d450261-64f8-4b48-9196-4bef98662cf8
+		sourceLineageTag: 4c69f5b1-fc27-4204-8b4a-76cee4339bec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source System
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table'
+		dataType: string
+		lineageTag: 2b3ddc00-63e9-47fa-bd0a-6e3894c8d03a
+		sourceLineageTag: a00d31a0-4fe0-463a-8a31-e7fe5b3774d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table
+
+		annotation SummarizationSetBy = User
+
+	column 'Staging Table Name'
+		dataType: string
+		lineageTag: 52467fb7-6b53-4b05-8c48-4fdcb386e261
+		sourceLineageTag: 0e1b9180-667c-49b9-97f6-2220d872d0bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Staging Table Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Frequency Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 52572aec-bd92-4e04-be69-05fcacf627c5
+		sourceLineageTag: db7fcbf9-6ae8-49e6-a0ce-9976b1606e50
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Frequency Days
+
+		annotation SummarizationSetBy = User
+
+	column 'Data Load Type'
+		dataType: string
+		lineageTag: 61ab27c6-1fb9-486a-9474-afa5941022c2
+		sourceLineageTag: ed648a0d-fd02-4cf1-83f7-5d8ab36b1e3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Data Load Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Row Created Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 7fea059d-24c1-476f-9ad2-1d6095ed8439
+		sourceLineageTag: eaac840e-dca3-4c2d-82b8-643467d95ee5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Row Created Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: a99a799d-6492-40a4-aec9-3d89debb7fda
+		sourceLineageTag: a578aeb5-3c19-4a11-ba24-8faf05f654ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		annotation SummarizationSetBy = User
+
+	partition 'Source Table' = entity
+		mode: directQuery
+		source
+			entityName: Source Table
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

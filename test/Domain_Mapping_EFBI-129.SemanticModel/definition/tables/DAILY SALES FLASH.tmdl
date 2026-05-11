@@ -1,0 +1,140 @@
+table 'DAILY SALES FLASH'
+	lineageTag: dbcb6e74-04dc-45bb-b3bf-ced0eb4a71f6
+
+	column 'B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY'
+		dataType: int64
+		lineageTag: 929c7ea4-2946-4923-8682-2f2f4f9b49ef
+		summarizeBy: sum
+		sourceColumn: B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'B_REPORT_DEPENDENCY.BUSINESS_DOMAIN_KEY'
+		dataType: int64
+		lineageTag: 6448d07d-738a-4278-a373-afc66a546399
+		summarizeBy: sum
+		sourceColumn: B_REPORT_DEPENDENCY.BUSINESS_DOMAIN_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'B_REPORT_DEPENDENCY.REPORT_KEY'
+		dataType: int64
+		lineageTag: 68767ccf-2d15-4019-b1a9-a7f109d98b68
+		summarizeBy: sum
+		sourceColumn: B_REPORT_DEPENDENCY.REPORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: 7123936c-17f2-408a-a6da-21baf06f06b4
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAKEHOUSE_TABLE_NAME
+		dataType: string
+		lineageTag: 3e9681fa-97e8-4a89-9efa-63e97f011093
+		summarizeBy: none
+		sourceColumn: LAKEHOUSE_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_VIEW_TABLE_NAME
+		dataType: string
+		lineageTag: eee93f32-ed38-457e-968e-25abb672e369
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_VIEW_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_TABLE_NAME2
+		dataType: string
+		lineageTag: 39f7620e-af07-4738-843b-ceb896a6e94e
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_TABLE_NAME2
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPORT_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f966307-02f8-4c9a-80fe-41a2108f2693
+		summarizeBy: sum
+		sourceColumn: REPORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.BUSINESS_DOMAIN_KEY'
+		dataType: int64
+		formatString: 0
+		lineageTag: 18c6fe06-51e4-4785-a507-fc780a00a651
+		summarizeBy: sum
+		sourceColumn: DailyFlash_SubDomain.BUSINESS_DOMAIN_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.BUSINESS_DOMAIN'
+		dataType: string
+		lineageTag: a02266f9-be48-47dd-a944-fa9ca5efae21
+		summarizeBy: none
+		sourceColumn: DailyFlash_SubDomain.BUSINESS_DOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.BUSINESS_SUBDOMAIN'
+		dataType: string
+		lineageTag: 09aea19d-8518-49d9-9bab-ea5dd9625295
+		summarizeBy: none
+		sourceColumn: DailyFlash_SubDomain.BUSINESS_SUBDOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.WAREHOUSE_TABLE'
+		dataType: string
+		lineageTag: 267fb468-b9bf-47a8-9fcc-298d532fb829
+		summarizeBy: none
+		sourceColumn: DailyFlash_SubDomain.WAREHOUSE_TABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.SOURCE_SYSTEM'
+		dataType: string
+		lineageTag: e098a057-870d-45f6-992c-4eb2ffc1a571
+		summarizeBy: none
+		sourceColumn: DailyFlash_SubDomain.SOURCE_SYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DailyFlash_SubDomain.STATIC'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c5d64800-13e8-4913-a866-234f77db2bcd
+		summarizeBy: none
+		sourceColumn: DailyFlash_SubDomain.STATIC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DAILY SALES FLASH' = m
+		mode: import
+		source =
+				let
+				    Source = Table.NestedJoin(DailyFlash_SubDomain, {"SNOWFLAKE_TABLE_NAME2"}, D_BUSINESS_DOMAIN, {"WAREHOUSE_TABLE"}, "DailyFlash_SubDomain", JoinKind.LeftOuter),
+				    #"Expanded DailyFlash_SubDomain" = Table.ExpandTableColumn(Source, "DailyFlash_SubDomain", {"BUSINESS_DOMAIN_KEY", "BUSINESS_DOMAIN", "BUSINESS_SUBDOMAIN", "WAREHOUSE_TABLE", "SOURCE_SYSTEM", "STATIC"}, {"DailyFlash_SubDomain.BUSINESS_DOMAIN_KEY", "DailyFlash_SubDomain.BUSINESS_DOMAIN", "DailyFlash_SubDomain.BUSINESS_SUBDOMAIN", "DailyFlash_SubDomain.WAREHOUSE_TABLE", "DailyFlash_SubDomain.SOURCE_SYSTEM", "DailyFlash_SubDomain.STATIC"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Expanded DailyFlash_SubDomain", {"REPORT_KEY", "DailyFlash_SubDomain.BUSINESS_DOMAIN_KEY"}, B_REPORT_DEPENDENCY, {"REPORT_KEY", "BUSINESS_DOMAIN_KEY"}, "B_REPORT_DEPENDENCY", JoinKind.LeftOuter),
+				    #"Expanded B_REPORT_DEPENDENCY" = Table.ExpandTableColumn(#"Merged Queries", "B_REPORT_DEPENDENCY", {"REPORT_DEPENDENCY_KEY", "BUSINESS_DOMAIN_KEY", "REPORT_KEY"}, {"B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY", "B_REPORT_DEPENDENCY.BUSINESS_DOMAIN_KEY", "B_REPORT_DEPENDENCY.REPORT_KEY"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Expanded B_REPORT_DEPENDENCY",{{"REPORT_KEY", Int64.Type}, {"DailyFlash_SubDomain.BUSINESS_DOMAIN_KEY", Int64.Type}, {"B_REPORT_DEPENDENCY.REPORT_DEPENDENCY_KEY", Int64.Type}, {"B_REPORT_DEPENDENCY.BUSINESS_DOMAIN_KEY", Int64.Type}, {"B_REPORT_DEPENDENCY.REPORT_KEY", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

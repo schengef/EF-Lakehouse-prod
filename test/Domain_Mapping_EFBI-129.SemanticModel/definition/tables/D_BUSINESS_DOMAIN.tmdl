@@ -1,0 +1,69 @@
+table D_BUSINESS_DOMAIN
+	lineageTag: 1ce25d61-41c1-4dd2-943b-0b19e88cf3e2
+
+	column BUSINESS_DOMAIN_KEY
+		dataType: double
+		lineageTag: 1a19d717-4ab4-47d2-83c8-477ddee9c1e6
+		summarizeBy: none
+		sourceColumn: BUSINESS_DOMAIN_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BUSINESS_DOMAIN
+		dataType: string
+		lineageTag: c9ab2cb4-2fbb-42bc-8938-c73f089e76a1
+		summarizeBy: none
+		sourceColumn: BUSINESS_DOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_SUBDOMAIN
+		dataType: string
+		lineageTag: f97dd1d4-b0a6-4838-8c32-cd0e45d68a32
+		summarizeBy: none
+		sourceColumn: BUSINESS_SUBDOMAIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column WAREHOUSE_TABLE
+		dataType: string
+		lineageTag: ce7aa7d9-b1d4-46b8-8044-7d6376c05ac3
+		summarizeBy: none
+		sourceColumn: WAREHOUSE_TABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCE_SYSTEM
+		dataType: string
+		lineageTag: 5f81cbb0-5d64-432c-be9b-f1393cc63a0f
+		summarizeBy: none
+		sourceColumn: SOURCE_SYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATIC
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a47551a8-66ea-43b0-a3b2-d4faf2c4b8aa
+		summarizeBy: none
+		sourceColumn: STATIC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_BUSINESS_DOMAIN = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com","REPORTING_PROD_WH",[Implementation="2.0"]),
+				    EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
+				    EDW_T_Schema = EDW_PROD_Database{[Name="EDW_T",Kind="Schema"]}[Data],
+				    D_BUSINESS_DOMAIN_Table = EDW_T_Schema{[Name="D_BUSINESS_DOMAIN",Kind="Table"]}[Data]
+				in
+				    D_BUSINESS_DOMAIN_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

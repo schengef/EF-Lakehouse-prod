@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Domain_Mapping_EFBI-129"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a74b25de-ab74-a7d1-43c4-3c371b077c78"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Daily Sales Flash - 418"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e442f89c-c399-925b-4e61-a1a20f35bcba"
+  }
+}

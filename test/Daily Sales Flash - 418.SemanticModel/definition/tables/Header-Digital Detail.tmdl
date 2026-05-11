@@ -1,0 +1,36 @@
+table 'Header-Digital Detail'
+	lineageTag: 5364fc9e-facf-4fb6-8d98-64f365d1aa47
+
+	column Metric
+		dataType: string
+		lineageTag: 3c5c1668-5494-4cb7-8340-87d10ba485b4
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: 'Metric Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 61d0bbaf-7326-44d2-834d-e04292b855ca
+		summarizeBy: sum
+		sourceColumn: Metric Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Header-Digital Detail' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCkotKS3KK1bQSCxRcHHWVNJRMlSK1UEVDy7JL0otBskZgeWC3YIVghNzUouBIsZgEaf8opTUorSi1FSgkAlYyCUzPbMkMUfBJTU3MS8FKGyqFBsLAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metric = _t, #"Metric Sort" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Metric Sort", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

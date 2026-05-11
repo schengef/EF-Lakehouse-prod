@@ -1,0 +1,971 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "sales_flash.sales_flash_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sasles_flash__vs_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash % vs Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "headerssales_flash.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Header-Sales Flash",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.blank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Blank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash__vs_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % vs Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_digital_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_digital_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_digital__vs_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital % vs Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "headerdigital_detail.metric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Header-Digital Detail",
+			          "ConceptualProperty": "Metric"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.daily_flash_digital_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_digital__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital__vs_budget": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital % vs Budget"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "finance_channel_join.finance_channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Finance Channel Join",
+			          "ConceptualProperty": "Finance Channel"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "high_level_calc_group.calculation_group_column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Stores Calc Group",
+			          "ConceptualProperty": "Calculation group column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "digital_calc_group.calculation_group_column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Digital Calc Group",
+			          "ConceptualProperty": "Calculation group column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.net_sales_budget_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Net Sales Budget Stores"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.sales_flash_budget_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Budget Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash__vs_budget_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash % vs Budget Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "channel_calc_group.calculation_group_column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Channel Calc Group",
+			          "ConceptualProperty": "Calculation group column"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.daily_flash_ly_wtd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash LY WTD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.daily_flash__vs_ly_wtd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % vs LY WTD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.daily_flash_digital_ly_wtd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital LY WTD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.daily_flash_digital__vs_ly_wtd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital % vs LY WTD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "headertotal.total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Header-Total",
+			          "ConceptualProperty": "Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "headerdaily_flash.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Header-Daily Flash",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales_flash.sales_flash_forecast_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Forecast Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash__vs_forecast_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash % vs Forecast Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_digital__vs_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Digital % vs Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales_flash.sales_flash__vs_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Sales Flash % vs Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash__of_budget_in": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % of Budget In"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% of Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash__of_budget_in_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % of Budget In Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% of Budget In": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash_budget_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Budget Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash__vs_budget_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % vs Budget Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Budget": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash_digital__vs_budget_in": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Digital % vs Budget In"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% of Budget In": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "date.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "store_dtc_allocated.region_description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Store (DTC Allocated)",
+			          "ConceptualProperty": "Region Description"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "allocated_store_dtc.region_description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Allocated Store (DTC)",
+			          "ConceptualProperty": "Region Description"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "localsales_flash.daily_flash_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "localsales_flash.daily_flash__vs_forecast": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Sales Flash",
+			          "ConceptualProperty": "Daily Flash % vs Forecast"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs Forecast": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

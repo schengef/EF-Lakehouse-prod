@@ -1,0 +1,60 @@
+table D_REPORT
+	lineageTag: 05c3205a-086d-4bc5-b1fe-26588f15c949
+
+	column REPORT_KEY
+		dataType: double
+		lineageTag: fcd1ac37-5695-45a5-9c55-1b4264f5b431
+		summarizeBy: none
+		sourceColumn: REPORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: ca8a5c3f-f6b9-42cd-af10-793527244960
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FREQUENCY_DAY
+		dataType: string
+		lineageTag: 4c01d71a-8f0e-44ab-9ac4-fe3a16b9dc7e
+		summarizeBy: none
+		sourceColumn: FREQUENCY_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURPOSE
+		dataType: string
+		lineageTag: f970c349-fd94-427d-bed5-b9eb5d21cff3
+		summarizeBy: none
+		sourceColumn: PURPOSE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOTES
+		dataType: string
+		lineageTag: 3a269267-f9f7-44aa-87fa-47bedbcd2b31
+		summarizeBy: none
+		sourceColumn: NOTES
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_REPORT = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com","REPORTING_PROD_WH",[Implementation="2.0"]),
+				    EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
+				    EDW_T_Schema = EDW_PROD_Database{[Name="EDW_T",Kind="Schema"]}[Data],
+				    D_REPORT_Table = EDW_T_Schema{[Name="D_REPORT",Kind="Table"]}[Data]
+				in
+				    D_REPORT_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

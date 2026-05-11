@@ -1,0 +1,90 @@
+{
+  "config": "{\"version\":\"5.70\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU02\",\"type\":2,\"version\":{\"visual\":\"2.6.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU02",
+            "path": "BaseThemes/CY26SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "join match",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "a604600d7757740e1203",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"22ea06f01425c973a05a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":954.0298507462686,\"y\":99.1044776119403,\"z\":1,\"width\":325.97014925373134,\"height\":136.11940298507463,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"D_REPORT.REPORT_NAME\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D_REPORT\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"REPORT_NAME\"},\"Name\":\"D_REPORT.REPORT_NAME\",\"NativeReferenceName\":\"REPORT_NAME\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D_REPORT\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"REPORT_NAME\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Daily Sales Flash'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 136.12,
+          "width": 325.97,
+          "x": 954.03,
+          "y": 99.10,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"fa9feea8be084a7e3c79\",\"layouts\":[{\"id\":0,\"position\":{\"x\":122.98507462686567,\"y\":99.1044776119403,\"z\":0,\"width\":703.2835820895522,\"height\":562.3880597014925,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"D_REPORT.REPORT_NAME\"},{\"queryRef\":\"D_BUSINESS_DOMAIN.BUSINESS_SUBDOMAIN\"},{\"queryRef\":\"CountNonNull(D_BUSINESS_DOMAIN.BUSINESS_SUBDOMAIN)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"D_REPORT\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"D_BUSINESS_DOMAIN\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"REPORT_NAME\"},\"Name\":\"D_REPORT.REPORT_NAME\",\"NativeReferenceName\":\"REPORT_NAME\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"BUSINESS_SUBDOMAIN\"},\"Name\":\"D_BUSINESS_DOMAIN.BUSINESS_SUBDOMAIN\",\"NativeReferenceName\":\"BUSINESS_SUBDOMAIN\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"BUSINESS_SUBDOMAIN\"}},\"Function\":5},\"Name\":\"CountNonNull(D_BUSINESS_DOMAIN.BUSINESS_SUBDOMAIN)\",\"NativeReferenceName\":\"Count of BUSINESS_SUBDOMAIN\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 562.39,
+          "width": 703.28,
+          "x": 122.99,
+          "y": 99.10,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1200.00,
+      "name": "a69eac43cf12b9db6f14",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"72775ca4bbbe5304981f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":955.2238805970148,\"y\":186.56716417910448,\"z\":1000,\"width\":644.776119402985,\"height\":935.820895522388,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"AlexQuery.REPORT_NAME\"},{\"queryRef\":\"Sum(AlexQuery.REPORT_KEY)\"},{\"queryRef\":\"AlexQuery.WAREHOUSE_TABLE\"},{\"queryRef\":\"AlexQuery.BUSINESS_DOMAIN\"},{\"queryRef\":\"AlexQuery.BUSINESS_SUBDOMAIN\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"AlexQuery\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"REPORT_NAME\"},\"Name\":\"AlexQuery.REPORT_NAME\",\"NativeReferenceName\":\"REPORT_NAME\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"BUSINESS_DOMAIN\"},\"Name\":\"AlexQuery.BUSINESS_DOMAIN\",\"NativeReferenceName\":\"BUSINESS_DOMAIN\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"BUSINESS_SUBDOMAIN\"},\"Name\":\"AlexQuery.BUSINESS_SUBDOMAIN\",\"NativeReferenceName\":\"BUSINESS_SUBDOMAIN\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"WAREHOUSE_TABLE\"},\"Name\":\"AlexQuery.WAREHOUSE_TABLE\",\"NativeReferenceName\":\"WAREHOUSE_TABLE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"REPORT_KEY\"},\"Name\":\"Sum(AlexQuery.REPORT_KEY)\",\"NativeReferenceName\":\"RD.REPORT_KEY\"}]},\"columnProperties\":{\"Sum(AlexQuery.REPORT_KEY)\":{\"displayName\":\"RD.REPORT_KEY\"}},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Alex Query'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"0b766eb0e770023638f5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"AlexQuery\"}},\"Property\":\"REPORT_NAME\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"AlexQuery\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"REPORT_NAME\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Daily Sales Flash'\"}}],[{\"Literal\":{\"Value\":\"'Executive Dashboard'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 935.82,
+          "width": 644.78,
+          "x": 955.22,
+          "y": 186.57,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"7bbe0b91654f858003b2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.417910447761194,\"y\":186.56716417910448,\"z\":0,\"width\":913.4328358208954,\"height\":935.820895522388,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Merge1.REPORT_NAME\"},{\"queryRef\":\"Sum(Merge1.B_REPORT_DEPENDENCY.REPORT_KEY)\"},{\"queryRef\":\"Merge1.SNOWFLAKE_TABLE_NAME2\"},{\"queryRef\":\"Merge1.DailyFlash_SubDomain.WAREHOUSE_TABLE\"},{\"queryRef\":\"Merge1.DailyFlash_SubDomain.BUSINESS_DOMAIN\"},{\"queryRef\":\"Merge1.DailyFlash_SubDomain.BUSINESS_SUBDOMAIN\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"DAILY SALES FLASH\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"REPORT_NAME\"},\"Name\":\"Merge1.REPORT_NAME\",\"NativeReferenceName\":\"REPORT_NAME\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"SNOWFLAKE_TABLE_NAME2\"},\"Name\":\"Merge1.SNOWFLAKE_TABLE_NAME2\",\"NativeReferenceName\":\"LH.SNOWFLAKE_TABLE_NAME\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"DailyFlash_SubDomain.WAREHOUSE_TABLE\"},\"Name\":\"Merge1.DailyFlash_SubDomain.WAREHOUSE_TABLE\",\"NativeReferenceName\":\"BD.WAREHOUSE_TABLE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"DailyFlash_SubDomain.BUSINESS_DOMAIN\"},\"Name\":\"Merge1.DailyFlash_SubDomain.BUSINESS_DOMAIN\",\"NativeReferenceName\":\"BD.BUSINESS_DOMAIN\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"DailyFlash_SubDomain.BUSINESS_SUBDOMAIN\"},\"Name\":\"Merge1.DailyFlash_SubDomain.BUSINESS_SUBDOMAIN\",\"NativeReferenceName\":\"BD.BUSINESS_SUBDOMAIN\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"B_REPORT_DEPENDENCY.REPORT_KEY\"},\"Name\":\"Sum(Merge1.B_REPORT_DEPENDENCY.REPORT_KEY)\",\"NativeReferenceName\":\"RD.REPORT_KEY\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"REPORT_NAME\"}}},{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"DailyFlash_SubDomain.BUSINESS_DOMAIN\"}}}]},\"columnProperties\":{\"Merge1.SNOWFLAKE_TABLE_NAME2\":{\"displayName\":\"LH.SNOWFLAKE_TABLE_NAME\"},\"Merge1.DailyFlash_SubDomain.WAREHOUSE_TABLE\":{\"displayName\":\"BD.WAREHOUSE_TABLE\"},\"Merge1.DailyFlash_SubDomain.BUSINESS_DOMAIN\":{\"displayName\":\"BD.BUSINESS_DOMAIN\"},\"Merge1.DailyFlash_SubDomain.BUSINESS_SUBDOMAIN\":{\"displayName\":\"BD.BUSINESS_SUBDOMAIN\"},\"Sum(Merge1.B_REPORT_DEPENDENCY.REPORT_KEY)\":{\"displayName\":\"RD.REPORT_KEY\"}},\"drillFilterOtherVisuals\":true,\"objects\":{},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Mapping LAKEHOUSE w SNOWFLAKE'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 935.82,
+          "width": 913.43,
+          "x": 16.42,
+          "y": 186.57,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"972ec00fddbff3f8487c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.417910447761194,\"y\":22.388059701492537,\"z\":2000,\"width\":476.1194029850746,\"height\":134.32835820895522,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Merge1.REPORT_NAME\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"DAILY SALES FLASH\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"REPORT_NAME\"},\"Name\":\"Merge1.REPORT_NAME\",\"NativeReferenceName\":\"REPORT_NAME\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"singleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DAILY SALES FLASH\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"REPORT_NAME\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Daily Sales Flash'\"}}],[{\"Literal\":{\"Value\":\"'Executive Dashboard'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 134.33,
+          "width": 476.12,
+          "x": 16.42,
+          "y": 22.39,
+          "z": 2000.00
+        }
+      ],
+      "width": 1600.00
+    }
+  ]
+}

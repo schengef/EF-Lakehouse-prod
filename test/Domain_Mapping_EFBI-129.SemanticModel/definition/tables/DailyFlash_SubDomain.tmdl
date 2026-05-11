@@ -1,0 +1,63 @@
+table DailyFlash_SubDomain
+	lineageTag: 6bb0b300-ede1-4358-91f9-b7581f7c2168
+
+	column REPORT_NAME
+		dataType: string
+		lineageTag: 8854583c-0c25-4c94-98b6-32f4a18d8a98
+		summarizeBy: none
+		sourceColumn: REPORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAKEHOUSE_TABLE_NAME
+		dataType: string
+		lineageTag: b0b5cfda-05b4-4c12-b8ca-d885414c1894
+		summarizeBy: none
+		sourceColumn: LAKEHOUSE_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_VIEW_TABLE_NAME
+		dataType: string
+		lineageTag: 565e0af7-354a-4604-840f-64620963f64c
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_VIEW_TABLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SNOWFLAKE_TABLE_NAME2
+		dataType: string
+		lineageTag: 5a1f0756-4686-4933-be0f-26c5280c3f78
+		summarizeBy: none
+		sourceColumn: SNOWFLAKE_TABLE_NAME2
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPORT_KEY
+		dataType: double
+		lineageTag: e2953984-3cc2-4b05-ad4b-79d33983a580
+		summarizeBy: sum
+		sourceColumn: REPORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DailyFlash_SubDomain = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\EileenFisher\dev\readiness\DailyFlash_SubDomain.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Appended Query" = Table.Combine({#"Promoted Headers", Merchandise_SubDomain, DCAF_SubDomain, ExecutiveDashboard_SubDomain, #"Inventory Dashboard_SubDomain"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Appended Query","Executive Summary Dashboard","Executive Dashboard",Replacer.ReplaceText,{"REPORT_NAME"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Replaced Value", {"REPORT_NAME"}, D_REPORT, {"REPORT_NAME"}, "D_REPORT", JoinKind.LeftOuter),
+				    #"Expanded D_REPORT" = Table.ExpandTableColumn(#"Merged Queries", "D_REPORT", {"REPORT_KEY"}, {"REPORT_KEY"})
+				in
+				    #"Expanded D_REPORT"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

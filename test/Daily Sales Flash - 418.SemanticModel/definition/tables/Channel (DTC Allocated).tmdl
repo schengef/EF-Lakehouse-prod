@@ -1,0 +1,86 @@
+table 'Channel (DTC Allocated)'
+	lineageTag: b3c68992-f3bb-40f3-b406-4f7915552fc3
+	sourceLineageTag: 028c3c30-045f-41fc-859e-269b065041f1
+
+	column 'Allocated Channel Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 03271088-d3de-48ca-a504-60b13687ac77
+		sourceLineageTag: e99ff6fe-316d-45bd-843e-367685d71b3e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Channel Name'
+		dataType: string
+		lineageTag: 2edc6272-b013-42c8-98fe-c7ad5c78f2a4
+		sourceLineageTag: 73446181-bd37-4de3-9311-85ea4d004201
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Sub Channel Name'
+		dataType: string
+		lineageTag: 88b4854d-0913-40cc-a58d-383ea52f5801
+		sourceLineageTag: ba42b40c-ec27-420a-ac3d-2fb8e2aec152
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Sub Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Channel Format'
+		dataType: string
+		lineageTag: 8991519c-7cbd-4c0d-bd97-dde85f2eeafe
+		sourceLineageTag: f346f871-e2ce-4665-b76b-1af858d6d1cb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Channel Format
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Channel Geography'
+		dataType: string
+		lineageTag: 921eff2a-03e2-4f32-aae0-a495c368aa4a
+		sourceLineageTag: 8b786c02-26d0-449b-8c62-99ea16d7c4ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Channel Geography
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9913ec2d-4fb8-46cd-83e8-45375b99d03b
+		sourceLineageTag: cd5fd57e-2054-4c51-96d3-1d49b7f0531b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Finance Channel'
+		dataType: string
+		lineageTag: 26395d10-dd22-4bf4-b1b5-f5f3855d3439
+		sourceLineageTag: 9be24559-dd95-4ee5-8837-be90eb2c4a30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocated Finance Channel
+		sortByColumn: 'Allocated Sort'
+
+		annotation SummarizationSetBy = User
+
+	partition 'Channel (DTC Allocated)' = entity
+		mode: directQuery
+		source
+			entityName: Channel (DTC Allocated)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
