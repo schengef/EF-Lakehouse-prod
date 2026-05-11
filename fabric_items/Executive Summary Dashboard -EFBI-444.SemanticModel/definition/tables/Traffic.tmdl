@@ -1,0 +1,61 @@
+table Traffic
+	isHidden
+	lineageTag: 523a98a5-20fb-451d-87c7-6985c3f42821
+	sourceLineageTag: 6aec865f-28e8-4111-94a0-8b84d80c81bf
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8b024378-bbf8-439f-8ea3-b7a23d5e3af0
+		sourceLineageTag: 23d41ed9-eef9-4bcc-a561-0b6aaca23026
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7a60cc6e-5fde-49cc-bfa6-c253e540199c
+		sourceLineageTag: 56972c0b-5991-4aba-8142-a6d223d351b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column Visits
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6f4772b0-d8e5-4127-8933-b5a35a5f2f25
+		sourceLineageTag: 0b072108-a29a-4f03-90de-85a295affb52
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Visits
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7cec5b24-f16c-4e00-b3f1-fae0f0478e66
+		sourceLineageTag: 6c6c891d-76f2-4f80-9590-d8ee69393092
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	partition Traffic = entity
+		mode: directQuery
+		source
+			entityName: Traffic
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

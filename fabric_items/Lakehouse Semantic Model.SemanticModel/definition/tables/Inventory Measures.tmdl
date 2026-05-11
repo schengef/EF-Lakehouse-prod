@@ -1,0 +1,128 @@
+table 'Inventory Measures'
+	lineageTag: 7d0b364f-68f0-4758-804a-8cc8ab792085
+	sourceLineageTag: [dbo].[Inventory Measures]
+
+	measure 'EOP Cost $ On Hand' =
+			CALCULATE(
+			    SUM(Inventory[Cost On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 52226924-d84f-4a0c-8e4e-0b5b42d51080
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'EOP Quantity On Hand' =
+			CALCULATE(
+			    SUM(Inventory[Units On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: 0
+		lineageTag: f3ccdf97-00c6-4d39-a5bf-b84de79ac270
+
+	measure 'EOP Retail $ On Hand' =
+			CALCULATE(
+			    SUM(Inventory[Retail On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 90cb7615-4195-44ce-9918-b6620e2fdf6b
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'On Hand AUR' =
+			DIVIDE(
+			    [EOP Retail $ On Hand],
+			    [EOP Quantity On Hand]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3629ba49-2cfd-4c54-9563-3ad1c398ce16
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'External Quantity On Hand' =
+			CALCULATE(
+			        SUM('Transactions (External POS)'[Oh Units]),
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        'Date'[Week End Date]=max('Date'[Week End Date])
+			    )
+		formatString: 0
+		lineageTag: f17df72d-1744-4ec0-a190-014157b79109
+
+	measure 'External On Hand Cost $' =
+			VAR PrevFiscalWeekDate = MAX('Filter Dates'[Date])
+			RETURN
+			IF(
+			    MAX('Filter Dates'[Date])>TODAY(),
+			    // blank()
+			    CALCULATE(
+			    [External Cost $],
+			    'Date'[Date]=PrevFiscalWeekDate-7
+			    )
+			    ,
+			    CALCULATE(
+			        [External Cost $],
+			        'Date'[Date]=max('Date'[Date])
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 52b1a56a-a73c-4039-8c34-43b6f754946d
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'External On Hand Retail $' =
+			VAR PrevFiscalWeekDate = MAX('Filter Dates'[Date])
+			RETURN
+			IF(
+			    MAX('Filter Dates'[Date])>TODAY(),
+			    //blank()
+			    CALCULATE(
+			    [External Retail $],
+			    'Date'[Date]=PrevFiscalWeekDate-7
+			    )
+			    ,
+			    CALCULATE(
+			        [External Retail $],
+			        'Date'[Date]=max('Date'[Date])
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0ce744b2-2ba2-4604-97b6-3b1574579253
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 757ee45b-b7c0-4369-8989-5f36499b85f0
+		sourceLineageTag: Column1
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inventory Measures' = entity
+		mode: directLake
+		source
+			entityName: Inventory Measures
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

@@ -1,0 +1,259 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": "SELECT \n    T.UNITS_ON_HAND AS \"Units On Hand\",\n    T.LOCATION AS \"Location\",\n    T.STORE_KEY AS \"Store Key\",\n    T.WAREHOUSE_KEY AS \"Warehouse Key\",\n    T.CHANNEL_KEY AS \"Channel Key\",\n    T.PRODUCT_KEY AS \"Product Key\",\n    T.DELIVERY_KEY AS \"Delivery Key\",\n    T.PRICE_CATEGORIZATION_KEY AS \"Price Categorization Key\",\n    PC.MARK_TYPE AS \"Mark Type\",\n    T.UNITS_ON_HAND * P.STANDARD_COST AS \"Cost On Hand\",\n    T.UNITS_ON_HAND * P.RETAIL_PRICE AS \"Retail On Hand\",\n    CAST(T.EFFECTIVE_START_DATE AS DATE) AS \"Start Date\",\n    CAST(T.EFFECTIVE_END_DATE AS DATE) AS \"End Date\",\n    CASE WHEN P.DEPARTMENT_CODE_MI9 > 89 THEN 1 END AS \"Dtc Misc Flag\"\nFROM EDW_V.F_INVENTORY_ON_HAND T\nLEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY\nLEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "database": "EDW_PROD"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "3d8a3261-8102-4569-9021-412ed801f489"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Inventory"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Units On Hand",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Units On Hand",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Location",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Location",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Warehouse Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Warehouse Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Channel Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Channel Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Product Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Product Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Delivery Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Delivery Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Price Categorization Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 2
+                },
+                "sink": {
+                  "name": "Price Categorization Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Mark Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Mark Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cost On Hand",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Cost On Hand",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Retail On Hand",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Retail On Hand",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Start Date",
+                  "type": "Date",
+                  "physicalType": "DATE"
+                },
+                "sink": {
+                  "name": "Start Date",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "End Date",
+                  "type": "Date",
+                  "physicalType": "DATE"
+                },
+                "sink": {
+                  "name": "End Date",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "Dtc Misc Flag",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 1
+                },
+                "sink": {
+                  "name": "Dtc Misc Flag",
+                  "physicalType": "long"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Inventory",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

@@ -1,0 +1,82 @@
+table 'Forecast (DTC Store)'
+	lineageTag: 378de02a-0b2b-40f9-8553-7456e97656f9
+	sourceLineageTag: [dbo].[Forecast _DTC-Store_]
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9aef9ca1-05e0-4962-a85f-4f16a3ed88e5
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 40579b7b-0a4e-4acb-87d7-ef85b24b3f17
+		sourceLineageTag: Date Key
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: ce8cda8b-213b-4c7f-a2a9-1764e99c7db4
+		sourceLineageTag: Measure
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Store Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: b55c77a9-fab7-4049-a9d6-f091321e287e
+		sourceLineageTag: Forecast Store Value
+		summarizeBy: none
+		sourceColumn: Forecast Store Value
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 865d6cf2-df13-4703-9985-b89b100c6a0b
+		sourceLineageTag: Currency Code
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Forecast (DTC Store)' = entity
+		mode: directLake
+		source
+			entityName: Forecast _DTC-Store_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

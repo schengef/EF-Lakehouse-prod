@@ -1,0 +1,112 @@
+table InTransit
+	lineageTag: 6df49556-5c42-49a6-8b47-6f2f8b2173eb
+	sourceLineageTag: [dbo].[InTransit]
+
+	column 'Movement No'
+		dataType: string
+		lineageTag: 5753e45d-6602-45c9-ad2e-d2fd476ca0e2
+		sourceLineageTag: Movement No
+		summarizeBy: none
+		sourceColumn: Movement No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		lineageTag: 68b3b436-afa4-455e-b8b8-cf42259be16b
+		sourceLineageTag: Channel
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9182306f-8836-4380-bdbe-c618134207fe
+		sourceLineageTag: ShipDateKey
+		summarizeBy: none
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 55e7db4d-83d9-4fb9-a976-abb93da769c2
+		sourceLineageTag: ShipUnits
+		summarizeBy: sum
+		sourceColumn: ShipUnits
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipCost
+		dataType: double
+		lineageTag: 4360e494-8cc8-4da8-aaa5-d879acd93384
+		sourceLineageTag: ShipCost
+		summarizeBy: sum
+		sourceColumn: ShipCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReceiptDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fe18a811-839a-43ac-a8da-8bdb364612a6
+		sourceLineageTag: ReceiptDateKey
+		summarizeBy: count
+		sourceColumn: ReceiptDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceiptUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: bb4fb1e4-5e06-4bdf-85f8-735e1ac85401
+		sourceLineageTag: ReceiptUnits
+		summarizeBy: sum
+		sourceColumn: ReceiptUnits
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceiptCost
+		dataType: double
+		lineageTag: a7fb1330-c4e5-44b0-bdc1-8269a3427eb9
+		sourceLineageTag: ReceiptCost
+		summarizeBy: sum
+		sourceColumn: ReceiptCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IntransitUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: a4975286-8d22-4f5a-be9a-a7f3b594fd9f
+		sourceLineageTag: IntransitUnits
+		summarizeBy: sum
+		sourceColumn: IntransitUnits
+
+		annotation SummarizationSetBy = Automatic
+
+	column IntransitCost
+		dataType: double
+		lineageTag: aff7e29b-b47f-4c23-a6dd-c4b41a5ec8aa
+		sourceLineageTag: IntransitCost
+		summarizeBy: sum
+		sourceColumn: IntransitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition InTransit = entity
+		mode: directLake
+		source
+			entityName: InTransit
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

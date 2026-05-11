@@ -1,0 +1,112 @@
+table 'Budget (Channel)'
+	lineageTag: 5d7f4fa9-6d13-4e08-a00a-6527fd15e290
+	sourceLineageTag: [dbo].[Budget _Channel_]
+
+	column Channel
+		dataType: string
+		isHidden
+		lineageTag: 2fcad240-6bbf-46a2-acca-7a0c0c3bf7d9
+		sourceLineageTag: Channel
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4e33e9bc-d657-49a5-ba10-92df718f951c
+		sourceLineageTag: Date Key
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Type'
+		dataType: string
+		lineageTag: dbb9cb67-c059-491e-9d1d-d40d75d3af42
+		sourceLineageTag: Customer Type
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: d0769960-5649-42d6-afa8-7eb4a6e3f89c
+		sourceLineageTag: Order Type
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		lineageTag: 05b6d86a-3425-45a3-ae60-7f73880391c8
+		sourceLineageTag: Measure
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 605f222e-9955-4455-b988-b9264a0db368
+		sourceLineageTag: Currency Key
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 81ffd869-518e-49e2-a693-479f9e8e6ea3
+		sourceLineageTag: Budget Value
+		summarizeBy: none
+		sourceColumn: Budget Value
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Dashboard Order Type'
+		dataType: string
+		lineageTag: d2ff9d05-1015-45ab-bbe3-d2cbd973b71d
+		sourceLineageTag: Dashboard Order Type
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget (Channel)' = entity
+		mode: directLake
+		source
+			entityName: Budget _Channel_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

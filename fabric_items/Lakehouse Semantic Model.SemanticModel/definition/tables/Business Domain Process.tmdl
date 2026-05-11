@@ -1,0 +1,96 @@
+table 'Business Domain Process'
+	lineageTag: 34a5994f-66e3-4853-8bef-c80dddf3b340
+	sourceLineageTag: [dbo].[Business Domain Process]
+
+	column 'Business Domain Process Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: de50b45c-051f-48dc-b302-c73aa29196c9
+		sourceLineageTag: Business Domain Process Key
+		isDefaultLabel
+		summarizeBy: count
+		sourceColumn: Business Domain Process Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2d206b6b-4902-4951-ba35-0ff73ad3592f
+		sourceLineageTag: Business Domain Key
+		summarizeBy: count
+		sourceColumn: Business Domain Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d195e33-52f5-4400-8580-6fbfc9f22a35
+		sourceLineageTag: Date Key
+		summarizeBy: count
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rows Inserted'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3060642d-6c65-4bc0-83cf-ad5d020da144
+		sourceLineageTag: Rows Inserted
+		summarizeBy: sum
+		sourceColumn: Rows Inserted
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rows Updated'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8823af25-350a-4e2c-a687-7ee15030264a
+		sourceLineageTag: Rows Updated
+		summarizeBy: sum
+		sourceColumn: Rows Updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0a863648-90fd-40be-b185-19627356143a
+		sourceLineageTag: Start Time
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 007961c9-a294-40ad-9b3d-91e7b3e6df21
+		sourceLineageTag: End Time
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rows Deleted'
+		dataType: double
+		lineageTag: 2a38a639-d1f4-441f-b0dd-c3f5c52ddf71
+		sourceLineageTag: Rows Deleted
+		summarizeBy: sum
+		sourceColumn: Rows Deleted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Business Domain Process' = entity
+		mode: directLake
+		source
+			entityName: Business Domain Process
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

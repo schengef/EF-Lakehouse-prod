@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "InTransit"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9b85e6e1-9e6c-8f02-4f50-a576bb383012"
+  }
+}

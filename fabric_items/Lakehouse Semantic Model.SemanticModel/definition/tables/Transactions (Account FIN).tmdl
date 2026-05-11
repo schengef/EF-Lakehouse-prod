@@ -1,0 +1,177 @@
+table 'Transactions (Account FIN)'
+	lineageTag: 97725895-d3d0-4ffd-93b5-1e36d0c4053e
+	sourceLineageTag: [dbo].[Transactions _Account FIN_]
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: bf893651-4e91-4134-9240-9241ad94786e
+		sourceLineageTag: Week Ending Date Key
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 123a6810-d39c-4e91-9ea9-d3448f1d22b2
+		sourceLineageTag: Wholesale Account Key
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Number'
+		dataType: string
+		lineageTag: f6f44016-1756-4396-a005-fbecc513c955
+		sourceLineageTag: Store Number
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5aefdd53-cb7f-4b48-981a-c701d3e57a7f
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Dept
+		dataType: string
+		lineageTag: 03997708-bbdc-4ef2-b2e1-8b9a63965653
+		sourceLineageTag: Dept
+		summarizeBy: none
+		sourceColumn: Dept
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1e4d7e50-771f-48c4-b2cd-c7bdf08f9002
+		sourceLineageTag: Sales Dollars
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Currency Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: e7ff0219-93eb-44c0-aa08-689ec0fe0250
+		sourceLineageTag: Currency Key
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Oh Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c73e0f3b-dc80-4a7a-9117-fbfeff7a6f72
+		sourceLineageTag: Oh Dollars
+		summarizeBy: none
+		sourceColumn: Oh Dollars
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Md Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e4b367bd-95f4-4020-818c-65833da26cd6
+		sourceLineageTag: Md Dollars
+		summarizeBy: none
+		sourceColumn: Md Dollars
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Receipt Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 4f138106-836a-4c6a-a9f6-d40a62b63246
+		sourceLineageTag: Receipt Dollars
+		summarizeBy: none
+		sourceColumn: Receipt Dollars
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 64e6e91f-2b9e-4dbc-b72e-5d0d95b75ad9
+		sourceLineageTag: Etl Row Updated Ts
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Transactions (Account FIN)' = entity
+		mode: directLake
+		source
+			entityName: Transactions _Account FIN_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+
+	changedProperty = IsHidden
+

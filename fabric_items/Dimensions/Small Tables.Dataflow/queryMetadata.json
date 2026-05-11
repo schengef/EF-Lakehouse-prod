@@ -1,0 +1,47 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Small Tables",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "c01a47da-c9c8-472c-8368-09701e0be810",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Order Categorization": {
+      "queryId": "d7425c10-e520-467a-a6c4-7b0b055c1400",
+      "queryName": "Order Categorization",
+      "loadEnabled": false
+    },
+    "Account Group Join": {
+      "queryId": "d6b2be17-5949-4944-aea3-c57b78653659",
+      "queryName": "Account Group Join",
+      "loadEnabled": false
+    },
+    "Order Type Join": {
+      "queryId": "c6d9a363-a1d3-45ff-ae2e-2940f66d8a3e",
+      "queryName": "Order Type Join",
+      "loadEnabled": false
+    },
+    "Currency Selector": {
+      "queryId": "7fdc864e-439b-4616-b358-04efa72f3780",
+      "queryName": "Currency Selector",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

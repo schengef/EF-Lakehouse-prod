@@ -1,0 +1,26 @@
+table 'Account Group Join'
+	isHidden
+	lineageTag: 1865e004-bdc6-4021-86ae-6b33ad451c21
+	sourceLineageTag: [dbo].[Account Group Join]
+
+	column 'Account Group'
+		dataType: string
+		isHidden
+		lineageTag: 7f5ce836-a09f-4b99-ad21-58492f7587eb
+		sourceLineageTag: Account Group
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Account Group Join' = entity
+		mode: directLake
+		source
+			entityName: Account Group Join
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+

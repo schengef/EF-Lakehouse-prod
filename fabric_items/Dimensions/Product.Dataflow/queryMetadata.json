@@ -1,0 +1,37 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Product",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "94d8f20a-a3be-4e4d-a71d-95512cb177ab",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Product": {
+      "queryId": "b41adaf2-8d37-4b87-82b7-cd4e2d41a309",
+      "queryName": "Product",
+      "loadEnabled": false
+    },
+    "Product (Current)": {
+      "queryId": "8020ccc0-1cad-4789-8306-1f4b41c4c871",
+      "queryName": "Product (Current)",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

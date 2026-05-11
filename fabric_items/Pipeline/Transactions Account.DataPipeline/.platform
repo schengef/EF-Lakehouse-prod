@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Transactions Account"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "58d244d9-14a6-aeaf-417b-e5516c0762bd"
+  }
+}

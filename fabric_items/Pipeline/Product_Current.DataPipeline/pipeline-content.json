@@ -1,0 +1,1511 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": "SELECT \n    T.ACTIVE_COLORWAY AS \"Active Colorway\",\n    T.ACTIVE_STYLE AS \"Active Style\",\n    T.ARMHOLE_CONSTRUCTION AS \"Armhole Construction\",\n    T.BULLET01 AS \"Bullet01\",\n    T.BULLET02 AS \"Bullet02\",\n    T.BULLET03 AS \"Bullet03\",\n    T.BULLET04 AS \"Bullet04\",\n    T.BULLET05 AS \"Bullet05\",\n    T.BULLET06 AS \"Bullet06\",\n    T.BULLET07 AS \"Bullet07\",\n    T.BULLET08 AS \"Bullet08\",\n    T.BULLET09 AS \"Bullet09\",\n    T.BULLET10 AS \"Bullet10\",\n    T.BULLET11 AS \"Bullet11\",\n    T.BULLET12 AS \"Bullet12\",\n    T.BULLET13 AS \"Bullet13\",\n    T.BULLET14 AS \"Bullet14\",\n    T.BULLET15 AS \"Bullet15\",\n    T.CAN_RETAIL_PRICE AS \"Can Retail Price\",\n    T.CAN_SELLING_PRICE_DTC AS \"Can Selling Price Dtc\",\n    T.CAN_STANDARD_COST AS \"Can Standard Cost\",\n    T.CAN_WHOLESALE_PRICE AS \"Can Wholesale Price\",\n    T.CLASS_CODE_MI9 AS \"Class Code Mi9\",\n    T.CLASS_DESCRIPTION_MI9 AS \"Class Description Mi9\",\n    T.COLOR_CATEGORY AS \"Color Category\",\n    T.COLOR_CLARITY AS \"Color Clarity\",\n    T.COLOR_CODE_5_LETTER AS \"Color Code 5 Letter\",\n    T.COLOR_CODE_NRF AS \"Color Code Nrf\",\n    T.COLOR_DESCRIPTION AS \"Color Description\",\n    T.COLOR_GROUP_CODE AS \"Color Group Code\",\n    T.COLOR_GROUP_NAME AS \"Color Group Name\",\n    T.COLOR_SHADE AS \"Color Shade\",\n    T.COLOR_TEMP AS \"Color Temp\",\n    T.COST_AVERAGE_WEIGHTED_CANADA AS \"Cost Average Weighted Canada\",\n    T.COST_AVERAGE_WEIGHTED_COMPANY AS \"Cost Average Weighted Company\",\n    T.COST_AVERAGE_WEIGHTED_US AS \"Cost Average Weighted Us\",\n    T.DEPARTMENT_CODE AS \"Department Code\",\n    T.DEPARTMENT_CODE_MI9 AS \"Department Code Mi9\",\n    T.DEPARTMENT_DESCRIPTION AS \"Department Description\",\n    T.DEPARTMENT_DESCRIPTION_MI9 AS \"Department Description Mi9\",\n    T.DISPLAY_NAME AS \"Display Name\",\n    T.DIVISION_CODE_MI9 AS \"Division Code Mi9\",\n    T.DIVISION_DESCRIPTION_MI9 AS \"Division Description Mi9\",\n    T.DOM_IMP_CODE AS \"Dom Imp Code\",\n    T.DOM_IMP_NAME AS \"Dom Imp Name\",\n    T.ECOM_IMAGE AS \"Ecom Image\",\n    T.ECOM_IMAGE_FLAT AS \"Ecom Image Flat\",\n    T.EF_COLOR_FAMILY AS \"Ef Color Family\",\n    T.FABRIC_COL_MIN AS \"Fabric Col Min\",\n    T.FABRIC_ORD_MIN AS \"Fabric Ord Min\",\n    T.FES_CODE AS \"Fes Code\",\n    T.FES_DESCRIPTION AS \"Fes Description\",\n    T.FIT AS \"Fit\",\n    T.FLAT_HANG_CODE AS \"Flat Hang Code\",\n    T.FLAT_HANG_NAME AS \"Flat Hang Name\",\n    T.GARMENT_DETAILS AS \"Garment Details\",\n    T.GARMENT_LENGTH AS \"Garment Length\",\n    T.GBP_RETAIL_PRICE AS \"Gbp Retail Price\",\n    T.GBP_STANDARD_COST AS \"Gbp Standard Cost\",\n    T.GBP_WHOLESALE_PRICE AS \"Gbp Wholesale Price\",\n    T.GOOD_FOR_PETITE AS \"Good For Petite\",\n    T.HEX_COLOR AS \"Hex Color\",\n    T.IDENTITY_SHORT AS \"Identity Short\",\n    T.INTRO_SEASON_DELIVERY AS \"Intro Season Delivery\",\n    T.IN_PLM AS \"In Plm\",\n    T.LENGTH_DIMENSION AS \"Length Dimension\",\n    T.LONG_DESCRIPTION AS \"Long Description\",\n    T.MAT_STITCH_TYPE AS \"Mat Stitch Type\",\n    T.MATERIAL_CLASSIFICATION_CODE AS \"Material Classification Code\",\n    T.MATERIAL_CLASSIFICATION_DESCRIPTION AS \"Material Classification Description\",\n    T.MATERIAL_CODE AS \"Material Code\",\n    T.MATERIAL_CONTENT_CODE AS \"Material Content Code\",\n    T.MATERIAL_CONTENT_DESCRIPTION AS \"Material Content Description\",\n    T.MATERIAL_DESCRIPTION AS \"Material Description\",\n    T.MATERIAL_ECO AS \"Material Eco\",\n    T.MATERIAL_GROUP AS \"Material Group\",\n    T.MATERIAL_GROUP_CLONE AS \"Material Clone\",\n    T.MATERIAL_GROUP_FAMILY AS \"Material Family\",\n    T.MATERIAL_SELECTION AS \"Material Selection\",\n    T.MATERIAL_YARN_DESCRIPTION AS \"Material Yarn Description\",\n    T.MATERIAL_YARN_NAME AS \"Material Yarn Name\",\n    T.MD_DATE AS \"Md Date\",\n    T.MELANGE AS \"Melange\",\n    T.MERCH_DIVISION_CODE AS \"Merch Division Code\",\n    T.MERCH_DIVISION_NAME AS \"Merch Division Name\",\n    T.NECKLINE AS \"Neckline\",\n    T.NECKLINE_TYPE AS \"Neckline Type\",\n    T.PRICE_TIER AS \"Price Tier\",\n    T.PRICE_TIER_SORT AS \"Price Tier Sort\",\n    T.PRODUCT_KEY AS \"Product Key\",\n    T.PRODUCTION_LANDED_COST AS \"Production Landed Cost\",\n    T.PRODUCTION_QUOTE_STATE AS \"Production Quote State\",\n    T.PRODUCTION_RETAIL_MARKUP_PERCENT AS \"Production Retail Markup Percent\",\n    T.PRODUCTION_WHOLESALE_MARKUP_PERCENT AS \"Production Wholesale Markup Percent\",\n    T.REF_COO AS \"Ref Coo\",\n    T.RETAIL_PRICE AS \"Retail Price\",\n    T.SEASON AS \"Season\",\n    T.SHAPE_CODE AS \"Shape Code\",\n    T.\"SIZE\" AS \"Size\",\n    T.SIZE_RANGE_CODE AS \"Size Range Code\",\n    T.SIZE_RANGE_DESCRIPTION AS \"Size Range Description\",\n    T.SIZE_SCALE AS \"Size Scale\",\n    T.SKU AS \"Sku\",\n    T.SLEEVE_LENGTH AS \"Sleeve Length\",\n    T.STANDARD_COST AS \"Standard Cost\",\n    T.STAPLE_STATEMENT AS \"Staple Statement\",\n    T.STYLE_CLASSIFICATION_CODE AS \"Style Classification Code\",\n    T.STYLE_CLASSIFICATION_DESCRIPTION AS \"Style Classification Description\",\n    T.STYLE_DESCRIPTION_LONG AS \"Style Description Long\",\n    T.STYLE_NAME AS \"Style Name\",\n    T.STYLE_NUMBER AS \"Style Number\",\n    T.STYLE_NUMBER_AND_COLOR AS \"Style Number And Color\",\n    T.STYLE_NUMBER_AND_NAME AS \"Style Number And Name\",\n    T.STYLE_REPLACEMENT AS \"Style Replacement\",\n    T.STYLE_STAGE AS \"Style Stage\",\n    T.STYLE_SUBCLASSIFICATION AS \"Style Subclassification\",\n    T.UPC AS \"Upc\",\n    T.US_SELLING_PRICE_DTC AS \"Us Selling Price Dtc\",\n    T.USC_SELLING_PRICE_DTC AS \"Usc Selling Price Dtc\",\n    T.WAIST_CONSTRUCTION AS \"Waist Construction\",\n    T.WHOLESALE_PRICE AS \"Wholesale Price\",\n    T.WIDTH_DIMENSION AS \"Width Dimension\"\nFROM EDW_PROD.EDW_V.D_PRODUCT_CURRENT_NEW T",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "database": "EDW_PROD"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "3d8a3261-8102-4569-9021-412ed801f489"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Product _Current_"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Active Colorway",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Active Colorway",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Active Style",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Active Style",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Armhole Construction",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Armhole Construction",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet01",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet01",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet02",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet02",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet03",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet03",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet04",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet04",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet05",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet05",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet06",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet06",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet07",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet07",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet08",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet08",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet09",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet09",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet10",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet10",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet11",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet11",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet12",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet12",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet13",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet13",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet14",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet14",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Bullet15",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Bullet15",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Can Retail Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Can Retail Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Can Selling Price Dtc",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Can Selling Price Dtc",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Can Standard Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Can Standard Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Can Wholesale Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Can Wholesale Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Class Code Mi9",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "Class Code Mi9",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Class Description Mi9",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Class Description Mi9",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Category",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Category",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Clarity",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Clarity",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Code 5 Letter",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Code 5 Letter",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Code Nrf",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Code Nrf",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Group Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Group Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Group Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Group Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Shade",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Shade",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Color Temp",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Color Temp",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cost Average Weighted Canada",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Cost Average Weighted Canada",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Cost Average Weighted Company",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Cost Average Weighted Company",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Cost Average Weighted Us",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Cost Average Weighted Us",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Department Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Department Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Department Code Mi9",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "Department Code Mi9",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Department Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Department Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Department Description Mi9",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Department Description Mi9",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Display Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Display Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Division Code Mi9",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "Division Code Mi9",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Division Description Mi9",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Division Description Mi9",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Dom Imp Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Dom Imp Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Dom Imp Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Dom Imp Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Ecom Image",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Ecom Image",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Ecom Image Flat",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Ecom Image Flat",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Ef Color Family",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Ef Color Family",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Fabric Col Min",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Fabric Col Min",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Fabric Ord Min",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Fabric Ord Min",
+                  "physicalType": "decimal",
+                  "scale": 18,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Fes Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Fes Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Fes Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Fes Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Fit",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Fit",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Flat Hang Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Flat Hang Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Flat Hang Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Flat Hang Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Garment Details",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Garment Details",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Garment Length",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Garment Length",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Gbp Retail Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Gbp Retail Price",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Gbp Standard Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Gbp Standard Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Gbp Wholesale Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Gbp Wholesale Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Good For Petite",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Good For Petite",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Hex Color",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Hex Color",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Identity Short",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Identity Short",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Intro Season Delivery",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Intro Season Delivery",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "In Plm",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "In Plm",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Length Dimension",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Length Dimension",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Long Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Long Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Mat Stitch Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Mat Stitch Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Classification Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Classification Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Classification Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Classification Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Content Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Content Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Content Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Content Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Eco",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Eco",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Group",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Group",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Clone",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Clone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Family",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Family",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Selection",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Selection",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Yarn Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Yarn Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Material Yarn Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Material Yarn Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Md Date",
+                  "type": "Date",
+                  "physicalType": "DATE"
+                },
+                "sink": {
+                  "name": "Md Date",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "Melange",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Melange",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Merch Division Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Merch Division Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Merch Division Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Merch Division Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Neckline",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Neckline",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Neckline Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Neckline Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Price Tier",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Price Tier",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Price Tier Sort",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 2
+                },
+                "sink": {
+                  "name": "Price Tier Sort",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Product Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Product Key",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "Production Landed Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 12,
+                  "precision": 18
+                },
+                "sink": {
+                  "name": "Production Landed Cost",
+                  "physicalType": "decimal",
+                  "scale": 12,
+                  "precision": 18
+                }
+              },
+              {
+                "source": {
+                  "name": "Production Quote State",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Production Quote State",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Production Retail Markup Percent",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 11
+                },
+                "sink": {
+                  "name": "Production Retail Markup Percent",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 11
+                }
+              },
+              {
+                "source": {
+                  "name": "Production Wholesale Markup Percent",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 11
+                },
+                "sink": {
+                  "name": "Production Wholesale Markup Percent",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 11
+                }
+              },
+              {
+                "source": {
+                  "name": "Ref Coo",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Ref Coo",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Retail Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Retail Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Season",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Season",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Shape Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Shape Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Size",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Size",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Size Range Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Size Range Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Size Range Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Size Range Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Size Scale",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Size Scale",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Sku",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Sku",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Sleeve Length",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Sleeve Length",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Standard Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Standard Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Staple Statement",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Staple Statement",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Classification Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Classification Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Classification Description",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Classification Description",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Description Long",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Description Long",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Number",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Number And Color",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Number And Color",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Number And Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Number And Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Replacement",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Replacement",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Stage",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Stage",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Style Subclassification",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Style Subclassification",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Upc",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Upc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Us Selling Price Dtc",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Us Selling Price Dtc",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Usc Selling Price Dtc",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Usc Selling Price Dtc",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Waist Construction",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Waist Construction",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Wholesale Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Wholesale Price",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Width Dimension",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Width Dimension",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Product_Current",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

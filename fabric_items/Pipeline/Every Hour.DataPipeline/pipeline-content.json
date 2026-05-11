@@ -1,0 +1,565 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>@{activity('Semantic model refresh').output}</p>",
+          "to": "Shirley.Cheng@eileenfisher.com",
+          "subject": "lake house semantic model refresh fail"
+        },
+        "externalReferences": {
+          "connection": "3ec5f445-c35d-41f8-81f9-b766d1ce8886"
+        },
+        "policy": {
+          "timeout": "12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Office365Email1",
+        "dependsOn": [
+          {
+            "activity": "Semantic model refresh",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "ae8fa9d3-8f77-a288-4dae-e39519ab59a7",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Budget Forecast Plan",
+        "dependsOn": [
+          {
+            "activity": "Delivery",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "1873c550-e35e-9cfe-4b6b-871d2b178936",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Channel Store Account",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "807a469f-bcc5-986f-4e3c-585131990258",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Delivery",
+        "dependsOn": [
+          {
+            "activity": "Traffic",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "fa11d86d-0712-997c-49cb-a36a74fbd3e1",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Traffic",
+        "dependsOn": []
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "596e6029-a72e-afab-4a7f-f26f84ccc198",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transactions External POS",
+        "dependsOn": []
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "POST",
+          "groupId": "8a36f33d-a1a9-4e11-afd1-e24a3f8deb56",
+          "datasetId": "da13f417-58a1-47fe-b9c6-26c920242273",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "Traffic"
+            },
+            {
+              "table": "Product"
+            },
+            {
+              "table": "Product (Current)"
+            },
+            {
+              "table": "Transactions (Financial)"
+            },
+            {
+              "table": "Plan (Wholesale Retail)"
+            },
+            {
+              "table": "Forecast (DTC Store)"
+            },
+            {
+              "table": "Forecast (Channel)"
+            },
+            {
+              "table": "Budget (DTC Store)"
+            },
+            {
+              "table": "Budget (Inventory)"
+            },
+            {
+              "table": "Budget (Channel)"
+            },
+            {
+              "table": "Transactions (Account FIN)"
+            },
+            {
+              "table": "Transactions (Account POS)"
+            },
+            {
+              "table": "Transactions (Account MIX)"
+            },
+            {
+              "table": "Channel"
+            },
+            {
+              "table": "Store"
+            },
+            {
+              "table": "Accounts"
+            },
+            {
+              "table": "Delivery"
+            },
+            {
+              "table": "Currency Selector"
+            },
+            {
+              "table": "Order Type Join"
+            },
+            {
+              "table": "Account Group Join"
+            },
+            {
+              "table": "Order Categorization"
+            },
+            {
+              "table": "Currency"
+            },
+            {
+              "table": "Date EOY"
+            },
+            {
+              "table": "Date"
+            },
+            {
+              "table": "Inventory"
+            },
+            {
+              "table": "Transactions (External POS)"
+            },
+            {
+              "table": "Store (DTC Original)"
+            },
+            {
+              "table": "Store (DTC Allocated)"
+            },
+            {
+              "table": "Channel (DTC Original)"
+            },
+            {
+              "table": "Channel (DTC Allocated)"
+            },
+            {
+              "table": "Filter Dates"
+            },
+            {
+              "table": "Budget and Forecast Measures"
+            },
+            {
+              "table": "Total Company Measures"
+            },
+            {
+              "table": "Wholesale Measures"
+            },
+            {
+              "table": "Inventory Measures"
+            },
+            {
+              "table": "DTC Measures"
+            },
+            {
+              "table": "Usage"
+            },
+            {
+              "table": "Business Domain"
+            },
+            {
+              "table": "Business Domain Process"
+            },
+            {
+              "table": "Dependency"
+            },
+            {
+              "table": "Source Table"
+            },
+            {
+              "table": "Report"
+            },
+            {
+              "table": "Staging Process"
+            },
+            {
+              "table": "Semantic Model Update"
+            },
+            {
+              "table": "DateTableTemplate_6b094467-a280-4a70-80c8-545364dfc1c1"
+            },
+            {
+              "table": "LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c"
+            },
+            {
+              "table": "Inventory Movement"
+            },
+            {
+              "table": "Readiness SourceTable"
+            },
+            {
+              "table": "Readiness Domain"
+            },
+            {
+              "table": "InTransit"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "3c28e850-be30-4bf6-9664-4d9da47b6d0b"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Semantic model refresh",
+        "dependsOn": [
+          {
+            "activity": "Inventory",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Product_Current",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Transactions Account",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Inventory_Movement",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "ProductDataflow",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Transactions Financial Full Load",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "58d244d9-14a6-aeaf-417b-e5516c0762bd",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transactions Account",
+        "dependsOn": [
+          {
+            "activity": "Channel Store Account",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "acb7f7af-8e14-a9a9-4c2a-2865c1066607",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Inventory",
+        "dependsOn": [
+          {
+            "activity": "Budget Forecast Plan",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "59046315-d2af-b63b-481e-b027677c185c",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Inventory_Movement",
+        "dependsOn": [
+          {
+            "activity": "Intransit",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "9b85e6e1-9e6c-8f02-4f50-a576bb383012",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Intransit",
+        "dependsOn": []
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "e6f3d507-2ac3-8dd4-4ac9-a8a78e9b3b77",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transactions Financial Full Load",
+        "dependsOn": [
+          {
+            "activity": "Transactions External POS",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "8a36f33d-a1a9-4e11-afd1-e24a3f8deb56",
+          "pipelineId": "3aa45807-57fa-4734-888c-0aae35129566",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Product",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "8a36f33d-a1a9-4e11-afd1-e24a3f8deb56",
+          "pipelineId": "60869913-af51-4307-a3f3-654675c625d8",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.0:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Product_Current",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "Product",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "e1f7cd78-6e45-a551-4e94-6c6baa9c5eb7",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "ProductDataflow",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

@@ -1,0 +1,40 @@
+table 'Readiness Domain'
+	lineageTag: 94cb2056-3bd7-433c-af00-19ec11963aec
+	sourceLineageTag: [dbo].[Readiness Domain]
+
+	column 'Business Domain Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 200fc360-c7c2-45c0-84a3-a42fb9017102
+		sourceLineageTag: Business Domain Key
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Domain Last Processed'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d5e5b402-d5e9-47e5-b636-342a4e1747cf
+		sourceLineageTag: Business Domain Last Processed
+		summarizeBy: none
+		sourceColumn: Business Domain Last Processed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Domain Freshness'
+		dataType: string
+		lineageTag: 404af8b3-f7b3-4430-83fa-32eeefba46da
+		sourceLineageTag: Business Domain Freshness
+		summarizeBy: none
+		sourceColumn: Business Domain Freshness
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Readiness Domain' = entity
+		mode: directLake
+		source
+			entityName: Readiness Domain
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

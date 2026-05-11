@@ -1,0 +1,51 @@
+table Usage
+	lineageTag: 063f79e6-b858-4852-bba6-f35611839455
+	sourceLineageTag: [dbo].[Usage]
+
+	column 'Load Usage Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 58f234ee-42ae-4640-877a-07fd6af00542
+		sourceLineageTag: Load Usage Key
+		isDefaultLabel
+		summarizeBy: count
+		sourceColumn: Load Usage Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 99b8226b-c421-4477-853a-2de5f1e86f65
+		sourceLineageTag: Source Table Key
+		summarizeBy: count
+		sourceColumn: Source Table Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2c8fdb44-419e-42c7-8fdb-b77913d41ff2
+		sourceLineageTag: Business Domain Key
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Usage = entity
+		mode: directLake
+		source
+			entityName: Usage
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

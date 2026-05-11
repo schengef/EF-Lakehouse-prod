@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Currency",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "e90a19e4-9dd3-416d-821d-594bfe32be0f",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Currency": {
+      "queryId": "e844c5ef-d7e1-409d-8630-dfc6a78ce51c",
+      "queryName": "Currency",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

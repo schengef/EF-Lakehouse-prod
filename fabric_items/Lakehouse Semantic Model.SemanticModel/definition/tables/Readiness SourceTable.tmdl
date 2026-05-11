@@ -1,0 +1,50 @@
+table 'Readiness SourceTable'
+	lineageTag: 3b6297b8-290b-43ee-9998-3829c85556be
+	sourceLineageTag: [dbo].[Readiness SourceTable]
+
+	column 'Business Domain Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d99abf4-231c-4c35-bacf-b365f3c0d21f
+		sourceLineageTag: Business Domain Key
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f9cc359-6440-4211-94fd-80e0149fd694
+		sourceLineageTag: Source Table Key
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table Last Processed Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9c075285-207e-4a58-8e00-7344cddf52ca
+		sourceLineageTag: Source Table Last Processed Ts
+		summarizeBy: none
+		sourceColumn: Source Table Last Processed Ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table Freshness'
+		dataType: string
+		lineageTag: c62b0467-b65f-459c-9d3c-faf9eaf3aa4a
+		sourceLineageTag: Source Table Freshness
+		summarizeBy: none
+		sourceColumn: Source Table Freshness
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Readiness SourceTable' = entity
+		mode: directLake
+		source
+			entityName: Readiness SourceTable
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

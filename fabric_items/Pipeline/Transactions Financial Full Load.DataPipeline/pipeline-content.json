@@ -1,0 +1,666 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": " SELECT \n    T.TRANSACTION_ID  as        \"Transaction Id\",\n\tT.TRANSACTION_LINE_ID  as\t\t\"Transaction Line Id\",\n\tT.TRANSACTION_NO  as\t\t\"Transaction No\",\n\tT.TRANSACTION_LINE_NO  as\t\t\"Transaction Line No\",\n\tT.TRANSACTION_DATE  as\t\t\"Transaction Date\",\n\tCAST(T.TRANSACTION_DATE_KEY AS INT) as\t\t\"Transaction Date Key\",\n\tT.TRANSACTION_TYPE  as\t\t\"Transaction Type\",\n\tT.ORDER_TYPE as\t\t\"Order Type\",\n\tT.STORE_ID  as\t\t\"Store Id\",\n\tT.STORE_KEY  as\t\t\"Store Key\",\n\tT.CHANNEL_NAME  as\t\t\"Channel Name\",\n\tT.CHANNEL_KEY  as\t\t\"Channel Key\",\n\tT.REGISTER_NUM  as\t\t\"Register Num\",\n\tT.EMPLOYEE_KEY  as\t\t\"Employee Key\",\n\tT.CUSTOMER_NUMBER  as\t\t\"Customer Number\",\n\tT.CUSTOMER_KEY  as\t\t\"Customer Key\",\n\tT.PRODUCT_KEY  as\t\t\"Product Key\",\n\tT.DELIVERY_KEY  as\t\t\"Delivery Key\",\n\tT.E_SELL_ORDER_NUM  as\t\t\"E Sell Order Num\",\n\tT.QUANTITY   as\t\t\"Quantity\",\n\tT.PRICE_CATEGORIZATION_KEY  as\t\t\"Price Categorization Key\",\n\tT.ORDER_CATEGORIZATION_KEY  as\t\t\"Order Categorization Key\",\n\tT.CURRENCY_KEY  as\t\t\"Currency Key\",\n\tT.UNIT_RETAIL_PRICE  as\t\t\"Unit Retail Price\",\n\tT.TOTAL_PRICE  as\t\t\"Total Price\",\n\tT.NET_PRICE  as\t\t\"Net Price\",\n\tT.TAX_AMOUNT  as\t\t\"Tax Amount\",\n\tT.DISCOUNT_AMOUNT  as\t\t\"Discount Amount\",\n\tT.CALC_RETURNED_AMT  as\t\t\"Calc Returned Amt\",\n\tT.GIFT_FLAG  as\t\t\"Gift Flag\",\n\tT.RETURNED_FLAG  as\t\t\"Returned Flag\",\n\tT.RETURN_REASON_CODE  as\t\t\"Return Reason Code\",\n\tT.RETURN_REASON_DESC  as\t\t\"Return Reason Desc\",\n\tT.CANCEL_FLAG  as\t\t\"Cancel Flag\",\n\tT.CANCEL_REASON_CODE  as\t\t\"Cancel Reason Code\",\n\tT.ALLOCATED_STORE_KEY  as\t\t\"Allocated Store Key\",\n\tT.ETL_SOURCE_SYSTEM_CD  as\t\t\"Etl Source System Cd\",\n    COALESCE(T.ORIGINAL_STORE_KEY, T.STORE_KEY) AS \"Original Store Key\", \n    S.CHANNEL_KEY AS \"Original Channel Key\",\n    CASE \n        WHEN T.ORDER_TYPE = 'LIQ' THEN '3RD PARTY'\n        WHEN T.ORDER_TYPE = 'DRS' THEN 'DROP SHIP'\n        WHEN T.ORDER_TYPE = 'REO' AND LEFT(P.FES_CODE, 1) = 'F' THEN 'FASHION REORDER'\n        WHEN T.ORDER_TYPE NOT IN ('DRS', 'LIQ') AND LEFT(P.FES_CODE, 1) = 'E' THEN 'QR'\n        ELSE 'FASHION INITIALS'\n    END AS \"Dashboard Order Type\",\n    PC.MARK_TYPE as \"Mark Type\",\n    PC.POS_PRESENT as \"Pos Present\", \n    PC.SELLING_PRICE as \"Selling Price\",\n    C.CURRENCY as \"Currency\",\n    CASE WHEN P.DEPARTMENT_CODE_MI9 > 89 THEN 1 END AS \"Dtc Misc Flag\",\n    COALESCE(\n        CASE\n            WHEN C.CURRENCY = 'CAD' THEN P.CAN_STANDARD_COST\n            WHEN C.CURRENCY = 'GBP' THEN P.GBP_STANDARD_COST\n            ELSE P.STANDARD_COST\n        END,\n        CASE\n            WHEN S.DIVSION_DESCRIPTION = 'Company Stores' THEN P.COST_AVERAGE_WEIGHTED_COMPANY \n            WHEN S.REGION_DESCRIPTION = 'Northwest Canada Stores' THEN P.COST_AVERAGE_WEIGHTED_CANADA\n            ELSE P.COST_AVERAGE_WEIGHTED_US\n        END\n    ) AS \"Currency Based Cost\",\n    (\"Currency Based Cost\" * T.QUANTITY) AS \"Total Cost\"\nFROM EDW_PROD.EDW_V.F_TRANSACTION T\nLEFT OUTER JOIN EDW_PROD.EDW_V.D_PRODUCT_CURRENT_NEW P ON T.PRODUCT_KEY = P.PRODUCT_KEY\nLEFT OUTER JOIN EDW_PROD.EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY\nLEFT OUTER JOIN EDW_PROD.EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY \nLEFT OUTER JOIN EDW_PROD.EDW_V.D_STORE S ON COALESCE(T.ORIGINAL_STORE_KEY, T.STORE_KEY) = S.STORE_KEY\n--WHERE T.TRANSACTION_DATE >= DATEADD(day, -180, CURRENT_DATE())\n\n",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "database": "EDW_PROD"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "3d8a3261-8102-4569-9021-412ed801f489"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Transactions _Financial_"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Transaction Id",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Transaction Id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction Line Id",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Transaction Line Id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction No",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Transaction No",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction Line No",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Transaction Line No",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction Date",
+                  "type": "DateTime",
+                  "physicalType": "TIMESTAMP_NTZ"
+                },
+                "sink": {
+                  "name": "Transaction Date",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction Date Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Transaction Date Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Transaction Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Transaction Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Order Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Order Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Store Id",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Store Id",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Store Key",
+                  "physicalType": "decimal",
+                  "scale": 0,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Channel Name",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Channel Name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Channel Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Channel Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Register Num",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Register Num",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Employee Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Employee Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Customer Number",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Customer Number",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Customer Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Customer Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Product Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Product Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Delivery Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Delivery Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "E Sell Order Num",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "E Sell Order Num",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Quantity",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Quantity",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Price Categorization Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Price Categorization Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Order Categorization Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Order Categorization Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Currency Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Currency Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Unit Retail Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Unit Retail Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Total Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Total Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Net Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Net Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Tax Amount",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Tax Amount",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Discount Amount",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Discount Amount",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Calc Returned Amt",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Calc Returned Amt",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Gift Flag",
+                  "type": "Boolean",
+                  "physicalType": "BOOLEAN"
+                },
+                "sink": {
+                  "name": "Gift Flag",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "Returned Flag",
+                  "type": "Boolean",
+                  "physicalType": "BOOLEAN"
+                },
+                "sink": {
+                  "name": "Returned Flag",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "Return Reason Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Return Reason Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Return Reason Desc",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Return Reason Desc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cancel Flag",
+                  "type": "Boolean",
+                  "physicalType": "BOOLEAN"
+                },
+                "sink": {
+                  "name": "Cancel Flag",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cancel Reason Code",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Cancel Reason Code",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Allocated Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Allocated Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Etl Source System Cd",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Etl Source System Cd",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Original Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Original Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Original Channel Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "Original Channel Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Dashboard Order Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Dashboard Order Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Mark Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Mark Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Pos Present",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Pos Present",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Selling Price",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Selling Price",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Currency",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Currency",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Dtc Misc Flag",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 1
+                },
+                "sink": {
+                  "name": "Dtc Misc Flag",
+                  "physicalType": "decimal",
+                  "scale": 0,
+                  "precision": 1
+                }
+              },
+              {
+                "source": {
+                  "name": "Currency Based Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 8,
+                  "precision": 18
+                },
+                "sink": {
+                  "name": "Currency Based Cost",
+                  "physicalType": "decimal",
+                  "scale": 8,
+                  "precision": 18
+                }
+              },
+              {
+                "source": {
+                  "name": "Total Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 10,
+                  "precision": 33
+                },
+                "sink": {
+                  "name": "Total Cost",
+                  "physicalType": "decimal",
+                  "scale": 10,
+                  "precision": 33
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transaction Financial",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

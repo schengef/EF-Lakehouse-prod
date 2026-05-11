@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Inventory Movement"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "59046315-d2af-b63b-481e-b027677c185c"
+  }
+}

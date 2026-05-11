@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "cf6256d68ce49050a4a3",
+  "position": {
+    "x": 65.065731814198074,
+    "y": 59.456617002629272,
+    "z": 0,
+    "height": 591.20070113935151,
+    "width": 591.20070113935151,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Report"
+                    }
+                  },
+                  "Property": "Report Name"
+                }
+              },
+              "queryRef": "Report.Report Name",
+              "nativeQueryRef": "Report Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Business Domain"
+                    }
+                  },
+                  "Property": "Business Subdomain"
+                }
+              },
+              "queryRef": "Business Domain.Business Subdomain",
+              "nativeQueryRef": "Business Subdomain"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Business Domain"
+                        }
+                      },
+                      "Property": "Business Subdomain"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Business Domain.Business Subdomain)",
+              "nativeQueryRef": "Count of Business Subdomain"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4263e7a11d91bc9b4890",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Report"
+              }
+            },
+            "Property": "Report Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6eafd115c9554a2b098a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Business Domain"
+              }
+            },
+            "Property": "Business Subdomain"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "88c260cced8c0008d350",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Business Domain"
+                  }
+                },
+                "Property": "Business Subdomain"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

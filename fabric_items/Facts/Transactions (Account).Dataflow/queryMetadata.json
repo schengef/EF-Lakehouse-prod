@@ -1,0 +1,42 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Transactions (Account)",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "10647ff4-6ca9-4dec-a378-e9c449175bb2",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Transactions (Account POS)": {
+      "queryId": "6dda1580-8705-4509-86c4-a83359fdb901",
+      "queryName": "Transactions (Account POS)",
+      "loadEnabled": false
+    },
+    "Transactions (Account MIX)": {
+      "queryId": "10da9a08-fac5-47aa-8d4a-18506d957055",
+      "queryName": "Transactions (Account MIX)",
+      "loadEnabled": false
+    },
+    "Transactions (Account FIN)": {
+      "queryId": "b1d7c4f3-3d81-4ea3-87b2-5af63f61de29",
+      "queryName": "Transactions (Account FIN)",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

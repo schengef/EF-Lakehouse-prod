@@ -1,0 +1,39 @@
+table 'Semantic Model Update'
+	lineageTag: 6cb183cd-1b13-4db4-951b-2235c8bb7437
+
+	column Row
+		dataType: string
+		lineageTag: 200767f4-78ba-44d5-a03b-53acb2a58f4c
+		summarizeBy: none
+		sourceColumn: Row
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date.1'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 517fe0f4-c492-4e90-994f-5aa6fddc5f68
+		summarizeBy: none
+		sourceColumn: Date.1
+
+		variation Variation
+			isDefault
+			relationship: a72cb7b0-f294-4cac-98f9-abfe26a9f1f2
+			defaultHierarchy: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Semantic Model Update' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Row = _t]),
+				    #"Added Custom" = Table.AddColumn(Source, "Date.1", each DateTime.LocalNow()),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Added Custom", {{"Date.1", type date}})
+				in
+				    #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

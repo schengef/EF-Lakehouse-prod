@@ -1,0 +1,103 @@
+table 'Transactions (Account MIX)'
+	lineageTag: c32a5b1f-e8aa-4a9b-a3da-58ecf3d26b0a
+	sourceLineageTag: [dbo].[Transactions _Account MIX_]
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ae7b5df0-64a8-4e7a-9561-03a957d10f63
+		sourceLineageTag: Week Ending Date Key
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5df35872-d846-441e-9c61-dd2fe8901f6b
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Department
+		dataType: string
+		lineageTag: f5994328-249d-46ee-bcc6-c1a2ce9a9bdd
+		sourceLineageTag: Department
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Dollars'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: d6447802-65f5-4a59-9202-ec0e57164bdd
+		sourceLineageTag: Sales Dollars
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ebdc0c0c-92c9-4deb-bc17-24afc887f5ae
+		sourceLineageTag: Currency Key
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 714d765e-608e-497d-a14f-2440e80599e1
+		sourceLineageTag: Channel Key
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (Account MIX)' = entity
+		mode: directLake
+		source
+			entityName: Transactions _Account MIX_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

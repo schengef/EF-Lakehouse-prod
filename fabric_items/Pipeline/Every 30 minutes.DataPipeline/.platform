@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Every 30 minutes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "702c3593-9999-9d36-41dd-474562bb5360"
+  }
+}

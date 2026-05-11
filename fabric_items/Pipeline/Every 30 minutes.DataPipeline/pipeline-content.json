@@ -1,0 +1,238 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>@{activity('Semantic model refresh').output}</p>",
+          "to": "Shirley.Cheng@eileenfisher.com",
+          "subject": "lake house semantic model refresh fail"
+        },
+        "externalReferences": {
+          "connection": "3ec5f445-c35d-41f8-81f9-b766d1ce8886"
+        },
+        "policy": {
+          "timeout": "12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Office365Email1",
+        "dependsOn": [
+          {
+            "activity": "Semantic model refresh",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "InvokePipeline",
+        "typeProperties": {
+          "parameters": {},
+          "waitOnCompletion": true,
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "pipelineId": "e6f3d507-2ac3-8dd4-4ac9-a8a78e9b3b77",
+          "operationType": "InvokeFabricPipeline"
+        },
+        "externalReferences": {
+          "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transactions Financial Full Load",
+        "dependsOn": []
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "post",
+          "groupId": "8a36f33d-a1a9-4e11-afd1-e24a3f8deb56",
+          "datasetId": "da13f417-58a1-47fe-b9c6-26c920242273",
+          "commitMode": "Transactional",
+          "objects": [
+            {
+              "table": "Traffic"
+            },
+            {
+              "table": "Product"
+            },
+            {
+              "table": "Product (Current)"
+            },
+            {
+              "table": "Transactions (Financial)"
+            },
+            {
+              "table": "Plan (Wholesale Retail)"
+            },
+            {
+              "table": "Forecast (DTC Store)"
+            },
+            {
+              "table": "Forecast (Channel)"
+            },
+            {
+              "table": "Budget (DTC Store)"
+            },
+            {
+              "table": "Budget (Inventory)"
+            },
+            {
+              "table": "Budget (Channel)"
+            },
+            {
+              "table": "Transactions (Account FIN)"
+            },
+            {
+              "table": "Transactions (Account POS)"
+            },
+            {
+              "table": "Transactions (Account MIX)"
+            },
+            {
+              "table": "Channel"
+            },
+            {
+              "table": "Store"
+            },
+            {
+              "table": "Accounts"
+            },
+            {
+              "table": "Delivery"
+            },
+            {
+              "table": "Currency Selector"
+            },
+            {
+              "table": "Order Type Join"
+            },
+            {
+              "table": "Account Group Join"
+            },
+            {
+              "table": "Order Categorization"
+            },
+            {
+              "table": "Currency"
+            },
+            {
+              "table": "Date EOY"
+            },
+            {
+              "table": "Date"
+            },
+            {
+              "table": "Inventory"
+            },
+            {
+              "table": "Transactions (External POS)"
+            },
+            {
+              "table": "Store (DTC Original)"
+            },
+            {
+              "table": "Store (DTC Allocated)"
+            },
+            {
+              "table": "Channel (DTC Original)"
+            },
+            {
+              "table": "Channel (DTC Allocated)"
+            },
+            {
+              "table": "Filter Dates"
+            },
+            {
+              "table": "Budget and Forecast Measures"
+            },
+            {
+              "table": "Total Company Measures"
+            },
+            {
+              "table": "Wholesale Measures"
+            },
+            {
+              "table": "Inventory Measures"
+            },
+            {
+              "table": "DTC Measures"
+            },
+            {
+              "table": "Usage"
+            },
+            {
+              "table": "Business Domain"
+            },
+            {
+              "table": "Business Domain Process"
+            },
+            {
+              "table": "Dependency"
+            },
+            {
+              "table": "Source Table"
+            },
+            {
+              "table": "Report"
+            },
+            {
+              "table": "Staging Process"
+            },
+            {
+              "table": "Semantic Model Update"
+            },
+            {
+              "table": "DateTableTemplate_6b094467-a280-4a70-80c8-545364dfc1c1"
+            },
+            {
+              "table": "LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c"
+            },
+            {
+              "table": "Inventory Movement"
+            },
+            {
+              "table": "Readiness SourceTable"
+            },
+            {
+              "table": "Readiness Domain"
+            },
+            {
+              "table": "InTransit"
+            }
+          ],
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "3c28e850-be30-4bf6-9664-4d9da47b6d0b"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Semantic model refresh",
+        "dependsOn": [
+          {
+            "activity": "Transactions Financial Full Load",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "concurrency": 10
+  }
+}

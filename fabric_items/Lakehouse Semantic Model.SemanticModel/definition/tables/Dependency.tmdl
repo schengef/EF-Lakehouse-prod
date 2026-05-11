@@ -1,0 +1,68 @@
+table Dependency
+	lineageTag: 1180a63f-e241-4bae-8300-bbdaf3da02ca
+	sourceLineageTag: [dbo].[Dependency]
+
+	column 'Report Dependency Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: c4b45ca0-bae5-470a-b417-7589c4d92837
+		sourceLineageTag: Report Dependency Key
+		isDefaultLabel
+		summarizeBy: count
+		sourceColumn: Report Dependency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Domain Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: b4e5261f-f9f7-4063-a3d0-aabdd08b888b
+		sourceLineageTag: Business Domain Key
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 99489c58-02ab-41b9-a33a-8e554d5b7a24
+		sourceLineageTag: Report Key
+		summarizeBy: none
+		sourceColumn: Report Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Name'
+		dataType: string
+		lineageTag: 6e3113d6-af16-416b-acf8-68e6af7dffda
+		sourceLineageTag: Report Name
+		summarizeBy: none
+		sourceColumn: Report Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Frequency Day'
+		dataType: string
+		lineageTag: 2224b515-fbe6-4933-8c05-6147138113db
+		sourceLineageTag: Frequency Day
+		summarizeBy: none
+		sourceColumn: Frequency Day
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dependency = entity
+		mode: directLake
+		source
+			entityName: Dependency
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+

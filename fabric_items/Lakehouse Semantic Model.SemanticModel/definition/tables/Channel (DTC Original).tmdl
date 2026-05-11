@@ -1,0 +1,92 @@
+table 'Channel (DTC Original)'
+	lineageTag: 11117a36-c252-4e76-a576-c95da9f88621
+	sourceLineageTag: [dbo].[Channel _DTC Original_]
+
+	column 'Original Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c74bfaf4-6211-423a-9dd5-a3300db46d52
+		sourceLineageTag: Original Channel Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Original Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Channel Name'
+		dataType: string
+		lineageTag: 1570b59a-43ee-4830-bab4-34e25e57b35d
+		sourceLineageTag: Original Channel Name
+		summarizeBy: none
+		sourceColumn: Original Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Sub Channel Name'
+		dataType: string
+		lineageTag: 591ad1dc-c688-4ef5-93ea-dc0470fd18f0
+		sourceLineageTag: Original Sub Channel Name
+		summarizeBy: none
+		sourceColumn: Original Sub Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Channel Format'
+		dataType: string
+		lineageTag: c40c419f-0d64-4dff-a855-acbc26b50233
+		sourceLineageTag: Original Channel Format
+		summarizeBy: none
+		sourceColumn: Original Channel Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Channel Geography'
+		dataType: string
+		lineageTag: 1bb2f01d-cad2-4275-8dbd-89602d865f33
+		sourceLineageTag: Original Channel Geography
+		summarizeBy: none
+		sourceColumn: Original Channel Geography
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0304de70-f3c8-4cb5-9ab6-c4854dbe317b
+		sourceLineageTag: Original Sort
+		summarizeBy: none
+		sourceColumn: Original Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Finance Channel'
+		dataType: string
+		lineageTag: d6bd1a53-398b-4df1-9d4e-1d758ff5c917
+		sourceLineageTag: Original Finance Channel
+		summarizeBy: none
+		sourceColumn: Original Finance Channel
+		sortByColumn: 'Original Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel (DTC Original)' = entity
+		mode: directLake
+		source
+			entityName: Channel _DTC Original_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

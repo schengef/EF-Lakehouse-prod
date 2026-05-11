@@ -1,0 +1,231 @@
+table 'Inventory Movement'
+	lineageTag: 005777ea-1c9a-4b20-bdfa-b294d9ce9309
+	sourceLineageTag: [dbo].[Inventory Movement]
+
+	column 'Inventory Movement Key'
+		dataType: int64
+		lineageTag: f4f9487e-c01e-4c6c-a3f2-cbbc7a0b114f
+		sourceLineageTag: Inventory Movement Key
+		summarizeBy: count
+		sourceColumn: Inventory Movement Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Send Store Key'
+		dataType: int64
+		lineageTag: 328050bb-950e-4ffb-ab32-37c7c9efe95f
+		sourceLineageTag: Send Store Key
+		summarizeBy: count
+		sourceColumn: Send Store Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Send Warehouse Key'
+		dataType: int64
+		lineageTag: 17491bf8-35a9-4dd7-a175-489be20d8f87
+		sourceLineageTag: Send Warehouse Key
+		summarizeBy: count
+		sourceColumn: Send Warehouse Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Receive Store Key'
+		dataType: int64
+		lineageTag: d2125c18-2745-474b-a52e-5c8552679df1
+		sourceLineageTag: Receive Store Key
+		summarizeBy: count
+		sourceColumn: Receive Store Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Receive Warehouse Key'
+		dataType: int64
+		lineageTag: 87faa702-d125-4bc7-8a76-7414549d0524
+		sourceLineageTag: Receive Warehouse Key
+		summarizeBy: count
+		sourceColumn: Receive Warehouse Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Key'
+		dataType: int64
+		lineageTag: 1a100992-bbcb-4251-ad49-f52c23716965
+		sourceLineageTag: Product Key
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Movement Date Key'
+		dataType: int64
+		lineageTag: 3aaf6b76-f7d5-4a50-a70b-d99d968719d3
+		sourceLineageTag: Movement Date Key
+		summarizeBy: none
+		sourceColumn: Movement Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Send Location'
+		dataType: string
+		lineageTag: 2668377b-7256-4677-88d8-b253dc1ee072
+		sourceLineageTag: Send Location
+		summarizeBy: none
+		sourceColumn: Send Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Receive Location'
+		dataType: string
+		lineageTag: 93c370b5-2ca9-40a3-811b-e94621f58162
+		sourceLineageTag: Receive Location
+		summarizeBy: none
+		sourceColumn: Receive Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Upc
+		dataType: string
+		lineageTag: 3be214fc-6cea-4661-bddf-cb6583d91db2
+		sourceLineageTag: Upc
+		summarizeBy: none
+		sourceColumn: Upc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement No'
+		dataType: string
+		lineageTag: 0cbca9c3-8788-41ab-903e-3d8de3fdb49f
+		sourceLineageTag: Movement No
+		summarizeBy: none
+		sourceColumn: Movement No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e2cfe2a6-1d51-49a9-ad4a-6d42260f6edd
+		sourceLineageTag: Movement Date
+		summarizeBy: none
+		sourceColumn: Movement Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Stage'
+		dataType: string
+		lineageTag: f3accf6d-adb7-4f23-bf38-374f5c1ba30b
+		sourceLineageTag: Movement Stage
+		summarizeBy: none
+		sourceColumn: Movement Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Type'
+		dataType: string
+		lineageTag: 47b0391b-ecf0-49a5-95ce-5e796e4ddfbe
+		sourceLineageTag: Movement Type
+		summarizeBy: none
+		sourceColumn: Movement Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: int64
+		lineageTag: be4ad594-ef74-4172-b214-58ed2d0e6e2e
+		sourceLineageTag: Units
+		summarizeBy: sum
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Md5 Checksum'
+		dataType: string
+		lineageTag: bde43756-3a0f-4c76-873a-faeac7b3852a
+		sourceLineageTag: Md5 Checksum
+		summarizeBy: none
+		sourceColumn: Md5 Checksum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Md5 Nk'
+		dataType: string
+		lineageTag: 16cf0469-fd04-4092-9304-fd5aadabbd3b
+		sourceLineageTag: Md5 Nk
+		summarizeBy: none
+		sourceColumn: Md5 Nk
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Row Created Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd86e07d-5538-4a3f-8200-7930ca031bc1
+		sourceLineageTag: Etl Row Created Ts
+		summarizeBy: none
+		sourceColumn: Etl Row Created Ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7beb1962-6b51-4107-ab00-3f8e64bba997
+		sourceLineageTag: Etl Row Updated Ts
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Source System Cd'
+		dataType: string
+		lineageTag: 9910063e-fdd7-4624-a3e3-b09a44957aa7
+		sourceLineageTag: Etl Source System Cd
+		summarizeBy: none
+		sourceColumn: Etl Source System Cd
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Cost'
+		dataType: double
+		lineageTag: 928e2435-4699-4537-9ce4-102e06e3cf11
+		sourceLineageTag: Standard Cost
+		summarizeBy: sum
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Retail Price'
+		dataType: decimal
+		formatString: 0
+		lineageTag: 93e2cac6-f15c-456e-b47d-3ded56c462a0
+		sourceLineageTag: Retail Price
+		summarizeBy: sum
+		sourceColumn: Retail Price
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Inventory Movement' = entity
+		mode: directLake
+		source
+			entityName: Inventory Movement
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

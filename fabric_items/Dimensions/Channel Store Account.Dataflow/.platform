@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Channel Store Account"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1873c550-e35e-9cfe-4b6b-871d2b178936"
+  }
+}

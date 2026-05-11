@@ -1,0 +1,299 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": "select \nCAST(T.WEEK_ENDING_DATE_KEY AS INT) AS \"Week Ending Date Key\", \nCAST(T.STORE_KEY AS INT) AS \"Store Key\", \nCAST(T.PRODUCT_KEY AS INT) AS \"Product Key\", \nT.SALES_UNITS AS \"Sales Units\", \nT.SALES_DOLLARS AS \"Sales Dollars\", \nT.OH_UNITS AS \"Oh Units\", \nCAST(T.CURRENCY_KEY AS INT) AS \"Currency Key\", \nCAST(T.PRICE_CATEGORIZATION_KEY AS INT) AS \"Price Categorization Key\", \nCAST(T.DELIVERY_KEY AS INT) AS \"Delivery Key\", \nCAST(T.CHANNEL_KEY AS INT) AS \"Channel Key\", \nPC.MARK_TYPE AS \"Mark Type\",\nCASE WHEN C.CURRENCY='CAD' then P.CAN_STANDARD_COST else P.STANDARD_COST end  as \"Currency Based Unit Cost\"\n,(\"Currency Based Unit Cost\"*T.OH_UNITS) as \"On Hand Cost\"\n,(\"Currency Based Unit Cost\"*T.SALES_UNITS) as \"Sales Cost\"\n,P.RETAIL_PRICE*T.OH_UNITS as \"On Hand Retail\"\n, S.WHOLESALE_ACCOUNT_KEY AS \"Wholesale Account Key\"\nfrom EDW_V.V_EXTERNAL_TRANSACTIONS_POS T\nLEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY\nLEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY\nLEFT OUTER JOIN EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY \nLEFT OUTER JOIN EDW_T.D_STORE S ON T.STORE_KEY = S.STORE_KEY ",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "database": "EDW_PROD"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "3d8a3261-8102-4569-9021-412ed801f489"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Transactions _External POS_"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Week Ending Date Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Week Ending Date Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Product Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Product Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Sales Units",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 27
+                },
+                "sink": {
+                  "name": "Sales Units",
+                  "physicalType": "decimal",
+                  "scale": 18,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Sales Dollars",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 27
+                },
+                "sink": {
+                  "name": "Sales Dollars",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 27
+                }
+              },
+              {
+                "source": {
+                  "name": "Oh Units",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Oh Units",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Currency Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Currency Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Price Categorization Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Price Categorization Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Delivery Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Delivery Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Channel Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Channel Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Mark Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Mark Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Currency Based Unit Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Currency Based Unit Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "On Hand Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "On Hand Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Sales Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 7,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Sales Cost",
+                  "physicalType": "decimal",
+                  "scale": 7,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "On Hand Retail",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "On Hand Retail",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "Wholesale Account Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Wholesale Account Key",
+                  "physicalType": "long"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Transactions External POS",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

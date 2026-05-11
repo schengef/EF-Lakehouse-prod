@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Transactions (External POS)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8360736-5618-9bef-44a8-a21cccd7d6d5"
+  }
+}

@@ -1,0 +1,91 @@
+table 'Source Table'
+	lineageTag: 737973f2-4326-499d-9a01-340082d12a58
+	sourceLineageTag: [dbo].[Source Table]
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9d088368-fe9f-489d-92ac-1f348043cc26
+		sourceLineageTag: Source Table Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source System'
+		dataType: string
+		lineageTag: 4c69f5b1-fc27-4204-8b4a-76cee4339bec
+		sourceLineageTag: Source System
+		summarizeBy: none
+		sourceColumn: Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table'
+		dataType: string
+		lineageTag: a00d31a0-4fe0-463a-8a31-e7fe5b3774d5
+		sourceLineageTag: Source Table
+		summarizeBy: none
+		sourceColumn: Source Table
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staging Table Name'
+		dataType: string
+		lineageTag: 0e1b9180-667c-49b9-97f6-2220d872d0bf
+		sourceLineageTag: Staging Table Name
+		summarizeBy: none
+		sourceColumn: Staging Table Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Frequency Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: db7fcbf9-6ae8-49e6-a0ce-9976b1606e50
+		sourceLineageTag: Frequency Days
+		summarizeBy: sum
+		sourceColumn: Frequency Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Load Type'
+		dataType: string
+		lineageTag: ed648a0d-fd02-4cf1-83f7-5d8ab36b1e3a
+		sourceLineageTag: Data Load Type
+		summarizeBy: none
+		sourceColumn: Data Load Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Row Created Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eaac840e-dca3-4c2d-82b8-643467d95ee5
+		sourceLineageTag: Etl Row Created Ts
+		summarizeBy: none
+		sourceColumn: Etl Row Created Ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a578aeb5-3c19-4a11-ba24-8faf05f654ea
+		sourceLineageTag: Etl Row Updated Ts
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Source Table' = entity
+		mode: directLake
+		source
+			entityName: Source Table
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

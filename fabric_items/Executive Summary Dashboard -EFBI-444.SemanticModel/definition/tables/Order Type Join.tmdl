@@ -1,0 +1,38 @@
+table 'Order Type Join'
+	isHidden
+	lineageTag: 4fe7d3ae-7333-421c-b57a-caf8238a4bc7
+	sourceLineageTag: ecee6adb-14f9-48b8-bc9a-c4c872fa7365
+
+	column 'Order Type'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: ae230efd-85dc-4476-a15f-82a5ff328727
+		sourceLineageTag: 0f9585ff-72d3-4def-a7b1-d6db9028ea0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+		sortByColumn: 'Order Type Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 235e61a7-0df9-4748-b43f-91b5dcc5633a
+		sourceLineageTag: 4c9eefd2-2eaf-4bdb-98bd-558648185ca6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type Sort
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type Join' = entity
+		mode: directQuery
+		source
+			entityName: Order Type Join
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

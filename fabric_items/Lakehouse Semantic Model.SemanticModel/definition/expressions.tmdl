@@ -1,0 +1,11 @@
+expression 'DirectLake - Sandbox_Lakehouse' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/8a36f33d-a1a9-4e11-afd1-e24a3f8deb56/eadbf17e-7da4-4599-aa97-04b03a262c1c", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: a3e44043-ec5b-4c90-bebb-f5d39d071659
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[Transaction_Financial_New]"}},"objectType":"Table"}]
+

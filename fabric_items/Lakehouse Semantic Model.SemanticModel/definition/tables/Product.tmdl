@@ -1,0 +1,1640 @@
+table Product
+	lineageTag: 8e18d0d2-55d3-437f-a693-e94a6333a537
+	sourceLineageTag: [dbo].[Product]
+
+	column 'Active Colorway'
+		dataType: string
+		displayFolder: Status
+		lineageTag: 83e45f69-abc7-4d20-bef4-aa52bc9865f5
+		sourceLineageTag: Active Colorway
+		summarizeBy: none
+		sourceColumn: Active Colorway
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Active Style'
+		dataType: string
+		displayFolder: Status
+		lineageTag: f0699c5a-592e-440b-b345-88527e070f87
+		sourceLineageTag: Active Style
+		summarizeBy: none
+		sourceColumn: Active Style
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Armhole Construction'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: b72d44e9-94de-4a83-b04b-7760a8e90668
+		sourceLineageTag: Armhole Construction
+		summarizeBy: none
+		sourceColumn: Armhole Construction
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet01
+		dataType: string
+		displayFolder: Site
+		lineageTag: 7d773746-0297-4a46-9049-cbc8da68d12f
+		sourceLineageTag: Bullet01
+		summarizeBy: none
+		sourceColumn: Bullet01
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet02
+		dataType: string
+		displayFolder: Site
+		lineageTag: ee8d31ee-bffd-49c7-bd68-4bb6d9094967
+		sourceLineageTag: Bullet02
+		summarizeBy: none
+		sourceColumn: Bullet02
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet03
+		dataType: string
+		displayFolder: Site
+		lineageTag: 0bb1748b-aa6b-4215-8577-e3bb947b9379
+		sourceLineageTag: Bullet03
+		summarizeBy: none
+		sourceColumn: Bullet03
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet04
+		dataType: string
+		displayFolder: Site
+		lineageTag: ad911ee3-450b-4e18-966f-96d604879c45
+		sourceLineageTag: Bullet04
+		summarizeBy: none
+		sourceColumn: Bullet04
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet05
+		dataType: string
+		displayFolder: Site
+		lineageTag: ca1484f2-39ca-42de-ba08-8a1d0f7fdddf
+		sourceLineageTag: Bullet05
+		summarizeBy: none
+		sourceColumn: Bullet05
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet06
+		dataType: string
+		displayFolder: Site
+		lineageTag: 8a570d4b-4e9a-4742-99c3-c913cfec04ba
+		sourceLineageTag: Bullet06
+		summarizeBy: none
+		sourceColumn: Bullet06
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet07
+		dataType: string
+		displayFolder: Site
+		lineageTag: b6cf807b-8fa1-4da7-b465-2540f513e790
+		sourceLineageTag: Bullet07
+		summarizeBy: none
+		sourceColumn: Bullet07
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet08
+		dataType: string
+		displayFolder: Site
+		lineageTag: cf05b6fb-56d4-4a9a-b356-72b5334ba0cb
+		sourceLineageTag: Bullet08
+		summarizeBy: none
+		sourceColumn: Bullet08
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet09
+		dataType: string
+		displayFolder: Site
+		lineageTag: 16071563-a518-47fa-af29-3402fc288f8f
+		sourceLineageTag: Bullet09
+		summarizeBy: none
+		sourceColumn: Bullet09
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet10
+		dataType: string
+		displayFolder: Site
+		lineageTag: 2e4d1302-b349-4886-9349-6b3114c334cc
+		sourceLineageTag: Bullet10
+		summarizeBy: none
+		sourceColumn: Bullet10
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet11
+		dataType: string
+		displayFolder: Site
+		lineageTag: 59951dcc-6a3b-49ba-af3b-d5089b3fe9ae
+		sourceLineageTag: Bullet11
+		summarizeBy: none
+		sourceColumn: Bullet11
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet12
+		dataType: string
+		displayFolder: Site
+		lineageTag: a100f9fd-db90-46d9-ab7f-5203a07ed727
+		sourceLineageTag: Bullet12
+		summarizeBy: none
+		sourceColumn: Bullet12
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet13
+		dataType: string
+		displayFolder: Site
+		lineageTag: 082efadd-5eae-4f3f-9ce3-f7d610412e40
+		sourceLineageTag: Bullet13
+		summarizeBy: none
+		sourceColumn: Bullet13
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet14
+		dataType: string
+		displayFolder: Site
+		lineageTag: 5d7033d9-1f23-4d54-a939-ba2ff0fa7eeb
+		sourceLineageTag: Bullet14
+		summarizeBy: none
+		sourceColumn: Bullet14
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bullet15
+		dataType: string
+		displayFolder: Site
+		lineageTag: 39e4ba65-86f0-41f1-ba01-ce0b4a3d069f
+		sourceLineageTag: Bullet15
+		summarizeBy: none
+		sourceColumn: Bullet15
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Can Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: f45ee40e-5392-4139-b418-30212de5efe3
+		sourceLineageTag: Can Retail Price
+		summarizeBy: none
+		sourceColumn: Can Retail Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: ede18e75-a84b-4b5e-a9cb-0eb9fa91935e
+		sourceLineageTag: Can Selling Price Dtc
+		summarizeBy: none
+		sourceColumn: Can Selling Price Dtc
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 68bf75b6-53ad-4857-8104-b2d74a81711c
+		sourceLineageTag: Can Standard Cost
+		summarizeBy: none
+		sourceColumn: Can Standard Cost
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Can Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 2c9c0e0e-7d74-482a-a6d9-47eebd900f96
+		sourceLineageTag: Can Wholesale Price
+		summarizeBy: none
+		sourceColumn: Can Wholesale Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Class Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: 7260fb5b-1350-42e9-ba6d-20bd8250cbb2
+		sourceLineageTag: Class Code Mi9
+		summarizeBy: none
+		sourceColumn: Class Code Mi9
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Class Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 46cc67f0-b696-4ee7-bdbd-7921dbf4f56c
+		sourceLineageTag: Class Description Mi9
+		summarizeBy: none
+		sourceColumn: Class Description Mi9
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Category'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 9adf5655-a8cc-40b3-835c-6d41e692b0f2
+		sourceLineageTag: Color Category
+		summarizeBy: none
+		sourceColumn: Color Category
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Clarity'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 7126590e-d128-4325-9b52-b108595ba86d
+		sourceLineageTag: Color Clarity
+		summarizeBy: none
+		sourceColumn: Color Clarity
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Code 5 Letter'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 9372ec24-5b24-4db1-b4a5-03edaf17cd72
+		sourceLineageTag: Color Code 5 Letter
+		summarizeBy: none
+		sourceColumn: Color Code 5 Letter
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Code Nrf'
+		dataType: string
+		displayFolder: Color
+		lineageTag: fb805c5a-8589-4a69-817e-4edeec8498e1
+		sourceLineageTag: Color Code Nrf
+		summarizeBy: none
+		sourceColumn: Color Code Nrf
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Description'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 87252c54-4863-45c8-b89e-0fb896b3c919
+		sourceLineageTag: Color Description
+		summarizeBy: none
+		sourceColumn: Color Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Group Code'
+		dataType: string
+		displayFolder: Color
+		lineageTag: a504b8b7-859d-4f25-982e-e9ee65c23cb0
+		sourceLineageTag: Color Group Code
+		summarizeBy: none
+		sourceColumn: Color Group Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Group Name'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 0bd09156-a3dc-44f9-9b57-7dcdd982ac3d
+		sourceLineageTag: Color Group Name
+		summarizeBy: none
+		sourceColumn: Color Group Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Shade'
+		dataType: string
+		displayFolder: Color
+		lineageTag: b393a58b-d6d1-4655-8c3c-b88a7482f8a8
+		sourceLineageTag: Color Shade
+		summarizeBy: none
+		sourceColumn: Color Shade
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Temp'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 11d0c3f2-475a-4d06-a6ab-222d79258288
+		sourceLineageTag: Color Temp
+		summarizeBy: none
+		sourceColumn: Color Temp
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 5ed41ae5-5973-4322-b360-eb7cd4923d20
+		sourceLineageTag: Department Code
+		summarizeBy: none
+		sourceColumn: Department Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: a9cc53ed-32c1-43d0-bad7-34e68f26bf16
+		sourceLineageTag: Department Code Mi9
+		summarizeBy: none
+		sourceColumn: Department Code Mi9
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Department Description'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: e5803913-97d4-463b-929d-3da45995f92b
+		sourceLineageTag: Department Description
+		summarizeBy: none
+		sourceColumn: Department Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 7f30806d-3f0f-4243-a5b9-b8699a30200e
+		sourceLineageTag: Department Description Mi9
+		summarizeBy: none
+		sourceColumn: Department Description Mi9
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 67001b8a-b9cf-492e-b84e-5d9f5ea8427b
+		sourceLineageTag: Display Name
+		summarizeBy: none
+		sourceColumn: Display Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code Mi9'
+		dataType: int64
+		formatString: 0
+		displayFolder: Product Hierarchy
+		lineageTag: 3104af4b-e52d-4358-8bc0-f9637452e708
+		sourceLineageTag: Division Code Mi9
+		summarizeBy: none
+		sourceColumn: Division Code Mi9
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Description Mi9'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 3c1e5a74-b710-421b-b986-e396be534b3e
+		sourceLineageTag: Division Description Mi9
+		summarizeBy: none
+		sourceColumn: Division Description Mi9
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dom Imp Code'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: a95fc382-cc74-48c5-9ab1-321e021dbffd
+		sourceLineageTag: Dom Imp Code
+		summarizeBy: none
+		sourceColumn: Dom Imp Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dom Imp Name'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: 3b4c0734-1282-4448-b5a0-a7f3a880e8e4
+		sourceLineageTag: Dom Imp Name
+		summarizeBy: none
+		sourceColumn: Dom Imp Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ecom Image'
+		dataType: string
+		displayFolder: Image
+		lineageTag: f7baf899-97c1-43bc-917f-5a262a40d231
+		sourceLineageTag: Ecom Image
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ecom Image Flat'
+		dataType: string
+		displayFolder: Image
+		lineageTag: 96ba6b74-c7bb-4cb1-8701-dd4b8f192c07
+		sourceLineageTag: Ecom Image Flat
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Ecom Image Flat
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ef Color Family'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 381762c6-886d-48e7-ba0f-3c01b132957c
+		sourceLineageTag: Ef Color Family
+		summarizeBy: none
+		sourceColumn: Ef Color Family
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fabric Col Min'
+		dataType: int64
+		formatString: 0
+		displayFolder: Production
+		lineageTag: 4e24c42c-afa2-4d7f-bee9-cbbeaa1fda85
+		sourceLineageTag: Fabric Col Min
+		summarizeBy: none
+		sourceColumn: Fabric Col Min
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Fabric Ord Min'
+		dataType: int64
+		formatString: 0
+		displayFolder: Production
+		lineageTag: 5d976c7d-84d9-4cb9-8a92-1cecdbe063b1
+		sourceLineageTag: Fabric Ord Min
+		summarizeBy: none
+		sourceColumn: Fabric Ord Min
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Fes Code'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 9142b9e1-6f02-4522-a2e3-830fc34fdf6b
+		sourceLineageTag: Fes Code
+		summarizeBy: none
+		sourceColumn: Fes Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fes Description'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 7f246246-f714-4466-b76c-ede591bf5a02
+		sourceLineageTag: Fes Description
+		summarizeBy: none
+		sourceColumn: Fes Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fit
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 1f08662e-58a5-4dc0-8a83-94e5867312a9
+		sourceLineageTag: Fit
+		summarizeBy: none
+		sourceColumn: Fit
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Flat Hang Code'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: f872e002-98fc-4612-9366-75c93cc0c114
+		sourceLineageTag: Flat Hang Code
+		summarizeBy: none
+		sourceColumn: Flat Hang Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Flat Hang Name'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: d017ea20-1953-4fb4-9ae6-5b659dfc54d0
+		sourceLineageTag: Flat Hang Name
+		summarizeBy: none
+		sourceColumn: Flat Hang Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Garment Details'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 0ee62e8f-2314-4384-aa45-afb5780a532a
+		sourceLineageTag: Garment Details
+		summarizeBy: none
+		sourceColumn: Garment Details
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Garment Length'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 88b3ada1-744a-4717-879d-c67f9316b53b
+		sourceLineageTag: Garment Length
+		summarizeBy: none
+		sourceColumn: Garment Length
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gbp Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 0f437156-3fe4-4d90-8aa2-d3aa43b6a39f
+		sourceLineageTag: Gbp Retail Price
+		summarizeBy: none
+		sourceColumn: Gbp Retail Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gbp Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: aca6fbac-c562-46e8-9efe-f29388d62506
+		sourceLineageTag: Gbp Standard Cost
+		summarizeBy: none
+		sourceColumn: Gbp Standard Cost
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Gbp Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 938d652b-b7ad-47e9-a722-5e630242bb84
+		sourceLineageTag: Gbp Wholesale Price
+		summarizeBy: none
+		sourceColumn: Gbp Wholesale Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Good For Petite'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: a3d51a4e-1da7-46fb-b7e9-fcb24b81c9b4
+		sourceLineageTag: Good For Petite
+		summarizeBy: none
+		sourceColumn: Good For Petite
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hex Color'
+		dataType: string
+		displayFolder: Color
+		lineageTag: 634425b6-46b4-450b-a052-b750da0b8954
+		sourceLineageTag: Hex Color
+		summarizeBy: none
+		sourceColumn: Hex Color
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Identity Short'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: b39376ba-f366-465a-b112-9322db05dc14
+		sourceLineageTag: Identity Short
+		summarizeBy: none
+		sourceColumn: Identity Short
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Intro Season Delivery'
+		dataType: string
+		displayFolder: Delivery
+		lineageTag: d2ae2bce-1737-4999-9401-480e631eb2c9
+		sourceLineageTag: Intro Season Delivery
+		summarizeBy: none
+		sourceColumn: Intro Season Delivery
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In Plm'
+		dataType: string
+		displayFolder: Status
+		lineageTag: 1718162f-4644-4316-87b2-6bfd563994c6
+		sourceLineageTag: In Plm
+		summarizeBy: none
+		sourceColumn: In Plm
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Length Dimension'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: ddf41d3e-0eed-4038-bbc6-dab2eacd3858
+		sourceLineageTag: Length Dimension
+		summarizeBy: none
+		sourceColumn: Length Dimension
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Long Description'
+		dataType: string
+		displayFolder: Site
+		lineageTag: 4c9f426f-c514-4254-a719-a0eaba0b2e73
+		sourceLineageTag: Long Description
+		summarizeBy: none
+		sourceColumn: Long Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mat Stitch Type'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 513c4772-4d71-4372-b937-9007f09afecc
+		sourceLineageTag: Mat Stitch Type
+		summarizeBy: none
+		sourceColumn: Mat Stitch Type
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Classification Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 6ffd9a6c-5985-43ab-9a5c-a9d0011f58cd
+		sourceLineageTag: Material Classification Code
+		summarizeBy: none
+		sourceColumn: Material Classification Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Classification Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: c2ee8705-9bc3-4ee7-a5be-bd18c4818701
+		sourceLineageTag: Material Classification Description
+		summarizeBy: none
+		sourceColumn: Material Classification Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: c731298c-5ae1-4916-8498-755402f4848d
+		sourceLineageTag: Material Code
+		summarizeBy: none
+		sourceColumn: Material Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Content Code'
+		dataType: string
+		displayFolder: Material
+		lineageTag: d78b9221-0e6a-40a6-83f8-e47752c195db
+		sourceLineageTag: Material Content Code
+		summarizeBy: none
+		sourceColumn: Material Content Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Content Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: b9c722f6-d32d-41fc-97bd-c127837e4453
+		sourceLineageTag: Material Content Description
+		summarizeBy: none
+		sourceColumn: Material Content Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 39eb73b0-1621-4b9b-98e5-2cfc1cb8f7c5
+		sourceLineageTag: Material Description
+		summarizeBy: none
+		sourceColumn: Material Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Eco'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 6805af05-07aa-42cf-8c73-ba43436677b5
+		sourceLineageTag: Material Eco
+		summarizeBy: none
+		sourceColumn: Material Eco
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Group'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 3a1bc6cd-096a-4d08-abe3-db16fcfd1644
+		sourceLineageTag: Material Group
+		summarizeBy: none
+		sourceColumn: Material Group
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Clone'
+		dataType: string
+		displayFolder: Material
+		lineageTag: c59b8aff-b8f6-4411-9303-7b41a41ded1d
+		sourceLineageTag: Material Clone
+		summarizeBy: none
+		sourceColumn: Material Clone
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Family'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 81cfd161-420b-433d-9ff9-cfb9b7e21582
+		sourceLineageTag: Material Family
+		summarizeBy: none
+		sourceColumn: Material Family
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Selection'
+		dataType: string
+		displayFolder: Material
+		lineageTag: 615ebad1-ec98-4dd8-8ae1-438359770ea9
+		sourceLineageTag: Material Selection
+		summarizeBy: none
+		sourceColumn: Material Selection
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Yarn Description'
+		dataType: string
+		displayFolder: Material
+		lineageTag: f1f2c94a-632a-406b-b48c-fff4e12791fc
+		sourceLineageTag: Material Yarn Description
+		summarizeBy: none
+		sourceColumn: Material Yarn Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Yarn Name'
+		dataType: string
+		displayFolder: Material
+		lineageTag: bf735162-d745-494d-90c3-df32815e15e0
+		sourceLineageTag: Material Yarn Name
+		summarizeBy: none
+		sourceColumn: Material Yarn Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Md Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Product Info
+		lineageTag: 21d929b5-634a-4635-9c52-8b0355684faf
+		sourceLineageTag: Md Date
+		summarizeBy: none
+		sourceColumn: Md Date
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Melange
+		dataType: string
+		displayFolder: Color
+		lineageTag: 6d4166e8-a503-488a-ae70-e9c7fe6fa4bf
+		sourceLineageTag: Melange
+		summarizeBy: none
+		sourceColumn: Melange
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Merch Division Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 2873b0f0-698e-4291-944e-639d085be571
+		sourceLineageTag: Merch Division Code
+		summarizeBy: none
+		sourceColumn: Merch Division Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Merch Division Name'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: d1dad372-e045-44be-911c-587e9e765056
+		sourceLineageTag: Merch Division Name
+		summarizeBy: none
+		sourceColumn: Merch Division Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Neckline
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 83f41437-2fa8-4538-b931-28747dbe4406
+		sourceLineageTag: Neckline
+		summarizeBy: none
+		sourceColumn: Neckline
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Neckline Type'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 010ec939-4e57-4767-8f70-5e5614873a7f
+		sourceLineageTag: Neckline Type
+		summarizeBy: none
+		sourceColumn: Neckline Type
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Tier'
+		dataType: string
+		displayFolder: Production
+		lineageTag: 020e1d3a-f1ff-4d1c-bdb8-d05f8cd18b1a
+		sourceLineageTag: Price Tier
+		summarizeBy: none
+		sourceColumn: Price Tier
+		sortByColumn: 'Price Tier Sort'
+
+		changedProperty = SortByColumn
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Tier Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Production
+		lineageTag: 3eac4c30-b832-4ce1-a0a4-42254ee2e9a1
+		sourceLineageTag: Price Tier Sort
+		summarizeBy: none
+		sourceColumn: Price Tier Sort
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c73b2524-b4c7-45d7-aa49-15abc6404a26
+		sourceLineageTag: Product Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Landed Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Production
+		lineageTag: 288a2e9d-9365-4f13-869e-c09ad5f0708f
+		sourceLineageTag: Production Landed Cost
+		summarizeBy: none
+		sourceColumn: Production Landed Cost
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Production Quote State'
+		dataType: string
+		displayFolder: Production
+		lineageTag: a4839a9f-f718-4b25-9482-bc7b3ae0cea4
+		sourceLineageTag: Production Quote State
+		summarizeBy: none
+		sourceColumn: Production Quote State
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Production Retail Markup Percent'
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: Production
+		lineageTag: 8360a3b7-47c7-4845-8214-c30d4dbec699
+		sourceLineageTag: Production Retail Markup Percent
+		summarizeBy: none
+		sourceColumn: Production Retail Markup Percent
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Wholesale Markup Percent'
+		dataType: decimal
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: Production
+		lineageTag: 6ea6a211-0d22-4d35-9086-f383ea1f11e5
+		sourceLineageTag: Production Wholesale Markup Percent
+		summarizeBy: none
+		sourceColumn: Production Wholesale Markup Percent
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Ref Coo'
+		dataType: string
+		displayFolder: Production\Logistics
+		lineageTag: ca5cdde8-ce6d-4f77-9e02-e188534743d2
+		sourceLineageTag: Ref Coo
+		summarizeBy: none
+		sourceColumn: Ref Coo
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 6a46bff8-ba2a-4774-9434-2557541c18e1
+		sourceLineageTag: Retail Price
+		summarizeBy: none
+		sourceColumn: Retail Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Season
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 67e9645c-b930-432b-8ba0-3062e8129a41
+		sourceLineageTag: Season
+		summarizeBy: none
+		sourceColumn: Season
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shape Code'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 3adcf9fb-8121-4826-85d9-d2972747d553
+		sourceLineageTag: Shape Code
+		summarizeBy: none
+		sourceColumn: Shape Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		displayFolder: Size
+		lineageTag: 64b8bd2f-cd01-455d-82b6-14a6b60dee7d
+		sourceLineageTag: Size
+		summarizeBy: none
+		sourceColumn: Size
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Range Code'
+		dataType: string
+		displayFolder: Size
+		lineageTag: f75fe187-ce19-4886-86e2-ef2087143349
+		sourceLineageTag: Size Range Code
+		summarizeBy: none
+		sourceColumn: Size Range Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Range Description'
+		dataType: string
+		displayFolder: Size
+		lineageTag: 8a3cf65d-1152-416d-8d10-56c6bf275fff
+		sourceLineageTag: Size Range Description
+		summarizeBy: none
+		sourceColumn: Size Range Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Size Scale'
+		dataType: string
+		displayFolder: Size
+		lineageTag: a2c6d57f-5ed3-4df2-89af-d2b773c3371b
+		sourceLineageTag: Size Scale
+		summarizeBy: none
+		sourceColumn: Size Scale
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sku
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: f377cb4e-4d13-4e89-8ad7-398d57d54ca7
+		sourceLineageTag: Sku
+		summarizeBy: none
+		sourceColumn: Sku
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sleeve Length'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: fb763f45-e1ee-4eb5-8ae0-805915939648
+		sourceLineageTag: Sleeve Length
+		summarizeBy: none
+		sourceColumn: Sleeve Length
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Cost'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 69f73f42-4283-4437-8f83-13205d1557f0
+		sourceLineageTag: Standard Cost
+		summarizeBy: none
+		sourceColumn: Standard Cost
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Staple Statement'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: dc597f2d-7c98-4e9f-b5e1-80da05298017
+		sourceLineageTag: Staple Statement
+		summarizeBy: none
+		sourceColumn: Staple Statement
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Classification Code'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: dd1679fb-85a6-46b3-a88c-06779f588237
+		sourceLineageTag: Style Classification Code
+		summarizeBy: none
+		sourceColumn: Style Classification Code
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Classification Description'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 991520ef-9e14-472e-bb8c-46223224723a
+		sourceLineageTag: Style Classification Description
+		summarizeBy: none
+		sourceColumn: Style Classification Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Description Long'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 2c2ba513-ee28-4758-8ae1-6e246179313c
+		sourceLineageTag: Style Description Long
+		summarizeBy: none
+		sourceColumn: Style Description Long
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 4cfc3d12-cb3a-4ab7-8bc7-a1df742d12f7
+		sourceLineageTag: Style Name
+		summarizeBy: none
+		sourceColumn: Style Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: f4c8cda8-a50f-4b70-90be-009afffa3f60
+		sourceLineageTag: Style Number
+		summarizeBy: none
+		sourceColumn: Style Number
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number And Color'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: d1ef6e72-6e49-4cef-8798-5874a2406dc7
+		sourceLineageTag: Style Number And Color
+		summarizeBy: none
+		sourceColumn: Style Number And Color
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Number And Name'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 9395619e-7d3c-4391-a042-afd3f3ee56f2
+		sourceLineageTag: Style Number And Name
+		summarizeBy: none
+		sourceColumn: Style Number And Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Replacement'
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 49c5ab8b-d0dc-4cfb-96aa-021e85bcabac
+		sourceLineageTag: Style Replacement
+		summarizeBy: none
+		sourceColumn: Style Replacement
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Stage'
+		dataType: string
+		displayFolder: Status
+		lineageTag: ea92f3fa-8c31-41ae-87a1-b07beaf0d789
+		sourceLineageTag: Style Stage
+		summarizeBy: none
+		sourceColumn: Style Stage
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Subclassification'
+		dataType: string
+		displayFolder: Product Hierarchy
+		lineageTag: 72990958-080e-4145-a2bd-0df3ded482c7
+		sourceLineageTag: Style Subclassification
+		summarizeBy: none
+		sourceColumn: Style Subclassification
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Upc
+		dataType: string
+		displayFolder: Product Info
+		lineageTag: 80d998d2-682c-40d1-8015-3e965d6a3591
+		sourceLineageTag: Upc
+		summarizeBy: none
+		sourceColumn: Upc
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Us Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 13e0e9c3-496c-444b-b08e-86cb534c9367
+		sourceLineageTag: Us Selling Price Dtc
+		summarizeBy: none
+		sourceColumn: Us Selling Price Dtc
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Usc Selling Price Dtc'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: d02a4a36-2ad3-45bd-945f-02d1abc9900c
+		sourceLineageTag: Usc Selling Price Dtc
+		summarizeBy: none
+		sourceColumn: Usc Selling Price Dtc
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Waist Construction'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: aec2a831-fc62-4514-b66e-11ddf7713ec4
+		sourceLineageTag: Waist Construction
+		summarizeBy: none
+		sourceColumn: Waist Construction
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wholesale Price'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Price & Cost
+		lineageTag: 2a31fa01-4c54-4128-a37d-212c5f5bdf97
+		sourceLineageTag: Wholesale Price
+		summarizeBy: none
+		sourceColumn: Wholesale Price
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Width Dimension'
+		dataType: string
+		displayFolder: Design Details & Construction
+		lineageTag: 21e8041a-165c-434f-8f7f-dc8cc896ce60
+		sourceLineageTag: Width Dimension
+		summarizeBy: none
+		sourceColumn: Width Dimension
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Average Weighted Canada'
+		dataType: double
+		lineageTag: 1fce1121-e6bf-418f-8e61-9b85a3d515b6
+		sourceLineageTag: Cost Average Weighted Canada
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Canada
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cost Average Weighted Company'
+		dataType: double
+		lineageTag: b114b789-de97-432a-b324-ee7fcd7dcbbc
+		sourceLineageTag: Cost Average Weighted Company
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Company
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cost Average Weighted Us'
+		dataType: double
+		lineageTag: e7dfcf8a-8fe0-4c6b-ac3b-9c667f9f4acd
+		sourceLineageTag: Cost Average Weighted Us
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Us
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Product = entity
+		mode: directLake
+		source
+			entityName: Product
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

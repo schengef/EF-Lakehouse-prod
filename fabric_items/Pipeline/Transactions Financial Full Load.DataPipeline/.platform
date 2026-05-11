@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Transactions Financial Full Load"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e6f3d507-2ac3-8dd4-4ac9-a8a78e9b3b77"
+  }
+}

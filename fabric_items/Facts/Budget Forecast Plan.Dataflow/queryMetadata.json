@@ -1,0 +1,74 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Budget Forecast Plan",
+  "queryGroups": [
+    {
+      "id": "7182192a-88a5-455f-8a79-32f3250d1769",
+      "name": "Forecast",
+      "description": ""
+    },
+    {
+      "id": "86f93fa6-dba5-4001-ae1f-abf800de39db",
+      "name": "Budget",
+      "description": "",
+      "order": 1
+    }
+  ],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "0083809f-b1d3-4a10-9ac2-cf8abea0a415",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Budget (Channel)": {
+      "queryId": "ef523f50-7427-4549-83c9-f004a9501452",
+      "queryName": "Budget (Channel)",
+      "queryGroupId": "86f93fa6-dba5-4001-ae1f-abf800de39db",
+      "loadEnabled": false
+    },
+    "Forecast (Channel)": {
+      "queryId": "dd3a8fcb-2f02-4be8-ad97-896fe072865f",
+      "queryName": "Forecast (Channel)",
+      "queryGroupId": "7182192a-88a5-455f-8a79-32f3250d1769",
+      "loadEnabled": false
+    },
+    "Budget (Inventory)": {
+      "queryId": "601ca2f1-458f-4985-bbd1-435c33d62cc7",
+      "queryName": "Budget (Inventory)",
+      "queryGroupId": "86f93fa6-dba5-4001-ae1f-abf800de39db",
+      "loadEnabled": false
+    },
+    "Plan (Wholesale Retail)": {
+      "queryId": "cb4ae131-da9d-4f3d-b147-1feadf301946",
+      "queryName": "Plan (Wholesale Retail)",
+      "loadEnabled": false
+    },
+    "Budget (DTC-Store)": {
+      "queryId": "19bf6706-31d4-42d7-9200-8a5eb1a9ac6b",
+      "queryName": "Budget (DTC-Store)",
+      "queryGroupId": "86f93fa6-dba5-4001-ae1f-abf800de39db",
+      "loadEnabled": false
+    },
+    "Forecast (DTC-Store)": {
+      "queryId": "11f8b73c-8602-4425-855b-7947c51cba48",
+      "queryName": "Forecast (DTC-Store)",
+      "queryGroupId": "7182192a-88a5-455f-8a79-32f3250d1769",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

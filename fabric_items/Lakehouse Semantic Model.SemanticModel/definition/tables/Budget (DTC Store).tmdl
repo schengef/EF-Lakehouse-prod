@@ -1,0 +1,87 @@
+table 'Budget (DTC Store)'
+	lineageTag: 72e5602b-0100-400f-9a6d-e83070d87e4d
+	sourceLineageTag: [dbo].[Budget _DTC-Store_]
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c42e579f-d346-4288-9586-51900f658d4e
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4cc1066e-5ab0-4df5-9cc8-87bc554dab7e
+		sourceLineageTag: Date Key
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: bfff727a-abaf-4e52-822c-0d99cb2f07c1
+		sourceLineageTag: Measure
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Store Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: f3b540f6-8430-4b9d-93c8-6e0eb14a24ca
+		sourceLineageTag: Budget Store Value
+		summarizeBy: none
+		sourceColumn: Budget Store Value
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		lineageTag: a7c205d2-bb4f-41d9-8330-fafb922f56e6
+		sourceLineageTag: Currency Code
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget (DTC Store)' = entity
+		mode: directLake
+		source
+			entityName: Budget _DTC-Store_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

@@ -1,0 +1,87 @@
+table 'Staging Process'
+	lineageTag: 8d59e016-4016-45b8-a98c-cac5109a9ac0
+	sourceLineageTag: [dbo].[Staging Process]
+
+	column 'Staging Process Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7c961e7e-1ba1-417d-91bc-fcc004363ce5
+		sourceLineageTag: Staging Process Key
+		summarizeBy: count
+		sourceColumn: Staging Process Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b8b779d9-bded-4a47-b190-bb56f3c80694
+		sourceLineageTag: Source Table Key
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: bf2de11b-90cf-4967-9087-76cf3ba1cc32
+		sourceLineageTag: Date Key
+		summarizeBy: count
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rows Inserted'
+		dataType: int64
+		formatString: 0
+		lineageTag: d87415a4-89b5-468c-9b42-003c0bce5e42
+		sourceLineageTag: Rows Inserted
+		summarizeBy: sum
+		sourceColumn: Rows Inserted
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rows Updated'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d5282ea-2a59-426e-ad79-56c7fea310d4
+		sourceLineageTag: Rows Updated
+		summarizeBy: sum
+		sourceColumn: Rows Updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: de8e8e2a-f5eb-4eaa-ba8c-7bc4733a6190
+		sourceLineageTag: Start Time
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f391a1d2-4455-4675-a9c5-74f8d3c77b74
+		sourceLineageTag: End Time
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Staging Process' = entity
+		mode: directLake
+		source
+			entityName: Staging Process
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

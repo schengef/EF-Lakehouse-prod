@@ -1,0 +1,208 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "sqlReaderQuery": "select * from [dbo].[ShippReceiptInTransit]",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "InTransit"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Movement No",
+                  "type": "String",
+                  "physicalType": "varchar"
+                },
+                "sink": {
+                  "name": "Movement No",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Channel",
+                  "type": "String",
+                  "physicalType": "varchar"
+                },
+                "sink": {
+                  "name": "Channel",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ShipDateKey",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "ShipDateKey",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "ShipUnits",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "ShipUnits",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "ShipCost",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "ShipCost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "ReceiptDateKey",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "ReceiptDateKey",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "ReceiptUnits",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "ReceiptUnits",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "ReceiptCost",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "ReceiptCost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                }
+              },
+              {
+                "source": {
+                  "name": "IntransitUnits",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "IntransitUnits",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "IntransitCost",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "IntransitCost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 38
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "InTransit",
+        "dependsOn": []
+      }
+    ]
+  }
+}

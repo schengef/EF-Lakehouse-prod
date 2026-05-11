@@ -1,0 +1,279 @@
+table 'Transactions (External POS)'
+	lineageTag: 9d174612-53c0-452b-ba20-9d6b17547081
+	sourceLineageTag: [dbo].[Transactions _External POS_]
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 89a1a20b-2441-438e-97a1-c62b6e43fda0
+		sourceLineageTag: Week Ending Date Key
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9381685e-9607-46b4-84b8-bcf037063fa6
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1ee5477b-9b10-4964-8111-cee6da2953ef
+		sourceLineageTag: Product Key
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Units'
+		dataType: double
+		isHidden
+		formatString: #,0
+		lineageTag: 821da8bb-1e9b-4195-b9dc-978068727b27
+		sourceLineageTag: Sales Units
+		summarizeBy: none
+		sourceColumn: Sales Units
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Dollars'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e2393ea4-bff7-476a-beed-98979ec8cfb0
+		sourceLineageTag: Sales Dollars
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Oh Units'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 5bf2dc67-c5d1-4da0-baf0-646441d29cae
+		sourceLineageTag: Oh Units
+		summarizeBy: none
+		sourceColumn: Oh Units
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8f029172-8dd0-4136-b85d-e98c583f27b4
+		sourceLineageTag: Currency Key
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 971a2ca0-7f56-46c4-91b1-e37c0f6265c6
+		sourceLineageTag: Price Categorization Key
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a0b73048-afb2-4942-8de1-d76505806849
+		sourceLineageTag: Delivery Key
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8634d71f-9841-4280-8416-12d935433e99
+		sourceLineageTag: Channel Key
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark Type'
+		dataType: string
+		lineageTag: 45ccab26-2a67-4382-9adf-35e33c7d608e
+		sourceLineageTag: Mark Type
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Based Unit Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5f0d7383-2f81-4415-bdf8-0664b8ef3b95
+		sourceLineageTag: Currency Based Unit Cost
+		summarizeBy: none
+		sourceColumn: Currency Based Unit Cost
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'On Hand Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 93e4e8f0-aba6-4e07-a8ac-a482e27d6fa6
+		sourceLineageTag: On Hand Cost
+		summarizeBy: none
+		sourceColumn: On Hand Cost
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Sales Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1d7f6919-cdcb-446e-b507-0db4f224284f
+		sourceLineageTag: Sales Cost
+		summarizeBy: none
+		sourceColumn: Sales Cost
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'On Hand Retail'
+		dataType: double
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: bb66563f-6303-4926-b17b-60f24bbcfd8b
+		sourceLineageTag: On Hand Retail
+		summarizeBy: none
+		sourceColumn: On Hand Retail
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bff96775-744f-4672-84f9-330fb14487a7
+		sourceLineageTag: Wholesale Account Key
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (External POS)' = entity
+		mode: directLake
+		source
+			entityName: Transactions _External POS_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

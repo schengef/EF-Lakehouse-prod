@@ -1,0 +1,74 @@
+table Traffic
+	isHidden
+	lineageTag: 6aec865f-28e8-4111-94a0-8b84d80c81bf
+	sourceLineageTag: [dbo].[Traffic]
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 23d41ed9-eef9-4bcc-a561-0b6aaca23026
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 56972c0b-5991-4aba-8142-a6d223d351b7
+		sourceLineageTag: Date Key
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Visits
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0b072108-a29a-4f03-90de-85a295affb52
+		sourceLineageTag: Visits
+		summarizeBy: none
+		sourceColumn: Visits
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6c6c891d-76f2-4f80-9590-d8ee69393092
+		sourceLineageTag: Channel Key
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition Traffic = entity
+		mode: directLake
+		source
+			entityName: Traffic
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+

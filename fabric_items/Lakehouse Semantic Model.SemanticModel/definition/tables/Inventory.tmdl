@@ -1,0 +1,219 @@
+table Inventory
+	lineageTag: 89fce2d2-291d-41a7-b971-4d2980ba88f8
+	sourceLineageTag: [dbo].[Inventory]
+
+	column 'Units On Hand'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 80cdd963-b45c-4f8d-ab7e-84fc8c16d0a0
+		sourceLineageTag: Units On Hand
+		summarizeBy: none
+		sourceColumn: Units On Hand
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column Location
+		dataType: string
+		lineageTag: 5f9be9f2-53ec-4e69-8717-15bd905149b2
+		sourceLineageTag: Location
+		summarizeBy: none
+		sourceColumn: Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a36beb38-3be0-4e84-a7fc-3ecfa2fafc6f
+		sourceLineageTag: Store Key
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e89a3ff1-1890-493b-a1cd-eac2215c659e
+		sourceLineageTag: Warehouse Key
+		summarizeBy: none
+		sourceColumn: Warehouse Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 761cfc70-ddfc-4ef2-832c-eb75e18221cb
+		sourceLineageTag: Channel Key
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6cad700d-7c2e-4524-834f-e4600cadf7fe
+		sourceLineageTag: Product Key
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 31c564a3-fad3-4f4c-a577-bcde1a8a0adb
+		sourceLineageTag: Delivery Key
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d0037c92-add1-4bd9-8060-4fed71bca445
+		sourceLineageTag: Price Categorization Key
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark Type'
+		dataType: string
+		lineageTag: 8f1e5e90-38d8-4622-bfce-50017fead88a
+		sourceLineageTag: Mark Type
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost On Hand'
+		dataType: double
+		isHidden
+		lineageTag: bdf2d457-c9be-4223-b200-11c51d685885
+		sourceLineageTag: Cost On Hand
+		summarizeBy: none
+		sourceColumn: Cost On Hand
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Retail On Hand'
+		dataType: double
+		isHidden
+		lineageTag: c59f89be-1f38-40fc-9805-6d9b9f1817cc
+		sourceLineageTag: Retail On Hand
+		summarizeBy: none
+		sourceColumn: Retail On Hand
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: a69e1ec8-714a-4d1e-accd-1f1a845c6e76
+		sourceLineageTag: Start Date
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: db6c7132-84f9-41c3-9043-f9fc129032f8
+		sourceLineageTag: End Date
+		summarizeBy: none
+		sourceColumn: End Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5f986d2e-8c4b-4240-a139-6c7f114b7f2b
+		sourceLineageTag: Dtc Misc Flag
+		summarizeBy: none
+		sourceColumn: Dtc Misc Flag
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition Inventory = entity
+		mode: directLake
+		source
+			entityName: Inventory
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+

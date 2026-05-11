@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Inventory"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4561cdde-693d-83f1-427f-4c91e17b4d0f"
+  }
+}

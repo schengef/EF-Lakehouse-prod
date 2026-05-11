@@ -1,0 +1,47 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Measure Tables",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "6daf2bfa-ac62-4d94-98f9-5de93304642b",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Budget and Forecast Measures": {
+      "queryId": "a7b4a920-5052-4692-882b-3ec7922eafc3",
+      "queryName": "Budget and Forecast Measures",
+      "loadEnabled": false
+    },
+    "DTC Measures": {
+      "queryId": "517f8cbf-d3b7-4a4f-8fe2-1dae0b39587a",
+      "queryName": "DTC Measures",
+      "loadEnabled": false
+    },
+    "Inventory Measures": {
+      "queryId": "9bba137f-1bcb-4936-a7f5-9aa4b17ae3b1",
+      "queryName": "Inventory Measures",
+      "loadEnabled": false
+    },
+    "Total Company Measures": {
+      "queryId": "caa716a4-13d8-4e2a-b93f-402b890de4e7",
+      "queryName": "Total Company Measures",
+      "loadEnabled": false
+    },
+    "Wholesale Measures": {
+      "queryId": "c5a4e86e-531f-4510-9ea8-bb23fe7faf1e",
+      "queryName": "Wholesale Measures",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    }
+  ]
+}

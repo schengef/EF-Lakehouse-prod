@@ -1,0 +1,114 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Data Readiness",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "Dependency": {
+      "queryId": "c06a4adb-4973-44c2-bb5a-1d8939cdef54",
+      "queryName": "Dependency",
+      "loadEnabled": false
+    },
+    "Usage": {
+      "queryId": "03126ad3-ecc1-4e58-b48a-9acc0bd75f19",
+      "queryName": "Usage",
+      "loadEnabled": false
+    },
+    "Business Domain": {
+      "queryId": "dcdbac24-16cb-4dee-9d4b-87608fd0b125",
+      "queryName": "Business Domain",
+      "loadEnabled": false
+    },
+    "Report": {
+      "queryId": "b55fa44d-65dc-4bd0-a19a-743cbdd1c0f1",
+      "queryName": "Report",
+      "loadEnabled": false
+    },
+    "Source Table": {
+      "queryId": "dd1ce325-8d92-4681-a2d5-c05f827eb6b5",
+      "queryName": "Source Table",
+      "loadEnabled": false
+    },
+    "Business Domain Process": {
+      "queryId": "0fafc55b-d619-42d8-9925-1fb657140580",
+      "queryName": "Business Domain Process",
+      "loadEnabled": false
+    },
+    "Staging Process": {
+      "queryId": "f7b3e61e-396f-4e7f-9a05-458c57e6c5d3",
+      "queryName": "Staging Process",
+      "loadEnabled": false
+    },
+    "Business Domain Process_DataDestination": {
+      "queryId": "0a905f83-d4ed-4984-afed-6894808b5c05",
+      "queryName": "Business Domain Process_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Source Table_DataDestination": {
+      "queryId": "2866b8e4-f179-4e90-8636-d8a534f534af",
+      "queryName": "Source Table_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Report_DataDestination": {
+      "queryId": "da296ba0-c591-4ba3-a86c-67ea53cf9f08",
+      "queryName": "Report_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Business Domain_DataDestination": {
+      "queryId": "fec3ede6-fef2-490b-939e-13e155a1454d",
+      "queryName": "Business Domain_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Usage_DataDestination": {
+      "queryId": "12b7640b-837e-41df-9c29-8f15016b58d1",
+      "queryName": "Usage_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Dependency_DataDestination": {
+      "queryId": "a43636e7-f020-4ac7-bf3b-931d11f8a2be",
+      "queryName": "Dependency_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "d84c1cc6-63e2-454a-b2d0-8c298faf7e7a",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Staging Process_DataDestination": {
+      "queryId": "912887e2-a97e-4198-b98e-27be0b9f3467",
+      "queryName": "Staging Process_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Readiness Domain": {
+      "queryId": "1c41e321-55a5-4d5e-8692-03f1044d88ea",
+      "queryName": "Readiness Domain",
+      "loadEnabled": false
+    },
+    "Readiness SourceTable": {
+      "queryId": "3681ea6f-c262-496c-88f8-3d3e469487af",
+      "queryName": "Readiness SourceTable",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+table 'Order Type Join'
+	isHidden
+	lineageTag: ecee6adb-14f9-48b8-bc9a-c4c872fa7365
+	sourceLineageTag: [dbo].[Order Type Join]
+
+	column 'Order Type'
+		dataType: string
+		isHidden
+		lineageTag: 0f9585ff-72d3-4def-a7b1-d6db9028ea0a
+		sourceLineageTag: Order Type
+		summarizeBy: none
+		sourceColumn: Order Type
+		sortByColumn: 'Order Type Sort'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4c9eefd2-2eaf-4bdb-98bd-558648185ca6
+		sourceLineageTag: Order Type Sort
+		summarizeBy: none
+		sourceColumn: Order Type Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type Join' = entity
+		mode: directLake
+		source
+			entityName: Order Type Join
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+

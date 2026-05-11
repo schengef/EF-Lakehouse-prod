@@ -1,0 +1,48 @@
+table 'Currency Selector'
+	lineageTag: a0149850-a8fe-4cea-aa9d-62508673ec2a
+	sourceLineageTag: [dbo].[Currency Selector]
+
+	column 'Currency Selection'
+		dataType: string
+		lineageTag: 3dd559b4-942d-4a4b-9e1a-93794dd75f32
+		sourceLineageTag: Currency Selection
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Currency Selection
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: string
+		isHidden
+		lineageTag: 6badfcbc-8749-4d34-8afa-9f045b515048
+		sourceLineageTag: Sort
+		summarizeBy: none
+		sourceColumn: Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		lineageTag: 3c31afd7-c889-4b69-b247-3db82f6a8961
+		sourceLineageTag: Conversion Type
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Currency Selector' = entity
+		mode: directLake
+		source
+			entityName: Currency Selector
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

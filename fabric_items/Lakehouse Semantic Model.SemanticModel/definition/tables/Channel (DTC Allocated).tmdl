@@ -1,0 +1,92 @@
+table 'Channel (DTC Allocated)'
+	lineageTag: 028c3c30-045f-41fc-859e-269b065041f1
+	sourceLineageTag: [dbo].[Channel _DTC Allocated_]
+
+	column 'Allocated Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e99ff6fe-316d-45bd-843e-367685d71b3e
+		sourceLineageTag: Allocated Channel Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Allocated Channel Key
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Channel Name'
+		dataType: string
+		lineageTag: 73446181-bd37-4de3-9311-85ea4d004201
+		sourceLineageTag: Allocated Channel Name
+		summarizeBy: none
+		sourceColumn: Allocated Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Sub Channel Name'
+		dataType: string
+		lineageTag: ba42b40c-ec27-420a-ac3d-2fb8e2aec152
+		sourceLineageTag: Allocated Sub Channel Name
+		summarizeBy: none
+		sourceColumn: Allocated Sub Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Format'
+		dataType: string
+		lineageTag: f346f871-e2ce-4665-b76b-1af858d6d1cb
+		sourceLineageTag: Allocated Channel Format
+		summarizeBy: none
+		sourceColumn: Allocated Channel Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Geography'
+		dataType: string
+		lineageTag: 8b786c02-26d0-449b-8c62-99ea16d7c4ca
+		sourceLineageTag: Allocated Channel Geography
+		summarizeBy: none
+		sourceColumn: Allocated Channel Geography
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cd5fd57e-2054-4c51-96d3-1d49b7f0531b
+		sourceLineageTag: Allocated Sort
+		summarizeBy: none
+		sourceColumn: Allocated Sort
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Finance Channel'
+		dataType: string
+		lineageTag: 9be24559-dd95-4ee5-8837-be90eb2c4a30
+		sourceLineageTag: Allocated Finance Channel
+		summarizeBy: none
+		sourceColumn: Allocated Finance Channel
+		sortByColumn: 'Allocated Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Channel (DTC Allocated)' = entity
+		mode: directLake
+		source
+			entityName: Channel _DTC Allocated_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

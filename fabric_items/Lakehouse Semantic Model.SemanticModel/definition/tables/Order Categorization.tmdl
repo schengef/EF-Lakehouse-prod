@@ -1,0 +1,63 @@
+table 'Order Categorization'
+	lineageTag: cfa6ee17-1de2-4b49-badb-209acf47f47e
+	sourceLineageTag: [dbo].[Order Categorization]
+
+	column 'Order Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1405aa3c-28db-4779-8ccc-23c2eae31991
+		sourceLineageTag: Order Categorization Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Order Categorization Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped To'
+		dataType: string
+		lineageTag: 528316b4-0fe0-4edd-aea9-fab46e8be5ec
+		sourceLineageTag: Shipped To
+		summarizeBy: none
+		sourceColumn: Shipped To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipped From'
+		dataType: string
+		lineageTag: fd3dfbb3-b1d5-45a7-9fc1-6fc510006102
+		sourceLineageTag: Shipped From
+		summarizeBy: none
+		sourceColumn: Shipped From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sfcc Type'
+		dataType: string
+		lineageTag: 406ff28b-fdf7-4151-94b9-189a7cd7291f
+		sourceLineageTag: Sfcc Type
+		summarizeBy: none
+		sourceColumn: Sfcc Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Send Order'
+		dataType: string
+		lineageTag: ca523520-2ceb-4912-a15c-b72da2679d6d
+		sourceLineageTag: Send Order
+		summarizeBy: none
+		sourceColumn: Send Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Categorization' = entity
+		mode: directLake
+		source
+			entityName: Order Categorization
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

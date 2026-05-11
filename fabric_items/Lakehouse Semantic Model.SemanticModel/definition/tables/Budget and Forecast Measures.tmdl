@@ -1,0 +1,371 @@
+table 'Budget and Forecast Measures'
+	lineageTag: f42481b9-584b-4284-b3d1-d8836ba0dd13
+	sourceLineageTag: [dbo].[Budget and Forecast Measures]
+
+	measure 'Budget Invoiced Gross Margin %' =
+			Divide(
+			    CALCULATE(
+			        [Budget],
+			        KEEPFILTERS('Budget (Channel)'[Measure]="Invoiced Gross Margin $")
+			    ),
+			    CALCULATE(
+			        [Budget],
+			        KEEPFILTERS('Budget (Channel)'[Measure]="Net Sales $")
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f1b6a140-19d5-41c7-922d-ed72c0f7326b
+
+		changedProperty = FormatString
+
+	measure 'Budget Net Gross Margin %' =
+			Divide(
+			    CALCULATE(
+			        [Budget],
+			        KEEPFILTERS('Budget (Channel)'[Measure]="Net Gross Margin $")
+			    ),
+			    CALCULATE(
+			        [Budget],
+			        KEEPFILTERS('Budget (Channel)'[Measure]="Net Retail Sales $")
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9e2a2df7-f755-412b-9e37-35d6492fba5f
+
+		changedProperty = FormatString
+
+	measure 'Budget Net Invoiced Sales $' = ```
+			CALCULATE([Budget],KEEPFILTERS('Budget (Channel)'[Measure] = "Gross Sales $")) 
+			- 
+			CALCULATE([Budget],KEEPFILTERS('Budget (Channel)'[Measure] = "Upfront Discount on Sales $")) 
+			+ 
+			CALCULATE([Budget],KEEPFILTERS('Budget (Channel)'[Measure] = "Gross Return (RTV) $")) 
+			-
+			CALCULATE([Budget],FILTER('Budget (Channel)','Budget (Channel)'[Measure]="Dilutions $"),filter('Budget (Channel)','Budget (Channel)'[Order Type]="RTV DISCOUNT OFFSET"))
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b69a9747-790c-4ba3-bc07-822cb27f78f2
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Forecast Net Gross Margin %' =
+			Divide(
+			    CALCULATE([Forecast],FILTER('Forecast (Channel)','Forecast (Channel)'[Measure]="Net Gross Margin $"))
+			    ,
+			    CALCULATE([Forecast],filter('Forecast (Channel)','Forecast (Channel)'[Measure]="Net Retail Sales $"))
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 96363128-04ea-49aa-b9e7-8ae0cee36c21
+
+		changedProperty = FormatString
+
+	measure 'Forecast Net Invoiced Sales $' =
+			CALCULATE([Forecast],FILTER('Forecast (Channel)','Forecast (Channel)'[Measure]="Gross Sales $"))
+			-
+			CALCULATE([Forecast],filter('Forecast (Channel)','Forecast (Channel)'[Measure]="Upfront Discount on Sales $"))
+			+
+			CALCULATE([Forecast],filter('Forecast (Channel)','Forecast (Channel)'[Measure]="Gross Return (RTV) $"))
+			-
+			CALCULATE([Forecast],FILTER('Forecast (Channel)','Forecast (Channel)'[Measure]="Dilutions $"),filter('Forecast (Channel)','Forecast (Channel)'[Order Type]="RTV DISCOUNT OFFSET"))
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 98bd9d70-c2df-42cc-9529-944f85822925
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Budget =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			CALCULATE(
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Budget (Channel)'[Measure]) in NoConversionMeasures),
+			    SUM('Budget (Channel)'[Budget Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Budget (Channel)',
+			            'Budget (Channel)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Budget (Channel)'[Budget Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			        )
+			    RETURN
+			Result
+			),
+			TREATAS(VALUES('Channel (DTC Original)'[Original Finance Channel]),'Budget (Channel)'[Channel]),
+			TREATAS(VALUES('Channel (DTC Allocated)'[Allocated Finance Channel]),'Budget (Channel)'[Channel]),
+			TREATAS(VALUES('Channel'[Finance Channel]),'Budget (Channel)'[Channel]),
+			TREATAS(VALUES(Store[Store Finance Channel]),'Budget (Channel)'[Channel]),
+			TREATAS(VALUES('Store (DTC Original)'[Original Finance Channel]),'Budget (Channel)'[Channel]),
+			TREATAS(VALUES('Store (DTC Allocated)'[Allocated Finance Channel]),'Budget (Channel)'[Channel])
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2ff0dc31-d6ea-4e9d-a379-0a0c38ced885
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Budget' =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Budget (DTC Store)'[Measure]) in NoConversionMeasures),
+			    SUM('Budget (DTC Store)'[Budget Store Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Budget (DTC Store)',
+			            'Budget (DTC Store)'[Currency Code],
+			            'Budget (DTC Store)'[Date Key]
+			        ),
+			        "@NetPrice",calculate( sum('Budget (DTC Store)'[Budget Store Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Date Key],'Budget (DTC Store)'[Date Key], 'Currency'[Currency],'Budget (DTC Store)'[Currency Code],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Date Key],'Budget (DTC Store)'[Date Key], 'Currency'[Currency],'Budget (DTC Store)'[Currency Code],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			        )
+			    RETURN
+			Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9603a405-fbde-47af-ac5c-426012a0fbf5
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Forecast =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			CALCULATE(
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Forecast (Channel)'[Measure]) in NoConversionMeasures),
+			    SUM('Forecast (Channel)'[Forecast Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Forecast (Channel)',
+			            'Forecast (Channel)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Forecast (Channel)'[Forecast Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Forecast (Channel)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Forecast (Channel)'[Currency Key],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			),
+			TREATAS(VALUES('Channel (DTC Original)'[Original Finance Channel]),'Forecast (Channel)'[Channel]),
+			TREATAS(VALUES('Channel (DTC Allocated)'[Allocated Finance Channel]),'Forecast (Channel)'[Channel]),
+			TREATAS(VALUES('Channel'[Finance Channel]),'Forecast (Channel)'[Channel]),
+			TREATAS(VALUES(Store[Store Finance Channel]),'Forecast (Channel)'[Channel]),
+			TREATAS(VALUES('Store (DTC Original)'[Original Finance Channel]),'Forecast (Channel)'[Channel]),
+			TREATAS(VALUES('Store (DTC Allocated)'[Allocated Finance Channel]),'Forecast (Channel)'[Channel])
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a65803a1-9ab7-4e26-8834-4bc9421b5af9
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Forecast' =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Forecast (DTC Store)'[Measure]) in NoConversionMeasures),
+			    SUM('Forecast (DTC Store)'[Forecast Store Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Forecast (DTC Store)',
+			            'Forecast (DTC Store)'[Currency Code],
+			            'Forecast (DTC Store)'[Date Key]
+			        ),
+			        "@NetPrice",calculate( sum('Forecast (DTC Store)'[Forecast Store Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Date Key],'Forecast (DTC Store)'[Date Key], 'Currency'[Currency],'Forecast (DTC Store)'[Currency Code],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Date Key],'Forecast (DTC Store)'[Date Key], 'Currency'[Currency],'Forecast (DTC Store)'[Currency Code],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			        )
+			    RETURN
+			Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 20df4066-51fd-41b7-9df4-bc859cfa4419
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Plan =
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Plan (Wholesale Retail)'[Plan Value]),
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			            SUMX (
+			                'Plan (Wholesale Retail)',
+			                'Plan (Wholesale Retail)'[Plan Value]*LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Plan (Wholesale Retail)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type]))
+			                )
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f29dfc16-9b27-409a-b9b5-fd7c43c900f2
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Forecast Net Demand' =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			CALCULATE(
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Forecast (Channel)'[Measure]) in NoConversionMeasures),
+			    SUM('Forecast (Channel)'[Forecast Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Forecast (Channel)',
+			            'Forecast (Channel)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Forecast (Channel)'[Forecast Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Forecast (Channel)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Forecast (Channel)'[Currency Key],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+			
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 08c8bd38-89dd-4c37-919e-301d205495a9
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Budget Net Demand' =
+			VAR NoConversionMeasures={"Transactions","Units","Traffic"}
+			RETURN
+			CALCULATE(
+			if(
+			    or(SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",SELECTEDVALUE('Budget (Channel)'[Measure]) in NoConversionMeasures),
+			    SUM('Budget (Channel)'[Budget Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Budget (Channel)',
+			            'Budget (Channel)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Budget (Channel)'[Budget Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			        )
+			    RETURN
+			Result
+			))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2c1c0e34-0697-4731-9240-a30c877fd870
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column DELETE
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 14081c9e-9c1b-4726-a5a0-d07da21a8833
+		sourceLineageTag: DELETE
+		summarizeBy: sum
+		sourceColumn: DELETE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Budget and Forecast Measures' = entity
+		mode: directLake
+		source
+			entityName: Budget and Forecast Measures
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

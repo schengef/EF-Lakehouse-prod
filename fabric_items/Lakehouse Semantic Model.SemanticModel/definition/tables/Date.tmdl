@@ -1,0 +1,378 @@
+table Date
+	lineageTag: c2c01f89-ceb1-4deb-a159-e4267a76606a
+	sourceLineageTag: [dbo].[Date]
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 517f8c4a-baee-4296-8cf3-099d3bf6fa3a
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date LY'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 4d221934-0b00-41b5-b4a8-307227c5c781
+		sourceLineageTag: Date LY
+		summarizeBy: none
+		sourceColumn: Date LY
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date LLY'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 773ca6b5-3c7a-4a05-9ffc-1b707b29317d
+		sourceLineageTag: Date LLY
+		summarizeBy: none
+		sourceColumn: Date LLY
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Select a Calendar'
+		dataType: string
+		lineageTag: 6921ff7b-425a-40f6-9cd7-cbc0f86c3326
+		sourceLineageTag: Select a Calendar
+		summarizeBy: none
+		sourceColumn: Select a Calendar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		isHidden
+		lineageTag: 15f5ce62-3267-4689-8eb4-cdfaf54e88b0
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		isHidden
+		lineageTag: 7b4f8a5e-267f-4660-9df5-719f21c6fba7
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: af0ea2be-f4ec-40f6-bc7c-393b5fecef7d
+		sourceLineageTag: Week End Date
+		summarizeBy: none
+		sourceColumn: Week End Date
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CurrWeek End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 1f3ca778-4844-4f81-a336-a0b236e9d68e
+		sourceLineageTag: CurrWeek End Date
+		summarizeBy: none
+		sourceColumn: CurrWeek End Date
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Half
+		dataType: string
+		isHidden
+		lineageTag: 51b4d36f-ba24-4c79-8470-8d16431f4c8e
+		sourceLineageTag: Half
+		summarizeBy: none
+		sourceColumn: Half
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthname Weekno'
+		dataType: string
+		isHidden
+		lineageTag: fd997c21-9306-4c71-8e54-ccb480b5a1e6
+		sourceLineageTag: Monthname Weekno
+		summarizeBy: none
+		sourceColumn: Monthname Weekno
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		isHidden
+		lineageTag: b07aa5ed-38dc-44bf-95e0-0b9cf76a84aa
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Monthnum
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monthnamefull
+		dataType: string
+		isHidden
+		lineageTag: 0fc39821-81df-4b36-898e-c19c72ceed5e
+		sourceLineageTag: Monthnamefull
+		summarizeBy: none
+		sourceColumn: Monthnamefull
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sortorder
+		dataType: string
+		isHidden
+		lineageTag: 99fe61f9-1e8c-401b-af8e-3c5606352cc8
+		sourceLineageTag: Sortorder
+		summarizeBy: none
+		sourceColumn: Sortorder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f8503784-6708-4c35-987e-72066472e961
+		sourceLineageTag: Week
+		summarizeBy: none
+		sourceColumn: Week
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 84c3a7e4-511e-46bf-9d71-549ff3b2e566
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Dayofweek
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a3dc8cd1-b93c-4f4e-b6cc-87f67bd22910
+		sourceLineageTag: Dayofweek
+		summarizeBy: none
+		sourceColumn: Dayofweek
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Dayofmonth
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6959975a-c672-486b-9e6d-c19ef5e60e43
+		sourceLineageTag: Dayofmonth
+		summarizeBy: none
+		sourceColumn: Dayofmonth
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Dayofyear
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 69915dc5-061b-4ec5-935e-f788f05096ea
+		sourceLineageTag: Dayofyear
+		summarizeBy: none
+		sourceColumn: Dayofyear
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Monthnum
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e5d316cf-b1d7-4f60-87d7-8a86656cd9b2
+		sourceLineageTag: Monthnum
+		summarizeBy: none
+		sourceColumn: Monthnum
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Datekey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 73f217b9-7793-49ad-95c5-4467e810475e
+		sourceLineageTag: Datekey
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Datekey
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Sequential Day Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a3add916-7849-4466-ba10-fef7e3c0db28
+		sourceLineageTag: Sequential Day Number
+		summarizeBy: none
+		sourceColumn: Sequential Day Number
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Monthsort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9b4a4d5d-6cd8-4c4f-8ae2-0a7de24d5c90
+		sourceLineageTag: Monthsort
+		summarizeBy: none
+		sourceColumn: Monthsort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Monthindex
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fe33dc55-ab22-4d7e-a97c-f2b3fc31a032
+		sourceLineageTag: Monthindex
+		summarizeBy: none
+		sourceColumn: Monthindex
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Select a Date'
+		dataType: string
+		isHidden
+		lineageTag: ddfd7917-6f88-4039-a214-115148a735ba
+		sourceLineageTag: Select a date
+		summarizeBy: none
+		sourceColumn: Select a date
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 18bfe1c4-cc01-4e87-85cf-2b6b30e5d4eb
+
+		level Year
+			lineageTag: be1f1bcd-0e68-4891-b2c3-077591fc7718
+			column: Year
+
+		level Half
+			lineageTag: 1b5ea2d4-b482-4b4a-99af-dd070471522f
+			column: Half
+
+		level Quarter
+			lineageTag: 4769bb8b-5e4a-4bf7-a346-27865005892c
+			column: Quarter
+
+		level MonthName
+			lineageTag: 3474adbb-cb35-4832-a2e6-482bdd207436
+			column: MonthName
+
+		level 'Week End Date'
+			lineageTag: 7ebc1188-9491-41a7-88db-10060eb2ae92
+			column: 'Week End Date'
+
+		level Date
+			lineageTag: 868d7664-dde3-480b-85ee-35af34e6e332
+			column: Date
+
+		changedProperty = Name
+
+	partition Date = entity
+		mode: directLake
+		source
+			entityName: Date
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

@@ -1,0 +1,61 @@
+table Report
+	lineageTag: d056fab4-4748-4719-8531-8dad4b89ca24
+	sourceLineageTag: [dbo].[Report]
+
+	column 'Report Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3852922e-d2d2-4c43-9eb7-ed97f5be48a2
+		sourceLineageTag: Report Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Report Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Name'
+		dataType: string
+		lineageTag: 6f81453b-f7f6-4fd1-9359-7f71bb7c24da
+		sourceLineageTag: Report Name
+		summarizeBy: none
+		sourceColumn: Report Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Frequency Day'
+		dataType: string
+		lineageTag: 08b011e8-8f24-434f-b41c-62101d1fb445
+		sourceLineageTag: Frequency Day
+		summarizeBy: none
+		sourceColumn: Frequency Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Purpose
+		dataType: string
+		lineageTag: 9b82ab4c-d406-4cbd-b799-4708d152f646
+		sourceLineageTag: Purpose
+		summarizeBy: none
+		sourceColumn: Purpose
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: cf751696-9846-486b-bb4c-fe31212ab454
+		sourceLineageTag: Notes
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Report = entity
+		mode: directLake
+		source
+			entityName: Report
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

@@ -1,0 +1,80 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Channel Store Account Gen2",
+  "queryGroups": [
+    {
+      "id": "ff79aaba-ff75-4179-beea-f3078fd9e369",
+      "name": "Store",
+      "description": ""
+    },
+    {
+      "id": "9de4b119-4ed7-44f0-b8fa-f47be4ab1b1a",
+      "name": "Channel",
+      "description": "",
+      "order": 1
+    }
+  ],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "40f097fa-9428-4a79-9b05-f4f0cf562d1f",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Store": {
+      "queryId": "a2c2eaca-4d0a-4909-9370-00ff3c67f4cf",
+      "queryName": "Store",
+      "queryGroupId": "ff79aaba-ff75-4179-beea-f3078fd9e369",
+      "loadEnabled": false
+    },
+    "Store (DTC Allocated)": {
+      "queryId": "bf337c1d-afac-456d-9485-7f5113b7265e",
+      "queryName": "Store (DTC Allocated)",
+      "queryGroupId": "ff79aaba-ff75-4179-beea-f3078fd9e369",
+      "loadEnabled": false
+    },
+    "Store (DTC Original)": {
+      "queryId": "7f59e78a-7427-4d84-b28c-5a5606ab2278",
+      "queryName": "Store (DTC Original)",
+      "queryGroupId": "ff79aaba-ff75-4179-beea-f3078fd9e369",
+      "loadEnabled": false
+    },
+    "Channel": {
+      "queryId": "6c577cd6-0ec1-46de-8523-b63e02148445",
+      "queryName": "Channel",
+      "queryGroupId": "9de4b119-4ed7-44f0-b8fa-f47be4ab1b1a",
+      "loadEnabled": false
+    },
+    "Channel (DTC Original)": {
+      "queryId": "fed32f6f-9455-4ae3-af21-a083c097da49",
+      "queryName": "Channel (DTC Original)",
+      "queryGroupId": "9de4b119-4ed7-44f0-b8fa-f47be4ab1b1a",
+      "loadEnabled": false
+    },
+    "Channel (DTC Allocated)": {
+      "queryId": "27939b8b-13c7-4f31-83a1-a77a4efbdb03",
+      "queryName": "Channel (DTC Allocated)",
+      "queryGroupId": "9de4b119-4ed7-44f0-b8fa-f47be4ab1b1a",
+      "loadEnabled": false
+    },
+    "Account": {
+      "queryId": "957ea83b-ca12-4965-933b-7d14ba5b0dc9",
+      "queryName": "Account",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"e0b36ad0-b650-48b3-88e3-80a547d60ed6\"}"
+    },
+    {
+      "path": "eileen.us-east-1.snowflakecomputing.com;REPORTING_PROD_WH",
+      "kind": "Snowflake",
+      "connectionId": "{\"ClusterId\":\"eeb57061-71e5-40cc-b5be-813aef7b6c89\",\"DatasourceId\":\"3d8a3261-8102-4569-9021-412ed801f489\"}"
+    }
+  ]
+}

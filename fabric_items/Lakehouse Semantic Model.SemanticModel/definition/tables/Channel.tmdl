@@ -1,0 +1,124 @@
+table Channel
+	lineageTag: eb7cbc49-990d-4053-befb-15411f2c45c2
+	sourceLineageTag: [dbo].[Channel]
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fc5954a6-dd4d-4395-b779-332c05951bfd
+		sourceLineageTag: Channel Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Name'
+		dataType: string
+		lineageTag: 1f29acce-cab9-4e29-9e70-396d697c1a98
+		sourceLineageTag: Channel Name
+		summarizeBy: none
+		sourceColumn: Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub Channel Name'
+		dataType: string
+		lineageTag: 99209570-93d5-4401-830e-9a39502ff60d
+		sourceLineageTag: Sub Channel Name
+		summarizeBy: none
+		sourceColumn: Sub Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Format'
+		dataType: string
+		lineageTag: 9ee65de8-0892-405f-94e2-2c819649074b
+		sourceLineageTag: Channel Format
+		summarizeBy: none
+		sourceColumn: Channel Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Geography'
+		dataType: string
+		lineageTag: ea555f28-6689-498a-8c61-bcc4d8b5d1aa
+		sourceLineageTag: Channel Geography
+		summarizeBy: none
+		sourceColumn: Channel Geography
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e1e84433-9f2f-4763-beb2-bd94e66ba8e4
+		sourceLineageTag: Sort
+		summarizeBy: none
+		sourceColumn: Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel (Product Dashboard) Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7505d64a-72c2-499b-a176-8c07e5dd6ef5
+		sourceLineageTag: Finance Channel _Product Dashboard_ Sort
+		summarizeBy: none
+		sourceColumn: Finance Channel _Product Dashboard_ Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel'
+		dataType: string
+		lineageTag: a06349df-9afe-4a95-b73e-feb404d0518e
+		sourceLineageTag: Finance Channel
+		summarizeBy: none
+		sourceColumn: Finance Channel
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Channel (Product Dashboard)'
+		dataType: string
+		isHidden
+		lineageTag: cf709eed-b603-40de-8e53-afa23aa297ed
+		sourceLineageTag: Finance Channel _Product Dashboard_
+		summarizeBy: none
+		sourceColumn: Finance Channel _Product Dashboard_
+		sortByColumn: 'Finance Channel (Product Dashboard) Sort'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Channel = entity
+		mode: directLake
+		source
+			entityName: Channel
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

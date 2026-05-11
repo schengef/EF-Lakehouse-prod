@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Small Tables"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "53795188-dae5-ab25-495d-711882d8a4d1"
+  }
+}

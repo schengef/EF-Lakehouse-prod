@@ -1,0 +1,582 @@
+table 'Store (DTC Allocated)'
+	lineageTag: 1042ae4e-ab13-4130-b717-488954e76eb0
+	sourceLineageTag: [dbo].[Store _DTC Allocated_]
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Store Details
+		lineageTag: eeac27bd-15b4-4efa-b129-13fc7480ef92
+		sourceLineageTag: Store Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Name'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 5d0ffcae-ea45-4683-911a-ed9d85a6579b
+		sourceLineageTag: Account Name
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		displayFolder: Account
+		lineageTag: 7fbe3e9f-95d2-44d0-a67a-8a42020d0619
+		sourceLineageTag: Account Code
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Group'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 9762839a-051c-4465-a5d6-aecdb890fc07
+		sourceLineageTag: Account Group
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dc Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 7bfef030-bad8-449a-a161-7260ccd6279e
+		sourceLineageTag: Dc Id
+		summarizeBy: none
+		sourceColumn: Dc Id
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 7c25b1de-9c07-45bd-bd4d-0738af82cc4a
+		sourceLineageTag: Store Id
+		summarizeBy: none
+		sourceColumn: Store Id
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edi Store Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: fc3921bb-ecc0-4300-a7de-4246392388a9
+		sourceLineageTag: Edi Store Id
+		summarizeBy: none
+		sourceColumn: Edi Store Id
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Account
+		lineageTag: 1fc47ba2-2797-4d7e-a8e4-abe4a974e63f
+		sourceLineageTag: Wholesale Account Key
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Name'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 8626a010-4568-45b7-b41b-b01abc652dad
+		sourceLineageTag: Store Name
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Type'
+		dataType: string
+		displayFolder: Account
+		lineageTag: e0efd26d-3fa6-47c9-97f0-9316a1dfafbb
+		sourceLineageTag: Store Type
+		summarizeBy: none
+		sourceColumn: Store Type
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Type Description'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 32c7a822-72ff-4b46-903e-9a9b18516f6c
+		sourceLineageTag: Store Type Description
+		summarizeBy: none
+		sourceColumn: Store Type Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Channel
+		lineageTag: deec9cf8-00ed-49c7-a91b-901f644c4972
+		sourceLineageTag: Channel Key
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Finance Channel'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 66048188-2b1a-444e-8b1c-c1885a3865b6
+		sourceLineageTag: Allocated Finance Channel
+		summarizeBy: none
+		sourceColumn: Allocated Finance Channel
+		sortByColumn: 'Finance Channel Sort'
+
+		changedProperty = SortByColumn
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 1384a1f2-229e-45ca-ad9e-f6f960d2100f
+		sourceLineageTag: Address1
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address1
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 62bb4917-e8ca-4ecd-aced-e19aff831d9d
+		sourceLineageTag: Address2
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address2
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: bbd16ab3-1c9b-436a-aee4-bf84a754e9a7
+		sourceLineageTag: City
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 91d5fe8b-1446-468b-9c2e-db47aeb3c974
+		sourceLineageTag: State
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 2bed8152-f1de-4bce-a834-a6a1c39486f0
+		sourceLineageTag: Country
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 7835000b-2295-4d63-b344-cd84f043071a
+		sourceLineageTag: Zip Code
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Zip Code
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Open Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Physical Information
+		lineageTag: aaebdb1f-df96-4aee-a0cc-353038cf0bba
+		sourceLineageTag: Store Open Date
+		summarizeBy: none
+		sourceColumn: Store Open Date
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Close Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Physical Information
+		lineageTag: ee63f2f8-2f5f-4c18-95ee-82f32808d3ed
+		sourceLineageTag: Store Close Date
+		summarizeBy: none
+		sourceColumn: Store Close Date
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Status'
+		dataType: string
+		displayFolder: Physical Information
+		lineageTag: 5b8a6c4e-f6d9-4edc-904b-d3e40a10065a
+		sourceLineageTag: Store Status
+		summarizeBy: none
+		sourceColumn: Store Status
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Size Selling Area'
+		dataType: int64
+		formatString: 0
+		displayFolder: Physical Information
+		lineageTag: c7460dd8-f173-4777-95bc-6a9aa082af96
+		sourceLineageTag: Store Size Selling Area
+		summarizeBy: none
+		sourceColumn: Store Size Selling Area
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Chain Description'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 01f522f8-69b1-42c7-8988-2c94ad778e99
+		sourceLineageTag: Chain Description
+		summarizeBy: none
+		sourceColumn: Chain Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Store Details
+		lineageTag: 28dca348-eb2c-40c8-9bb1-2c0a2aa83480
+		sourceLineageTag: Division Code
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Description'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 461157fb-df14-4842-889d-3fa288d76df5
+		sourceLineageTag: Division Description
+		summarizeBy: none
+		sourceColumn: Division Description
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Code'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Location
+		lineageTag: 38395554-a0ec-4632-a5b3-2f834a4ba543
+		sourceLineageTag: Region Code
+		summarizeBy: none
+		sourceColumn: Region Code
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Region Description'
+		dataType: string
+		displayFolder: Location
+		lineageTag: de6b0fbf-bdd5-4050-8c20-ec492c140d6f
+		sourceLineageTag: Region Description
+		summarizeBy: none
+		sourceColumn: Region Description
+		sortByColumn: 'Region Code'
+
+		changedProperty = DisplayFolder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Name'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 90cf24ce-8002-4a80-841f-03519b0b42fc
+		sourceLineageTag: Allocated Channel Name
+		summarizeBy: none
+		sourceColumn: Allocated Channel Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Subchannel Name'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 55312c17-3a75-49b6-ad07-37382c0fe3e3
+		sourceLineageTag: Allocated Subchannel Name
+		summarizeBy: none
+		sourceColumn: Allocated Subchannel Name
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Format'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 0adbc5d9-43ae-4370-ba7f-d2a88cda89d9
+		sourceLineageTag: Allocated Channel Format
+		summarizeBy: none
+		sourceColumn: Allocated Channel Format
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Geography'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 39988a40-79fa-494a-a027-2d89494af244
+		sourceLineageTag: Allocated Channel Geography
+		summarizeBy: none
+		sourceColumn: Allocated Channel Geography
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Channel Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Channel
+		lineageTag: 89cb63c8-d281-454d-95be-46086409dda6
+		sourceLineageTag: Finance Channel Sort
+		summarizeBy: none
+		sourceColumn: Finance Channel Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Name And Num'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: db7235e1-329d-4b96-92d3-b3d487555e1d
+		sourceLineageTag: Store Name And Num
+		summarizeBy: none
+		sourceColumn: Store Name And Num
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		displayFolder: Location
+		lineageTag: 794f21e3-7726-40bf-a8dc-5768af9cb39e
+		sourceLineageTag: Latitude
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		displayFolder: Location
+		lineageTag: 466f1016-5923-4c78-8c25-f92e93fad0c9
+		sourceLineageTag: Longitude
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy 'Address Hierarchy'
+		displayFolder: Location
+		lineageTag: 3d986615-8b72-4889-b3e0-6f9f4541814d
+
+		level Country
+			lineageTag: c3fa5c90-980a-44f7-a685-89757e970872
+			column: Country
+
+		level State
+			lineageTag: def85045-f741-4634-978d-10cb351b0cfa
+			column: State
+
+		level 'Zip Code'
+			lineageTag: 5b0473d3-b34f-4e06-a6e0-3a164eedd406
+			column: 'Zip Code'
+
+		level Address1
+			lineageTag: f8ffed09-03e6-4b95-a7ab-de707f60a5e2
+			column: Address1
+
+		level City
+			lineageTag: dda44e76-a1dc-46bc-baff-56980c52806e
+			column: City
+
+		level Address2
+			lineageTag: 4c4a9d83-fd83-4024-b5fc-a068e057ade9
+			column: Address2
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	partition 'Store (DTC Allocated)' = entity
+		mode: directLake
+		source
+			entityName: Store _DTC Allocated_
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = Name
+

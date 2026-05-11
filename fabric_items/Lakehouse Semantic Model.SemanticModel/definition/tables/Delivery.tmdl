@@ -1,0 +1,251 @@
+table Delivery
+	lineageTag: dfe9ada8-db71-45c5-8eb8-41780093ef06
+	sourceLineageTag: [dbo].[Delivery]
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3be59754-0cea-4673-bb62-4686abc27bd4
+		sourceLineageTag: Delivery Key
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Code Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9c147cf4-a430-4458-a8b8-919e0442ad4f
+		sourceLineageTag: Delivery Code Key
+		summarizeBy: none
+		sourceColumn: Delivery Code Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Code'
+		dataType: string
+		lineageTag: 7ead7d5c-4ea5-4241-a66c-b2036d2709a9
+		sourceLineageTag: Delivery Code
+		summarizeBy: none
+		sourceColumn: Delivery Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Style
+		dataType: string
+		lineageTag: e515af2c-2f9b-4710-b8eb-2d28050e3679
+		sourceLineageTag: Style
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Color Code'
+		dataType: string
+		lineageTag: fbb95d86-1bf3-4338-9160-491e2a493fce
+		sourceLineageTag: Color Code
+		summarizeBy: none
+		sourceColumn: Color Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 68976b21-0cca-4564-a691-687ed9a0a787
+		sourceLineageTag: Wholesale Account Key
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		lineageTag: 6e114e4b-d93e-4917-8c7d-e11e17867b6a
+		sourceLineageTag: Account Code
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Color Collection'
+		dataType: string
+		lineageTag: 22b35263-cf30-4d10-8961-7dc9ead6e968
+		sourceLineageTag: Style Color Collection
+		summarizeBy: none
+		sourceColumn: Style Color Collection
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3b0a5e22-137c-40cc-ab76-7b954e8a9c46
+		sourceLineageTag: Active
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exclusive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c67b8002-d46d-469d-be31-75766858d3b0
+		sourceLineageTag: Exclusive
+		summarizeBy: none
+		sourceColumn: Exclusive
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective Dtc Transactions Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: d5d17b7e-9848-404f-b813-cadfd50474d7
+		sourceLineageTag: Effective Dtc Transactions Start Date
+		summarizeBy: none
+		sourceColumn: Effective Dtc Transactions Start Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective Dtc Transactions End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: ce6aeb86-1d0c-45ef-9197-e18dc0181e16
+		sourceLineageTag: Effective Dtc Transactions End Date
+		summarizeBy: none
+		sourceColumn: Effective Dtc Transactions End Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Name'
+		dataType: string
+		lineageTag: a6468cca-c051-4200-ae97-a8c1ab6efc0f
+		sourceLineageTag: Delivery Name
+		summarizeBy: none
+		sourceColumn: Delivery Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Prefix'
+		dataType: string
+		lineageTag: f855f35d-3a45-46c6-82f1-b56b8abe5cc1
+		sourceLineageTag: Style Prefix
+		summarizeBy: none
+		sourceColumn: Style Prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Year'
+		dataType: string
+		lineageTag: ce9fa8b3-47e1-4cca-ad54-6dfdfdc7c871
+		sourceLineageTag: Delivery Year
+		summarizeBy: none
+		sourceColumn: Delivery Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Month'
+		dataType: string
+		lineageTag: bd95d68a-c876-47db-85bc-cd6d46a7d092
+		sourceLineageTag: Delivery Month
+		summarizeBy: none
+		sourceColumn: Delivery Month
+		sortByColumn: 'Month Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dtc Transactions Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: ef2d2a22-def3-4c26-b01e-cbb6323d8e5c
+		sourceLineageTag: Dtc Transactions Start Date
+		summarizeBy: none
+		sourceColumn: Dtc Transactions Start Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 93a82d28-bed3-4a50-b254-bef76626a78d
+		sourceLineageTag: Month Sort
+		summarizeBy: none
+		sourceColumn: Month Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		lineageTag: 324f2f65-514a-445c-85a4-8008164a800e
+		sourceLineageTag: Season
+		summarizeBy: none
+		sourceColumn: Season
+		sortByColumn: 'Season Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b44b4733-084d-4349-9f9d-90498fc1ed3f
+		sourceLineageTag: Season Sort
+		summarizeBy: none
+		sourceColumn: Season Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition Delivery = entity
+		mode: directLake
+		source
+			entityName: Delivery
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

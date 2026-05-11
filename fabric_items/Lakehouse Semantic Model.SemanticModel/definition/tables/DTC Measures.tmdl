@@ -1,0 +1,809 @@
+table 'DTC Measures'
+	lineageTag: b83fd45b-4513-4717-9462-a38c021e3a83
+	sourceLineageTag: [dbo].[DTC Measures]
+
+	measure 'Demand Gross Retail Sales $' =
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 915dfa95-b34b-44a7-8406-025b7ac0e31c
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Demand Discount Retail Sales $' =
+			CALCULATE(
+			    [Discount Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 20c021b9-1af9-47cb-a19a-c519bc51e481
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Demand Net Retail Sales $' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    //KEEPFILTERS('Transactions (Financial)'[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5158a8f6-baa2-4e0d-96d5-f5031dced01d
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Demand Unit Sales' =
+			CALCULATE(
+			    [Units (Sum)],
+			    Channel[Channel Name]="DTC",
+			    Channel[Channel Format]="Digital",
+			    'Transactions (Financial)'[Transaction Type]="ORDER"
+			)
+		formatString: #,0
+		lineageTag: a5a34f98-a763-473a-bb06-c504b45297e7
+
+		changedProperty = FormatString
+
+	measure 'Demand Tax $' =
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 3538fd98-8f35-48f3-b98e-dd723a66ca32
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cancel Gross Retail Sales $' =
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 30ba4f4f-5c27-4574-bad5-24867a1cd1a8
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cancel Net Retail Sales $' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 27d75100-32c7-4364-8a20-35d2fb1ad037
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cancel Tax $' =
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 91beebf0-7357-4a4f-a345-fdf03beb7e9f
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cancel Unit Sales' =
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: #,0
+		lineageTag: 63ee24a6-9b63-4cad-8414-2624ad33a91c
+
+		changedProperty = FormatString
+
+	measure 'Fulfillment Gross Retail Sales $' =
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 11019bb9-18cf-4418-b787-95fa82886a4e
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Fulfillment Net Retail Sales $' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ff202fa9-9ccd-47c7-a7dc-cf025dec9282
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Fulfillment Tax $' =
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b224daa7-12cd-45db-9114-28813d86d9b8
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Fulfillment Unit Sales' =
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: #,0
+		lineageTag: 951c540d-c88d-47b8-a301-e2b1d03defa1
+
+		changedProperty = FormatString
+
+	measure 'Gross Retail Sales $' = ```
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type] in {"SHIPMENT","TAKE"}),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4d446f80-b073-4d87-866d-e4a7d86f2d01
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Gross Unit Sales' =
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"||'Transactions (Financial)'[Transaction Type]="TAKE"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: #,0
+		lineageTag: 47276505-555e-482c-9eed-403ef070fb17
+
+		changedProperty = FormatString
+
+	measure 'Gross Cost Sales $' =
+			CALCULATE(
+			   [Standard Cost (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"||'Transactions (Financial)'[Transaction Type]="TAKE")  ,
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			    //'Transactions (Financial)'[Channel Key] <> 2020101 && 'Transactions (Financial)'[Channel Key] <> 2020103 && 'Transactions (Financial)'[Channel Key] <> 2030101
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 458729d7-6e5b-4fb4-ba83-deb850ba3801
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Gross Margin $' =
+			[Gross Retail Sales $]
+			-
+			[Gross Cost Sales $]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 40c42ba1-8ef5-4faa-a4ba-ea830adab450
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Gross Margin %' =
+			DIVIDE(
+			    [Gross Margin $],
+			    [Gross Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3083da2f-1466-42df-a90e-70443804c860
+
+		changedProperty = FormatString
+
+	measure 'Gross Sales AUR' =
+			DIVIDE(
+			    [Gross Retail Sales $],
+			    [Gross Unit Sales]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d4728dc0-62ff-487d-bc3e-936dcb876625
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Gross Sales AUC' =
+			DIVIDE(
+			    [Gross Cost Sales $],
+			    [Gross Unit Sales]
+			)
+		lineageTag: ae224e5b-09c7-40b7-a179-2ec01fe456c6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Gross Margin $' =
+			[Net Retail Sales $]
+			-
+			[Net Cost Sales $]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7d302c46-f908-430c-a76c-919b6f3fdf26
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Gross Margin %' =
+			divide(
+			[Net Gross Margin $],
+			[Net Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2e11eda0-d725-42e1-a5f8-cfccf78f2ef2
+
+		changedProperty = FormatString
+
+	measure 'Net Sales AUR' =
+			divide(
+			[Net Retail Sales $],
+			[Net Sales Units]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 29762248-6ed3-45dd-b0fb-c03929ddbae5
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales AUC' =
+			divide(
+			[Net Cost Sales $],
+			[Net Sales Units]
+			)
+		lineageTag: 80296969-1528-4685-9e49-692854066fd7
+
+	measure 'Return Gross Retail Sales $' =
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c25b8ab0-af1c-4cb5-9c4a-2bf8a995a464
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Return Net Retail Sales $' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d3d339b6-3895-4ad9-9079-2e90c1a72f5a
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Return Tax Sales $' =
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 86b56d9c-b77f-4113-9529-052cadfaeb1c
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Return Unit Sales' =
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: #,0
+		lineageTag: e90116f6-f437-4a37-9477-84f0f31ad44c
+
+		changedProperty = FormatString
+
+	measure 'Net Sales Units' = ```
+			[Gross Unit Sales] 
+			-
+			[Returns Units]
+			```
+		formatString: #,0
+		lineageTag: e961303c-79f6-459a-a527-905c904ffdae
+
+		changedProperty = FormatString
+
+	measure 'Returns Units' =
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: #,0
+		lineageTag: 8d0c3a03-528d-4d1c-a765-f9f0931e585f
+
+		changedProperty = FormatString
+
+	measure 'Net Retail Sales $' =
+			[Gross Retail Sales $]
+			-
+			[Retail Returns $]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: eee61652-b18a-48c1-8ba9-75a59a51bdc8
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Retail Returns $' = ```
+			CALCULATE(
+			    [Net Price (Sum)],  
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 55b48113-3461-4c17-989a-7f5b89c5e7d4
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Cost Sales $' =
+			[Gross Cost Sales $]
+			-
+			[Cost Returns $]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 7a32597c-c15e-4bea-b9c2-cd40005f7a7e
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure UPTs =
+			DIVIDE(
+			[Net Sales Units],
+			[Sales Transactions]
+			)
+		formatString: 0.0
+		lineageTag: c44a23e9-6336-4742-9948-9129b304edbe
+
+		changedProperty = FormatString
+
+	measure AOV =
+			CALCULATE(
+			    DIVIDE(
+			        [Net Retail Sales $]+[Net Retail Orders $],
+			        [Sales Transactions]
+			        ),
+			    'Transactions (Financial)'[Transaction Type]<>"SHIPMENT"
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 245610ba-9e5c-4a51-9d01-dc101802c5b3
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure AUR =
+			DIVIDE(
+			    [Net Retail Sales $]+[Demand Net Retail Sales $],
+			    [Net Sales Units]+[Demand Unit Sales]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f9021f72-f634-49e5-8703-2a3fec699175
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'DTC Full Price %' =
+			DIVIDE(
+			    CALCULATE([Net Retail Sales $],
+			    'Transactions (Financial)'[Mark Type]="FP"
+			    ),
+			    [Net Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8b97ad2b-29a2-4682-b5cc-ab86a8dcb7f6
+
+		changedProperty = FormatString
+
+	measure 'Markdown $ Retail' =
+			CALCULATE(
+			    [Total Price (Sum)]-[Net Price (Sum)],
+			    KEEPFILTERS('Channel'[Channel Geography]="Canada")
+			    )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5922de3a-f4ca-4158-9337-fe4d0be8665c
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost Returns $' = ```
+			CALCULATE(
+			    [Standard Cost (Sum)],  
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 6a227f18-ac21-4d51-825f-a3c9ce7da8de
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Returns Tax $' =
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c45f6fef-9f55-418d-80f6-8debab9f059f
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Retail Orders $' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d29d20c7-e409-4cc6-be16-3593cf128254
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Conversions =
+			DIVIDE(
+			    [Sales Transactions],
+			    [Traffic]
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 5a89ea4d-9246-41ba-bc87-b71c7dedd69b
+
+		changedProperty = FormatString
+
+	measure Traffic =
+			CALCULATE(
+			    SUM(
+			        'Traffic'[Visits]
+			    )
+			)
+		formatString: #,0
+		lineageTag: 78b7fcd8-405f-4556-ac36-94b356733173
+
+		changedProperty = FormatString
+
+	measure 'Sales Transactions' =
+			VAR ValidTransactionTypes = {"ORDER", "TAKE"}
+			RETURN
+			CALCULATE(
+			    DISTINCTCOUNT('Transactions (Financial)'[Transaction ID]),
+			    'Channel (DTC Original)'[Original Channel Name] = "DTC",
+			    'Transactions (Financial)'[Transaction Type] IN ValidTransactionTypes
+			    //KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1
+			)
+		formatString: #,0
+		lineageTag: fa2978a3-810f-4730-a408-5d5676b3d345
+
+		changedProperty = FormatString
+
+	measure 'DC Returns Retail (Digital Purchase)' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Channel (DTC Original)'[Original Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 098b94a2-9b45-4643-96f0-4755c5d47625
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Returns Retail (Digital Purchase)' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Channel (DTC Original)'[Original Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 553b2530-7033-4343-88c3-1ab6b0f5b887
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Returns Retail (Store Purchase)' =
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Channel (DTC Original)'[Original Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9dfc9590-26e9-45b7-a2cd-37d79d459e1b
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Transactions =
+			
+			CALCULATE(
+			    COUNTROWS(
+			        SUMMARIZE(
+			            'Transactions (Financial)',
+			            'Transactions (Financial)'[Transaction No],
+			            'Transactions (Financial)'[Store Id],
+			            'Transactions (Financial)'[Register Num],
+			            'Transactions (Financial)'[Transaction Date]
+			        )
+			    ),
+			    'Channel (DTC Original)'[Original Channel Name] = "DTC"
+			)
+		formatString: #,0
+		lineageTag: 7c74e978-f3d6-4db1-8561-2e6393504a9e
+
+		changedProperty = FormatString
+
+	measure 'Receipt Retail $ MSRP' = ```
+			CALCULATE(
+			    SUMX(
+			        'Inventory Movement', 
+			        'Inventory Movement'[Retail Price] * 'Inventory Movement'[Units]
+			    ),
+			    'Inventory Movement'[Movement Stage] = "RECEIPT",'Inventory Movement'[Movement Type]="PURCHASE ORDER"
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 34c36ba7-6387-4721-af9a-1ade474aa957
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Receipt Cost $' = ```
+			CALCULATE(
+			    SUMX(
+			        'Inventory Movement', 
+			        'Inventory Movement'[Standard Cost] * 'Inventory Movement'[Units]
+			    ),
+			    'Inventory Movement'[Movement Stage] = "RECEIPT",
+			    'Inventory Movement'[Movement Type]="PURCHASE ORDER"
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8df510fc-1726-46c1-a26b-16e9e47918d5
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'DTC IMU %' = DIVIDE(([Receipt Retail $ MSRP]-[Receipt Cost $]),[Receipt Retail $ MSRP])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 183f64e3-9224-4348-b7dd-7e0d8c10bfe4
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Retail Receipt $ Budget' = ```
+			
+			CALCULATE([Receipt $ Budget(sum)],
+			'Budget (Channel)'[Channel]="Digital",        
+			'Budget (Channel)'[Measure]="RETAIL_RECEIPTS_$"
+			 )
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7f9f5019-ae2e-4a07-9bda-d5b04f2298bf
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost Receipt $ Budget' = ```
+			
+			CALCULATE([Receipt $ Budget(sum)],
+			'Budget (Channel)'[Channel]="Digital",        
+			'Budget (Channel)'[Measure]="COST_RECEIPTS_$"
+			 )
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ec0265f7-733e-4ff3-993c-aa21a02fee4a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Receipt $ Budget(sum)' =
+			
+			if(
+			    SELECTEDVALUE('Currency Selector'[Currency Selection])="Local",
+			    SUM('Budget (Channel)'[Budget Value]),
+			    VAR AggregatedInCurrency=
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			            'Budget (Channel)',
+			            'Budget (Channel)'[Currency Key]
+			        ),
+			        "@NetPrice",calculate( sum('Budget (Channel)'[Budget Value])),
+			        "@Rate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],selectedvalue('Currency'[Conversion Type])),
+			        "@DefaultRate",LOOKUPVALUE('Currency'[Conversion Value],'Currency'[Currency Key],'Budget (Channel)'[Currency Key],'Currency'[Conversion Type],"BUDGET_TO_USD")
+			    )  //Creates a table summing dollars by date with the currently selected and default conversion rate for that date
+			    VAR Result=
+			    IF (
+			        HASONEVALUE ( 'Currency Selector'[Currency Selection] ),
+			        SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@Rate]
+			            ),
+			            SUMX (
+			            AggregatedInCurrency,
+			            [@NetPrice]*[@DefaultRate]
+			            )
+			    )
+			    RETURN
+			    Result
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: da8a5da9-2809-4f15-baa8-78ca01ef4f8e
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'DTC Shipped Units' = ```
+			
+			CALCULATE(
+			sum(InTransit[ShipUnits]),
+			InTransit[Channel]="DTC")
+			
+			```
+		formatString: #,0
+		lineageTag: 2db1c129-2737-463a-8c18-330f16426fd8
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'DTC Receipt Units' = ```
+			
+			CALCULATE(
+			sum(InTransit[ReceiptUnits]),
+			InTransit[Channel]="DTC")
+			
+			```
+		formatString: #,0
+		lineageTag: 475c9532-9d67-4822-aa60-34684a7181e4
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'DTC InTransit Units' = ```
+			
+			CALCULATE(
+			sum(InTransit[IntransitUnits]),
+			InTransit[Channel]="DTC")
+			
+			```
+		formatString: #,0
+		lineageTag: 5be2e3df-6826-44c7-ab29-b2c4493b8bf0
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 8b0b2500-f477-4a5d-8e36-1c0f4befc228
+		sourceLineageTag: Column1
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DTC Measures' = entity
+		mode: directLake
+		source
+			entityName: DTC Measures
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

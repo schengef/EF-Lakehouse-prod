@@ -1,0 +1,347 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "SnowflakeSource",
+            "query": "SELECT \ni.INVENTORY_MOVEMENT_KEY    as \"Inventory Movement Key\"\n,i.SEND_STORE_KEY            as \"Send Store Key\"\n,i.SEND_WAREHOUSE_KEY        as \"Send Warehouse Key\"\n,i.RECEIVE_STORE_KEY         as \"Receive Store Key\"\n,i.RECEIVE_WAREHOUSE_KEY     as \"Receive Warehouse Key\"\n,i.PRODUCT_KEY               as \"Product Key\"\n,i.MOVEMENT_DATE_KEY         as \"Movement Date Key\"\n,i.SEND_LOCATION             as \"Send Location\"\n,i.RECEIVE_LOCATION          as \"Receive Location\"\n,i.UPC                       as \"Upc\"\n,i.MOVEMENT_NO               as \"Movement No\"\n,i.MOVEMENT_DATE             as \"Movement Date\"\n,i.MOVEMENT_STAGE            as \"Movement Stage\"\n,i.MOVEMENT_TYPE             as \"Movement Type\"\n,i.UNITS                     as \"Units\"\n,i.MD5_CHECKSUM              as \"Md5 Checksum\"\n,i.MD5_NK                    as \"Md5 Nk\"\n,i.ETL_ROW_CREATED_TS        as \"Etl Row Created Ts\"\n,i.ETL_ROW_UPDATED_TS        as \"Etl Row Updated Ts\"\n,i.ETL_SOURCE_SYSTEM_CD      as \"Etl Source System Cd\"\n ,p.Retail_Price as               \"Retail Price\"\n ,p.Standard_Cost AS               \"Standard Cost\"\nFROM EDW_PROD.EDW_V.F_INVENTORY_MOVEMENT   i\nleft join EDW_PROD.EDW_V.D_PRODUCT p\non i.PRODUCT_KEY= p.PRODUCT_KEY\n",
+            "exportSettings": {
+              "type": "SnowflakeExportCopyCommand"
+            },
+            "datasetSettings": {
+              "type": "SnowflakeTable",
+              "typeProperties": {
+                "database": "EDW_PROD"
+              },
+              "version": "1.1",
+              "schema": [],
+              "externalReferences": {
+                "connection": "3d8a3261-8102-4569-9021-412ed801f489"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "applyVOrder": true,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Inventory Movement"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Sandbox_Lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "3a262c1c-04b0-aa97-4599-7da4eadbf17e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "e0b36ad0-b650-48b3-88e3-80a547d60ed6"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Inventory Movement Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Inventory Movement Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Send Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Send Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Send Warehouse Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Send Warehouse Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Receive Store Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Receive Store Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Receive Warehouse Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Receive Warehouse Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Product Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Product Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Movement Date Key",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Movement Date Key",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Send Location",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Send Location",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Receive Location",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Receive Location",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Upc",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Upc",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Movement No",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Movement No",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Movement Date",
+                  "type": "DateTimeOffset",
+                  "physicalType": "TIMESTAMP_TZ"
+                },
+                "sink": {
+                  "name": "Movement Date",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "Movement Stage",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Movement Stage",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Movement Type",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Movement Type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Units",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 0,
+                  "precision": 38
+                },
+                "sink": {
+                  "name": "Units",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "Md5 Checksum",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Md5 Checksum",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Md5 Nk",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Md5 Nk",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Etl Row Created Ts",
+                  "type": "DateTimeOffset",
+                  "physicalType": "TIMESTAMP_TZ"
+                },
+                "sink": {
+                  "name": "Etl Row Created Ts",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "Etl Row Updated Ts",
+                  "type": "DateTimeOffset",
+                  "physicalType": "TIMESTAMP_TZ"
+                },
+                "sink": {
+                  "name": "Etl Row Updated Ts",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "Etl Source System Cd",
+                  "type": "String",
+                  "physicalType": "VARCHAR"
+                },
+                "sink": {
+                  "name": "Etl Source System Cd",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Retail Price",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 2,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Retail Price",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 15
+                }
+              },
+              {
+                "source": {
+                  "name": "Standard Cost",
+                  "type": "Decimal",
+                  "physicalType": "NUMBER",
+                  "scale": 5,
+                  "precision": 15
+                },
+                "sink": {
+                  "name": "Standard Cost",
+                  "physicalType": "decimal",
+                  "scale": 5,
+                  "precision": 15
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Inventory Movement",
+        "dependsOn": []
+      }
+    ],
+    "concurrency": 10
+  }
+}

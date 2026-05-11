@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Transactions External POS"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "596e6029-a72e-afab-4a7f-f26f84ccc198"
+  }
+}
