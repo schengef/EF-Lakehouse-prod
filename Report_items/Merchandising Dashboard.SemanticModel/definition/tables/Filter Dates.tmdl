@@ -1,0 +1,43 @@
+table 'Filter Dates'
+	isHidden
+	lineageTag: a3fc829f-e3ca-4485-b9a2-fde5b3daf6af
+	sourceLineageTag: 4e3a9640-27df-44d7-8fbd-6d79bb0d1b26
+
+	measure 'Selected Date Range' = EXTERNALMEASURE("Selected Date Range", STRING, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		isHidden
+		lineageTag: 2a1f9954-37ee-4ba9-8569-3f03d331e4df
+		sourceLineageTag: 16426f21-11e0-4e45-8466-216b6a70a729
+		dataCategory: Uncategorized
+
+	column Date
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Short Date
+		lineageTag: 982ea7d5-145f-471d-9f02-0295f9cd1964
+		sourceLineageTag: ded117e9-b55a-4e9b-8cd4-0d70fd61c4a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Datekey
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 6720c435-7d42-4ecc-a4be-1437f3e9082f
+		sourceLineageTag: 84d5e9ed-3e11-4395-a724-3504d4ddf942
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Datekey
+
+		annotation SummarizationSetBy = User
+
+	partition 'Filter Dates' = entity
+		mode: directQuery
+		source
+			entityName: Filter Dates
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

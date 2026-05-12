@@ -1,0 +1,113 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "store.store_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Store",
+			          "ConceptualProperty": "Store Id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Return Store Id": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "original_store_dtc.store_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Original Store (DTC)",
+			          "ConceptualProperty": "Store Id"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "channel.finance_channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Channel",
+			          "ConceptualProperty": "Finance Channel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Return Channel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "original_channel_dtc.original_finance_channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Original Channel (DTC)",
+			          "ConceptualProperty": "Original Finance Channel"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "store_dtc_original.store_id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Store (DTC Original)",
+			          "ConceptualProperty": "Store Id"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Original Store Id": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "channel_dtc_original.original_finance_channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Channel (DTC Original)",
+			          "ConceptualProperty": "Original Finance Channel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Bought Channel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

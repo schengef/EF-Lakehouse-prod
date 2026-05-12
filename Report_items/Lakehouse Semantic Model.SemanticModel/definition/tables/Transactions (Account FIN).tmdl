@@ -1,0 +1,129 @@
+table 'Transactions (Account FIN)'
+	lineageTag: 3889391f-ee78-4e1f-9f29-01e27098f8a8
+	sourceLineageTag: 97725895-d3d0-4ffd-93b5-1e36d0c4053e
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 239529bb-0b24-4b4c-b56c-797c443adf86
+		sourceLineageTag: bf893651-4e91-4134-9240-9241ad94786e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 51a75f38-7295-4f65-aaa4-5fba46d5538d
+		sourceLineageTag: 123a6810-d39c-4e91-9ea9-d3448f1d22b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Number'
+		dataType: string
+		lineageTag: 05de605e-1e2b-4d16-9679-05191d1efb31
+		sourceLineageTag: f6f44016-1756-4396-a005-fbecc513c955
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b368664-5239-45bc-a48e-c38601815a1d
+		sourceLineageTag: 5aefdd53-cb7f-4b48-981a-c701d3e57a7f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column Dept
+		dataType: string
+		lineageTag: a0e23ee9-685a-4873-9053-448a92ba7b1e
+		sourceLineageTag: 03997708-bbdc-4ef2-b2e1-8b9a63965653
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dept
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5e768263-63ee-476c-892c-315c069afab6
+		sourceLineageTag: 1e4d7e50-771f-48c4-b2cd-c7bdf08f9002
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: a306812c-cef6-47fe-b72e-5b0fb0d2864e
+		sourceLineageTag: e7ff0219-93eb-44c0-aa08-689ec0fe0250
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Oh Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: ab244de4-c5c3-475c-9a88-44953ff6dd76
+		sourceLineageTag: c73e0f3b-dc80-4a7a-9117-fbfeff7a6f72
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Oh Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Md Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 8a6947f2-804c-4298-b028-8d521af17134
+		sourceLineageTag: e4b367bd-95f4-4020-818c-65833da26cd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Md Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Receipt Dollars'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: ded55519-c603-40f0-8f7c-cffa085da75d
+		sourceLineageTag: 4f138106-836a-4c6a-a9f6-d40a62b63246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Receipt Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: a0dacd26-b769-47ce-b663-17f9e47d62cc
+		sourceLineageTag: 64e6e91f-2b9e-4dbc-b72e-5d0d95b75ad9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (Account FIN)' = entity
+		mode: directQuery
+		source
+			entityName: Transactions (Account FIN)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

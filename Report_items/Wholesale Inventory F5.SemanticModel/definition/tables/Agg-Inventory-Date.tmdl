@@ -1,0 +1,182 @@
+table Agg-Inventory-Date
+	isHidden
+	lineageTag: 41305bdd-5bb5-4bef-a5c5-d1adb0ff8606
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: de2736c4-ef3d-4663-8a24-4cf9d366067c
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		alternateOf
+			baseColumn: Inventory.'Delivery Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cd404190-3b28-4b74-99c6-304f0c1adc17
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		alternateOf
+			baseColumn: Inventory.'Channel Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mark Type'
+		dataType: string
+		isHidden
+		lineageTag: 29a58615-833c-41f7-96b8-928ec5699f69
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		alternateOf
+			baseColumn: Inventory.'Mark Type'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost On Hand'
+		dataType: double
+		isHidden
+		lineageTag: 7e83b47e-3f35-40fa-9411-ed6ed050934c
+		summarizeBy: sum
+		sourceColumn: Cost On Hand
+
+		alternateOf
+			summarization: sum
+			baseColumn: Inventory.'Cost On Hand'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Retail On Hand'
+		dataType: double
+		isHidden
+		lineageTag: 4c3b8b53-9207-4c84-a45d-21e9ddc418b1
+		summarizeBy: sum
+		sourceColumn: Retail On Hand
+
+		alternateOf
+			summarization: sum
+			baseColumn: Inventory.'Retail On Hand'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 90271d8f-1564-4f0e-8fd8-cc8c422f6c9b
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		alternateOf
+			baseColumn: Inventory.'Start Date'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 822525cd-9101-4c66-a1ed-c53c076df0d4
+		summarizeBy: none
+		sourceColumn: End Date
+
+		alternateOf
+			baseColumn: Inventory.'End Date'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Units On Hand'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c1ad44bb-875c-428a-99eb-520977414927
+		summarizeBy: sum
+		sourceColumn: Units On Hand
+
+		alternateOf
+			summarization: sum
+			baseColumn: Inventory.'Units On Hand'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 982d3e9a-ae09-424c-a326-cc7d4aae5768
+		summarizeBy: sum
+		sourceColumn: Dtc Misc Flag
+
+		alternateOf
+			baseColumn: Inventory.'Dtc Misc Flag'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Agg-Inventory-Date = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.DELIVERY_KEY,T.CHANNEL_KEY,PC.MARK_TYPE,sum(T.UNITS_ON_HAND*P.STANDARD_COST) as COST_ON_HAND,sum(T.UNITS_ON_HAND*P.RETAIL_PRICE) as RETAIL_ON_HAND, cast(T.EFFECTIVE_START_DATE as DATE) AS START_DATE, cast(T.EFFECTIVE_END_DATE as DATE) AS END_DATE,sum(T.UNITS_ON_HAND) as UNITS_ON_HAND, CASE WHEN P.DEPARTMENT_CODE_MI9>89 THEN 1 END AS DTC_MISC_FLAG 
+				from EDW_V.F_INVENTORY_ON_HAND T
+				LEFT OUTER JOIN EDW_V.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				where T.EFFECTIVE_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				GROUP BY T.CHANNEL_KEY,START_DATE,END_DATE,PC.MARK_TYPE,T.DELIVERY_KEY,DTC_MISC_FLAG
+				
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{ {"Channel Key", Int32.Type}, {"Delivery Key", Int32.Type}, {"Units On Hand", Int32.Type},{"Dtc Misc Flag", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

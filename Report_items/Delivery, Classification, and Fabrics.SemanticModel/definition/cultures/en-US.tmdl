@@ -1,0 +1,2370 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "product_dashboard_measures.classification_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display TY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.classification_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display LY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.blank_column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Blank Column"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.classification__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display % vs LY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "headersdollars.metric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers-Detail",
+			          "ConceptualProperty": "Metric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "____________": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "headersdetail.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers-Detail",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.display_overall": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Overall"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.net_sales_units_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales Units TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Net Unit Sales TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sell_through__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sell Through % TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Sell Thru % Units": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Sell Through %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__to_total_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ % to Total TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% to Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sell_through__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sell Through % LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__to_total_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ % to Total LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_gross_margin__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Gross Margin % TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_gross_margin__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Gross Margin % LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__aur_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ AUR TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__aur_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ AUR LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.on_hand_aur__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "On Hand AUR $ TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.on_hand_aur__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "On Hand AUR $ LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.cost_oh__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Cost OH $ TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.cost_oh__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Cost OH $ LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.cost_oh__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Cost OH $ % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_fp__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales FP % TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_fp__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales FP % LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.weeks_on_hand_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Weeks On Hand TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.weeks_on_hand_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Weeks On Hand LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.retail_oh__to_total_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Retail OH % to Total TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.retail_oh__to_total_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Retail OH % to Total LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.retail_returns_units_product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Retail Returns Units Product"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.retail_returns__product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Retail Returns $ Product"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "headersperiod.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers-Period",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__ly_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ LY Delivery"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales $ LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__vs_ly_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ % vs LY Delivery"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales $ % vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__to_total_ty_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales $ % to Total TY Delivery"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% to Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_net_sales_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Net Sales TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_net_sales_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Net Sales LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_net_sales__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Net Sales % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_oh_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display OH TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_oh_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display OH LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_oh__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display OH % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units__to_total_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units % to Total TY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.net_sales_units_ly_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units LY Delivery"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Sales Units LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units__vs_ly_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units % vs LY Delivery"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units__to_total_ty_delivery": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units % to Total TY Delivery"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.net_sales__to_class_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales % to Class TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% to Total": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "% to Class": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.cost_oh__to_total_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Cost OH % to Total TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.receipts__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Shipments $ TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales__to_class_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales % to Class LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.cost_oh__to_total_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Cost OH % to Total LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.receipts__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Shipments $ LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.units_oh_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Units OH TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.units_oh_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Units OH LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.units_oh__vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Units OH % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "ranking.rank": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Ranking",
+			          "ConceptualProperty": "Rank"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank TY-Color"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.rank_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank LY-Color"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.sales_by_rank_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sales_by_rank_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sales_by_rank__vs_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank % vs LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.st_by_rank_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "ST% by Rank TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.st_by_rank_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "ST% by Rank LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_sales__to_total_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net Sales % to Total TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_sales__to_total_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net Sales % to Total LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_retail_oh__to_total_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Retail OH % to Total TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_retail_oh__to_total_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Retail OH % to Total LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_gm_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net GM TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_gm_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net GM LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_fp_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank FP% TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_fp_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank FP% LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_weeks_oh_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Weeks OH LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_weeks_oh_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Weeks OH TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_sales_aur_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Sales AUR TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_sales_aur_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Sales AUR LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_oh_aur_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank OH AUR TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_oh_aur_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank OH AUR LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_cost_oh_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_cost_oh_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_cost_oh__vs_lycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH % vs LY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sales_by_rank_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.st_by_rank_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "ST% by Rank TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_sales__to_total_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net Sales % to Total TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_retail_oh__to_total_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Retail OH % to Total TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_gm_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net GM TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_sales_aur_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Sales AUR TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_oh_aur_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank OH AUR TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_display_oh_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_weeks_oh_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Weeks OH TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_fp_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank FP% TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sales_by_rank_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.st_by_rank_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "ST% by Rank LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_sales__to_total_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net Sales % to Total LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_retail_oh__to_total_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Retail OH % to Total LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_net_gm_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Net GM LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_sales_aur_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Sales AUR LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_oh_aur_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank OH AUR LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_display_oh_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_weeks_oh_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Weeks OH LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_fp_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank FP% LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_display_oh__vs_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Display OH % vs LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.sales_by_rank__vs_lyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Sales by Rank % vs LY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.net_sales_units__to_class_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Net Sales Units % to Class TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% to Class": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "headersclassification.column1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers-Classification",
+			          "ConceptualProperty": "Column1"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "headerstotal.total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers-Total",
+			          "ConceptualProperty": "Total"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "product_dashboard_measures.receipts_units_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Shipments Units TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.receipts_units_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Shipments Units LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_receipts_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Shipments TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.display_receipts_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Display Shipments LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_receipts_tycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Shipments TY-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_receipts_ly_deliverycolor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Shipments LY Delivery-Color"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_receipts_tyfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Shipments TY-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_dashboard_measures.rank_receipts_ly_deliveryfabric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product Dashboard Measures",
+			          "ConceptualProperty": "Rank Shipments LY Delivery-Fabric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

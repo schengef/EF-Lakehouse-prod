@@ -1,0 +1,23 @@
+table 'Account Group Join'
+	isHidden
+	lineageTag: 81a9986e-5186-4eca-b17b-78ee23786455
+	sourceLineageTag: 1865e004-bdc6-4021-86ae-6b33ad451c21
+
+	column 'Account Group'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: dfc1e78a-2b9e-4352-9f3b-14b1d28bf2aa
+		sourceLineageTag: 7f5ce836-a09f-4b99-ad21-58492f7587eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		annotation SummarizationSetBy = User
+
+	partition 'Account Group Join' = entity
+		mode: directQuery
+		source
+			entityName: Account Group Join
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

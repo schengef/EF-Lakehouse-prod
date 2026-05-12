@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - Delivery, Classification, and Fabrics' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Executive%20Dashboard", "Delivery, Classification, and Fabrics"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 64042349-6181-4b3d-ac0b-34aad240dcdb
+
+	annotation PBI_IncludeFutureArtifacts = True
+

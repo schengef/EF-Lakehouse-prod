@@ -1,0 +1,44 @@
+table 'Filter Dates'
+	lineageTag: 210314e6-836c-49d7-a481-24876ac601dc
+	dataCategory: Time
+
+	measure 'Selected Date Range' = ```
+			
+			    MIN('Filter Dates'[Date]) &
+			    " - " &
+			    MAX('Filter Dates'[Date])
+			```
+		isHidden
+		lineageTag: e39cd96a-9762-4d0e-8474-6d27fafc86ad
+
+	column Date
+		isHidden
+		isKey
+		formatString: General Date
+		lineageTag: 92b435eb-3e68-49e3-a564-36d59dffdab3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey = YEAR('Filter Dates'[Date])*10000+MONTH('Filter Dates'[Date])*100+DAY('Filter Dates'[Date])
+		isHidden
+		formatString: 0
+		lineageTag: 107f6dc9-4aad-48de-9000-2d8356ffccfc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Filter Dates' = calculated
+		mode: import
+		source = ```
+				
+				    CALENDAR(
+				    DATE(YEAR(today())-3,1,1),
+				    today() - WEEKDAY(today(), 1) +7
+				    )
+				```
+
+	annotation PBI_Id = a55ba1e7d2394334a658abefb0480cdd
+

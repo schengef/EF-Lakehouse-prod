@@ -1,0 +1,41 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Lakehouse Semantic Model","Headers-Detail","Product Dashboard Measures","Headers-Period","Headers-Units/Dollars","Headers-Classification","Headers-Total"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table Headers-Detail
+ref table Ranking
+ref table 'Product Dashboard Measures'
+ref table Headers-Period
+ref table Headers-Units/Dollars
+ref table Headers-Classification
+ref table Headers-Total
+ref table 'Product (Current)'
+ref table 'Transactions (Financial)'
+ref table Channel
+ref table Accounts
+ref table Delivery
+ref table 'Currency Selector'
+ref table Currency
+ref table Date
+ref table Inventory
+ref table 'Transactions (External POS)'
+ref table 'Filter Dates'
+ref table 'Total Company Measures'
+ref table 'Wholesale Measures'
+ref table 'Inventory Measures'
+ref table 'DTC Measures'
+
+ref cultureInfo en-US
+

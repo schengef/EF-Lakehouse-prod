@@ -1,0 +1,44 @@
+table 'Account Group Join'
+	isHidden
+	lineageTag: 84801830-1bb1-4150-a5eb-c9d34e01b60d
+
+	column 'Account Group'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 987fbaae-7fa6-4a35-8b96-7de75939da43
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Account Group Join' = m
+		mode: dual
+		queryGroup: 'Join Tables'
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com", SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_" & Environment, Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				    SELECT S.ACCOUNT_GROUP,
+				    FROM EDW_PROD.EDW_V.D_STORE S
+				    GROUP BY S.ACCOUNT_GROUP
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery, each Text.Replace(_, "_", " ")),
+				    #"Renamed Columns" = Table.TransformColumnNames(#"Remove Underscores", each Text.Proper(_)),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each [Account Group] <> null and [Account Group] <> "")
+				in
+				    #"Filtered Rows"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,50 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Lakehouse Semantic Model","Table"]
+
+ref table Table
+ref table Product
+ref table 'Product (Current)'
+ref table 'Transactions (Financial)'
+ref table 'Plan (Wholesale Retail)'
+ref table 'Forecast (DTC Store)'
+ref table 'Forecast (Channel)'
+ref table 'Budget (DTC Store)'
+ref table 'Budget (Inventory)'
+ref table 'Budget (Channel)'
+ref table 'Transactions (Account FIN)'
+ref table 'Transactions (Account POS)'
+ref table 'Transactions (Account MIX)'
+ref table Channel
+ref table Store
+ref table Accounts
+ref table Delivery
+ref table 'Currency Selector'
+ref table 'Order Type Join'
+ref table 'Order Categorization'
+ref table Currency
+ref table Date
+ref table Inventory
+ref table 'Transactions (External POS)'
+ref table 'Channel (DTC Original)'
+ref table 'Channel (DTC Allocated)'
+ref table 'Filter Dates'
+ref table 'Budget and Forecast Measures'
+ref table 'Total Company Measures'
+ref table 'Wholesale Measures'
+ref table 'Inventory Measures'
+ref table 'DTC Measures'
+ref table 'Business Domain'
+ref table 'Business Domain Process'
+ref table Dependency
+
+ref cultureInfo en-US
+

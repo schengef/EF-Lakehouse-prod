@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "2443d1137e744eb4b12d",
+  "position": {
+    "x": 0,
+    "y": 238,
+    "z": 1000,
+    "height": 110,
+    "width": 698,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product (Current)"
+                    }
+                  },
+                  "Property": "Style Number"
+                }
+              },
+              "queryRef": "Product (Current).Style Number",
+              "nativeQueryRef": "Style Number"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Delivery"
+                    }
+                  },
+                  "Property": "Delivery Code"
+                }
+              },
+              "queryRef": "Delivery.Delivery Code",
+              "nativeQueryRef": "Delivery Code"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Retail Sales Units"
+                }
+              },
+              "queryRef": "Total Company Measures.External Retail Sales Units",
+              "nativeQueryRef": "External Retail Sales Units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inventory Measures"
+                    }
+                  },
+                  "Property": "External Quantity On Hand"
+                }
+              },
+              "queryRef": "Inventory Measures.External Quantity On Hand",
+              "nativeQueryRef": "External Quantity On Hand"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Sell Through %"
+                }
+              },
+              "queryRef": "Total Company Measures.External Sell Through %",
+              "nativeQueryRef": "External Sell Through %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c077e5429c3bfc9d8b02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product (Current)"
+              }
+            },
+            "Property": "Style Number"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "16bb8002117998b71d36",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Delivery"
+              }
+            },
+            "Property": "Delivery Code"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a3095237f79c2c04fbd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Total Company Measures"
+              }
+            },
+            "Property": "External Retail Sales Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "410fe7484013356e93c2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Total Company Measures"
+              }
+            },
+            "Property": "External Sell Through %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5b67830a092c331f779d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Inventory Measures"
+              }
+            },
+            "Property": "External Quantity On Hand"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

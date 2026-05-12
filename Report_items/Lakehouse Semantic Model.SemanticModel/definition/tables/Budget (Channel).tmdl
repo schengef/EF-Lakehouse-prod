@@ -1,0 +1,97 @@
+table 'Budget (Channel)'
+	lineageTag: dfe55692-8160-46de-8ed3-81fca5c96118
+	sourceLineageTag: 5d7f4fa9-6d13-4e08-a00a-6527fd15e290
+
+	column Channel
+		dataType: string
+		isHidden
+		lineageTag: 3c177bb5-9ed1-429c-916a-22cc8b083389
+		sourceLineageTag: 2fcad240-6bbf-46a2-acca-7a0c0c3bf7d9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a2e4f9e8-27cb-429d-8bc1-5829ca1748e9
+		sourceLineageTag: 4e33e9bc-d657-49a5-ba10-92df718f951c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Type'
+		dataType: string
+		lineageTag: a43a249d-2870-4429-b504-90a2af4bf6b8
+		sourceLineageTag: dbb9cb67-c059-491e-9d1d-d40d75d3af42
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: da4702fd-9e2b-4def-ab25-c910311bc3bd
+		sourceLineageTag: d0769960-5649-42d6-afa8-7eb4a6e3f89c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: bd4c7748-a8f1-4fd9-8f72-f7143b88077d
+		sourceLineageTag: 05b6d86a-3425-45a3-ae60-7f73880391c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e6bc701b-8759-40b8-a731-0a2d9e8a92c6
+		sourceLineageTag: 605f222e-9955-4455-b988-b9264a0db368
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: bea7c541-e30e-41ae-a8fe-ed3e52db3e13
+		sourceLineageTag: 81ffd869-518e-49e2-a693-479f9e8e6ea3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Budget Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Dashboard Order Type'
+		dataType: string
+		lineageTag: 7fb78729-755c-4008-ac7a-984b1a000770
+		sourceLineageTag: d2ff9d05-1015-45ab-bbe3-d2cbd973b71d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dashboard Order Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget (Channel)' = entity
+		mode: directQuery
+		source
+			entityName: Budget (Channel)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

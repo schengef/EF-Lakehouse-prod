@@ -1,0 +1,44 @@
+table 'Currency Selector'
+	lineageTag: d092fa98-e5e0-45b0-9391-c4b9c4afce5d
+	sourceLineageTag: 9293caa3-d312-4cc1-a046-58add0769013
+
+	column 'Currency Selection'
+		dataType: string
+		lineageTag: 7f7f7076-f00a-42a7-a2c3-38850f8cb824
+		sourceLineageTag: 9e7f2798-ec4b-4999-85f3-eddf8167f2f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Selection
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column Sort
+		dataType: string
+		isHidden
+		lineageTag: f47ce406-4d43-4a68-bb88-dd1519425438
+		sourceLineageTag: 0d6577aa-3e99-4cf6-a00a-005fa4af29f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: c3d94763-3774-47cd-8d98-06edcce0b880
+		sourceLineageTag: 7b1497fa-368f-4c10-a446-7e8ec9f8de8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Currency Selector' = entity
+		mode: directQuery
+		source
+			entityName: Currency Selector
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

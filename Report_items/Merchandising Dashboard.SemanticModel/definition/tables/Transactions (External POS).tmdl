@@ -1,0 +1,200 @@
+table 'Transactions (External POS)'
+	lineageTag: 250dc17e-e0d3-455b-a95e-304ed75a6e6b
+	sourceLineageTag: 922197b4-a67f-440c-9424-5311d1a67b75
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b7bc9235-59f1-40aa-83ef-41a2a9d2e9a8
+		sourceLineageTag: a9880d67-afa4-4d26-af47-d5e099ccee44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2a22ca07-1b2d-46d1-b5ef-d794ff9efe81
+		sourceLineageTag: 680371a5-965e-4b13-a048-7c8c516cf4b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: de08e5b6-30ff-45a3-bca2-9a57bbeddf1c
+		sourceLineageTag: 2fa42805-2799-48e1-b872-f56318560603
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Units'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: cf553772-d2f6-4d67-9e6a-8f792381889c
+		sourceLineageTag: 5453d713-abcd-4fad-96be-451c160ff5e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Dollars'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 9eea475e-7194-4558-8e7d-cf06615987e7
+		sourceLineageTag: 313b1150-bead-440e-a0d6-5031f3a95166
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Oh Units'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: f0861843-7525-409b-b7c7-03750eb88394
+		sourceLineageTag: e05d9c67-48f3-4cc5-899b-4ca02b3feb3f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Oh Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 386f6689-1b00-43a6-ba5f-f5100933071c
+		sourceLineageTag: 5cf653a8-01c9-4039-a6e4-3c9f04b8349b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d18a7e02-5a7e-4ab2-bb2e-bb5fc5045f42
+		sourceLineageTag: 2cdb0e3b-1dc5-4aed-814c-b8bf5f0c3484
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 019371df-03bb-4fd3-9154-ce2f89a4119b
+		sourceLineageTag: 07004758-e73e-445a-b2c4-9e03ea22fba5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 79d196bd-df64-4b67-9349-172282d103f5
+		sourceLineageTag: aa523c9b-ebc1-4352-ab7e-672628fb2ca5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark Type'
+		dataType: string
+		lineageTag: f29ea75a-810f-49d9-8021-fd491127503d
+		sourceLineageTag: 8d75c310-c2b9-480a-bc51-d7361b2cddec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Based Unit Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 02ddd725-aa6c-4bfd-867b-2b5a8717468a
+		sourceLineageTag: 6e350b85-f67c-46e6-b25f-9b49d8e85df0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Based Unit Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'On Hand Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c9044c27-ef13-4d93-a180-52cfd0903ae5
+		sourceLineageTag: 48ee04f9-c0d2-46a2-a23f-4a8f6b9c4829
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: On Hand Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Cost'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 6d86a08f-9701-4a65-bf0e-1cedfe364478
+		sourceLineageTag: 74dedd7a-aa9e-4176-a101-70b466410870
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'On Hand Retail'
+		dataType: double
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e5f8ec9c-1512-436c-94ce-b3812f1b8e3a
+		sourceLineageTag: 19a9fac0-f49b-48e6-a333-f26ab68b57f9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: On Hand Retail
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ae68b8d0-6ebb-4edf-8b71-4433b2047ef6
+		sourceLineageTag: 2460300b-dab6-4b4a-84c0-4fb3770be1b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Transactions (External POS)' = entity
+		mode: directQuery
+		source
+			entityName: Transactions (External POS)
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

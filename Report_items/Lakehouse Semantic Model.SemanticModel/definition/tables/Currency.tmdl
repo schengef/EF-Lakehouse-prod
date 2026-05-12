@@ -1,0 +1,69 @@
+table Currency
+	isHidden
+	lineageTag: db0e1c98-2e3e-4f8e-aa2c-629b4df07d76
+	sourceLineageTag: efdc3aab-1584-42e7-b049-c3d1c129c131
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5e3bc767-e06d-46ce-9bb9-ef9b27a0bbb3
+		sourceLineageTag: 8edf6b47-be4e-40a4-b790-2a46f5bb72e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 09d3c626-911d-4d5c-a343-f6380c67da54
+		sourceLineageTag: 79dc6f76-8266-47d5-8f32-b8f17d7423b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Date Key
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		isHidden
+		lineageTag: f9a1d11e-c991-4176-a667-d708f7e2ece6
+		sourceLineageTag: 98042701-e9b9-4dec-95ce-6c5f4ad2518a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		lineageTag: 0d3f6d73-55ed-4b98-9d3a-aa644e0b3bb5
+		sourceLineageTag: 7db28516-b655-4961-9ec4-84335de5b62a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 1749be93-0ecd-4edb-b85f-01384684ea6b
+		sourceLineageTag: 2f4c86af-ca76-47e1-b1c0-2a310c1188f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Value
+
+		annotation SummarizationSetBy = User
+
+	partition Currency = entity
+		mode: directQuery
+		source
+			entityName: Currency
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,44 @@
+table 'Currency Selector'
+	lineageTag: 5340860a-14bf-498e-9116-7da91ec535a5
+	sourceLineageTag: a0149850-a8fe-4cea-aa9d-62508673ec2a
+
+	column 'Currency Selection'
+		dataType: string
+		lineageTag: 427aef3d-24aa-4d7b-b334-fd3257b2e492
+		sourceLineageTag: 3dd559b4-942d-4a4b-9e1a-93794dd75f32
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Selection
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column Sort
+		dataType: string
+		isHidden
+		lineageTag: eb0c7eeb-ace0-43b4-ad44-112cc04523e8
+		sourceLineageTag: 6badfcbc-8749-4d34-8afa-9f045b515048
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 2568c6fe-b60d-496e-807a-7793926c4485
+		sourceLineageTag: 3c31afd7-c889-4b69-b247-3db82f6a8961
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Currency Selector' = entity
+		mode: directQuery
+		source
+			entityName: Currency Selector
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

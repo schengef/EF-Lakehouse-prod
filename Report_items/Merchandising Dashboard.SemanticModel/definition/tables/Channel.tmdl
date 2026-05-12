@@ -1,0 +1,110 @@
+table Channel
+	lineageTag: 2d06c55f-416c-46fc-9dd5-df7989766f71
+	sourceLineageTag: 75c9d5ea-1d9a-4524-99b7-0df20eda63a9
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 30a5651b-9798-4e88-b5cc-f4afc017537b
+		sourceLineageTag: 892a497a-0bb2-43b2-8e2c-6bf409af163f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Name'
+		dataType: string
+		lineageTag: e2e3dc93-640a-447e-a84b-f3fd2f1904cb
+		sourceLineageTag: 7a5e6919-b16c-4334-99c2-49c45c49fefe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Sub Channel Name'
+		dataType: string
+		lineageTag: bf681ef3-d5bc-43ff-92ab-d6efb6f91750
+		sourceLineageTag: ddab101f-762c-4831-a23d-611575aa1a8b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sub Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Format'
+		dataType: string
+		lineageTag: 7e8cba36-b192-4cff-a349-a67d7bf9930d
+		sourceLineageTag: 297a494b-fb7a-4fad-921b-c2cbb1d3707c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Format
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Geography'
+		dataType: string
+		lineageTag: 837e4df3-02d8-4e14-848c-62ab83bafe10
+		sourceLineageTag: eb29d648-404b-48f1-baf5-376445533e1e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Geography
+
+		annotation SummarizationSetBy = User
+
+	column Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7aa83863-3cfd-412c-ba14-ada8cd8696a9
+		sourceLineageTag: 361adcbe-75c2-4cd7-ac57-a0002f43ae64
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel (Product Dashboard) Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0efb65cd-a7ed-4817-a3ea-e2e24b82ae25
+		sourceLineageTag: bc30d060-8f37-46ec-bba0-533a8fff7de9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Channel (Product Dashboard) Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel'
+		dataType: string
+		lineageTag: 4f062eaa-a73d-4203-8b6c-4372813f0229
+		sourceLineageTag: 27ae8f6e-b242-481d-b537-0c18ac093d73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Channel
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel (Product Dashboard)'
+		dataType: string
+		isHidden
+		lineageTag: 28f308d5-ef12-42a2-870d-fd7962dc3ee4
+		sourceLineageTag: 2f69b6af-ead0-442e-a693-0d3bff0e47a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Channel (Product Dashboard)
+		sortByColumn: 'Finance Channel (Product Dashboard) Sort'
+
+		annotation SummarizationSetBy = User
+
+	partition Channel = entity
+		mode: directQuery
+		source
+			entityName: Channel
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

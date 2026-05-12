@@ -1,0 +1,231 @@
+table 'Wholesale Measures'
+	lineageTag: 82cdaa4b-e748-40c2-999e-2abdd714e443
+	sourceLineageTag: e6b639a8-98c7-49ee-9f8f-1b2a372d5b99
+
+	measure 'Gross Return (RTV) $' = EXTERNALMEASURE("Gross Return (RTV) $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1439f744-792f-40c0-923f-3bb0d2c2c4bc
+		sourceLineageTag: ea521aaa-75ee-4904-ab14-58a2260f8204
+		dataCategory: Uncategorized
+
+	measure 'Upfront Discount on Sales $' = EXTERNALMEASURE("Upfront Discount on Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 44a60612-5008-4089-b652-475806a03d7b
+		sourceLineageTag: 9b96fd18-c365-4874-a410-101246699c15
+		dataCategory: Uncategorized
+
+	measure 'Upfront Discount on Return $' = EXTERNALMEASURE("Upfront Discount on Return $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5ab4abb9-4167-427d-9dcd-fef566b6ba5b
+		sourceLineageTag: 0cedfc31-2c54-4bfc-a511-83a29a20123f
+		dataCategory: Uncategorized
+
+	measure 'Net Invoiced Sales $' = EXTERNALMEASURE("Net Invoiced Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c4d348d4-43bd-4b06-a8ec-3255970525cb
+		sourceLineageTag: dfe96542-ed4a-42a0-83aa-7aeb1ef5a3d7
+		dataCategory: Uncategorized
+
+	measure 'Total Standard Cost $' = EXTERNALMEASURE("Total Standard Cost $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 63170cb5-3650-44bf-ae03-b01ea6f752b3
+		sourceLineageTag: 41316201-1590-4f6c-9d02-304e185ba42d
+		dataCategory: Uncategorized
+
+	measure 'Total Standard Cost $ of Returns' = EXTERNALMEASURE("Total Standard Cost $ of Returns", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 28552079-a7d4-409d-849e-afc547d4716c
+		sourceLineageTag: c1df090d-1772-4b2b-95da-26e01ceff2eb
+		dataCategory: Uncategorized
+
+	measure 'Net COGS $' = EXTERNALMEASURE("Net COGS $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ce05d577-6a55-47f1-ae28-3cba46152009
+		sourceLineageTag: 113c3306-793a-40b3-ba01-0761427b62e4
+		dataCategory: Uncategorized
+
+	measure 'IMU %' = EXTERNALMEASURE("IMU %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 870587ea-8221-49d5-a4c4-d5765ab93b7d
+		sourceLineageTag: 9e239b6e-28c1-408b-b79a-25bec0ff3cf9
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Margin $' = EXTERNALMEASURE("Invoiced Margin $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ec584d2d-1e11-4253-8b9c-f2bdcd54c630
+		sourceLineageTag: d27e6f63-b936-44be-ae2b-4edc73690fbb
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Margin %' = EXTERNALMEASURE("Invoiced Margin %", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 24154aed-ca16-438c-a475-5852dddf91b7
+		sourceLineageTag: 9bef7e72-0558-4d4d-8e2f-9c44866d1c19
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Order Qty' = EXTERNALMEASURE("Wholesale Order Qty", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: cfcf4fbf-b715-4c3b-80f2-1fdbd6e0435e
+		sourceLineageTag: 60e08074-2c7f-4e75-88ec-a06d4779a1ca
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Full Price % (Internal)' = EXTERNALMEASURE("Wholesale Full Price % (Internal)", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ece7647a-846c-4a0e-a6e0-b5570a73a8d0
+		sourceLineageTag: 3de3c33f-66f2-4586-a87a-d24c9aa78ae5
+		dataCategory: Uncategorized
+
+	measure 'Net Return (RTV) $' = EXTERNALMEASURE("Net Return (RTV) $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e3ad1da2-a3f5-4b70-9943-e0d7ed2fc008
+		sourceLineageTag: 63221759-1685-430e-81e1-006b2fdc21e1
+		dataCategory: Uncategorized
+
+	measure '% External Sales $ FIN' = EXTERNALMEASURE("% External Sales $ FIN", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 4e70ebda-904d-47a2-a996-01d77516c9a6
+		sourceLineageTag: 11fecd0d-5c22-4264-b7be-679e1ad7344c
+		dataCategory: Uncategorized
+
+	measure '% External Sales Units POS' = EXTERNALMEASURE("% External Sales Units POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3786891f-9dc2-44d0-961d-93a8e0b768ba
+		sourceLineageTag: e5b17a29-bf1c-4d47-9b14-2116e852ab70
+		dataCategory: Uncategorized
+
+	measure 'AUR External Sales $ POS' = EXTERNALMEASURE("AUR External Sales $ POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8e641115-4ecf-423a-a250-94a22343d824
+		sourceLineageTag: d6715cdd-98b3-4814-a645-ecad9002d88b
+		dataCategory: Uncategorized
+
+	measure 'AUR External Stock POS' = EXTERNALMEASURE("AUR External Stock POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 994c3450-6756-4c08-9ed1-790c49591ce6
+		sourceLineageTag: 57b3059f-c072-489b-8dc8-0d4e50e84789
+		dataCategory: Uncategorized
+
+	measure 'EOP External Units On Hand POS' = EXTERNALMEASURE("EOP External Units On Hand POS", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 5ec5e259-ecaf-419a-ab07-4d61f6ad0a4b
+		sourceLineageTag: 801f73c8-c1fb-42d7-bd14-946a90b62f16
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales Units POS' = EXTERNALMEASURE("Net External Retail Sales Units POS", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 6215322d-6b28-4af2-92d6-4a40f99ed4f5
+		sourceLineageTag: 9794b6d5-fe77-407f-a36f-10d9a236a2ab
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales $ FIN' = EXTERNALMEASURE("Total Net External Retail Sales $ FIN", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 1bb7fd23-8158-42e1-bf63-b5683212ba05
+		sourceLineageTag: 415549e4-ef9c-4c17-8219-3e82d2419953
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales Units POS' = EXTERNALMEASURE("Total Net External Retail Sales Units POS", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 1c67dd36-ee7a-43ba-9916-3ee10e7154ca
+		sourceLineageTag: 18412fda-42c5-4913-90e7-bc0e509dbafc
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Full Price % (External) POS' = EXTERNALMEASURE("Wholesale Full Price % (External) POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f6eed000-8aed-499a-a2fe-86282aa93718
+		sourceLineageTag: 2aea7a59-a728-4352-8366-b679f4e56c86
+		dataCategory: Uncategorized
+
+	measure 'EOP External $ On Hand POS' = EXTERNALMEASURE("EOP External $ On Hand POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 95d8eb2e-89c6-4bbe-bf7f-5c627d9b7d90
+		sourceLineageTag: 23b05a81-115f-4c27-86c2-96cdd1796dcb
+		dataCategory: Uncategorized
+
+	measure '% External Sales $ MIX' = EXTERNALMEASURE("% External Sales $ MIX", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2f2e7bf0-c0d1-4946-9de3-d4caee17b0bb
+		sourceLineageTag: 24feed14-316c-4f71-b373-7be559a31796
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales $ MIX' = EXTERNALMEASURE("Total Net External Retail Sales $ MIX", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 47e956fa-e83a-44ec-a0e2-6dbbbfda5192
+		sourceLineageTag: d52eee59-10d6-440a-87ae-7b6334f4471b
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Shipments $' = EXTERNALMEASURE("Wholesale Shipments $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d384ea43-9f3e-4fe3-a1c6-ee29e7105e33
+		sourceLineageTag: 430d122f-535f-4a69-8f60-ef3affb2fcbe
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Shipments Units' = EXTERNALMEASURE("Wholesale Shipments Units", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 608e134e-e039-4725-a1b9-a82fc14c2f2e
+		sourceLineageTag: 6b78309f-cc56-4464-b6ef-87149e86c7ec
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales $' = EXTERNALMEASURE("Gross Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8dcf5121-c364-49fb-b00b-99d2e5abf3ce
+		sourceLineageTag: 98e01a44-aae0-4e32-910a-a6813df05316
+		dataCategory: Uncategorized
+
+	measure 'Net Units' = EXTERNALMEASURE("Net Units", INTEGER, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: #,0
+		lineageTag: 149c849f-5efa-485c-8ef4-ba56a826b5b9
+		sourceLineageTag: 6ec180ac-eca3-4a55-bcee-c4cd3f6444a7
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $' = EXTERNALMEASURE("Net Sales $", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 70e4a125-1216-4070-bc5b-ae9d1e2fb9e7
+		sourceLineageTag: 8ff63405-6011-43ea-924c-4d3a0f8178a0
+		dataCategory: Uncategorized
+
+	measure 'EOP External $ On Hand FIN' = EXTERNALMEASURE("EOP External $ On Hand FIN", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 921381aa-6686-4a41-a235-6e329eba8307
+		sourceLineageTag: 3a63b61b-5160-4272-aadb-0922b3d61241
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ FIN' = EXTERNALMEASURE("Net External Retail Sales $ FIN", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0d420807-4887-4e9f-9d83-df9d4ef7ccfc
+		sourceLineageTag: 712b27ea-fe05-40d7-b96d-6251bf9025e1
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ POS' = EXTERNALMEASURE("Net External Retail Sales $ POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5b5c9ebb-0cd4-4fa0-bc74-5f3b1cdf3403
+		sourceLineageTag: 8ea8c6d5-5974-463b-a655-87be6bb74377
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ MIX' = EXTERNALMEASURE("Net External Retail Sales $ MIX", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ceb1afa1-faee-4ffa-ba36-581e8d3a51d1
+		sourceLineageTag: 36bf9948-1a49-4c06-91e2-4321c9696e61
+		dataCategory: Uncategorized
+
+	measure 'External $ On Hand POS' = EXTERNALMEASURE("External $ On Hand POS", DOUBLE, "DirectQuery to AS - Lakehouse Semantic Model")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 57865bd9-379b-4bb7-98c6-0b228cc9aa48
+		sourceLineageTag: 3d90a4a6-f3bc-4168-a21a-0b4958642853
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 7da5624d-916c-4c27-8593-5f09c8e9ffdf
+		sourceLineageTag: ea7f6ee4-1136-4632-9f1f-c70a6f782f5f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'Wholesale Measures' = entity
+		mode: directQuery
+		source
+			entityName: Wholesale Measures
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

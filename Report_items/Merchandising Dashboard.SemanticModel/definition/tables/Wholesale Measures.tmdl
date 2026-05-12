@@ -1,0 +1,231 @@
+table 'Wholesale Measures'
+	lineageTag: c0c9ce6f-ad58-439e-bf50-a6bf01e07420
+	sourceLineageTag: 1311a7b5-f743-4b22-ab2e-83ea1e7d11de
+
+	measure 'Gross Return (RTV) $' = EXTERNALMEASURE("Gross Return (RTV) $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a369fe58-e439-473a-9ea2-eff234ac8fe5
+		sourceLineageTag: f97c4b81-a206-4be4-9baf-20fa5bc69058
+		dataCategory: Uncategorized
+
+	measure 'Upfront Discount on Sales $' = EXTERNALMEASURE("Upfront Discount on Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 89570864-b10e-4d8a-a1ba-2f3de67e030d
+		sourceLineageTag: 4a8d030d-bdfc-4de3-97b6-a67640cef678
+		dataCategory: Uncategorized
+
+	measure 'Upfront Discount on Return $' = EXTERNALMEASURE("Upfront Discount on Return $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 4bb0293d-4775-426a-b956-c18df8a7013d
+		sourceLineageTag: 31225b5c-9f40-41b3-8fcc-789d4507a0e4
+		dataCategory: Uncategorized
+
+	measure 'Net Invoiced Sales $' = EXTERNALMEASURE("Net Invoiced Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 039261d1-4cec-4a7a-a2c3-aef3fb0e87c1
+		sourceLineageTag: 7cb0be75-ab5d-40cf-94b5-d4bdb2b01f31
+		dataCategory: Uncategorized
+
+	measure 'Total Standard Cost $' = EXTERNALMEASURE("Total Standard Cost $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 519fedb6-3435-4ac8-882d-48d837c1ad90
+		sourceLineageTag: 6c6d057d-1135-48f2-aa01-5078dfa0694a
+		dataCategory: Uncategorized
+
+	measure 'Total Standard Cost $ of Returns' = EXTERNALMEASURE("Total Standard Cost $ of Returns", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f2289eb4-2559-4c47-9b8c-52d9d55344c9
+		sourceLineageTag: 05bd1a10-47f7-4fcc-9b04-cf460bc5f2fd
+		dataCategory: Uncategorized
+
+	measure 'Net COGS $' = EXTERNALMEASURE("Net COGS $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8b25253f-d0c5-45ef-8871-1a06d0706553
+		sourceLineageTag: 511f1634-86ea-430c-a731-5b83f1a3fc28
+		dataCategory: Uncategorized
+
+	measure 'IMU %' = EXTERNALMEASURE("IMU %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ca0ceb3e-8664-4102-b925-f5bfe179d338
+		sourceLineageTag: 71062158-6e81-454a-b0e7-01838bd952c4
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Margin $' = EXTERNALMEASURE("Invoiced Margin $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c2232612-f370-4974-bd2a-d7e6aa5e59d7
+		sourceLineageTag: 287493ae-e96f-4d76-8570-01eb3f0d66f2
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Margin %' = EXTERNALMEASURE("Invoiced Margin %", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 38af9919-2345-4185-972e-e1ca9eba5e4a
+		sourceLineageTag: 5a95de65-a9d8-4688-8fd0-8b967915817f
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Order Qty' = EXTERNALMEASURE("Wholesale Order Qty", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 1244c513-56d0-4c4c-b996-9708de2d265b
+		sourceLineageTag: 9f85a1ff-81c5-47af-bab7-5208c5eb6d53
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Full Price % (Internal)' = EXTERNALMEASURE("Wholesale Full Price % (Internal)", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 258d0817-76a2-4f41-84c0-25ae37707ae8
+		sourceLineageTag: ed2087af-5a56-4280-8512-1c0e2128d0e0
+		dataCategory: Uncategorized
+
+	measure 'Net Return (RTV) $' = EXTERNALMEASURE("Net Return (RTV) $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e5e8f051-5cb9-4754-90e8-b7aa80370574
+		sourceLineageTag: d82f13ca-69e4-44e2-9eb2-49edb213c37c
+		dataCategory: Uncategorized
+
+	measure '% External Sales $ FIN' = EXTERNALMEASURE("% External Sales $ FIN", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e13b8205-3df5-4e5b-ae8a-700327d46783
+		sourceLineageTag: f24b7677-1c69-4c09-a33f-ab3e484267df
+		dataCategory: Uncategorized
+
+	measure '% External Sales Units POS' = EXTERNALMEASURE("% External Sales Units POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c0b06cbb-1553-4d2c-94a8-bdf18ffefb81
+		sourceLineageTag: b91c04c0-7498-460d-9ba8-c4790b67c9cc
+		dataCategory: Uncategorized
+
+	measure 'AUR External Sales $ POS' = EXTERNALMEASURE("AUR External Sales $ POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 0893b5f2-6a61-4f78-bc60-96810a211213
+		sourceLineageTag: f1885634-6ac3-4ea3-a5ab-48b6fa57aa3d
+		dataCategory: Uncategorized
+
+	measure 'AUR External Stock POS' = EXTERNALMEASURE("AUR External Stock POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 605942b7-6e88-467e-b86f-dc51a719bc1e
+		sourceLineageTag: 8f378285-e94d-4991-89d0-ef19b4862d2f
+		dataCategory: Uncategorized
+
+	measure 'EOP External Units On Hand POS' = EXTERNALMEASURE("EOP External Units On Hand POS", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: e3337102-7fda-4326-af39-a6ebca8a4ae3
+		sourceLineageTag: 763fda6d-1afb-4243-9939-913c0cdfc41b
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales Units POS' = EXTERNALMEASURE("Net External Retail Sales Units POS", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 8a3ed91e-83ee-48ff-bd8b-1cae0f637c46
+		sourceLineageTag: 7fbe245c-ef3d-4e99-8f0d-9f9d8f223785
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales $ FIN' = EXTERNALMEASURE("Total Net External Retail Sales $ FIN", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 47b583ee-8273-477f-8298-606a9ecd29ae
+		sourceLineageTag: b9d12101-b175-42ba-8420-4348c7cf50d9
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales Units POS' = EXTERNALMEASURE("Total Net External Retail Sales Units POS", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 22dd9316-ea2c-4896-9e32-6fdcf9fad15d
+		sourceLineageTag: e729c750-2ba6-419b-83d4-bdac726c04c5
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Full Price % (External) POS' = EXTERNALMEASURE("Wholesale Full Price % (External) POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8458cdc6-9af2-4d8b-9223-f5f36371f87e
+		sourceLineageTag: e8011a34-3b49-4786-9c02-483583f8cab9
+		dataCategory: Uncategorized
+
+	measure 'EOP External $ On Hand POS' = EXTERNALMEASURE("EOP External $ On Hand POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 38335599-254b-416c-9f42-210f561c1a44
+		sourceLineageTag: 88dfa176-ed21-4cf9-9dbc-40d92b9a28af
+		dataCategory: Uncategorized
+
+	measure '% External Sales $ MIX' = EXTERNALMEASURE("% External Sales $ MIX", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 828c4792-59bd-4480-b356-b703b213840b
+		sourceLineageTag: fe000495-98cd-4574-b46a-0b66f425cd79
+		dataCategory: Uncategorized
+
+	measure 'Total Net External Retail Sales $ MIX' = EXTERNALMEASURE("Total Net External Retail Sales $ MIX", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8e9af4a6-9647-4a4f-aaf0-58b31d9d63b2
+		sourceLineageTag: 22c6cdd7-6bfe-4156-9745-b99091250cb3
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Shipments $' = EXTERNALMEASURE("Wholesale Shipments $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 529d8720-cc02-4a5e-9a3b-3843735e9999
+		sourceLineageTag: 76003555-afc0-4fbf-86ca-9d1e060e4b26
+		dataCategory: Uncategorized
+
+	measure 'Wholesale Shipments Units' = EXTERNALMEASURE("Wholesale Shipments Units", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 104133a0-7278-4670-9714-70266c488bf3
+		sourceLineageTag: 2daa1a6a-4ba7-406c-81fc-37183e53b940
+		dataCategory: Uncategorized
+
+	measure 'Gross Sales $' = EXTERNALMEASURE("Gross Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 39a545b2-1151-4507-8afe-836d8c5c1f1c
+		sourceLineageTag: 996e2e32-d0fd-44f2-b90a-7e9a8b015a37
+		dataCategory: Uncategorized
+
+	measure 'Net Units' = EXTERNALMEASURE("Net Units", INTEGER, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: #,0
+		lineageTag: 846d4358-8763-4be1-a9db-c7878dbb8a74
+		sourceLineageTag: f89ad0b0-6277-4003-9a2e-673717d05111
+		dataCategory: Uncategorized
+
+	measure 'Net Sales $' = EXTERNALMEASURE("Net Sales $", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 90ad8829-43e4-4bb4-8933-ff72d2201b63
+		sourceLineageTag: f867cb0e-1497-4302-a7d6-cb3abfcc11d0
+		dataCategory: Uncategorized
+
+	measure 'EOP External $ On Hand FIN' = EXTERNALMEASURE("EOP External $ On Hand FIN", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2f915c0d-839b-4874-9d5a-3bc58f2fdf2c
+		sourceLineageTag: f370259b-2f80-4292-812f-864a2cf859ba
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ FIN' = EXTERNALMEASURE("Net External Retail Sales $ FIN", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f4d8e0e1-73d0-4bec-b141-63f99a778905
+		sourceLineageTag: 6679a51d-1ad5-4866-ba51-60abe98e62f5
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ POS' = EXTERNALMEASURE("Net External Retail Sales $ POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 445c6520-ef15-4b11-b48e-1da5439b7849
+		sourceLineageTag: c731deda-46a8-44d8-981e-dcf4ccd1584a
+		dataCategory: Uncategorized
+
+	measure 'Net External Retail Sales $ MIX' = EXTERNALMEASURE("Net External Retail Sales $ MIX", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a7696477-591f-49d3-9621-3b557dddc2dd
+		sourceLineageTag: cc05827a-dffb-4611-b69a-8b5fbf5b2bc8
+		dataCategory: Uncategorized
+
+	measure 'External $ On Hand POS' = EXTERNALMEASURE("External $ On Hand POS", DOUBLE, "DirectQuery to AS - Delivery, Classification, and Fabrics")
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8e6d0961-5a6c-4615-81ea-d02f0197fcad
+		sourceLineageTag: 18b1df0b-eccb-43d2-8d5b-91afc985edb0
+		dataCategory: Uncategorized
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: e684ce77-2155-4dac-b0bc-87de5372a5e9
+		sourceLineageTag: 6b72bbd2-f1d6-4279-a787-4bac9cae5c8b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = User
+
+	partition 'Wholesale Measures' = entity
+		mode: directQuery
+		source
+			entityName: Wholesale Measures
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

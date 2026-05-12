@@ -1,0 +1,43 @@
+table 'Readiness Domain'
+	lineageTag: 9a326aa6-cca9-4c7b-af6d-f2b33fc8b2aa
+	sourceLineageTag: 94cb2056-3bd7-433c-af00-19ec11963aec
+
+	column 'Business Domain Key'
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 4c3fae43-2eec-4b86-a171-3437f9b7fe07
+		sourceLineageTag: 200fc360-c7c2-45c0-84a3-a42fb9017102
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Last Processed'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: dbb26760-1a9b-4090-93cb-57d7e7eb987e
+		sourceLineageTag: d5e5b402-d5e9-47e5-b636-342a4e1747cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Last Processed
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Freshness'
+		dataType: string
+		lineageTag: b3266069-a32c-4dc2-b50f-1f60dc06dcf3
+		sourceLineageTag: 404af8b3-f7b3-4430-83fa-32eeefba46da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Freshness
+
+		annotation SummarizationSetBy = User
+
+	partition 'Readiness Domain' = entity
+		mode: directQuery
+		source
+			entityName: Readiness Domain
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

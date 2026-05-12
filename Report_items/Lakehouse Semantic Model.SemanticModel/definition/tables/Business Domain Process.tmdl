@@ -1,0 +1,88 @@
+table 'Business Domain Process'
+	lineageTag: b8fcfe41-5574-4821-9def-66b8536765b8
+	sourceLineageTag: 34a5994f-66e3-4853-8bef-c80dddf3b340
+
+	column 'Business Domain Process Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: efe880d8-5a5f-48a9-80ef-2c6a23fafebf
+		sourceLineageTag: de50b45c-051f-48dc-b302-c73aa29196c9
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Business Domain Process Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 774585b5-5c35-4ed0-9ea8-1f2be22b2890
+		sourceLineageTag: 2d206b6b-4902-4951-ba35-0ff73ad3592f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: adf9855d-df9f-404e-8a31-a928a5267ffc
+		sourceLineageTag: 1d195e33-52f5-4400-8580-6fbfc9f22a35
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Rows Inserted'
+		dataType: int64
+		formatString: 0
+		lineageTag: 23c5163a-0609-4148-b7cb-3dfba336570d
+		sourceLineageTag: 3060642d-6c65-4bc0-83cf-ad5d020da144
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rows Inserted
+
+		annotation SummarizationSetBy = User
+
+	column 'Rows Updated'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6fd9c621-26f5-4443-9d02-ebb23e9dd952
+		sourceLineageTag: 8823af25-350a-4e2c-a687-7ee15030264a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rows Updated
+
+		annotation SummarizationSetBy = User
+
+	column 'Start Time'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: fff904ba-5550-4958-825e-6cbebe160b7b
+		sourceLineageTag: 0a863648-90fd-40be-b185-19627356143a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Start Time
+
+		annotation SummarizationSetBy = User
+
+	column 'End Time'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 23c5fe8e-80dc-433c-b084-558c01f62165
+		sourceLineageTag: 007961c9-a294-40ad-9b3d-91e7b3e6df21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: End Time
+
+		annotation SummarizationSetBy = User
+
+	partition 'Business Domain Process' = entity
+		mode: directQuery
+		source
+			entityName: Business Domain Process
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

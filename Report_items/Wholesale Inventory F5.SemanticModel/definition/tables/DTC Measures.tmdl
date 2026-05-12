@@ -1,0 +1,747 @@
+table 'DTC Measures'
+	lineageTag: 67ba48f5-45a6-4375-af24-f8bf3f9e0289
+
+	/// Customer orders on Web in retail $s before discount
+	/// Sum of [Total Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=ORDER
+	measure 'Demand Gross Retail Sales $' =
+			
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: $#,###
+		lineageTag: a02f08da-8cb5-4ec6-a9aa-dbc07e1efebe
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Retail $ Discount amount on Web Gross Retail Sales $
+	/// Sum of [Discount Amount] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=ORDER
+	measure 'Demand Discount Retail Sales $' =
+			
+			CALCULATE(
+			    [Discount Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: $###,###
+		lineageTag: 06dda1fa-87b9-44be-83be-dbde6a78dcda
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer orders on Web in retail $s after discount
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=ORDER
+	measure 'Demand Net Retail Sales $' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: $###,###
+		lineageTag: 3243fbe1-478d-4181-a1bb-3de73e1490f8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer web units sold
+	/// Sum of [Units] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=ORDER
+	measure 'Demand Unit Sales' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    Channel[Channel Name]="DTC",
+			    Channel[Channel Format]="Digital",
+			    'Transactions (Financial)'[Transaction Type]="ORDER"
+			)
+		formatString: ###,###
+		lineageTag: 1249d8b9-98c0-4a4a-9cbf-fee5f4a1e7ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tax $ on web gross retail sales
+	/// Sum of [Tax Amount] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=ORDER
+	measure 'Demand Tax $' =
+			
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		formatString: $###,###
+		lineageTag: 5e4bf319-615c-453f-ab9e-a859c148ab59
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer orders cancelled on Web in retail $s before discount
+	/// Sum of [Total Price] where [Channel]=DTC, [Channel Format]=Digital, [Transaction Type]=CANCEL that are not MISC
+	measure 'Cancel Gross Retail Sales $' =
+			
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Cancels
+		lineageTag: 71e24861-346d-4442-9c05-a4f2448041a9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Retail $ after discount on Web Gross Retail Sales $ cancelled by customer
+	/// Sum of [Net Price] where [Channel]=DTC, [Channel Format]=Digital, [Transaction Type]=CANCEL that are not MISC
+	measure 'Cancel Net Retail Sales $' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Cancels
+		lineageTag: fd33500e-260e-4e79-b97d-6be0efddb50b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tax $ on cancelled web gross retail sales
+	/// Sum of [Tax Amount] where [Channel]=DTC, [Channel Format]=Digital, [Transaction Type]=CANCEL that are not MISC
+	measure 'Cancel Tax $' =
+			
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Cancels
+		lineageTag: c5979a5b-0cec-492c-933b-c6770b3335d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer orders cancelled on Web in units 
+	/// Sum of [Quantity] where [Channel]=DTC, [Channel Format]=Digital, [Transaction Type]=CANCEL that are not MISC
+	measure 'Cancel Unit Sales' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="CANCEL"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: ###,###
+		displayFolder: Cancels
+		lineageTag: 900584c4-914c-463e-be49-b82e72de3d84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer orders filled on Web in retail $s before discount
+	/// Sum of [Total Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=SHIPMENT that is not MISC
+	measure 'Fulfillment Gross Retail Sales $' =
+			
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Fulfillment
+		lineageTag: 96796e4d-e637-42c9-b6f7-27b1668b33c8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Filled Retail $ after discount on Web Gross Retail Sales $ by customer
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=SHIPMENT that is not MISC
+	measure 'Fulfillment Net Retail Sales $' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Fulfillment
+		lineageTag: eed9b9e2-ee75-4d9e-96df-1c7b44ec5c03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tax $ on shipped web gross retail sales
+	/// Sum of [Tax Amount] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=SHIPMENT that is not MISC
+	measure 'Fulfillment Tax $' =
+			
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		displayFolder: Fulfillment
+		lineageTag: e10629db-1c3c-4257-89f7-d4f4d6f6fee3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer orders filled on Web in units
+	/// Sum of [Units] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=SHIPMENT that is not MISC
+	measure 'Fulfillment Unit Sales' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: ###,###
+		displayFolder: Fulfillment
+		lineageTag: a0326a54-74d9-4ecf-a776-cf2db634fccd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total retail sales (before returns )
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Transaction Type]=SHIPMENT or TAKE that is not MISC
+	measure 'Gross Retail Sales $' = ```
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),        
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type] in {"SHIPMENT","TAKE"}),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			//&& 'Transaction (Internal)'[Channel Key] <> 2020101 && 'Transaction (Internal)'[Channel Key] <> 2020103 && 'Transaction (Internal)'[Channel Key] <> 2030101
+			```
+		formatString: $###,###
+		lineageTag: 729a097b-a0e6-48d3-b712-4c274f35a142
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total unit sales before (before returns)
+	/// Sum of [Units] where [Channel Name]=DTC,  [Transaction Type]=SHIPMENT or TAKE that is not MISC
+	measure 'Gross Unit Sales' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"||'Transactions (Financial)'[Transaction Type]="TAKE"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: ###,###
+		lineageTag: 4affe5d8-d1e9-4a3e-b6ce-a2817b309984
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total cost sales (before returns)
+	/// Sum of [Standard Cost] where [Channel Name]=DTC, [Transaction Type]=SHIPMENT or TAKE that is not MISC
+	measure 'Gross Cost Sales $' =
+			
+			CALCULATE(
+			   [Standard Cost (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="SHIPMENT"||'Transactions (Financial)'[Transaction Type]="TAKE")  ,
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			    //'Transactions (Financial)'[Channel Key] <> 2020101 && 'Transactions (Financial)'[Channel Key] <> 2020103 && 'Transactions (Financial)'[Channel Key] <> 2030101
+			)
+		formatString: $###,###
+		lineageTag: 27170ffa-1562-4490-9b63-1cd9632ddbf4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross retail margin $ (before returns)
+	/// [Gross Retail Sales $]-[Gross Cost Sales $]
+	measure 'Gross Margin $' =
+			
+			[Gross Retail Sales $]
+			-
+			[Gross Cost Sales $]
+		formatString: $###,###
+		lineageTag: 2123c1b2-0af6-4c2c-b97c-f5282503eb46
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross retail margin % (before returns)
+	/// [Gross Margin $] divided by [Gross Retail Sales $]
+	measure 'Gross Margin %' =
+			
+			DIVIDE(
+			    [Gross Margin $],
+			    [Gross Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 948fefb4-d419-41ab-8dec-355442a546ae
+
+	/// Average unit retail (before returns)
+	/// [Gross Retail Sales $] divided by [Gross Unit Sales]
+	measure 'Gross Sales AUR' =
+			
+			DIVIDE(
+			    [Gross Retail Sales $],
+			    [Gross Unit Sales]
+			)
+		formatString: $###,###
+		lineageTag: 056c0d06-d2cf-49d9-87a2-8f6f70d89977
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Average unit cost (before returns)
+	/// [Gross Cost Sales $] divided by [Gross Unit Sales]
+	measure 'Gross Sales AUC' =
+			
+			DIVIDE(
+			    [Gross Cost Sales $],
+			    [Gross Unit Sales]
+			)
+		formatString: $###,###
+		lineageTag: d8e0e885-d0a9-4679-9e9c-7f09ba0f3a75
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross margin $ after returns from respective channel
+	/// [Net Retail Sales $] - [Net Cost Sales $]
+	measure 'Net Gross Margin $' =
+			
+			[Net Retail Sales $]
+			-
+			[Net Cost Sales $]
+		formatString: $###,###
+		lineageTag: a262d5fd-9d0b-4cb8-8b06-4ee263536670
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross margin % after returns from respective channel
+	/// [Net Gross Margin $] divided by [Net Retail Sales $]
+	measure 'Net Gross Margin %' =
+			divide(
+			[Net Gross Margin $],
+			[Net Retail Sales $]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3b0ae6c8-08e5-4b46-a06a-cbf5c6862769
+
+	/// Average unit retail (before returns)
+	/// [Net Retail Sales $] divided by [Net Sales Units]
+	measure 'Net Sales AUR' =
+			divide(
+			[Net Retail Sales $],
+			[Net Sales Units]
+			)
+		formatString: " $###,###"
+		lineageTag: 3bdc6751-e7d1-42c2-8548-76c756194c3e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Average unit cost after returns
+	/// [Net Cost Sales $] divided by [Net Sales Units]
+	measure 'Net Sales AUC' = ```
+			divide(
+			[Net Cost Sales $],
+			[Net Sales Units]
+			)
+			
+			```
+		formatString: " $###,###"
+		lineageTag: 1e3d3590-3c83-44e1-b3e6-d8e765edf5f1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Customer Web orders returned to Web,Stores in Gross Retail Sales $
+	/// Sum of [Total Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'Return Gross Retail Sales $' =
+			
+			CALCULATE(
+			    [Total Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		isHidden
+		displayFolder: Returns
+		lineageTag: 6a87d5ac-e82d-4ab9-83b2-b4ee548ed4d6
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer Web orders returned to Web,Stores in Net Retail Sales $
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'Return Net Retail Sales $' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		isHidden
+		displayFolder: Returns
+		lineageTag: 01cb2899-d5bf-43a3-ba8b-e7f2db622e31
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tax $ on returned web gross retail sales
+	/// Sum of [Tax Amount] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'Return Tax Sales $' =
+			
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: $###,###
+		isHidden
+		displayFolder: Returns
+		lineageTag: e1b9ef9b-086d-4f81-8afb-200de8a68dc4
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer Web orders returned to Web,Stores in units
+	/// Sum of [Units] where [Channel Name]=DTC, [Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'Return Unit Sales' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: ###,###
+		isHidden
+		displayFolder: Returns
+		lineageTag: d03df102-37d0-4855-8d40-6c19cf7befdb
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total unit sales after returns only from respective original channel 
+	/// [Gross Units Sales] -  [Returns Units]
+	measure 'Net Sales Units' = ```
+			[Gross Unit Sales] 
+			-
+			[Returns Units]
+			```
+		formatString: ###,###
+		lineageTag: ddb07853-4af2-46de-a163-8e71f5f81415
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Customer Web orders returned to Web, Stores in units based on original Channel
+	/// Sum of [Units] where [Channel Name]=DTC,  [Transaction Type]=RETURN that is not MISC
+	/// 
+	measure 'Returns Units' =
+			
+			CALCULATE(
+			    [Units (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: ###,###
+		displayFolder: Returns
+		lineageTag: bd7ad5eb-ae5b-4983-9377-57818d9275ef
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total retail sales after returns only from respective Original channel 
+	/// [Gross Retail Sales $] - [Retail Returns $]
+	measure 'Net Retail Sales $' =
+			[Gross Retail Sales $]
+			-
+			[Retail Returns $]
+		formatString: $###,###
+		lineageTag: 6195a321-9446-4817-9e30-393e34c1fbd2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total retail returns based on original channel
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Transaction Type]=RETURN that is not MISC
+	measure 'Retail Returns $' = ```
+			
+			CALCULATE(
+			    [Net Price (Sum)],  
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			```
+		formatString: $###,###
+		displayFolder: Returns
+		lineageTag: 4e3687c4-2e23-44ff-aeae-059228e75f5b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total cost sales after returns only from respective Original channel 
+	/// [Gross Cost Sales $] - [Cost Returns $]
+	measure 'Net Cost Sales $' =
+			[Gross Cost Sales $]
+			-
+			[Cost Returns $]
+		formatString: $###,###
+		lineageTag: 86c9ee73-aab9-4cdb-a55d-1e8c899b88d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Distinct Count of [Transaction ID] where [Original Channel Name]=DTC, [Transaction Type]=ORDER or TAKE
+	measure 'Sales Transactions' =
+			
+			VAR ValidTransactionTypes = {"ORDER", "TAKE"}
+			RETURN
+			CALCULATE(
+			    DISTINCTCOUNT('Transactions (Financial)'[Transaction ID]),
+			    'Original Channel (DTC)'[Original Channel Name] = "DTC",
+			    'Transactions (Financial)'[Transaction Type] IN ValidTransactionTypes
+			    //KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1
+			)
+		lineageTag: 829e9f63-c95d-4575-89a6-ebfe7b20706d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// [Net Sales Units] divided by [Sales Transactions]
+	measure UPTs =
+			
+			DIVIDE(
+			[Net Sales Units],
+			[Sales Transactions]
+			)
+		formatString: 0.0
+		lineageTag: e7fae1d1-fa6f-4da3-95a1-70cd201d2f72
+
+	/// [Net Retail Sales $]+[Net Retail Orders $] divided by [Sales Transactions] where 'Transactions (Financial)'[Transaction Type] is not "SHIPMENT"
+	measure AOV =
+			
+			CALCULATE(
+			    DIVIDE(
+			        [Net Retail Sales $]+[Net Retail Orders $],
+			        [Sales Transactions]
+			        ),
+			    'Transactions (Financial)'[Transaction Type]<>"SHIPMENT"
+			)
+		formatString: $#,##0;($#,,##0)
+		lineageTag: 973ad29c-5502-4d59-86a5-36ebd7d5ceed
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// [Net Retail Sales $]+[Demand Net Retail Sales $] divided by [Net Sales Units]+[Demand Unit Sales]
+	measure AUR =
+			
+			DIVIDE(
+			    [Net Retail Sales $]+[Demand Net Retail Sales $],
+			    [Net Sales Units]+[Demand Unit Sales]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 599f5a1c-f606-4124-9a8a-01f103a56131
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// [Net Retail Sales $] where [Mark Type]=FP divided by all [Net Retail Sales $]
+	measure 'DTC Full Price %' =
+			
+			DIVIDE(
+			    CALCULATE([Net Retail Sales $],
+			    'Transactions (Financial)'[Mark Type]="FP"
+			    ),
+			    [Net Retail Sales $]
+			)
+		lineageTag: 71f1f74d-0953-45fa-8070-901f2358f25a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// The sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Digital, [Original Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'DC Returns Retail (Digital Purchase)' = ```
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Original Channel (DTC)'[Original Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Returns
+		lineageTag: e11180f5-3ea2-4ac1-bb63-cbdf3e7c8e03
+
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Stores, [Original Channel Format]=Digital, [Transaction Type]=RETURN that is not MISC
+	measure 'Store Returns Retail (Digital Purchase)' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Original Channel (DTC)'[Original Channel Format]="Digital"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Returns
+		lineageTag: e439ab12-60df-430f-9e5e-120026757c31
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// Sum of [Net Price] where [Channel Name]=DTC, [Channel Format]=Stores, [Original Channel Format]=Stores, [Transaction Type]=RETURN that is not MISC
+	measure 'Store Returns Retail (Store Purchase)' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS(Channel[Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Original Channel (DTC)'[Original Channel Format]="Stores"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Returns
+		lineageTag: 5d14f7f0-0972-4d66-b7d9-597c8685ad83
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// [Total Price] - [Net Price] where [Channel Geography]=Canada
+	measure 'Markdown $ Retail' =
+			
+			CALCULATE(
+			    [Total Price (Sum)]-[Net Price (Sum)],
+			    KEEPFILTERS('Channel'[Channel Geography]="Canada")
+			    )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9ec97edf-350e-4a1c-ab74-64ffa6f1c88a
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// The sum of [Standard Cost] where [Channel Name]=DTC, [Transaction Type]=RETURN that is not MISC
+	measure 'Cost Returns $' = ```
+			
+			CALCULATE(
+			    [Standard Cost (Sum)],  
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+			```
+		displayFolder: Returns
+		lineageTag: 6ca226d8-c08b-47ce-a022-22686413d831
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of [Tax Amount] where [Channel Name]=DTC, [Transaction Type]=RETURN that is not MISC
+	measure 'Returns Tax $' =
+			
+			CALCULATE(
+			    [Tax Amount (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="RETURN"),
+			    KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1)
+			)
+		displayFolder: Returns
+		lineageTag: 09307463-43a3-4115-9905-c88ba12bb43c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Distinct Count of [Transaction ID] where [Channel Name]=DTC
+	measure Transactions =
+			
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Transactions (Financial)'[Transaction ID]),
+			    'Original Channel (DTC)'[Original Channel Name] = "DTC"
+			    //KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1
+			)
+		lineageTag: 819149d8-5deb-4742-bcc3-214c41b8777d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of [Net Price] where [Channel Name]=DTC and [Transaction Type]=ORDER
+	measure 'Net Retail Orders $' =
+			
+			CALCULATE(
+			    [Net Price (Sum)],
+			    KEEPFILTERS(Channel[Channel Name]="DTC"),
+			    KEEPFILTERS('Transactions (Financial)'[Transaction Type]="ORDER")
+			)
+		lineageTag: 863253f9-2aad-4099-89f3-bd3bab107971
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// [Sales Transactions] divided by [Traffic]
+	measure Conversions =
+			
+			DIVIDE(
+			    [Sales Transactions],
+			    [Traffic]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bee887f0-6052-411a-a3fb-4d594f13642e
+
+	measure Traffic =
+			
+			CALCULATE(
+			    SUM(
+			        'Traffic'[Visits]
+			    )
+			)
+		formatString: #,0
+		lineageTag: ab00bac4-5575-402b-81a3-f356eee84c4b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// Count of unique transactions, aggregated at the Date, Store, and Transaction Type level
+	measure 'Sales Transactions Aggregated' =
+			
+			VAR ValidTransactionTypes = {"ORDER", "TAKE"}
+			RETURN
+			CALCULATE(
+			    SUM('Agg Pseudo-Transaction Count'[Transactions]),
+			    'Original Channel (DTC)'[Original Channel Name] = "DTC",
+			    'Agg Pseudo-Transaction Count'[Transaction Type] IN ValidTransactionTypes
+			    //KEEPFILTERS('Transactions (Financial)'[Dtc Misc Flag]<>1
+			)
+		formatString: #,0
+		lineageTag: ad22fc75-6163-49e9-9463-8d1c27396d0b
+
+	partition 'DTC Measures' = m
+		mode: import
+		queryGroup: Measures
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "2326757a56483a5973c1",
+  "position": {
+    "x": 581.69907881269194,
+    "y": 349.80552712384849,
+    "z": 4000,
+    "height": 49.785056294779935,
+    "width": 116.60184237461617,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "<-- SFS Sales"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "  BOPIS Sales -->"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

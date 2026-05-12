@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Store & Channel Returns"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "325cfeb8-972e-bcf0-406f-c7b88bee0ece"
+  }
+}

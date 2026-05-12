@@ -1,0 +1,91 @@
+relationship 3d0270ca-5b72-4c86-81c1-ed081d2a371e
+	fromColumn: 'Transactions (Financial)'.'Transaction Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 8bf8b0db-aa0b-4119-aa7b-966fc3b1c02d
+	fromColumn: 'Transactions (Financial)'.'Order Categorization Key'
+	toColumn: 'Order Categorization'.'Order Categorization Key'
+
+relationship a81b3d1e-ae52-430c-86f8-f2fd02d53606
+	fromColumn: 'Forecast (DTC Store)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship bee98699-4fb6-4591-b7b9-f0cb84e79726
+	fromColumn: 'Forecast (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship a75f3ec3-9f81-452f-ad32-86321c3c86d9
+	fromColumn: 'Forecast (Channel)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship ea91a32c-e6b6-424a-8a41-0450a14c4160
+	fromColumn: 'Budget (DTC Store)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 4bac8a17-975a-409c-8416-b12ae190f95b
+	fromColumn: 'Budget (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship d83d1a30-5e18-4db1-95dd-9abb4893411f
+	fromColumn: 'Budget (Channel)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship a066d96d-bdd6-47a3-a088-d41adfbf4dac
+	fromColumn: Currency.'Currency Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 470f2e63-9a25-4c9e-8323-ee51c9a1f09a
+	fromColumn: Currency.'Conversion Type'
+	toColumn: 'Currency Selector'.'Conversion Type'
+
+relationship 69335318-ca7d-4453-bb28-3ada325cc274
+	crossFilteringBehavior: bothDirections
+	fromColumn: Date.Datekey
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 5f1e1084-d376-4834-90ad-f8941ed624c0
+	fromColumn: 'Store (DTC Allocated)'.'Channel Key'
+	toColumn: 'Channel (DTC Allocated)'.'Allocated Channel Key'
+
+relationship e41c1f8d-c382-4af3-a03d-6ce7df8c9dc6
+	fromColumn: 'Transactions (Financial)'.'Allocated Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship 2830aa01-1272-43ac-8d5f-86afd26834a0
+	fromColumn: Usage.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship 90d1da70-7652-4801-a90b-eb5c08800b47
+	fromColumn: Dependency.'Report Key'
+	toColumn: Report.'Report Key'
+
+relationship cf3365c4-47b7-4e0d-9f44-db9db91b35a6
+	fromColumn: Dependency.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship 71bbe58a-faa5-4d83-9295-8c0b3f9ae7de
+	fromColumn: 'Staging Process'.'Source Table Key'
+	toColumn: 'Source Table'.'Source Table Key'
+
+relationship eb92bdf6-85a1-41aa-8ca6-5009261ec77f
+	fromColumn: 'Semantic Model Update'.'Date.1'
+	toColumn: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.Date
+
+relationship 0721cc7f-4cf3-4be6-9495-b0a4294ec9a4
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Business Domain'.'Business Domain Key'
+	toColumn: 'Readiness Domain'.'Business Domain Key'
+
+relationship 5fe20b2a-3fef-44c2-9748-e5375ff8770a
+	fromColumn: 'Inventory Movement'.'Movement Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 65ed1807-b544-40d7-a919-535ee5eea08a
+	fromColumn: 'Readiness SourceTable'.'Source Table Key'
+	toColumn: 'Source Table'.'Source Table Key'
+
+relationship b9fa057f-9718-40e4-b289-78bc9c711172
+	fromColumn: 'Readiness SourceTable'.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+

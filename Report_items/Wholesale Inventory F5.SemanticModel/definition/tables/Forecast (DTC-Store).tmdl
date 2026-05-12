@@ -1,0 +1,89 @@
+table 'Forecast (DTC-Store)'
+	lineageTag: d5c940fa-ddeb-43b1-9175-d6a11a9f1122
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d634f919-2a9b-43a9-b84a-3d3d63a76e48
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Date Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 3f90e0bb-1bb0-486b-9664-379792f6acc2
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Measure
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 111e1d24-755b-46aa-8b98-1344db152c43
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Store Value'
+		dataType: double
+		sourceProviderType: decimal(38, 15)
+		lineageTag: 56ddd9ba-80f8-4960-8877-4aaf6f5f4df9
+		summarizeBy: sum
+		sourceColumn: Forecast Store Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(3)
+		lineageTag: 526d8d2f-39e2-4aca-bbe9-e7fdeafaab0b
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Forecast (DTC-Store)' = m
+		mode: dual
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.STORE_KEY,T.DATE_KEY,T.MEASURE,T.FORECAST_STORE_VALUE,T.CURRENCY_CODE
+				from EDW_V.F_FORECAST_STORE T
+				where WEEK_END_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) )
+				in
+				    #"Renamed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

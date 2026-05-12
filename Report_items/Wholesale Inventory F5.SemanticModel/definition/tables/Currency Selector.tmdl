@@ -1,0 +1,52 @@
+table 'Currency Selector'
+	lineageTag: 6a442812-3eaf-4ec5-bf39-c594b6dbc9f2
+
+	column 'Currency Selection'
+		dataType: string
+		lineageTag: c4303844-c3b2-4d2e-8be8-578dad74cdc3
+		summarizeBy: none
+		sourceColumn: Currency Selection
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0398ddc0-dc3d-4193-a824-c1269e6b9947
+		summarizeBy: none
+		sourceColumn: Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		lineageTag: 1adfff91-6b0f-4538-a60e-b2ad6028e107
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Currency Selector' = m
+		mode: import
+		queryGroup: Currency
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCg12UXAqTUlPLVHQcMvMS8xLTtVU0lEyAmKnUBd315D4EP94oCKlWB2IYt/8vJKMnEoU1cZA7OvvF+LhE4ms3NkRq9kmKGYDFcEVYzPbFNVsmHJ3pwCFyNTEIpBqX09LkEozkEpPy/hIV8cgiGKgIrBin/zkxBygrCEQK8XGAgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Currency Selection" = _t, Sort = _t, #"Currency Type" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Currency Selection", type text}, {"Sort", Int64.Type}, {"Currency Type", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Currency Type", "Conversion Type"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

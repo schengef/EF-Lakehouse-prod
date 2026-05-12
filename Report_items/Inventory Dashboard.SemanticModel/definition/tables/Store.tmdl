@@ -1,0 +1,466 @@
+table Store
+	lineageTag: c9a73215-61a4-4bfe-8dcc-d740c6dbaf72
+	sourceLineageTag: c1f6a6fd-abed-4e5d-b9e2-e450515859e3
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		displayFolder: Store Details
+		lineageTag: 1aa63f02-5484-4d47-bf99-e1a7a47971a9
+		sourceLineageTag: 77c75398-37f6-41cf-a4b9-4d840eb1e180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Name'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 0ee3972a-7603-45e8-a08b-6c30318be565
+		sourceLineageTag: dc822086-611b-48db-8681-3fd42e675a1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		displayFolder: Account
+		lineageTag: ab61d865-f225-4c11-bfc3-31b928030114
+		sourceLineageTag: db4475bd-9835-49fa-af2f-7e667430d24f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Group'
+		dataType: string
+		displayFolder: Account
+		lineageTag: baa070d9-8b10-4334-9b9b-2d5de0c05f05
+		sourceLineageTag: df9febab-ca0e-44e4-b764-75f8b072f82d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Dc Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 17a343c5-ac70-4f38-a386-87eac1f323ab
+		sourceLineageTag: 68197a1c-3698-47c6-991a-b83ddf7d687e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dc Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: a3984b14-3462-4fc2-a6d5-70fc3b71fd72
+		sourceLineageTag: 42acfd47-1278-44e6-ab56-8c6f420f7ccb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Edi Store Id'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 6b379f48-930a-4444-8b38-f50403a0bfc2
+		sourceLineageTag: 4c2cecc1-f8c3-4f5b-ac6d-e72b737a1634
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Edi Store Id
+
+		annotation SummarizationSetBy = User
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Account
+		lineageTag: 1bd8f783-57e7-425b-baec-01c9b47cceba
+		sourceLineageTag: b6fb7d21-e880-4114-980c-425e1dd383c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Name'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: af332664-6688-4829-8e8d-a7f544b885c1
+		sourceLineageTag: 37b5f98a-45df-47bb-be1f-8339ed1d3ac1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Type'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 51dc507a-5f26-4b4d-a4bc-f36050ffa7b0
+		sourceLineageTag: 4fa8e196-8fc9-498d-a924-966926a8873d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Type Description'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 80fc1da4-4f60-4dc5-ae9a-c23d485fcc77
+		sourceLineageTag: ffdda125-98d3-4f48-9910-dace81a36849
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Type Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Channel
+		lineageTag: 212ff6a3-8f5e-4e60-8678-890268736cdf
+		sourceLineageTag: 1e3ffc1f-659b-460f-ad6a-af085f54f8d4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Finance Channel'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: f13fab97-e930-49f9-98b1-cfe09908e2af
+		sourceLineageTag: 5a00961d-4e92-4151-aac1-e29508897913
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Finance Channel
+		sortByColumn: 'Finance Channel Sort'
+
+		annotation SummarizationSetBy = User
+
+	column Address1
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: cf0b5de4-c279-43de-9924-9dbe6062f4cd
+		sourceLineageTag: a3ff8722-9d0e-47cc-9d77-b7ef93ca00fc
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = User
+
+	column Address2
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 9829ecd7-6b84-4e88-bf80-d120152bfc35
+		sourceLineageTag: d1837e41-9231-4048-a8bf-5a0624fe366d
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: 04cd8223-98a7-4089-9770-ad13f6e32d06
+		sourceLineageTag: b880332d-b5bb-49ac-8081-e029cee9d836
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = User
+
+	column State
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: ddb58666-5984-443e-ab63-92206e8b2856
+		sourceLineageTag: b0185066-4d0c-472c-adaf-d12c7c479212
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		isHidden
+		displayFolder: Location
+		lineageTag: a8fab19c-bd97-4026-95fe-7e453e216d72
+		sourceLineageTag: 011a1387-f5f9-45bd-9d73-3d36a677565e
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Zip Code'
+		dataType: string
+		displayFolder: Location
+		lineageTag: 8e3095cc-0554-485e-b445-d5e3818640dc
+		sourceLineageTag: 67dfb1d1-4fbd-4a7b-8130-9b2d5043a78b
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Zip Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Open Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Physical Information
+		lineageTag: 4429f99d-3cf5-4c91-ab90-26248d10b062
+		sourceLineageTag: bb3ffb0f-51b0-47c6-b967-027a8f2426fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Open Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Close Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Physical Information
+		lineageTag: ef6e059c-c1b2-464a-a2d3-c47db0856a34
+		sourceLineageTag: f3b1f87f-6261-4e2f-a77f-91af4697df6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Close Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Status'
+		dataType: string
+		displayFolder: Physical Information
+		lineageTag: 7393587d-9538-4123-97c8-8de837ac4336
+		sourceLineageTag: eabe32b0-a9f8-4bbf-827a-252456f213c0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Size Selling Area'
+		dataType: int64
+		displayFolder: Physical Information
+		lineageTag: b0123703-4320-41fe-a05b-7a143baa3c70
+		sourceLineageTag: 2ecf9677-82dd-4ecd-9833-416ee62a8165
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Size Selling Area
+
+		annotation SummarizationSetBy = User
+
+	column 'Chain Description'
+		dataType: string
+		displayFolder: Account
+		lineageTag: 83e750f6-86bb-4dec-8a2e-c94601019243
+		sourceLineageTag: c4237d4d-31da-427b-a66c-98e5f3f08d04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Chain Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Code'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Store Details
+		lineageTag: 7ab24734-2f37-4c27-9ec0-124f1731ad7e
+		sourceLineageTag: edc6f498-fd10-48ac-bae2-e61319a8e63b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Division Description'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: 3b376cba-fe81-4753-ba77-9368aa91cac1
+		sourceLineageTag: 315ccb29-cf45-462c-83b5-317c61ea0e7f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Division Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Region Code'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Location
+		lineageTag: a57c01d6-6124-4490-88d9-0860f001f339
+		sourceLineageTag: cf1aa577-9a20-4f1c-b95c-9264f20125dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Region Description'
+		dataType: string
+		displayFolder: Location
+		lineageTag: 75fe9f74-9d94-4a4b-97cf-f1d8d057bd0b
+		sourceLineageTag: 9be039d4-d3cf-4ab4-9425-d05dcbdb9815
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region Description
+		sortByColumn: 'Region Code'
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Channel Name'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 29bd0674-a060-44d6-925c-79740af935f3
+		sourceLineageTag: c19245b2-d129-4446-91dd-dffa292ef175
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Channel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Subchannel Name'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 5d2ed9cd-961b-47e1-9188-1adf1343a28e
+		sourceLineageTag: ed2ea8cc-63a6-457b-80e8-72f3909afa82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Subchannel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Channel Format'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: b6d7a75b-a861-4e91-900a-acdd6da537ba
+		sourceLineageTag: 68425629-1204-449c-8491-e26a0752be9e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Channel Format
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Channel Geography'
+		dataType: string
+		displayFolder: Channel
+		lineageTag: 0e50e948-4e53-408b-aebb-cc277fbf5150
+		sourceLineageTag: 187b6243-b550-440d-a099-2d06247ec049
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Channel Geography
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Channel Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Channel
+		lineageTag: dafcd077-4179-40e0-9a80-f7e137a4cdf7
+		sourceLineageTag: 4cc40b1d-ddcd-428d-bd2e-d598a499be83
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Channel Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Name And Num'
+		dataType: string
+		displayFolder: Store Details
+		lineageTag: f5a696f1-f52f-4aa0-ae38-5deeff53c201
+		sourceLineageTag: 222f6c67-d85b-470f-9d53-500f31a0faa7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Name And Num
+
+		annotation SummarizationSetBy = User
+
+	column Latitude
+		dataType: double
+		displayFolder: Location
+		lineageTag: a1a7608c-cdac-4a75-9dcc-9d0df3822039
+		sourceLineageTag: ef8b3828-fad6-4405-b9f2-6ab2e3aa3fb1
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+	column Longitude
+		dataType: double
+		displayFolder: Location
+		lineageTag: 8b1bfb14-376b-4135-b402-bee09c5a3268
+		sourceLineageTag: b3970e53-57fa-4903-8c4b-e67922c55e93
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Address Hierarchy'
+		displayFolder: Location
+		lineageTag: 45d7d7dd-912b-4f16-bb00-46f903ba5e1b
+		sourceLineageTag: 6a646539-1f61-4965-a7cd-b77fd6fc48ac
+
+		level Country
+			lineageTag: 2f17419e-789e-4ab4-8a09-d29add710eab
+			sourceLineageTag: 75e11771-5941-41e0-9842-c1ec673969db
+			column: Country
+
+		level State
+			lineageTag: b1261a16-ed2a-4a97-9047-4a75fe087981
+			sourceLineageTag: 61f26df3-a2eb-48be-930d-7dc24d1471cd
+			column: State
+
+		level City
+			lineageTag: f79fc385-2a28-44f1-bef1-46fff8a93966
+			sourceLineageTag: 4e4c6177-f49d-43ac-a242-359e207eb5e0
+			column: City
+
+		level 'Zip Code'
+			lineageTag: 337d91f2-995a-43c5-ae21-b0d7a3e130ed
+			sourceLineageTag: 343185d5-4c38-4124-b98d-23512a135f98
+			column: 'Zip Code'
+
+		level Address1
+			lineageTag: 246e7723-3006-4798-b6ea-b47273f7694c
+			sourceLineageTag: 8389a765-84a8-4c32-bf90-fbc0716e91d7
+			column: Address1
+
+		level Address2
+			lineageTag: 49efee0e-57ee-497b-9ed0-42cd70ff47b3
+			sourceLineageTag: 85fb4a68-3a78-4350-8138-b25a0e6e0933
+			column: Address2
+
+	partition Store = entity
+		mode: directQuery
+		source
+			entityName: Store
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

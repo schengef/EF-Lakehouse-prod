@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - Lakehouse Semantic Model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Lakehouse", "Lakehouse Semantic Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 4ad1a74d-5abc-4fe1-81af-ad99f26382cf
+
+	annotation PBI_IncludeFutureArtifacts = True
+

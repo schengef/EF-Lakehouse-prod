@@ -1,0 +1,45 @@
+table 'Readiness Domain'
+	lineageTag: c74813fb-9127-4d22-aac5-9e1a2a90d203
+	sourceLineageTag: 94cb2056-3bd7-433c-af00-19ec11963aec
+
+	column 'Business Domain Key'
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 53846b43-9ab3-4414-961d-27b9f1ecd1b4
+		sourceLineageTag: 200fc360-c7c2-45c0-84a3-a42fb9017102
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Last Processed'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: e1efa0e8-92a8-4b8a-a360-7dc9736f6898
+		sourceLineageTag: d5e5b402-d5e9-47e5-b636-342a4e1747cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Last Processed
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Freshness'
+		dataType: string
+		lineageTag: 7e83b7d2-308d-439c-b5b7-e5d2bd6c9ba8
+		sourceLineageTag: 404af8b3-f7b3-4430-83fa-32eeefba46da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Freshness
+
+		annotation SummarizationSetBy = User
+
+	partition 'Readiness Domain' = entity
+		mode: directQuery
+		source
+			entityName: Readiness Domain
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

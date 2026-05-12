@@ -1,0 +1,99 @@
+table 'Currency Pivot'
+	isHidden
+	lineageTag: d38eb9cf-3e49-48bc-8cbb-b23d739eb3a4
+
+	column 'Currency Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: eea3dadf-262c-4664-b8c5-3163ed03082a
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Date Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 2792743f-fc69-40ae-99ef-721bd947ef37
+		summarizeBy: none
+		sourceColumn: Currency Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Currency
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f917a390-f295-488a-95df-633e0411b836
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conversion Type'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(18)
+		lineageTag: 703de5e5-d1de-4652-9966-e237ee7dab42
+		summarizeBy: none
+		sourceColumn: Conversion Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conversion Value'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 20)
+		lineageTag: 0890c87c-4e97-4867-a7a5-140ccc3a2f62
+		summarizeBy: sum
+		sourceColumn: Conversion Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Currency Pivot' = m
+		mode: dual
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*,
+				from EDW_V.V_CURRENCY_PIVOT T
+				where CURRENCY_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Currency Key", "Currency Date Key", "Currency", "Conversion Type", "Conversion Value"})
+				in
+				    #"Removed Other Columns"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

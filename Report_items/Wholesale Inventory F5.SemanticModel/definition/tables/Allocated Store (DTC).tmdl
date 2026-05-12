@@ -1,0 +1,402 @@
+table 'Allocated Store (DTC)'
+	lineageTag: 168e6161-9779-4371-8d2c-5d81af13adcd
+
+	column 'Store Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 1110e310-06f1-4a74-8354-9c094145e145
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Account Name'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 50905c60-955d-43c0-a66c-d48180b113cd
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Code'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 24072e60-9e1a-439e-aeed-2868f7a6d6c5
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Group'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: e8efdb08-1e13-47ef-abe7-d0aa9b300888
+		summarizeBy: none
+		sourceColumn: Account Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dc Id'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: f67b4505-805a-4774-ac0b-55792a06a925
+		summarizeBy: none
+		sourceColumn: Dc Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Id'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a99fe5fb-b4fe-471e-888f-80de27824f71
+		summarizeBy: none
+		sourceColumn: Store Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Edi Store Id'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a3beb390-8cfe-459d-89e0-0f721701238f
+		summarizeBy: none
+		sourceColumn: Edi Store Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Wholesale Account Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 08ae8f46-6977-4850-b300-a78c7524a18f
+		summarizeBy: count
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Name'
+		dataType: string
+		sourceProviderType: nvarchar(3000)
+		lineageTag: ccd65b37-9fbe-4a77-8632-833a9bcde9fb
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Type'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 8b6bd897-5013-4b51-8b1a-6c810ac40874
+		summarizeBy: none
+		sourceColumn: Store Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Type Description'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 0a13dd24-9839-4fde-aa53-b14a2997d3e6
+		summarizeBy: none
+		sourceColumn: Store Type Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(10, 0)
+		lineageTag: e8344da5-65d1-44f2-8238-b3c94a4ce42e
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Finance Channel'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 03f17393-e83d-4f51-8509-705e15c93abf
+		summarizeBy: none
+		sourceColumn: Allocated Finance Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: f15287ce-b902-471e-a1c8-94b8662cb18d
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 69a00322-95e4-442d-a808-e9b635c7b078
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 8a1974d4-5c20-4590-8cbd-2a709d8e42a8
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 5cb68d6b-a9f0-41dd-a0e2-f3584341d656
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 64a0d077-493b-4599-94d4-0a098d28a1b9
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 38242563-6cfd-41f0-8435-9556313fff43
+		summarizeBy: none
+		sourceColumn: Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Open Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 110172fc-d31e-4775-8b79-0375f29c3104
+		summarizeBy: none
+		sourceColumn: Store Open Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Close Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 84e95d2d-041e-41e5-ab87-2a564f91b8da
+		summarizeBy: none
+		sourceColumn: Store Close Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Status'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: e8ee859a-32bb-4a55-b9c6-4fe91425f582
+		summarizeBy: none
+		sourceColumn: Store Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Size Selling Area'
+		dataType: double
+		sourceProviderType: decimal(4, 0)
+		lineageTag: 95a793de-9612-400d-b429-900e67af2343
+		summarizeBy: sum
+		sourceColumn: Store Size Selling Area
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Chain Description'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 38260472-ae9d-4aa8-8878-6c2b7f43df7a
+		summarizeBy: none
+		sourceColumn: Chain Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Division Code'
+		dataType: double
+		sourceProviderType: decimal(3, 0)
+		lineageTag: afa5198b-e37e-4712-9e36-08b2e38e29b9
+		summarizeBy: count
+		sourceColumn: Division Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Division Description'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 419f2775-e6b1-48df-a9c3-7dfdc89bc6eb
+		summarizeBy: none
+		sourceColumn: Division Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Code'
+		dataType: double
+		sourceProviderType: decimal(3, 0)
+		lineageTag: e8ac8f6f-b5ad-40cd-8990-036c6ab5740a
+		summarizeBy: count
+		sourceColumn: Region Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Region Description'
+		dataType: string
+		sourceProviderType: nvarchar(1000)
+		lineageTag: 3c8116e2-04a4-4176-93be-7f542a23b61c
+		summarizeBy: none
+		sourceColumn: Region Description
+		sortByColumn: 'Region Code'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Name'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1f47a9cb-6e98-403f-b353-05372c045a0f
+		summarizeBy: none
+		sourceColumn: Allocated Channel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Subchannel Name'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d5afc4c2-f7c2-4d93-91e7-0acb283eef5e
+		summarizeBy: none
+		sourceColumn: Allocated Subchannel Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Format'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c942853d-9bfb-4a5f-bcc8-63e9fa3e0f16
+		summarizeBy: none
+		sourceColumn: Allocated Channel Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Channel Geography'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5fc2dcd2-c456-4658-b04f-84ae5498126a
+		summarizeBy: none
+		sourceColumn: Allocated Channel Geography
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Channel Sort'
+		dataType: double
+		sourceProviderType: decimal(2, 0)
+		lineageTag: a9b9de66-e45d-4796-8dcd-d35891a309f1
+		summarizeBy: sum
+		sourceColumn: Finance Channel Sort
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Name And Num'
+		dataType: string
+		sourceProviderType: nvarchar(3103)
+		lineageTag: aa348640-4ba0-4d69-8f5c-c2459a8810a5
+		summarizeBy: none
+		sourceColumn: Store Name And Num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		sourceProviderType: decimal(12, 9)
+		lineageTag: 0e8dc9bc-9fc5-4b7d-8d98-434e57bdccaa
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		sourceProviderType: decimal(12, 9)
+		lineageTag: 9c1fae17-01c1-40c0-ac0e-ee6835c499ff
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Allocated Store (DTC)' = m
+		mode: dual
+		queryGroup: Dimensions
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com", SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_" & Environment, Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				 SELECT S.*, CAST(NULLIF(S.LATITUDE, '') AS DECIMAL(12,9)) as Latitude_Num,  CAST(NULLIF(S.Longitude, '') AS DECIMAL(12,9)) as Longitude_Num,
+				           C.CHANNEL_NAME, C.SUB_CHANNEL_NAME, C.CHANNEL_FORMAT, C.CHANNEL_GEOGRAPHY,
+				           CASE
+				            WHEN S.FINANCE_CHANNEL='Digital' then 1
+				            WHEN S.FINANCE_CHANNEL='Full Price US Stores' then 2
+				            WHEN S.FINANCE_CHANNEL='Canada' then 4
+				            WHEN S.FINANCE_CHANNEL='Renew Digital' then 5
+				            WHEN S.FINANCE_CHANNEL='Renew Stores' then 6
+				            WHEN S.FINANCE_CHANNEL='Company Stores' then 3
+				            WHEN S.FINANCE_CHANNEL='WHOLESALE US FULL PRICE' then 7
+				            WHEN S.FINANCE_CHANNEL='WHOLESALE US SPECIALTY' then 8
+				            WHEN S.FINANCE_CHANNEL='WHOLESALE INTERNATIONAL' then 9
+				            WHEN S.FINANCE_CHANNEL='WHOLESALE CANADA' then 10
+				            WHEN S.FINANCE_CHANNEL='WHOLESALE 3RD PARTY' then 11
+				            WHEN S.FINANCE_CHANNEL='Digital' then 12
+				            END AS FINANCE_CHANNEL_SORT,CONCAT(S.STORE_ID,' - ',S.STORE_NAME) as STORE_NAME_AND_NUM
+				    FROM EDW_PROD.EDW_V.D_STORE S
+				    LEFT OUTER JOIN EDW_V.D_CHANNEL C ON S.CHANNEL_KEY = C.CHANNEL_KEY
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery, each Text.Replace(_, "_", " ")),
+				    #"Renamed Columns" = Table.TransformColumnNames(#"Remove Underscores", each Text.Proper(_)),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Store Key", "Account Name", "Account Code", "Account Group", "Dc Id", "Store Id", "Edi Store Id", "Wholesale Account Key", "Store Name", "Store Type", "Store Type Description", "Channel Key", "Finance Channel", "Address1", "Address2", "City", "State", "Country", "Zip Code", "Store Open Date", "Store Close Date", "Store Status", "Store Size Selling Area", "Store Size Backroom Area", "Store Manager First Name", "Store Manager Last Name", "Chain Code", "Chain Description", "Divsion Code", "Divsion Description", "Region Code", "Region Description", "Channel Name", "Sub Channel Name", "Channel Format", "Channel Geography","Finance Channel Sort","Store Name And Num","Latitude Num","Longitude Num"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Removed Other Columns",{{"Channel Format", "Allocated Channel Format"}, {"Finance Channel", "Allocated Finance Channel"}, {"Sub Channel Name", "Allocated Subchannel Name"}, {"Channel Geography", "Allocated Channel Geography"}, {"Channel Name", "Allocated Channel Name"}, {"Divsion Description", "Division Description"}, {"Divsion Code", "Division Code"},{"Latitude Num","Latitude"},{"Longitude Num","Longitude"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"Store Size Backroom Area", "Store Manager First Name", "Store Manager Last Name", "Chain Code"})
+				in
+				    #"Removed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

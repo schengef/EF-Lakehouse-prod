@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Lakehouse Semantic Model","Headers - Wholesale Retail","Executive Dashboard Measures","SnowflakeWarehouse","Environment"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop"]
+
+ref table 'Headers - Wholesale Retail'
+ref table 'Executive Dashboard Measures'
+ref table 'Product (Current)'
+ref table Channel
+ref table Store
+ref table Delivery
+ref table 'Currency Selector'
+ref table Currency
+ref table Date
+ref table Inventory
+ref table 'Filter Dates'
+ref table 'Inventory Measures'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,66 @@
+table 'Forecast (DTC Store)'
+	lineageTag: f2829f2b-9204-4898-9e80-deea5fce2da0
+	sourceLineageTag: 378de02a-0b2b-40f9-8553-7456e97656f9
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2ec5e9a0-0038-47d5-b097-5821a30110a2
+		sourceLineageTag: 9aef9ca1-05e0-4962-a85f-4f16a3ed88e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 49879149-ef15-47c1-a851-0857a50ba1eb
+		sourceLineageTag: 40579b7b-0a4e-4acb-87d7-ef85b24b3f17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: 22766893-46de-4aea-9d6f-78570177deb9
+		sourceLineageTag: ce8cda8b-213b-4c7f-a2a9-1764e99c7db4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Store Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5c3a2b58-e398-4e07-b9ce-f638a5ef782f
+		sourceLineageTag: b55c77a9-fab7-4049-a9d6-f091321e287e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Store Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 1d43395a-716c-49ce-a646-41e310779257
+		sourceLineageTag: 865d6cf2-df13-4703-9985-b89b100c6a0b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast (DTC Store)' = entity
+		mode: directQuery
+		source
+			entityName: Forecast (DTC Store)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

@@ -1,0 +1,29 @@
+table 'Calculation group'
+	lineageTag: 4083e35a-d81e-493d-ad78-2c02af901647
+
+	calculationGroup
+
+		calculationItem 'Sort Measure' = SELECTEDMEASURE()
+
+		calculationItem 'Opposite Measure' =
+				
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units", [Net Sales $ TY],[Net Sales Units TY])
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: d48e960e-96f9-45c3-9eaa-6694046f2288
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 2920f920-3dd1-45d4-86ba-86de1838e37b
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

@@ -1,0 +1,13 @@
+expression 'DirectQuery to AS - Lakehouse Semantic Model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Lakehouse", "Lakehouse Semantic Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 452e78d2-585f-4531-b5f4-3f0c74b3c0ad
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"2c1d535d-f186-4fdf-b196-f1a3bfe2949e"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"063f79e6-b858-4852-bba6-f35611839455"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"737973f2-4326-499d-9a01-340082d12a58"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"8d59e016-4016-45b8-a98c-cac5109a9ac0"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"3b6297b8-290b-43ee-9998-3829c85556be"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"94cb2056-3bd7-433c-af00-19ec11963aec"}},"objectType":"Table"}]
+

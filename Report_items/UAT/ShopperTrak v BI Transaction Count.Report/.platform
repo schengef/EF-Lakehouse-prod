@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ShopperTrak v BI Transaction Count"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1baa0d53-4060-a7e6-461b-a5a4cf31c514"
+  }
+}

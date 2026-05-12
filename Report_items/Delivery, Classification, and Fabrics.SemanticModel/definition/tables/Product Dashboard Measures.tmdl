@@ -1,0 +1,4671 @@
+table 'Product Dashboard Measures'
+	lineageTag: 8e83b861-fb95-4a9b-bb49-3481193e2310
+
+	measure 'Net Sales $ TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE([External Retail Sales $],
+			    ALL('Date'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [External Retail Sales $],
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Net Retail Sales $
+		lineageTag: ba7f30db-5fa5-43ec-ad15-b2c37e6a17d6
+
+	measure 'Net Sales $ LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))    
+			Return
+			CALCULATE (
+			    [External Retail Sales $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Net Retail Sales $
+		lineageTag: 913e010a-288e-4ee0-938a-60db2b9e31be
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales $ % vs LY' =
+			
+			DIVIDE(
+			    [Net Sales $ TY]-[Net Sales $ LY],
+			    [Net Sales $ LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Net Retail Sales $
+		lineageTag: 039be1c1-ed57-44a0-86ac-a952cf23561c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales % to Class TY' =
+			
+			DIVIDE(
+			    [Net Sales $ TY],
+			    CALCULATE (
+			        [Net Sales $ TY],
+			        ALLEXCEPT('Product (Current)','Product (Current)'[Style Classification Description]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Class
+		lineageTag: 4be23935-d2fd-4566-b5cf-c143ff41460a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales % to Class LY' =
+			
+			DIVIDE(
+			    [Net Sales $ LY],
+			    CALCULATE (
+			        [Net Sales $ LY],
+			        ALLEXCEPT('Product (Current)','Product (Current)'[Style Classification Description]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Class
+		lineageTag: abec8d54-624e-420e-96d2-74b3c1330f36
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales $ % to Total TY' =
+			
+			DIVIDE(
+			    [Net Sales $ TY],
+			    CALCULATE (
+			        [Net Sales $ TY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Total
+		lineageTag: b571f175-7d46-4bc1-8cd3-5af4211a749a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales $ % to Total LY' =
+			
+			DIVIDE(
+			    [Net Sales $ LY],
+			    CALCULATE (
+			        [Net Sales $ LY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Total
+		lineageTag: 635978bc-690e-4544-a8fd-d40af3d5f133
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Blank Column' = Blank()
+		formatString: 0
+		displayFolder: Formatting
+		lineageTag: 779d7f09-9d3b-4cdc-adf0-e889bb64a1d9
+
+		changedProperty = Name
+
+	measure 'Display TY' = ```
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ TY],"$#,###;($#,###);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units TY],"#,###;(#,###);")),
+			    "Sell Thru % Units",format([Sell Through % TY],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Class",format([Net Sales % to Class TY],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Total Apparel",format([Net Sales $ % to Total TY],"0.0%;(0.0%)"),
+			    "Cost $ On Hand 
+			% to Total Apparel",format([Cost OH % to Total TY],"0.0%;(0.0%)"),
+			    "Net Gross Margin %",format([Net Gross Margin % TY],"0.0%;(0.0%)"),
+			    "Net Retail Sales $ AUR",format([Net Sales $ AUR TY],"$#,###;($#,###)"),
+			    "Retail $ On Hand AUR",format([On Hand AUR $ TY],"$#,###;($#,###)"),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH $ TY],"$#,###;($#,###);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH TY],"#,###;(#,###);")),
+			    "Weeks On Hand Units",format([Weeks On Hand TY],"0.0;(0.0)"),
+			    "FP 
+			% to Total Apparel",format([Net Sales FP % TY],"0.0%;(0.0%)"),
+			    "Shipments",IF(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",FORMAT([Shipments $ TY],"$#,###;($#,###)"),format([Shipments Units TY],"#,###;(#,###)"))
+			)
+			```
+		displayFolder: Display
+		lineageTag: bfa3ee54-a4d8-49fc-8b74-ec6d5fee171e
+
+	measure 'Display LY' = ```
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ LY],"$#,###;($#,###);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units LY],"#,###;(#,###);")),
+			    "Sell Thru % Units",format([Sell Through % LY],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Class",format([Net Sales % to Class LY],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Total Apparel",format([Net Sales $ % to Total LY],"0.0%;(0.0%)"),
+			    "Cost $ On Hand 
+			% to Total Apparel",format([Cost OH % to Total LY],"0.0%;(0.0%)"),
+			    "Net Gross Margin %",format([Net Gross Margin % LY],"0.0%;(0.0%)"),
+			    "Net Retail Sales $ AUR",format([Net Sales $ AUR LY],"$#,###;($#,###)"),
+			    "Retail $ On Hand AUR",format([On Hand AUR $ LY],"$#,###;($#,###)"),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH $ LY],"$#,###;($#,###);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH LY],"#,###;(#,###);")),
+			    "Weeks On Hand Units",format([Weeks On Hand LY],"0.0;(0.0)"),
+			    "FP 
+			% to Total Apparel",format([Net Sales FP % LY],"0.0%;(0.0%)"),
+			    "Shipments",IF(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",FORMAT([Shipments $ LY],"$#,###;($#,###)"),format([Shipments Units LY],"#,###;(#,###)"))
+			)
+			```
+		displayFolder: Display
+		lineageTag: 598b9482-2837-4034-9ab7-e857c3d88ac6
+
+	measure 'Display % vs LY' =
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ % vs LY],"0.0%;(0.0%);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units % vs LY],"0.0%;(0.0%);")),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH $ % vs LY],"0.0%;(0.0%);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH % vs LY],"0.0%;(0.0%);")),
+			    blank()
+			)
+		displayFolder: Display
+		lineageTag: 9f590b29-1e81-4df3-ab76-37a20edc61de
+
+	measure 'Display Overall' =
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Period]),
+			    "TY",[Display TY],
+			    "LY",[Display LY],
+			    "% vs LY",[Display % vs LY],
+			    ".",SWITCH(
+			        SELECTEDVALUE('Headers-Units/Dollars'[Selection]),
+			        "Dollars",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales Units",blank(),
+			            "Units On Hand",blank(),
+			            " "
+			        ),
+			        "Units",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales $",blank(),
+			            "Cost $ On Hand",blank(),
+			            " "
+			        ),
+			        " "
+			    )
+			)
+		displayFolder: Display
+		lineageTag: a4875e0a-516d-4bed-b6dd-9f153cebead9
+
+	measure 'Column Divider Formatting' =
+			
+			if(SELECTEDVALUE('Headers-Detail'[Period])=".","Fill")
+		displayFolder: Formatting
+		lineageTag: 484824f9-7843-4d7b-81fe-2aa745d8b292
+
+	measure 'Net Sales FP % TY' =
+			
+			DIVIDE(
+			    CALCULATE (
+			        [Net Sales $ TY],
+			        KEEPFILTERS('Transactions (External POS)'[Mark Type]="FP")
+			    ),
+			    [Net Sales $ TY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Full Price %
+		lineageTag: 95213593-b479-4bf3-b7fc-4bf61509ea9a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales FP % LY' =
+			
+			DIVIDE(
+			    CALCULATE (
+			        [Net Sales $ LY],
+			        KEEPFILTERS('Transactions (External POS)'[Mark Type]="FP")
+			    ),
+			    [Net Sales $ LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Full Price %
+		lineageTag: 2484abe1-ace7-48c1-ab95-5c00aaff6adf
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales $ AUR TY' =
+			
+			DIVIDE(
+			    [Net Sales $ TY],
+			    [Net Sales Units TY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: AUR
+		lineageTag: f8a4cdb8-6468-4fba-a3e9-1dc0b555a9aa
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Sales Units TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [External Retail Sales Units],
+			        ALL('Date'),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [External Retail Sales Units],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: #,0
+		displayFolder: Net Sales Units
+		lineageTag: 0972d0bc-de64-4016-b891-b1473a0376bf
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Net Sales Units LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [External Retail Sales Units],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: #,0
+		displayFolder: Net Sales Units
+		lineageTag: e5c8f646-fe7d-433f-a8fb-1f9d2ba8be34
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Net Sales $ AUR LY' =
+			
+			DIVIDE(
+			    [Net Sales $ LY],
+			    [Net Sales Units LY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: AUR
+		lineageTag: 9fdf0933-78ca-4ea9-b34e-5c39ce6b72d0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH $ TY' =
+			calculate(
+			[External On Hand Cost $],
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\Cost
+		lineageTag: aa7d3959-78e1-43d9-9f34-2c3be4c818bc
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH $ LY' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			CALCULATE(
+			    [External On Hand Cost $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    'Date'[Date]=LastDayLY,
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\Cost
+		lineageTag: ee628b45-51a4-46bf-8a1f-d2577ccda873
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH $ % vs LY' =
+			
+			DIVIDE(
+			    [Cost OH $ TY]-[Cost OH $ LY],
+			    [Cost OH $ LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\Cost
+		lineageTag: 310e028f-8d5a-41f9-b9f5-bb58df1a5387
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH % to Total LY' =
+			
+			DIVIDE(
+			    [Cost OH $ LY],
+			    CALCULATE (
+			        [Cost OH $ LY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\% to Total
+		lineageTag: 81fb6c7b-6c08-47a3-8177-3d8d48292e09
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH % to Total TY' =
+			
+			DIVIDE(
+			    [Cost OH $ TY],
+			    CALCULATE (
+			        [Cost OH $ TY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\% to Total
+		lineageTag: d726d40d-a9e1-4917-9e9d-a58e8ae5df9e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Cost $ TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [External Sales Cost $],
+			        ALL('Date'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [External Sales Cost $],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Gross Margin %
+		lineageTag: 83573ef0-42af-48d9-aca6-c3141ce18668
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Net Cost $ LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))    
+			Return
+			CALCULATE (
+			    [External Sales Cost $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD", 'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		displayFolder: Gross Margin %
+		lineageTag: cbe93230-2481-4af8-80c2-8f98c78ff59c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Gross Margin % TY' =
+			
+			DIVIDE(
+			    [Net Sales $ TY]-[Net Cost $ TY],
+			    [Net Sales $ TY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Gross Margin %
+		lineageTag: e6b21147-d54b-48be-9a93-efc17d5ad783
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Gross Margin % LY' =
+			
+			DIVIDE(
+			    [Net Sales $ LY]-[Net Cost $ LY],
+			    [Net Sales $ LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Gross Margin %
+		lineageTag: 5583c6c1-a9d0-4a3b-adbc-b2292d62edf0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'On Hand AUR $ TY' = ```
+			
+			    DIVIDE(
+			    [Retail OH $ TY],
+			    [Units OH TY]
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\AUR
+		lineageTag: 59ffccf3-fc0f-42fd-8eb0-a9f0832743f3
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'On Hand AUR $ LY' = ```
+			
+			    DIVIDE(
+			    [Retail OH $ LY],
+			    [Units OH LY]
+			    )
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: On Hand\AUR
+		lineageTag: b63ebf58-fe01-4122-afbd-1fc0741adee0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Remove Empty Rows Detail' =
+			
+			if(or(ISBLANK([Net Sales $ TY]),[Net Sales $ TY]=0)&&or(ISBLANK([Net Sales $ LY]),[Net Sales $ LY]=0)&&or(ISBLANK([COST OH $ TY]),[COST OH $ TY]=0)&&or(ISBLANK([COST OH $ LY]),[COST OH $ LY]=0),"Remove")
+		displayFolder: Formatting
+		lineageTag: 709f6f2d-fca1-4fff-90fe-30795acdc584
+
+	measure 'Sell Through % TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [External Sell Through %],
+			        ALL('Date'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [External Sell Through %],
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sell Thru
+		lineageTag: f0d1e22d-78ad-4a60-818d-b7987eb04a22
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sell Through % LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [External Sell Through %],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Sell Thru
+		lineageTag: 00e934dc-e8a6-46ba-92c4-ab0cbd932ab9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return %' =
+			
+			DIVIDE(
+			    [Returns Units],
+			    [Gross Unit Sales]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Returns
+		lineageTag: 1bca8be2-f54e-4a83-9a4d-24d087c361a2
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return % to Total' =
+			
+			DIVIDE(
+			    [Returns Units],
+			    CALCULATE(
+			        [Returns Units],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Returns
+		lineageTag: 74441c7a-e0ee-43cd-9786-f1af64c73fd5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Weeks On Hand TY' =
+			
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			RETURN
+			DIVIDE(
+			    [External Quantity On Hand],
+			    DIVIDE(
+			        CALCULATE(
+			            [External Retail Sales Units],
+			            ALLEXCEPT('Date','Date'[Select a Calendar]),
+			            'Date'[Year]=LastFiscalYear,
+			            DATESINPERIOD('Date'[Week End Date],LastFiscalWeek,-28,DAY),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),4 //Rolling average of the last 4 weeks
+			    )
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: On Hand\Weeks
+		lineageTag: 41292d3b-6627-4324-9311-0ceac663d3e2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Weeks On Hand LY' =
+			
+			VAR LastDayAvailable = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR RollingPeriod=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], DATESINPERIOD('Date'[Week End Date],LastDayAvailable,-28,DAY)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			RETURN
+			DIVIDE(
+			    CALCULATE(
+			    [External Quantity On Hand],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    'Date'[Date]<=LastDayLY,
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    DIVIDE(
+			        CALCULATE(
+			            [External Retail Sales Units],
+			            ALLEXCEPT('Date','Date'[Select a Calendar]),
+			            'Date'[Date] in RollingPeriod,
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),4 //Rolling average of the last 4 weeks
+			    )
+			)
+		formatString: " 0.0;(0.0)"
+		displayFolder: On Hand\Weeks
+		lineageTag: 2c90a295-9dec-45a5-b0b1-d1b4bde71c77
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales by Rank LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Ranking Measure LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Ranking Measure LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: f8facb2c-3483-487a-89be-c5f4fa303625
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Sales by Rank TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Ranking Measure TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Ranking Measure TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 1e251a4b-fc4c-4a1a-b27d-6a08cef6255a
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			RETURN
+			CALCULATE(MAX('Product (Current)'[Color Description]),
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC,Dense)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			)
+		displayFolder: Rank\Color\Rank
+		lineageTag: d3aeaa4d-2c34-401f-b407-28abb2fdd942
+
+	measure 'Rank LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			RETURN
+			CALCULATE(max('Product (Current)'[Color Description]),
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			)
+		displayFolder: Rank\Color\Rank
+		lineageTag: f4432fec-a88c-4b9d-8fcb-8c7be265fd4b
+
+	measure 'Sales by Rank % vs LY-Color' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Color]-[Sales by Rank LY-Color],
+			    [Sales by Rank LY-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 76b2f1d3-de2e-4c28-aeea-87e003eef1a7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ST% by Rank TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Sell Through % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Sell Through % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: 3d8d29b1-ffb6-4b64-ab6a-5e6de4234f02
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ST% by Rank LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Sell Through % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Sell Through % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: 8ae42ca3-0e3a-4372-b7ca-94b34b7ec2d8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total TY-Color' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Color],
+			    CALCULATE (
+			        [Ranking Measure TY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: de8c9d2c-eff7-4eb1-bfb6-a50db21e9c68
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total LY-Color' =
+			
+			DIVIDE(
+			    [Sales by Rank LY-Color],
+			    CALCULATE (
+			        [Ranking Measure LY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 2928cab4-0ef8-4abb-a6ec-d995c3c8c419
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return % Rank for Filter' =
+			
+			RANKX(ALL('Product (Current)'[Style Number And Name]),[Return %],,DESC)
+		formatString: 0
+		displayFolder: Returns
+		lineageTag: 0d169d71-81d8-4a54-a96f-6da468048346
+
+	measure 'Rank Display OH TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display OH TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display OH TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: c8ad9f2a-792a-4f73-b8fb-ae1010418658
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Display OH LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display OH LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display OH LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: 2949347b-35dc-46b1-ba2b-0578e8223db0
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Net GM TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Gross Margin % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Gross Margin % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: 68b60b71-1a17-4719-8b2a-cfad2d838241
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net GM LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Gross Margin % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Gross Margin % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: e4fe3981-5c90-42e0-bdb3-6ee26ce63ee7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Sales AUR TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales $ AUR TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales $ AUR TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: 3113d399-f6c4-4bf2-b7b5-3eb35b3940f3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Sales AUR LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales $ AUR LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales $ AUR LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: b7486d45-d6a2-4175-a417-e9661eb3ce9c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank OH AUR TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([On Hand AUR $ TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([On Hand AUR $ TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: aa15c456-b159-441b-95fb-2c5c8fb4f2f8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank OH AUR LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([On Hand AUR $ LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([On Hand AUR $ LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: 98bdef42-93e6-442b-8ca4-d825268ac299
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank FP% TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales FP % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales FP % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: 71a525cc-ae8f-4c9b-b661-765e2e2b5b67
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank FP% LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales FP % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales FP % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: c9588935-d8ae-48e7-b22c-3be99dc35caf
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Retail OH $ TY' =
+			calculate(
+			[External On Hand Retail $],
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+		displayFolder: On Hand\Retail
+		lineageTag: a3e716bc-75a3-47b6-9acd-1c27ceec3d04
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Retail OH $ LY' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			CALCULATE(
+			    [External On Hand Retail $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    'Date'[Date]=LastDayLY,
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+		displayFolder: On Hand\Retail
+		lineageTag: e3098fa7-201d-47a1-bd94-5524d466d408
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Retail OH % to Total TY' =
+			
+			DIVIDE(
+			    [Retail OH $ TY],
+			    CALCULATE (
+			        [Retail OH $ TY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\Retail
+		lineageTag: 658f328f-5632-42f4-b543-b31e8eeacfc6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Retail OH % to Total LY' =
+			
+			DIVIDE(
+			    [Retail OH $ LY],
+			    CALCULATE (
+			        [Retail OH $ LY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\Retail
+		lineageTag: 74bfc7d1-7a12-436f-bf68-f2ce95248db1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Retail OH % to Total TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Retail OH % to Total TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\Retail OH
+		lineageTag: 326abd4d-ea75-49e4-84dc-d41be085cb31
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Retail OH % to Total LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Retail OH % to Total LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\Retail OH
+		lineageTag: a2430e80-1549-483f-942f-4577310c10c4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH LY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Weeks On Hand LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Weeks On Hand LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: f57b630d-c974-4c38-901c-815c57473402
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Weeks On Hand TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Weeks On Hand TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: beca735f-df07-488a-bdec-4498349e5301
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Display OH % vs LY-Color' =
+			
+			DIVIDE(
+			    [Rank Display OH TY-Color]-[Rank Display OH LY-Color],
+			    [Rank Display OH LY-Color]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: 8ea42373-a77b-4587-a9bc-219f0c85b702
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Is Current Season' = ```
+			
+			VAR SeasonShort=IF(LOOKUPVALUE('Date'[MonthNum],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))<7,"S","F")
+			VAR SeasonLong=IF(SeasonShort="S","Spring","Fall")
+			VAR YearLong=LOOKUPVALUE('Date'[Year],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR YearShort=RIGHT(YearLong,2)
+			RETURN 
+			SeasonShort&YearShort&"-"&SeasonLong&" "&YearLong
+			```
+		displayFolder: Returns
+		lineageTag: 82b74579-f695-4473-9564-8c173cc9119c
+
+		changedProperty = Name
+
+	measure 'Remove Empty Rows Delivery Year Month' =
+			
+			VAR BaseMonth=format(MAX('Date'[Date]),"mm")
+			VAR BaseYear=FORMAT(MAX('Date'[Date]),"yy")
+			VAR NexMonth=if(DAY(Max('Date'[Date]))<12,BaseMonth,SWITCH(BaseMonth,"12","01",format(VALUE(BaseMonth+1),"00")))
+			VAR NexYear=if(DAY(Max('Date'[Date]))<12,BaseYear,SWITCH(BaseMonth,"12",format(value(BaseYear+1),"00"),BaseYear))
+			VAR DeliveryCodeKey=LOOKUPVALUE(Delivery[Delivery Code Key],Delivery[Delivery Code],NexYear&NexMonth)
+			RETURN
+			DeliveryCodeKey-SELECTEDVALUE('Delivery'[Delivery Code Key])
+		formatString: 0
+		displayFolder: Delivery\Formatting
+		lineageTag: e2150722-3fd0-4dd0-bddd-e90f9569624f
+
+	measure 'Net Sales $ LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [External Retail Sales $],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [External Retail Sales $],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "LTD",'Date'[Date]<=LastDayLY
+			            ),
+			            KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Net Sales $ LY]
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: 49e5bbcb-8d58-423e-af2e-a3b858c12b45
+
+	measure 'Net Sales $ % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales $ TY]-[Net Sales $ LY Delivery],
+			    [Net Sales $ LY Delivery]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: f5c2dd09-8734-4ecd-a22b-d14f83a5ea8b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales FP % LY Delivery' =
+			
+			DIVIDE(
+			    CALCULATE (
+			        [Net Sales $ LY Delivery],
+			        'Transactions (External POS)'[Mark Type]="FP"
+			    ),
+			    [Net Sales $ LY Delivery]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Full Price %
+		lineageTag: 4f62a5c9-6c8f-4cef-b265-ba8f34cd3d56
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales $ AUR LY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales $ LY Delivery],
+			    [Net Sales Units LY Delivery]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\AUR
+		lineageTag: 5bef366d-d519-4b1e-a38d-9751407d9ca2
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH $ LY Delivery' =
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    CALCULATE(
+			        [External On Hand Cost $],
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        'Date'[Date]=LastDayLY,
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    [Cost OH $ LY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\On Hand\Cost
+		lineageTag: e136737e-7b60-4c5a-a853-307bdb7243d2
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Cost OH $ TY]-[Cost OH $ LY Delivery],
+			    [Cost OH $ LY Delivery]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\On Hand\Cost
+		lineageTag: e5c27141-0b78-42e5-a118-a130718ce730
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'On Hand AUR $ LY Delivery' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    CALCULATE(
+			        DIVIDE(
+			            [External On Hand Retail $],
+			            [External Quantity On Hand]
+			        ),
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        'Date'[Date]=LastDayLY,
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    [On Hand AUR $ LY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Delivery\On Hand\AUR
+		lineageTag: d5fa1afa-a5e9-4b0e-8bec-1a6e642cfbd1
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sell Through % LY Delivery' = ```
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))    
+			Return
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [External Sell Through %],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [External Sell Through %],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            ALLEXCEPT('Date','Date'[Select a Calendar]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY
+			            ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Sell Through % LY]
+			)
+			```
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Sell Thru
+		lineageTag: 126be5a2-6ade-49c1-a116-c414fc8e76f9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Units OH LY BOP Delivery' =
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			
+			RETURN
+			CALCULATE(
+			    [External Quantity On Hand],
+			    'Delivery'[Delivery Year]=format(LastFiscalYear-1,"####"),
+			    ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD",'Date'[week]=LastFiscalWeek-1 && 'Date'[Year]=LastFiscalYear-1,
+			        "MTD",'Date'[Monthnum]=LastFiscalMonth-1 && 'Date'[Year]=LastFiscalYear-1,
+			        "YTD",'Date'[Year]=LastFiscalYear-1 && 'Date'[Dayofyear]=7,
+			        'Date'[Week End Date]=MIN('Date'[Week End Date])
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+		displayFolder: Delivery\Sell Thru
+		lineageTag: e4852b0a-16c4-45d4-87f3-d657b53a7e77
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Cost $ LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			if(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			            [External Sales Cost $],
+			            ALL('Date'),
+			            'Date'[Date]<=LastDayLY,
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [External Sales Cost $],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY
+			            ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Net Cost $ LY]
+			)
+			```
+		displayFolder: Delivery\Gross Margin %
+		lineageTag: 84f2139b-386a-4929-8325-8a32fd42fecb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Gross Margin % LY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales $ LY Delivery]-[Net Cost $ LY Delivery],
+			    [Net Sales $ LY Delivery]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Gross Margin %
+		lineageTag: 793a04ab-a202-4389-9836-e59a2021ac49
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Weeks On Hand LY Delivery' =
+			
+			VAR LastDayAvailable =  LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR RollingPeriod=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], DATESINPERIOD('Date'[Week End Date],LastDayAvailable,-28,DAY)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			RETURN
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    DIVIDE(
+			        CALCULATE(
+			        [External Quantity On Hand],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        'Date'[Date]<=LastDayLY,
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        DIVIDE(
+			            CALCULATE(
+			                [External Retail Sales Units],
+			                ALLEXCEPT('Date','Date'[Select a Calendar]),
+			                ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			                'Date'[Date] in RollingPeriod,
+			                'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			                KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			            ),4 //Rolling average of the last 4 weeks
+			        )
+			    ),
+			    [Weeks On Hand LY]
+			)
+		formatString: " 0.0;(0.0)"
+		displayFolder: Delivery\On Hand\Weeks
+		lineageTag: 82cc0292-ec50-4160-8853-955f0fa4518a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))    
+			Return
+			if(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			            [External Retail Sales Units],
+			            ALL('Date'),
+			            'Date'[Date]<=LastDayLY,
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [External Retail Sales Units],
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY
+			            ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Net Sales Units LY]
+			)
+			```
+		formatString: #,0
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: 530b995b-f066-4bba-a2b2-3c2c9cc8270c
+
+	measure 'Display TY Delivery' = ```
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ TY],"$#,###;($#,###);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units TY],"#,###;(#,###);")),
+			    "Sell Thru % Units",format([Sell Through % TY],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Total Apparel",format([Net Sales $ % to Total TY Delivery],"0.0%;(0.0%)"),
+			    "Cost $ On Hand 
+			% to Total Apparel",format([Cost OH % to Total TY Delivery],"0.0%;(0.0%)"),
+			    "Net Gross Margin %",format([Net Gross Margin % TY],"0.0%;(0.0%)"),
+			    "Net Retail Sales $ AUR",format([Net Sales $ AUR TY],"$#,###;($#,###)"),
+			    "Retail $ On Hand AUR",format([On Hand AUR $ TY],"$#,###;($#,###)"),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH $ TY],"$#,###;($#,###);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH TY],"#,###;(#,###);")),
+			    "Weeks On Hand Units",format([Weeks On Hand TY],"0.0;(0.0)"),
+			    "FP 
+			% to Total Apparel",format([Net Sales FP % TY],"0.0%;(0.0%)"),
+			    "Shipments",IF(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",FORMAT([Shipments $ TY],"$#,###;($#,###)"),format([Shipments Units TY],"#,###;(#,###)"))
+			)
+			```
+		displayFolder: Delivery\Display
+		lineageTag: 50f0d8f7-871b-497e-b5b3-9519611fb076
+
+	measure 'Display LY Delivery' = ```
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ LY Delivery],"$#,###;($#,###);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units LY Delivery],"#,###;(#,###);")),
+			    "Sell Thru % Units",format([Sell Through % LY Delivery],"0.0%;(0.0%)"),
+			    "Net Sales $ 
+			% to Total Apparel",format([Net Sales $ % to Total LY Delivery],"0.0%;(0.0%)"),
+			    "Cost $ On Hand 
+			% to Total Apparel",format([Cost OH % to Total LY Delivery],"0.0%;(0.0%)"),
+			    "Net Gross Margin %",format([Net Gross Margin % LY Delivery],"0.0%;(0.0%)"),
+			    "Net Retail Sales $ AUR",format([Net Sales $ AUR LY Delivery],"$#,###;($#,###)"),
+			    "Retail $ On Hand AUR",format([On Hand AUR $ LY Delivery],"$#,###;($#,###)"),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH $ LY Delivery],"$#,###;($#,###);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH LY Delivery],"#,###;(#,###);")),
+			    "Weeks On Hand Units",format([Weeks On Hand LY Delivery],"0.0;(0.0)"),
+			    "FP 
+			% to Total Apparel",format([Net Sales FP % LY Delivery],"0.0%;(0.0%)"),
+			"Shipments",IF(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",FORMAT([Shipments $ LY Delivery],"$#,###;($#,###)"),format([Shipments Units LY Delivery],"#,###;(#,###)"))
+			)
+			```
+		displayFolder: Delivery\Display
+		lineageTag: c6e4ac87-8b06-46c9-86fb-db156cb32b0f
+
+	measure 'Display % vs LY Delivery' =
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Metric]),
+			    "Net Sales $", if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Net Sales $ % vs LY Delivery],"0.0%;(0.0%);")),
+			    "Net Sales Units",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Net Sales Units % vs LY Delivery],"0.0%;(0.0%);")),
+			    "Cost $ On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",format([Cost OH % vs LY Delivery],"0.0%;(0.0%);")),
+			    "Units On Hand",if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Units",format([Units OH % vs LY Delivery],"0.0%;(0.0%);")),
+			    blank()
+			)
+		displayFolder: Delivery\Display
+		lineageTag: 6b72f7bd-2034-4610-86a4-c32eca324e32
+
+	measure 'Display Overall Delivery' =
+			
+			Switch(
+			    SELECTEDVALUE('Headers-Detail'[Period]),
+			    "TY",[Display TY Delivery],
+			    "LY",[Display LY Delivery],
+			    "% vs LY",[Display % vs LY Delivery],
+			    ".",SWITCH(
+			        SELECTEDVALUE('Headers-Units/Dollars'[Selection]),
+			        "Dollars",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales Units",blank(),
+			            "Units On Hand",blank(),
+			            " "
+			        ),
+			        "Units",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales $",blank(),
+			            "Cost $ On Hand",blank(),
+			            " "
+			        ),
+			        " "
+			    )
+			)
+		displayFolder: Delivery\Display
+		lineageTag: 81cde8d8-31c0-4b6d-98a1-26d54ebe73d1
+
+	measure 'Retail Returns $ Product' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			CALCULATE (
+			    [Retail Returns $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			        "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			        "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Returns
+		lineageTag: a179db17-51bf-47da-8140-18c0619ed5b4
+
+		changedProperty = Name
+
+	measure 'Retail Returns Units Product' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			CALCULATE (
+			    [Returns Units],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week]=LastFiscalWeek, 
+			        "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			        "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: 0
+		displayFolder: Returns
+		lineageTag: fad14733-d236-41ab-9952-8e3b2e8e142a
+
+	measure 'Net Sales $ % to Total TY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales $ TY],
+			    CALCULATE (
+			        [Net Sales $ TY],
+			        ALL(Delivery)
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Delivery\% to Total
+		lineageTag: f52aca49-60df-4e9d-acce-c5c4bfa7ab7d
+
+	measure 'Net Sales $ % to Total LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))   
+			RETURN
+			DIVIDE(
+			    [Net Sales $ LY Delivery],
+			    CALCULATE (
+			        [External Retail Sales $],
+			        ALL('Delivery'),
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			            "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			            "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			            "LTD",'Date'[Date]<=LastDayLY
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: 0.00%;(0.00%);0.00%
+		displayFolder: Delivery\% to Total
+		lineageTag: cc5abdb7-63d2-44c5-8405-e62f5b2b4a19
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH % to Total TY Delivery' =
+			
+			DIVIDE(
+			    [Cost OH $ TY],
+			    CALCULATE (
+			        [Cost OH $ TY],
+			        ALL(Delivery)
+			    )
+			)
+		displayFolder: Delivery\% to Total
+		lineageTag: 7b56311e-04e8-4475-b72c-e6d9a546a2a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % to Total LY Delivery' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			
+			RETURN
+			DIVIDE(
+			    [Cost OH $ LY Delivery],
+			    CALCULATE(
+			        [External On Hand Cost $],
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        ALL(Delivery),
+			        'Date'[Date]<=LastDayLY
+			    )
+			)
+		formatString: 0.00%;(0.00%);0.00%
+		displayFolder: Delivery\% to Total
+		lineageTag: 44de192a-92ed-4560-85df-296328b0c756
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % vs LY' =
+			
+			DIVIDE(
+			    [Net Sales Units TY]-[Net Sales Units LY],
+			    [Net Sales Units LY]
+			)
+		formatString: " 0.0%;(0.0%);0.0%"
+		displayFolder: Net Sales Units
+		lineageTag: b60beaec-3dc9-4aa6-a36e-2af18740982c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Units OH TY' =
+			calculate(
+			[External Quantity On Hand],
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+		formatString: #,0
+		displayFolder: On Hand\Units
+		lineageTag: 3e36f630-6136-43a6-ba30-05a820cbdf34
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Units OH LY' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			CALCULATE(
+			    [External Quantity On Hand],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    'Date'[Date]=LastDayLY,
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+		formatString: #,0
+		displayFolder: On Hand\Units
+		lineageTag: 8413f012-6472-41e8-8659-49bc72389196
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Units OH % vs LY' =
+			
+			DIVIDE(
+			    [Units OH TY]-[Units OH LY],
+			    [Units OH LY]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: On Hand\Units
+		lineageTag: d2205ec5-ed67-4330-9376-9a064fc5996e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Units OH LY Delivery' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    CALCULATE(
+			        [External Quantity On Hand],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        'Date'[Date]=LastDayLY,
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    [Units OH LY]
+			)
+		formatString: 0
+		displayFolder: Delivery\On Hand\Units
+		lineageTag: c07c43eb-ff1f-431a-862c-5295887947de
+
+	measure 'Units OH % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Units OH TY]-[Units OH LY Delivery],
+			    [Units OH LY Delivery]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Delivery\On Hand\Units
+		lineageTag: 653fec79-6d20-4147-9f83-6a68b426175a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales Units TY]-[Net Sales Units LY Delivery],
+			    [Net Sales Units LY Delivery]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: d474ef08-4544-425b-9393-fac316451b3a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Net Sales % vs LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ % vs LY],[Net Sales Units % vs LY])
+			```
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Display
+		lineageTag: 6b473d5a-be53-427d-ba04-ef6f0fc477e2
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Net Sales LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ LY],[Net Sales Units LY])
+			```
+		displayFolder: Display
+		lineageTag: febd6605-0af6-4ad9-8da8-d077087e284a
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+		changedProperty = Name
+
+	measure 'Display Net Sales TY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ TY],[Net Sales Units TY])
+			```
+		displayFolder: Display
+		lineageTag: d0f8d0a1-d61b-40aa-a310-97bb77dd5b77
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+		changedProperty = Name
+
+	measure 'Display OH % vs LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Cost OH $ % vs LY],[Units OH % vs LY])
+			```
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Display
+		lineageTag: bec7aa3c-4dac-452a-9123-98ae167067f7
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display OH LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Cost OH $ LY],[Units OH LY])
+			```
+		displayFolder: Display
+		lineageTag: 3f4a0d8c-8379-4641-a3f4-f600a547534e
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+		changedProperty = Name
+
+	measure 'Display OH TY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Cost OH $ TY],[Units OH TY])
+			```
+		displayFolder: Display
+		lineageTag: db50aaaa-f039-4482-ac58-1bbb70df6bcf
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+		changedProperty = Name
+
+	measure 'Ranking Measure TY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ TY],[Net Sales Units TY])
+			```
+		displayFolder: Rank
+		lineageTag: 1313720b-d2c6-4e0e-a89a-a360de23af01
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Ranking Measure LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ LY],[Net Sales Units LY])
+			```
+		displayFolder: Rank
+		lineageTag: 62b57f48-2df0-476d-a4e6-7d33dd88ffdd
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Shipments $ TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [Wholesale Shipments $],
+			        ALL('Date'),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [Wholesale Shipments $],
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: fc164708-222a-41cb-9230-73487890d8ca
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Shipments $ LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			IF(
+			    ISFILTERED(Delivery),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [Wholesale Shipments $],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [Wholesale Shipments $],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY
+			            ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Shipments $ LY] 
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: c2f913ef-301a-464a-aee8-b4e25d7a4029
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Shipments Units LY Delivery' = ```
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=max('Date'[Year]))),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=max('Date'[Week End Date])))    
+			Return
+			IF(
+			    ISFILTERED(Delivery),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [Wholesale Shipments Units],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [Wholesale Shipments Units],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY
+			            ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Shipments Units LY]
+			)
+			```
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: 1fc34239-35e8-4bdd-abdc-92c2965a5677
+
+	measure 'Shipments Units TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [Wholesale Shipments Units],
+			        ALL('Date'),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [Wholesale Shipments Units],
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: 4eb11959-0096-4c0c-b284-3014b5ae8454
+
+	measure 'Shipments $ LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Wholesale Shipments $],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 570c5f77-1fcd-48c1-96a3-0c467f4dbfbc
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Shipments Units LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Wholesale Shipments Units],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: #,0
+		displayFolder: Shipments
+		lineageTag: 78a25bd6-f6e8-4796-8344-9b22079de719
+
+	measure 'Net Sales Units % to Total TY' =
+			
+			DIVIDE(
+			    [Net Sales Units TY],
+			    CALCULATE (
+			        [Net Sales Units TY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: % to Total
+		lineageTag: 4c079050-a7e5-4f5f-be50-378ec8e0cfb7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % to Total TY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales Units TY],
+			    CALCULATE (
+			        [Net Sales Units TY],
+			        ALL(Delivery)
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Delivery\% to Total
+		lineageTag: dd0c181c-07f1-46c0-a6a3-d803889e7f49
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Header Display' =
+			
+			SWITCH(
+			        SELECTEDVALUE('Headers-Units/Dollars'[Selection]),
+			        "Dollars",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales Units",blank(),
+			            "Units On Hand",blank(),
+			            " "
+			        ),
+			        "Units",SWITCH(
+			            SELECTEDVALUE('Headers-Detail'[Metric]),
+			            "Net Sales $",blank(),
+			            "Cost $ On Hand",blank(),
+			            " "
+			        ),
+			        " "
+			    )
+		displayFolder: Formatting
+		lineageTag: 78b51772-93e6-4c71-b70c-1c0725ae12c2
+
+	measure 'Sales by Rank LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Ranking Measure LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Ranking Measure LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: 55ee43cd-d1ca-4753-93a9-30226ec136b4
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Sales by Rank TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Ranking Measure TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Ranking Measure TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: ded2aa58-8293-4384-9dad-b0f83526b27f
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Sales by Rank % vs LY-Fabric' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Fabric]-[Sales by Rank LY-Fabric],
+			    [Sales by Rank LY-Fabric]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: 833356fc-6672-42b5-9760-2d814d873f37
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total TY-Fabric' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Fabric],
+			    CALCULATE (
+			        [Ranking Measure TY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: d9f297c6-1bc4-4728-aae1-22a669da1849
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total LY-Fabric' =
+			
+			DIVIDE(
+			    [Sales by Rank LY-Fabric],
+			    CALCULATE (
+			        [Ranking Measure LY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Net Sales
+		lineageTag: 7993f09e-4cce-4d9d-baf0-63d260a66130
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			RETURN
+			CALCULATE(MAX('Product (Current)'[Material Clone]),
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC,Dense)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			)
+		displayFolder: Rank\Fabric\Rank
+		lineageTag: b8392bc7-6372-4009-a69d-432eb9b8037d
+
+	measure 'Rank LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			RETURN
+			CALCULATE(max('Product (Current)'[Material Clone]),
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			)
+		displayFolder: Rank\Fabric\Rank
+		lineageTag: 4f6f9f42-33ec-404b-9c33-dad3bb1cd0e9
+
+	measure 'ST% by Rank TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Sell Through % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Sell Through % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\ST%
+		lineageTag: b0678b99-9b7b-4913-818b-4ebcba87697c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ST% by Rank LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Sell Through % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Sell Through % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\ST%
+		lineageTag: 54138534-176e-40fb-ac2e-cc8110ed8f39
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Display OH TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display OH TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display OH TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: d96d6cf8-3fb2-4f2f-bad0-0b8286bbbb3a
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Display OH LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display OH LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display OH LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: 21cf79ad-0232-4973-a2b0-968c69348454
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Display OH % vs LY-Fabric' =
+			
+			DIVIDE(
+			    [Rank Display OH TY-Color]-[Rank Display OH LY-Color],
+			    [Rank Display OH LY-Color]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\Cost or Unit OH
+		lineageTag: b507044b-3c7a-48a8-aea2-33877e629232
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net GM TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Gross Margin % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Gross Margin % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\GM%
+		lineageTag: 5ef94937-c75a-4fc0-8075-9846a45b4309
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net GM LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Gross Margin % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Gross Margin % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\GM%
+		lineageTag: 0250e290-5a09-4dde-a364-d37a9b159449
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Sales AUR TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales $ AUR TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales $ AUR TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Sales AUR
+		lineageTag: 0d070c13-2232-4f5c-b59b-3394d5bed1ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Sales AUR LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales $ AUR LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales $ AUR LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Sales AUR
+		lineageTag: 005b74c7-61a1-413c-939f-0c73b0ac22f1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank OH AUR TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([On Hand AUR $ TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([On Hand AUR $ TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\OH AUR
+		lineageTag: ffce4e3f-2156-49f7-9fa0-a9d79ec00f05
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank OH AUR LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([On Hand AUR $ LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([On Hand AUR $ LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\OH AUR
+		lineageTag: efabfbe0-e5cc-48f0-8bd2-fdff41ede8ec
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank FP% TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales FP % TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales FP % TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\FP%
+		lineageTag: fa76e882-4c81-4864-a0ce-48579fec0bca
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank FP% LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales FP % LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales FP % LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\FP%
+		lineageTag: d851062c-5b5d-4ecb-acce-18670032032b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Retail OH % to Total TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Retail OH % to Total TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\Retail OH
+		lineageTag: 56654f6c-9909-4fde-b097-91dcfc53eac2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Retail OH % to Total LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Retail OH % to Total LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Retail OH % to Total LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Fabric\Retail OH
+		lineageTag: 1241801a-e220-45f4-adaa-24c0b7dc221b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH LY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Weeks On Hand LY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Weeks On Hand LY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Fabric\Weeks OH
+		lineageTag: 77f65914-d476-4f2c-b3ce-99feca7e5a43
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Weeks On Hand TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Weeks On Hand TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Fabric\Weeks OH
+		lineageTag: f245bd26-e18a-49f4-8dc2-adb3bf5ef539
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sales Units % to Class TY' =
+			
+			DIVIDE(
+			    [Net Sales Units TY],
+			    CALCULATE (
+			        [Net Sales Units TY],
+			        ALLEXCEPT('Product (Current)','Product (Current)'[Style Classification Description]),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: % to Class
+		lineageTag: dff947bb-4f64-49af-845b-24eea121d26e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'SKU Count TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [SKU Count],
+			        ALL('Date'),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [SKU Count],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: 470321ab-8f94-45b5-b6e5-14d93e70fb6c
+
+	measure 'SKU Count' =
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( 'Product (Current)'[Style Number And Color] ),
+			    CROSSFILTER ( 'Transactions (External POS)'[Product Key], 'Product (Current)'[Product Key], BOTH )
+			)
+		formatString: 0
+		displayFolder: SKU Count
+		lineageTag: 624eb883-6957-490f-90de-c7d55087fe7d
+
+	measure 'SKU Count LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [SKU Count],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: 154e1f7c-e0c9-4708-aa4d-d7e9dba1b28f
+
+	measure 'SKU Count % vs LY' =
+			
+			DIVIDE(
+			    [SKU Count TY]-[SKU Count LY],
+			    [SKU Count LY]
+			)
+		displayFolder: SKU Count
+		lineageTag: 7b54e2bd-cfdc-4e64-afbf-e08e61f61496
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Style Count' =
+			
+			CALCULATE (
+			    DISTINCTCOUNT ( 'Product (Current)'[Style Number] ),
+			    CROSSFILTER ( 'Transactions (External POS)'[Product Key], 'Product (Current)'[Product Key], BOTH )
+			)
+		formatString: 0
+		displayFolder: Style Count
+		lineageTag: cd9cc092-68ab-4cef-a57c-b141c6c99164
+
+	measure 'Style Count TY' = ```
+			
+			VAR LastFiscalYear = LOOKUPVALUE('Date'[Year],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalMonth = LOOKUPVALUE('Date'[Monthnum],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			VAR LastFiscalWeek = LOOKUPVALUE('Date'[Week End Date],'Date'[DateKey],MAX('Filter Dates'[DateKey]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar] ))
+			     
+			Return
+			IF(
+			    SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			    CALCULATE(
+			        [Style Count],
+			        ALL('Date'),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    ),
+			    CALCULATE (
+			        [Style Count],
+			        ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			        SWITCH(
+			            SELECTEDVALUE('Headers-Period'[Period]),
+			            "WTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]=LastFiscalWeek, 
+			            "MTD", 'Date'[Year] = LastFiscalYear  && 'Date'[Monthnum]=LastFiscalMonth && 'Date'[Week End Date]<=LastFiscalWeek,
+			            "YTD",'Date'[Year] = LastFiscalYear && 'Date'[Week End Date]<=LastFiscalWeek && 'Date'[Week End Date]<=LastFiscalWeek
+			        ),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+			```
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: 46725f78-7408-4f36-b029-a673a23f6ef1
+
+	measure 'Style Count LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Style Count],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    SWITCH(
+			        SELECTEDVALUE('Headers-Period'[Period]),
+			        "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			        "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			        "LTD",'Date'[Date]<=LastDayLY
+			    ),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			)
+			```
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: 1e939f67-5c49-4db8-8199-cd71093f4c03
+
+	measure 'Style Count % vs LY' =
+			
+			DIVIDE(
+			    [Style Count TY]-[Style Count LY],
+			    [Style Count LY]
+			)
+		displayFolder: Style Count
+		lineageTag: 5d7dc332-c3e8-4e5c-bde9-ba25c940f452
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Color Multiplier TY' =
+			
+			DIVIDE(
+			    [SKU Count TY],
+			    [Style Count TY]
+			)
+		formatString: #,0.0
+		displayFolder: Color Multiplier
+		lineageTag: d9a7f2a8-de51-4c3e-be75-b1172660207a
+
+	measure 'Color Multiplier LY' =
+			
+			DIVIDE(
+			    [SKU Count LY],
+			    [Style Count LY]
+			)
+		formatString: 0.0
+		displayFolder: Color Multiplier
+		lineageTag: d6aba20b-c25d-4f96-8c0a-07c35f3353d2
+
+	measure 'Color Multiplier % vs LY' =
+			
+			DIVIDE(
+			    [Color Multiplier TY]-[Color Multiplier LY],
+			    [Color Multiplier LY]
+			)
+		displayFolder: Color Multiplier
+		lineageTag: dda61f90-1c9b-499f-a1db-798a0d4d5057
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Sales per SKU TY' =
+			
+			DIVIDE([Display Net Sales TY],[SKU Count TY])
+		displayFolder: Avg Sales per SKU
+		lineageTag: 48a9cf62-6dae-43c8-b3d6-0b03fef83fd4
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Avg Sales per SKU LY' =
+			
+			DIVIDE([Display Net Sales LY],[SKU Count LY])
+		displayFolder: Avg Sales per SKU
+		lineageTag: 6583df56-efd9-4b6a-97cc-5146b6d608ed
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Avg Sales per SKU % vs LY' = ```
+			
+			    DIVIDE(
+			        [Avg Sales per SKU TY]-[Avg Sales per SKU LY],
+			        [Avg Sales per SKU LY]
+			    )
+			```
+		displayFolder: Avg Sales per SKU
+		lineageTag: dd39424a-8f38-443b-951a-3feff0723872
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Display Shipments TY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Shipments $ TY],[Shipments Units TY])
+			```
+		displayFolder: Display
+		lineageTag: 6931fb27-7ba1-4f19-9dca-4bb224945849
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Display Shipments LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Shipments $ LY],[Shipments Units LY])
+			```
+		displayFolder: Display
+		lineageTag: 20aedcd1-7fa3-4af0-8189-da4840f199bb
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Display Shipments % vs LY' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Shipments $ % vs LY],[Shipments Units % vs LY])
+			```
+		formatString: 0%;-0%;0%
+		displayFolder: Display
+		lineageTag: 3e369c33-33ef-40b4-b565-d1765de79241
+
+	measure 'Shipments Units % vs LY' =
+			
+			DIVIDE(
+			    [Shipments Units TY]-[Shipments Units LY],
+			    [Shipments Units LY]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 0f9e32b7-386e-41b1-b9f3-4d4c535f65b6
+
+	measure 'Shipments $ % vs LY' =
+			
+			DIVIDE(
+			    [Shipments $ TY]-[Shipments $ LY],
+			    [Shipments $ LY]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: a7d283c9-d363-475b-9514-bb1afe526cdf
+
+	measure 'Shipments $ AUR TY' =
+			
+			DIVIDE(
+			    [Shipments $ TY],
+			    [Shipments Units TY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 0fb48a76-9bcb-408d-bd50-14459f17bf0e
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Shipments $ AUR LY' =
+			
+			DIVIDE(
+			    [Shipments $ LY],
+			    [Shipments Units LY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: f133568f-308f-4afd-9f1c-8d6e445f8612
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Shipments ST% TY' =
+			
+			DIVIDE(
+			    [Net Sales Units TY],
+			    [Shipments Units TY]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 81172744-8129-4c22-be89-de792820b4ae
+
+	measure 'Shipments ST% LY' =
+			
+			DIVIDE(
+			    [Net Sales Units LY],
+			    [Shipments Units LY]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 64541527-0746-4367-b42d-86a482a3b926
+
+	measure 'Shipments % to Total TY' =
+			
+			DIVIDE(
+			    [Display Shipments TY],
+			    CALCULATE (
+			        [Display Shipments TY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: % to Total
+		lineageTag: 198d42d3-1765-41f9-822a-ec2d43330184
+
+	measure 'Shipments % to Total LY' =
+			
+			DIVIDE(
+			    [Display Shipments LY],
+			    CALCULATE (
+			        [Display Shipments LY],
+			        ALL('Product (Current)'),
+			    KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			    )
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: % to Total
+		lineageTag: 6a56388e-f12b-446b-932e-efabddfaac41
+
+	measure 'Selected Date Filters' = ```
+			
+			SELECTEDVALUE('Headers-Period'[Period]) & "-" & 
+			SWITCH(
+			    SELECTEDVALUE('Headers-Period'[Period]),
+			    "WTD", max('Date'[Week End Date]),
+			    "MTD",MAX('Date'[MonthName]) & " " & MAX('Date'[Year]),
+			    "YTD",MAX('Date'[Year]),
+			    "LTD",max('Date'[Week End Date]),
+			    FORMAT(max('Date'[Week End Date]),"M/D/YYYY")
+			)
+			
+			```
+		displayFolder: Selected Filters
+		lineageTag: 4de87d7f-8887-4b64-a4d6-f1453163854a
+
+		changedProperty = Name
+
+	measure 'Selected Channel Filters' =
+			
+			"Channel: " & IF(
+			ISFILTERED('Channel'[Finance Channel (Product Dashboard)]),
+			CONCATENATEX(VALUES('Channel'[Finance Channel (Product Dashboard)]), 'Channel'[Finance Channel (Product Dashboard)], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: ef323f85-9173-4edb-b574-dcf4fa90fcbc
+
+	measure 'Selected Style Color Collection Filters' =
+			
+			"Style Color Collection: " & IF(
+			ISFILTERED('Delivery'[Style Color Collection]),
+			CONCATENATEX(VALUES('Delivery'[Style Color Collection]), 'Delivery'[Style Color Collection], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: 1dede4bb-cd10-458d-bd56-e5e5d69b1496
+
+	measure 'Selected Division Desc Filters' =
+			
+			"Division Description: " & IF(
+			ISFILTERED('Product (Current)'[Division Description Mi9]),
+			CONCATENATEX(VALUES('Product (Current)'[Division Description Mi9]), 'Product (Current)'[Division Description Mi9], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: 4d58f2cc-27ce-4e0e-a3f2-450b5482c560
+
+	measure 'Selected Mark Type Filters' =
+			
+			"FP/MD: " & IF(
+			ISFILTERED('Transactions (External POS)'[Mark Type]),
+			CONCATENATEX(VALUES('Transactions (External POS)'[Mark Type]), 'Transactions (External POS)'[Mark Type], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: 6241b990-d99c-4e4f-a909-5b049e9fc2c6
+
+	measure 'Selected Classification Filters' =
+			
+			"Classification: " & IF(
+			ISFILTERED('Product (Current)'[Style Classification Description]),
+			CONCATENATEX(VALUES('Product (Current)'[Style Classification Description]), 'Product (Current)'[Style Classification Description], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: 1affb3d8-2b40-44f8-8326-2b68f436ae59
+
+	measure 'Selected Department Filters' =
+			
+			"Department: " & IF(
+			ISFILTERED('Product (Current)'[Department Description]),
+			CONCATENATEX(VALUES('Product (Current)'[Department Description]), 'Product (Current)'[Department Description], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: 1aff8a92-84fb-4de6-a2ac-a380e37f0c91
+
+	measure 'Selected Delivery Season Filters' =
+			
+			"Delivery: " & IF(
+			ISFILTERED(Delivery[Season]),
+			CONCATENATEX(VALUES(Delivery[Season]), Delivery[Season], ", "),
+			"All"
+			)
+		displayFolder: Selected Filters
+		lineageTag: e9b8ea29-906c-4211-918b-7da7f3de081a
+
+	measure 'Display Net Sales LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ LY Delivery],[Net Sales Units LY Delivery])
+			```
+		displayFolder: Display
+		lineageTag: c0e53b6d-fe3e-4c56-b0df-7859cc0d2077
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Display Net Sales % vs LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ % vs LY Delivery],[Net Sales Units % vs LY Delivery])
+			```
+		formatString: 0.0%;(0.0%)
+		displayFolder: Display
+		lineageTag: 4465c99e-df6c-4ac3-bf23-b9a680abdd6c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display OH LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Cost OH $ LY Delivery],[Units OH LY Delivery])
+			```
+		displayFolder: Display
+		lineageTag: 90a67217-3431-471d-b162-e801b95d8ac3
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Display OH % vs LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Cost OH % vs LY Delivery],[Units OH % vs LY Delivery])
+			```
+		formatString: 0.0%;(0.0%)
+		displayFolder: Display
+		lineageTag: 6e27c385-c1ab-441b-b50e-6e6f3940179c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Display Shipments LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Shipments $ LY Delivery],[Shipments Units LY Delivery])
+			```
+		displayFolder: Display
+		lineageTag: 2c5d2f13-1851-4051-b3f1-a81d7010b085
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Display Shipments % vs LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Shipments $ % vs LY Delivery],[Shipments Units % vs LY Delivery])
+			```
+		formatString: 0%;-0%;0%
+		displayFolder: Display
+		lineageTag: 7be17787-ddc7-4bce-970b-471626392e0a
+
+	measure 'Shipments $ % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Shipments $ TY]-[Shipments $ LY Delivery],
+			    [Shipments $ LY Delivery]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: bb636c77-941a-40b8-8527-cd1992ecf01c
+
+	measure 'Shipments Units % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Shipments Units TY]-[Shipments Units LY Delivery],
+			    [Shipments Units LY Delivery]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 20079a1c-8ac9-44c5-87c7-d3645f538452
+
+	measure 'Shipments ST% LY Delivery' =
+			
+			DIVIDE(
+			    [Net Sales Units LY Delivery],
+			    [Shipments Units LY Delivery]
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Shipments
+		lineageTag: 9e1be841-0798-445d-a921-db363b13c360
+
+	measure 'Shipments $ AUR LY Delivery' =
+			
+			DIVIDE(
+			    [Shipments $ LY Delivery],
+			    [Shipments Units LY Delivery]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Shipments
+		lineageTag: 2bb512ab-ae78-45fd-ad71-0ff86786f392
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Style Count LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [Style Count],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [Style Count],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "LTD",'Date'[Date]<=LastDayLY
+			            ),
+			            KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [Style Count LY]
+			)
+			```
+		formatString: #,0
+		displayFolder: Style Count
+		lineageTag: a94d3b42-5bab-4b8b-95e6-61557c3c2214
+
+	measure 'SKU Count LY Delivery' = ```
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			VAR LastWeek=max('Date'[Week End Date])
+			VAR LastYear=max('Date'[Year])
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Year]=LastYear)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date'[Monthnum],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Monthnum]=LastMonth)),ALLEXCEPT('Date','Date'[Select a Calendar]))
+			VAR LW=CALCULATETABLE(SUMMARIZECOLUMNS('Date'[Date LY], FILTER('Date','Date'[Week End Date]=LastWeek)),ALLEXCEPT('Date','Date'[Select a Calendar]))  
+			Return
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    IF(
+			        SELECTEDVALUE('Headers-Period'[Period])="LTD",
+			        CALCULATE (
+			        [SKU Count],
+			        ALL('Date'),
+			        'Date'[Date]<=LastDayLY,
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        ),
+			        CALCULATE (
+			            [SKU Count],
+			            ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			            ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			            'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			            SWITCH(
+			                SELECTEDVALUE('Headers-Period'[Period]),
+			                "WTD", 'Date'[Date] in LW && 'Date'[Date]<=LastDayLY,
+			                "MTD", 'Date'[Date] in LM && 'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "YTD",'Date'[Date] in LY && 'Date'[Date]<=LastDayLY,
+			                "LTD",'Date'[Date]<=LastDayLY
+			            ),
+			            KEEPFILTERS('Product (Current)'[Division Description Mi9]<>"MISCELLANEOUS")
+			        )
+			    ),
+			    [SKU Count LY]
+			)
+			```
+		formatString: #,0
+		displayFolder: SKU Count
+		lineageTag: 8209b9da-be90-4f8c-ad43-d3b97a8af217
+
+	measure 'Style Count % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Style Count TY]-[Style Count LY Delivery],
+			    [Style Count LY Delivery]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Style Count
+		lineageTag: 2e2d7f2c-14b1-425f-8ed0-f4701f6b2e3c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'SKU Count % vs LY Delivery' =
+			
+			DIVIDE(
+			    [SKU Count TY]-[SKU Count LY Delivery],
+			    [SKU Count LY Delivery]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: SKU Count
+		lineageTag: a6080f17-3ada-4b1a-a21b-75b52a7c4b96
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Color Multiplier LY Delivery' =
+			
+			DIVIDE(
+			    [SKU Count LY Delivery],
+			    [Style Count LY Delivery]
+			)
+		formatString: #,0.0
+		displayFolder: Color Multiplier
+		lineageTag: d726fea4-79d5-48b8-8edb-d7e231be0e7d
+
+	measure 'Color Multiplier % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Color Multiplier TY]-[Color Multiplier LY Delivery],
+			    [Color Multiplier LY Delivery]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Color Multiplier
+		lineageTag: 8de4d38b-f241-451d-9094-d393a4215c9f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Avg Sales per SKU LY Delivery' =
+			
+			DIVIDE([Display Net Sales LY Delivery],[SKU Count LY Delivery])
+		displayFolder: Avg Sales per SKU
+		lineageTag: 4ea7ab99-2d22-448f-9430-1e62d276d617
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Avg Sales per SKU % vs LY Delivery' = ```
+			
+			    DIVIDE(
+			        [Avg Sales per SKU TY]-[Avg Sales per SKU LY Delivery],
+			        [Avg Sales per SKU LY Delivery]
+			    )
+			```
+		formatString: 0.0%;(0.0%)
+		displayFolder: Avg Sales per SKU
+		lineageTag: 9dd3550e-b205-4e4d-9991-84e0760565ba
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales by Rank  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Ranking Measure LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Ranking Measure LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: e85a2899-52b8-445f-8b56-8d3fb3463b82
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Sales by Rank % vs  LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Sales by Rank TY-Color]-[Sales by Rank  LY Delivery-Color],
+			    [Sales by Rank  LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: 2d536819-700d-4205-a94e-cf914d960231
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net Sales % to Total  LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Sales by Rank  LY Delivery-Color],
+			    CALCULATE (
+			        [Ranking Measure LY Delivery],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: b9f8e6a1-d861-442b-af1c-85cbcf2b2e70
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			RETURN
+			CALCULATE(max('Product (Current)'[Color Description]),
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			)
+		displayFolder: Rank\Color\Rank
+		lineageTag: 53704b91-61b1-4119-a201-694a4be0e55f
+
+	measure 'ST% by Rank  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Sell Through % LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Sell Through % LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Stock ST%
+		lineageTag: fd820e2c-6927-4fbe-b869-e2828474756d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Display OH  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display OH LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display OH LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: 4cf5550a-6952-4d21-9210-6357c88571d4
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Display OH % vs  LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank Display OH TY-Color]-[Rank Display OH  LY Delivery-Color],
+			    [Rank Display OH  LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: 6f7a1c02-88d8-4754-a08a-42c5157fef9a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Net GM  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Gross Margin % LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Gross Margin % LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\GM%
+		lineageTag: 5d9c148f-8de7-439d-8e35-bde80665c333
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Sales AUR  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Sales AUR
+		lineageTag: 15296f97-8545-44c6-abe8-71c5a888e243
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank OH AUR  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([On Hand AUR $ LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([On Hand AUR $ LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\OH AUR
+		lineageTag: d3445fbd-279c-4fc9-9536-2bb24bd5f974
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank FP%  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Net Sales FP % LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Net Sales FP % LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%)
+		displayFolder: Rank\Color\FP%
+		lineageTag: 9b9d4e23-ea96-4cb8-a92f-ad3e7b0bb581
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Weeks OH  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Weeks On Hand LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Weeks On Hand LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0;(0.0)
+		displayFolder: Rank\Color\Weeks OH
+		lineageTag: e4189df1-97c5-48d1-8d89-b40ddf9ae40e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ranking Measure LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ LY Delivery],[Net Sales Units LY Delivery])
+			```
+		displayFolder: Rank
+		lineageTag: b62f9238-0a01-485d-ac0e-3fca9d1307ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rank Shipments TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display Shipments TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display Shipments TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 080c1bee-2cd5-4dbb-9e22-cfb4215d0e8d
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Shipments LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display Shipments LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display Shipments LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 04a1b467-4279-428a-8bb3-af293e355408
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Rank Shipments % vs LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank Shipments TY-Color]-[Rank Shipments LY Delivery-Color],
+			    [Rank Shipments LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 69e50b88-888d-4750-bc9c-e87ac64a63e7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments % to Total TY-Color' =
+			
+			DIVIDE(
+			    [Rank Shipments TY-Color],
+			    CALCULATE (
+			        [Rank Shipments TY-Color],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments
+		lineageTag: 48476cba-55af-4082-a1bd-5b4b942f02f3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Receipt ST% TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments ST% TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments ST% TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments ST%
+		lineageTag: 7fb1e6c6-b06d-40e1-9288-71029bc293c4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Receipt ST% LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments ST% LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments ST% LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Shipments ST%
+		lineageTag: a4f5af3e-e133-4bc6-9ff6-75ee8e7f4886
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments AUR TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments $ AUR TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments $ AUR TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Receipt AUR
+		lineageTag: 3d0ec77e-275b-4acf-a49a-fa3ff0e02887
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments AUR  LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Color\Receipt AUR
+		lineageTag: 0fc5a559-9a22-48f3-a76c-5d3b1daa2668
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Style Count TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Style Count TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Style Count TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: #,0
+		displayFolder: Rank\Color\Style Count
+		lineageTag: 9ef381e4-4d2a-42cd-b08a-c6ca8ac10a10
+
+	measure 'Rank Style Count LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Style Count LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Style Count LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: #,0
+		displayFolder: Rank\Color\Style Count
+		lineageTag: d0cc1ca0-a867-4c3a-962e-d326b9c7f718
+
+		changedProperty = Name
+
+	measure 'Rank Style Count % vs LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank Style Count TY-Color]-[Rank Style Count LY Delivery-Color],
+			    [Rank Style Count LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Style Count
+		lineageTag: 1acbb941-beda-432b-b2f9-cddc5c460d20
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank SKU Count TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([SKU Count TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([SKU Count TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: #,0
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: 5b6541e9-8221-4e30-b814-3477743249d2
+
+	measure 'Rank SKU Count LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([SKU Count LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([SKU Count LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: #,0
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: aadf0118-7be5-4298-ab08-8734e4954c6b
+
+		changedProperty = Name
+
+	measure 'Rank SKU Count % vs LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank SKU Count TY-Color]-[Rank SKU Count LY Delivery-Color],
+			    [Rank SKU Count LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\SKU Count
+		lineageTag: 8047e1e5-8630-4b30-aa79-0c4b1db23e03
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Color Multiplier TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Color Multiplier TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Color Multiplier TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: d398930f-570c-4b10-b25e-8082a6ad412e
+
+	measure 'Rank Color Multiplier LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Color Multiplier LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Color Multiplier LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: 96fee547-dbb9-4011-adc2-41abb4ba0f0e
+
+		changedProperty = Name
+
+	measure 'Rank Color Multiplier % vs LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank Color Multiplier TY-Color]-[Rank Color Multiplier LY Delivery-Color],
+			    [Rank Color Multiplier LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Color Multiplier
+		lineageTag: b2c8d3ff-f12d-4c29-8b05-22427816bc57
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Avg Sales per SKU TY-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Avg Sales per SKU TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Avg Sales per SKU TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: 8572be50-ad08-4aea-8a1e-30a92525e313
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Avg Sales per SKU LY Delivery-Color' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Avg Sales per SKU LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Avg Sales per SKU LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: 135e4fca-ef9a-49aa-a384-93022f969f90
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Rank Avg Sales per SKU % vs LY Delivery-Color' =
+			
+			DIVIDE(
+			    [Rank Avg Sales per SKU TY-Color]-[Rank Avg Sales per SKU LY Delivery-Color],
+			    [Rank Avg Sales per SKU LY Delivery-Color]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Color\Avg Sales per SKU
+		lineageTag: fd49910b-ea82-4b3f-a518-4ee1c53bbf7a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Display OH % to Total TY-Color' =
+			
+			DIVIDE(
+			    [Rank Display OH TY-Color],
+			    CALCULATE (
+			        [Display OH TY],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Rank\Color\Cost or Unit OH
+		lineageTag: c4728726-ee0f-48bb-a0cb-af01d6ffdf1b
+
+	measure 'Display Net Sales diff LY Delivery' = ```
+			
+			 if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars",[Net Sales $ diff LY Delivery],[Net Sales Units diff LY Delivery])
+			```
+		displayFolder: Delivery\Display
+		lineageTag: d41f3f5f-c01c-45ba-8aa7-5fd364e16256
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Net Sales $ diff LY Delivery' = ```
+			
+			    [Net Sales $ TY]-[Net Sales $ LY Delivery]
+			```
+		displayFolder: Delivery\Net Retail Sales $
+		lineageTag: 1ef83761-8bc9-432b-b378-c397c8a8382a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Sales Units diff LY Delivery' = ```
+			
+			    [Net Sales Units TY]-[Net Sales Units LY Delivery]
+			```
+		formatString: 0
+		displayFolder: Delivery\Net Sales Units
+		lineageTag: dd884d7f-7694-428d-b427-81a020aa99a6
+
+	measure 'Sales by Rank diff vs LY Delivery-Color' = ```
+			
+			    [Sales by Rank TY-Color]-[Sales by Rank  LY Delivery-Color]
+			```
+		displayFolder: Rank\Color\Net Sales
+		lineageTag: c04fd23c-f358-47e4-918a-8bcc05d2d6ee
+
+		formatStringDefinition = if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+
+	measure 'Rank Shipments AUR LY Delivery-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments $ AUR LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Shipments AUR
+		lineageTag: b1d0315d-0755-45b0-8eb2-069485a32c64
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments AUR TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments $ AUR TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments $ AUR TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: $#,###;($#,###)
+		displayFolder: Rank\Fabric\Shipments AUR
+		lineageTag: 7a77cd6a-1169-44f7-b5f0-a24554075dae
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments % to Total TY-Fabric' =
+			
+			DIVIDE(
+			    [Rank Shipments TY-Fabric],
+			    CALCULATE (
+			        [Rank Shipments TY-Fabric],
+			        ALL('Product (Current)')
+			    )
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: f8fbb2af-270d-4606-9963-dfc99298d304
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Shipments LY Delivery-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display Shipments LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display Shipments LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: 5ed35328-2f09-4c72-b54d-9f1ce8e12be7
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+		changedProperty = Name
+
+	measure 'Rank Shipments TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Display Shipments TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Display Shipments TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: c8b380a7-635f-47b4-b18e-cca44bda541c
+
+		formatStringDefinition = ```
+				if(SELECTEDVALUE('Headers-Units/Dollars'[Selection])="Dollars","$#,###;($#,###)","#,###;(#,###)")
+				
+				```
+
+	measure 'Rank Recpeits % vs LY Delivery-Fabric' =
+			
+			DIVIDE(
+			    [Rank Shipments TY-Fabric]-[Rank Shipments LY Delivery-Fabric],
+			    [Rank Shipments LY Delivery-Fabric]
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments
+		lineageTag: 533a8c38-918c-4b7c-9c3d-4981769691e4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Receipt ST% LY Delivery-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Material Clone])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments ST% LY Delivery],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments ST% LY Delivery],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Material Clone]),round([Ranking Measure LY Delivery],0), ,DESC)<RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments ST%
+		lineageTag: 8de7d5e1-a695-4f11-a87e-870474ea316d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rank Receipt ST% TY-Fabric' =
+			
+			VAR RankingDimension=VALUES('Product (Current)'[Color Description])
+			VAR RankLimit=COUNTROWS(Ranking)
+			RETURN
+			if(ISINSCOPE('Ranking'[Rank]),
+			CALCULATE([Shipments ST% TY],
+			    FILTER(RankingDimension,
+			        COUNTROWS(
+			            FILTER('Ranking',
+			                RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)=SELECTEDVALUE('Ranking'[Rank])
+			            )
+			        )=1
+			    )
+			),
+			CALCULATE([Shipments ST% TY],
+			    FILTER(RankingDimension,
+			        RANKX(ALL('Product (Current)'[Color Description]),round([Ranking Measure TY],0), ,DESC)<=RankLimit
+			    )
+			)
+			)
+		formatString: 0.0%;(0.0%);0.0%
+		displayFolder: Rank\Fabric\Shipments ST%
+		lineageTag: f9fd00f0-dd45-471f-a922-c0e94508dc15
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Filtered Account' =
+			
+			VAR FilteredAccount =
+			    CALCULATETABLE ( VALUES ( 'Accounts'[Account Name] ), RELATEDTABLE ( 'Transactions (External POS)' ) )
+			RETURN
+			    COUNTROWS ( FilteredAccount )
+		formatString: 0
+		lineageTag: 59c6e44b-33d5-4848-b96f-60afe222dc0a
+
+		changedProperty = Name
+
+	partition 'Product Dashboard Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

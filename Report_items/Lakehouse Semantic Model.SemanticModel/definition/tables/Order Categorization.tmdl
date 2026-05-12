@@ -1,0 +1,63 @@
+table 'Order Categorization'
+	lineageTag: 427cbf25-4bc6-4e26-b948-fa083092fe2a
+	sourceLineageTag: cfa6ee17-1de2-4b49-badb-209acf47f47e
+
+	column 'Order Categorization Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: e4c306de-da46-4288-aa4c-bfc3cca0c379
+		sourceLineageTag: 1405aa3c-28db-4779-8ccc-23c2eae31991
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Categorization Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped To'
+		dataType: string
+		lineageTag: 590b3deb-2403-43a6-8183-3a8bcda317d7
+		sourceLineageTag: 528316b4-0fe0-4edd-aea9-fab46e8be5ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped To
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped From'
+		dataType: string
+		lineageTag: 5dd863a4-c747-47bb-91cb-2b90e4f78932
+		sourceLineageTag: fd3dfbb3-b1d5-45a7-9fc1-6fc510006102
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped From
+
+		annotation SummarizationSetBy = User
+
+	column 'Sfcc Type'
+		dataType: string
+		lineageTag: c717aabb-b721-4813-814d-7326770090e8
+		sourceLineageTag: 406ff28b-fdf7-4151-94b9-189a7cd7291f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sfcc Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Send Order'
+		dataType: string
+		lineageTag: fd873afd-19d8-47b2-848b-d3f5e0005739
+		sourceLineageTag: ca523520-2ceb-4912-a15c-b72da2679d6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Send Order
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Categorization' = entity
+		mode: directQuery
+		source
+			entityName: Order Categorization
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

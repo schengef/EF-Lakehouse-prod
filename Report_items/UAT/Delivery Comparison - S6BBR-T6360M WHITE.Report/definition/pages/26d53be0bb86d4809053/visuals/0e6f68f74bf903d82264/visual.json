@@ -1,0 +1,260 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "0e6f68f74bf903d82264",
+  "position": {
+    "x": 0,
+    "y": 442,
+    "z": 3000,
+    "height": 81,
+    "width": 1043,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product (Current)"
+                    }
+                  },
+                  "Property": "Style Number"
+                }
+              },
+              "queryRef": "Product (Current).Style Number",
+              "nativeQueryRef": "Style Number"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Retail Sales Units"
+                }
+              },
+              "queryRef": "Total Company Measures.External Retail Sales Units",
+              "nativeQueryRef": "External Retail Sales Units"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Inventory Measures"
+                    }
+                  },
+                  "Property": "External Quantity On Hand"
+                }
+              },
+              "queryRef": "Inventory Measures.External Quantity On Hand",
+              "nativeQueryRef": "External Quantity On Hand"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Total Company Measures"
+                    }
+                  },
+                  "Property": "External Sell Through %"
+                }
+              },
+              "queryRef": "Total Company Measures.External Sell Through %",
+              "nativeQueryRef": "External Sell Through %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Delivery"
+                    }
+                  },
+                  "Property": "Effective Dtc Transactions Start Date"
+                }
+              },
+              "queryRef": "Delivery.Effective Dtc Transactions Start Date",
+              "nativeQueryRef": "Effective Dtc Transactions Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Delivery"
+                    }
+                  },
+                  "Property": "Effective Dtc Transactions End Date"
+                }
+              },
+              "queryRef": "Delivery.Effective Dtc Transactions End Date",
+              "nativeQueryRef": "Effective Dtc Transactions End Date"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "54ada0cf1fc2a7695c10",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Date"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 4,
+                  "Left": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Date"
+                    }
+                  },
+                  "Right": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Literal": {
+                          "Value": "datetime'2026-02-10T00:00:00'"
+                        }
+                      },
+                      "TimeUnit": 5
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "6b67d80c67f4570a1451",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Product (Current)"
+              }
+            },
+            "Property": "Style Number"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ab8be47bbf5316b30117",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Total Company Measures"
+              }
+            },
+            "Property": "External Retail Sales Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7f6f8ae2846451353d1a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Total Company Measures"
+              }
+            },
+            "Property": "External Sell Through %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5cc720e4f65c9c260351",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Inventory Measures"
+              }
+            },
+            "Property": "External Quantity On Hand"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b09cd7fcf645970f5967",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Delivery"
+              }
+            },
+            "Property": "Effective Dtc Transactions End Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "42acb922c1018d319e6a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Delivery"
+              }
+            },
+            "Property": "Effective Dtc Transactions Start Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

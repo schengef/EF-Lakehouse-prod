@@ -1,0 +1,212 @@
+table '445 Calendar Period'
+	isHidden
+	lineageTag: e35b0c47-fbc9-464a-bf93-e1c4f62c4274
+
+	calculationGroup
+		precedence: 1
+
+	column '445 Calendar Aggregation'
+		dataType: string
+		isHidden
+		lineageTag: 499abe02-b95f-4495-84a5-9f9c84281d4b
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"445 Calendar Period","TableItemName":"445 Calendar Aggregation (groups)","ObjectType":4},"LinkType":"UsedInGroup"},{"LinkTarget":{"TableName":"445 Calendar Period","TableItemName":"445 Calendar Aggregation (groups) 2","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7a515420-a6bc-4cd6-9111-2551013372b6
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column '445 Calendar Aggregation (groups)' =
+			SWITCH(
+				TRUE,
+				ISBLANK('445 Calendar Period'[445 Calendar Aggregation]),
+				"(Blank)",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"MAT (364)",
+					"LYMAT (364)",
+					"MATG",
+					"MATG %"},
+				"MAT",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"MTD",
+					"LMTD",
+					"LMC",
+					"LYMTD",
+					"MOM",
+					"MOM %",
+					"MOLYMTD",
+					"MOLYMTD %",
+					"MTDOLM",
+					"MTDOLM%"},
+				"Month",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"QTD",
+					"LQTD",
+					"LQC",
+					"LYQTD",
+					"QOQ",
+					"QOQ %",
+					"QOLYQTD",
+					"QOLYQTD %",
+					"QTDOLQ",
+					"QTDOLQ%"},
+				"Quarter",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"WTD",
+					"LWTD",
+					"LWC",
+					"LYWTD",
+					"WOW",
+					"WOW%",
+					"WOLYWTD",
+					"WOLYWTD%",
+					"WTDOLW",
+					"WTDOLW%"},
+				"Week",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"YTD",
+					"LYTD",
+					"LYC",
+					"LLYC",
+					"LLYTD",
+					"YOY",
+					"YOY %",
+					"YOLYTD",
+					"YOLYTD %",
+					"YTDOLY",
+					"YTDOLY%",
+					"YOLLYTD",
+					"YOLLYTD %",
+					"YTDOLLY",
+					"YTDOLLY%"},
+				"Year",
+				'445 Calendar Period'[445 Calendar Aggregation]
+			)
+		isHidden
+		lineageTag: 892561fb-a050-4aa5-8ef7-504ed737c67e
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "445 Calendar Period"
+				          }
+				        },
+				        "Property": "445 Calendar Aggregation"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"4","Entity":"445 Calendar Period"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"MAT","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'MAT (364)'"}}],[{"Literal":{"Value":"'LYMAT (364)'"}}],[{"Literal":{"Value":"'MATG'"}}],[{"Literal":{"Value":"'MATG %'"}}]]}}},{"DisplayName":"Month","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'MTD'"}}],[{"Literal":{"Value":"'LMTD'"}}],[{"Literal":{"Value":"'LMC'"}}],[{"Literal":{"Value":"'LYMTD'"}}],[{"Literal":{"Value":"'MOM'"}}],[{"Literal":{"Value":"'MOM %'"}}],[{"Literal":{"Value":"'MOLYMTD'"}}],[{"Literal":{"Value":"'MOLYMTD %'"}}],[{"Literal":{"Value":"'MTDOLM'"}}],[{"Literal":{"Value":"'MTDOLM%'"}}]]}}},{"DisplayName":"Quarter","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'QTD'"}}],[{"Literal":{"Value":"'LQTD'"}}],[{"Literal":{"Value":"'LQC'"}}],[{"Literal":{"Value":"'LYQTD'"}}],[{"Literal":{"Value":"'QOQ'"}}],[{"Literal":{"Value":"'QOQ %'"}}],[{"Literal":{"Value":"'QOLYQTD'"}}],[{"Literal":{"Value":"'QOLYQTD %'"}}],[{"Literal":{"Value":"'QTDOLQ'"}}],[{"Literal":{"Value":"'QTDOLQ%'"}}]]}}},{"DisplayName":"Week","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'WTD'"}}],[{"Literal":{"Value":"'LWTD'"}}],[{"Literal":{"Value":"'LWC'"}}],[{"Literal":{"Value":"'LYWTD'"}}],[{"Literal":{"Value":"'WOW'"}}],[{"Literal":{"Value":"'WOW%'"}}],[{"Literal":{"Value":"'WOLYWTD'"}}],[{"Literal":{"Value":"'WOLYWTD%'"}}],[{"Literal":{"Value":"'WTDOLW'"}}],[{"Literal":{"Value":"'WTDOLW%'"}}]]}}},{"DisplayName":"Year","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'YTD'"}}],[{"Literal":{"Value":"'LYTD'"}}],[{"Literal":{"Value":"'LYC'"}}],[{"Literal":{"Value":"'LLYC'"}}],[{"Literal":{"Value":"'LLYTD'"}}],[{"Literal":{"Value":"'YOY'"}}],[{"Literal":{"Value":"'YOY %'"}}],[{"Literal":{"Value":"'YOLYTD'"}}],[{"Literal":{"Value":"'YOLYTD %'"}}],[{"Literal":{"Value":"'YTDOLY'"}}],[{"Literal":{"Value":"'YTDOLY%'"}}],[{"Literal":{"Value":"'YOLLYTD'"}}],[{"Literal":{"Value":"'YOLLYTD %'"}}],[{"Literal":{"Value":"'YTDOLLY'"}}],[{"Literal":{"Value":"'YTDOLLY%'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '445 Calendar Aggregation (groups) 2' =
+			SWITCH(
+				TRUE,
+				ISBLANK('445 Calendar Period'[445 Calendar Aggregation]),
+				"(Blank)",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LLYC",
+					"YTDOLLY",
+					"YTDOLLY%"},
+				"LLYC",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LLYTD",
+					"YOLLYTD",
+					"YOLLYTD %"},
+				"LLYTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LMC",
+					"MTDOLM",
+					"MTDOLM%"},
+				"LMC",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LMTD",
+					"MOM",
+					"MOM %"},
+				"LMTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LQC",
+					"QTDOLQ",
+					"QTDOLQ%"},
+				"LQC",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LQTD",
+					"QOQ",
+					"QOQ %"},
+				"LQTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LWC",
+					"WTDOLW",
+					"WTDOLW%"},
+				"LWC",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LWTD",
+					"WOW",
+					"WOW%"},
+				"LWTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LYC",
+					"YTDOLY",
+					"YTDOLY%"},
+				"LYC",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LYMTD",
+					"MOLYMTD",
+					"MOLYMTD %"},
+				"LYMTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LYQTD",
+					"QOLYQTD",
+					"QOLYQTD %"},
+				"LYQTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LYTD",
+					"YOY",
+					"YOY %"},
+				"LYTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"LYWTD",
+					"WOLYWTD",
+					"WOLYWTD%"},
+				"LYWTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"MAT (364)",
+					"LYMAT (364)",
+					"MATG",
+					"MATG %"},
+				"MAT",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"MTD"},
+				"MTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"QTD"},
+				"QTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"WTD"},
+				"WTD",
+				'445 Calendar Period'[445 Calendar Aggregation] IN {"YTD"},
+				"YTD",
+				'445 Calendar Period'[445 Calendar Aggregation]
+			)
+		isHidden
+		lineageTag: 22c54ea5-ccea-4ea6-9495-627921e6becc
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "445 Calendar Period"
+				          }
+				        },
+				        "Property": "445 Calendar Aggregation"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"4","Entity":"445 Calendar Period"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"LLYC","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LLYC'"}}],[{"Literal":{"Value":"'YTDOLLY'"}}],[{"Literal":{"Value":"'YTDOLLY%'"}}]]}}},{"DisplayName":"LLYTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LLYTD'"}}],[{"Literal":{"Value":"'YOLLYTD'"}}],[{"Literal":{"Value":"'YOLLYTD %'"}}]]}}},{"DisplayName":"LMC","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LMC'"}}],[{"Literal":{"Value":"'MTDOLM'"}}],[{"Literal":{"Value":"'MTDOLM%'"}}]]}}},{"DisplayName":"LMTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LMTD'"}}],[{"Literal":{"Value":"'MOM'"}}],[{"Literal":{"Value":"'MOM %'"}}]]}}},{"DisplayName":"LQC","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LQC'"}}],[{"Literal":{"Value":"'QTDOLQ'"}}],[{"Literal":{"Value":"'QTDOLQ%'"}}]]}}},{"DisplayName":"LQTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LQTD'"}}],[{"Literal":{"Value":"'QOQ'"}}],[{"Literal":{"Value":"'QOQ %'"}}]]}}},{"DisplayName":"LWC","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LWC'"}}],[{"Literal":{"Value":"'WTDOLW'"}}],[{"Literal":{"Value":"'WTDOLW%'"}}]]}}},{"DisplayName":"LWTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LWTD'"}}],[{"Literal":{"Value":"'WOW'"}}],[{"Literal":{"Value":"'WOW%'"}}]]}}},{"DisplayName":"LYC","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LYC'"}}],[{"Literal":{"Value":"'YTDOLY'"}}],[{"Literal":{"Value":"'YTDOLY%'"}}]]}}},{"DisplayName":"LYMTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LYMTD'"}}],[{"Literal":{"Value":"'MOLYMTD'"}}],[{"Literal":{"Value":"'MOLYMTD %'"}}]]}}},{"DisplayName":"LYQTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LYQTD'"}}],[{"Literal":{"Value":"'QOLYQTD'"}}],[{"Literal":{"Value":"'QOLYQTD %'"}}]]}}},{"DisplayName":"LYTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LYTD'"}}],[{"Literal":{"Value":"'YOY'"}}],[{"Literal":{"Value":"'YOY %'"}}]]}}},{"DisplayName":"LYWTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'LYWTD'"}}],[{"Literal":{"Value":"'WOLYWTD'"}}],[{"Literal":{"Value":"'WOLYWTD%'"}}]]}}},{"DisplayName":"MAT","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'MAT (364)'"}}],[{"Literal":{"Value":"'LYMAT (364)'"}}],[{"Literal":{"Value":"'MATG'"}}],[{"Literal":{"Value":"'MATG %'"}}]]}}},{"DisplayName":"MTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'MTD'"}}]]}}},{"DisplayName":"QTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'QTD'"}}]]}}},{"DisplayName":"WTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'WTD'"}}]]}}},{"DisplayName":"YTD","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"4"}},"Property":"445 Calendar Aggregation"}}],"Values":[[{"Literal":{"Value":"'YTD'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+

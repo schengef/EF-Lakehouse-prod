@@ -1,0 +1,89 @@
+table 'Plan (Wholesale Retail)'
+	lineageTag: 6093e318-aa9b-4277-b97d-e642eb14a927
+	sourceLineageTag: 3f664b99-20c3-4f6b-9da6-89e0a6c8bddf
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 41638546-4cc3-4418-b87a-ce4b8f8976c6
+		sourceLineageTag: e5061d5c-a9c2-42e1-a6cd-e9b8c881cb65
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	column Department
+		dataType: string
+		lineageTag: 49d2ee8d-411d-484f-ac7d-4f26a1072185
+		sourceLineageTag: a499536e-736b-4c15-af3a-2ca64d41655b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Department
+
+		annotation SummarizationSetBy = User
+
+	column Type
+		dataType: string
+		lineageTag: c5a32bef-d809-4d5c-8262-6c84e9a4b0d6
+		sourceLineageTag: 6510c04e-8a05-4041-81e6-09ad8fb272b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 01721cca-52ef-4fdc-93c5-322ecd8b45a6
+		sourceLineageTag: 7f7230f8-cd15-4ed8-9797-036130ad6d50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Plan Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c19575c3-d0b4-41ed-9378-c77342bcb43f
+		sourceLineageTag: 81996190-41ba-484f-bd78-9fdc549da3ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Plan Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 051720a2-ceb0-44de-a9d3-1ba20f063329
+		sourceLineageTag: d487e6b8-21e1-4cd7-82cb-3f1db5f5f1f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		lineageTag: a92f0fe9-ae20-446e-a3c4-afa2cebefca7
+		sourceLineageTag: c33bc2c1-663c-4839-b26a-9b10a2879b5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = User
+
+	partition 'Plan (Wholesale Retail)' = entity
+		mode: directQuery
+		source
+			entityName: Plan (Wholesale Retail)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

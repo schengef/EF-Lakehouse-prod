@@ -1,0 +1,102 @@
+table 'Executive Dashboard Measures'
+	lineageTag: 5eb890fd-afc7-4075-9a5a-e63242c2bda4
+
+	measure 'Row Category Delivery Year Month' =
+			
+			VAR CurrMonth=LOOKUPVALUE('Date'[MonthNum],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR CurrYear=LOOKUPVALUE('Date'[Year],'Date'[Date],MAX('Date'[Date]),'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			VAR SeasonShort=IF(or(CurrMonth<5,CurrMonth>10),"06","12")
+			VAR YearShort=right(if(CurrMonth <11,CurrYear,CurrYear+1),2)
+			VAR DeliveryCodeKey=LOOKUPVALUE(Delivery[Delivery Code Key],Delivery[Delivery Code],YearShort&SeasonShort)
+			RETURN
+			DeliveryCodeKey-SELECTEDVALUE('Delivery'[Delivery Code Key])
+		formatString: 0
+		lineageTag: 7460c897-6188-422a-8831-a13d41bebdc6
+
+	measure 'Cost OH $ LY Delivery' =
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable)
+			RETURN
+			IF(
+			    OR(ISFILTERED(Delivery[Season]),ISFILTERED(Delivery[Delivery Month])),
+			    CALCULATE(
+			        [EOP Cost $ On Hand],
+			        ALLEXCEPT('Delivery','Delivery'[Delivery Month]),
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        'Delivery'[Delivery Year]=format(IFERROR(VALUE(SELECTEDVALUE('Delivery'[Delivery Year])),0)-1,"####"),
+			        'Date'[Date]=LastDayLY
+			    ),
+			    [Cost OH $ LY]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: b554287a-1f3a-4d44-a80a-aaf5b09d4ca8
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Cost OH $ LY' =
+			
+			VAR LastDayAvailable = max('Date'[Week End Date])
+			VAR LastDayLY=LOOKUPVALUE('Date'[Date LY],'Date'[Date],LastDayAvailable,'Date'[Select a Calendar],SELECTEDVALUE('Date'[Select a Calendar]))
+			RETURN
+			CALCULATE(
+			    [EOP Cost $ On Hand],
+			    ALLEXCEPT('Date', 'Date'[Select a Calendar]),
+			    'Date'[Date]=LastDayLY
+			)
+		lineageTag: 25fce320-8611-445f-b2a7-a0bf4decb95b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cost OH % vs LY Delivery' =
+			
+			DIVIDE(
+			    [Cost OH $ TY]-[Cost OH $ LY Delivery],
+			    [Cost OH $ LY Delivery]
+			)
+		formatString: 0.0%;(0.0%)
+		lineageTag: 0b721a2e-1687-431e-ac14-d78c212d6a83
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cost OH $ TY' =
+			
+			[EOP Cost $ On Hand]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 706cfe76-4921-464a-ab95-17a0862cb217
+
+	measure 'Delivery Has Inventory' =
+			
+			IF(
+			    AND(
+			    AND([Cost OH $ TY]=0,[EOP Quantity On Hand]=0),
+			    [Cost OH $ LY Delivery]=0),
+			    0,1)
+		formatString: 0
+		lineageTag: 4a37c7a0-5ca9-45dd-b5df-6c92e8cb817c
+
+	measure 'Seasonless Inventory' =
+			
+			VAR Location={"800","EFW"}
+			VAR StyleColorCollection={"N/A","QR","RENEW","SLEEPWEAR"}
+			Return
+			if(
+			    SELECTEDVALUE('Delivery'[Style Color Collection])="N/A" && SELECTEDVALUE(Inventory[Location])="EFW",0,1)
+		formatString: 0
+		lineageTag: 66afcf49-d2cf-447f-9b5c-a644a6ff50ca
+
+		changedProperty = Name
+
+	partition 'Executive Dashboard Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

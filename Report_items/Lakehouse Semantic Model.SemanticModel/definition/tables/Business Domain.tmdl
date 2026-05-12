@@ -1,0 +1,74 @@
+table 'Business Domain'
+	lineageTag: 28e3afd9-ecb7-47df-8008-1a3b896e300a
+	sourceLineageTag: ba3451a6-3e44-4c8b-8a00-606b7bb66157
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 83857e9f-a571-464b-87a7-71cfbf57ab78
+		sourceLineageTag: c4f47517-24aa-48f8-9090-736d4ee5c16a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain'
+		dataType: string
+		lineageTag: 39a01a90-6557-40a0-925f-3d2a1a62e926
+		sourceLineageTag: 5f427fe0-bc82-4c73-99b0-61fcd872e3a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Subdomain'
+		dataType: string
+		lineageTag: 208c143b-3e07-4d04-806e-99aa9a65f9ae
+		sourceLineageTag: 8850f0b7-a3e2-4947-8ade-8017bf5f2948
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Subdomain
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Table'
+		dataType: string
+		lineageTag: 72cf070a-1e05-4566-9763-974db9d28542
+		sourceLineageTag: 30f3bead-7050-4d58-9b76-5f5c349330d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Table
+
+		annotation SummarizationSetBy = User
+
+	column 'Source System'
+		dataType: string
+		lineageTag: d8802caf-33da-47fa-86da-c1156b1fd3de
+		sourceLineageTag: bfc1d0f3-a92b-4682-bac6-0671c3b4c5f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source System
+
+		annotation SummarizationSetBy = User
+
+	column Static
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5eb0737f-8c18-43f3-9b3b-ced96251eebf
+		sourceLineageTag: c890ca68-0b30-4d3a-94ed-623c629c2e31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Static
+
+		annotation SummarizationSetBy = User
+
+	partition 'Business Domain' = entity
+		mode: directQuery
+		source
+			entityName: Business Domain
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

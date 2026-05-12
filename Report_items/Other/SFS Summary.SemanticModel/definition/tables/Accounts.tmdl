@@ -1,0 +1,565 @@
+table Accounts
+	lineageTag: b78f0831-7b37-4510-8a3f-65da2fae0d5f
+	sourceLineageTag: fadeef0f-ace4-4ea8-8596-fae1bedd4736
+
+	column 'Wholesale Account Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 896bdfff-3fe7-409d-a6d0-dd6f1dd52339
+		sourceLineageTag: e9370660-40ee-43e6-93fd-7f16570bc131
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Name'
+		dataType: string
+		lineageTag: 6704f4a0-6bee-4329-ba00-51e0e3faa96f
+		sourceLineageTag: da3de592-3f93-4017-a077-a009b8201bf5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Type'
+		dataType: string
+		lineageTag: 4a339a1f-0306-4ab8-abf6-fa210423518b
+		sourceLineageTag: 60b69688-d28b-4e4c-8d13-6eef804c1889
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Code'
+		dataType: string
+		isHidden
+		lineageTag: 920125b7-89ac-4c6d-adf9-f121dad36ebf
+		sourceLineageTag: 00876967-9bb9-4f2b-aaf6-adb7e0ee0b6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = User
+
+	column Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 47bf4efd-c023-4a4e-8a5c-358b25301d4a
+		sourceLineageTag: 755b4012-54f1-4b00-8079-53132458ad95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = User
+
+	column 'Address Line 1'
+		dataType: string
+		isHidden
+		lineageTag: b1c3925d-c968-4419-80d4-be107ef5506e
+		sourceLineageTag: 347dc998-da59-4d92-9177-107125e43c97
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 1
+
+		annotation SummarizationSetBy = User
+
+	column 'Address Line 2'
+		dataType: string
+		isHidden
+		lineageTag: 96f6d6ee-b4b4-4a62-b1f7-8b1d7432d4b4
+		sourceLineageTag: 1ccbb272-9100-46fa-a7c5-aab745c0f53a
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 2
+
+		annotation SummarizationSetBy = User
+
+	column 'Address Line 3'
+		dataType: string
+		isHidden
+		lineageTag: 03569edc-f474-4d33-9371-7a599ab1da71
+		sourceLineageTag: ce3cc029-5f8d-44c1-bd80-f2d774e6b2a2
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 3
+
+		annotation SummarizationSetBy = User
+
+	column 'Address Line 4'
+		dataType: string
+		isHidden
+		lineageTag: cbff5ede-36c9-4938-a4a2-0f9d247b6e05
+		sourceLineageTag: b505bd9d-d778-42ca-82fe-52b2747f6869
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 4
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		isHidden
+		lineageTag: 7d4f3579-b0c2-4a82-8b15-44931ac623dd
+		sourceLineageTag: 55e454a9-928d-44e9-8717-07c8fa25fbd1
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = User
+
+	column State
+		dataType: string
+		isHidden
+		lineageTag: 886346d8-93c8-4f13-8b88-2f06bf95f644
+		sourceLineageTag: 7f874f80-e687-489f-acf0-d910dd56b154
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = User
+
+	column Zipcode
+		dataType: string
+		isHidden
+		lineageTag: e02a43c9-1ecb-4e99-8b27-78c5ee1f022d
+		sourceLineageTag: d68b8f48-5cc2-4454-b43a-9ea936a582ce
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Zipcode
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		isHidden
+		lineageTag: 1590614b-075e-44cc-8721-391419f625ad
+		sourceLineageTag: 2e6b8070-2462-4d7f-998b-5b5dcb31852d
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Allow Back Order'
+		dataType: string
+		lineageTag: 75c032e4-e626-4cce-964c-bc80aa368d36
+		sourceLineageTag: 4dfeca51-1d28-48be-bdf0-126a47815155
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allow Back Order
+
+		annotation SummarizationSetBy = User
+
+	column 'Always Print'
+		dataType: string
+		lineageTag: 25203d36-a4ea-4680-8e48-46c760b62f60
+		sourceLineageTag: 28215fcb-0b1b-45b9-9cfc-a60dab01e463
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Always Print
+
+		annotation SummarizationSetBy = User
+
+	column 'Auto Create Bulk'
+		dataType: string
+		lineageTag: 167abb9d-49de-45c0-9b0d-8f8b1577b63e
+		sourceLineageTag: 36dab240-a255-43d3-8d7d-11fe6d32d58f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Auto Create Bulk
+
+		annotation SummarizationSetBy = User
+
+	column 'Bill Option'
+		dataType: string
+		lineageTag: 80f7084e-4e14-4ed0-bfb4-0b7b06421059
+		sourceLineageTag: 983aea71-2bc1-432e-a2e4-a3877a4f11f4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bill Option
+
+		annotation SummarizationSetBy = User
+
+	column 'Bol Load Type'
+		dataType: string
+		lineageTag: c8ea0ff3-6f6f-4310-8667-d01706dc915b
+		sourceLineageTag: 58002ed5-ff9c-4198-bce6-66c6ad552180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Bol Load Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Call Appointment No Of Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: d56c0369-3e35-4895-a0ef-826e5213c992
+		sourceLineageTag: a54a1fe2-40d9-46da-860a-20d2130a6eb6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Call Appointment No Of Days
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Tax Exempt Number'
+		dataType: string
+		lineageTag: edb4a061-e959-457e-8a48-1cb9a5c1332e
+		sourceLineageTag: 912c0cc7-a498-4a54-94bb-0ca85f271afb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Tax Exempt Number
+
+		annotation SummarizationSetBy = User
+
+	column Dba
+		dataType: string
+		lineageTag: 498a0e99-d246-4bf9-86a6-0d9302f11b34
+		sourceLineageTag: 236fec33-5631-4ea1-8311-0329004b22e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dba
+
+		annotation SummarizationSetBy = User
+
+	column 'Allow Duplicate Sku'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 52a74349-edbc-4e20-90ca-269dbdda7099
+		sourceLineageTag: 9432cdc0-7ac0-44a9-935c-7ff49c44b3c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allow Duplicate Sku
+
+		annotation SummarizationSetBy = User
+
+	column 'Factor Client Number'
+		dataType: string
+		lineageTag: 3e92f9d5-f7ec-426e-b69e-d25bbcc81081
+		sourceLineageTag: bd883b38-5462-4ff9-ab61-28f488e45c28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Factor Client Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Exclude Freight'
+		dataType: string
+		lineageTag: 64a9ce6d-8a27-41c5-80d6-daddbc9f4004
+		sourceLineageTag: e30d242f-8654-43b6-8442-a1de104503f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Exclude Freight
+
+		annotation SummarizationSetBy = User
+
+	column 'Has Notes'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: afa11fde-a34d-4cec-9af2-bd7490b00441
+		sourceLineageTag: 6ff89c5f-4f98-43a0-87a6-c83d7c5ae450
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Has Notes
+
+		annotation SummarizationSetBy = User
+
+	column Insurance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f09d48b7-4da2-4c32-8242-acf0ebec6d2c
+		sourceLineageTag: 1ca4a786-77ed-4c67-9454-fec00696bd1f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Insurance
+
+		annotation SummarizationSetBy = User
+
+	column 'Process Balance In Invoicing'
+		dataType: string
+		lineageTag: f49e8372-d80d-4ce3-850d-11bfe6f79385
+		sourceLineageTag: 5be80b8f-5968-4962-ba5c-ff66980aed45
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Process Balance In Invoicing
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoicing Cancel Reason'
+		dataType: string
+		lineageTag: 58188afc-dc2b-49b7-af9a-2412c47ab7ac
+		sourceLineageTag: 6caafd83-c789-4389-9d05-5dfd1a5a56c0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoicing Cancel Reason
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoicing Cancel Type'
+		dataType: string
+		lineageTag: 927a9719-a321-4e3e-95c6-6a591133b2ad
+		sourceLineageTag: c44a9e2f-9ef9-441b-a3be-50d1150cf564
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoicing Cancel Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Form'
+		dataType: string
+		lineageTag: 8ca76d2b-3135-4bf7-8054-211df874c78b
+		sourceLineageTag: 8dd4c9a1-4c13-4aa0-8be7-26adf0b312ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Form
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Duty'
+		dataType: string
+		lineageTag: 9c93aafa-7a29-4ec4-903e-3d2050172c32
+		sourceLineageTag: 3893c6ca-d5a6-4ad1-bd93-fdb77b0593aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Duty
+
+		annotation SummarizationSetBy = User
+
+	column Location
+		dataType: string
+		lineageTag: a96c63fd-38ff-42f4-affe-f7c620b8d8ef
+		sourceLineageTag: c69bae85-978a-4925-92f0-08265fe742b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c01a49a6-b5ec-41d4-bced-fbc062f2d236
+		sourceLineageTag: b13ffcfb-74f1-424c-bfae-73e9372a3b4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Old Account'
+		dataType: string
+		lineageTag: 39a23e56-5404-4214-940d-a2d4dd7b4e11
+		sourceLineageTag: 620cba97-5209-4169-accb-59be4f0caf4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Old Account
+
+		annotation SummarizationSetBy = User
+
+	column 'Org Code'
+		dataType: string
+		lineageTag: d76e4f8c-d9a5-493f-a11f-3a49c74d4256
+		sourceLineageTag: d3c663b8-82f3-4918-b341-ffcdd4c47684
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Org Code
+
+		annotation SummarizationSetBy = User
+
+	column Parent
+		dataType: string
+		lineageTag: d2d4466e-8346-4434-9287-aebce61978dc
+		sourceLineageTag: 424be8b2-e0cd-46e5-929a-707d81d64f23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent
+
+		annotation SummarizationSetBy = User
+
+	column 'User Preferred Shipper'
+		dataType: string
+		lineageTag: 5e2a6d58-eb04-49a1-8bc4-b4bf68e7b404
+		sourceLineageTag: 1801c3cb-ef2f-49f7-a6fb-03aabaec9d87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: User Preferred Shipper
+
+		annotation SummarizationSetBy = User
+
+	column 'Warn On Zero Price'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e3209834-6331-4799-8949-4aeec34695b2
+		sourceLineageTag: 09e2c9e3-2c03-45a6-a1c1-4dd63cc338bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warn On Zero Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Print Invoice'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4dd9570a-49fe-4499-93b3-3b70eb42e559
+		sourceLineageTag: 43fb4a15-3004-4c52-88cf-2592b5ee0d44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Print Invoice
+
+		annotation SummarizationSetBy = User
+
+	column 'Resale Number'
+		dataType: string
+		lineageTag: 95e29674-a720-4c10-acbe-370b71e6a8a3
+		sourceLineageTag: 775de0c3-e8c2-4296-800c-53e4dc6c21cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Resale Number
+
+		annotation SummarizationSetBy = User
+
+	column Residential
+		dataType: string
+		lineageTag: 3aec3249-d514-415d-9411-2827d6bf72ad
+		sourceLineageTag: e69314c2-80ab-4223-bc98-26167ec1de3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Residential
+
+		annotation SummarizationSetBy = User
+
+	column 'Upc Required'
+		dataType: string
+		lineageTag: 491aeff3-7ed5-49b6-bdd7-33dec761bae0
+		sourceLineageTag: 81767d70-a638-4e54-9849-7460d8f884f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Upc Required
+
+		annotation SummarizationSetBy = User
+
+	column 'Sps Account Number'
+		dataType: string
+		lineageTag: 0096e172-1bbc-4ec0-8ec1-f9d3b871af2a
+		sourceLineageTag: 8d0aaf35-fabd-46be-8403-f9ac9df840ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sps Account Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Tax Exempt'
+		dataType: string
+		lineageTag: 7bce1e76-57ae-432d-bd7f-81f316836e94
+		sourceLineageTag: 3feb217e-c5e1-44ad-b57f-9c58bdd77401
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tax Exempt
+
+		annotation SummarizationSetBy = User
+
+	column 'Roll Up'
+		dataType: string
+		lineageTag: 24c55896-28a1-403f-bd28-5ce8dc09bb46
+		sourceLineageTag: 689a7924-47ac-49ac-bbb5-19e2016a4724
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Roll Up
+
+		annotation SummarizationSetBy = User
+
+	column 'Ar Email Ind'
+		dataType: string
+		lineageTag: 4d6effff-2a89-4abb-a3d6-05d218b1bdb5
+		sourceLineageTag: 8f1d106f-3211-4fe8-ac7c-19b84709d4c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ar Email Ind
+
+		annotation SummarizationSetBy = User
+
+	column 'Use Calculated Freight'
+		dataType: string
+		lineageTag: 3e1cdde8-4b2c-4e02-991f-7ec095fc5ada
+		sourceLineageTag: cdfa3afb-18c3-43f4-b9bc-5fe9e90f2fd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Use Calculated Freight
+
+		annotation SummarizationSetBy = User
+
+	column 'Use Dept Number'
+		dataType: string
+		lineageTag: f23bc05e-6571-4d06-a83e-c500ddb69dcf
+		sourceLineageTag: a74a03a7-51d3-415c-9b6f-2716b32f3671
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Use Dept Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Use Po Number'
+		dataType: string
+		lineageTag: adbf9f48-a811-4325-a216-d67ed1e71438
+		sourceLineageTag: 480c0175-5c8d-4788-80cb-fea4e48fa5bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Use Po Number
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Address Hierarchy'
+		lineageTag: 3fc0475e-1f11-47c2-85d4-cabcde687e7d
+		sourceLineageTag: 49076b99-fc38-45ed-8832-390a5b6b6842
+
+		level Country
+			lineageTag: d3043972-2c3b-4f17-873a-e57cf010d483
+			sourceLineageTag: 2cf2d220-ff67-4609-9bce-953e6d285ac2
+			column: Country
+
+		level City
+			lineageTag: a391e8a6-7e5a-4f35-b513-3d23df2f0e8f
+			sourceLineageTag: ab66ef0f-c2cc-46ea-a017-883b66017607
+			column: City
+
+		level Zipcode
+			lineageTag: 85cd0ea5-f594-4db4-abbe-b9651ffb5ec4
+			sourceLineageTag: 6d0b9246-e9e8-47ab-b211-5917a9ab36ce
+			column: Zipcode
+
+		level State
+			lineageTag: 14c6e9a0-781e-448f-a8b1-c4ebdb6ffc37
+			sourceLineageTag: 37c1d04f-1894-4bae-86f3-142915a19eb1
+			column: State
+
+		level 'Address Line 1'
+			lineageTag: a5ea30ef-718a-4c3c-9015-59a8a687b5d6
+			sourceLineageTag: 6065f6cd-a536-4365-bb00-f2fbca2a236e
+			column: 'Address Line 1'
+
+		level 'Address Line 2'
+			lineageTag: 236c3947-52ff-4169-82f1-2c85c311ab67
+			sourceLineageTag: 92e39c67-b455-48b9-a6df-7a2f7bb51ae2
+			column: 'Address Line 2'
+
+		level 'Address Line 3'
+			lineageTag: 78201b37-600d-4422-bac2-f8701769ee60
+			sourceLineageTag: 11a2ab74-540f-464d-bdb7-56d8850bebd9
+			column: 'Address Line 3'
+
+		level 'Address Line 4'
+			lineageTag: 1fe0aa74-edec-43d4-ae0e-1da21a544bae
+			sourceLineageTag: 39fa515b-327f-4e0a-8bf7-45af9bb13294
+			column: 'Address Line 4'
+
+	partition Accounts = entity
+		mode: directQuery
+		source
+			entityName: Accounts
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

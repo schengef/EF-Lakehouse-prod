@@ -1,0 +1,79 @@
+table 'Order Categorization'
+	lineageTag: e976ee28-9307-4336-8a84-90c81d8e3fa1
+
+	column 'Order Categorization Key'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 271c0b0c-26cb-453f-b100-15068cefbf2b
+		summarizeBy: none
+		sourceColumn: Order Categorization Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Shipped To'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e9a25ff3-2131-4e3f-96c8-799c2bc4f03a
+		summarizeBy: none
+		sourceColumn: Shipped To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipped From'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e374466d-a2d1-4b5e-867c-2dd918ec192f
+		summarizeBy: none
+		sourceColumn: Shipped From
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For Borderfree, choose SFCC Type="Global-E"
+	column 'Sfcc Type'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ca8517f3-5e18-483a-a6f6-15b876e1818e
+		summarizeBy: none
+		sourceColumn: Sfcc Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Send Order'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 7a422c08-4fee-4df4-8fe2-f48a45a21734
+		summarizeBy: none
+		sourceColumn: Send Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Categorization' = m
+		mode: dual
+		queryGroup: Dimensions
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com", SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_" & Environment, Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				    SELECT O.*
+				    FROM EDW_PROD.EDW_T.D_ORDER_CATEGORIZATION O
+				    ",
+				    NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery, each Text.Replace(_, "_", " ")),
+				    #"Renamed Columns" = Table.TransformColumnNames(#"Remove Underscores", each Text.Proper(_)),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Etl Row Created Ts", "Etl Row Updated Ts", "Etl Source System Cd"})
+				in
+				    #"Removed Columns"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

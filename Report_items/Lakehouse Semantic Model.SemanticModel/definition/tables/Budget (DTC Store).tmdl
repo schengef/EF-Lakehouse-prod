@@ -1,0 +1,67 @@
+table 'Budget (DTC Store)'
+	lineageTag: cc23ae74-0f67-4a6d-83fa-38e3a01e58ce
+	sourceLineageTag: 72e5602b-0100-400f-9a6d-e83070d87e4d
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a4e7012a-8c26-47bd-ac49-058f5e96cfa0
+		sourceLineageTag: c42e579f-d346-4288-9586-51900f658d4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1f0a40c6-0604-4b1d-b2d3-6199189ceaef
+		sourceLineageTag: 4cc1066e-5ab0-4df5-9cc8-87bc554dab7e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column Measure
+		dataType: string
+		lineageTag: 8fbab4c2-3bce-4e92-9384-7413cf214536
+		sourceLineageTag: bfff727a-abaf-4e52-822c-0d99cb2f07c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Store Value'
+		dataType: decimal
+		isHidden
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 07b70525-df98-490a-8d55-ec1c1582861f
+		sourceLineageTag: f3b540f6-8430-4b9d-93c8-6e0eb14a24ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Budget Store Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Code'
+		dataType: string
+		isHidden
+		lineageTag: 7ceb79d2-4c6d-4e89-93cb-bc1256aefcf3
+		sourceLineageTag: a7c205d2-bb4f-41d9-8330-fafb922f56e6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget (DTC Store)' = entity
+		mode: directQuery
+		source
+			entityName: Budget (DTC Store)
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

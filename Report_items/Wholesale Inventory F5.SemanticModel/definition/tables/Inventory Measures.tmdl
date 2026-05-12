@@ -1,0 +1,120 @@
+table 'Inventory Measures'
+	lineageTag: 532adfad-b9ba-4584-acff-8372e47ee605
+
+	/// Sum of [Cost on Hand] at the maximum date in the view
+	measure 'EOP Cost $ On Hand' =
+			
+			CALCULATE(
+			    SUM(Inventory[Cost On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 5bbe1a60-a669-4a77-a441-2664d408026d
+
+	/// Sum of [Quantity on Hand] at the maximum date in the view
+	measure 'EOP Quantity On Hand' =
+			
+			CALCULATE(
+			    SUM(Inventory[Units On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: #,0
+		lineageTag: 8a19b122-3d27-4e1e-988c-faeb04d8a8d1
+
+	/// Sum of [Retail On Hand] at the maximum date in the view
+	measure 'EOP Retail $ On Hand' =
+			
+			CALCULATE(
+			    SUM(Inventory[Retail On Hand]),
+			    Inventory[End Date]>=MAX('Date'[Date]),
+			    Inventory[Start Date]<=MAX('Date'[Date]),
+			    Inventory[Dtc Misc Flag]<>1
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: bc9c9c66-af98-4128-b306-36756d6e58eb
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	/// [EOP Retail $ On Hand] divided by [EOP Quantity on Hand]
+	measure 'On Hand AUR' =
+			
+			DIVIDE(
+			    [EOP Retail $ On Hand],
+			    [EOP Quantity On Hand]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 63e3d625-a215-48e6-a900-472c75c8c27a
+
+	/// [Oh Units] at the maximum date in the view
+	measure 'External Quantity On Hand' =
+			
+			CALCULATE(
+			        SUM('Transactions (External POS)'[Oh Units]),
+			        ALLEXCEPT('Date','Date'[Select a Calendar]),
+			        'Date'[Week End Date]=max('Date'[Week End Date])-7
+			    )
+		formatString: #,0
+		lineageTag: 113dd499-d22d-4863-86b9-a7aaa28e42c6
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// [External Cost $] at the maximum date in the view
+	measure 'External On Hand Cost $' =
+			
+			VAR PrevFiscalWeekDate = MAX('Filter Dates'[Date])
+			RETURN
+			IF(
+			    MAX('Filter Dates'[Date])>TODAY(),
+			    CALCULATE(
+			    [External Cost $],
+			    'Date'[Date]=PrevFiscalWeekDate-7
+			    ),
+			    CALCULATE(
+			        [External Cost $],
+			        'Date'[Date]=max('Date'[Date])
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: d1fc99b8-774a-46bb-b03f-f75672c54f94
+
+		changedProperty = IsHidden
+
+	/// [External Retail $] at the maximum date in the view
+	measure 'External On Hand Retail $' =
+			
+			VAR PrevFiscalWeekDate = MAX('Filter Dates'[Date])
+			RETURN
+			IF(
+			    MAX('Filter Dates'[Date])>TODAY(),
+			    CALCULATE(
+			    [External Retail $],
+			    'Date'[Date]=PrevFiscalWeekDate-7
+			    ),
+			    CALCULATE(
+			        [External Retail $],
+			        'Date'[Date]=max('Date'[Date])
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 8a98acdd-ca29-48ac-aad3-5c67b40aa305
+
+		changedProperty = IsHidden
+
+	partition 'Inventory Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

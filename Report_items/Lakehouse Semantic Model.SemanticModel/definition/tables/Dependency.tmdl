@@ -1,0 +1,47 @@
+table Dependency
+	isHidden
+	lineageTag: 8e963f3d-beda-407d-9e78-38c596c482f9
+	sourceLineageTag: 1180a63f-e241-4bae-8300-bbdaf3da02ca
+
+	column 'Report Dependency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 931fd6f2-46b5-4227-91ef-ed60008c9205
+		sourceLineageTag: c4b45ca0-bae5-470a-b417-7589c4d92837
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Report Dependency Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 259c6dfe-18d1-4b3e-bb9d-1ae2aca69cd3
+		sourceLineageTag: b4e5261f-f9f7-4063-a3d0-aabdd08b888b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Report Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c8051676-ae69-46e7-8425-97db0dec4996
+		sourceLineageTag: 99489c58-02ab-41b9-a33a-8e554d5b7a24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Key
+
+		annotation SummarizationSetBy = User
+
+	partition Dependency = entity
+		mode: directQuery
+		source
+			entityName: Dependency
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

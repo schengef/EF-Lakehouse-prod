@@ -1,0 +1,57 @@
+table Headers-Detail
+	lineageTag: 09e4e6b8-88d2-4d0e-82dd-595a05bbd0c5
+
+	column Metric
+		dataType: string
+		lineageTag: 8669a2d3-09b7-46df-9436-60e743783588
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: 'Metric Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0509e7fd-f6b1-4016-9468-a2dd67f25dec
+		summarizeBy: sum
+		sourceColumn: Metric Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: dc5fa24e-3003-40a2-9802-0a2c4bb4d665
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f59737d-6ca4-4218-93cd-a94d473ff82c
+		summarizeBy: sum
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Headers-Detail = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jZVda8IwFIb/Sij2zg0z5z4uRdh2sS9sRUbxIrAwy7K2NNl+/5Jom4+epAUteM5z6pueBy2KBCXz5ALLi3od5kWS1w3CC/lJvfMPecHD+rOqX+n6KxUoI4xyNNOsM2Sau6oUXA85QEYZQ/mx/UVpjyxD95hJSNRowwjnKvf1CJjXgjC0bhrSUiaxlctvqSAlk/BbhZ5I9QkP3bhDm5qLsZHbYa7HtpaZX0j7VVYola27IXPO0x1hvdvK9v1I5hOFF9GUqu5tRj/sDlBVbzF7Sr/7fr8a7O3m4R1+AthbTXYsmx9ane6xGh7dFQi0yxbIAkICwYYCAsVASCCLny6QNTRVIC8XKJDHBAWKZbYECqfsBLIIUCCrHxHIoqIC2Wv2BYr+AqXojyNNLCMW+VTgzD4GHjz8jV2mS+1bOI3ph5SG7gAZHeEgoQ0+3WczM1VnNxRos4sEZY7ktVwOJuzWagBwoaYdEdlAUY+t1foam5bz/3ouH/4B", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metric = _t, #"Metric Sort" = _t, Period = _t, #"Period Sort" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metric", type text}, {"Metric Sort", Int64.Type}, {"Period", type text}, {"Period Sort", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","% to ","#(lf)% to ",Replacer.ReplaceText,{"Metric"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

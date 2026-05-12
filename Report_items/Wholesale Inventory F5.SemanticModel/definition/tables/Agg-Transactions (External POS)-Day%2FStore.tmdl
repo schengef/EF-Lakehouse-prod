@@ -1,0 +1,163 @@
+table 'Agg-Transactions (External POS)-Day/Store'
+	isHidden
+	lineageTag: 5da64101-7896-4097-ab89-80d2223c5410
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d5b345e4-fe02-43bb-9a24-65ad108a4a52
+		summarizeBy: count
+		sourceColumn: Channel Key
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Channel Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1ed32a68-9aee-4c4e-a78d-a8b4ee577de9
+		summarizeBy: count
+		sourceColumn: Currency Key
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Currency Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 99bcd5ad-7c84-4a18-ac54-4737d24be39a
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Delivery Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Dollars'
+		dataType: double
+		isHidden
+		lineageTag: 45acd094-5145-4d4f-800b-8f384f768e29
+		summarizeBy: sum
+		sourceColumn: Sales Dollars
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (External POS)'.'Sales Dollars'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3fc15f6b-db47-43e1-b1f0-0373cad0a73e
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Week Ending Date Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mark Type'
+		dataType: string
+		isHidden
+		lineageTag: 933fc5dd-f1f4-4bd2-ba9a-2af594ded741
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Mark Type'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Oh Cost'
+		dataType: double
+		isHidden
+		lineageTag: 2106a68c-b078-4a02-aa7f-2e58aa9b887b
+		summarizeBy: sum
+		sourceColumn: Oh Cost
+
+		alternateOf
+			summarization: sum
+			baseColumn: 'Transactions (External POS)'.'On Hand Cost'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1ecdfed8-0a51-4b95-9ca1-79fb502f04c3
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		alternateOf
+			baseColumn: 'Transactions (External POS)'.'Store Key'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Agg-Transactions (External POS)-Day/Store' = m
+		mode: import
+		queryGroup: Facts\Aggregated
+		source = ```
+				let
+				
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    " 
+				    select T.CHANNEL_KEY,T.CURRENCY_KEY,T.DELIVERY_KEY,SUM(T.SALES_DOLLARS) AS SALES_DOLLARS,T.WEEK_ENDING_DATE_KEY,
+				PC.MARK_TYPE,Sum(T.OH_UNITS*CASE WHEN C.CURRENCY='CAD' then P.CAN_STANDARD_COST else P.STANDARD_COST end) as OH_COST,S.STORE_KEY
+				from EDW_V.V_EXTERNAL_TRANSACTIONS_POS T
+				LEFT OUTER JOIN EDW_T.D_PRICE_CATEGORIZATION PC ON T.PRICE_CATEGORIZATION_KEY = PC.PRICE_CATEGORIZATION_KEY
+				LEFT OUTER JOIN EDW_T.D_PRODUCT P ON T.PRODUCT_KEY = P.PRODUCT_KEY
+				LEFT OUTER JOIN EDW_T.D_CURRENCY C ON T.CURRENCY_KEY = C.CURRENCY_KEY
+				LEFT OUTER JOIN EDW_T.D_STORE S ON T.STORE_KEY = S.STORE_KEY
+				where WEEK_ENDING_DATE  >= datefromparts(year(getdate()) - 3, 1, 1)
+				GROUP BY T.CHANNEL_KEY,T.CURRENCY_KEY,T.DELIVERY_KEY,T.WEEK_ENDING_DATE_KEY,PC.MARK_TYPE,S.STORE_KEY
+				    
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each true),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Channel Key", Int64.Type}, {"Currency Key", Int64.Type}, {"Delivery Key", Int64.Type}, {"Week Ending Date Key", Int64.Type}, {"Store Key", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

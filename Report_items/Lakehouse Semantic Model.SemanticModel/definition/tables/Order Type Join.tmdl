@@ -1,0 +1,36 @@
+table 'Order Type Join'
+	isHidden
+	lineageTag: fac961be-7cc4-4776-9dec-94c1d4980952
+	sourceLineageTag: ecee6adb-14f9-48b8-bc9a-c4c872fa7365
+
+	column 'Order Type'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: a819dc5d-1b7d-4ef9-801c-d9f772481fd4
+		sourceLineageTag: 0f9585ff-72d3-4def-a7b1-d6db9028ea0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+		sortByColumn: 'Order Type Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a3130038-d08a-4e9d-a060-dbd0bdf7d90e
+		sourceLineageTag: 4c9eefd2-2eaf-4bdb-98bd-558648185ca6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type Sort
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type Join' = entity
+		mode: directQuery
+		source
+			entityName: Order Type Join
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+

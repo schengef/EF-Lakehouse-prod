@@ -1,0 +1,85 @@
+table Traffic
+	lineageTag: 0b237d41-3cb3-4954-b137-209734ef0365
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: acd8103f-afce-4a4a-9ef4-2bcd3667645d
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 2189e6e8-caae-4d7c-88f7-d2a54bfd29fb
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Visits
+		dataType: int64
+		sourceProviderType: int
+		lineageTag: bbb975ce-2b4c-4f40-b30c-a9b08c6fc10b
+		summarizeBy: sum
+		sourceColumn: Visits
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		sourceProviderType: int
+		lineageTag: b7766d92-2647-45dc-99fa-6f164b0f22eb
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Traffic = m
+		mode: directQuery
+		queryGroup: Facts
+		source = ```
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    SQLStatement = 
+				    "
+				select T.*,S.CHANNEL_KEY
+				from EDW_V.F_TRAFFIC T
+				LEFT OUTER JOIN EDW_V.D_STORE S ON T.STORE_KEY = S.STORE_KEY
+				where DATE_KEY  >= (year(getdate()) - 3)*10000+101
+				    ",
+				NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+				    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Store Key", "Date Key", "Visits","Channel Key"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Store Key", Int32.Type}, {"Date Key", Int32.Type}, {"Visits", Int32.Type}, {"Channel Key", Int32.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

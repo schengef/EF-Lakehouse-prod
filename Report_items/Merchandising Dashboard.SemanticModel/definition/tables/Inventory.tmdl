@@ -1,0 +1,172 @@
+table Inventory
+	lineageTag: b572daed-28b8-4063-84bd-87963b064d75
+	sourceLineageTag: 75bc81b8-5adf-4ce1-88be-f83bb1e7b265
+
+	column 'Units On Hand'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 2cf77442-6aa3-4f47-bd18-60291085fd25
+		sourceLineageTag: 8db94bf0-5977-42ea-a2cc-e80838a12d42
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Units On Hand
+
+		annotation SummarizationSetBy = User
+
+	column Location
+		dataType: string
+		lineageTag: b7480e89-8a94-45f7-b407-f1bf98916bf1
+		sourceLineageTag: bf99550a-cd45-4ffd-9e78-87ecfa83aab7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 70cbef71-5e09-44c9-a598-2f4a20cf45c6
+		sourceLineageTag: 9bb33bab-c7a0-4fe7-bfa4-a1de86c4260b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6add8179-46ae-46bc-9820-77ab8328aaaf
+		sourceLineageTag: 46496fc6-be70-40bb-93b0-7d36aaa8de0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5de46900-613f-4041-bd6f-62e3c2bb25b4
+		sourceLineageTag: ed039f54-92c0-43a3-86df-e8d4ce613e71
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 41dfb468-1049-4cfe-8b78-8b507a81418c
+		sourceLineageTag: f11ddada-88d3-4c8b-b67a-21c3f3a8e53f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 10b9418b-0230-4bc1-a151-78e9259b5bb0
+		sourceLineageTag: ba9e0eba-d236-450d-ad36-8d59e997bf57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Categorization Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 07ef5dfd-ba74-48cd-9cc4-733b2936160c
+		sourceLineageTag: 74e28d62-7971-4eee-b551-cb83c56085d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Categorization Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark Type'
+		dataType: string
+		lineageTag: 43379648-05b9-4659-b7f7-dacafd6b0e47
+		sourceLineageTag: c107853f-5716-432c-b333-0deb3773325c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mark Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost On Hand'
+		dataType: double
+		isHidden
+		lineageTag: 2a9e509e-62cd-489e-b9d3-0515cad7c1cd
+		sourceLineageTag: 932eeb9c-acc6-43a4-af1d-dd16f0cf0332
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost On Hand
+
+		annotation SummarizationSetBy = User
+
+	column 'Retail On Hand'
+		dataType: double
+		isHidden
+		lineageTag: 8418701b-0929-44e6-8c6e-cece02fb6d99
+		sourceLineageTag: a30522f3-72fe-4438-9efb-2f62daeaa410
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Retail On Hand
+
+		annotation SummarizationSetBy = User
+
+	column 'Start Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: a9951d90-a761-446b-819d-5d5b0d55f705
+		sourceLineageTag: 2e2123c4-0f84-49ea-a038-71a70611569f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		annotation SummarizationSetBy = User
+
+	column 'End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: db61ed0e-c299-403e-85af-43eca9963327
+		sourceLineageTag: bfd370e4-628a-4757-b04d-05393b946473
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: End Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Dtc Misc Flag'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 60b837b9-7c8c-4ce6-a564-0669788cc7c7
+		sourceLineageTag: 28248dc5-3c0c-4d3d-9490-82ca1b9b9dd1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dtc Misc Flag
+
+		annotation SummarizationSetBy = User
+
+	partition Inventory = entity
+		mode: directQuery
+		source
+			entityName: Inventory
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

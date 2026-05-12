@@ -1,0 +1,31 @@
+table Headers-Period
+	lineageTag: 39887a98-2fc0-42b5-a975-18fc4dbed3e4
+	sourceLineageTag: 5a986eda-2914-439b-8f33-728235ec67d3
+
+	column Period
+		dataType: string
+		lineageTag: 79ce347c-ce07-497f-bb6a-2f295ac0e610
+		sourceLineageTag: f93403c2-9794-4c6e-9aa1-baa27ed011ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Period Sort'
+		dataType: string
+		lineageTag: e12477f8-2e54-4ab7-a4cf-9a147f491ae4
+		sourceLineageTag: a11b4eb4-3ab3-4e57-99bc-9a3524a6e9a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = User
+
+	partition Headers-Period = entity
+		mode: directQuery
+		source
+			entityName: Headers-Period
+			expressionSource: 'DirectQuery to AS - Delivery, Classification, and Fabrics'
+

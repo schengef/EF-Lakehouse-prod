@@ -1,0 +1,579 @@
+table Accounts
+	lineageTag: 9891f37e-d53d-4b0d-9132-2f7448e64d39
+
+	column 'Wholesale Account Key'
+		dataType: double
+		isHidden
+		isKey
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 6af44421-42a4-44d6-9e5c-37fc23a741be
+		summarizeBy: none
+		sourceColumn: Wholesale Account Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Account Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8876f3f9-63a4-4bc3-b4f4-fa5bef5b01b3
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8a66467c-de31-47b7-8345-f8dc17ae3151
+		summarizeBy: none
+		sourceColumn: Account Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d25e1e48-e840-4b5d-b97d-88596f57c9a2
+		summarizeBy: none
+		sourceColumn: Account Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 414c569d-bf6a-45cd-9467-aab87c12ac9d
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 1'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: 2cca1703-20e8-4cb8-871a-c4da894fd503
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 2'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: f3916d90-6117-47d8-899e-66bd3ae8b79b
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 3'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: f92598ab-cdce-4eea-af31-2a47dc3c8342
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Address Line 4'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: f121d495-e068-4ede-8476-1b90cdef7b82
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address Line 4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: 6a5f2685-a75d-49a7-b118-5e8366cdffba
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: 8a29f0fd-ea1b-4287-a86b-7a3eb8077785
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zipcode
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: ac698586-ccf7-4a83-b0dd-d3c32e63b9c6
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Zipcode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: d5a1a99f-21de-4ce8-93aa-933852a3aace
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allow Back Order'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 44ec01e5-e49b-45c2-8010-a98aaa10b47f
+		summarizeBy: none
+		sourceColumn: Allow Back Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Always Print'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 29f2ec26-9897-4979-bbd6-d32e28dc2817
+		summarizeBy: none
+		sourceColumn: Always Print
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Auto Create Bulk'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: 015a407c-fb8f-4c38-8912-aef11316bd19
+		summarizeBy: none
+		sourceColumn: Auto Create Bulk
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill Option'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: 44f0fa2f-2535-4d4d-8214-927490cfd746
+		summarizeBy: none
+		sourceColumn: Bill Option
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bol Load Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: 0d2396f7-54b7-47f6-b6fc-18ecac0ca2df
+		summarizeBy: none
+		sourceColumn: Bol Load Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Call Appointment No Of Days'
+		dataType: int64
+		sourceProviderType: decimal(1, 0)
+		displayFolder: Contact
+		lineageTag: 3d0755a1-8bfd-4b81-b990-1109ad4b6441
+		summarizeBy: sum
+		sourceColumn: Call Appointment No Of Days
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Account Tax Exempt Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: acf1c5ab-73af-47ba-97a7-4fa43dc5276e
+		summarizeBy: none
+		sourceColumn: Account Tax Exempt Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dba
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7289906b-f008-4d9e-93b4-f51a663521d9
+		summarizeBy: none
+		sourceColumn: Dba
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allow Duplicate Sku'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 182bba11-71fc-4e42-9df3-ce9d240eb9bd
+		summarizeBy: none
+		sourceColumn: Allow Duplicate Sku
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Factor Client Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f982bef7-88b8-4715-a53c-0702c330667e
+		summarizeBy: none
+		sourceColumn: Factor Client Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exclude Freight'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: 53e7a040-bc9e-43a7-bcc7-ca9c9100b588
+		summarizeBy: none
+		sourceColumn: Exclude Freight
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has Notes'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: c10c61a7-9a79-4bfc-8ff5-bd6492780027
+		summarizeBy: none
+		sourceColumn: Has Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Insurance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 81264f28-8c9b-419c-ad06-57c621e9fd97
+		summarizeBy: none
+		sourceColumn: Insurance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Process Balance In Invoicing'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: 8585d1ac-1c23-4479-8ad8-aa74ff628dba
+		summarizeBy: none
+		sourceColumn: Process Balance In Invoicing
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Cancel Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: c9d20540-ff9d-4e91-a419-7da499b9a1c9
+		summarizeBy: none
+		sourceColumn: Invoicing Cancel Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoicing Cancel Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: 0b6ad4ee-c802-4591-9c93-071e21b7d7fc
+		summarizeBy: none
+		sourceColumn: Invoicing Cancel Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Form'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: 5cfa26b6-4cb6-402e-b0f4-e6e71cf3cb12
+		summarizeBy: none
+		sourceColumn: Invoice Form
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Duty'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Invoicing
+		lineageTag: 79d2b791-07b1-4206-8b5c-588ae8afd952
+		summarizeBy: none
+		sourceColumn: Invoice Duty
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Location
+		lineageTag: f7d2d388-2606-483b-9a00-ea93b1d7fbd0
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Key'
+		dataType: double
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(1, 0)
+		lineageTag: 22cc002d-74c0-42d3-b7b4-119d7f56ceec
+		summarizeBy: none
+		sourceColumn: Warehouse Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Old Account'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e3875d38-6d8d-42ea-82d8-95eb79f6e44f
+		summarizeBy: none
+		sourceColumn: Old Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Org Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c0614653-6334-4766-a060-477c73d4b062
+		summarizeBy: none
+		sourceColumn: Org Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parent
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1372d4a3-2e05-45b5-a458-86aa55f9b091
+		summarizeBy: none
+		sourceColumn: Parent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Preferred Shipper'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: e07a5597-457f-4f02-bb8a-21d268a4c8f5
+		summarizeBy: none
+		sourceColumn: User Preferred Shipper
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warn On Zero Price'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: aec7fe33-d771-43a6-9ce2-85cb264127b3
+		summarizeBy: none
+		sourceColumn: Warn On Zero Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Print Invoice'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: Invoicing
+		lineageTag: 88590b63-13be-43d8-a040-3fd945755cbf
+		summarizeBy: none
+		sourceColumn: Print Invoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Resale Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d1e94e2c-5fed-4c24-834c-b46be4f6f6a8
+		summarizeBy: none
+		sourceColumn: Resale Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Residential
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: fdc16af5-1787-4ced-b6e7-474792f8321c
+		summarizeBy: none
+		sourceColumn: Residential
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upc Required'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0eb7eb9a-5bd0-4187-bd98-a6c1d7b4ac3e
+		summarizeBy: none
+		sourceColumn: Upc Required
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sps Account Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8e167bcd-0bd0-4c6d-9c1a-56e7c6faef13
+		summarizeBy: none
+		sourceColumn: Sps Account Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tax Exempt'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6e2adddc-1971-4b66-8731-74459279b4ab
+		summarizeBy: none
+		sourceColumn: Tax Exempt
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Roll Up'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0ac1908e-d23e-46de-b6c5-21202d2ea725
+		summarizeBy: none
+		sourceColumn: Roll Up
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ar Email Ind'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Contact
+		lineageTag: d781ac0d-cc3b-4fbc-813e-2e23030fee62
+		summarizeBy: none
+		sourceColumn: Ar Email Ind
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Use Calculated Freight'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Shipping
+		lineageTag: 2655e9f1-2d95-4e73-8f8d-41a5d4c357d7
+		summarizeBy: none
+		sourceColumn: Use Calculated Freight
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Use Dept Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 76dd90ea-2f34-4f8c-b616-f3c7721199e0
+		summarizeBy: none
+		sourceColumn: Use Dept Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Use Po Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 529b12df-3194-49ae-aebd-b229f959b946
+		summarizeBy: none
+		sourceColumn: Use Po Number
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'State Hierarchy'
+		displayFolder: Location
+		lineageTag: 734e0e37-9894-426d-a517-e36f8697916f
+
+		level State
+			lineageTag: 34a03115-0149-4e3d-bb5f-a7e0b0cebbdf
+			column: State
+
+		level Zipcode
+			lineageTag: 3b401d13-dc1a-4ee8-9926-3d45c02caf88
+			column: Zipcode
+
+		level City
+			lineageTag: 2e05a2ae-de46-4ea9-8451-fbf4b2cb3a4c
+			column: City
+
+		level Country
+			lineageTag: ddc7cfb4-e4b3-48ee-b300-11cdfde9dca5
+			column: Country
+
+		level 'Address Line 4'
+			lineageTag: 64531858-2b84-4afa-b686-84024e490a4f
+			column: 'Address Line 4'
+
+		level 'Address Line 3'
+			lineageTag: c895dd18-68c0-46ae-a0f3-3305e8bb8da8
+			column: 'Address Line 3'
+
+		level 'Address Line 2'
+			lineageTag: 826672f5-ae19-4faf-ac70-5aa13708b7d7
+			column: 'Address Line 2'
+
+		level 'Address Line 1'
+			lineageTag: 60cfed9f-eb92-4659-a414-c3ec5c3d8f5b
+			column: 'Address Line 1'
+
+	partition Accounts = m
+		mode: dual
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com",SnowflakeWarehouse),
+				    EDW_PROD_Database = Source{[Name="EDW_"&Environment,Kind="Database"]}[Data],
+				    EDW_V_Schema = EDW_PROD_Database{[Name="EDW_V",Kind="Schema"]}[Data],
+				    D_WHOLESALE_ACCOUNT_View = EDW_V_Schema{[Name="D_WHOLESALE_ACCOUNT",Kind="View"]}[Data],
+				    #"Remove Underscores" = Table.TransformColumnNames(D_WHOLESALE_ACCOUNT_View,  each Text.Replace( _, "_", " " ) ),
+				    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Renamed Columns",{"Wholesale Account Key", "Account Name", "Account Type", "Account Code", "Active", "Address Line 1", "Address Line 2", "Address Line 3", "Address Line 4", "City", "State", "Zipcode", "Country", "Allow Back Order", "Always Print", "Auto Create Bulk", "Bill Option", "Bol Load Type", "Call Appointment No Of Days", "Account Tax Exempt Number", "Dba", "Allow Duplicate Sku", "Factor Client Number", "Exclude Freight", "Has Notes", "Insurance", "Process Balance In Invoicing", "Invoicing Cancel Reason", "Invoicing Cancel Type", "Invoice Form", "Invoice Duty", "Location", "Warehouse Key", "Old Account", "Org Code", "Parent", "User Preferred Shipper", "Warn On Zero Price", "Print Invoice", "Resale Number", "Residential", "Upc Required", "Sps Account Number", "Tax Exempt", "Roll Up", "Ar Email Ind", "Use Calculated Freight", "Use Dept Number", "Use Po Number", "Primary Means Of Contact", "Primary Contact Type", "Primary Contact Name", "Primary Format", "Primary Contact Notes"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Removed Other Columns",{"Primary Means Of Contact", "Primary Contact Type", "Primary Contact Name", "Primary Format", "Primary Contact Notes"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

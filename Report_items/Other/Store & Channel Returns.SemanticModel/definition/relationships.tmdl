@@ -1,0 +1,263 @@
+relationship 5d162acc-ca22-478a-aeb6-b5189488f289
+	fromColumn: Traffic.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 8fe22172-c8eb-403c-bd6c-ad5f8eacdb0a
+	fromColumn: Traffic.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship 222a70b9-2575-4bcb-bd2e-a2c6020780e6
+	fromColumn: Traffic.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship f63e1706-6d9e-41ff-8582-b33b30143535
+	fromColumn: 'Transactions (Financial)'.'Transaction Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship fe788a50-cb8a-4f5c-a99b-29229880ee9a
+	fromColumn: 'Transactions (Financial)'.'Dashboard Order Type'
+	toColumn: 'Order Type Join'.'Order Type'
+
+relationship 32fb60ef-dbdd-42f1-ac8d-5903a30aba08
+	fromColumn: 'Transactions (Financial)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship a28f0d24-d0b2-465c-9a22-a44ad356c3b6
+	fromColumn: 'Transactions (Financial)'.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship e705b12c-be45-4240-8514-4c728027d9a6
+	fromColumn: 'Transactions (Financial)'.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship fa7e6073-9fae-4f93-b952-255cb3980640
+	fromColumn: 'Transactions (Financial)'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship d4302c10-1e19-40b2-9273-c77d533c606e
+	fromColumn: 'Transactions (Financial)'.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship 84c53d1e-ab02-41dd-a295-670c2ff90350
+	isActive: false
+	fromColumn: 'Transactions (Financial)'.'Original Channel Key'
+	toColumn: 'Channel (DTC Original)'.'Original Channel Key'
+
+relationship 2e96bb07-68ee-4308-85b7-8a9a252d667c
+	fromColumn: 'Transactions (Financial)'.'Order Categorization Key'
+	toColumn: 'Order Categorization'.'Order Categorization Key'
+
+relationship f4bf952a-8a8b-4cfe-af64-6d388ec031e8
+	fromColumn: 'Transactions (Financial)'.'Allocated Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship 3004c9dc-dcce-497c-8512-943eb1b865e0
+	fromColumn: 'Transactions (Financial)'.'Original Store Key'
+	toColumn: 'Store (DTC Original)'.'Store Key'
+
+relationship cc9ab5dd-23aa-4ac1-afe1-9e7075ab6a83
+	fromColumn: 'Plan (Wholesale Retail)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 4f67540b-ac08-4f51-8642-b3ee7df2ce77
+	fromColumn: 'Plan (Wholesale Retail)'.'Wholesale Account Key'
+	toColumn: Accounts.'Wholesale Account Key'
+
+relationship c2898fd4-1c33-4f11-ae56-1defe8cdf12d
+	toCardinality: many
+	fromColumn: 'Plan (Wholesale Retail)'.'Account Code'
+	toColumn: Store.'Account Code'
+
+relationship 44cc874c-6160-410d-84c1-33dab75aa8bd
+	fromColumn: 'Forecast (DTC Store)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 5072273b-ed67-4d38-846a-10bc4b8ff6d7
+	fromColumn: 'Forecast (DTC Store)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship c64b6693-b354-4e61-a460-73f009d29f16
+	fromColumn: 'Forecast (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Original)'.'Store Key'
+
+relationship 68c2cf00-c603-4654-86f6-f24f946e1b60
+	fromColumn: 'Forecast (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship b630d1b2-bb60-43f2-a179-7455deb1edf2
+	fromColumn: 'Forecast (Channel)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 4744a12a-9997-490d-a0f8-24e2be095cfd
+	fromColumn: 'Forecast (Channel)'.'Customer Type'
+	toColumn: 'Account Group Join'.'Account Group'
+
+relationship f16e21e4-17ee-4d8a-8080-184f2138e8fa
+	fromColumn: 'Forecast (Channel)'.'Dashboard Order Type'
+	toColumn: 'Order Type Join'.'Order Type'
+
+relationship cbdb89b3-a771-40db-b0ea-541a46bbbdb1
+	fromColumn: 'Budget (DTC Store)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 0edb194d-8110-4c16-ac92-8bfc4d4a8bbc
+	fromColumn: 'Budget (DTC Store)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship c0244767-f5be-4e9e-9d0a-cf992d922f94
+	fromColumn: 'Budget (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Allocated)'.'Store Key'
+
+relationship 9b0f6a0c-6696-477b-8ba5-b492bdcc6377
+	fromColumn: 'Budget (DTC Store)'.'Store Key'
+	toColumn: 'Store (DTC Original)'.'Store Key'
+
+relationship 0212b88a-f84d-4641-bcbc-90f82a7530bd
+	fromColumn: 'Budget (Inventory)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 9421e8f1-a81d-42c4-b120-cca2610c6b73
+	fromColumn: 'Budget (Channel)'.'Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 9f774694-1f0b-41b6-bdb2-b36372da0ade
+	fromColumn: 'Budget (Channel)'.'Customer Type'
+	toColumn: 'Account Group Join'.'Account Group'
+
+relationship 9d4ecff5-0495-45dd-95a8-68b3209f6591
+	fromColumn: 'Budget (Channel)'.'Dashboard Order Type'
+	toColumn: 'Order Type Join'.'Order Type'
+
+relationship c24a2c26-8a70-4ac0-9030-6bdefddd1dc7
+	fromColumn: 'Transactions (Account FIN)'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 5695c425-caf5-4506-b67b-6b3f10c05261
+	fromColumn: 'Transactions (Account FIN)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship 5758a748-0a04-4c0c-a98c-3668c41dbe35
+	fromColumn: 'Transactions (Account POS)'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 03f9bb52-9d67-40a0-b5a2-a98d78ff23ba
+	fromColumn: 'Transactions (Account POS)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship be098c15-bd4f-47ad-a05c-170a2531b264
+	fromColumn: 'Transactions (Account POS)'.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship 56553229-50eb-4b96-a11c-72badef93d2e
+	fromColumn: 'Transactions (Account POS)'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship 20f99a24-a3a5-437f-b17a-8172d7ab7da5
+	fromColumn: 'Transactions (Account POS)'.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship 4539e1e7-e9c1-48df-add8-69af7e1dd2fc
+	fromColumn: 'Transactions (Account MIX)'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship fb529a43-b784-4426-84d5-e28c6668b6aa
+	fromColumn: 'Transactions (Account MIX)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship d7d7cca5-6bf8-4c2a-b006-998cd57f5932
+	fromColumn: 'Transactions (Account MIX)'.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship ab5f607f-c769-4fd0-ae69-ad03222b523c
+	fromColumn: Store.'Wholesale Account Key'
+	toColumn: Accounts.'Wholesale Account Key'
+
+relationship 733b4763-02fa-4258-aed8-53eae18b147a
+	fromColumn: Store.'Account Group'
+	toColumn: 'Account Group Join'.'Account Group'
+
+relationship 0809113e-9211-42c1-892c-0b08d5e67f8f
+	fromColumn: Currency.'Currency Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship d3728160-922b-43e5-96d0-fbba9caa8410
+	fromColumn: Currency.'Conversion Type'
+	toColumn: 'Currency Selector'.'Conversion Type'
+
+relationship 57bbe5f9-0936-4805-9f62-f376e3f1ab19
+	crossFilteringBehavior: bothDirections
+	fromColumn: Date.Datekey
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 52bac633-8b05-4466-a206-901707073fea
+	fromColumn: Inventory.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship f2931d1b-1b03-49cb-b2c6-1c511c40a015
+	fromColumn: Inventory.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship c865b7e1-191e-4fc7-9a46-c01f94f9e569
+	fromColumn: Inventory.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship 35b5ae56-ee14-401b-9443-c0341a9466a1
+	fromColumn: Inventory.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship 72a4a3bc-c09f-49ed-a270-11902d2f5658
+	fromColumn: Inventory.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship 7b7e4520-1084-47de-9528-d76fb8f9b26e
+	fromColumn: 'Transactions (External POS)'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 58135313-bbdb-47ce-b500-887acf2eaa51
+	fromColumn: 'Transactions (External POS)'.'Store Key'
+	toColumn: Store.'Store Key'
+
+relationship 6cc873f7-53ed-46ba-a7b1-aac42e6e543d
+	fromColumn: 'Transactions (External POS)'.'Delivery Key'
+	toColumn: Delivery.'Delivery Key'
+
+relationship 34053a53-f2dc-42ed-9f81-68d2a8dc2023
+	fromColumn: 'Transactions (External POS)'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship be6a3be8-a9e0-4942-94b5-0542bc1e138c
+	fromColumn: 'Transactions (External POS)'.'Product Key'
+	toColumn: Product.'Product Key'
+
+relationship cc1cd934-80c4-45b2-890b-e8e40214e8a5
+	fromColumn: 'Transactions (External POS)'.'Channel Key'
+	toColumn: Channel.'Channel Key'
+
+relationship 9dad4d1f-cdb7-4d57-addc-fea834daef20
+	fromColumn: 'Store (DTC Original)'.'Channel Key'
+	toColumn: 'Channel (DTC Original)'.'Original Channel Key'
+
+relationship c5321115-ccb0-4fe6-9e26-b935d33ca330
+	fromColumn: 'Store (DTC Allocated)'.'Channel Key'
+	toColumn: 'Channel (DTC Allocated)'.'Allocated Channel Key'
+
+relationship 9147bb62-168c-4096-9dd1-42710f02f724
+	fromColumn: Dependency.'Report Key'
+	toColumn: Report.'Report Key'
+
+relationship 2b06e4c5-fb79-40eb-b356-21d230723053
+	fromColumn: Dependency.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship 2a4de337-2f61-45dd-bd62-6d3018b511f0
+	fromColumn: 'Semantic Model Update'.'Date.1'
+	toColumn: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.Date
+
+relationship 6d01837c-d0d8-48a8-bc40-61cfb3f1b524
+	fromColumn: 'Inventory Movement'.'Movement Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 0e19610b-20b8-4d62-b3c0-ebce553bf9ed
+	fromColumn: 'Inventory Movement'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+

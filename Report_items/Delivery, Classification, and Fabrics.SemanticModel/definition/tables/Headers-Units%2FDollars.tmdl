@@ -1,0 +1,24 @@
+table Headers-Units/Dollars
+	lineageTag: 9927437a-3eae-47ce-ab3a-472d508a8e4c
+
+	column Selection
+		dataType: string
+		lineageTag: 8eb551a8-2c5d-4d27-9377-7b24a86f5c46
+		summarizeBy: none
+		sourceColumn: Selection
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Headers-Units/Dollars = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcsnPyUksKlaK1YlWCs3LLAGyYgE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Selection = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Selection", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
