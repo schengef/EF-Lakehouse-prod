@@ -3984,7 +3984,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Ship Unit": {
+			          "Ship Units": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
