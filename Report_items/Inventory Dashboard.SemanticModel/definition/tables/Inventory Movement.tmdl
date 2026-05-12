@@ -1,0 +1,236 @@
+table 'Inventory Movement'
+	lineageTag: d75eb0d7-197f-4d69-9777-7b3b159da022
+	sourceLineageTag: 005777ea-1c9a-4b20-bdfa-b294d9ce9309
+
+	column 'Inventory Movement Key'
+		dataType: int64
+		lineageTag: ebc7db9d-8023-4170-81cf-f5a80ae99bbb
+		sourceLineageTag: f4f9487e-c01e-4c6c-a3f2-cbbc7a0b114f
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Inventory Movement Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Send Store Key'
+		dataType: int64
+		lineageTag: 77a60346-431d-4be6-86b5-b1de110bc657
+		sourceLineageTag: 328050bb-950e-4ffb-ab32-37c7c9efe95f
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Send Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Send Warehouse Key'
+		dataType: int64
+		lineageTag: 5813d7fb-dfe6-4d0a-ac8b-f59681882209
+		sourceLineageTag: 17491bf8-35a9-4dd7-a175-489be20d8f87
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Send Warehouse Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Receive Store Key'
+		dataType: int64
+		lineageTag: 58a62ae1-20f0-43e4-9d62-0899f99ed790
+		sourceLineageTag: d2125c18-2745-474b-a52e-5c8552679df1
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Receive Store Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Receive Warehouse Key'
+		dataType: int64
+		lineageTag: 100c398e-114a-456b-9b21-eff644b9aedf
+		sourceLineageTag: 87faa702-d125-4bc7-8a76-7414549d0524
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Receive Warehouse Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: int64
+		lineageTag: 44860aa2-6937-4f55-9346-36e8b375957d
+		sourceLineageTag: 1a100992-bbcb-4251-ad49-f52c23716965
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Date Key'
+		dataType: int64
+		lineageTag: 7ca0db13-3ea3-4961-91bd-8b919e6144bf
+		sourceLineageTag: 3aaf6b76-f7d5-4a50-a70b-d99d968719d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Send Location'
+		dataType: string
+		lineageTag: 14051746-7bbb-4352-9cf9-00643ff1f5f1
+		sourceLineageTag: 2668377b-7256-4677-88d8-b253dc1ee072
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Send Location
+
+		annotation SummarizationSetBy = User
+
+	column 'Receive Location'
+		dataType: string
+		lineageTag: 51591807-d94d-4def-9f22-d802a91e9f26
+		sourceLineageTag: 93c370b5-2ca9-40a3-811b-e94621f58162
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Receive Location
+
+		annotation SummarizationSetBy = User
+
+	column Upc
+		dataType: string
+		lineageTag: 8c726be9-0c0c-4d6b-91e6-767c009f4ddf
+		sourceLineageTag: 3be214fc-6cea-4661-bddf-cb6583d91db2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Upc
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement No'
+		dataType: string
+		lineageTag: 59886c37-60bc-4683-8c17-fbbdbb1ea00e
+		sourceLineageTag: 0cbca9c3-8788-41ab-903e-3d8de3fdb49f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement No
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Date'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 94d9404c-f702-4da8-afb7-69cb801c76a7
+		sourceLineageTag: e2cfe2a6-1d51-49a9-ad4a-6d42260f6edd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Stage'
+		dataType: string
+		lineageTag: e944e140-1e11-44be-ba4a-e381aba437ba
+		sourceLineageTag: f3accf6d-adb7-4f23-bf38-374f5c1ba30b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Stage
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Type'
+		dataType: string
+		lineageTag: 2b93eb99-e020-4175-af49-bd4ef42c9ec4
+		sourceLineageTag: 47b0391b-ecf0-49a5-95ce-5e796e4ddfbe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Type
+
+		annotation SummarizationSetBy = User
+
+	column Units
+		dataType: int64
+		lineageTag: 1aa9a1f7-a6b7-49ca-821a-c5be6aeb0927
+		sourceLineageTag: be4ad594-ef74-4172-b214-58ed2d0e6e2e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Md5 Checksum'
+		dataType: string
+		lineageTag: 3a04561f-8266-4e72-b2f2-d10ec568ee44
+		sourceLineageTag: bde43756-3a0f-4c76-873a-faeac7b3852a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Md5 Checksum
+
+		annotation SummarizationSetBy = User
+
+	column 'Md5 Nk'
+		dataType: string
+		lineageTag: 409e2809-9e9d-4393-8d45-85842bedb025
+		sourceLineageTag: 16cf0469-fd04-4092-9304-fd5aadabbd3b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Md5 Nk
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Row Created Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 341e3412-813d-4c81-a7db-d769cda4c9ac
+		sourceLineageTag: fd86e07d-5538-4a3f-8200-7930ca031bc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Row Created Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Row Updated Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: d4aae314-3160-4489-bd94-897d1437fcdd
+		sourceLineageTag: 7beb1962-6b51-4107-ab00-3f8e64bba997
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Row Updated Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Etl Source System Cd'
+		dataType: string
+		lineageTag: 8ffcece4-3309-4f30-aeb8-deb8cb731478
+		sourceLineageTag: 9910063e-fdd7-4624-a3e3-b09a44957aa7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Etl Source System Cd
+
+		annotation SummarizationSetBy = User
+
+	column 'Standard Cost'
+		dataType: double
+		lineageTag: 49351492-0acd-475d-9500-72e9a81cb216
+		sourceLineageTag: 928e2435-4699-4537-9ce4-102e06e3cf11
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Retail Price'
+		dataType: decimal
+		formatString: 0
+		lineageTag: 2c1297ea-a164-41c9-8f62-336c231afb33
+		sourceLineageTag: 93e2cac6-f15c-456e-b47d-3ded56c462a0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Retail Price
+
+		annotation SummarizationSetBy = User
+
+	partition 'Inventory Movement' = entity
+		mode: directQuery
+		source
+			entityName: Inventory Movement
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

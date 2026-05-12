@@ -1,0 +1,55 @@
+table 'Readiness SourceTable'
+	lineageTag: c671145d-d966-4754-b1eb-466e30a440b8
+	sourceLineageTag: 3b6297b8-290b-43ee-9998-3829c85556be
+
+	column 'Business Domain Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 09fe56ad-fc71-475b-a2e5-41e24a499849
+		sourceLineageTag: 9d99abf4-231c-4c35-bacf-b365f3c0d21f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8880ae7d-7ca2-4dcd-b259-d0990d8ed9a9
+		sourceLineageTag: 2f9cc359-6440-4211-94fd-80e0149fd694
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Last Processed Ts'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 999d7c55-69c6-4b2b-aec3-1a83f672955b
+		sourceLineageTag: 9c075285-207e-4a58-8e00-7344cddf52ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Last Processed Ts
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Freshness'
+		dataType: string
+		lineageTag: 9df2f34d-44ee-4301-80f7-833fba189a2e
+		sourceLineageTag: c62b0467-b65f-459c-9d3c-faf9eaf3aa4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source Table Freshness
+
+		annotation SummarizationSetBy = User
+
+	partition 'Readiness SourceTable' = entity
+		mode: directQuery
+		source
+			entityName: Readiness SourceTable
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

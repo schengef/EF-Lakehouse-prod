@@ -1,0 +1,167 @@
+table InTransit
+	lineageTag: 2c6377c8-58df-4fea-a6c2-1fe9467c5fe4
+	sourceLineageTag: 6df49556-5c42-49a6-8b47-6f2f8b2173eb
+
+	measure 'Ship Units' = sum(InTransit[ShipUnits])
+		formatString: #,0
+		lineageTag: 8ec1e9ce-8e25-4ca2-bfd8-ad554570fc6a
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Ship Cost' = sum(InTransit[ShipCost])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 238c8a8e-9171-4e51-b2f7-fd78e432f3d0
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Receipt Units' = sum(InTransit[ReceiptUnits])
+		formatString: #,0
+		lineageTag: 7ebb4407-6adc-444c-bcaf-2673450ddee9
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Receipt Cost' = sum(InTransit[ReceiptCost])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: c5443e49-951a-492c-936f-4d94f88e12a0
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Intransit Units' = sum(InTransit[IntransitUnits])
+		formatString: #,0
+		lineageTag: 2deb1ef7-9edc-4f75-acf5-1a4b82c3020f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Intransit Cost' = sum(InTransit[IntransitCost])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e519829a-436f-41ef-b9f3-7a725802f09f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column 'Movement No'
+		dataType: string
+		lineageTag: 6de61620-3412-476c-9916-eb38d63677a4
+		sourceLineageTag: 5753e45d-6602-45c9-ad2e-d2fd476ca0e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement No
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		lineageTag: 1cea7e28-9e19-41de-bc0b-54945fe34efe
+		sourceLineageTag: 68b3b436-afa4-455e-b8b8-cf42259be16b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 0210e8ea-ae00-4313-a595-7d53f5606583
+		sourceLineageTag: 9182306f-8836-4380-bdbe-c618134207fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ShipDateKey
+
+		annotation SummarizationSetBy = User
+
+	column ShipUnits
+		dataType: int64
+		formatString: #,0
+		lineageTag: 50e64a5d-c6e0-496c-b395-3881fdec5938
+		sourceLineageTag: 55e7db4d-83d9-4fb9-a976-abb93da769c2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShipUnits
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column ShipCost
+		dataType: double
+		lineageTag: 4543c73f-50d9-4af3-aaca-3d4b131e412f
+		sourceLineageTag: 4360e494-8cc8-4da8-aaa5-d879acd93384
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShipCost
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 06df8cb1-fb26-4f2d-a8d8-e40914ad55c4
+		sourceLineageTag: fe18a811-839a-43ac-a8da-8bdb364612a6
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: ReceiptDateKey
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 77c92e4c-78f8-4b5a-babe-7ce155749965
+		sourceLineageTag: bb4fb1e4-5e06-4bdf-85f8-735e1ac85401
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceiptUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReceiptCost
+		dataType: double
+		lineageTag: 45baec7d-6b7e-4a22-b1f2-36ab2e22f573
+		sourceLineageTag: a7fb1330-c4e5-44b0-bdc1-8269a3427eb9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceiptCost
+
+		annotation SummarizationSetBy = User
+
+	column IntransitUnits
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ea45544-09e6-4839-83da-841675009cf2
+		sourceLineageTag: a4975286-8d22-4f5a-be9a-a7f3b594fd9f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: IntransitUnits
+
+		annotation SummarizationSetBy = User
+
+	column IntransitCost
+		dataType: double
+		lineageTag: 8073913f-5cb3-47d7-b478-eb54e0ed7198
+		sourceLineageTag: aff7e29b-b47f-4c23-a6dd-c4b41a5ec8aa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: IntransitCost
+
+		annotation SummarizationSetBy = User
+
+	partition InTransit = entity
+		mode: directQuery
+		source
+			entityName: InTransit
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

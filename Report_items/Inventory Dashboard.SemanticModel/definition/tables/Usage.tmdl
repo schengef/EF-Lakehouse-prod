@@ -1,0 +1,49 @@
+table Usage
+	isHidden
+	lineageTag: 160bcc29-59fe-4441-b9e0-8e5816061f22
+	sourceLineageTag: 063f79e6-b858-4852-bba6-f35611839455
+
+	column 'Load Usage Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 02bd2d4d-9338-40ab-80c2-28662477d574
+		sourceLineageTag: 58f234ee-42ae-4640-877a-07fd6af00542
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Load Usage Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Source Table Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d205a5cd-67c6-4151-98f5-672c5723f6f2
+		sourceLineageTag: 99b8226b-c421-4477-853a-2de5f1e86f65
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Source Table Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Business Domain Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 48bc7f5c-2d89-4da1-97da-4c406f3758d6
+		sourceLineageTag: 2c8fdb44-419e-42c7-8fdb-b77913d41ff2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Business Domain Key
+
+		annotation SummarizationSetBy = User
+
+	partition Usage = entity
+		mode: directQuery
+		source
+			entityName: Usage
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

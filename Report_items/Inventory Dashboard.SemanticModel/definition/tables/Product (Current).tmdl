@@ -476,7 +476,7 @@ table 'Product (Current)'
 		displayFolder: Image
 		lineageTag: d55a450f-a0be-40a0-9e43-a16e467befce
 		sourceLineageTag: accbed2d-8841-48c3-b7ce-f6259799abee
-		dataCategory: Uncategorized
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Ecom Image
 
@@ -487,7 +487,7 @@ table 'Product (Current)'
 		displayFolder: Image
 		lineageTag: c0fd9348-9456-49e4-a75c-c9fd6f178097
 		sourceLineageTag: 0e5faecc-221a-409f-80ed-b1502a915d4c
-		dataCategory: Uncategorized
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Ecom Image Flat
 
@@ -1334,6 +1334,36 @@ table 'Product (Current)'
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Width Dimension
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Canada'
+		dataType: double
+		lineageTag: 6491319f-2005-440d-82da-419ebed45360
+		sourceLineageTag: 939d43ac-1ba6-4f79-8406-06325655ca93
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Canada
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Company'
+		dataType: double
+		lineageTag: 9a5d4a33-6a6b-4220-9517-9cfa6fa265ac
+		sourceLineageTag: c96078a2-2667-4fe6-a2d0-11c20d0dada8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Company
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Average Weighted Us'
+		dataType: double
+		lineageTag: 6fb11086-b723-48fe-b103-a1f408ff52f6
+		sourceLineageTag: 6c0dd294-be71-4b9b-ae76-c10bc7782738
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cost Average Weighted Us
 
 		annotation SummarizationSetBy = User
 

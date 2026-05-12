@@ -12,19 +12,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales Budget $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_sales_ty_": {
 			      "Definition": {
@@ -33,19 +21,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales TY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_sales_ly_": {
 			      "Definition": {
@@ -54,19 +30,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales LY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_sales__vs_budget": {
 			      "Definition": {
@@ -75,19 +39,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_sales__vs_ly": {
 			      "Definition": {
@@ -96,19 +48,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.blank_column": {
 			      "Definition": {
@@ -117,19 +57,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Blank Column"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          ".": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_ty_": {
 			      "Definition": {
@@ -138,19 +66,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM$ TY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_budget_": {
 			      "Definition": {
@@ -159,19 +75,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM$ Budget $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_ly_": {
 			      "Definition": {
@@ -180,19 +84,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM$ LY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm__vs_budget": {
 			      "Definition": {
@@ -201,19 +93,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM$ % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm__vs_ly": {
 			      "Definition": {
@@ -222,19 +102,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM$ % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_ty_1": {
 			      "Definition": {
@@ -243,19 +111,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM% TY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_budget_1": {
 			      "Definition": {
@@ -264,19 +120,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM% Budget $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm_ly_1": {
 			      "Definition": {
@@ -285,19 +129,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM% LY $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm__vs_budget1": {
 			      "Definition": {
@@ -306,19 +138,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM% % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.executive_summary_gm__vs_ly1": {
 			      "Definition": {
@@ -327,19 +147,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary GM% % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.eop_cost__on_hand_actual_new": {
 			      "Definition": {
@@ -348,19 +156,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EOP Cost $ On Hand Actual"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Actual": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.eop_cost__on_hand_budget": {
 			      "Definition": {
@@ -369,19 +165,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EOP Cost $ On Hand Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.eop_cost__on_hand_ly_new": {
 			      "Definition": {
@@ -390,19 +174,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EOP Cost $ On Hand LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.eop_cost__on_hand__vs_ly": {
 			      "Definition": {
@@ -411,19 +183,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "EOP Cost $ On Hand % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_net_gm_": {
 			      "Definition": {
@@ -459,19 +219,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__forecast": {
 			      "Definition": {
@@ -480,19 +228,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__budget": {
 			      "Definition": {
@@ -501,19 +237,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__ly": {
 			      "Definition": {
@@ -522,19 +246,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_budget": {
 			      "Definition": {
@@ -543,19 +255,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_budget": {
 			      "Definition": {
@@ -564,19 +264,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_ly": {
 			      "Definition": {
@@ -585,19 +273,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_ly": {
 			      "Definition": {
@@ -606,19 +282,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_cost_on_hand_": {
 			      "Definition": {
@@ -654,19 +318,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.cost_on_hand__ly": {
 			      "Definition": {
@@ -675,19 +327,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.cost_on_hand___vs_ly": {
 			      "Definition": {
@@ -696,19 +336,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.cost_on_hand__vs_ly": {
 			      "Definition": {
@@ -717,19 +345,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_net_gm_1": {
 			      "Definition": {
@@ -765,19 +381,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__forecast1": {
 			      "Definition": {
@@ -786,19 +390,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__budget1": {
 			      "Definition": {
@@ -807,19 +399,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__ly1": {
 			      "Definition": {
@@ -828,19 +408,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_budget1": {
 			      "Definition": {
@@ -849,19 +417,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_budget1": {
 			      "Definition": {
@@ -870,19 +426,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_ly1": {
 			      "Definition": {
@@ -891,19 +435,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_ly1": {
 			      "Definition": {
@@ -912,19 +444,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_gross_demand": {
 			      "Definition": {
@@ -960,19 +480,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand_forecast": {
 			      "Definition": {
@@ -981,19 +489,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand_budget": {
 			      "Definition": {
@@ -1002,19 +498,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand_ly": {
 			      "Definition": {
@@ -1023,19 +507,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_budget": {
 			      "Definition": {
@@ -1044,19 +516,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_ly": {
 			      "Definition": {
@@ -1065,19 +525,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_budget1": {
 			      "Definition": {
@@ -1086,19 +534,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_ly1": {
 			      "Definition": {
@@ -1107,19 +543,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_net_sales": {
 			      "Definition": {
@@ -1155,19 +579,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales_forecast": {
 			      "Definition": {
@@ -1176,19 +588,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales_budget": {
 			      "Definition": {
@@ -1197,19 +597,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales_ly": {
 			      "Definition": {
@@ -1218,19 +606,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_budget": {
 			      "Definition": {
@@ -1239,19 +615,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_budget1": {
 			      "Definition": {
@@ -1260,19 +624,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_ly": {
 			      "Definition": {
@@ -1281,19 +633,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_ly1": {
 			      "Definition": {
@@ -1302,19 +642,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__lly": {
 			      "Definition": {
@@ -1323,19 +651,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_forecast": {
 			      "Definition": {
@@ -1344,19 +660,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_forecast": {
 			      "Definition": {
@@ -1365,19 +669,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_lly": {
 			      "Definition": {
@@ -1386,19 +678,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_lly": {
 			      "Definition": {
@@ -1407,19 +687,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__lly1": {
 			      "Definition": {
@@ -1428,19 +696,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_forecast1": {
 			      "Definition": {
@@ -1449,19 +705,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_forecast1": {
 			      "Definition": {
@@ -1470,19 +714,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm___vs_lly1": {
 			      "Definition": {
@@ -1491,19 +723,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_gm__vs_lly1": {
 			      "Definition": {
@@ -1512,19 +732,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_traffic": {
 			      "Definition": {
@@ -1560,19 +768,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic_ly": {
 			      "Definition": {
@@ -1581,19 +777,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic__vs_ly": {
 			      "Definition": {
@@ -1602,19 +786,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic_lly": {
 			      "Definition": {
@@ -1623,19 +795,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic_vs_ly": {
 			      "Definition": {
@@ -1644,19 +804,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic__vs_lly": {
 			      "Definition": {
@@ -1665,19 +813,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.traffic_vs_lly": {
 			      "Definition": {
@@ -1686,19 +822,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_transactions": {
 			      "Definition": {
@@ -1734,19 +858,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions_ly": {
 			      "Definition": {
@@ -1755,19 +867,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions_lly": {
 			      "Definition": {
@@ -1776,19 +876,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions__vs_lly": {
 			      "Definition": {
@@ -1797,19 +885,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions_vs_ly": {
 			      "Definition": {
@@ -1818,19 +894,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions__vs_ly": {
 			      "Definition": {
@@ -1839,19 +903,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.transactions_vs_lly": {
 			      "Definition": {
@@ -1860,19 +912,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_conversion": {
 			      "Definition": {
@@ -1908,19 +948,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion_ly": {
 			      "Definition": {
@@ -1929,19 +957,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion_lly": {
 			      "Definition": {
@@ -1950,19 +966,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion__vs_ly": {
 			      "Definition": {
@@ -1971,19 +975,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion_vs_ly": {
 			      "Definition": {
@@ -1992,19 +984,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion__vs_lly": {
 			      "Definition": {
@@ -2013,19 +993,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.conversion_vs_lly": {
 			      "Definition": {
@@ -2034,19 +1002,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_units": {
 			      "Definition": {
@@ -2082,19 +1038,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units_ly": {
 			      "Definition": {
@@ -2103,19 +1047,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units_lly": {
 			      "Definition": {
@@ -2124,19 +1056,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units__vs_ly": {
 			      "Definition": {
@@ -2145,19 +1065,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units_vs_ly": {
 			      "Definition": {
@@ -2166,19 +1074,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units__vs_lly": {
 			      "Definition": {
@@ -2187,19 +1083,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.units_vs_lly": {
 			      "Definition": {
@@ -2208,19 +1092,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_upt": {
 			      "Definition": {
@@ -2256,19 +1128,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt_ly": {
 			      "Definition": {
@@ -2277,19 +1137,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt_lly": {
 			      "Definition": {
@@ -2298,19 +1146,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt__vs_ly": {
 			      "Definition": {
@@ -2319,19 +1155,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt_vs_ly": {
 			      "Definition": {
@@ -2340,19 +1164,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt__vs_lly": {
 			      "Definition": {
@@ -2361,19 +1173,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.upt_vs_lly": {
 			      "Definition": {
@@ -2382,19 +1182,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_aov": {
 			      "Definition": {
@@ -2430,19 +1218,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov_ly": {
 			      "Definition": {
@@ -2451,19 +1227,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov_lly": {
 			      "Definition": {
@@ -2472,19 +1236,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov___vs_ly": {
 			      "Definition": {
@@ -2493,19 +1245,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV %  vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov_vs_ly": {
 			      "Definition": {
@@ -2514,19 +1254,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov___vs_lly": {
 			      "Definition": {
@@ -2535,19 +1263,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV %  vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "%  vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aov_vs_lly": {
 			      "Definition": {
@@ -2556,19 +1272,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_aur": {
 			      "Definition": {
@@ -2604,19 +1308,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur__vs_lly": {
 			      "Definition": {
@@ -2625,19 +1317,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur_ty": {
 			      "Definition": {
@@ -2646,19 +1326,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur_ly": {
 			      "Definition": {
@@ -2667,19 +1335,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur_lly": {
 			      "Definition": {
@@ -2688,19 +1344,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur_vs_ly": {
 			      "Definition": {
@@ -2709,19 +1353,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.aur_vs_lly": {
 			      "Definition": {
@@ -2730,19 +1362,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand_lly": {
 			      "Definition": {
@@ -2751,19 +1371,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_forecast": {
 			      "Definition": {
@@ -2772,19 +1380,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_forecast1": {
 			      "Definition": {
@@ -2793,19 +1389,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_lly": {
 			      "Definition": {
@@ -2814,19 +1398,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.gross_demand__vs_lly1": {
 			      "Definition": {
@@ -2835,19 +1407,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales_lly": {
 			      "Definition": {
@@ -2856,19 +1416,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_forecast": {
 			      "Definition": {
@@ -2877,19 +1425,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_forecast1": {
 			      "Definition": {
@@ -2898,19 +1434,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_lly": {
 			      "Definition": {
@@ -2919,19 +1443,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.net_sales__vs_lly1": {
 			      "Definition": {
@@ -2940,19 +1452,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_dc_returns_digital_purchase": {
 			      "Definition": {
@@ -2988,19 +1488,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase_forecast": {
 			      "Definition": {
@@ -3009,19 +1497,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase_budget": {
 			      "Definition": {
@@ -3030,19 +1506,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase_ly": {
 			      "Definition": {
@@ -3051,19 +1515,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase_lly": {
 			      "Definition": {
@@ -3072,19 +1524,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_forecast": {
 			      "Definition": {
@@ -3093,19 +1533,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_forecast1": {
 			      "Definition": {
@@ -3114,19 +1542,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs Forecast"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_budget": {
 			      "Definition": {
@@ -3135,19 +1551,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_budget1": {
 			      "Definition": {
@@ -3156,19 +1560,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs Budget"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_ly": {
 			      "Definition": {
@@ -3177,19 +1569,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_ly1": {
 			      "Definition": {
@@ -3198,19 +1578,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_lly": {
 			      "Definition": {
@@ -3219,19 +1587,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.dc_returns_digital_purchase__vs_lly1": {
 			      "Definition": {
@@ -3240,19 +1596,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs LLY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wtd_store_returns_store_purchase": {
 			      "Definition": {
@@ -3432,19 +1776,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI WTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "WTD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.kpi_mtd": {
 			      "Definition": {
@@ -3453,19 +1785,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI MTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "MTD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.kpi_ytd": {
 			      "Definition": {
@@ -3474,19 +1794,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI YTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "YTD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_summary_ly": {
 			      "Definition": {
@@ -3495,19 +1803,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail Summary LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_summary_pl": {
 			      "Definition": {
@@ -3516,19 +1812,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail Summary PL"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "PL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_summary_ty": {
 			      "Definition": {
@@ -3537,19 +1821,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail Summary TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_summary_pl1": {
 			      "Definition": {
@@ -3558,19 +1830,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail Summary %PL"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "%PL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_summary_ly1": {
 			      "Definition": {
@@ -3579,19 +1839,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail Summary %LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "%LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_ty": {
 			      "Definition": {
@@ -3600,19 +1848,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_pl": {
 			      "Definition": {
@@ -3621,19 +1857,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail PL"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "PL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_ly": {
 			      "Definition": {
@@ -3642,19 +1866,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_pl1": {
 			      "Definition": {
@@ -3663,19 +1875,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail %PL"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "%PL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.retail_ly1": {
 			      "Definition": {
@@ -3684,19 +1884,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Retail %LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "%LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.wholesale_lw": {
 			      "Definition": {
@@ -3705,19 +1893,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Wholesale WTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "WTD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account__budget_in": {
 			      "Definition": {
@@ -3726,19 +1902,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account % BUDGET IN"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% Bdgt In": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account__forecast_in": {
 			      "Definition": {
@@ -3747,19 +1911,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account % FORECAST IN"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% Fcst In": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account__ly_in": {
 			      "Definition": {
@@ -3768,19 +1920,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account % LY IN"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% LY In": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account_ly_ptd": {
 			      "Definition": {
@@ -3789,19 +1929,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account LY PTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account_forecast_": {
 			      "Definition": {
@@ -3810,19 +1938,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account Forecast $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Fcst $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account_budget_": {
 			      "Definition": {
@@ -3831,19 +1947,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account Budget $"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Bdgt $": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "all_measures_new.account_ty_ptd": {
 			      "Definition": {
@@ -3852,19 +1956,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Account TY PTD"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "To Date": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "wholesale_retail_headers.wholesale_retail_period": {
 			      "Definition": {
@@ -3903,16 +1995,6 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "..": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
 			          ".": {
 			            "State": "Suggested",
 			            "Source": {
@@ -3931,19 +2013,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand_ly_summary": {
 			      "Definition": {
@@ -3952,19 +2022,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand_lly_summary": {
 			      "Definition": {
@@ -3973,19 +2031,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand_forecast_summary": {
 			      "Definition": {
@@ -3994,19 +2040,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand_budget_summary": {
 			      "Definition": {
@@ -4015,19 +2049,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_ly_summary": {
 			      "Definition": {
@@ -4036,19 +2058,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_lly_summary": {
 			      "Definition": {
@@ -4057,19 +2067,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_forecast_summary": {
 			      "Definition": {
@@ -4078,19 +2076,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_budget_summary": {
 			      "Definition": {
@@ -4099,19 +2085,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand $ vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_ly_summary1": {
 			      "Definition": {
@@ -4120,19 +2094,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_lly_summary1": {
 			      "Definition": {
@@ -4141,19 +2103,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_budget_summary1": {
 			      "Definition": {
@@ -4162,19 +2112,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.gross_demand__vs_forecast_summary1": {
 			      "Definition": {
@@ -4183,19 +2121,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Gross Demand % vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales_ty_summary": {
 			      "Definition": {
@@ -4204,19 +2130,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales_forecast_summary": {
 			      "Definition": {
@@ -4225,19 +2139,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales_budget_summary": {
 			      "Definition": {
@@ -4246,19 +2148,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales_ly_summary": {
 			      "Definition": {
@@ -4267,19 +2157,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales_lly_summary": {
 			      "Definition": {
@@ -4288,19 +2166,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_forecast_summary_": {
 			      "Definition": {
@@ -4309,19 +2175,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs Forecast Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_forecast_summary_1": {
 			      "Definition": {
@@ -4330,19 +2184,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs Forecast Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_budget_summary_": {
 			      "Definition": {
@@ -4351,19 +2193,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs Budget Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_budget_summary_1": {
 			      "Definition": {
@@ -4372,19 +2202,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs Budget Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_ly_summary_": {
 			      "Definition": {
@@ -4393,19 +2211,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs LY Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_ly_summary_1": {
 			      "Definition": {
@@ -4414,19 +2220,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs LY Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_lly_summary_": {
 			      "Definition": {
@@ -4435,19 +2229,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales % vs LLY Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_sales__vs_lly_summary_1": {
 			      "Definition": {
@@ -4456,19 +2238,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net Sales $ vs LLY Summary "
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase_ty_summary": {
 			      "Definition": {
@@ -4477,19 +2247,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase_forecast_summary": {
 			      "Definition": {
@@ -4498,19 +2256,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase_budget_summary": {
 			      "Definition": {
@@ -4519,19 +2265,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase_ly_summary": {
 			      "Definition": {
@@ -4540,19 +2274,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase_lly_summary": {
 			      "Definition": {
@@ -4561,19 +2283,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_forecast_summary": {
 			      "Definition": {
@@ -4582,19 +2292,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_forecast_summary1": {
 			      "Definition": {
@@ -4603,19 +2301,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_budget_summary": {
 			      "Definition": {
@@ -4624,19 +2310,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_budget_summary1": {
 			      "Definition": {
@@ -4645,19 +2319,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_ly_summary": {
 			      "Definition": {
@@ -4666,19 +2328,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_ly_summary1": {
 			      "Definition": {
@@ -4687,19 +2337,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_lly_summary": {
 			      "Definition": {
@@ -4708,19 +2346,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.dc_returns_digital_purchase__vs_lly_summary1": {
 			      "Definition": {
@@ -4729,19 +2355,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Returns $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.markdown_ty_summary": {
 			      "Definition": {
@@ -4867,19 +2481,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__forecast_summary": {
 			      "Definition": {
@@ -4888,19 +2490,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__budget_summary": {
 			      "Definition": {
@@ -4909,19 +2499,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__ly_summary": {
 			      "Definition": {
@@ -4930,19 +2508,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__lly_summary": {
 			      "Definition": {
@@ -4951,19 +2517,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_forecast_summary": {
 			      "Definition": {
@@ -4972,19 +2526,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_budget_summary": {
 			      "Definition": {
@@ -4993,19 +2535,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_forecast_summary1": {
 			      "Definition": {
@@ -5014,19 +2544,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ $ vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_budget_summary1": {
 			      "Definition": {
@@ -5035,19 +2553,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ $ vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_ly_summary": {
 			      "Definition": {
@@ -5056,19 +2562,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_ly_summary1": {
 			      "Definition": {
@@ -5077,19 +2571,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_lly_summary": {
 			      "Definition": {
@@ -5098,19 +2580,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_lly_summary1": {
 			      "Definition": {
@@ -5119,19 +2589,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM $ $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__ty_summary1": {
 			      "Definition": {
@@ -5140,19 +2598,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__forecast_summary1": {
 			      "Definition": {
@@ -5161,19 +2607,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__budget_summary1": {
 			      "Definition": {
@@ -5182,19 +2616,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__ly_summary1": {
 			      "Definition": {
@@ -5203,19 +2625,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm__lly_summary1": {
 			      "Definition": {
@@ -5224,19 +2634,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_forecast_summary2": {
 			      "Definition": {
@@ -5245,19 +2643,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_forecast_summary3": {
 			      "Definition": {
@@ -5266,19 +2652,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % $ vs Forecast Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs Forecast": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_budget_summary2": {
 			      "Definition": {
@@ -5287,19 +2661,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_budget_summary3": {
 			      "Definition": {
@@ -5308,19 +2670,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % $ vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_ly_summary2": {
 			      "Definition": {
@@ -5329,19 +2679,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_ly_summary3": {
 			      "Definition": {
@@ -5350,19 +2688,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_lly_summary2": {
 			      "Definition": {
@@ -5371,19 +2697,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.net_gm___vs_lly_summary3": {
 			      "Definition": {
@@ -5392,19 +2706,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Net GM % $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "bp vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic_ty_summary": {
 			      "Definition": {
@@ -5413,19 +2715,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic_ly_summary": {
 			      "Definition": {
@@ -5434,19 +2724,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic_lly_summary": {
 			      "Definition": {
@@ -5455,19 +2733,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic__vs_ly_summary": {
 			      "Definition": {
@@ -5476,19 +2742,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic__vs_ly_summary1": {
 			      "Definition": {
@@ -5497,19 +2751,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic__vs_lly_summary": {
 			      "Definition": {
@@ -5518,19 +2760,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic__vs_lly_summary1": {
 			      "Definition": {
@@ -5539,19 +2769,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions_ty_summary": {
 			      "Definition": {
@@ -5560,19 +2778,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions_ly_summary": {
 			      "Definition": {
@@ -5581,19 +2787,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions_lly_summary": {
 			      "Definition": {
@@ -5602,19 +2796,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions__vs_ly_summary": {
 			      "Definition": {
@@ -5623,19 +2805,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions__vs_ly_summary1": {
 			      "Definition": {
@@ -5644,19 +2814,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions__vs_lly_summary": {
 			      "Definition": {
@@ -5665,19 +2823,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions__vs_lly_summary1": {
 			      "Definition": {
@@ -5686,19 +2832,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion_ty_summary": {
 			      "Definition": {
@@ -5707,19 +2841,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion_ly_summary": {
 			      "Definition": {
@@ -5728,19 +2850,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion_lly_summary": {
 			      "Definition": {
@@ -5749,19 +2859,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion__vs_ly_summary": {
 			      "Definition": {
@@ -5770,19 +2868,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion__vs_ly_summary1": {
 			      "Definition": {
@@ -5791,19 +2877,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion__vs_lly_summary": {
 			      "Definition": {
@@ -5812,19 +2886,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion__vs_lly_summary1": {
 			      "Definition": {
@@ -5833,19 +2895,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov_ty_summary": {
 			      "Definition": {
@@ -5854,19 +2904,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov_ly_summary": {
 			      "Definition": {
@@ -5875,19 +2913,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov_lly_summary": {
 			      "Definition": {
@@ -5896,19 +2922,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov__vs_ly_summary": {
 			      "Definition": {
@@ -5917,19 +2931,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov__vs_ly_summary1": {
 			      "Definition": {
@@ -5938,19 +2940,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov__vs_lly_summary": {
 			      "Definition": {
@@ -5959,19 +2949,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov__vs_lly_summary1": {
 			      "Definition": {
@@ -5980,19 +2958,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units_ty_summary": {
 			      "Definition": {
@@ -6001,19 +2967,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units_ly_summary": {
 			      "Definition": {
@@ -6022,19 +2976,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units_lly_summary": {
 			      "Definition": {
@@ -6043,19 +2985,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units__vs_ly_summary": {
 			      "Definition": {
@@ -6064,19 +2994,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units__vs_ly_summary1": {
 			      "Definition": {
@@ -6085,19 +3003,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units__vs_lly_summary": {
 			      "Definition": {
@@ -6106,19 +3012,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units__vs_lly_summary1": {
 			      "Definition": {
@@ -6127,19 +3021,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt_ty_summary": {
 			      "Definition": {
@@ -6148,19 +3030,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt_ly_summary": {
 			      "Definition": {
@@ -6169,19 +3039,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt_lly_summary": {
 			      "Definition": {
@@ -6190,19 +3048,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt__vs_ly_summary": {
 			      "Definition": {
@@ -6211,19 +3057,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt__vs_ly_summary1": {
 			      "Definition": {
@@ -6232,19 +3066,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt__vs_lly_summary": {
 			      "Definition": {
@@ -6253,19 +3075,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt__vs_lly_summary1": {
 			      "Definition": {
@@ -6274,19 +3084,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur_ty_summary": {
 			      "Definition": {
@@ -6295,19 +3093,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur_ly_summary": {
 			      "Definition": {
@@ -6316,19 +3102,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur_lly_summary": {
 			      "Definition": {
@@ -6337,19 +3111,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur__vs_ly_summary": {
 			      "Definition": {
@@ -6358,19 +3120,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur__vs_ly_summary1": {
 			      "Definition": {
@@ -6379,19 +3129,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur__vs_lly_summary": {
 			      "Definition": {
@@ -6400,19 +3138,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR % vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur__vs_lly_summary1": {
 			      "Definition": {
@@ -6421,19 +3147,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR $ vs LLY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "vs LLY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "headers__dtc_import.metrics": {
 			      "Definition": {
@@ -6460,19 +3174,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.cost_on_hand__ly_summary": {
 			      "Definition": {
@@ -6481,19 +3183,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.cost_on_hand___vs_ly_summary": {
 			      "Definition": {
@@ -6502,19 +3192,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.cost_on_hand___vs_ly_summary1": {
 			      "Definition": {
@@ -6523,19 +3201,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Cost On Hand $ $ vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "$ vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic_budget_summary": {
 			      "Definition": {
@@ -6544,19 +3210,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.traffic__vs_budget_summary": {
 			      "Definition": {
@@ -6565,19 +3219,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Traffic % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion_budget_summary": {
 			      "Definition": {
@@ -6586,19 +3228,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.conversion__vs_budget_summary": {
 			      "Definition": {
@@ -6607,19 +3237,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Conversion % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions_budget_summary": {
 			      "Definition": {
@@ -6628,19 +3246,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.transactions__vs_budget_summary": {
 			      "Definition": {
@@ -6649,19 +3255,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Transactions % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units_budget_summary": {
 			      "Definition": {
@@ -6670,19 +3264,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.units__vs_budget_summary": {
 			      "Definition": {
@@ -6691,19 +3273,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Units % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt_budget_summary": {
 			      "Definition": {
@@ -6712,19 +3282,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.upt__vs_budget_summary": {
 			      "Definition": {
@@ -6733,19 +3291,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "UPT % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur_budget_summary": {
 			      "Definition": {
@@ -6754,19 +3300,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aur__vs_budget_summary": {
 			      "Definition": {
@@ -6775,19 +3309,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AUR % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov_budget_summary": {
 			      "Definition": {
@@ -6796,19 +3318,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.aov__vs_budget_summary": {
 			      "Definition": {
@@ -6817,19 +3327,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "AOV % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.zz_retail_ty": {
 			      "Definition": {
@@ -6928,19 +3426,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI GD+NS TY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.kpi_gdns_budget_summary": {
 			      "Definition": {
@@ -6949,19 +3435,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI GD+NS Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.kpi_gdns_ly_summary": {
 			      "Definition": {
@@ -6970,19 +3444,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI GD+NS LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.kpi_gdns__vs_budget_summary": {
 			      "Definition": {
@@ -6991,19 +3453,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI GD+NS % vs Budget Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs Budget": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.kpi_gdns__vs_ly_summary": {
 			      "Definition": {
@@ -7012,19 +3462,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "KPI GD+NS % vs LY Summary"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "% vs LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.delivery_sales_": {
 			      "Definition": {
@@ -7132,19 +3570,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Full Price TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.executive_summary_full_price_ly": {
 			      "Definition": {
@@ -7153,19 +3579,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Full Price LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.executive_summary_imu_ty": {
 			      "Definition": {
@@ -7174,19 +3588,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary IMU TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.executive_summary_imu_ly": {
 			      "Definition": {
@@ -7195,19 +3597,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary IMU LY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "LY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.executive_summary_sales_aur_ty": {
 			      "Definition": {
@@ -7216,19 +3606,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales AUR TY"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "TY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "executive_dashboard_measures.executive_summary_sales_aur_ly": {
 			      "Definition": {
@@ -7237,10 +3615,37 @@ cultureInfo en-US
 			          "ConceptualProperty": "Executive Summary Sales AUR LY"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "executive_dashboard_measures.executive_summary_stock_aur_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Executive Dashboard Measures",
+			          "ConceptualProperty": "Executive Summary Stock AUR TY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "executive_dashboard_measures.executive_summary_stock_aur_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Executive Dashboard Measures",
+			          "ConceptualProperty": "Executive Summary Stock AUR LY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "inventory_measures.eop_quantity_on_hand": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "EOP Quantity On Hand"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "LY": {
+			          "TY Units": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -7251,11 +3656,95 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "executive_dashboard_measures.executive_summary_stock_aur_ty": {
+			    "store.store_finance_channel": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Executive Dashboard Measures",
-			          "ConceptualProperty": "Executive Summary Stock AUR TY"
+			          "ConceptualEntity": "Store",
+			          "ConceptualProperty": "Store Finance Channel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "delivery.season": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Delivery",
+			          "ConceptualProperty": "Season"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "delivery.style_color_collection": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Delivery",
+			          "ConceptualProperty": "Style Color Collection"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory.location": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory",
+			          "ConceptualProperty": "Location"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.executive_summary_shipped_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary Shipped TY"
 			        }
 			      },
 			      "State": "Generated",
@@ -7272,17 +3761,293 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "executive_dashboard_measures.executive_summary_stock_aur_ly": {
+			    "inventory_measures.executive_summary_shipped_ly": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Executive Dashboard Measures",
-			          "ConceptualProperty": "Executive Summary Stock AUR LY"
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary Shipped LY"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
 			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.executive_summary_receipt_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary Receipt TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.executive_summary_receipt_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary Receipt LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.executive_summary_intransit_ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary InTransit TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.executive_summary_intransit_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Executive Summary InTransit LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.blank_column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Blank Column"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "headers__inventory_summary.business_unit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Headers - Inventory Summary",
+			          "ConceptualProperty": "Business Unit"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "localexecutive_dashboard_measures.intransit_cost__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Executive Dashboard Measures",
+			          "ConceptualProperty": "Intransit Cost $ TY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "localexecutive_dashboard_measures.intransit_cost__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Executive Dashboard Measures",
+			          "ConceptualProperty": "Intransit Cost $ LY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "localexecutive_dashboard_measures.intransit_cost___vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Local-Executive Dashboard Measures",
+			          "ConceptualProperty": "Intransit Cost $ % vs LY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "inventory_measures.intransit_cost__ty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Intransit Cost $ TY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.intransit_cost__ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Intransit Cost $ LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "inventory_measures.intransit_cost___vs_ly": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Inventory Measures",
+			          "ConceptualProperty": "Intransit Cost $ % vs LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% vs LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "intransit.ship_u": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InTransit",
+			          "ConceptualProperty": "Ship Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ship Unit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "intransit.ship_c": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InTransit",
+			          "ConceptualProperty": "Ship Cost"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ship Cost": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "intransit.receipt_u": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InTransit",
+			          "ConceptualProperty": "Receipt Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Receipt Unit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "intransit.receipt_c": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "InTransit",
+			          "ConceptualProperty": "Receipt Cost"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Receipt Cost": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

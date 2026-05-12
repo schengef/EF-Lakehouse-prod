@@ -27,3 +27,54 @@ relationship eece24bc-cba6-40f5-93dd-8be87f3adb4a
 	fromColumn: Inventory.'Channel Key'
 	toColumn: Channel.'Channel Key'
 
+relationship 58b14fe2-7863-4b50-befe-fc27758374d7
+	fromColumn: Usage.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship 72afbedf-72e8-4209-89d6-b99800330cfe
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Business Domain'.'Business Domain Key'
+	toColumn: 'Readiness Domain'.'Business Domain Key'
+
+relationship 38b64f42-dfa7-492d-8142-4ecc760f7486
+	fromColumn: Dependency.'Report Key'
+	toColumn: Report.'Report Key'
+
+relationship 3de30ea8-8fb5-47f4-9c3b-cda3812b7f3c
+	fromColumn: Dependency.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship 971af707-48aa-48c7-bb52-8da207787b9a
+	fromColumn: 'Staging Process'.'Source Table Key'
+	toColumn: 'Source Table'.'Source Table Key'
+
+relationship 921b6b45-fe7d-490e-9968-2e9db4fcfe4e
+	fromColumn: 'Semantic Model Update'.'Date.1'
+	toColumn: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.Date
+
+relationship 3c807d86-e7f4-4645-8a26-befefef1d1ea
+	fromColumn: 'Inventory Movement'.'Movement Date Key'
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 84664e2a-36f8-4173-baf8-53281f80411c
+	fromColumn: 'Inventory Movement'.'Product Key'
+	toColumn: 'Product (Current)'.'Product Key'
+
+relationship 66d93a43-c3f9-4022-aed2-97589d43fccb
+	fromColumn: 'Readiness SourceTable'.'Source Table Key'
+	toColumn: 'Source Table'.'Source Table Key'
+
+relationship 40684607-a755-449c-bf88-52ea8e2070f3
+	fromColumn: 'Readiness SourceTable'.'Business Domain Key'
+	toColumn: 'Business Domain'.'Business Domain Key'
+
+relationship c28d65f2-7b4a-4ac5-aa72-12e47d1d6259
+	fromColumn: InTransit.ShipDateKey
+	toColumn: 'Filter Dates'.Datekey
+
+relationship 8a4df6b1-0b43-443e-940e-1732d98c9b20
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date EOY'.Datekey
+	toColumn: 'Filter Dates'.Datekey
+

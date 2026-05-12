@@ -1,0 +1,328 @@
+table 'Date EOY'
+	isHidden
+	lineageTag: eba7420a-bdda-428c-a831-c23798ac1700
+	sourceLineageTag: 2c1d535d-f186-4fdf-b196-f1a3bfe2949e
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 44b7afaf-140e-417a-a51d-20632ecd34a8
+		sourceLineageTag: cf7e6063-3508-423a-9039-1e32ad09b672
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Date LY'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: d1e56c22-b977-47b9-917d-0e097c2e3920
+		sourceLineageTag: 233b46e4-2db9-4411-8466-f382d327971b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date LY
+
+		annotation SummarizationSetBy = User
+
+	column 'Date LLY'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 6f1623fa-b9a6-4f05-afcc-111e7fdc3c5a
+		sourceLineageTag: 41674208-0f69-47a3-b718-c241181c5f0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date LLY
+
+		annotation SummarizationSetBy = User
+
+	column 'Select a Calendar'
+		dataType: string
+		isHidden
+		lineageTag: 21fd4910-fe8e-4c90-b8f1-57ce2c26b867
+		sourceLineageTag: 33f180f7-c785-4198-95d1-a4b794295d40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Select a Calendar
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		isHidden
+		lineageTag: 33d468fd-72e6-464c-a3a7-e2c29299c872
+		sourceLineageTag: 0760a33e-d168-42cf-b3a7-c10977607dcf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		isHidden
+		lineageTag: 1df46c4b-2c6a-4f75-bf90-cd269842db4d
+		sourceLineageTag: bb47d908-1550-4672-b20c-b99343801d1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Week End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 36b5aa92-2659-439d-ba40-c32c063aeb77
+		sourceLineageTag: 443c789b-1c7b-4562-929f-15e95877bfbc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week End Date
+
+		annotation SummarizationSetBy = User
+
+	column 'CurrWeek End Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 68d7ac74-2d62-4659-bb6e-318248dc4951
+		sourceLineageTag: 430359af-aea0-4602-a0ad-c1c3e4779bce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CurrWeek End Date
+
+		annotation SummarizationSetBy = User
+
+	column Half
+		dataType: string
+		isHidden
+		lineageTag: a3127b59-cd9f-4286-ad1e-d7a84eed718b
+		sourceLineageTag: 06d31661-fccc-4ff3-99e2-441d4235ce36
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Half
+
+		annotation SummarizationSetBy = User
+
+	column 'Monthname Weekno'
+		dataType: string
+		isHidden
+		lineageTag: 145eb8ca-5694-4653-8971-d83a88f6caf4
+		sourceLineageTag: 2abe04cb-5090-42f8-8f53-0cebbb958db2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Monthname Weekno
+
+		annotation SummarizationSetBy = User
+
+	column MonthName
+		dataType: string
+		isHidden
+		lineageTag: 8bea18c0-b353-4caf-95fc-42112fc1a7e9
+		sourceLineageTag: 280ba9bc-d03d-448b-8eb7-7f6cb31d5d8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Monthnum
+
+		annotation SummarizationSetBy = User
+
+	column Monthnamefull
+		dataType: string
+		isHidden
+		lineageTag: 8b2a6162-37aa-4a9e-8d85-c26c61b5e1f1
+		sourceLineageTag: b56f91b8-dfb8-4e61-bed7-7810f76e14aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Monthnamefull
+
+		annotation SummarizationSetBy = User
+
+	column Sortorder
+		dataType: string
+		isHidden
+		lineageTag: f4eb7375-5183-485e-b94d-0d4834f6116c
+		sourceLineageTag: 5da5faeb-c8ca-4bf1-9e65-d4c1bf52ca15
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sortorder
+
+		annotation SummarizationSetBy = User
+
+	column Week
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: df5a2428-7f1c-4c64-ba3b-c8e475421d6c
+		sourceLineageTag: 652857f7-d033-48c0-a268-4e157d217534
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b14d356d-cee7-40de-b3b7-257ab3ad3336
+		sourceLineageTag: b9f6cd2c-ad9c-46e8-a05e-b4f6533911c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Dayofweek
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7c17fbed-f032-4249-84c0-6e45c877e379
+		sourceLineageTag: 5dfacae0-efb5-4773-b818-86d5a130abab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dayofweek
+
+		annotation SummarizationSetBy = User
+
+	column Dayofmonth
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 08a05259-da8d-477a-9102-237ee008f3eb
+		sourceLineageTag: a93f6c4b-28db-4884-af65-99b829f02d99
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dayofmonth
+
+		annotation SummarizationSetBy = User
+
+	column Dayofyear
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a518028a-96f8-4cb0-aed2-56239a11dd13
+		sourceLineageTag: 1fae0ef9-23b5-42ef-b79e-ef51e4c6a686
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dayofyear
+
+		annotation SummarizationSetBy = User
+
+	column Monthnum
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b611f0e9-6034-4ea8-be7b-702756c657ba
+		sourceLineageTag: 02bfb94e-c56d-412f-9b63-6b2b5b2a6715
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Monthnum
+
+		annotation SummarizationSetBy = User
+
+	column Datekey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 836e7d1a-d75f-48f7-918f-5ff36f43cbab
+		sourceLineageTag: 35f9cbf4-42e4-4aab-bc6e-326f229a947d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Datekey
+
+		annotation SummarizationSetBy = User
+
+	column 'Sequential Day Number'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 82e49dde-be33-46fc-9aeb-16ef97416bca
+		sourceLineageTag: 59ac5e05-8b70-471c-afac-134ed3e7dd38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sequential Day Number
+
+		annotation SummarizationSetBy = User
+
+	column Monthsort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f9f73d29-c7d7-4335-85c4-8189fec09eb6
+		sourceLineageTag: 3e62d37d-1311-420e-b910-6e644f20043a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Monthsort
+
+		annotation SummarizationSetBy = User
+
+	column Monthindex
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9cb55e2f-3e8a-4b9b-a2c0-ab50f3d049e7
+		sourceLineageTag: 19c2b3d3-c270-4ffc-8b47-2f31f59170cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Monthindex
+
+		annotation SummarizationSetBy = User
+
+	column 'Select a Date'
+		dataType: string
+		isHidden
+		lineageTag: a6dbc860-290e-42cb-bfe3-90e7e27237c0
+		sourceLineageTag: d5622ddd-b6bd-4321-82dd-ca073440acd5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Select a Date
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Date Hierarchy'
+		isHidden
+		lineageTag: a12c0592-43b1-4031-9484-cab59600e9cc
+		sourceLineageTag: 2a374567-2239-49e9-86bf-c06cc9770c37
+
+		level Year
+			lineageTag: 52cff58e-68b6-4381-a553-2868ec0e1d75
+			sourceLineageTag: 833bc094-ee67-4898-a5d8-1110f289080b
+			column: Year
+
+		level Half
+			lineageTag: 6c122a06-f107-4f83-89b2-39b7106ad72b
+			sourceLineageTag: 3d270ae4-ec1d-48ca-9afb-071fde71237c
+			column: Half
+
+		level Quarter
+			lineageTag: 1edb2a27-2cc5-40ec-aa95-53646021cb91
+			sourceLineageTag: caab5862-4861-4a74-b60d-175f33754b20
+			column: Quarter
+
+		level MonthName
+			lineageTag: b62e9b36-74a7-4a39-b2fc-c7c6f38e9262
+			sourceLineageTag: 80df5a2a-3b8f-4ac1-950c-994ca1c88f0f
+			column: MonthName
+
+		level 'Week End Date'
+			lineageTag: 4b84ca45-fb71-48df-801d-655d8248400e
+			sourceLineageTag: d636acda-ed69-4260-936f-4d96804dc845
+			column: 'Week End Date'
+
+		level Date
+			lineageTag: 50a2d18b-d95f-42f6-bab1-b66fe848deca
+			sourceLineageTag: 0421eb31-73ab-4bed-823a-e69feb5a13e6
+			column: Date
+
+	partition 'Date EOY' = entity
+		mode: directQuery
+		source
+			entityName: Date EOY
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

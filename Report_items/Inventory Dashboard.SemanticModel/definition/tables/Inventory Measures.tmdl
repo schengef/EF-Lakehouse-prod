@@ -44,6 +44,1374 @@ table 'Inventory Measures'
 		sourceLineageTag: 0ce744b2-2ba2-4604-97b6-3b1574579253
 		dataCategory: Uncategorized
 
+	measure 'Executive Summary InTransit DTC MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC InTransit Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: a02d19f7-f888-43a3-b2f1-b18d0800c079
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit DTC MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			Return
+			CALCULATE (
+			    [DTC InTransit Units],
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			 'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			  'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			 'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: a881f2bf-5a8f-4188-9546-64427c025447
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit DTC WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			Return
+			CALCULATE (
+			    [DTC InTransit Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: a4ca79d9-53ed-4032-ad97-e4eb504af94e
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit DTC WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [DTC InTransit Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: 9490e979-86f4-4807-a3b1-d04b45428c9f
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit DTC YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			Return
+			CALCULATE (
+			    [DTC InTransit Units],
+			        ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: 46d1eaba-5cd7-4e2c-bce6-0314e20c3363
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit DTC YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			
+			CALCULATE (
+			    [DTC InTransit Units],
+			 ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\DTC
+		lineageTag: 436a26b9-1925-4373-965c-1e752990ad24
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: 8f55dd65-af97-49b2-9dc8-c581e15c8218
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			 
+			Return
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: c40628df-a8af-4fa6-8ab9-098c279133a0
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: 295a4e27-e972-4864-9ab8-2cbeadca3775
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: ca66da84-e8e7-45ea-8985-edfac277f9bd
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: 84121503-6e67-4815-a6db-c3d0a5ccde49
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Wholesale YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			CALCULATE (
+			    [Wholesale InTransit Units],
+			 ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Wholesale
+		lineageTag: a121c46e-e675-40f3-8c2d-e61f3646b7c0
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: 1fc24c02-568b-4af6-8b2d-1af0a4e5ae93
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))       
+			
+			Return
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: bf10b5a8-db3e-4893-9212-67cc643e7e0c
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			           ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: 4a1af1fe-8be1-48f0-a775-8e41d78843b2
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			          ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: dc56ed45-0ca1-40fa-a117-1e73494ec486
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			                ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: cd0226bd-2391-43cf-af5a-0cd830759a5a
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit Total YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			CALCULATE (
+			    [DTC InTransit Units]+[Wholesale InTransit Units],
+			  ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\InTransit\Total Company
+		lineageTag: 4f761419-5617-4d7a-ad75-f52617406059
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit TY' =
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit Wholesale WTD TY],
+			                "Month to Date",[Executive Summary InTransit Wholesale MTD TY],
+			                "Year to Date",[Executive Summary InTransit Wholesale YTD TY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit DTC WTD TY],
+			                "Month to Date",[Executive Summary InTransit DTC MTD TY],
+			                "Year to Date",[Executive Summary InTransit DTC YTD TY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit Total WTD TY],
+			                "Month to Date",[Executive Summary InTransit Total MTD TY],
+			                "Year to Date",[Executive Summary InTransit Total YTD TY]
+			            )
+			        )
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\InTransit
+		lineageTag: 9c3b0965-1180-4c3e-a42c-593524460ba8
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary InTransit LY' = ```
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit Wholesale WTD LY],
+			                "Month to Date",[Executive Summary InTransit Wholesale MTD LY],
+			                "Year to Date",[Executive Summary InTransit Wholesale YTD LY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit DTC WTD LY],
+			                "Month to Date",[Executive Summary InTransit DTC MTD LY],
+			                "Year to Date",[Executive Summary InTransit DTC YTD LY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary InTransit Total WTD LY],
+			                "Month to Date",[Executive Summary InTransit Total MTD LY],
+			                "Year to Date",[Executive Summary InTransit Total YTD LY]
+			            )
+			        )
+			        
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\InTransit
+		lineageTag: 22fd2629-2ec0-4b44-a697-f84ead9d8794
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC Shipped Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: 82b380c9-0e63-4f08-98f4-18090ccc6a88
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			Return
+			CALCULATE (
+			    [DTC Shipped Units],
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			 'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			  'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			 'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: 8bac6944-ad00-4c7f-a16d-c83fe79539c4
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			Return
+			CALCULATE (
+			    [DTC Shipped Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: 10095795-f093-44b9-9893-536c01c95a72
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [DTC Shipped Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: ed64f876-d154-4f14-8fa0-c07e692ab5ef
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			Return
+			CALCULATE (
+			    [DTC Shipped Units],
+			        ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: bb6dfdb9-98ca-4cbd-b90a-93ed72feb0a8
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped DTC YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			CALCULATE (
+			    [DTC Shipped Units],
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\DTC
+		lineageTag: 739df179-c08c-47f6-91c7-d55dca795842
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: 3ec5903b-ad7f-451e-907e-ba26f33f7788
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			 
+			Return
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: 5804ee68-bf30-4690-9ccc-147623be85fb
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: ad09959a-69ec-4d40-b726-688d512f7196
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: 38a7f6c2-7260-4abc-b59f-6f9b75546d84
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: 18a76053-17f8-4c2a-9ca9-395434e1e1f3
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Wholesale YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			
+			CALCULATE (
+			    [Wholesale Shipped Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Wholesale
+		lineageTag: 1b8481e9-4ef4-4d8c-8478-a058f4af38d9
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: 833bef95-7706-4e64-ae70-28da2cd5763d
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))       
+			
+			Return
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: ff9a7207-04ee-4adc-81cd-26d3c37d37cd
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			           ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: 4986ba04-29e8-4566-877f-a0ad5caa71b6
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			          ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: 3bc2eb71-8d99-40f7-916b-be7d2103cd00
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			                ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: 6a30cf75-9913-47fa-b056-5fd2125c145b
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped Total YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			
+			CALCULATE (
+			    [DTC Shipped Units]+[Wholesale Shipped Units],
+			 ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Shipped\Total Company
+		lineageTag: 8e0a7c6c-ad66-4438-bee2-75ab45b535be
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped TY' =
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped Wholesale WTD TY],
+			                "Month to Date",[Executive Summary Shipped Wholesale MTD TY],
+			                "Year to Date",[Executive Summary Shipped Wholesale YTD TY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped DTC WTD TY],
+			                "Month to Date",[Executive Summary Shipped DTC MTD TY],
+			                "Year to Date",[Executive Summary Shipped DTC YTD TY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped Total WTD TY],
+			                "Month to Date",[Executive Summary Shipped Total MTD TY],
+			                "Year to Date",[Executive Summary Shipped Total YTD TY]
+			            )
+			        )
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Shipped
+		lineageTag: 8767f5cc-97c7-438c-ac5a-3ede6380dd4b
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Shipped LY' = ```
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped Wholesale WTD LY],
+			                "Month to Date",[Executive Summary Shipped Wholesale MTD LY],
+			                "Year to Date",[Executive Summary Shipped Wholesale YTD LY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped DTC WTD LY],
+			                "Month to Date",[Executive Summary Shipped DTC MTD LY],
+			                "Year to Date",[Executive Summary Shipped DTC YTD LY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Shipped Total WTD LY],
+			                "Month to Date",[Executive Summary Shipped Total MTD LY],
+			                "Year to Date",[Executive Summary Shipped Total YTD LY]
+			            )
+			        )
+			        
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Shipped
+		lineageTag: d5d9e5ff-d26f-4de9-a1e9-e574023dfe28
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC Receipt Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: 831c4290-51d0-49ba-8305-8afc37c864b6
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			Return
+			CALCULATE (
+			    [DTC Receipt Units],
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			 'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			  'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			 'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: 9686be69-f95d-4f33-bc76-0af326c180a8
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			Return
+			CALCULATE (
+			    [DTC Receipt Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: 65367d00-cb20-4d1c-b17d-b7aa21d9ee55
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			  [DTC Receipt Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: 6f7e581c-3191-4f87-989e-d293e71cc620
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			Return
+			CALCULATE (
+			    [DTC Receipt Units],
+			        ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: dd824d25-ec96-4596-b9e1-90c3df0661d9
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt DTC YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			CALCULATE (
+			    [DTC Receipt Units],
+			 ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\DTC
+		lineageTag: 7695a2f6-799e-4a1e-8caf-edd2c0a85697
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [Wholesale Receipt Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: 8540c7b7-958a-435f-8004-c1dec69a1d99
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			 
+			Return
+			CALCULATE (
+			        [Wholesale Receipt Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: 1c9932f2-658e-4f96-ab87-1f725b337234
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			        [Wholesale Receipt Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: 5009a7a0-80b5-4a3b-ba77-fd75da1683ea
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			        [Wholesale Receipt Units],
+			       ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: d5fa326d-753c-494c-a7d9-571731edddbd
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			        [Wholesale Receipt Units],
+			         ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: 0e5ab19d-7674-40d4-b8df-cc813e2a7ed0
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Wholesale YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			CALCULATE (
+			        [Wholesale Receipt Units],
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Wholesale
+		lineageTag: c3ceb9a5-c506-4f96-a738-8997fad3077f
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Total MTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			VAR LastMonth=LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[Date],LastDayAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LM=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Monthnum]=LastMonth)),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))  
+			Return
+			CALCULATE (
+			    [DTC Receipt Units]+[Wholesale Receipt Units],
+			    ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LM &&
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY     
+			)
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: 321d7df4-622d-4f18-a30f-c2ed225ac0f6
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+	measure 'Executive Summary Receipt Total MTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastDayAvailable =  LOOKUPVALUE('Date EOY'[MonthIndex],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYearMonthAvailable = LOOKUPVALUE('Date EOY'[Monthnum],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))       
+			
+			Return
+			CALCULATE (
+			    [DTC Receipt Units]+[Wholesale Receipt Units],
+			      ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[MonthNum]),
+			    'Date EOY'[MonthIndex]  <= LastDayAvailable &&
+			     'Date EOY'[MonthNum]= LastFiscalYearMonthAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear       
+			)
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: 51c15446-9105-4099-af3b-64996dd5afa8
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Total WTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LW=SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Week End Date]=max('Date EOY'[Week End Date])))    
+			
+			Return
+			CALCULATE (
+			    [DTC Receipt Units]+[Wholesale Receipt Units],
+			           ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LW &&
+			    'Date EOY'[Date]<=LastDayLY         
+			)
+			
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: d6529137-22ff-484c-93d0-719a7cdebce0
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+	measure 'Executive Summary Receipt Total WTD TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR LastFiscalYearWeekAvailable = LOOKUPVALUE('Date EOY'[Week End Date],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))
+			VAR LastFiscalYear = LOOKUPVALUE('Date EOY'[Year],'Date EOY'[date],LastDateAvailable,'Date EOY'[Select a Calendar],SELECTEDVALUE('Date EOY'[Select a Calendar]))   
+			
+			Return
+			CALCULATE (
+			    [DTC Receipt Units]+[Wholesale Receipt Units],
+			          ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar],'Date EOY'[Week End Date]),
+			    'Date EOY'[Week End Date]  = LastFiscalYearWeekAvailable &&
+			    'Date EOY'[Year] = LastFiscalYear        
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: ce8f6cd4-2553-4367-8655-39c3aecca24f
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt Total YTD LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			
+			Return
+			CALCULATE (
+			    [DTC Receipt Units]+[Wholesale Receipt Units],
+			                ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: fc883150-aeb5-42f5-bf22-84fa520c876a
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+	measure 'Executive Summary Receipt Total YTD TY' = ```
+			
+			VAR DayTY=CALCULATE(min('Date EOY'[Date]),'Date EOY'[Date]=TODAY())  //4/16/2026
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=DayTY)    //2025
+			Return 
+			
+			CALCULATE (
+			   [DTC Receipt Units]+[Wholesale Receipt Units],
+			 ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=DayTY,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Inventory Dashboard\Inventory\Receipt\Total Company
+		lineageTag: f6a03e59-0645-4e4e-9afc-b943124607a4
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt TY' =
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt Wholesale WTD TY],
+			                "Month to Date",[Executive Summary Receipt Wholesale MTD TY],
+			                "Year to Date",[Executive Summary Receipt Wholesale YTD TY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt DTC WTD TY],
+			                "Month to Date",[Executive Summary Receipt DTC MTD TY],
+			                "Year to Date",[Executive Summary Receipt DTC YTD TY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt Total WTD TY],
+			                "Month to Date",[Executive Summary Receipt Total MTD TY],
+			                "Year to Date",[Executive Summary Receipt Total YTD TY]
+			            )
+			        )
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Receipt
+		lineageTag: b4dbca9d-5072-473b-85c9-c362172147ca
+
+		changedProperty = DisplayFolder
+
+	measure 'Executive Summary Receipt LY' = ```
+			
+			switch(
+			        selectedvalue('Headers - Inventory Summary'[Business Unit]),
+			        "Wholesale",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt Wholesale WTD LY],
+			                "Month to Date",[Executive Summary Receipt Wholesale MTD LY],
+			                "Year to Date",[Executive Summary Receipt Wholesale YTD LY]
+			            ),
+			        "DTC",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt DTC WTD LY],
+			                "Month to Date",[Executive Summary Receipt DTC MTD LY],
+			                "Year to Date",[Executive Summary Receipt DTC YTD LY]
+			            ),
+			        "Total Company",
+			            SWITCH(
+			                SELECTEDVALUE('Headers - Inventory Summary'[Period]),
+			                "Week to Date",[Executive Summary Receipt Total WTD LY],
+			                "Month to Date",[Executive Summary Receipt Total MTD LY],
+			                "Year to Date",[Executive Summary Receipt Total YTD LY]
+			            )
+			        )
+			        
+			```
+		formatString: #,0
+		displayFolder: Inventory Dashboard\Inventory\Receipt
+		lineageTag: d3cf3a29-f9e2-4c66-852d-8cc8311e5836
+
+		changedProperty = DisplayFolder
+
+	measure 'Blank Column' = blank()
+		formatString: 0
+		lineageTag: 3c70528e-ec3e-4743-be2f-02aab6e7f5d7
+
+		changedProperty = Name
+
+	measure 'Intransit Cost $ TY' = ```
+			
+			VAR LastDateAvailable=min(LASTDATE('Date'[Date]),LASTDATE('Date EOY'[Date]))
+			VAR YearTY=CALCULATE(max('Date EOY'[Year]),'Date EOY'[Date]=LastDateAvailable)    //2025
+			Return
+			CALCULATE (
+			   sum(InTransit[IntransitCost]),
+			  ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date]<=LastDateAvailable,
+			     'Date EOY'[Year] = YearTY
+			)
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Inventory Dashboard\Inventory\InTransit
+		lineageTag: bcfc25dc-286b-4128-89bd-7572e4f7841f
+
+	measure 'Intransit Cost $ LY' = ```
+			
+			VAR LastDayAvailable = max('Date'[Date])+ if(max('Date'[Date])>=today(),WEEKDAY(today(), 1)-8,0)
+			VAR LastDayLY=LOOKUPVALUE('Date EOY'[Date LY],'Date EOY'[Date],LastDayAvailable)
+			VAR LY=CALCULATETABLE(SUMMARIZECOLUMNS('Date EOY'[Date LY], FILTER('Date EOY','Date EOY'[Year]=max('Date EOY'[Year]))),ALLEXCEPT('Date EOY','Date EOY'[Select a Calendar]))
+			Return
+			CALCULATE (
+			   sum(InTransit[IntransitCost]),
+			   ALLEXCEPT('Date EOY', 'Date EOY'[Select a Calendar]),
+			    'Date EOY'[Date] in LY &&
+			    'Date EOY'[Date]<=LastDayLY  
+			)
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Inventory Dashboard\Inventory\InTransit
+		lineageTag: 3716585d-239e-4942-8624-86154197329c
+
+	measure 'Intransit Cost $ % vs LY' = ([Intransit Cost $ TY]-[Intransit Cost $ LY])/[Intransit Cost $ LY]
+		formatString: 0.0%;(0.0%)
+		displayFolder: Inventory Dashboard\Inventory\InTransit
+		lineageTag: 9b0f1332-bc2c-4de0-9249-c624366dcd9e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
 	column Column1
 		dataType: string
 		isHidden

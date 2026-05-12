@@ -1,0 +1,62 @@
+table 'Headers - Inventory Summary'
+	lineageTag: b40fdbe9-03d4-491a-a3a7-edd5a132a392
+
+	column Period
+		dataType: string
+		lineageTag: 1332a0b7-f257-4538-bfab-61a5b8a77d42
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: 'Period Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Abbrv'
+		dataType: string
+		lineageTag: 55ec0910-9ea9-404b-a3e9-2d22efb099fb
+		summarizeBy: none
+		sourceColumn: Period Abbrv
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Unit'
+		dataType: string
+		lineageTag: c77d6e17-da1f-47ee-ac11-62150b4acc3c
+		summarizeBy: none
+		sourceColumn: Business Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fb620c8-7ddf-4fb4-bbe5-181d633856f3
+		summarizeBy: sum
+		sourceColumn: Period Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Unit Sort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c8bd500-0816-4850-91b3-e92805a6fe0f
+		summarizeBy: sum
+		sourceColumn: Business Unit Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Headers - Inventory Summary' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fc+7CoMwFIDhVwmZXUzyBNXVpQ2IBIdQD1VqTbDp0LdvQCmH3IYccvuGXynaAzyJM6TVDmhFe9n62crGz9ovdpzIFe6wWEfHStHObG5GpkOGZcwAekdkQIRnyOUzPcD5h//m+C8y/5Ml/WxWeOsVzh6O78htXqyFqVCFPSv6ZCHmvMjjWmxF0SbLpXF6JY15Wb19z/o6us+Xh55lfbI85DzL4/LQirQdfw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Period = _t, #"Period Abbrv" = _t, #"Business Unit" = _t, #"Period Sort" = _t, #"Business Unit Sort" = _t, #"Business Unit IMU" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Period", type text}, {"Business Unit", type text}, {"Period Sort", Int64.Type}, {"Business Unit Sort", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Business Unit IMU"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
