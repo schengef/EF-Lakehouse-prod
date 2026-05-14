@@ -1,0 +1,42 @@
+table 'Semantic Model Update'
+	lineageTag: e50b05ce-fa74-41ee-8603-c50d934826ae
+	sourceLineageTag: 6cb183cd-1b13-4db4-951b-2235c8bb7437
+
+	column Row
+		dataType: string
+		lineageTag: 1b896d84-29cb-416b-93fe-e58e22a14c1e
+		sourceLineageTag: 200767f4-78ba-44d5-a03b-53acb2a58f4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Row
+
+		annotation SummarizationSetBy = User
+
+	column 'Date.1'
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: db671244-f0bb-4349-a23a-673910c94035
+		sourceLineageTag: 517fe0f4-c492-4e90-994f-5aa6fddc5f68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date.1
+
+		variation Variation
+			isDefault
+			relationship: 6d762c02-9c8b-467a-894b-85fbdecd2230
+			defaultHierarchy: LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c.'Date Hierarchy'
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Semantic Model Update' = entity
+		mode: directQuery
+		source
+			entityName: Semantic Model Update
+			expressionSource: 'DirectQuery to AS - Lakehouse Semantic Model'
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,67 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - Lakehouse Semantic Model","Headers - Wholesale Shipping","Headers - Wholesale Retail","Local-Executive Dashboard Measures","Headers - DTC","Headers - Executive Summary","A-measure","F_INVENTORY_MOVEMENT_WS_ship","F_INVENTORY_MOVEMENT_DTC_receipt","F_INVENTORY_MOVEMENT_WS_Receipt"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","WebModelingEdit"]
+
+ref table 'Headers - Wholesale Shipping'
+ref table 'Headers - Wholesale Retail'
+ref table 'Local-Executive Dashboard Measures'
+ref table 'Headers - DTC'
+ref table 'Headers - Executive Summary'
+ref table Traffic
+ref table 'Transactions (Financial)'
+ref table 'Forecast (Channel)'
+ref table 'Budget (Inventory)'
+ref table 'Budget (Channel)'
+ref table Channel
+ref table Store
+ref table Accounts
+ref table Delivery
+ref table 'Currency Selector'
+ref table 'Order Type Join'
+ref table 'Account Group Join'
+ref table 'Order Categorization'
+ref table Currency
+ref table 'Date EOY'
+ref table Date
+ref table Inventory
+ref table 'Store (DTC Original)'
+ref table 'Channel (DTC Original)'
+ref table 'Filter Dates'
+ref table 'Budget and Forecast Measures'
+ref table 'Total Company Measures'
+ref table 'Wholesale Measures'
+ref table 'Inventory Measures'
+ref table 'DTC Measures'
+ref table 'Transactions (Account POS)'
+ref table 'Transactions (Account MIX)'
+ref table 'Plan (Wholesale Retail)'
+ref table 'Transactions (External POS)'
+ref table Usage
+ref table 'Business Domain'
+ref table 'Business Domain Process'
+ref table Dependency
+ref table 'Source Table'
+ref table Report
+ref table 'Staging Process'
+ref table 'Semantic Model Update'
+ref table LocalDateTable_33393262-7dc3-4f0f-b24d-2ef34a563a6c
+ref table 'Inventory Movement'
+ref table A-measure
+ref table 'Readiness SourceTable'
+ref table 'Readiness Domain'
+ref table InTransit
+
+ref cultureInfo en-US
+
