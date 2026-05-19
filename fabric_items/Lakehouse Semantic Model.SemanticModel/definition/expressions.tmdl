@@ -7,5 +7,5 @@ expression 'DirectLake - Sandbox_Lakehouse' =
 
 	annotation PBI_IncludeFutureArtifacts = False
 
-	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[Transaction_Financial_New]"}},"objectType":"Table"}]
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[Transaction_Financial_New]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[table_run_history]"}},"objectType":"Table"}]
 

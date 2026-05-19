@@ -1,0 +1,51 @@
+table table_run_history
+	lineageTag: b5e1daba-5dce-4e2a-b32f-7953d8a33113
+	sourceLineageTag: [dbo].[table_run_history]
+
+	column TableName
+		dataType: string
+		lineageTag: c9d6b672-ad00-49c6-9f78-84e684f1a2dc
+		sourceLineageTag: TableName
+		summarizeBy: none
+		sourceColumn: TableName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RowCount
+		dataType: int64
+		formatString: #,0
+		lineageTag: d7ea0b97-2743-44da-9e49-3a2d09890ba9
+		sourceLineageTag: RowCount
+		summarizeBy: sum
+		sourceColumn: RowCount
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column LogTimestamp_EDT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5af6ec88-b4ab-438e-bfcd-022ba8728f9f
+		sourceLineageTag: LogTimestamp_EDT
+		summarizeBy: none
+		sourceColumn: LogTimestamp_EDT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PipelineName
+		dataType: string
+		lineageTag: 2261fc0e-a933-4243-829d-3b2552899a81
+		sourceLineageTag: PipelineName
+		summarizeBy: none
+		sourceColumn: PipelineName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition table_run_history = entity
+		mode: directLake
+		source
+			entityName: table_run_history
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+

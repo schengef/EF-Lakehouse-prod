@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Hourly_Data_Sync"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f399ec68-e76e-8021-4b20-34d9f5ed8452"
+  }
+}

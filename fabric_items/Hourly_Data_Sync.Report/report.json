@@ -1,0 +1,124 @@
+{
+  "config": "{\"version\":\"5.73\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU05\",\"type\":2,\"version\":{\"visual\":\"2.9.0\",\"report\":\"3.3.0\",\"page\":\"2.3.1\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "filters": "[{\"name\":\"dbad0817d25c1eef58ac\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Currency Selector'\"}}],[{\"Literal\":{\"Value\":\"'Date'\"}}],[{\"Literal\":{\"Value\":\"'Date EOY'\"}}],[{\"Literal\":{\"Value\":\"'Dependency'\"}}],[{\"Literal\":{\"Value\":\"'DTC Measures'\"}}],[{\"Literal\":{\"Value\":\"'Filter Dates'\"}}],[{\"Literal\":{\"Value\":\"'Inventory Measures'\"}}],[{\"Literal\":{\"Value\":\"'Readiness Domain'\"}}],[{\"Literal\":{\"Value\":\"'Readiness SourceTable'\"}}],[{\"Literal\":{\"Value\":\"'Report'\"}}],[{\"Literal\":{\"Value\":\"'Source Table'\"}}],[{\"Literal\":{\"Value\":\"'Staging Process'\"}}],[{\"Literal\":{\"Value\":\"'table_run_history'\"}}],[{\"Literal\":{\"Value\":\"'Total Company Measures'\"}}],[{\"Literal\":{\"Value\":\"'Transaction_Financial_New'\"}}],[{\"Literal\":{\"Value\":\"'Usage'\"}}],[{\"Literal\":{\"Value\":\"'Wholesale Measures'\"}}],[{\"Literal\":{\"Value\":\"'Budget and Forecast Measures'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU05",
+            "path": "BaseThemes/CY26SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"308L\"}}}}}]}}",
+      "displayName": "Page 1",
+      "displayOption": 2,
+      "filters": "[]",
+      "height": 1800.00,
+      "name": "e646569c432a4d97faeb",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"237b3f4c1197ba9bd8b2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":989.948006932409,\"z\":4000,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Inventory'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 989.95,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"35b4e03d0c2d401dab5d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":220.4506065857886,\"z\":3000,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Transactions _Financial_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 220.45,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"64cdfc83967ff50aab3c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.63778162911612,\"y\":34.662045060658585,\"z\":1000,\"width\":499.1334488734836,\"height\":1706.7590987868286,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"table_run_history.TableName\"},{\"queryRef\":\"Sum(table_run_history.RowCount)\"},{\"queryRef\":\"table_run_history.LogTimestamp_EDT\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 1706.76,
+          "width": 499.13,
+          "x": 16.64,
+          "y": 34.66,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"6d72493478ab90b9b7c6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":1177.1230502599653,\"z\":5000,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Inventory Movement'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 1177.12,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"8753be425b96546d0797\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":594.8006932409013,\"z\":7002,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":7002}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Transactions _Account MIX_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 594.80,
+          "z": 7002.00
+        },
+        {
+          "config": "{\"name\":\"b17275dc4e1c0d122ddf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":802.7729636048527,\"z\":2000,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Transactions _Account POS_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 802.77,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"b86c1a97fb8d34ff2262\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":407.62564991334494,\"z\":7001,\"width\":1034.315424610052,\"height\":187.17504332755635,\"tabOrder\":7001}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Transactions _Account FIN_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.18,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 407.63,
+          "z": 7001.00
+        },
+        {
+          "config": "{\"name\":\"dc48d8bbe7866945c65e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":1552.8596187175044,\"z\":7000,\"width\":1034.315424610052,\"height\":188.56152512998267,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Product _Current_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 188.56,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 1552.86,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"eecadea187d0a492e467\",\"layouts\":[{\"id\":0,\"position\":{\"x\":527.7566539923955,\"y\":33.460076045627375,\"z\":0,\"width\":1034.2205323193916,\"height\":187.0722433460076,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Transactions _External POS_'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 187.07,
+          "width": 1034.22,
+          "x": 527.76,
+          "y": 33.46,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"fd43ec92003d74676391\",\"layouts\":[{\"id\":0,\"position\":{\"x\":528.2495667244368,\"y\":1364.2980935875219,\"z\":6000,\"width\":1034.315424610052,\"height\":188.56152512998267,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"table_run_history.LogTimestamp_EDT\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(table_run_history.RowCount)\"}],\"Series\":[{\"queryRef\":\"table_run_history.TableName\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"},\"Name\":\"table_run_history.LogTimestamp_EDT\",\"NativeReferenceName\":\"LogTimestamp_EDT\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"RowCount\"}},\"Function\":0},\"Name\":\"Sum(table_run_history.RowCount)\",\"NativeReferenceName\":\"Sum of RowCount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"},\"Name\":\"table_run_history.TableName\",\"NativeReferenceName\":\"TableName\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"LogTimestamp_EDT\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"68cc45e2c0d1307ee6e6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"table_run_history\"}},\"Property\":\"TableName\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"table_run_history\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"TableName\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Product'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 188.56,
+          "width": 1034.32,
+          "x": 528.25,
+          "y": 1364.30,
+          "z": 6000.00
+        }
+      ],
+      "width": 1600.00
+    }
+  ]
+}

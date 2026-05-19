@@ -25,6 +25,12 @@
             "dependencyConditions": [
               "Failed"
             ]
+          },
+          {
+            "activity": "Semantic model Hourly Data Sync",
+            "dependencyConditions": [
+              "Failed"
+            ]
           }
         ]
       },
@@ -329,12 +335,6 @@
             ]
           },
           {
-            "activity": "Inventory_Movement",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          },
-          {
             "activity": "ProductDataflow",
             "dependencyConditions": [
               "Succeeded"
@@ -342,6 +342,12 @@
           },
           {
             "activity": "Transactions Financial Full Load",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "Intransit",
             "dependencyConditions": [
               "Succeeded"
             ]
@@ -361,7 +367,7 @@
           "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
         },
         "policy": {
-          "timeout": "0.0:10:00",
+          "timeout": "0.0:20:00",
           "retry": 0,
           "retryIntervalInSeconds": 30,
           "secureInput": false,
@@ -390,7 +396,7 @@
           "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
         },
         "policy": {
-          "timeout": "0.0:10:00",
+          "timeout": "0.0:20:00",
           "retry": 0,
           "retryIntervalInSeconds": 30,
           "secureInput": false,
@@ -419,21 +425,14 @@
           "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
         },
         "policy": {
-          "timeout": "0.0:10:00",
+          "timeout": "0.0:20:00",
           "retry": 0,
           "retryIntervalInSeconds": 30,
           "secureInput": false,
           "secureOutput": false
         },
         "name": "Inventory_Movement",
-        "dependsOn": [
-          {
-            "activity": "Intransit",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
+        "dependsOn": []
       },
       {
         "type": "InvokePipeline",
@@ -455,7 +454,14 @@
           "secureOutput": false
         },
         "name": "Intransit",
-        "dependsOn": []
+        "dependsOn": [
+          {
+            "activity": "Inventory_Movement",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
       },
       {
         "type": "InvokePipeline",
@@ -470,7 +476,7 @@
           "connection": "9b3aa538-fd76-44ce-b95b-ac3fec48ae24"
         },
         "policy": {
-          "timeout": "0.0:10:00",
+          "timeout": "0.0:20:00",
           "retry": 0,
           "retryIntervalInSeconds": 30,
           "secureInput": false,
@@ -558,6 +564,59 @@
         },
         "name": "ProductDataflow",
         "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "19b83b67-dffc-990b-4efe-f30f6332b809",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "hourly_data_sync",
+        "dependsOn": [
+          {
+            "activity": "Semantic model refresh",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "PBISemanticModelRefresh",
+        "typeProperties": {
+          "method": "POST",
+          "groupId": "8a36f33d-a1a9-4e11-afd1-e24a3f8deb56",
+          "datasetId": "f5ed8452-34d9-4b20-8021-e76ef399ec68",
+          "commitMode": "Transactional",
+          "waitOnCompletion": true,
+          "operationType": "SemanticModelRefresh"
+        },
+        "externalReferences": {
+          "connection": "3c28e850-be30-4bf6-9664-4d9da47b6d0b"
+        },
+        "policy": {
+          "timeout": "0.00:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Semantic model Hourly Data Sync",
+        "dependsOn": [
+          {
+            "activity": "hourly_data_sync",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
       }
     ],
     "concurrency": 10
