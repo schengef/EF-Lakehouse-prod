@@ -623,7 +623,7 @@ table 'DTC Measures'
 			            'Transactions (Financial)'[Transaction No],
 			            'Transactions (Financial)'[Store Id],
 			            'Transactions (Financial)'[Register Num],
-			            'Transactions (Financial)'[Transaction Date]
+			            'Transactions (Financial)'[Transaction Date Key]
 			        )
 			    ),
 			    'Channel (DTC Original)'[Original Channel Name] = "DTC"
