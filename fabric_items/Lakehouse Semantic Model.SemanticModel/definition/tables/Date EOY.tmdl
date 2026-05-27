@@ -1,11 +1,9 @@
 table 'Date EOY'
-	isHidden
 	lineageTag: 2c1d535d-f186-4fdf-b196-f1a3bfe2949e
 	sourceLineageTag: [dbo].[Date EOY]
 
 	column Date
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: cf7e6063-3508-423a-9039-1e32ad09b672
 		sourceLineageTag: Date
@@ -20,7 +18,6 @@ table 'Date EOY'
 
 	column 'Date LY'
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: 233b46e4-2db9-4411-8466-f382d327971b
 		sourceLineageTag: Date LY
@@ -35,7 +32,6 @@ table 'Date EOY'
 
 	column 'Date LLY'
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: 41674208-0f69-47a3-b718-c241181c5f0a
 		sourceLineageTag: Date LLY
@@ -50,7 +46,6 @@ table 'Date EOY'
 
 	column 'Select a Calendar'
 		dataType: string
-		isHidden
 		lineageTag: 33f180f7-c785-4198-95d1-a4b794295d40
 		sourceLineageTag: Select a Calendar
 		summarizeBy: none
@@ -62,7 +57,6 @@ table 'Date EOY'
 
 	column Month
 		dataType: string
-		isHidden
 		lineageTag: 0760a33e-d168-42cf-b3a7-c10977607dcf
 		sourceLineageTag: Month
 		summarizeBy: none
@@ -74,7 +68,6 @@ table 'Date EOY'
 
 	column Quarter
 		dataType: string
-		isHidden
 		lineageTag: bb47d908-1550-4672-b20c-b99343801d1a
 		sourceLineageTag: Quarter
 		summarizeBy: none
@@ -86,7 +79,6 @@ table 'Date EOY'
 
 	column 'Week End Date'
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: 443c789b-1c7b-4562-929f-15e95877bfbc
 		sourceLineageTag: Week End Date
@@ -101,7 +93,6 @@ table 'Date EOY'
 
 	column 'CurrWeek End Date'
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: 430359af-aea0-4602-a0ad-c1c3e4779bce
 		sourceLineageTag: CurrWeek End Date
@@ -116,7 +107,6 @@ table 'Date EOY'
 
 	column Half
 		dataType: string
-		isHidden
 		lineageTag: 06d31661-fccc-4ff3-99e2-441d4235ce36
 		sourceLineageTag: Half
 		summarizeBy: none
@@ -128,7 +118,6 @@ table 'Date EOY'
 
 	column 'Monthname Weekno'
 		dataType: string
-		isHidden
 		lineageTag: 2abe04cb-5090-42f8-8f53-0cebbb958db2
 		sourceLineageTag: Monthname Weekno
 		summarizeBy: none
@@ -140,7 +129,6 @@ table 'Date EOY'
 
 	column MonthName
 		dataType: string
-		isHidden
 		lineageTag: 280ba9bc-d03d-448b-8eb7-7f6cb31d5d8a
 		sourceLineageTag: MonthName
 		summarizeBy: none
@@ -155,7 +143,6 @@ table 'Date EOY'
 
 	column Monthnamefull
 		dataType: string
-		isHidden
 		lineageTag: b56f91b8-dfb8-4e61-bed7-7810f76e14aa
 		sourceLineageTag: Monthnamefull
 		summarizeBy: none
@@ -167,7 +154,6 @@ table 'Date EOY'
 
 	column Sortorder
 		dataType: string
-		isHidden
 		lineageTag: 5da5faeb-c8ca-4bf1-9e65-d4c1bf52ca15
 		sourceLineageTag: Sortorder
 		summarizeBy: none
@@ -179,7 +165,6 @@ table 'Date EOY'
 
 	column Week
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 652857f7-d033-48c0-a268-4e157d217534
 		sourceLineageTag: Week
@@ -194,7 +179,6 @@ table 'Date EOY'
 
 	column Year
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: b9f6cd2c-ad9c-46e8-a05e-b4f6533911c5
 		sourceLineageTag: Year
@@ -209,7 +193,6 @@ table 'Date EOY'
 
 	column Dayofweek
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 5dfacae0-efb5-4773-b818-86d5a130abab
 		sourceLineageTag: Dayofweek
@@ -224,7 +207,6 @@ table 'Date EOY'
 
 	column Dayofmonth
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: a93f6c4b-28db-4884-af65-99b829f02d99
 		sourceLineageTag: Dayofmonth
@@ -239,7 +221,6 @@ table 'Date EOY'
 
 	column Dayofyear
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 1fae0ef9-23b5-42ef-b79e-ef51e4c6a686
 		sourceLineageTag: Dayofyear
@@ -254,7 +235,6 @@ table 'Date EOY'
 
 	column Monthnum
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 02bfb94e-c56d-412f-9b63-6b2b5b2a6715
 		sourceLineageTag: Monthnum
@@ -269,7 +249,6 @@ table 'Date EOY'
 
 	column Datekey
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 35f9cbf4-42e4-4aab-bc6e-326f229a947d
 		sourceLineageTag: Datekey
@@ -285,7 +264,6 @@ table 'Date EOY'
 
 	column 'Sequential Day Number'
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 59ac5e05-8b70-471c-afac-134ed3e7dd38
 		sourceLineageTag: Sequential Day Number
@@ -300,7 +278,6 @@ table 'Date EOY'
 
 	column Monthsort
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 3e62d37d-1311-420e-b910-6e644f20043a
 		sourceLineageTag: Monthsort
@@ -315,7 +292,6 @@ table 'Date EOY'
 
 	column Monthindex
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 19c2b3d3-c270-4ffc-8b47-2f31f59170cc
 		sourceLineageTag: Monthindex
@@ -330,7 +306,6 @@ table 'Date EOY'
 
 	column 'Select a Date'
 		dataType: string
-		isHidden
 		lineageTag: d5622ddd-b6bd-4321-82dd-ca073440acd5
 		sourceLineageTag: Select a date
 		summarizeBy: none
@@ -343,7 +318,6 @@ table 'Date EOY'
 		annotation SummarizationSetBy = Automatic
 
 	hierarchy 'Date Hierarchy'
-		isHidden
 		lineageTag: 2a374567-2239-49e9-86bf-c06cc9770c37
 
 		level Year

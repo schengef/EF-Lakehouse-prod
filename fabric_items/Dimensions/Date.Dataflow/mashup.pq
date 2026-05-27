@@ -7,8 +7,18 @@ shared Date = let
     EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
     SQLStatement = 
     "
-select T.*,
-from EDW_V.V_UNIFIED_CALENDAR T",
+WITH StartDate AS (
+    SELECT MAX(WEEK_END_DATE) - 7 AS StartDate
+    FROM EDW_V.V_UNIFIED_CALENDAR
+)
+SELECT 
+    T.*,
+    CASE 
+        WHEN T.WEEK_END_DATE <= M.StartDate THEN 1 
+        ELSE 0 
+    END AS IS_PRIOR_WEEK_OR_BEFORE
+FROM EDW_V.V_UNIFIED_CALENDAR_EOY T
+CROSS JOIN StartDate M",
 NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),    
 #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
 #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),

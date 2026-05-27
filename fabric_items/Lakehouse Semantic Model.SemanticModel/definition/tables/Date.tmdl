@@ -4,7 +4,6 @@ table Date
 
 	column Date
 		dataType: dateTime
-		isHidden
 		formatString: Short Date
 		lineageTag: 517f8c4a-baee-4296-8cf3-099d3bf6fa3a
 		sourceLineageTag: Date
@@ -192,7 +191,6 @@ table Date
 
 	column Year
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: 84c3a7e4-511e-46bf-9d71-549ff3b2e566
 		sourceLineageTag: Year
@@ -252,7 +250,6 @@ table Date
 
 	column Monthnum
 		dataType: int64
-		isHidden
 		formatString: 0
 		lineageTag: e5d316cf-b1d7-4f60-87d7-8a86656cd9b2
 		sourceLineageTag: Monthnum

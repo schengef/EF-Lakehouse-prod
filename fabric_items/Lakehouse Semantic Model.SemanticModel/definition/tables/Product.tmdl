@@ -1631,6 +1631,15 @@ table Product
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Style Number and Color Code NRF'
+		dataType: string
+		lineageTag: d8dc74ce-9868-446a-adf7-1792b99fddeb
+		sourceLineageTag: Style Number and Color Code NRF
+		summarizeBy: none
+		sourceColumn: Style Number and Color Code NRF
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Product = entity
 		mode: directLake
 		source
