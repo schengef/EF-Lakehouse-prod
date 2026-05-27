@@ -337,6 +337,17 @@ table Date
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Is Prior Week Or Before'
+		dataType: string
+		lineageTag: ea7b5c28-54bc-40aa-a143-dfa47bf2ef6a
+		sourceLineageTag: Is Prior Week Or Before
+		summarizeBy: none
+		sourceColumn: Is Prior Week Or Before
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Date Hierarchy'
 		lineageTag: 18bfe1c4-cc01-4e87-85cf-2b6b30e5d4eb
 

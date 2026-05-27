@@ -17,7 +17,7 @@ SELECT
         WHEN T.WEEK_END_DATE <= M.StartDate THEN 1 
         ELSE 0 
     END AS IS_PRIOR_WEEK_OR_BEFORE
-FROM EDW_V.V_UNIFIED_CALENDAR_EOY T
+FROM EDW_V.V_UNIFIED_CALENDAR T
 CROSS JOIN StartDate M",
 NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),    
 #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
@@ -27,7 +27,7 @@ NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFo
     #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"This Year Vs Last Year"}),
   #"Changed column type" = Table.TransformColumnTypes(#"Removed Columns", {{"Week", Int64.Type}, {"Year", Int64.Type}, {"Dayofweek", Int64.Type}, {"Dayofmonth", Int64.Type}, {"Dayofyear", Int64.Type}, {"Monthnum", Int64.Type}, {"Datekey", Int64.Type}, {"Sequential Day Number", Int64.Type}, {"Monthsort", Int64.Type}, {"Monthindex", Int64.Type}}),
   #"Added custom" = Table.AddColumn(#"Changed column type", "Select a date", each "Select a date"),
-  #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom", {{"Select a date", type text}})
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom", {{"Select a date", type text}, {"Is Prior Week Or Before", type text}})
 in
     #"Changed column type 1";
 [BindToDefaultDestination = true]
