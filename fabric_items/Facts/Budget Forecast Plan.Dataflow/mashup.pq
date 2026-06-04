@@ -121,3 +121,20 @@ NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFo
   #"Changed column type" = Table.TransformColumnTypes(#"Renamed Columns", {{"Forecast Store Value", Currency.Type}, {"Date Key", Int64.Type}, {"Store Key", Int64.Type}})
 in
     #"Changed column type";
+[BindToDefaultDestination = true]
+shared #"Additional DSF Metrics" = let
+    Source = Snowflake.Databases("eileen.us-east-1.snowflakecomputing.com","REPORTING_PROD_WH"),
+    EDW_PROD_Database = Source{[Name="EDW_PROD",Kind="Database"]}[Data],
+    SQLStatement = 
+    "
+select T.*
+from EDW_V.F_DTC_ADDL_METRICS T
+    ",
+NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFolding=true]),
+    #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
+    #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
+  #"Removed columns" = Table.RemoveColumns(#"Renamed Columns", {"Week", "Year", "Dtc Addl Metrics Key"}),
+  #"Changed column type" = Table.TransformColumnTypes(#"Removed columns", {{"Week Ending Date Key", Int64.Type}}),
+  #"Renamed columns 1" = Table.RenameColumns(#"Changed column type", {{"Scenario", "Budget or Forecast"}})
+in
+    #"Renamed columns 1";

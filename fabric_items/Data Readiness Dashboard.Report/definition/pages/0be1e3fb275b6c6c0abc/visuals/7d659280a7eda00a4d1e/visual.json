@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "7d659280a7eda00a4d1e",
   "position": {
     "x": 11.096433289299867,
@@ -101,6 +101,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Readiness SourceTable"
+                  }
+                },
+                "Property": "Source Table Freshness"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {

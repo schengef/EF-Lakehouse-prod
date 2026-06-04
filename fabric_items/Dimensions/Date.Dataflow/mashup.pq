@@ -23,11 +23,11 @@ NativeQuery = Value.NativeQuery(EDW_PROD_Database, SQLStatement, null, [EnableFo
 #"Remove Underscores" = Table.TransformColumnNames(NativeQuery,  each Text.Replace( _, "_", " " ) ),
 #"Renamed Columns" = Table.TransformColumnNames( #"Remove Underscores",  each Text.Proper( _ ) ),
 #"Renamed Columns1" = Table.RenameColumns(#"Renamed Columns",{{"Select A Calendar", "Select a Calendar"}, {"Currweek End Date", "CurrWeek End Date"}, {"Monthname", "MonthName"},{"Date Ly", "Date LY"}, {"Date Lly", "Date LLY"}}),
-#"Filtered Rows" = if Date.DayOfWeekName(DateTime.Date(DateTime.FixedLocalNow()))="Sunday" then Table.SelectRows(#"Renamed Columns1", each [Date] < Date.From(DateTime.LocalNow())) else if Date.DayOfWeekName(DateTime.Date(DateTime.FixedLocalNow()))="Saturday" then Table.SelectRows(#"Renamed Columns1", each [Date] <= Date.From(DateTime.LocalNow())) else #"Renamed Columns1",
-    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"This Year Vs Last Year"}),
+    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns1",{"This Year Vs Last Year"}),
   #"Changed column type" = Table.TransformColumnTypes(#"Removed Columns", {{"Week", Int64.Type}, {"Year", Int64.Type}, {"Dayofweek", Int64.Type}, {"Dayofmonth", Int64.Type}, {"Dayofyear", Int64.Type}, {"Monthnum", Int64.Type}, {"Datekey", Int64.Type}, {"Sequential Day Number", Int64.Type}, {"Monthsort", Int64.Type}, {"Monthindex", Int64.Type}}),
   #"Added custom" = Table.AddColumn(#"Changed column type", "Select a date", each "Select a date"),
-  #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom", {{"Select a date", type text}, {"Is Prior Week Or Before", type text}})
+  #"Added custom 1" = Table.AddColumn(#"Added custom", "SundayFlag", each if Date.DayOfWeekName(DateTime.Date(DateTime.FixedLocalNow()))="Sunday" then "1" else "0"),
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Added custom 1", {{"Select a date", type text}, {"Is Prior Week Or Before", type text}})
 in
     #"Changed column type 1";
 [BindToDefaultDestination = true]

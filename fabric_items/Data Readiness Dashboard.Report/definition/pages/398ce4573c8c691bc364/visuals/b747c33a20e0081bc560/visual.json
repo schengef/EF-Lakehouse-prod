@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "0f0208b10e53a29627bb",
+  "name": "b747c33a20e0081bc560",
   "position": {
-    "x": 250.46235138705416,
-    "y": 20.607661822985467,
+    "x": 250.08944543828267,
+    "y": 20.393559928443651,
     "z": 0,
-    "height": 635.667107001321,
-    "width": 946.36723910171725,
+    "height": 627.90697674418607,
+    "width": 750.26833631484794,
     "tabOrder": 0
   },
   "visual": {
@@ -101,7 +101,8 @@
                 }
               },
               "queryRef": "Min(Readiness Domain.Business Domain Last Processed)",
-              "nativeQueryRef": "Business Domain Last Processed"
+              "nativeQueryRef": "Last Processed",
+              "displayName": "Last Processed"
             }
           ]
         }
@@ -832,7 +833,7 @@
         "howCreated": "User"
       },
       {
-        "name": "76f29e133ab1e7cb0733",
+        "name": "c20fc952da62b183901b",
         "field": {
           "Column": {
             "Expression": {
@@ -843,10 +844,63 @@
             "Property": "Report Name"
           }
         },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "r",
+              "Entity": "Report",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "r"
+                          }
+                        },
+                        "Property": "Report Name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Executive Dashboard'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "a09cb6e2dd102a539006",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Business Domain"
+              }
+            },
+            "Property": "Business Domain"
+          }
+        },
         "type": "Categorical"
       },
       {
-        "name": "85a24672cb1eb63730d8",
+        "name": "82481791cec771e5941d",
         "field": {
           "Column": {
             "Expression": {
@@ -860,7 +914,7 @@
         "type": "Categorical"
       },
       {
-        "name": "3eef0b0022c5cbcb2cd5",
+        "name": "37ee87902dd18e901004",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -879,21 +933,7 @@
         "type": "Advanced"
       },
       {
-        "name": "7f37d684595166a10029",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Business Domain"
-              }
-            },
-            "Property": "Business Domain"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "78add83f474597d0c5bb",
+        "name": "3241a342b6c108411db8",
         "field": {
           "Aggregation": {
             "Expression": {

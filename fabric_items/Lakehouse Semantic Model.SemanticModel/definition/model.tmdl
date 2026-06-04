@@ -62,4 +62,5 @@ ref table 'Inventory Movement'
 ref table 'Readiness SourceTable'
 ref table 'Readiness Domain'
 ref table InTransit
+ref table 'Additional DSF Metrics'
 

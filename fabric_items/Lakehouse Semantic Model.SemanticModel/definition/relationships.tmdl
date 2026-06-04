@@ -293,3 +293,8 @@ relationship a42395fe-9e75-4876-6b33-d33397295a2c
 	fromColumn: InTransit.ShipDateKey
 	toColumn: 'Filter Dates'.Datekey
 
+relationship e3caa3c6-7a19-6220-cb96-0013cc91f833
+	relyOnReferentialIntegrity
+	fromColumn: 'Additional DSF Metrics'.'Week Ending Date Key'
+	toColumn: 'Filter Dates'.Datekey
+

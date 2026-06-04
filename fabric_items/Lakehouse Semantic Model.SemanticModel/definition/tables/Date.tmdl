@@ -344,8 +344,6 @@ table Date
 		summarizeBy: none
 		sourceColumn: Is Prior Week Or Before
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	hierarchy 'Date Hierarchy'

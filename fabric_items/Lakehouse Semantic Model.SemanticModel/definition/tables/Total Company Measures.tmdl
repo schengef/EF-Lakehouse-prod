@@ -393,6 +393,45 @@ table 'Total Company Measures'
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
+	measure Freshness =
+			
+			CALCULATE(
+			    FIRSTNONBLANK('readiness domain'[business domain freshness], 1),
+			    TREATAS(
+			        VALUES('dependency'[business domain key]),
+			        'business domain'[business domain key]
+			    )
+			)
+		isHidden
+		displayFolder: Data Readiness
+		lineageTag: f58a3496-d86f-4e3c-adc4-e7a4f0329c49
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
+	measure 'Last Processed' =
+			
+			CALCULATE(
+			    MAX('Readiness Domain'[Business Domain Last Processed]),
+			    TREATAS(
+			        VALUES('dependency'[business domain key]),
+			        'business domain'[business domain key]
+			    )
+			)
+		formatString: General Date
+		isHidden
+		displayFolder: Data Readiness
+		lineageTag: eb456a4b-6126-4dad-8b6c-828864e4e29d
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
 	column Column1
 		dataType: string
 		isHidden

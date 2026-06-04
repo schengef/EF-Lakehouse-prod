@@ -53,6 +53,10 @@ df_current_logs = spark.createDataFrame(log_results, schema) \
 
 df_current_logs.write.format("delta").mode("append").saveAsTable(LOG_TABLE_NAME)
 
+spark.sql("OPTIMIZE table_run_history")
+spark.conf.set("spark.databricks.delta.vacuum.parallelDelete.enabled", "true")
+spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", "false")
+spark.sql("VACUUM table_run_history RETAIN 0 HOURS")
 # display(df_current_logs)
 
 # METADATA ********************

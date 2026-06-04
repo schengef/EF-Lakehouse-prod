@@ -57,6 +57,11 @@
       "queryName": "Forecast (DTC-Store)",
       "queryGroupId": "7182192a-88a5-455f-8a79-32f3250d1769",
       "loadEnabled": false
+    },
+    "Additional DSF Metrics": {
+      "queryId": "2fb60ba1-8579-4139-ba7e-89d402348857",
+      "queryName": "Additional DSF Metrics",
+      "loadEnabled": false
     }
   },
   "connections": [

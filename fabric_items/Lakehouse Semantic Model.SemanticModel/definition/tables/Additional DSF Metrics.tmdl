@@ -1,0 +1,62 @@
+table 'Additional DSF Metrics'
+	isHidden
+	lineageTag: 84663622-8e9f-4cf3-aaa4-b8746be30d96
+	sourceLineageTag: [dbo].[Additional DSF Metrics]
+
+	column 'Week Ending Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3500ad87-e1eb-4b09-99c9-c948cf60ffdd
+		sourceLineageTag: Week Ending Date Key
+		summarizeBy: none
+		sourceColumn: Week Ending Date Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		isHidden
+		lineageTag: f465ab8f-8605-49d9-af56-272d8ac6ca2b
+		sourceLineageTag: Measure
+		summarizeBy: none
+		sourceColumn: Measure
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		isHidden
+		lineageTag: c4456b86-1554-47d9-8503-b2347f64a688
+		sourceLineageTag: Value
+		summarizeBy: sum
+		sourceColumn: Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget or Forecast'
+		dataType: string
+		lineageTag: e8fb4f55-a19d-4a97-9eee-ae0a6cb712ca
+		sourceLineageTag: Budget or Forecast
+		summarizeBy: none
+		sourceColumn: Budget or Forecast
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Additional DSF Metrics' = entity
+		mode: directLake
+		source
+			entityName: Additional DSF Metrics
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sandbox_Lakehouse'
+
+	changedProperty = IsHidden
+
